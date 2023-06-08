@@ -424,26 +424,6 @@ style="text-align: center;">为了提升用户体验，浏览器支持在静音�
       </tags>
   </entry>
   <entry>
-    <title>HTML5+CSS3总览</title>
-    <url>/posts/10500.html</url>
-    <content><![CDATA[<h1 id="html5css301-day01">HTML5+CSS301-day01</h1>
-<p><a
-href="https://wang-nine.cn/posts/10501.html">HTML5+CSS301-day01</a></p>
-<h1 id="html5css302-day02">HTML5+CSS302-day02</h1>
-<p><a
-href="https://wang-nine.cn/posts/10502.html">HTML5+CSS302-day02</a></p>
-<h1 id="html5css303-day03">HTML5+CSS303-day03</h1>
-<p><a
-href="https://wang-nine.cn/posts/10503.html">HTML5+CSS303-day02</a></p>
-]]></content>
-      <categories>
-        <category>HTML+CSS</category>
-      </categories>
-      <tags>
-        <tag>HTML+CSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo+Butterfly主题博客搭建01</title>
     <url>/posts/10001.html</url>
     <content><![CDATA[<p>Hexo+Butterfly主题博客搭建01 ——— 个人博客搭建的基础环境配置工作
@@ -511,6 +491,26 @@ Bash Here并输入<code>hexo init</code>命令初始化这个文件夹。注意�
       </categories>
       <tags>
         <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML5+CSS3总览</title>
+    <url>/posts/10500.html</url>
+    <content><![CDATA[<h1 id="html5css301-day01">HTML5+CSS301-day01</h1>
+<p><a
+href="https://wang-nine.cn/posts/10501.html">HTML5+CSS301-day01</a></p>
+<h1 id="html5css302-day02">HTML5+CSS302-day02</h1>
+<p><a
+href="https://wang-nine.cn/posts/10502.html">HTML5+CSS302-day02</a></p>
+<h1 id="html5css303-day03">HTML5+CSS303-day03</h1>
+<p><a
+href="https://wang-nine.cn/posts/10503.html">HTML5+CSS303-day02</a></p>
+]]></content>
+      <categories>
+        <category>HTML+CSS</category>
+      </categories>
+      <tags>
+        <tag>HTML+CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -1109,6 +1109,46 @@ waiting状态。带有超时参数的常用方法有Thread.sleep和Object.wait</
       </tags>
   </entry>
   <entry>
+    <title></title>
+    <url>/posts/1.html</url>
+    <content><![CDATA[<h2 id="mysql8.0.26-linux版安装">MySQL8.0.26-Linux版安装</h2>
+<h3 id="准备一台linux服务器">1. 准备一台Linux服务器</h3>
+<p>云服务器或者虚拟机都可以;</p>
+<p>Linux的版本为 CentOS7;</p>
+<h3 id="下载linux版mysql安装包">2. 下载Linux版MySQL安装包</h3>
+<p>https://downloads.mysql.com/archives/community/</p>
+<h3 id="上传mysql安装包">3. 上传MySQL安装包</h3>
+<h3 id="创建目录并解压">4. 创建目录,并解压</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir mysql</span><br><span class="line"></span><br><span class="line">tar -xvf mysql-8.0.26-1.el7.x86_64.rpm-bundle.tar -C mysql</span><br></pre></td></tr></table></figure>
+<h3 id="安装mysql的安装包">5. 安装mysql的安装包</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd mysql</span><br><span class="line"></span><br><span class="line">rpm -ivh mysql-community-common-8.0.26-1.el7.x86_64.rpm </span><br><span class="line"></span><br><span class="line">rpm -ivh mysql-community-client-plugins-8.0.26-1.el7.x86_64.rpm </span><br><span class="line"></span><br><span class="line">rpm -ivh mysql-community-libs-8.0.26-1.el7.x86_64.rpm </span><br><span class="line"></span><br><span class="line">rpm -ivh mysql-community-libs-compat-8.0.26-1.el7.x86_64.rpm</span><br><span class="line"></span><br><span class="line">yum install openssl-devel</span><br><span class="line"></span><br><span class="line">rpm -ivh  mysql-community-devel-8.0.26-1.el7.x86_64.rpm</span><br><span class="line"></span><br><span class="line">rpm -ivh mysql-community-client-8.0.26-1.el7.x86_64.rpm</span><br><span class="line"></span><br><span class="line">rpm -ivh  mysql-community-server-8.0.26-1.el7.x86_64.rpm</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="启动mysql服务">6. 启动MySQL服务</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl start mysqld</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl stop mysqld</span><br></pre></td></tr></table></figure>
+<h3 id="查询自动生成的root用户密码">7. 查询自动生成的root用户密码</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grep &#x27;temporary password&#x27; /var/log/mysqld.log</span><br></pre></td></tr></table></figure>
+<p>命令行执行指令 :</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+<p>然后输入上述查询到的自动生成的密码, 完成登录 .</p>
+<h3 id="修改root用户密码">8. 修改root用户密码</h3>
+<p>登录到MySQL之后，需要将自动生成的不便记忆的密码修改了，修改成自己熟悉的便于记忆的密码。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ALTER  USER  &#x27;root&#x27;@&#x27;localhost&#x27;  IDENTIFIED BY &#x27;1234&#x27;;</span><br></pre></td></tr></table></figure>
+<p>执行上述的SQL会报错，原因是因为设置的密码太简单，密码复杂度不够。我们可以设置密码的复杂度为简单类型，密码长度为4。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set global validate_password.policy = 0;</span><br><span class="line">set global validate_password.length = 4;</span><br></pre></td></tr></table></figure>
+<p>降低密码的校验规则之后，再次执行上述修改密码的指令。</p>
+<h3 id="创建用户">9. 创建用户</h3>
+<p>默认的root用户只能当前节点localhost访问，是无法远程访问的，我们还需要创建一个root账户，用户远程访问</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">create user &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;1234&#x27;;</span><br></pre></td></tr></table></figure>
+<h3 id="并给root用户分配权限">10. 并给root用户分配权限</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grant all on *.* to &#x27;root&#x27;@&#x27;%&#x27;;</span><br></pre></td></tr></table></figure>
+<h3 id="重新连接mysql">11. 重新连接MySQL</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+<p>然后输入密码</p>
+<h3 id="通过datagrip远程连接mysql">12. 通过DataGrip远程连接MySQL</h3>
+]]></content>
+  </entry>
+  <entry>
     <title>JavaSE02-Java中的文件与方法递归与IO流</title>
     <url>/posts/10101.html</url>
     <content><![CDATA[<p>详细的描述了Java中
@@ -1162,307 +1202,6 @@ alt="image-20230524214623406" />
       </categories>
       <tags>
         <tag>JavaSE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL01-事务</title>
-    <url>/posts/10401.html</url>
-    <content><![CDATA[<p>详细的描述了MySQL中的事务的四大特性以及事务的隔离级别。
-<span id="more"></span></p>
-<h1 id="事务的简介">事务的简介</h1>
-<blockquote>
-<p><strong>事务</strong>是一组操作的集合，它是一个不可分割的工作单位，事务会把所有的操作作为一个整体一起向系统提交或撤销操作请求，即这些操作要么同时成功，要么同时失败。</p>
-</blockquote>
-<blockquote>
-<p>默认MySQL的事务是自动提交的，也就是说，当执行一条DML语句，MySQL会立即隐式的提交事务。</p>
-</blockquote>
-<h1 id="事务的操作">事务的操作</h1>
-<h2 id="提交事务的方式">提交事务的方式</h2>
-<h3 id="方式一">1.方式一</h3>
-<h4 id="查看设置事务的提交方式">① 查看/设置事务的提交方式</h4>
-<blockquote>
-<p>SELECT @<span class="citation"
-data-cites="autocommit">@autocommit</span>; SET @<span class="citation"
-data-cites="autocommit">@autocommit</span> = 0; --1是自动 0是手动 #### ②
-提交事务 COMMIT; --提交事务 #### ③ 回滚事务 ROLLBACK; --回滚事务</p>
-</blockquote>
-<h3 id="方式二手动开启并且提交">2.方式二（手动开启并且提交）</h3>
-<h4 id="开启事务">① 开启事务</h4>
-<blockquote>
-<p>START TRANSACTION / BEGIN; #### ② 提交事务 COMMIT； #### ③ 回滚事务
-ROLLBACK;</p>
-</blockquote>
-<h1 id="事务的四大特性acid">事务的四大特性（ACID）</h1>
-<blockquote>
-<h2
-id="原子性atomicity事务是不可分割的最小操作单元要么全部成功要么全部失败"><font size=3>原子性（<strong>A</strong>tomicity)∶事务是不可分割的最小操作单元，要么全部成功，要么全部失败。</font></h2>
-</blockquote>
-<blockquote>
-<h2
-id="一致性consistency-事务完成时必须使所有的数据都保持一致状态"><font size=3>一致性（Consistency)
-:事务完成时，必须使所有的数据都保持一致状态。</font></h2>
-</blockquote>
-<blockquote>
-<h2
-id="隔离性lsolation数据库系统提供的隔离机制保证事务在不受外部并发操作影响的独立环境下运行"><font size=3>隔离性（<strong>l</strong>solation):数据库系统提供的隔离机制，保证事务在不受外部并发操作影响的独立环境下运行。</font></h2>
-</blockquote>
-<blockquote>
-<h2
-id="持久性durability-事务一旦提交或回滚它对数据库中的数据的改变就是永久的"><font size=3>持久性（Durability)
-:事务一旦提交或回滚，它对数据库中的数据的改变就是永久的。</font></h2>
-</blockquote>
-<h1 id="并发事务的问题">并发事务的问题</h1>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>问题</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>脏读</td>
-<td>一个事务读到另外一个事务还没有提交的数据。</td>
-</tr>
-<tr class="even">
-<td>不可重复读</td>
-<td>一个事务先后读取同一条记录，但两次读取的数据不同，称之为不可重复读。</td>
-</tr>
-<tr class="odd">
-<td>幻读</td>
-<td>一个事务按照条件查询数据时，没有对应的数据行，但是在插入数据时，又发现这行数据已存在，好像出现了'幻影”。</td>
-</tr>
-</tbody>
-</table>
-<h1 id="事务的隔离级别">事务的隔离级别</h1>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">隔离级别</th>
-<th style="text-align: center;">脏读</th>
-<th style="text-align: center;">不可重复读</th>
-<th style="text-align: center;">幻读</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Read Uncommitted</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Read Committed</td>
-<td style="text-align: center;">×</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Repeatable Read（默认）</td>
-<td style="text-align: center;">×</td>
-<td style="text-align: center;">×</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Serializable</td>
-<td style="text-align: center;">×</td>
-<td style="text-align: center;">×</td>
-<td style="text-align: center;">×</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/posts/0.html</url>
-    <content><![CDATA[<h2 id="mysql8.0.26-linux版安装">MySQL8.0.26-Linux版安装</h2>
-<h3 id="准备一台linux服务器">1. 准备一台Linux服务器</h3>
-<p>云服务器或者虚拟机都可以;</p>
-<p>Linux的版本为 CentOS7;</p>
-<h3 id="下载linux版mysql安装包">2. 下载Linux版MySQL安装包</h3>
-<p>https://downloads.mysql.com/archives/community/</p>
-<h3 id="上传mysql安装包">3. 上传MySQL安装包</h3>
-<h3 id="创建目录并解压">4. 创建目录,并解压</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir mysql</span><br><span class="line"></span><br><span class="line">tar -xvf mysql-8.0.26-1.el7.x86_64.rpm-bundle.tar -C mysql</span><br></pre></td></tr></table></figure>
-<h3 id="安装mysql的安装包">5. 安装mysql的安装包</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd mysql</span><br><span class="line"></span><br><span class="line">rpm -ivh mysql-community-common-8.0.26-1.el7.x86_64.rpm </span><br><span class="line"></span><br><span class="line">rpm -ivh mysql-community-client-plugins-8.0.26-1.el7.x86_64.rpm </span><br><span class="line"></span><br><span class="line">rpm -ivh mysql-community-libs-8.0.26-1.el7.x86_64.rpm </span><br><span class="line"></span><br><span class="line">rpm -ivh mysql-community-libs-compat-8.0.26-1.el7.x86_64.rpm</span><br><span class="line"></span><br><span class="line">yum install openssl-devel</span><br><span class="line"></span><br><span class="line">rpm -ivh  mysql-community-devel-8.0.26-1.el7.x86_64.rpm</span><br><span class="line"></span><br><span class="line">rpm -ivh mysql-community-client-8.0.26-1.el7.x86_64.rpm</span><br><span class="line"></span><br><span class="line">rpm -ivh  mysql-community-server-8.0.26-1.el7.x86_64.rpm</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="启动mysql服务">6. 启动MySQL服务</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl start mysqld</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl stop mysqld</span><br></pre></td></tr></table></figure>
-<h3 id="查询自动生成的root用户密码">7. 查询自动生成的root用户密码</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grep &#x27;temporary password&#x27; /var/log/mysqld.log</span><br></pre></td></tr></table></figure>
-<p>命令行执行指令 :</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
-<p>然后输入上述查询到的自动生成的密码, 完成登录 .</p>
-<h3 id="修改root用户密码">8. 修改root用户密码</h3>
-<p>登录到MySQL之后，需要将自动生成的不便记忆的密码修改了，修改成自己熟悉的便于记忆的密码。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ALTER  USER  &#x27;root&#x27;@&#x27;localhost&#x27;  IDENTIFIED BY &#x27;1234&#x27;;</span><br></pre></td></tr></table></figure>
-<p>执行上述的SQL会报错，原因是因为设置的密码太简单，密码复杂度不够。我们可以设置密码的复杂度为简单类型，密码长度为4。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set global validate_password.policy = 0;</span><br><span class="line">set global validate_password.length = 4;</span><br></pre></td></tr></table></figure>
-<p>降低密码的校验规则之后，再次执行上述修改密码的指令。</p>
-<h3 id="创建用户">9. 创建用户</h3>
-<p>默认的root用户只能当前节点localhost访问，是无法远程访问的，我们还需要创建一个root账户，用户远程访问</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">create user &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;1234&#x27;;</span><br></pre></td></tr></table></figure>
-<h3 id="并给root用户分配权限">10. 并给root用户分配权限</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grant all on *.* to &#x27;root&#x27;@&#x27;%&#x27;;</span><br></pre></td></tr></table></figure>
-<h3 id="重新连接mysql">11. 重新连接MySQL</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
-<p>然后输入密码</p>
-<h3 id="通过datagrip远程连接mysql">12. 通过DataGrip远程连接MySQL</h3>
-]]></content>
-  </entry>
-  <entry>
-    <title>MySQL02-存储引擎</title>
-    <url>/posts/10402.html</url>
-    <content><![CDATA[<p>详细的描述了MySQL中的引擎之间的区别和选择。 <span id="more"></span></p>
-<h1 id="mysql体系结构">MySQL体系结构</h1>
-<figure>
-<img
-src="https://wang-nine.cn/images/MySQL02-01%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png"
-alt="MySQL02-01体系结构" />
-<figcaption aria-hidden="true">MySQL02-01体系结构</figcaption>
-</figure>
-<h2 id="连接层">连接层</h2>
-<blockquote>
-<p>最上层是一些客户端和链接服务，主要完成一些类似于连接处理、授权认证、及相关的安全方案。服务器也会为安全接入的每个客户端验证它所具有的操作权限。</p>
-</blockquote>
-<h2 id="服务层">服务层</h2>
-<blockquote>
-<p>第二层架构主要完成大多数的核心服务功能，如SQL接口，并完成缓存的查询，SQL的分析和优化，部分内置函数的执行。所有跨存储引擎的功能也在这一层实现，如过程、函数等。</p>
-</blockquote>
-<h2 id="引擎层">引擎层</h2>
-<blockquote>
-<p>存储引擎真正的负责了MySQL中数据的存储和提取，服务器通过API和存储引擎进行通信。不同的存储引擎具有不同的功能，这样我们可以根据自己的需要，来选取合适的存储引擎。</p>
-</blockquote>
-<h2 id="存储层">存储层</h2>
-<blockquote>
-<p>主要是将数据存储在文件系统之上，并完成与存储引擎的交互。</p>
-</blockquote>
-<h1 id="存储引擎简介">存储引擎简介</h1>
-<p>建表语句中使用 ENGINE = 引擎名 可以指定使用何种引擎
-查看当前数据库支持的引擎： SHOW ENGINES；</p>
-<h1 id="存储引擎的特点">存储引擎的特点</h1>
-<h2 id="innodb">InnoDB</h2>
-<p>简介 InnoDB是一种兼顾高可靠性和高性能的通用存储引擎，在MySQL
-5.5之后，InnoDB是默认的MySQL存储引擎。</p>
-<p>特点（事务，外键，行级锁）
-DML操作遵循ACID模型,支持<strong>事务</strong>
-支持<strong>外键</strong>FOREIGN KEY约束，保证数据的完整性和正确性
-<strong>行级锁</strong>，提高并发访问性能</p>
-<p>文件 xxx.ibd:
-xxx代表的是表名，innoDB引擎的每张表都会对应这样一个表空间文件，存储该表的表结构(frm、gdi)
-、数据和索引。参数: innodb_file_per_table</p>
-<figure>
-<img src="https://wang-nine.cn/iamges/MySQL02-02InnoDB.png"
-alt="MySQL02-02InnoDB" />
-<figcaption aria-hidden="true">MySQL02-02InnoDB</figcaption>
-</figure>
-<h2 id="myisam">MyISAM</h2>
-<p>简介 MylSAM是MySQL早期的默认存储引擎。</p>
-<p>特点 不支持事务 不支持外键支持表锁 不支持行锁访问速度快</p>
-<p>文件 xxx.sdi:存储表结构信息 xxx.MYD:存储数据 xxx.MYI:存储索引</p>
-<h2 id="memory">Memory</h2>
-<p>介绍
-Memory引擎的表数据时存储在内存中的，由于受到硬件问题、或断电问题的影响，只能将这些表作为临时表或缓存使用。</p>
-<p>特点 内存存放 hash索引（默认)</p>
-<p>文件 xxx.sdi:存储表结构信息</p>
-<p>比较：（来自黑马程序员，侵删）</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">特点</th>
-<th style="text-align: center;">InnoDB</th>
-<th style="text-align: center;">MyISAM</th>
-<th style="text-align: center;">Memory</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">存储限制</td>
-<td style="text-align: center;">64TB</td>
-<td style="text-align: center;">有</td>
-<td style="text-align: center;">有</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">事务安全</td>
-<td style="text-align: center;"><strong>支持</strong></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">锁机制</td>
-<td style="text-align: center;"><strong>行锁</strong></td>
-<td style="text-align: center;">表锁</td>
-<td style="text-align: center;">表锁</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">B+Tree索引</td>
-<td style="text-align: center;">支持</td>
-<td style="text-align: center;">支持</td>
-<td style="text-align: center;">支持</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Hash索引</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">支持</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">全文索引</td>
-<td style="text-align: center;">支持</td>
-<td style="text-align: center;">支持</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">空间使用</td>
-<td style="text-align: center;">高</td>
-<td style="text-align: center;">低</td>
-<td style="text-align: center;">N/A</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">内存使用</td>
-<td style="text-align: center;">高</td>
-<td style="text-align: center;">低</td>
-<td style="text-align: center;">中等</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">批量插入速度</td>
-<td style="text-align: center;">低</td>
-<td style="text-align: center;">高</td>
-<td style="text-align: center;">高</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">支持外键</td>
-<td style="text-align: center;"><strong>支持</strong></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-</tbody>
-</table>
-<h1
-id="存储引擎的选择总结自黑马程序员mysql课程侵删">存储引擎的选择（总结自黑马程序员MySQL课程，侵删）</h1>
-<p>在选择存储引擎时，应该根据应用系统的特点选择合适的存储引擎。对于复杂的应用系统，还可以根据实际情况选择多种存储引擎进行组合。</p>
-<p>InnoDB:是Mysql的默认存储引擎，支持事务、外键。如果应用对事务的完整性有比较高的要求，在并发条件下要求数据的一致性，数据操怍除了插入和查询之外，还包含很多的更新、删除操作，那么InnoDB存储引擎是比较合适的选择。</p>
-<p>MyISAM:如果应用是以读操作和插入操作为主，只有很少的更新和删除操作，并且对事务的完整性、并发性要求不是很高，那么选择这个存储引擎是非常合适的。（被MongoDB取代）</p>
-<p>MEMORY:将所有数据保存在内存中，访问速度快，通常用于临时表及缓存。MEMORY的缺陷就是对表的大小有限制，太大的表无法缓存在内存中，而且无法保障数据的安全性。（被Redis取代）</p>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -1713,6 +1452,267 @@ id="为什么innodb存储引擎选择使用btree索引结构">为什么InnoDB存
       </tags>
   </entry>
   <entry>
+    <title>MySQL02-存储引擎</title>
+    <url>/posts/10402.html</url>
+    <content><![CDATA[<p>详细的描述了MySQL中的引擎之间的区别和选择。 <span id="more"></span></p>
+<h1 id="mysql体系结构">MySQL体系结构</h1>
+<figure>
+<img
+src="https://wang-nine.cn/images/MySQL02-01%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png"
+alt="MySQL02-01体系结构" />
+<figcaption aria-hidden="true">MySQL02-01体系结构</figcaption>
+</figure>
+<h2 id="连接层">连接层</h2>
+<blockquote>
+<p>最上层是一些客户端和链接服务，主要完成一些类似于连接处理、授权认证、及相关的安全方案。服务器也会为安全接入的每个客户端验证它所具有的操作权限。</p>
+</blockquote>
+<h2 id="服务层">服务层</h2>
+<blockquote>
+<p>第二层架构主要完成大多数的核心服务功能，如SQL接口，并完成缓存的查询，SQL的分析和优化，部分内置函数的执行。所有跨存储引擎的功能也在这一层实现，如过程、函数等。</p>
+</blockquote>
+<h2 id="引擎层">引擎层</h2>
+<blockquote>
+<p>存储引擎真正的负责了MySQL中数据的存储和提取，服务器通过API和存储引擎进行通信。不同的存储引擎具有不同的功能，这样我们可以根据自己的需要，来选取合适的存储引擎。</p>
+</blockquote>
+<h2 id="存储层">存储层</h2>
+<blockquote>
+<p>主要是将数据存储在文件系统之上，并完成与存储引擎的交互。</p>
+</blockquote>
+<h1 id="存储引擎简介">存储引擎简介</h1>
+<p>建表语句中使用 ENGINE = 引擎名 可以指定使用何种引擎
+查看当前数据库支持的引擎： SHOW ENGINES；</p>
+<h1 id="存储引擎的特点">存储引擎的特点</h1>
+<h2 id="innodb">InnoDB</h2>
+<p>简介 InnoDB是一种兼顾高可靠性和高性能的通用存储引擎，在MySQL
+5.5之后，InnoDB是默认的MySQL存储引擎。</p>
+<p>特点（事务，外键，行级锁）
+DML操作遵循ACID模型,支持<strong>事务</strong>
+支持<strong>外键</strong>FOREIGN KEY约束，保证数据的完整性和正确性
+<strong>行级锁</strong>，提高并发访问性能</p>
+<p>文件 xxx.ibd:
+xxx代表的是表名，innoDB引擎的每张表都会对应这样一个表空间文件，存储该表的表结构(frm、gdi)
+、数据和索引。参数: innodb_file_per_table</p>
+<figure>
+<img src="https://wang-nine.cn/iamges/MySQL02-02InnoDB.png"
+alt="MySQL02-02InnoDB" />
+<figcaption aria-hidden="true">MySQL02-02InnoDB</figcaption>
+</figure>
+<h2 id="myisam">MyISAM</h2>
+<p>简介 MylSAM是MySQL早期的默认存储引擎。</p>
+<p>特点 不支持事务 不支持外键支持表锁 不支持行锁访问速度快</p>
+<p>文件 xxx.sdi:存储表结构信息 xxx.MYD:存储数据 xxx.MYI:存储索引</p>
+<h2 id="memory">Memory</h2>
+<p>介绍
+Memory引擎的表数据时存储在内存中的，由于受到硬件问题、或断电问题的影响，只能将这些表作为临时表或缓存使用。</p>
+<p>特点 内存存放 hash索引（默认)</p>
+<p>文件 xxx.sdi:存储表结构信息</p>
+<p>比较：（来自黑马程序员，侵删）</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">特点</th>
+<th style="text-align: center;">InnoDB</th>
+<th style="text-align: center;">MyISAM</th>
+<th style="text-align: center;">Memory</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">存储限制</td>
+<td style="text-align: center;">64TB</td>
+<td style="text-align: center;">有</td>
+<td style="text-align: center;">有</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">事务安全</td>
+<td style="text-align: center;"><strong>支持</strong></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">锁机制</td>
+<td style="text-align: center;"><strong>行锁</strong></td>
+<td style="text-align: center;">表锁</td>
+<td style="text-align: center;">表锁</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B+Tree索引</td>
+<td style="text-align: center;">支持</td>
+<td style="text-align: center;">支持</td>
+<td style="text-align: center;">支持</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Hash索引</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">支持</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">全文索引</td>
+<td style="text-align: center;">支持</td>
+<td style="text-align: center;">支持</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">空间使用</td>
+<td style="text-align: center;">高</td>
+<td style="text-align: center;">低</td>
+<td style="text-align: center;">N/A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">内存使用</td>
+<td style="text-align: center;">高</td>
+<td style="text-align: center;">低</td>
+<td style="text-align: center;">中等</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">批量插入速度</td>
+<td style="text-align: center;">低</td>
+<td style="text-align: center;">高</td>
+<td style="text-align: center;">高</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">支持外键</td>
+<td style="text-align: center;"><strong>支持</strong></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+</tbody>
+</table>
+<h1
+id="存储引擎的选择总结自黑马程序员mysql课程侵删">存储引擎的选择（总结自黑马程序员MySQL课程，侵删）</h1>
+<p>在选择存储引擎时，应该根据应用系统的特点选择合适的存储引擎。对于复杂的应用系统，还可以根据实际情况选择多种存储引擎进行组合。</p>
+<p>InnoDB:是Mysql的默认存储引擎，支持事务、外键。如果应用对事务的完整性有比较高的要求，在并发条件下要求数据的一致性，数据操怍除了插入和查询之外，还包含很多的更新、删除操作，那么InnoDB存储引擎是比较合适的选择。</p>
+<p>MyISAM:如果应用是以读操作和插入操作为主，只有很少的更新和删除操作，并且对事务的完整性、并发性要求不是很高，那么选择这个存储引擎是非常合适的。（被MongoDB取代）</p>
+<p>MEMORY:将所有数据保存在内存中，访问速度快，通常用于临时表及缓存。MEMORY的缺陷就是对表的大小有限制，太大的表无法缓存在内存中，而且无法保障数据的安全性。（被Redis取代）</p>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL01-事务</title>
+    <url>/posts/10401.html</url>
+    <content><![CDATA[<p>详细的描述了MySQL中的事务的四大特性以及事务的隔离级别。
+<span id="more"></span></p>
+<h1 id="事务的简介">事务的简介</h1>
+<blockquote>
+<p><strong>事务</strong>是一组操作的集合，它是一个不可分割的工作单位，事务会把所有的操作作为一个整体一起向系统提交或撤销操作请求，即这些操作要么同时成功，要么同时失败。</p>
+</blockquote>
+<blockquote>
+<p>默认MySQL的事务是自动提交的，也就是说，当执行一条DML语句，MySQL会立即隐式的提交事务。</p>
+</blockquote>
+<h1 id="事务的操作">事务的操作</h1>
+<h2 id="提交事务的方式">提交事务的方式</h2>
+<h3 id="方式一">1.方式一</h3>
+<h4 id="查看设置事务的提交方式">① 查看/设置事务的提交方式</h4>
+<blockquote>
+<p>SELECT @<span class="citation"
+data-cites="autocommit">@autocommit</span>; SET @<span class="citation"
+data-cites="autocommit">@autocommit</span> = 0; --1是自动 0是手动 #### ②
+提交事务 COMMIT; --提交事务 #### ③ 回滚事务 ROLLBACK; --回滚事务</p>
+</blockquote>
+<h3 id="方式二手动开启并且提交">2.方式二（手动开启并且提交）</h3>
+<h4 id="开启事务">① 开启事务</h4>
+<blockquote>
+<p>START TRANSACTION / BEGIN; #### ② 提交事务 COMMIT； #### ③ 回滚事务
+ROLLBACK;</p>
+</blockquote>
+<h1 id="事务的四大特性acid">事务的四大特性（ACID）</h1>
+<blockquote>
+<h2
+id="原子性atomicity事务是不可分割的最小操作单元要么全部成功要么全部失败"><font size=3>原子性（<strong>A</strong>tomicity)∶事务是不可分割的最小操作单元，要么全部成功，要么全部失败。</font></h2>
+</blockquote>
+<blockquote>
+<h2
+id="一致性consistency-事务完成时必须使所有的数据都保持一致状态"><font size=3>一致性（Consistency)
+:事务完成时，必须使所有的数据都保持一致状态。</font></h2>
+</blockquote>
+<blockquote>
+<h2
+id="隔离性lsolation数据库系统提供的隔离机制保证事务在不受外部并发操作影响的独立环境下运行"><font size=3>隔离性（<strong>l</strong>solation):数据库系统提供的隔离机制，保证事务在不受外部并发操作影响的独立环境下运行。</font></h2>
+</blockquote>
+<blockquote>
+<h2
+id="持久性durability-事务一旦提交或回滚它对数据库中的数据的改变就是永久的"><font size=3>持久性（Durability)
+:事务一旦提交或回滚，它对数据库中的数据的改变就是永久的。</font></h2>
+</blockquote>
+<h1 id="并发事务的问题">并发事务的问题</h1>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>问题</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>脏读</td>
+<td>一个事务读到另外一个事务还没有提交的数据。</td>
+</tr>
+<tr class="even">
+<td>不可重复读</td>
+<td>一个事务先后读取同一条记录，但两次读取的数据不同，称之为不可重复读。</td>
+</tr>
+<tr class="odd">
+<td>幻读</td>
+<td>一个事务按照条件查询数据时，没有对应的数据行，但是在插入数据时，又发现这行数据已存在，好像出现了'幻影”。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="事务的隔离级别">事务的隔离级别</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">隔离级别</th>
+<th style="text-align: center;">脏读</th>
+<th style="text-align: center;">不可重复读</th>
+<th style="text-align: center;">幻读</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Read Uncommitted</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Read Committed</td>
+<td style="text-align: center;">×</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Repeatable Read（默认）</td>
+<td style="text-align: center;">×</td>
+<td style="text-align: center;">×</td>
+<td style="text-align: center;">√</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Serializable</td>
+<td style="text-align: center;">×</td>
+<td style="text-align: center;">×</td>
+<td style="text-align: center;">×</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL03-索引02-性能分析</title>
     <url>/posts/10404.html</url>
     <content><![CDATA[<p>详细的描述了MySQL中的索引的性能分析。 <span id="more"></span></p>
@@ -1858,106 +1858,6 @@ where
       </tags>
   </entry>
   <entry>
-    <title>MySQL03-索引03-使用规则</title>
-    <url>/posts/10405.html</url>
-    <content><![CDATA[<p>详细的描述了MySQL中的索引的使用规则和设计原则。 <span id="more"></span></p>
-<h1 id="使用规则">使用规则</h1>
-<h2 id="联合索引">联合索引</h2>
-<h3 id="最左前缀法则">最左前缀法则</h3>
-<blockquote>
-<p>如果索引了多列(联合索引)，要遵守最左前缀法则。最左前缀法则指的是查询从索引的最左列开始，并且不跳过索引中的列。如果跳跃某一列，索引将部分失效(后面的字段索引失效)。</p>
-</blockquote>
-<h3 id="范围查询">范围查询</h3>
-<blockquote>
-<p>联合索引中，出现范围查询(&gt;,&lt;)，范围查询右侧的列索引失效</p>
-</blockquote>
-<h2 id="索引失效">索引失效</h2>
-<h3 id="索引列运算">索引列运算</h3>
-<blockquote>
-<p>不要在索引列上进行运算操作,索引将失效。</p>
-</blockquote>
-<h3 id="字符串不加引号">字符串不加引号</h3>
-<blockquote>
-<p>字符串类型字段使用时，不加引号，索引将失效。会在内部自动进行隐式类型转换。</p>
-</blockquote>
-<h3 id="模糊查询">模糊查询</h3>
-<blockquote>
-<p>如果仅仅是尾部模糊匹配，索引不会失效。如果是头部模糊匹配，索引失效。</p>
-</blockquote>
-<p>### or连接的条件</p>
-<blockquote>
-<p>用or分割开的条件，如果or前的条件中的列有索引，而后面的列中没有索引，那么涉及的索引都不会被用到。</p>
-<p>解决办法：针对另一个数据列也建立索引即可</p>
-</blockquote>
-<h3 id="数据分布影响">数据分布影响</h3>
-<blockquote>
-<p>如果MysQL评估使用索引比全表更慢，则不使用索引。</p>
-</blockquote>
-<h2 id="sql提示">SQL提示</h2>
-<h3 id="sql提示-1">SQL提示</h3>
-<blockquote>
-<p>SQL提示，是优化数据库的一个重要手段，简单来说，就是在SQL语句中加入一些人为的提示来达到优化操作的目的。</p>
-<p>放在where条件前，use/ignore/force index(索引名)</p>
-<p>use index: 建议使用索引，数据库可以选择不使用</p>
-<p>ignore index: 忽略某个索引</p>
-<p>force index: 强制使用某个索引</p>
-</blockquote>
-<h2 id="覆盖索引">覆盖索引</h2>
-<h3 id="覆盖索引-1">覆盖索引</h3>
-<blockquote>
-<p>尽量使用覆盖索引（查询使用了索引，并且需要返回的列，在该索引中已经全部能够找到)，减少select
-*。</p>
-<p>尽量避免回表查询</p>
-<p>extra中： using index condition :查找使用了索引,但是需要回表查询数据
-using where; using
-index:查找使用了索引，但是需要的数据都在索引列中能找到，所以不需要回表查询数据</p>
-</blockquote>
-<h2 id="前缀索引">前缀索引</h2>
-<h3 id="前缀索引-1">前缀索引</h3>
-<blockquote>
-<p>当字段类型为字符串(varchar,
-text等）时，有时候需要索引很长的字符串，这会让索引变得很大，查询时，浪费大量的磁盘IO，影响查询效率。此时可以只将字符串的一部分前缀，建立索引，这样可以大大节约索引空间，从而提高索引效率。</p>
-<p>语法： create index idx_xxx on table_name(column(n)) ; - -
-n为前缀长度</p>
-<p>前缀长度的选择：
-可以根据索引的选择性来决定，选择性是指不重复的索引值（基数）和数据表的记录总数的比值，索引选择性越高则查询效率越高，
-唯一索引的选择性是1，这是最好的索引选择性，性能也是最好的。
-可以使用聚合函数查询选择性 select count(distinct substring(xxx,1,5))/
-count(*) from table ; - - 即长度为5的选择性</p>
-</blockquote>
-<h2 id="单列联合索引">单列/联合索引</h2>
-<h3 id="单列索引与联合索引">单列索引与联合索引</h3>
-<blockquote>
-<p>单列索引:即一个索引只包含单个列。</p>
-<p>联合索引:即一个索引包含了多个列。</p>
-<p>在业务场景中，如果存在多个查询条件，考虑针对于查询字段建立索引时，建议建立联合索引，而非单列索引。</p>
-<p>多条件联合查询时，MySQL优化器会评估哪个字段的索引效率更高，会选择该索引完成本次查询。</p>
-</blockquote>
-<h1
-id="索引设计原则总结自黑马程序员侵删">索引设计原则（总结自黑马程序员，侵删）</h1>
-<h3 id="索引设计原则">索引设计原则</h3>
-<blockquote>
-<ol type="1">
-<li>针对于数据量较大，且查询比较频繁的表建立索引。</li>
-<li>针对于常作为查询条件（where)、排序(order by)、分组(group
-by)操作的字段建立索引。</li>
-<li>尽量选择区分度高的列作为索引，尽量建立唯一索引，区分度越高，使用索引的效率越高。</li>
-<li>如果是字符串类型的字段，字段的长度较长，可以针对于字段的特点，建立前缀索引。</li>
-<li>尽量使用联合索引，减少单列索引，查询时，联合索引很多时候可以覆盖索引，节省存储空间，避免回表，提高查询效率。</li>
-<li>要控制索引的数量，索引并不是多多益善，索引越多，维护索引结构的代价也就越大，会影响增删改的效率。</li>
-<li>如果索引列不能存储NULL值，请在创建表时使用NOT
-NULL约束它。当优化器知道每列是否包含NULL值时，它可以更好地确定哪个索引最有效地用于查询。</li>
-</ol>
-</blockquote>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL04-SQL优化</title>
     <url>/posts/10406.html</url>
     <content><![CDATA[<p>详细的描述了MySQL中的SQL语句的优化。 <span id="more"></span></p>
@@ -2079,33 +1979,97 @@ filesort:需要将返回的结果在排序缓冲区排序</p>
       </tags>
   </entry>
   <entry>
-    <title>MySQL06-存储函数</title>
-    <url>/posts/10408.html</url>
-    <content><![CDATA[<p>详细的描述了MySQL中的存储函数。 <span id="more"></span></p>
-<h1 id="存储函数">存储函数</h1>
-<p>存储函数是有返回值的存储过程，存储函数的参数只能是IN类型的。</p>
-<h2 id="语法">语法</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE FUNCTION 存储函数名称([参数列表])</span><br><span class="line">RETURNS type [characteristic ...]</span><br><span class="line">BEGIN</span><br><span class="line">	--SQL语句</span><br><span class="line">	RETURN ...;</span><br><span class="line">END;</span><br><span class="line"></span><br><span class="line">characteristic说明:</span><br><span class="line"> + DETERMINISTIC:相同的输入参数总是产生相同的结果</span><br><span class="line"> + NO SQL:不包含SQL语句。</span><br><span class="line"> + READS SQL DATA:包含读取数据的语句，但不包含写入数据的语句。</span><br></pre></td></tr></table></figure>
-<h2 id="样例">样例</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 存储函数</span><br><span class="line">-- 计算从1到n的累加</span><br><span class="line">create function fun1(n int)</span><br><span class="line">returns int deterministic </span><br><span class="line">begin</span><br><span class="line">    declare total int default 0;</span><br><span class="line"></span><br><span class="line">    while n &gt; 0 do</span><br><span class="line">        set total := total + n;</span><br><span class="line">        set n := n - 1;</span><br><span class="line">    end while;</span><br><span class="line"></span><br><span class="line">    return total;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">select fun1(100);</span><br></pre></td></tr></table></figure>
-<p><strong>注意当未添加 deterministic 会产生如下bug：</strong></p>
-<figure>
-<img
-src="https://wang-nine.cn/images/MySQL06-01%E6%9C%AA%E6%8C%87%E5%AE%9A%E5%8F%82%E6%95%B0%E6%80%A7%E8%B4%A8%E7%9A%84bug.png"
-alt="MySQL06-01未指定参数性质的bug" />
-<figcaption
-aria-hidden="true">MySQL06-01未指定参数性质的bug</figcaption>
-</figure>
-<p>运行结果：</p>
-<figure>
-<img
-src="https://wang-nine.cn/images/MySQL06-02%E5%AD%98%E5%82%A8%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png"
-alt="MySQL06-02存储函数的运行结果" />
-<figcaption aria-hidden="true">MySQL06-02存储函数的运行结果</figcaption>
-</figure>
-<h1 id="注意">注意</h1>
-<p><strong>存储函数必须要有返回值，而且参数只能是输入类型的参数，其过程实现完全可以被存储过程所代替。</strong></p>
-<p><strong>因此存储函数的使用较少，这里仅做了解。</strong></p>
+    <title>MySQL03-索引03-使用规则</title>
+    <url>/posts/10405.html</url>
+    <content><![CDATA[<p>详细的描述了MySQL中的索引的使用规则和设计原则。 <span id="more"></span></p>
+<h1 id="使用规则">使用规则</h1>
+<h2 id="联合索引">联合索引</h2>
+<h3 id="最左前缀法则">最左前缀法则</h3>
+<blockquote>
+<p>如果索引了多列(联合索引)，要遵守最左前缀法则。最左前缀法则指的是查询从索引的最左列开始，并且不跳过索引中的列。如果跳跃某一列，索引将部分失效(后面的字段索引失效)。</p>
+</blockquote>
+<h3 id="范围查询">范围查询</h3>
+<blockquote>
+<p>联合索引中，出现范围查询(&gt;,&lt;)，范围查询右侧的列索引失效</p>
+</blockquote>
+<h2 id="索引失效">索引失效</h2>
+<h3 id="索引列运算">索引列运算</h3>
+<blockquote>
+<p>不要在索引列上进行运算操作,索引将失效。</p>
+</blockquote>
+<h3 id="字符串不加引号">字符串不加引号</h3>
+<blockquote>
+<p>字符串类型字段使用时，不加引号，索引将失效。会在内部自动进行隐式类型转换。</p>
+</blockquote>
+<h3 id="模糊查询">模糊查询</h3>
+<blockquote>
+<p>如果仅仅是尾部模糊匹配，索引不会失效。如果是头部模糊匹配，索引失效。</p>
+</blockquote>
+<p>### or连接的条件</p>
+<blockquote>
+<p>用or分割开的条件，如果or前的条件中的列有索引，而后面的列中没有索引，那么涉及的索引都不会被用到。</p>
+<p>解决办法：针对另一个数据列也建立索引即可</p>
+</blockquote>
+<h3 id="数据分布影响">数据分布影响</h3>
+<blockquote>
+<p>如果MysQL评估使用索引比全表更慢，则不使用索引。</p>
+</blockquote>
+<h2 id="sql提示">SQL提示</h2>
+<h3 id="sql提示-1">SQL提示</h3>
+<blockquote>
+<p>SQL提示，是优化数据库的一个重要手段，简单来说，就是在SQL语句中加入一些人为的提示来达到优化操作的目的。</p>
+<p>放在where条件前，use/ignore/force index(索引名)</p>
+<p>use index: 建议使用索引，数据库可以选择不使用</p>
+<p>ignore index: 忽略某个索引</p>
+<p>force index: 强制使用某个索引</p>
+</blockquote>
+<h2 id="覆盖索引">覆盖索引</h2>
+<h3 id="覆盖索引-1">覆盖索引</h3>
+<blockquote>
+<p>尽量使用覆盖索引（查询使用了索引，并且需要返回的列，在该索引中已经全部能够找到)，减少select
+*。</p>
+<p>尽量避免回表查询</p>
+<p>extra中： using index condition :查找使用了索引,但是需要回表查询数据
+using where; using
+index:查找使用了索引，但是需要的数据都在索引列中能找到，所以不需要回表查询数据</p>
+</blockquote>
+<h2 id="前缀索引">前缀索引</h2>
+<h3 id="前缀索引-1">前缀索引</h3>
+<blockquote>
+<p>当字段类型为字符串(varchar,
+text等）时，有时候需要索引很长的字符串，这会让索引变得很大，查询时，浪费大量的磁盘IO，影响查询效率。此时可以只将字符串的一部分前缀，建立索引，这样可以大大节约索引空间，从而提高索引效率。</p>
+<p>语法： create index idx_xxx on table_name(column(n)) ; - -
+n为前缀长度</p>
+<p>前缀长度的选择：
+可以根据索引的选择性来决定，选择性是指不重复的索引值（基数）和数据表的记录总数的比值，索引选择性越高则查询效率越高，
+唯一索引的选择性是1，这是最好的索引选择性，性能也是最好的。
+可以使用聚合函数查询选择性 select count(distinct substring(xxx,1,5))/
+count(*) from table ; - - 即长度为5的选择性</p>
+</blockquote>
+<h2 id="单列联合索引">单列/联合索引</h2>
+<h3 id="单列索引与联合索引">单列索引与联合索引</h3>
+<blockquote>
+<p>单列索引:即一个索引只包含单个列。</p>
+<p>联合索引:即一个索引包含了多个列。</p>
+<p>在业务场景中，如果存在多个查询条件，考虑针对于查询字段建立索引时，建议建立联合索引，而非单列索引。</p>
+<p>多条件联合查询时，MySQL优化器会评估哪个字段的索引效率更高，会选择该索引完成本次查询。</p>
+</blockquote>
+<h1
+id="索引设计原则总结自黑马程序员侵删">索引设计原则（总结自黑马程序员，侵删）</h1>
+<h3 id="索引设计原则">索引设计原则</h3>
+<blockquote>
+<ol type="1">
+<li>针对于数据量较大，且查询比较频繁的表建立索引。</li>
+<li>针对于常作为查询条件（where)、排序(order by)、分组(group
+by)操作的字段建立索引。</li>
+<li>尽量选择区分度高的列作为索引，尽量建立唯一索引，区分度越高，使用索引的效率越高。</li>
+<li>如果是字符串类型的字段，字段的长度较长，可以针对于字段的特点，建立前缀索引。</li>
+<li>尽量使用联合索引，减少单列索引，查询时，联合索引很多时候可以覆盖索引，节省存储空间，避免回表，提高查询效率。</li>
+<li>要控制索引的数量，索引并不是多多益善，索引越多，维护索引结构的代价也就越大，会影响增删改的效率。</li>
+<li>如果索引列不能存储NULL值，请在创建表时使用NOT
+NULL约束它。当优化器知道每列是否包含NULL值时，它可以更好地确定哪个索引最有效地用于查询。</li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>MySQL</category>
@@ -2354,6 +2318,42 @@ href="https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html"
       </tags>
   </entry>
   <entry>
+    <title>MySQL06-存储函数</title>
+    <url>/posts/10408.html</url>
+    <content><![CDATA[<p>详细的描述了MySQL中的存储函数。 <span id="more"></span></p>
+<h1 id="存储函数">存储函数</h1>
+<p>存储函数是有返回值的存储过程，存储函数的参数只能是IN类型的。</p>
+<h2 id="语法">语法</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE FUNCTION 存储函数名称([参数列表])</span><br><span class="line">RETURNS type [characteristic ...]</span><br><span class="line">BEGIN</span><br><span class="line">	--SQL语句</span><br><span class="line">	RETURN ...;</span><br><span class="line">END;</span><br><span class="line"></span><br><span class="line">characteristic说明:</span><br><span class="line"> + DETERMINISTIC:相同的输入参数总是产生相同的结果</span><br><span class="line"> + NO SQL:不包含SQL语句。</span><br><span class="line"> + READS SQL DATA:包含读取数据的语句，但不包含写入数据的语句。</span><br></pre></td></tr></table></figure>
+<h2 id="样例">样例</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 存储函数</span><br><span class="line">-- 计算从1到n的累加</span><br><span class="line">create function fun1(n int)</span><br><span class="line">returns int deterministic </span><br><span class="line">begin</span><br><span class="line">    declare total int default 0;</span><br><span class="line"></span><br><span class="line">    while n &gt; 0 do</span><br><span class="line">        set total := total + n;</span><br><span class="line">        set n := n - 1;</span><br><span class="line">    end while;</span><br><span class="line"></span><br><span class="line">    return total;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">select fun1(100);</span><br></pre></td></tr></table></figure>
+<p><strong>注意当未添加 deterministic 会产生如下bug：</strong></p>
+<figure>
+<img
+src="https://wang-nine.cn/images/MySQL06-01%E6%9C%AA%E6%8C%87%E5%AE%9A%E5%8F%82%E6%95%B0%E6%80%A7%E8%B4%A8%E7%9A%84bug.png"
+alt="MySQL06-01未指定参数性质的bug" />
+<figcaption
+aria-hidden="true">MySQL06-01未指定参数性质的bug</figcaption>
+</figure>
+<p>运行结果：</p>
+<figure>
+<img
+src="https://wang-nine.cn/images/MySQL06-02%E5%AD%98%E5%82%A8%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png"
+alt="MySQL06-02存储函数的运行结果" />
+<figcaption aria-hidden="true">MySQL06-02存储函数的运行结果</figcaption>
+</figure>
+<h1 id="注意">注意</h1>
+<p><strong>存储函数必须要有返回值，而且参数只能是输入类型的参数，其过程实现完全可以被存储过程所代替。</strong></p>
+<p><strong>因此存储函数的使用较少，这里仅做了解。</strong></p>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL07-触发器</title>
     <url>/posts/10409.html</url>
     <content><![CDATA[<p>详细的描述了MySQL中的触发器。 <span id="more"></span></p>
@@ -2457,25 +2457,47 @@ alt="MySQL07-06delete触发器" />
       </tags>
   </entry>
   <entry>
-    <title>MySQL10-InnoDB引擎</title>
-    <url>/posts/10412.html</url>
-    <content><![CDATA[<p>详细的描述了MySQL中的InnoDB引擎。 <span id="more"></span></p>
-<h1 id="逻辑存储结构">逻辑存储结构</h1>
+    <title>MySQL08-视图</title>
+    <url>/posts/10410.html</url>
+    <content><![CDATA[<p>详细的描述了MySQL中的视图。 <span id="more"></span></p>
+<h1 id="视图的简介">视图的简介</h1>
+<p>​
+视图(View)是一种虚拟存在的表。视图中的数据并不在数据库中实际存在，行和列数据来自定义视图的查询中使用的表，并且是在使用视图时动态生成的。
+​
+通俗的讲，视图只保存了查询的SQL逻辑，不保存查询结果。所以我们在创建视图的时候，主要的工作在创建这条SQL查询语句上。</p>
+<h1 id="视图的语法">视图的语法</h1>
+<h2 id="创建">创建</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE [OR REPLACE] VIEW 视图名称 [(列名列表)] AS SELECT 语句[WITH[CASCADED|LOCAL] CHECK OPTION ]</span><br></pre></td></tr></table></figure>
+<h2 id="查询">查询</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW CREATE VIEW 视图名称; --查看创建视图语句</span><br><span class="line">SELECT * FROM 视图名称.......; --查看视图数据</span><br></pre></td></tr></table></figure>
+<h2 id="修改">修改</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 方式一</span><br><span class="line">CREATE [OR REPLACE] VIEW 视图名称(列名列表)] AS SELECT语句 [WITH[CASCADED|LOCAL] CHECK OPTION]</span><br><span class="line">-- 方式二</span><br><span class="line">ALTER VIEW 视图名称(列名列表)] AS SELECT语句 [WITH[CASCADED|LOCAL] CHECK OPTION]</span><br></pre></td></tr></table></figure>
+<h2 id="删除">删除</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP VIEW [IF EXISTS] 视图名称[视图名称] ...</span><br></pre></td></tr></table></figure>
+<h1 id="视图的检查选项">视图的检查选项</h1>
+<blockquote>
+<p>​ 当使用 WITH CHECK OPTION
+子句创建视图时，My5QL会通过视图检查正在更改的每个行，例如插入，更新，删除，以使其符合视图的定义。</p>
+<p>​
+MySQL允许基于另一个视图创建视图，它还会检查依赖视图中的规则以保持一致性。为了确定检查的范围，mysql
+提供了两个选项: CASCADED和LOCAL，默认值为CASCADED。</p>
+</blockquote>
+<h2 id="cascaded">cascaded</h2>
 <figure>
-<img
-src="https://butterfly-1317807093.cos.ap-beijing.myqcloud.com/images/20230608202920.png"
-alt="20230608202920" />
-<figcaption aria-hidden="true">20230608202920</figcaption>
+<img src="https://wang-nine.cn/images/MySQL08-01cascaded.png"
+alt="MySQL08-01cascaded" />
+<figcaption aria-hidden="true">MySQL08-01cascaded</figcaption>
 </figure>
-<h1 id="架构">架构</h1>
-<h2 id="总架构">总架构</h2>
+<h2 id="local">local</h2>
 <figure>
-<img
-src="https://butterfly-1317807093.cos.ap-beijing.myqcloud.com/images/20230608203053.png"
-alt="20230608203053" />
-<figcaption aria-hidden="true">20230608203053</figcaption>
+<img src="https://wang-nine.cn/images/MySQL08-02local.png"
+alt="MySQL08-02local" />
+<figcaption aria-hidden="true">MySQL08-02local</figcaption>
 </figure>
-<h2 id="内存结构">内存结构</h2>
+<h1 id="视图的更新">视图的更新</h1>
+<p>要使视图可更新，视图中的行与基础表中的行之间必须存在一对一的关系。如果视图包含以下任何一项，则该视图不可更新:
+1. 聚合函数或窗口函数(SUM()、MIN()、MAX()、COUNT()等) 2. DISTINCT 3.
+GROUP BY 4. HAVING 5. UNION 或者 UNION ALL</p>
 ]]></content>
       <categories>
         <category>MySQL</category>
@@ -2694,47 +2716,25 @@ lock退化为间隙锁。</li>
       </tags>
   </entry>
   <entry>
-    <title>MySQL08-视图</title>
-    <url>/posts/10410.html</url>
-    <content><![CDATA[<p>详细的描述了MySQL中的视图。 <span id="more"></span></p>
-<h1 id="视图的简介">视图的简介</h1>
-<p>​
-视图(View)是一种虚拟存在的表。视图中的数据并不在数据库中实际存在，行和列数据来自定义视图的查询中使用的表，并且是在使用视图时动态生成的。
-​
-通俗的讲，视图只保存了查询的SQL逻辑，不保存查询结果。所以我们在创建视图的时候，主要的工作在创建这条SQL查询语句上。</p>
-<h1 id="视图的语法">视图的语法</h1>
-<h2 id="创建">创建</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE [OR REPLACE] VIEW 视图名称 [(列名列表)] AS SELECT 语句[WITH[CASCADED|LOCAL] CHECK OPTION ]</span><br></pre></td></tr></table></figure>
-<h2 id="查询">查询</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW CREATE VIEW 视图名称; --查看创建视图语句</span><br><span class="line">SELECT * FROM 视图名称.......; --查看视图数据</span><br></pre></td></tr></table></figure>
-<h2 id="修改">修改</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 方式一</span><br><span class="line">CREATE [OR REPLACE] VIEW 视图名称(列名列表)] AS SELECT语句 [WITH[CASCADED|LOCAL] CHECK OPTION]</span><br><span class="line">-- 方式二</span><br><span class="line">ALTER VIEW 视图名称(列名列表)] AS SELECT语句 [WITH[CASCADED|LOCAL] CHECK OPTION]</span><br></pre></td></tr></table></figure>
-<h2 id="删除">删除</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP VIEW [IF EXISTS] 视图名称[视图名称] ...</span><br></pre></td></tr></table></figure>
-<h1 id="视图的检查选项">视图的检查选项</h1>
-<blockquote>
-<p>​ 当使用 WITH CHECK OPTION
-子句创建视图时，My5QL会通过视图检查正在更改的每个行，例如插入，更新，删除，以使其符合视图的定义。</p>
-<p>​
-MySQL允许基于另一个视图创建视图，它还会检查依赖视图中的规则以保持一致性。为了确定检查的范围，mysql
-提供了两个选项: CASCADED和LOCAL，默认值为CASCADED。</p>
-</blockquote>
-<h2 id="cascaded">cascaded</h2>
+    <title>MySQL10-InnoDB引擎</title>
+    <url>/posts/10412.html</url>
+    <content><![CDATA[<p>详细的描述了MySQL中的InnoDB引擎。 <span id="more"></span></p>
+<h1 id="逻辑存储结构">逻辑存储结构</h1>
 <figure>
-<img src="https://wang-nine.cn/images/MySQL08-01cascaded.png"
-alt="MySQL08-01cascaded" />
-<figcaption aria-hidden="true">MySQL08-01cascaded</figcaption>
+<img
+src="https://butterfly-1317807093.cos.ap-beijing.myqcloud.com/images/20230608202920.png"
+alt="20230608202920" />
+<figcaption aria-hidden="true">20230608202920</figcaption>
 </figure>
-<h2 id="local">local</h2>
+<h1 id="架构">架构</h1>
+<h2 id="总架构">总架构</h2>
 <figure>
-<img src="https://wang-nine.cn/images/MySQL08-02local.png"
-alt="MySQL08-02local" />
-<figcaption aria-hidden="true">MySQL08-02local</figcaption>
+<img
+src="https://butterfly-1317807093.cos.ap-beijing.myqcloud.com/images/20230608203053.png"
+alt="20230608203053" />
+<figcaption aria-hidden="true">20230608203053</figcaption>
 </figure>
-<h1 id="视图的更新">视图的更新</h1>
-<p>要使视图可更新，视图中的行与基础表中的行之间必须存在一对一的关系。如果视图包含以下任何一项，则该视图不可更新:
-1. 聚合函数或窗口函数(SUM()、MIN()、MAX()、COUNT()等) 2. DISTINCT 3.
-GROUP BY 4. HAVING 5. UNION 或者 UNION ALL</p>
+<h2 id="内存结构">内存结构</h2>
 ]]></content>
       <categories>
         <category>MySQL</category>
@@ -3345,106 +3345,6 @@ SpringConfig.class)</p></li>
       </tags>
   </entry>
   <entry>
-    <title>SSM06-Spring中的事务</title>
-    <url>/posts/10306.html</url>
-    <content><![CDATA[<p>详细的描述了Spring中的事务概念。 <span id="more"></span></p>
-<h1 id="事务的简介">事务的简介</h1>
-<p>事务作用：在数据层保障一系列的数据库操作同成功同失败
-Spring事务作用：在数据层或业务层保障一系列的数据库操作同成功同失败</p>
-<p>如何开启事务管理？</p>
-<p>步骤如下：</p>
-<ol type="1">
-<li>在业务层接口上添加Spring事务管理</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">xxxxx</span> &#123;</span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> xxx &#123;</span><br><span class="line">        代码体</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>注意事项</strong>：
-Spring注解式事务通常添加在业务层接口中而不会添加到业务层实现类中，降低耦合
-注解式事务可以添加到业务方法上表示当前方法开启事务，也可以添加到接口上表示当前接口所有方法开启事务</p>
-<ol start="2" type="1">
-<li>设置事务管理器</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="keyword">public</span> PlatformTransactionManager <span class="title function_">transactionManager</span><span class="params">(DataSource dataSource)</span>&#123;</span><br><span class="line">	<span class="type">DataSourceTransactionManager</span> <span class="variable">ptm</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DataSourceTransactionManager</span>();</span><br><span class="line">    ptm.setDataSource(dataSource);</span><br><span class="line">	<span class="keyword">return</span> ptm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="3" type="1">
-<li><p>在主配置类中开启事务型驱动</p>
-<p>添加如下注解：</p></li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@EnableTransactionmanagement</span></span><br></pre></td></tr></table></figure>
-<h1 id="spring事务角色">Spring事务角色</h1>
-<p>事务角色</p>
-<h2 id="事务管理员">事务管理员</h2>
-<p>发起事务方，在Spring中通常指代业务层开启事务的方法</p>
-<h2 id="事务协调员">事务协调员</h2>
-<p>加入事务方，在Spring中通常指代数据层方法，也可以是业务层方法</p>
-<h1 id="事务属性">事务属性</h1>
-<table>
-<colgroup>
-<col style="width: 24%" />
-<col style="width: 28%" />
-<col style="width: 46%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">属性</th>
-<th style="text-align: center;">作用</th>
-<th style="text-align: center;">实例</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">readOnly</td>
-<td style="text-align: center;">设置是否为只读事务</td>
-<td style="text-align: center;">readOnly = true 只读事务</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">timeout</td>
-<td style="text-align: center;">设置事务的超过时间</td>
-<td style="text-align: center;">timeout = -1 永不超时</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">rollbackFor</td>
-<td style="text-align: center;">设置事务回滚异常(class)</td>
-<td style="text-align: center;">rollbackFor =
-(NullPointException.class)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">rollbackForClassName</td>
-<td style="text-align: center;">设置事务回滚异常(String)</td>
-<td style="text-align: center;">同上格式为字符串</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">noRollbackFor</td>
-<td style="text-align: center;">设置事务不回滚异常(class)</td>
-<td style="text-align: center;">noRollbackFor =
-(NullPointException.class)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">noRollbackForClassName</td>
-<td style="text-align: center;">设置事务不回滚异常(String)</td>
-<td style="text-align: center;">同上格式为字符串</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">propagation</td>
-<td style="text-align: center;">设置事务传播行为</td>
-<td style="text-align: center;">…</td>
-</tr>
-</tbody>
-</table>
-<p><strong>事务传播行为</strong>：事务协调员对事务管理员所携带事务的处理态度</p>
-<figure>
-<img
-src="https://wang-nine.cn/images/SSM05-01%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA.png"
-alt="SSM05-01事务传播行为" />
-<figcaption aria-hidden="true">SSM05-01事务传播行为</figcaption>
-</figure>
-]]></content>
-      <categories>
-        <category>SSM</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SSM05-Spring中的AOP概念</title>
     <url>/posts/10305.html</url>
     <content><![CDATA[<p>详细的描述了Spring中的AOP概念。 <span id="more"></span></p>
@@ -3643,6 +3543,106 @@ data-cites="Around注意事项">@Around注意事项</span></strong></p>
 </ul>
 <p>样例代码如下（来自黑马程序员，侵删）</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima.aop;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.JoinPoint;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.ProceedingJoinPoint;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.*;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyAdvice</span> &#123;</span><br><span class="line">    <span class="meta">@Pointcut(&quot;execution(* com.itheima.dao.BookDao.findName(..))&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">pt</span><span class="params">()</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//JoinPoint：用于描述切入点的对象，必须配置成通知方法中的第一个参数，可用于获取原始方法调用的参数</span></span><br><span class="line"><span class="comment">//    @Before(&quot;pt()&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">before</span><span class="params">(JoinPoint jp)</span> &#123;</span><br><span class="line">        Object[] args = jp.getArgs();</span><br><span class="line">        System.out.println(Arrays.toString(args));</span><br><span class="line">        System.out.println(<span class="string">&quot;before advice ...&quot;</span> );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    @After(&quot;pt()&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">after</span><span class="params">(JoinPoint jp)</span> &#123;</span><br><span class="line">        Object[] args = jp.getArgs();</span><br><span class="line">        System.out.println(Arrays.toString(args));</span><br><span class="line">        System.out.println(<span class="string">&quot;after advice ...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//ProceedingJoinPoint：专用于环绕通知，是JoinPoint子类，可以实现对原始方法的调用</span></span><br><span class="line"><span class="comment">//    @Around(&quot;pt()&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">around</span><span class="params">(ProceedingJoinPoint pjp)</span> &#123;</span><br><span class="line">        Object[] args = pjp.getArgs();</span><br><span class="line">        System.out.println(Arrays.toString(args));</span><br><span class="line">        args[<span class="number">0</span>] = <span class="number">666</span>;</span><br><span class="line">        <span class="type">Object</span> <span class="variable">ret</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            ret = pjp.proceed(args);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Throwable t) &#123;</span><br><span class="line">            t.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//设置返回后通知获取原始方法的返回值，要求returning属性值必须与方法形参名相同</span></span><br><span class="line">    <span class="meta">@AfterReturning(value = &quot;pt()&quot;,returning = &quot;ret&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">afterReturning</span><span class="params">(JoinPoint jp,String ret)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;afterReturning advice ...&quot;</span>+ret);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//设置抛出异常后通知获取原始方法运行时抛出的异常对象，要求throwing属性值必须与方法形参名相同</span></span><br><span class="line">    <span class="meta">@AfterThrowing(value = &quot;pt()&quot;,throwing = &quot;t&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">afterThrowing</span><span class="params">(Throwable t)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;afterThrowing advice ...&quot;</span>+t);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>SSM</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SSM06-Spring中的事务</title>
+    <url>/posts/10306.html</url>
+    <content><![CDATA[<p>详细的描述了Spring中的事务概念。 <span id="more"></span></p>
+<h1 id="事务的简介">事务的简介</h1>
+<p>事务作用：在数据层保障一系列的数据库操作同成功同失败
+Spring事务作用：在数据层或业务层保障一系列的数据库操作同成功同失败</p>
+<p>如何开启事务管理？</p>
+<p>步骤如下：</p>
+<ol type="1">
+<li>在业务层接口上添加Spring事务管理</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">xxxxx</span> &#123;</span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> xxx &#123;</span><br><span class="line">        代码体</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意事项</strong>：
+Spring注解式事务通常添加在业务层接口中而不会添加到业务层实现类中，降低耦合
+注解式事务可以添加到业务方法上表示当前方法开启事务，也可以添加到接口上表示当前接口所有方法开启事务</p>
+<ol start="2" type="1">
+<li>设置事务管理器</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="keyword">public</span> PlatformTransactionManager <span class="title function_">transactionManager</span><span class="params">(DataSource dataSource)</span>&#123;</span><br><span class="line">	<span class="type">DataSourceTransactionManager</span> <span class="variable">ptm</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DataSourceTransactionManager</span>();</span><br><span class="line">    ptm.setDataSource(dataSource);</span><br><span class="line">	<span class="keyword">return</span> ptm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3" type="1">
+<li><p>在主配置类中开启事务型驱动</p>
+<p>添加如下注解：</p></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@EnableTransactionmanagement</span></span><br></pre></td></tr></table></figure>
+<h1 id="spring事务角色">Spring事务角色</h1>
+<p>事务角色</p>
+<h2 id="事务管理员">事务管理员</h2>
+<p>发起事务方，在Spring中通常指代业务层开启事务的方法</p>
+<h2 id="事务协调员">事务协调员</h2>
+<p>加入事务方，在Spring中通常指代数据层方法，也可以是业务层方法</p>
+<h1 id="事务属性">事务属性</h1>
+<table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 28%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">属性</th>
+<th style="text-align: center;">作用</th>
+<th style="text-align: center;">实例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">readOnly</td>
+<td style="text-align: center;">设置是否为只读事务</td>
+<td style="text-align: center;">readOnly = true 只读事务</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">timeout</td>
+<td style="text-align: center;">设置事务的超过时间</td>
+<td style="text-align: center;">timeout = -1 永不超时</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">rollbackFor</td>
+<td style="text-align: center;">设置事务回滚异常(class)</td>
+<td style="text-align: center;">rollbackFor =
+(NullPointException.class)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">rollbackForClassName</td>
+<td style="text-align: center;">设置事务回滚异常(String)</td>
+<td style="text-align: center;">同上格式为字符串</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">noRollbackFor</td>
+<td style="text-align: center;">设置事务不回滚异常(class)</td>
+<td style="text-align: center;">noRollbackFor =
+(NullPointException.class)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">noRollbackForClassName</td>
+<td style="text-align: center;">设置事务不回滚异常(String)</td>
+<td style="text-align: center;">同上格式为字符串</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">propagation</td>
+<td style="text-align: center;">设置事务传播行为</td>
+<td style="text-align: center;">…</td>
+</tr>
+</tbody>
+</table>
+<p><strong>事务传播行为</strong>：事务协调员对事务管理员所携带事务的处理态度</p>
+<figure>
+<img
+src="https://wang-nine.cn/images/SSM05-01%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA.png"
+alt="SSM05-01事务传播行为" />
+<figcaption aria-hidden="true">SSM05-01事务传播行为</figcaption>
+</figure>
 ]]></content>
       <categories>
         <category>SSM</category>
@@ -3903,6 +3903,42 @@ data-cites="ResponseBody">@ResponseBody</span></p>
     <title>SSM08-REST风格</title>
     <url>/posts/10308.html</url>
     <content><![CDATA[<p>详细的描述了Spring中的REST开发风格 <span id="more"></span></p>
+]]></content>
+      <categories>
+        <category>SSM</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SSM总览</title>
+    <url>/posts/10300.html</url>
+    <content><![CDATA[<h1 id="ssm01-spring中的bean">SSM01-Spring中的Bean</h1>
+<p><a
+href="https://wang-nine.cn/posts/10301.html">SSM01-Spring中的Bean</a></p>
+<h1
+id="ssm02-spring中bean的实例化与依赖注入">SSM02-Spring中Bean的实例化与依赖注入</h1>
+<p><a
+href="https://wang-nine.cn/posts/10302.html">SSM02-Spring中Bean的实例化与依赖注入</a></p>
+<h1 id="ssm03-spring的纯注解开发模式">SSM03-Spring的纯注解开发模式</h1>
+<p><a
+href="https://wang-nine.cn/posts/10303.html">SSM03-Spring的纯注解开发模式</a></p>
+<h1 id="ssm04-spring整合mybatis">SSM04-Spring整合MyBatis</h1>
+<p><a
+href="https://wang-nine.cn/posts/10304.html">SSM04-Spring整合MyBatis</a></p>
+<h1 id="ssm05-spring中的aop概念">SSM05-Spring中的AOP概念</h1>
+<p><a
+href="https://wang-nine.cn/posts/10305.html">SSM05-Spring中的AOP概念</a></p>
+<h1 id="ssm06-spring中的事务">SSM06-Spring中的事务</h1>
+<p><a
+href="https://wang-nine.cn/posts/10306.html">SSM06-Spring中的事务</a></p>
+<h1 id="ssm07-springmvc的请求与响应">SSM07-SpringMVC的请求与响应</h1>
+<p><a
+href="https://wang-nine.cn/posts/10307.html">SSM07-SpringMVC的请求与响应</a></p>
+<h1 id="ssm08-rest风格">SSM08-REST风格</h1>
+<p><a
+href="https://wang-nine.cn/posts/10308.html">SSM08-REST风格</a></p>
 ]]></content>
       <categories>
         <category>SSM</category>
@@ -4379,42 +4415,6 @@ mode.</li>
 ]]></content>
   </entry>
   <entry>
-    <title>SSM总览</title>
-    <url>/posts/10300.html</url>
-    <content><![CDATA[<h1 id="ssm01-spring中的bean">SSM01-Spring中的Bean</h1>
-<p><a
-href="https://wang-nine.cn/posts/10301.html">SSM01-Spring中的Bean</a></p>
-<h1
-id="ssm02-spring中bean的实例化与依赖注入">SSM02-Spring中Bean的实例化与依赖注入</h1>
-<p><a
-href="https://wang-nine.cn/posts/10302.html">SSM02-Spring中Bean的实例化与依赖注入</a></p>
-<h1 id="ssm03-spring的纯注解开发模式">SSM03-Spring的纯注解开发模式</h1>
-<p><a
-href="https://wang-nine.cn/posts/10303.html">SSM03-Spring的纯注解开发模式</a></p>
-<h1 id="ssm04-spring整合mybatis">SSM04-Spring整合MyBatis</h1>
-<p><a
-href="https://wang-nine.cn/posts/10304.html">SSM04-Spring整合MyBatis</a></p>
-<h1 id="ssm05-spring中的aop概念">SSM05-Spring中的AOP概念</h1>
-<p><a
-href="https://wang-nine.cn/posts/10305.html">SSM05-Spring中的AOP概念</a></p>
-<h1 id="ssm06-spring中的事务">SSM06-Spring中的事务</h1>
-<p><a
-href="https://wang-nine.cn/posts/10306.html">SSM06-Spring中的事务</a></p>
-<h1 id="ssm07-springmvc的请求与响应">SSM07-SpringMVC的请求与响应</h1>
-<p><a
-href="https://wang-nine.cn/posts/10307.html">SSM07-SpringMVC的请求与响应</a></p>
-<h1 id="ssm08-rest风格">SSM08-REST风格</h1>
-<p><a
-href="https://wang-nine.cn/posts/10308.html">SSM08-REST风格</a></p>
-]]></content>
-      <categories>
-        <category>SSM</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客搭建教程总览</title>
     <url>/posts/10001.html</url>
     <content><![CDATA[<h3 id="hexobutterfly主题博客搭建01">Hexo+Butterfly主题博客搭建01</h3>
@@ -4433,6 +4433,288 @@ href="https://wang-nine.cn/posts/10003.html">Hexo+Butterfly主题博客搭建03<
       <tags>
         <tag>博客搭建</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>线性代数复健</title>
+    <url>/posts/36888.html</url>
+    <content><![CDATA[<p>前言：最近在学习机器学习，但是在看AE(AutoEncoder)时，感觉到了其与PCA(Principal
+Component Analysis)的联系，从而对SVD(Singular Value
+Decomposition)产生了较大的兴趣。借此机会，对之前上过的高等代数课的部分知识做一个复健整理。</p>
+<p>说到线代，我们首先能想到嘴边的概念有：向量，矩阵，秩，线性空间，线性变化，逆矩阵，单位矩阵，相似矩阵，特征值分解。核心还是矩阵，我们可以把矩阵看作一组基或者看作一个线性变换。</p>
+<h3 id="基和坐标">基和坐标</h3>
+例如，<span class="math inline">\(\mathbf{x}=\left( x_1,x_2,,x_n
+\right)\)</span>代表一个向量，
+<div>
+<span class="math inline">\(X=\left( \begin{matrix}  x_{11}&amp;
+x_{12}&amp; x_{13}\\  x_{21}&amp; x_{22}&amp; x_{23}\\  x_{31}&amp;
+x_{32}&amp; x_{33}\\ \end{matrix} \right)\)</span>
+</div>
+<p>代表一个矩阵，我们令<span class="math inline">\(\mathbf{x}_1=\left(
+x_{11},x_{21},x_{31} \right) ^T , \mathbf{x}_2=\left(
+x_{12},x_{22},x_{32} \right) ^T , \mathbf{x}_3=\left(
+x_{13},x_{23},x_{33} \right) ^T\)</span></p>
+<p>则有$X=( _1,_2,_3 ) $。即矩阵的每一列代表一个基。</p>
+<p>我们常见的单位矩阵<span class="math inline">\(I=\left(
+\begin{matrix}  1&amp; 0&amp; 0\\  0&amp; 1&amp; 0\\  0&amp; 0&amp; 1\\
+\end{matrix} \right)\)</span>即是把<span
+class="math inline">\(\mathbf{\varepsilon }_1=\left( 1,0,0 \right)
+,\mathbf{\varepsilon }_2=\left( 0,1,0 \right), \mathbf{\varepsilon
+}_3=\left( 0,0,1 \right)\)</span>当作基。</p>
+<p>当然，谈到矩阵的基，自然会回忆起线性无关，正交基，施密特正交化这一系列东西，但是这些知识还比较熟悉，不是复习的重点。给定一个向量<span
+class="math inline">\(\alpha =\left( 1,2,3 \right)
+^T\)</span>，我们可以把它看作一个向量，也可以把它看作一个坐标，即<span
+class="math inline">\(\alpha =1\cdot \mathbf{\varepsilon }_1+2\cdot
+\mathbf{\varepsilon }_2+3\cdot \mathbf{\varepsilon }_3=\left(
+\mathbf{\varepsilon }_1,\mathbf{\varepsilon }_2,\mathbf{\varepsilon }_3
+\right) \cdot \left( 1,2,3 \right) ^T=I\cdot
+\alpha\)</span>，事实上，我们既然写成了这个样子，就潜意识地将标准基作为基底了。</p>
+<h3 id="线性变换的引出">线性变换的引出</h3>
+<p>另外一种看法是将矩阵看成一种线性变换，确切来说，矩阵是某个线性变换在一组基上的表示。</p>
+<p>按照课本的叙述方式：</p>
+<p>设<span class="math inline">\(V\)</span>是数域<span
+class="math inline">\(F\)</span>上一个<span
+class="math inline">\(n\)</span>维向量空间，令<span
+class="math inline">\(\sigma\)</span>是<span
+class="math inline">\(V\)</span>的一个线性变换。取定<span
+class="math inline">\(V\)</span>的一个基 <span class="math display">\[
+\mathbf{\alpha }_1,\mathbf{\alpha }_2,\cdots ,\mathbf{\alpha }_n
+\]</span> 考虑<span class="math inline">\(V\)</span>中任意一个向量 <span
+class="math display">\[
+\xi =x_1\mathbf{\alpha }_1+x_2\mathbf{\alpha }_2+\cdots
++x_n\mathbf{\alpha }_n
+\]</span> <span class="math inline">\(\sigma \left( \xi
+\right)\)</span>仍是<span class="math inline">\(V\)</span>的一个向量。设
+<span class="math display">\[
+\sigma \left( \xi \right) =y_1\mathbf{\alpha }_1+y_2\mathbf{\alpha
+}_2+\cdots +y_n\mathbf{\alpha }_n
+\]</span> 自然要问，如何计算<span class="math inline">\(\sigma \left(
+\xi \right)\)</span>的坐标<span class="math inline">\(\left(
+y_1,y_2,\cdots ,y_n \right)\)</span>。</p>
+<p>令 <span class="math display">\[
+\begin{cases}
+    \sigma \left( \mathbf{\alpha }_1 \right) =a_{11}\mathbf{\alpha
+}_1+a_{21}\mathbf{\alpha }_2+\cdots +a_{n1}\mathbf{\alpha }_n\\
+    \sigma \left( \mathbf{\alpha }_2 \right) =a_{12}\mathbf{\alpha
+}_1+a_{22}\mathbf{\alpha }_2+\cdots +a_{n2}\mathbf{\alpha }_n\\
+    \,\,                  \cdots \cdots \cdots \cdots\\
+    \sigma \left( \mathbf{\alpha }_n \right) =a_{1n}\mathbf{\alpha
+}_1+a_{2n}\mathbf{\alpha }_2+\cdots +a_{nn}\mathbf{\alpha }_n\\
+\end{cases}
+\]</span> 这里<span class="math inline">\(a_{ij}\)</span>就是$( _j )
+<span class="math inline">\(关于基\)</span>_1,_2,,_n$的坐标。</p>
+<p>令 <span class="math display">\[
+A=\left( \begin{matrix}
+    a_{11}&amp;     a_{12}&amp;     \cdots&amp;     a_{1n}\\
+    a_{21}&amp;     a_{22}&amp;     \cdots&amp;     a_{2n}\\
+    \vdots&amp;     \vdots&amp;     &amp;       \vdots\\
+    a_{n1}&amp;     a_{n2}&amp;     \cdots&amp;     a_{nn}\\
+\end{matrix} \right)
+\]</span> <span class="math inline">\(n\)</span>阶矩阵<span
+class="math inline">\(A\)</span>叫做线性变换<span
+class="math inline">\(\sigma\)</span>关于基<span
+class="math inline">\(\left\{ \mathbf{\alpha }_1,\mathbf{\alpha
+}_2,\cdots ,\mathbf{\alpha }_n \right\}\)</span>的矩阵。矩阵<span
+class="math inline">\(A\)</span>的第<span
+class="math inline">\(j\)</span>列的元素就是<span
+class="math inline">\(\sigma \left( \mathbf{\alpha }_j
+\right)\)</span>关于基<span class="math inline">\(\left\{ \mathbf{\alpha
+}_1,\mathbf{\alpha }_2,\cdots ,\mathbf{\alpha }_n
+\right\}\)</span>的坐标。</p>
+<p>这样，取定<span class="math inline">\(F\)</span>上<span
+class="math inline">\(n\)</span>维向量空间<span
+class="math inline">\(V\)</span>的一个基后，对于<span
+class="math inline">\(V\)</span>的每一线性变换，有唯一确定的<span
+class="math inline">\(F\)</span>上<span
+class="math inline">\(n\)</span>阶矩阵与之对应。</p>
+<p>事实上： <span class="math display">\[
+\left( \sigma \left( \mathbf{\alpha }_1 \right) ,\sigma \left(
+\mathbf{\alpha }_2 \right) ,\cdots ,\sigma \left( \mathbf{\alpha }_n
+\right) \right) =\left( \mathbf{\alpha }_1,\mathbf{\alpha }_2,\cdots
+,\mathbf{\alpha }_n \right) A
+\]</span> 这意味着从基<span class="math inline">\(\left\{ \mathbf{\alpha
+}_1,\mathbf{\alpha }_2,\cdots ,\mathbf{\alpha }_n
+\right\}\)</span>到基<span class="math inline">\(\left\{ \sigma \left(
+\mathbf{\alpha }_1 \right) ,\sigma \left( \mathbf{\alpha }_2 \right)
+,\cdots ,\sigma \left( \mathbf{\alpha }_n \right)
+\right\}\)</span>的过渡矩阵<span
+class="math inline">\(A\)</span>即是线性变换<span
+class="math inline">\(\sigma\)</span>关于基${ _1,_2,,_n } $的矩阵。</p>
+<h3 id="从拉伸角度理解线性变换">从拉伸角度理解线性变换</h3>
+<p>我们将坐标轴进行拉伸，即相当于对<span class="math inline">\(\left(
+\begin{matrix}  1&amp; 0\\  0&amp; 1\\ \end{matrix}
+\right)\)</span>做变换 <span class="math inline">\(\left(
+\begin{matrix}  \lambda _1&amp; 0\\  0&amp; \lambda _2\\ \end{matrix}
+\right)\)</span>，即<span class="math inline">\(\left(
+\begin{matrix}  \lambda _1&amp; 0\\  0&amp; \lambda _2\\ \end{matrix}
+\right) \left( \begin{matrix}  1&amp; 0\\  0&amp; 1\\ \end{matrix}
+\right) =\left( \begin{matrix}  \lambda _1&amp; 0\\  0&amp; \lambda _2\\
+\end{matrix}
+\right)\)</span>，显然，对标准正交基做的拉伸这一类线性变换对应的矩阵都是对角矩阵。那么，当一个线性变换对于标准正交基的矩阵不是对角矩阵时，我们能不能用拉伸来理解呢？事实上，可以，这就是特征向量和特征值的一个很重要的意义。</p>
+我们先反过来看，假如有一个线性变换对于基<span
+class="math inline">\(\left( \begin{matrix}  1&amp; -1\\  0&amp; 1\\
+\end{matrix} \right)\)</span>的矩阵是<span
+class="math inline">\(B=\left( \begin{matrix}  3&amp; 0\\  0&amp; 2\\
+\end{matrix} \right)\)</span>，那么我们只需要命名基<span
+class="math inline">\(\left( \begin{matrix}  1&amp; 0\\  0&amp; 1\\
+\end{matrix} \right)\)</span>到基$(
+<span class="math display">\[\begin{matrix}
+    1&amp;      -1\\
+    0&amp;      1\\
+\end{matrix}\]</span>
+) <span class="math inline">\(的过渡矩阵\)</span>T=(
+<span class="math display">\[\begin{matrix}
+    1&amp;      -1\\
+    0&amp;      1\\
+\end{matrix}\]</span>
+)<span class="math inline">\(，命名这一线性变换关于基\)</span>(
+<span class="math display">\[\begin{matrix}
+    1&amp;      0\\
+    0&amp;      1\\
+\end{matrix}\]</span>
+)<span class="math inline">\(的矩阵为\)</span>A<span
+class="math inline">\(，根据相似矩阵的知识，有\)</span>B=T<sup>{-1}AT<span
+class="math inline">\(，据此求得\)</span>A=TBT</sup>{-1}=(
+<span class="math display">\[\begin{matrix}
+    3&amp;      1\\
+    0&amp;      2\\
+\end{matrix}\]</span>
+<p>)$，所以，如果一个线性变换关于标准正交基的矩阵可以相似对角化，那么这个变换就可以被理解为对某组基的拉伸，这组基上的向量就是特征向量，对应的拉伸强度就是对应的特征值，至此，我们找到了一个更为直观的视角去看待线性变换。</p>
+<p>书上给出了一个对角化的充要条件，即<span
+class="math inline">\(n\)</span>维向量空间<span
+class="math inline">\(V\)</span>的一个线性变换<span
+class="math inline">\(\sigma\)</span>可以对角化的充要的条件是，<span
+class="math inline">\(V\)</span>可以分解为<span
+class="math inline">\(n\)</span>个在<span
+class="math inline">\(\sigma\)</span>之下不变的一维子空间<span
+class="math inline">\(W_1,W_2,\cdots
+,W_n\)</span>的直和。我们可以简单地理解为，这一个线性变换不会让空间坍塌降维。</p>
+<p>另外一点值得记录的是，这种拉伸是针对指定的方向的，并不是针对方向上的某一个向量，如果我们在选定的方向上选择标准基作为基，那么我们得到的特征向量矩阵将是一个正交矩阵，即它只表示方向。我们用<span
+class="math inline">\(W\)</span>来表示特征向量矩阵，用对角阵<span
+class="math inline">\(\varSigma\)</span>来表示拉伸强度，则有<span
+class="math inline">\(A=W\varSigma W^{-1}\)</span>，因为我们选取的<span
+class="math inline">\(W\)</span>为正交矩阵，所以有<span
+class="math inline">\(WW^T=I\)</span>，所以<span
+class="math inline">\(A=W\varSigma W^{T}\)</span>。</p>
+<h3 id="非方阵">非方阵</h3>
+<p>我们将<span class="math inline">\(\left( \begin{matrix}  1&amp;
+2\\  -1&amp; 4\\  3&amp; 0\\ \end{matrix} \right)\)</span>作用于<span
+class="math inline">\(\left( \begin{matrix}  1&amp; 0\\  0&amp; 1\\
+\end{matrix} \right)\)</span>，即<span class="math inline">\(\left(
+\begin{matrix}  1&amp; 2\\  -1&amp; 4\\  3&amp; 0\\ \end{matrix} \right)
+\left( \begin{matrix}  1&amp; 0\\  0&amp; 1\\ \end{matrix} \right)
+=\left( \begin{matrix}  1&amp; 2\\  -1&amp; 4\\  3&amp; 0\\ \end{matrix}
+\right)\)</span>，根据很多视频的说法，这个矩阵将平面映射成了斜面，我的理解是，非方阵会将基从<span
+class="math inline">\(m\)</span>维映射到<span
+class="math inline">\(n\)</span>维，但是由这些映射完的基所张成的空间的维度还是没有变大。</p>
+<h3 id="奇异值分解">奇异值分解</h3>
+<p>根据这个文章的思路作为主线<a
+href="https://zhuanlan.zhihu.com/p/29846048">奇异值分解（SVD） - 知乎
+(zhihu.com)</a></p>
+<p>存在一个mxn的矩阵<span
+class="math inline">\(A\)</span>，我们定义<span
+class="math inline">\(A\)</span>的SVD为<span
+class="math inline">\(A=U\varSigma V^{T}\)</span>，其中<span
+class="math inline">\(U\)</span>是mxm的矩阵，<span
+class="math inline">\(\varSigma\)</span>是mxn的矩阵，<span
+class="math inline">\(V\)</span>是nxn的矩阵，我们可以理解为，<span
+class="math inline">\(U\)</span>是在原平面找的特征向量矩阵，<span
+class="math inline">\(V\)</span>是在变换后的斜面找的特征向量矩阵。 <span
+class="math display">\[
+A^TA=V\varSigma ^TU^TU\varSigma V^T=V\varSigma ^2V^T
+\\
+AA^T=U\varSigma V^TV\varSigma ^TU^T=U\varSigma ^2U^T
+\]</span> 所以我们可以根据<span
+class="math inline">\(A\)</span>来求得<span
+class="math inline">\(A^TA\)</span>和<span
+class="math inline">\(AA^T\)</span>，进而求出<span
+class="math inline">\(V,\varSigma,U\)</span>。</p>
+<p>根据文中的例子： <span class="math display">\[
+A=\left( \begin{matrix}
+    0&amp;      1\\
+    1&amp;      1\\
+    1&amp;      0\\
+\end{matrix} \right) ,A^T=\left( \begin{matrix}
+    0&amp;      1&amp;      1\\
+    1&amp;      1&amp;      0\\
+\end{matrix} \right)
+\]</span> 然后对方阵<span class="math inline">\(A^TA\)</span>和<span
+class="math inline">\(AA^T\)</span>进行分解。 <span
+class="math display">\[
+A^TA=\left( \begin{matrix}
+    0&amp;      1&amp;      1\\
+    1&amp;      1&amp;      0\\
+\end{matrix} \right) \left( \begin{matrix}
+    0&amp;      1\\
+    1&amp;      1\\
+    1&amp;      0\\
+\end{matrix} \right) =\left( \begin{matrix}
+    2&amp;      1\\
+    1&amp;      2\\
+\end{matrix} \right) =\left( \begin{matrix}
+    \frac{1}{\sqrt{2}}&amp;     -\frac{1}{\sqrt{2}}\\
+    \frac{1}{\sqrt{2}}&amp;     \frac{1}{\sqrt{2}}\\
+\end{matrix} \right) \left( \begin{matrix}
+    3&amp;      0\\
+    0&amp;      1\\
+\end{matrix} \right) \left( \begin{matrix}
+    \frac{1}{\sqrt{2}}&amp;     \frac{1}{\sqrt{2}}\\
+    -\frac{1}{\sqrt{2}}&amp;        \frac{1}{\sqrt{2}}\\
+\end{matrix} \right)
+\\
+AA^T=\left( \begin{matrix}
+    0&amp;      1\\
+    1&amp;      1\\
+    1&amp;      0\\
+\end{matrix} \right) \left( \begin{matrix}
+    0&amp;      1&amp;      1\\
+    1&amp;      1&amp;      0\\
+\end{matrix} \right) =\left( \begin{matrix}
+    1&amp;      1&amp;      0\\
+    1&amp;      2&amp;      1\\
+    0&amp;      1&amp;      1\\
+\end{matrix} \right) =\left( \begin{matrix}
+    \frac{1}{\sqrt{6}}&amp;     \frac{1}{\sqrt{2}}&amp;     \frac{1}{\sqrt{3}}\\
+    \frac{2}{\sqrt{6}}&amp;     0&amp;      -\frac{1}{\sqrt{3}}\\
+    \frac{1}{\sqrt{6}}&amp;     -\frac{1}{\sqrt{2}}&amp;        \frac{1}{\sqrt{3}}\\
+\end{matrix} \right) \left( \begin{matrix}
+    3&amp;      0&amp;      0\\
+    0&amp;      1&amp;      0\\
+    0&amp;      0&amp;      0\\
+\end{matrix} \right) \left( \begin{matrix}
+    \frac{1}{\sqrt{6}}&amp;     \frac{2}{\sqrt{6}}&amp;     \frac{1}{\sqrt{6}}\\
+    \frac{1}{\sqrt{2}}&amp;     0&amp;      -\frac{1}{\sqrt{2}}\\
+    \frac{1}{\sqrt{3}}&amp;     -\frac{1}{\sqrt{3}}&amp;        \frac{1}{\sqrt{3}}\\
+\end{matrix} \right)
+\]</span> 所以得： <span class="math display">\[
+A=\left( \begin{matrix}
+    \frac{1}{\sqrt{6}}&amp;     \frac{1}{\sqrt{2}}&amp;     \frac{1}{\sqrt{3}}\\
+    \frac{2}{\sqrt{6}}&amp;     0&amp;      -\frac{1}{\sqrt{3}}\\
+    \frac{1}{\sqrt{6}}&amp;     -\frac{1}{\sqrt{2}}&amp;        \frac{1}{\sqrt{3}}\\
+\end{matrix} \right) \left( \begin{matrix}
+    3&amp;      0\\
+    0&amp;      1\\
+    0&amp;      0\\
+\end{matrix} \right) \left( \begin{matrix}
+    \frac{1}{\sqrt{2}}&amp;     \frac{1}{\sqrt{2}}\\
+    -\frac{1}{\sqrt{2}}&amp;        \frac{1}{\sqrt{2}}\\
+\end{matrix} \right)
+\]</span> 细心的话可以发现<span class="math inline">\(\det \left( U
+\right) =\left| \begin{matrix}  \frac{1}{\sqrt{6}}&amp;
+\frac{1}{\sqrt{2}}&amp; \frac{1}{\sqrt{3}}\\  \frac{2}{\sqrt{6}}&amp;
+0&amp; -\frac{1}{\sqrt{3}}\\  \frac{1}{\sqrt{6}}&amp;
+-\frac{1}{\sqrt{2}}&amp; \frac{1}{\sqrt{3}}\\ \end{matrix} \right|=-6\ne
+0\)</span>，但<span
+class="math inline">\(A^TA\)</span>的最后一个特征值是零，其实就代表着三维空间中一个维度坍塌了，而这一切的根源则是<span
+class="math inline">\(\det \left( AA^T \right) =\left|
+\begin{matrix}  1&amp; 1&amp; 0\\  1&amp; 2&amp; 1\\  0&amp; 1&amp; 1\\
+\end{matrix} \right|=0\)</span>，这激起了我对<span
+class="math inline">\(AA^T\)</span>和<span
+class="math inline">\(A^TA\)</span>之间关系的兴趣，等以后学矩阵论或许有机会探索下。</p>
+<figure>
+<img src=".\线代复健\Pake.jpg" alt="Pake" />
+<figcaption aria-hidden="true">Pake</figcaption>
+</figure>
+]]></content>
   </entry>
   <entry>
     <title>博客更新文档</title>
@@ -4768,308 +5050,14 @@ data-cites="AfterThrowing">@AfterThrowing</span>(value = "pt()",throwing
       </tags>
   </entry>
   <entry>
-    <title>线性代数复健</title>
-    <url>/posts/36888.html</url>
-    <content><![CDATA[<p>前言：最近在学习机器学习，但是在看AE(AutoEncoder)时，感觉到了其与PCA(Principal
-Component Analysis)的联系，从而对SVD(Singular Value
-Decomposition)产生了较大的兴趣。借此机会，对之前上过的高等代数课的部分知识做一个复健整理。</p>
-<p>说到线代，我们首先能想到嘴边的概念有：向量，矩阵，秩，线性空间，线性变化，逆矩阵，单位矩阵，相似矩阵，特征值分解。核心还是矩阵，我们可以把矩阵看作一组基或者看作一个线性变换。</p>
-<h3 id="基和坐标">基和坐标</h3>
-例如，<span class="math inline">\(\mathbf{x}=\left( x_1,x_2,,x_n
-\right)\)</span>代表一个向量，
-<div>
-<span class="math inline">\(X=\left( \begin{matrix}  x_{11}&amp;
-x_{12}&amp; x_{13}\\  x_{21}&amp; x_{22}&amp; x_{23}\\  x_{31}&amp;
-x_{32}&amp; x_{33}\\ \end{matrix} \right)\)</span>
-</div>
-<p>代表一个矩阵，我们令<span class="math inline">\(\mathbf{x}_1=\left(
-x_{11},x_{21},x_{31} \right) ^T , \mathbf{x}_2=\left(
-x_{12},x_{22},x_{32} \right) ^T , \mathbf{x}_3=\left(
-x_{13},x_{23},x_{33} \right) ^T\)</span></p>
-<p>则有$X=( _1,_2,_3 ) $。即矩阵的每一列代表一个基。</p>
-<p>我们常见的单位矩阵<span class="math inline">\(I=\left(
-\begin{matrix}  1&amp; 0&amp; 0\\  0&amp; 1&amp; 0\\  0&amp; 0&amp; 1\\
-\end{matrix} \right)\)</span>即是把<span
-class="math inline">\(\mathbf{\varepsilon }_1=\left( 1,0,0 \right)
-,\mathbf{\varepsilon }_2=\left( 0,1,0 \right), \mathbf{\varepsilon
-}_3=\left( 0,0,1 \right)\)</span>当作基。</p>
-<p>当然，谈到矩阵的基，自然会回忆起线性无关，正交基，施密特正交化这一系列东西，但是这些知识还比较熟悉，不是复习的重点。给定一个向量<span
-class="math inline">\(\alpha =\left( 1,2,3 \right)
-^T\)</span>，我们可以把它看作一个向量，也可以把它看作一个坐标，即<span
-class="math inline">\(\alpha =1\cdot \mathbf{\varepsilon }_1+2\cdot
-\mathbf{\varepsilon }_2+3\cdot \mathbf{\varepsilon }_3=\left(
-\mathbf{\varepsilon }_1,\mathbf{\varepsilon }_2,\mathbf{\varepsilon }_3
-\right) \cdot \left( 1,2,3 \right) ^T=I\cdot
-\alpha\)</span>，事实上，我们既然写成了这个样子，就潜意识地将标准基作为基底了。</p>
-<h3 id="线性变换的引出">线性变换的引出</h3>
-<p>另外一种看法是将矩阵看成一种线性变换，确切来说，矩阵是某个线性变换在一组基上的表示。</p>
-<p>按照课本的叙述方式：</p>
-<p>设<span class="math inline">\(V\)</span>是数域<span
-class="math inline">\(F\)</span>上一个<span
-class="math inline">\(n\)</span>维向量空间，令<span
-class="math inline">\(\sigma\)</span>是<span
-class="math inline">\(V\)</span>的一个线性变换。取定<span
-class="math inline">\(V\)</span>的一个基 <span class="math display">\[
-\mathbf{\alpha }_1,\mathbf{\alpha }_2,\cdots ,\mathbf{\alpha }_n
-\]</span> 考虑<span class="math inline">\(V\)</span>中任意一个向量 <span
-class="math display">\[
-\xi =x_1\mathbf{\alpha }_1+x_2\mathbf{\alpha }_2+\cdots
-+x_n\mathbf{\alpha }_n
-\]</span> <span class="math inline">\(\sigma \left( \xi
-\right)\)</span>仍是<span class="math inline">\(V\)</span>的一个向量。设
-<span class="math display">\[
-\sigma \left( \xi \right) =y_1\mathbf{\alpha }_1+y_2\mathbf{\alpha
-}_2+\cdots +y_n\mathbf{\alpha }_n
-\]</span> 自然要问，如何计算<span class="math inline">\(\sigma \left(
-\xi \right)\)</span>的坐标<span class="math inline">\(\left(
-y_1,y_2,\cdots ,y_n \right)\)</span>。</p>
-<p>令 <span class="math display">\[
-\begin{cases}
-    \sigma \left( \mathbf{\alpha }_1 \right) =a_{11}\mathbf{\alpha
-}_1+a_{21}\mathbf{\alpha }_2+\cdots +a_{n1}\mathbf{\alpha }_n\\
-    \sigma \left( \mathbf{\alpha }_2 \right) =a_{12}\mathbf{\alpha
-}_1+a_{22}\mathbf{\alpha }_2+\cdots +a_{n2}\mathbf{\alpha }_n\\
-    \,\,                  \cdots \cdots \cdots \cdots\\
-    \sigma \left( \mathbf{\alpha }_n \right) =a_{1n}\mathbf{\alpha
-}_1+a_{2n}\mathbf{\alpha }_2+\cdots +a_{nn}\mathbf{\alpha }_n\\
-\end{cases}
-\]</span> 这里<span class="math inline">\(a_{ij}\)</span>就是$( _j )
-<span class="math inline">\(关于基\)</span>_1,_2,,_n$的坐标。</p>
-<p>令 <span class="math display">\[
-A=\left( \begin{matrix}
-    a_{11}&amp;     a_{12}&amp;     \cdots&amp;     a_{1n}\\
-    a_{21}&amp;     a_{22}&amp;     \cdots&amp;     a_{2n}\\
-    \vdots&amp;     \vdots&amp;     &amp;       \vdots\\
-    a_{n1}&amp;     a_{n2}&amp;     \cdots&amp;     a_{nn}\\
-\end{matrix} \right)
-\]</span> <span class="math inline">\(n\)</span>阶矩阵<span
-class="math inline">\(A\)</span>叫做线性变换<span
-class="math inline">\(\sigma\)</span>关于基<span
-class="math inline">\(\left\{ \mathbf{\alpha }_1,\mathbf{\alpha
-}_2,\cdots ,\mathbf{\alpha }_n \right\}\)</span>的矩阵。矩阵<span
-class="math inline">\(A\)</span>的第<span
-class="math inline">\(j\)</span>列的元素就是<span
-class="math inline">\(\sigma \left( \mathbf{\alpha }_j
-\right)\)</span>关于基<span class="math inline">\(\left\{ \mathbf{\alpha
-}_1,\mathbf{\alpha }_2,\cdots ,\mathbf{\alpha }_n
-\right\}\)</span>的坐标。</p>
-<p>这样，取定<span class="math inline">\(F\)</span>上<span
-class="math inline">\(n\)</span>维向量空间<span
-class="math inline">\(V\)</span>的一个基后，对于<span
-class="math inline">\(V\)</span>的每一线性变换，有唯一确定的<span
-class="math inline">\(F\)</span>上<span
-class="math inline">\(n\)</span>阶矩阵与之对应。</p>
-<p>事实上： <span class="math display">\[
-\left( \sigma \left( \mathbf{\alpha }_1 \right) ,\sigma \left(
-\mathbf{\alpha }_2 \right) ,\cdots ,\sigma \left( \mathbf{\alpha }_n
-\right) \right) =\left( \mathbf{\alpha }_1,\mathbf{\alpha }_2,\cdots
-,\mathbf{\alpha }_n \right) A
-\]</span> 这意味着从基<span class="math inline">\(\left\{ \mathbf{\alpha
-}_1,\mathbf{\alpha }_2,\cdots ,\mathbf{\alpha }_n
-\right\}\)</span>到基<span class="math inline">\(\left\{ \sigma \left(
-\mathbf{\alpha }_1 \right) ,\sigma \left( \mathbf{\alpha }_2 \right)
-,\cdots ,\sigma \left( \mathbf{\alpha }_n \right)
-\right\}\)</span>的过渡矩阵<span
-class="math inline">\(A\)</span>即是线性变换<span
-class="math inline">\(\sigma\)</span>关于基${ _1,_2,,_n } $的矩阵。</p>
-<h3 id="从拉伸角度理解线性变换">从拉伸角度理解线性变换</h3>
-<p>我们将坐标轴进行拉伸，即相当于对<span class="math inline">\(\left(
-\begin{matrix}  1&amp; 0\\  0&amp; 1\\ \end{matrix}
-\right)\)</span>做变换 <span class="math inline">\(\left(
-\begin{matrix}  \lambda _1&amp; 0\\  0&amp; \lambda _2\\ \end{matrix}
-\right)\)</span>，即<span class="math inline">\(\left(
-\begin{matrix}  \lambda _1&amp; 0\\  0&amp; \lambda _2\\ \end{matrix}
-\right) \left( \begin{matrix}  1&amp; 0\\  0&amp; 1\\ \end{matrix}
-\right) =\left( \begin{matrix}  \lambda _1&amp; 0\\  0&amp; \lambda _2\\
-\end{matrix}
-\right)\)</span>，显然，对标准正交基做的拉伸这一类线性变换对应的矩阵都是对角矩阵。那么，当一个线性变换对于标准正交基的矩阵不是对角矩阵时，我们能不能用拉伸来理解呢？事实上，可以，这就是特征向量和特征值的一个很重要的意义。</p>
-我们先反过来看，假如有一个线性变换对于基<span
-class="math inline">\(\left( \begin{matrix}  1&amp; -1\\  0&amp; 1\\
-\end{matrix} \right)\)</span>的矩阵是<span
-class="math inline">\(B=\left( \begin{matrix}  3&amp; 0\\  0&amp; 2\\
-\end{matrix} \right)\)</span>，那么我们只需要命名基<span
-class="math inline">\(\left( \begin{matrix}  1&amp; 0\\  0&amp; 1\\
-\end{matrix} \right)\)</span>到基$(
-<span class="math display">\[\begin{matrix}
-    1&amp;      -1\\
-    0&amp;      1\\
-\end{matrix}\]</span>
-) <span class="math inline">\(的过渡矩阵\)</span>T=(
-<span class="math display">\[\begin{matrix}
-    1&amp;      -1\\
-    0&amp;      1\\
-\end{matrix}\]</span>
-)<span class="math inline">\(，命名这一线性变换关于基\)</span>(
-<span class="math display">\[\begin{matrix}
-    1&amp;      0\\
-    0&amp;      1\\
-\end{matrix}\]</span>
-)<span class="math inline">\(的矩阵为\)</span>A<span
-class="math inline">\(，根据相似矩阵的知识，有\)</span>B=T<sup>{-1}AT<span
-class="math inline">\(，据此求得\)</span>A=TBT</sup>{-1}=(
-<span class="math display">\[\begin{matrix}
-    3&amp;      1\\
-    0&amp;      2\\
-\end{matrix}\]</span>
-<p>)$，所以，如果一个线性变换关于标准正交基的矩阵可以相似对角化，那么这个变换就可以被理解为对某组基的拉伸，这组基上的向量就是特征向量，对应的拉伸强度就是对应的特征值，至此，我们找到了一个更为直观的视角去看待线性变换。</p>
-<p>书上给出了一个对角化的充要条件，即<span
-class="math inline">\(n\)</span>维向量空间<span
-class="math inline">\(V\)</span>的一个线性变换<span
-class="math inline">\(\sigma\)</span>可以对角化的充要的条件是，<span
-class="math inline">\(V\)</span>可以分解为<span
-class="math inline">\(n\)</span>个在<span
-class="math inline">\(\sigma\)</span>之下不变的一维子空间<span
-class="math inline">\(W_1,W_2,\cdots
-,W_n\)</span>的直和。我们可以简单地理解为，这一个线性变换不会让空间坍塌降维。</p>
-<p>另外一点值得记录的是，这种拉伸是针对指定的方向的，并不是针对方向上的某一个向量，如果我们在选定的方向上选择标准基作为基，那么我们得到的特征向量矩阵将是一个正交矩阵，即它只表示方向。我们用<span
-class="math inline">\(W\)</span>来表示特征向量矩阵，用对角阵<span
-class="math inline">\(\varSigma\)</span>来表示拉伸强度，则有<span
-class="math inline">\(A=W\varSigma W^{-1}\)</span>，因为我们选取的<span
-class="math inline">\(W\)</span>为正交矩阵，所以有<span
-class="math inline">\(WW^T=I\)</span>，所以<span
-class="math inline">\(A=W\varSigma W^{T}\)</span>。</p>
-<h3 id="非方阵">非方阵</h3>
-<p>我们将<span class="math inline">\(\left( \begin{matrix}  1&amp;
-2\\  -1&amp; 4\\  3&amp; 0\\ \end{matrix} \right)\)</span>作用于<span
-class="math inline">\(\left( \begin{matrix}  1&amp; 0\\  0&amp; 1\\
-\end{matrix} \right)\)</span>，即<span class="math inline">\(\left(
-\begin{matrix}  1&amp; 2\\  -1&amp; 4\\  3&amp; 0\\ \end{matrix} \right)
-\left( \begin{matrix}  1&amp; 0\\  0&amp; 1\\ \end{matrix} \right)
-=\left( \begin{matrix}  1&amp; 2\\  -1&amp; 4\\  3&amp; 0\\ \end{matrix}
-\right)\)</span>，根据很多视频的说法，这个矩阵将平面映射成了斜面，我的理解是，非方阵会将基从<span
-class="math inline">\(m\)</span>维映射到<span
-class="math inline">\(n\)</span>维，但是由这些映射完的基所张成的空间的维度还是没有变大。</p>
-<h3 id="奇异值分解">奇异值分解</h3>
-<p>根据这个文章的思路作为主线<a
-href="https://zhuanlan.zhihu.com/p/29846048">奇异值分解（SVD） - 知乎
-(zhihu.com)</a></p>
-<p>存在一个mxn的矩阵<span
-class="math inline">\(A\)</span>，我们定义<span
-class="math inline">\(A\)</span>的SVD为<span
-class="math inline">\(A=U\varSigma V^{T}\)</span>，其中<span
-class="math inline">\(U\)</span>是mxm的矩阵，<span
-class="math inline">\(\varSigma\)</span>是mxn的矩阵，<span
-class="math inline">\(V\)</span>是nxn的矩阵，我们可以理解为，<span
-class="math inline">\(U\)</span>是在原平面找的特征向量矩阵，<span
-class="math inline">\(V\)</span>是在变换后的斜面找的特征向量矩阵。 <span
-class="math display">\[
-A^TA=V\varSigma ^TU^TU\varSigma V^T=V\varSigma ^2V^T
-\\
-AA^T=U\varSigma V^TV\varSigma ^TU^T=U\varSigma ^2U^T
-\]</span> 所以我们可以根据<span
-class="math inline">\(A\)</span>来求得<span
-class="math inline">\(A^TA\)</span>和<span
-class="math inline">\(AA^T\)</span>，进而求出<span
-class="math inline">\(V,\varSigma,U\)</span>。</p>
-<p>根据文中的例子： <span class="math display">\[
-A=\left( \begin{matrix}
-    0&amp;      1\\
-    1&amp;      1\\
-    1&amp;      0\\
-\end{matrix} \right) ,A^T=\left( \begin{matrix}
-    0&amp;      1&amp;      1\\
-    1&amp;      1&amp;      0\\
-\end{matrix} \right)
-\]</span> 然后对方阵<span class="math inline">\(A^TA\)</span>和<span
-class="math inline">\(AA^T\)</span>进行分解。 <span
-class="math display">\[
-A^TA=\left( \begin{matrix}
-    0&amp;      1&amp;      1\\
-    1&amp;      1&amp;      0\\
-\end{matrix} \right) \left( \begin{matrix}
-    0&amp;      1\\
-    1&amp;      1\\
-    1&amp;      0\\
-\end{matrix} \right) =\left( \begin{matrix}
-    2&amp;      1\\
-    1&amp;      2\\
-\end{matrix} \right) =\left( \begin{matrix}
-    \frac{1}{\sqrt{2}}&amp;     -\frac{1}{\sqrt{2}}\\
-    \frac{1}{\sqrt{2}}&amp;     \frac{1}{\sqrt{2}}\\
-\end{matrix} \right) \left( \begin{matrix}
-    3&amp;      0\\
-    0&amp;      1\\
-\end{matrix} \right) \left( \begin{matrix}
-    \frac{1}{\sqrt{2}}&amp;     \frac{1}{\sqrt{2}}\\
-    -\frac{1}{\sqrt{2}}&amp;        \frac{1}{\sqrt{2}}\\
-\end{matrix} \right)
-\\
-AA^T=\left( \begin{matrix}
-    0&amp;      1\\
-    1&amp;      1\\
-    1&amp;      0\\
-\end{matrix} \right) \left( \begin{matrix}
-    0&amp;      1&amp;      1\\
-    1&amp;      1&amp;      0\\
-\end{matrix} \right) =\left( \begin{matrix}
-    1&amp;      1&amp;      0\\
-    1&amp;      2&amp;      1\\
-    0&amp;      1&amp;      1\\
-\end{matrix} \right) =\left( \begin{matrix}
-    \frac{1}{\sqrt{6}}&amp;     \frac{1}{\sqrt{2}}&amp;     \frac{1}{\sqrt{3}}\\
-    \frac{2}{\sqrt{6}}&amp;     0&amp;      -\frac{1}{\sqrt{3}}\\
-    \frac{1}{\sqrt{6}}&amp;     -\frac{1}{\sqrt{2}}&amp;        \frac{1}{\sqrt{3}}\\
-\end{matrix} \right) \left( \begin{matrix}
-    3&amp;      0&amp;      0\\
-    0&amp;      1&amp;      0\\
-    0&amp;      0&amp;      0\\
-\end{matrix} \right) \left( \begin{matrix}
-    \frac{1}{\sqrt{6}}&amp;     \frac{2}{\sqrt{6}}&amp;     \frac{1}{\sqrt{6}}\\
-    \frac{1}{\sqrt{2}}&amp;     0&amp;      -\frac{1}{\sqrt{2}}\\
-    \frac{1}{\sqrt{3}}&amp;     -\frac{1}{\sqrt{3}}&amp;        \frac{1}{\sqrt{3}}\\
-\end{matrix} \right)
-\]</span> 所以得： <span class="math display">\[
-A=\left( \begin{matrix}
-    \frac{1}{\sqrt{6}}&amp;     \frac{1}{\sqrt{2}}&amp;     \frac{1}{\sqrt{3}}\\
-    \frac{2}{\sqrt{6}}&amp;     0&amp;      -\frac{1}{\sqrt{3}}\\
-    \frac{1}{\sqrt{6}}&amp;     -\frac{1}{\sqrt{2}}&amp;        \frac{1}{\sqrt{3}}\\
-\end{matrix} \right) \left( \begin{matrix}
-    3&amp;      0\\
-    0&amp;      1\\
-    0&amp;      0\\
-\end{matrix} \right) \left( \begin{matrix}
-    \frac{1}{\sqrt{2}}&amp;     \frac{1}{\sqrt{2}}\\
-    -\frac{1}{\sqrt{2}}&amp;        \frac{1}{\sqrt{2}}\\
-\end{matrix} \right)
-\]</span> 细心的话可以发现<span class="math inline">\(\det \left( U
-\right) =\left| \begin{matrix}  \frac{1}{\sqrt{6}}&amp;
-\frac{1}{\sqrt{2}}&amp; \frac{1}{\sqrt{3}}\\  \frac{2}{\sqrt{6}}&amp;
-0&amp; -\frac{1}{\sqrt{3}}\\  \frac{1}{\sqrt{6}}&amp;
--\frac{1}{\sqrt{2}}&amp; \frac{1}{\sqrt{3}}\\ \end{matrix} \right|=-6\ne
-0\)</span>，但<span
-class="math inline">\(A^TA\)</span>的最后一个特征值是零，其实就代表着三维空间中一个维度坍塌了，而这一切的根源则是<span
-class="math inline">\(\det \left( AA^T \right) =\left|
-\begin{matrix}  1&amp; 1&amp; 0\\  1&amp; 2&amp; 1\\  0&amp; 1&amp; 1\\
-\end{matrix} \right|=0\)</span>，这激起了我对<span
-class="math inline">\(AA^T\)</span>和<span
-class="math inline">\(A^TA\)</span>之间关系的兴趣，等以后学矩阵论或许有机会探索下。</p>
-<figure>
-<img src=".\线代复健\Pake.jpg" alt="Pake" />
-<figcaption aria-hidden="true">Pake</figcaption>
-</figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>关于</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[
-]]></content>
-  </entry>
-  <entry>
     <title></title>
     <url>/index.html</url>
     <content><![CDATA[
 ]]></content>
   </entry>
   <entry>
-    <title>分类</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[
-]]></content>
-  </entry>
-  <entry>
-    <title>资源</title>
-    <url>/resources/index.html</url>
+    <title>关于</title>
+    <url>/about/index.html</url>
     <content><![CDATA[
 ]]></content>
   </entry>
@@ -5080,8 +5068,20 @@ class="math inline">\(A^TA\)</span>之间关系的兴趣，等以后学矩阵论
 ]]></content>
   </entry>
   <entry>
+    <title>分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[
+]]></content>
+  </entry>
+  <entry>
     <title>标签</title>
     <url>/tags/index.html</url>
+    <content><![CDATA[
+]]></content>
+  </entry>
+  <entry>
+    <title>资源</title>
+    <url>/resources/index.html</url>
     <content><![CDATA[
 ]]></content>
   </entry>
