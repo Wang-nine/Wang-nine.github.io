@@ -282,76 +282,6 @@ style="text-align: center;">为了提升用户体验，浏览器支持在静音�
       </tags>
   </entry>
   <entry>
-    <title>Hexo+Butterfly主题博客搭建01</title>
-    <url>/posts/10001.html</url>
-    <content><![CDATA[<p>Hexo+Butterfly主题博客搭建01 ——— 个人博客搭建的基础环境配置工作
-<span id="more"></span></p>
-<h1 id="node.js的配置">Node.js的配置</h1>
-<p><a href="https://nodejs.org/en/download">nodejs的官网</a></p>
-<p>选择适合自己系统的下载即可，大部分人应该是Windows Installer (.msi)
-64位，选择msi位安装程序，mac和linux用户选择适合自己的版本即可。</p>
-<p>安装是一路默认选项即可，<strong>注意安装的路径可以根据自己的需求，一定要记住安装在哪里了</strong></p>
-<p>安装完成之后可以在cmd中测试是否安装成功</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<figure>
-<img
-src="https://wang-nine.cn/images/Hexo01-01%E6%9F%A5%E7%9C%8Bnode%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F.png"
-alt="Hexo01-01查看node是否安装成功" />
-<figcaption
-aria-hidden="true">Hexo01-01查看node是否安装成功</figcaption>
-</figure>
-<h1 id="git的配置">Git的配置</h1>
-<p><a href="https://git-scm.com/">Git的官网</a></p>
-<figure>
-<img
-src="https://wang-nine.cn/images/Hexo01-02Git%E5%AE%89%E8%A3%85-1.png"
-alt="Hexo01-02Git安装-1" />
-<figcaption aria-hidden="true">Hexo01-02Git安装-1</figcaption>
-</figure>
-<p>选择适合自己系统的下载即可，大部分人应该是Windows64位，所以直接点击Downloade
-for Windows即可。</p>
-<p>安装是一路默认选项即可，<strong>注意安装的路径可以根据自己的需求，一定要记住安装在哪里了</strong></p>
-<p>安装完成之后可以在cmd中测试是否安装成功</p>
-<h1 id="github的配置">github的配置</h1>
-<p>在github新建一个仓库</p>
-<blockquote>
-<p>名称为 <strong>你的名称.github.io</strong></p>
-</blockquote>
-<p>如图所示为我的仓库样例：</p>
-<figure>
-<img
-src="https://wang-nine.cn/images/Hexo01-03github%E7%9A%84%E9%85%8D%E7%BD%AE.png"
-alt="Hexo01-03github的配置" />
-<figcaption aria-hidden="true">Hexo01-03github的配置</figcaption>
-</figure>
-<h1 id="博客的初始化">博客的初始化</h1>
-<h2 id="安装hexo">安装Hexo</h2>
-<p>所有必备的应用程序安装完成后，即可使用<code>npm</code>安装<code>Hexo</code>。不要觉得安装这个框架有多复杂，只需要一条命令就可以了。<code>npm</code>是安装工具，<code>install</code>表示安装，<code>-g</code>表示全局安装，<code>hexo-cli</code>表示安装的是hexo框架。</p>
-<p>在 git
-命令行下输入下述的命令，<strong>若无法安装可能是因为权限不够，可以以管理员权限运行
-gitbash</strong></p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h2 id="初始化博客">初始化博客</h2>
-<p>安装完框架之后新建一个存放博客的文件夹Blog，这里在D盘新建了一个Blog文件夹，在该文件夹下右键Git
-Bash Here并输入<code>hexo init</code>命令初始化这个文件夹。注意新建 Blog
-文件夹和初始化这个文件夹只需要下面这条命令就可以了。</p>
-<h2 id="启动和配置博客">启动和配置博客</h2>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo clean  # 清除缓存</span><br><span class="line">hexo g      # 生成静态网页</span><br><span class="line">hexo d      # 部署到Github</span><br><span class="line">hexo s 		# 是 hexo server 的缩写，启动本地服务器，用于预览主题。默认地址： http://localhost:4000/</span><br></pre></td></tr></table></figure>
-<p>此时输入 <code>hexo clean</code> <code>hexo d</code>
-<code>hexo h</code> <code>hexo s</code> 命令即可初步查看自己的 Blog 页面
-在浏览器输入 http://localhost:4000/ 即可访问
-顺利的话，在浏览器输入：<code>用户名.github.io</code>
-即可初步访问自己的博客</p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HTML5+CSS301-day02</title>
     <url>/posts/10502.html</url>
     <content><![CDATA[<p>第二天笔记 <span id="more"></span></p>
@@ -551,9 +481,67 @@ _config.yml 复制到 hexo 根目录下，同重命名为 _config.butterfly.yml<
       </tags>
   </entry>
   <entry>
-    <title>Hexo-Butterfly主题博客搭建03</title>
-    <url>/posts/10003.html</url>
-    <content><![CDATA[
+    <title>Hexo+Butterfly主题博客搭建01</title>
+    <url>/posts/10001.html</url>
+    <content><![CDATA[<p>Hexo+Butterfly主题博客搭建01 ——— 个人博客搭建的基础环境配置工作
+<span id="more"></span></p>
+<h1 id="node.js的配置">Node.js的配置</h1>
+<p><a href="https://nodejs.org/en/download">nodejs的官网</a></p>
+<p>选择适合自己系统的下载即可，大部分人应该是Windows Installer (.msi)
+64位，选择msi位安装程序，mac和linux用户选择适合自己的版本即可。</p>
+<p>安装是一路默认选项即可，<strong>注意安装的路径可以根据自己的需求，一定要记住安装在哪里了</strong></p>
+<p>安装完成之后可以在cmd中测试是否安装成功</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<figure>
+<img
+src="https://wang-nine.cn/images/Hexo01-01%E6%9F%A5%E7%9C%8Bnode%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F.png"
+alt="Hexo01-01查看node是否安装成功" />
+<figcaption
+aria-hidden="true">Hexo01-01查看node是否安装成功</figcaption>
+</figure>
+<h1 id="git的配置">Git的配置</h1>
+<p><a href="https://git-scm.com/">Git的官网</a></p>
+<figure>
+<img
+src="https://wang-nine.cn/images/Hexo01-02Git%E5%AE%89%E8%A3%85-1.png"
+alt="Hexo01-02Git安装-1" />
+<figcaption aria-hidden="true">Hexo01-02Git安装-1</figcaption>
+</figure>
+<p>选择适合自己系统的下载即可，大部分人应该是Windows64位，所以直接点击Downloade
+for Windows即可。</p>
+<p>安装是一路默认选项即可，<strong>注意安装的路径可以根据自己的需求，一定要记住安装在哪里了</strong></p>
+<p>安装完成之后可以在cmd中测试是否安装成功</p>
+<h1 id="github的配置">github的配置</h1>
+<p>在github新建一个仓库</p>
+<blockquote>
+<p>名称为 <strong>你的名称.github.io</strong></p>
+</blockquote>
+<p>如图所示为我的仓库样例：</p>
+<figure>
+<img
+src="https://wang-nine.cn/images/Hexo01-03github%E7%9A%84%E9%85%8D%E7%BD%AE.png"
+alt="Hexo01-03github的配置" />
+<figcaption aria-hidden="true">Hexo01-03github的配置</figcaption>
+</figure>
+<h1 id="博客的初始化">博客的初始化</h1>
+<h2 id="安装hexo">安装Hexo</h2>
+<p>所有必备的应用程序安装完成后，即可使用<code>npm</code>安装<code>Hexo</code>。不要觉得安装这个框架有多复杂，只需要一条命令就可以了。<code>npm</code>是安装工具，<code>install</code>表示安装，<code>-g</code>表示全局安装，<code>hexo-cli</code>表示安装的是hexo框架。</p>
+<p>在 git
+命令行下输入下述的命令，<strong>若无法安装可能是因为权限不够，可以以管理员权限运行
+gitbash</strong></p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h2 id="初始化博客">初始化博客</h2>
+<p>安装完框架之后新建一个存放博客的文件夹Blog，这里在D盘新建了一个Blog文件夹，在该文件夹下右键Git
+Bash Here并输入<code>hexo init</code>命令初始化这个文件夹。注意新建 Blog
+文件夹和初始化这个文件夹只需要下面这条命令就可以了。</p>
+<h2 id="启动和配置博客">启动和配置博客</h2>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo clean  # 清除缓存</span><br><span class="line">hexo g      # 生成静态网页</span><br><span class="line">hexo d      # 部署到Github</span><br><span class="line">hexo s 		# 是 hexo server 的缩写，启动本地服务器，用于预览主题。默认地址： http://localhost:4000/</span><br></pre></td></tr></table></figure>
+<p>此时输入 <code>hexo clean</code> <code>hexo d</code>
+<code>hexo h</code> <code>hexo s</code> 命令即可初步查看自己的 Blog 页面
+在浏览器输入 http://localhost:4000/ 即可访问
+顺利的话，在浏览器输入：<code>用户名.github.io</code>
+即可初步访问自己的博客</p>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -1109,6 +1097,18 @@ waiting状态。带有超时参数的常用方法有Thread.sleep和Object.wait</
       </tags>
   </entry>
   <entry>
+    <title>Hexo-Butterfly主题博客搭建03</title>
+    <url>/posts/10003.html</url>
+    <content><![CDATA[
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaSE02-Java中的文件与方法递归与IO流</title>
     <url>/posts/10101.html</url>
     <content><![CDATA[<p>详细的描述了Java中
@@ -1457,106 +1457,6 @@ id="存储引擎的选择总结自黑马程序员mysql课程侵删">存储引擎
 <p>InnoDB:是Mysql的默认存储引擎，支持事务、外键。如果应用对事务的完整性有比较高的要求，在并发条件下要求数据的一致性，数据操怍除了插入和查询之外，还包含很多的更新、删除操作，那么InnoDB存储引擎是比较合适的选择。</p>
 <p>MyISAM:如果应用是以读操作和插入操作为主，只有很少的更新和删除操作，并且对事务的完整性、并发性要求不是很高，那么选择这个存储引擎是非常合适的。（被MongoDB取代）</p>
 <p>MEMORY:将所有数据保存在内存中，访问速度快，通常用于临时表及缓存。MEMORY的缺陷就是对表的大小有限制，太大的表无法缓存在内存中，而且无法保障数据的安全性。（被Redis取代）</p>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL03-索引03-使用规则</title>
-    <url>/posts/10405.html</url>
-    <content><![CDATA[<p>详细的描述了MySQL中的索引的使用规则和设计原则。 <span id="more"></span></p>
-<h1 id="使用规则">使用规则</h1>
-<h2 id="联合索引">联合索引</h2>
-<h3 id="最左前缀法则">最左前缀法则</h3>
-<blockquote>
-<p>如果索引了多列(联合索引)，要遵守最左前缀法则。最左前缀法则指的是查询从索引的最左列开始，并且不跳过索引中的列。如果跳跃某一列，索引将部分失效(后面的字段索引失效)。</p>
-</blockquote>
-<h3 id="范围查询">范围查询</h3>
-<blockquote>
-<p>联合索引中，出现范围查询(&gt;,&lt;)，范围查询右侧的列索引失效</p>
-</blockquote>
-<h2 id="索引失效">索引失效</h2>
-<h3 id="索引列运算">索引列运算</h3>
-<blockquote>
-<p>不要在索引列上进行运算操作,索引将失效。</p>
-</blockquote>
-<h3 id="字符串不加引号">字符串不加引号</h3>
-<blockquote>
-<p>字符串类型字段使用时，不加引号，索引将失效。会在内部自动进行隐式类型转换。</p>
-</blockquote>
-<h3 id="模糊查询">模糊查询</h3>
-<blockquote>
-<p>如果仅仅是尾部模糊匹配，索引不会失效。如果是头部模糊匹配，索引失效。</p>
-</blockquote>
-<p>### or连接的条件</p>
-<blockquote>
-<p>用or分割开的条件，如果or前的条件中的列有索引，而后面的列中没有索引，那么涉及的索引都不会被用到。</p>
-<p>解决办法：针对另一个数据列也建立索引即可</p>
-</blockquote>
-<h3 id="数据分布影响">数据分布影响</h3>
-<blockquote>
-<p>如果MysQL评估使用索引比全表更慢，则不使用索引。</p>
-</blockquote>
-<h2 id="sql提示">SQL提示</h2>
-<h3 id="sql提示-1">SQL提示</h3>
-<blockquote>
-<p>SQL提示，是优化数据库的一个重要手段，简单来说，就是在SQL语句中加入一些人为的提示来达到优化操作的目的。</p>
-<p>放在where条件前，use/ignore/force index(索引名)</p>
-<p>use index: 建议使用索引，数据库可以选择不使用</p>
-<p>ignore index: 忽略某个索引</p>
-<p>force index: 强制使用某个索引</p>
-</blockquote>
-<h2 id="覆盖索引">覆盖索引</h2>
-<h3 id="覆盖索引-1">覆盖索引</h3>
-<blockquote>
-<p>尽量使用覆盖索引（查询使用了索引，并且需要返回的列，在该索引中已经全部能够找到)，减少select
-*。</p>
-<p>尽量避免回表查询</p>
-<p>extra中： using index condition :查找使用了索引,但是需要回表查询数据
-using where; using
-index:查找使用了索引，但是需要的数据都在索引列中能找到，所以不需要回表查询数据</p>
-</blockquote>
-<h2 id="前缀索引">前缀索引</h2>
-<h3 id="前缀索引-1">前缀索引</h3>
-<blockquote>
-<p>当字段类型为字符串(varchar,
-text等）时，有时候需要索引很长的字符串，这会让索引变得很大，查询时，浪费大量的磁盘IO，影响查询效率。此时可以只将字符串的一部分前缀，建立索引，这样可以大大节约索引空间，从而提高索引效率。</p>
-<p>语法： create index idx_xxx on table_name(column(n)) ; - -
-n为前缀长度</p>
-<p>前缀长度的选择：
-可以根据索引的选择性来决定，选择性是指不重复的索引值（基数）和数据表的记录总数的比值，索引选择性越高则查询效率越高，
-唯一索引的选择性是1，这是最好的索引选择性，性能也是最好的。
-可以使用聚合函数查询选择性 select count(distinct substring(xxx,1,5))/
-count(*) from table ; - - 即长度为5的选择性</p>
-</blockquote>
-<h2 id="单列联合索引">单列/联合索引</h2>
-<h3 id="单列索引与联合索引">单列索引与联合索引</h3>
-<blockquote>
-<p>单列索引:即一个索引只包含单个列。</p>
-<p>联合索引:即一个索引包含了多个列。</p>
-<p>在业务场景中，如果存在多个查询条件，考虑针对于查询字段建立索引时，建议建立联合索引，而非单列索引。</p>
-<p>多条件联合查询时，MySQL优化器会评估哪个字段的索引效率更高，会选择该索引完成本次查询。</p>
-</blockquote>
-<h1
-id="索引设计原则总结自黑马程序员侵删">索引设计原则（总结自黑马程序员，侵删）</h1>
-<h3 id="索引设计原则">索引设计原则</h3>
-<blockquote>
-<ol type="1">
-<li>针对于数据量较大，且查询比较频繁的表建立索引。</li>
-<li>针对于常作为查询条件（where)、排序(order by)、分组(group
-by)操作的字段建立索引。</li>
-<li>尽量选择区分度高的列作为索引，尽量建立唯一索引，区分度越高，使用索引的效率越高。</li>
-<li>如果是字符串类型的字段，字段的长度较长，可以针对于字段的特点，建立前缀索引。</li>
-<li>尽量使用联合索引，减少单列索引，查询时，联合索引很多时候可以覆盖索引，节省存储空间，避免回表，提高查询效率。</li>
-<li>要控制索引的数量，索引并不是多多益善，索引越多，维护索引结构的代价也就越大，会影响增删改的效率。</li>
-<li>如果索引列不能存储NULL值，请在创建表时使用NOT
-NULL约束它。当优化器知道每列是否包含NULL值时，它可以更好地确定哪个索引最有效地用于查询。</li>
-</ol>
-</blockquote>
 ]]></content>
       <categories>
         <category>MySQL</category>
@@ -2079,6 +1979,106 @@ filesort:需要将返回的结果在排序缓冲区排序</p>
       </tags>
   </entry>
   <entry>
+    <title>MySQL03-索引03-使用规则</title>
+    <url>/posts/10405.html</url>
+    <content><![CDATA[<p>详细的描述了MySQL中的索引的使用规则和设计原则。 <span id="more"></span></p>
+<h1 id="使用规则">使用规则</h1>
+<h2 id="联合索引">联合索引</h2>
+<h3 id="最左前缀法则">最左前缀法则</h3>
+<blockquote>
+<p>如果索引了多列(联合索引)，要遵守最左前缀法则。最左前缀法则指的是查询从索引的最左列开始，并且不跳过索引中的列。如果跳跃某一列，索引将部分失效(后面的字段索引失效)。</p>
+</blockquote>
+<h3 id="范围查询">范围查询</h3>
+<blockquote>
+<p>联合索引中，出现范围查询(&gt;,&lt;)，范围查询右侧的列索引失效</p>
+</blockquote>
+<h2 id="索引失效">索引失效</h2>
+<h3 id="索引列运算">索引列运算</h3>
+<blockquote>
+<p>不要在索引列上进行运算操作,索引将失效。</p>
+</blockquote>
+<h3 id="字符串不加引号">字符串不加引号</h3>
+<blockquote>
+<p>字符串类型字段使用时，不加引号，索引将失效。会在内部自动进行隐式类型转换。</p>
+</blockquote>
+<h3 id="模糊查询">模糊查询</h3>
+<blockquote>
+<p>如果仅仅是尾部模糊匹配，索引不会失效。如果是头部模糊匹配，索引失效。</p>
+</blockquote>
+<p>### or连接的条件</p>
+<blockquote>
+<p>用or分割开的条件，如果or前的条件中的列有索引，而后面的列中没有索引，那么涉及的索引都不会被用到。</p>
+<p>解决办法：针对另一个数据列也建立索引即可</p>
+</blockquote>
+<h3 id="数据分布影响">数据分布影响</h3>
+<blockquote>
+<p>如果MysQL评估使用索引比全表更慢，则不使用索引。</p>
+</blockquote>
+<h2 id="sql提示">SQL提示</h2>
+<h3 id="sql提示-1">SQL提示</h3>
+<blockquote>
+<p>SQL提示，是优化数据库的一个重要手段，简单来说，就是在SQL语句中加入一些人为的提示来达到优化操作的目的。</p>
+<p>放在where条件前，use/ignore/force index(索引名)</p>
+<p>use index: 建议使用索引，数据库可以选择不使用</p>
+<p>ignore index: 忽略某个索引</p>
+<p>force index: 强制使用某个索引</p>
+</blockquote>
+<h2 id="覆盖索引">覆盖索引</h2>
+<h3 id="覆盖索引-1">覆盖索引</h3>
+<blockquote>
+<p>尽量使用覆盖索引（查询使用了索引，并且需要返回的列，在该索引中已经全部能够找到)，减少select
+*。</p>
+<p>尽量避免回表查询</p>
+<p>extra中： using index condition :查找使用了索引,但是需要回表查询数据
+using where; using
+index:查找使用了索引，但是需要的数据都在索引列中能找到，所以不需要回表查询数据</p>
+</blockquote>
+<h2 id="前缀索引">前缀索引</h2>
+<h3 id="前缀索引-1">前缀索引</h3>
+<blockquote>
+<p>当字段类型为字符串(varchar,
+text等）时，有时候需要索引很长的字符串，这会让索引变得很大，查询时，浪费大量的磁盘IO，影响查询效率。此时可以只将字符串的一部分前缀，建立索引，这样可以大大节约索引空间，从而提高索引效率。</p>
+<p>语法： create index idx_xxx on table_name(column(n)) ; - -
+n为前缀长度</p>
+<p>前缀长度的选择：
+可以根据索引的选择性来决定，选择性是指不重复的索引值（基数）和数据表的记录总数的比值，索引选择性越高则查询效率越高，
+唯一索引的选择性是1，这是最好的索引选择性，性能也是最好的。
+可以使用聚合函数查询选择性 select count(distinct substring(xxx,1,5))/
+count(*) from table ; - - 即长度为5的选择性</p>
+</blockquote>
+<h2 id="单列联合索引">单列/联合索引</h2>
+<h3 id="单列索引与联合索引">单列索引与联合索引</h3>
+<blockquote>
+<p>单列索引:即一个索引只包含单个列。</p>
+<p>联合索引:即一个索引包含了多个列。</p>
+<p>在业务场景中，如果存在多个查询条件，考虑针对于查询字段建立索引时，建议建立联合索引，而非单列索引。</p>
+<p>多条件联合查询时，MySQL优化器会评估哪个字段的索引效率更高，会选择该索引完成本次查询。</p>
+</blockquote>
+<h1
+id="索引设计原则总结自黑马程序员侵删">索引设计原则（总结自黑马程序员，侵删）</h1>
+<h3 id="索引设计原则">索引设计原则</h3>
+<blockquote>
+<ol type="1">
+<li>针对于数据量较大，且查询比较频繁的表建立索引。</li>
+<li>针对于常作为查询条件（where)、排序(order by)、分组(group
+by)操作的字段建立索引。</li>
+<li>尽量选择区分度高的列作为索引，尽量建立唯一索引，区分度越高，使用索引的效率越高。</li>
+<li>如果是字符串类型的字段，字段的长度较长，可以针对于字段的特点，建立前缀索引。</li>
+<li>尽量使用联合索引，减少单列索引，查询时，联合索引很多时候可以覆盖索引，节省存储空间，避免回表，提高查询效率。</li>
+<li>要控制索引的数量，索引并不是多多益善，索引越多，维护索引结构的代价也就越大，会影响增删改的效率。</li>
+<li>如果索引列不能存储NULL值，请在创建表时使用NOT
+NULL约束它。当优化器知道每列是否包含NULL值时，它可以更好地确定哪个索引最有效地用于查询。</li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL05-存储过程</title>
     <url>/posts/10407.html</url>
     <content><![CDATA[<p>详细的描述了MySQL中的存储过程。 <span id="more"></span></p>
@@ -2318,6 +2318,42 @@ href="https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html"
       </tags>
   </entry>
   <entry>
+    <title>MySQL06-存储函数</title>
+    <url>/posts/10408.html</url>
+    <content><![CDATA[<p>详细的描述了MySQL中的存储函数。 <span id="more"></span></p>
+<h1 id="存储函数">存储函数</h1>
+<p>存储函数是有返回值的存储过程，存储函数的参数只能是IN类型的。</p>
+<h2 id="语法">语法</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE FUNCTION 存储函数名称([参数列表])</span><br><span class="line">RETURNS type [characteristic ...]</span><br><span class="line">BEGIN</span><br><span class="line">	--SQL语句</span><br><span class="line">	RETURN ...;</span><br><span class="line">END;</span><br><span class="line"></span><br><span class="line">characteristic说明:</span><br><span class="line"> + DETERMINISTIC:相同的输入参数总是产生相同的结果</span><br><span class="line"> + NO SQL:不包含SQL语句。</span><br><span class="line"> + READS SQL DATA:包含读取数据的语句，但不包含写入数据的语句。</span><br></pre></td></tr></table></figure>
+<h2 id="样例">样例</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 存储函数</span><br><span class="line">-- 计算从1到n的累加</span><br><span class="line">create function fun1(n int)</span><br><span class="line">returns int deterministic </span><br><span class="line">begin</span><br><span class="line">    declare total int default 0;</span><br><span class="line"></span><br><span class="line">    while n &gt; 0 do</span><br><span class="line">        set total := total + n;</span><br><span class="line">        set n := n - 1;</span><br><span class="line">    end while;</span><br><span class="line"></span><br><span class="line">    return total;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">select fun1(100);</span><br></pre></td></tr></table></figure>
+<p><strong>注意当未添加 deterministic 会产生如下bug：</strong></p>
+<figure>
+<img
+src="https://wang-nine.cn/images/MySQL06-01%E6%9C%AA%E6%8C%87%E5%AE%9A%E5%8F%82%E6%95%B0%E6%80%A7%E8%B4%A8%E7%9A%84bug.png"
+alt="MySQL06-01未指定参数性质的bug" />
+<figcaption
+aria-hidden="true">MySQL06-01未指定参数性质的bug</figcaption>
+</figure>
+<p>运行结果：</p>
+<figure>
+<img
+src="https://wang-nine.cn/images/MySQL06-02%E5%AD%98%E5%82%A8%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png"
+alt="MySQL06-02存储函数的运行结果" />
+<figcaption aria-hidden="true">MySQL06-02存储函数的运行结果</figcaption>
+</figure>
+<h1 id="注意">注意</h1>
+<p><strong>存储函数必须要有返回值，而且参数只能是输入类型的参数，其过程实现完全可以被存储过程所代替。</strong></p>
+<p><strong>因此存储函数的使用较少，这里仅做了解。</strong></p>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL07-触发器</title>
     <url>/posts/10409.html</url>
     <content><![CDATA[<p>详细的描述了MySQL中的触发器。 <span id="more"></span></p>
@@ -2412,92 +2448,6 @@ src="https://wang-nine.cn/images/MySQL07-06delete%E8%A7%A6%E5%8F%91%E5%99%A8.png
 alt="MySQL07-06delete触发器" />
 <figcaption aria-hidden="true">MySQL07-06delete触发器</figcaption>
 </figure>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL08-视图</title>
-    <url>/posts/10410.html</url>
-    <content><![CDATA[<p>详细的描述了MySQL中的视图。 <span id="more"></span></p>
-<h1 id="视图的简介">视图的简介</h1>
-<p>​
-视图(View)是一种虚拟存在的表。视图中的数据并不在数据库中实际存在，行和列数据来自定义视图的查询中使用的表，并且是在使用视图时动态生成的。
-​
-通俗的讲，视图只保存了查询的SQL逻辑，不保存查询结果。所以我们在创建视图的时候，主要的工作在创建这条SQL查询语句上。</p>
-<h1 id="视图的语法">视图的语法</h1>
-<h2 id="创建">创建</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE [OR REPLACE] VIEW 视图名称 [(列名列表)] AS SELECT 语句[WITH[CASCADED|LOCAL] CHECK OPTION ]</span><br></pre></td></tr></table></figure>
-<h2 id="查询">查询</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW CREATE VIEW 视图名称; --查看创建视图语句</span><br><span class="line">SELECT * FROM 视图名称.......; --查看视图数据</span><br></pre></td></tr></table></figure>
-<h2 id="修改">修改</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 方式一</span><br><span class="line">CREATE [OR REPLACE] VIEW 视图名称(列名列表)] AS SELECT语句 [WITH[CASCADED|LOCAL] CHECK OPTION]</span><br><span class="line">-- 方式二</span><br><span class="line">ALTER VIEW 视图名称(列名列表)] AS SELECT语句 [WITH[CASCADED|LOCAL] CHECK OPTION]</span><br></pre></td></tr></table></figure>
-<h2 id="删除">删除</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP VIEW [IF EXISTS] 视图名称[视图名称] ...</span><br></pre></td></tr></table></figure>
-<h1 id="视图的检查选项">视图的检查选项</h1>
-<blockquote>
-<p>​ 当使用 WITH CHECK OPTION
-子句创建视图时，My5QL会通过视图检查正在更改的每个行，例如插入，更新，删除，以使其符合视图的定义。</p>
-<p>​
-MySQL允许基于另一个视图创建视图，它还会检查依赖视图中的规则以保持一致性。为了确定检查的范围，mysql
-提供了两个选项: CASCADED和LOCAL，默认值为CASCADED。</p>
-</blockquote>
-<h2 id="cascaded">cascaded</h2>
-<figure>
-<img src="https://wang-nine.cn/images/MySQL08-01cascaded.png"
-alt="MySQL08-01cascaded" />
-<figcaption aria-hidden="true">MySQL08-01cascaded</figcaption>
-</figure>
-<h2 id="local">local</h2>
-<figure>
-<img src="https://wang-nine.cn/images/MySQL08-02local.png"
-alt="MySQL08-02local" />
-<figcaption aria-hidden="true">MySQL08-02local</figcaption>
-</figure>
-<h1 id="视图的更新">视图的更新</h1>
-<p>要使视图可更新，视图中的行与基础表中的行之间必须存在一对一的关系。如果视图包含以下任何一项，则该视图不可更新:
-1. 聚合函数或窗口函数(SUM()、MIN()、MAX()、COUNT()等) 2. DISTINCT 3.
-GROUP BY 4. HAVING 5. UNION 或者 UNION ALL</p>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL06-存储函数</title>
-    <url>/posts/10408.html</url>
-    <content><![CDATA[<p>详细的描述了MySQL中的存储函数。 <span id="more"></span></p>
-<h1 id="存储函数">存储函数</h1>
-<p>存储函数是有返回值的存储过程，存储函数的参数只能是IN类型的。</p>
-<h2 id="语法">语法</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE FUNCTION 存储函数名称([参数列表])</span><br><span class="line">RETURNS type [characteristic ...]</span><br><span class="line">BEGIN</span><br><span class="line">	--SQL语句</span><br><span class="line">	RETURN ...;</span><br><span class="line">END;</span><br><span class="line"></span><br><span class="line">characteristic说明:</span><br><span class="line"> + DETERMINISTIC:相同的输入参数总是产生相同的结果</span><br><span class="line"> + NO SQL:不包含SQL语句。</span><br><span class="line"> + READS SQL DATA:包含读取数据的语句，但不包含写入数据的语句。</span><br></pre></td></tr></table></figure>
-<h2 id="样例">样例</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 存储函数</span><br><span class="line">-- 计算从1到n的累加</span><br><span class="line">create function fun1(n int)</span><br><span class="line">returns int deterministic </span><br><span class="line">begin</span><br><span class="line">    declare total int default 0;</span><br><span class="line"></span><br><span class="line">    while n &gt; 0 do</span><br><span class="line">        set total := total + n;</span><br><span class="line">        set n := n - 1;</span><br><span class="line">    end while;</span><br><span class="line"></span><br><span class="line">    return total;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">select fun1(100);</span><br></pre></td></tr></table></figure>
-<p><strong>注意当未添加 deterministic 会产生如下bug：</strong></p>
-<figure>
-<img
-src="https://wang-nine.cn/images/MySQL06-01%E6%9C%AA%E6%8C%87%E5%AE%9A%E5%8F%82%E6%95%B0%E6%80%A7%E8%B4%A8%E7%9A%84bug.png"
-alt="MySQL06-01未指定参数性质的bug" />
-<figcaption
-aria-hidden="true">MySQL06-01未指定参数性质的bug</figcaption>
-</figure>
-<p>运行结果：</p>
-<figure>
-<img
-src="https://wang-nine.cn/images/MySQL06-02%E5%AD%98%E5%82%A8%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png"
-alt="MySQL06-02存储函数的运行结果" />
-<figcaption aria-hidden="true">MySQL06-02存储函数的运行结果</figcaption>
-</figure>
-<h1 id="注意">注意</h1>
-<p><strong>存储函数必须要有返回值，而且参数只能是输入类型的参数，其过程实现完全可以被存储过程所代替。</strong></p>
-<p><strong>因此存储函数的使用较少，这里仅做了解。</strong></p>
 ]]></content>
       <categories>
         <category>MySQL</category>
@@ -2716,6 +2666,56 @@ lock退化为间隙锁。</li>
       </tags>
   </entry>
   <entry>
+    <title>MySQL08-视图</title>
+    <url>/posts/10410.html</url>
+    <content><![CDATA[<p>详细的描述了MySQL中的视图。 <span id="more"></span></p>
+<h1 id="视图的简介">视图的简介</h1>
+<p>​
+视图(View)是一种虚拟存在的表。视图中的数据并不在数据库中实际存在，行和列数据来自定义视图的查询中使用的表，并且是在使用视图时动态生成的。
+​
+通俗的讲，视图只保存了查询的SQL逻辑，不保存查询结果。所以我们在创建视图的时候，主要的工作在创建这条SQL查询语句上。</p>
+<h1 id="视图的语法">视图的语法</h1>
+<h2 id="创建">创建</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE [OR REPLACE] VIEW 视图名称 [(列名列表)] AS SELECT 语句[WITH[CASCADED|LOCAL] CHECK OPTION ]</span><br></pre></td></tr></table></figure>
+<h2 id="查询">查询</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW CREATE VIEW 视图名称; --查看创建视图语句</span><br><span class="line">SELECT * FROM 视图名称.......; --查看视图数据</span><br></pre></td></tr></table></figure>
+<h2 id="修改">修改</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 方式一</span><br><span class="line">CREATE [OR REPLACE] VIEW 视图名称(列名列表)] AS SELECT语句 [WITH[CASCADED|LOCAL] CHECK OPTION]</span><br><span class="line">-- 方式二</span><br><span class="line">ALTER VIEW 视图名称(列名列表)] AS SELECT语句 [WITH[CASCADED|LOCAL] CHECK OPTION]</span><br></pre></td></tr></table></figure>
+<h2 id="删除">删除</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP VIEW [IF EXISTS] 视图名称[视图名称] ...</span><br></pre></td></tr></table></figure>
+<h1 id="视图的检查选项">视图的检查选项</h1>
+<blockquote>
+<p>​ 当使用 WITH CHECK OPTION
+子句创建视图时，My5QL会通过视图检查正在更改的每个行，例如插入，更新，删除，以使其符合视图的定义。</p>
+<p>​
+MySQL允许基于另一个视图创建视图，它还会检查依赖视图中的规则以保持一致性。为了确定检查的范围，mysql
+提供了两个选项: CASCADED和LOCAL，默认值为CASCADED。</p>
+</blockquote>
+<h2 id="cascaded">cascaded</h2>
+<figure>
+<img src="https://wang-nine.cn/images/MySQL08-01cascaded.png"
+alt="MySQL08-01cascaded" />
+<figcaption aria-hidden="true">MySQL08-01cascaded</figcaption>
+</figure>
+<h2 id="local">local</h2>
+<figure>
+<img src="https://wang-nine.cn/images/MySQL08-02local.png"
+alt="MySQL08-02local" />
+<figcaption aria-hidden="true">MySQL08-02local</figcaption>
+</figure>
+<h1 id="视图的更新">视图的更新</h1>
+<p>要使视图可更新，视图中的行与基础表中的行之间必须存在一对一的关系。如果视图包含以下任何一项，则该视图不可更新:
+1. 聚合函数或窗口函数(SUM()、MIN()、MAX()、COUNT()等) 2. DISTINCT 3.
+GROUP BY 4. HAVING 5. UNION 或者 UNION ALL</p>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL10-InnoDB引擎01-架构</title>
     <url>/posts/10412.html</url>
     <content><![CDATA[<p>详细的描述了MySQL中的InnoDB引擎的架构。 <span id="more"></span></p>
@@ -2877,6 +2877,12 @@ href="https://wang-nine.cn/posts/10409.html">MySQL07-触发器</a></p>
       </tags>
   </entry>
   <entry>
+    <title></title>
+    <url>/posts/2.html</url>
+    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span>配置篇<span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line">set showmatch</span><br><span class="line">set hlsearch</span><br><span class="line">set incsearch</span><br><span class="line">set ignorecase</span><br><span class="line">set smartcase</span><br><span class="line">set history=<span class="number">3000000</span></span><br><span class="line">set commentary</span><br><span class="line">:set vb</span><br><span class="line">:set keep-english-in-normal</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span>基础篇<span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"><span class="string">&quot;debug神器</span></span><br><span class="line"><span class="string">nmap &lt;C-j&gt; :action StepOver&lt;CR&gt;</span></span><br><span class="line"><span class="string">nmap &lt;C-k&gt; :action Resume&lt;CR&gt;</span></span><br><span class="line"><span class="string">nmap &lt;C-h&gt; :action StepOut&lt;CR&gt;</span></span><br><span class="line"><span class="string">nmap &lt;C-l&gt; :action ForceStepInto&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>移动专精</span><br><span class="line">vmap &lt;C-j&gt; &lt;C-e&gt;</span><br><span class="line">vmap &lt;C-k&gt; &lt;C-y&gt;</span><br><span class="line">vmap &lt;C-h&gt; 10zh</span><br><span class="line">vmap &lt;C-l&gt; 10zl</span><br><span class="line"><span class="string">&quot;移动专精</span></span><br><span class="line"><span class="string">&quot;</span>imap &lt;C-j&gt; &lt;Esc&gt;ja</span><br><span class="line"><span class="string">&quot;imap &lt;C-k&gt; &lt;Esc&gt;ka</span></span><br><span class="line"><span class="string">&quot;</span>imap &lt;C-h&gt; &lt;Esc&gt;10zhi</span><br><span class="line"><span class="string">&quot;imap &lt;C-l&gt; &lt;Esc&gt;l10zla</span></span><br><span class="line"><span class="string">imap &lt;C-j&gt; &lt;Down&gt;</span></span><br><span class="line"><span class="string">imap &lt;C-k&gt; &lt;Up&gt;</span></span><br><span class="line"><span class="string">imap &lt;C-h&gt; &lt;Left&gt;</span></span><br><span class="line"><span class="string">imap &lt;C-l&gt; &lt;Right&gt;</span></span><br><span class="line"><span class="string">imap &lt;C-i&gt; &lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>左右视野</span><br><span class="line">nnoremap zH 50zh</span><br><span class="line">nnoremap zL 50zl</span><br><span class="line"><span class="string">&quot;^$符号太难按了</span></span><br><span class="line"><span class="string">map gh ^</span></span><br><span class="line"><span class="string">map gl $</span></span><br><span class="line"><span class="string">&quot;</span>代码提示</span><br><span class="line"><span class="string">&quot;imap &lt;C-n&gt; &lt;ESC&gt;:action HippieCompletion&lt;CR&gt;a</span></span><br><span class="line"><span class="string">&quot;</span>imap &lt;C-p&gt; &lt;ESC&gt;:action HippieBackwardCompletion&lt;CR&gt;a</span><br><span class="line"><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span>重构篇<span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"><span class="string">&quot;元素名称重构</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;re :action RenameElement&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>移动重构</span><br><span class="line">noremap &lt;Space&gt;mv :action Move&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;成员变量转换为静态变量重构(配合移动重构有奇效)</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ms :action MakeStatic&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>静态变量转换为成员变量重构</span><br><span class="line">noremap &lt;Space&gt;ci :action ConvertToInstanceMethod&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;内联重构(合并无效变量无效方法)</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;il :action Inline&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>抽取方法重构</span><br><span class="line">noremap &lt;Space&gt;em :action ExtractMethod&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;抽取接口重构</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ei :action ExtractInterface&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>字段的访问限制</span><br><span class="line">noremap &lt;Space&gt;ef :action EncapsulateFields&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;切换方法为方法对象</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;rmo :action ReplaceMethodWithMethodObject&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>引入临时变量</span><br><span class="line">noremap &lt;Space&gt;iv :action IntroduceVariable&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;引入常量</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ic :action IntroduceConstant&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>引入方法参数</span><br><span class="line">noremap &lt;Space&gt;ip :action IntroduceParameter&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;引入字段</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;if :action IntroduceField&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>引入参数对象(指定参数)</span><br><span class="line">noremap &lt;Space&gt;po :action IntroduceParameterObject&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;方法下放到子类</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;pd :action MemberPushDown&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>方法上移到父类</span><br><span class="line">noremap &lt;Space&gt;pu :action MembersPullUp&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;文件名称重构</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;RF :action RenameFile&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>修改方法签名</span><br><span class="line">noremap &lt;Space&gt;cs  :action ChangeSignature&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;抽取类</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ec :action ExtractClass&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>匿名类到内部类</span><br><span class="line">noremap &lt;Space&gt;ai :action AnonymousToInner&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span>跳转篇<span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"><span class="string">&quot;搜索任何位置</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;te :action SearchEverywhere&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>特殊变量跳转</span><br><span class="line">nnoremap &lt;Space&gt;ts mm`m:action GotoSymbol&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;url地址跳转</span></span><br><span class="line"><span class="string">noremap  &lt;Space&gt;tu  mm`m:action Toolkit.GotoService&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>动作跳转</span><br><span class="line">nnoremap &lt;Space&gt;ta mm`m:action GotoAction&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;文件跳转</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;tf mm`m:action GotoFile&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>测试类跳转</span><br><span class="line">noremap &lt;Space&gt;tt mm`m:action GotoTest&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;java类跳转</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;tc mm`m:action GotoClass&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>文本跳转</span><br><span class="line">noremap &lt;Space&gt;tp mm`m:action FindInPath&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;跳转下个报错处</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ne mm`m:action GotoNextError&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>跳转上个报错处</span><br><span class="line">noremap &lt;Space&gt;pe mm`m:action GotoPreviousError&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;从子类方法跳到父类的方法</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;gs mm`m:action GotoSuperMethod&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>跳到方法实现</span><br><span class="line">noremap &lt;Space&gt;gi mm`m:action GotoImplementation&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;跳转到下个改动处</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;g, mm`m:action JumpToLastChange&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>跳转到上个改动处</span><br><span class="line">noremap &lt;Space&gt;g; mm`m:action JumpToNextChange&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;最近查看文件间相互跳转</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;rf mm`m:action RecentFiles&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>最近改动文件间相互跳转</span><br><span class="line">noremap &lt;Space&gt;rF mm`m:action RecentChangedFiles&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;项目之间的跳转(上一个)</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;nw :action NextProjectWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>项目之间的跳转(下一个)</span><br><span class="line">noremap &lt;Space&gt;pw :action PreviousProjectWindow&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;跳转 需要安装AceJump插件</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;tj mm`m:action AceWordAction&lt;CR&gt;</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;jp mm`m:action AceDeclarationAction&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;SQL篇&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">&quot;</span>sql提交</span><br><span class="line">noremap &lt;Space&gt;sc :action Console.Transaction.Commit&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;sql回滚</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;sr :action Console.Transaction.Rollback&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>sql执行</span><br><span class="line">noremap &lt;Space&gt;se :action Console.Jdbc.Execute&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;sql执行计划</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ep :action Console.Jdbc.ExplainPlan&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>sql-raw执行计划</span><br><span class="line">noremap &lt;Space&gt;EP :action Console.Jdbc.ExplainPlan.Raw&lt;CR&gt;</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;打开数据库日志窗口,前提安装了MyBatis Log Plugin插件</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;sl :action TailMyBatisLog0&lt;CR&gt;</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;SL :action ActivateMyBatisLogToolWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;AL :action TailMyBatisLog0&lt;CR&gt;:action ActivateMyBatisLogToolWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;运行篇&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">&quot;</span>设置运行配置</span><br><span class="line">nnoremap &lt;Space&gt;rc :action RunConfiguration&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;运行上次运行的类</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;rr :action Run&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>运行当前(now)类</span><br><span class="line">noremap &lt;Space&gt;rn :action RunClass&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;debug上次运行的类</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;dd :action Debug&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>debug当前(now)类</span><br><span class="line">noremap &lt;Space&gt;dn :action DebugClass&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;统计单元测试覆盖率运行上个类</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;cc :action Coverage&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>统计单元测试覆盖率运行当前(now)类</span><br><span class="line">noremap &lt;Space&gt;cn :action RunCoverage&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;项目停止运行</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;sp   :action Stop&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;Debug篇&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">&quot;</span>开启或关闭当前行断点</span><br><span class="line">noremap &lt;Space&gt;bp :action ToggleLineBreakpoint&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;debug时快速计算表达式</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;qe :action QuickEvaluateExpression &lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>debug计算器</span><br><span class="line">noremap &lt;Space&gt;ee :action EvaluateExpression &lt;CR&gt;</span><br><span class="line"><span class="string">&quot;debug强制返回</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;fr :action Debugger.ForceEarlyReturn&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>添加新的debug观察</span><br><span class="line">noremap &lt;Space&gt;daw :action Debugger.AddToWatch&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;debug强制运行到光标处</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;fc :action ForceRunToCursor&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>安装了JRebel且在JRebel debug下才生效,热更新</span><br><span class="line">noremap &lt;Space&gt;hs :action Hotswap&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;安装了JRebel的debug运行</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;DD :action JRebel Debug&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>去除所有断点在当前文件中</span><br><span class="line">noremap &lt;Space&gt;rab :action Debugger.RemoveAllBreakpointsInFile&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;去除所有断点</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;raB :action Debugger.RemoveAllBreakpoints&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>弹出帧</span><br><span class="line">noremap &lt;Space&gt;df :action Debugger.PopFrame&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;显示当前断点位置</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;pp :action ShowExecutionPoint&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>流追踪技术</span><br><span class="line">noremap &lt;Space&gt;ds :action StreamTracerAction&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;哑断点技术</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;mb :action XDebugger.MuteBreakpoints&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>条件断点编辑</span><br><span class="line">noremap &lt;Space&gt;eb :action EditBreakpoint&lt;CR&gt;</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span>窗口篇<span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"><span class="string">&quot;激活maven窗口</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;AM  :action ActivateMavenToolWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>激活database窗口</span><br><span class="line">noremap &lt;Space&gt;AD  :action ActivateDatabaseToolWindow&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;激活todo的窗口</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;AT   :action ActivateTODOToolWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>激活Favorites的窗口</span><br><span class="line">noremap &lt;Space&gt;AF :action ActivateFavoritesToolWindow&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;激活project的窗口</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;AP :action ActivateProjectToolWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>激活git的窗口</span><br><span class="line">noremap &lt;Space&gt;AG :action ActivateVersionControlToolWindow&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;激活git的窗口</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;AS :action ActivateServicesToolWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>激活Breakpoints的窗口.</span><br><span class="line">noremap &lt;Space&gt;AB :action ViewBreakpoints&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;激活Rest的窗口(需要安装插件)</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;AR :action ActivateRestServicesToolWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>激活debug的运行窗口</span><br><span class="line">nnoremap &lt;Space&gt;wd :action ActivateDebugToolWindow&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;激活run的运行窗口</span></span><br><span class="line"><span class="string">nnoremap &lt;Space&gt;wr :action ActivateRunToolWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>隐藏窗口(windows hide)</span><br><span class="line">nnoremap &lt;Space&gt;wh :action HideActiveWindow&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;窗口最大化windows max</span></span><br><span class="line"><span class="string">nnoremap &lt;Space&gt;mm :action MaximizeToolWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>隐藏所有窗口</span><br><span class="line">noremap &lt;Space&gt;ha :action HideAllWindows&lt;CR&gt;</span><br><span class="line">noremap &lt;Space&gt;&lt;Space&gt; :action HideAllWindows&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;激活窗口,选中当前位置</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;si :action SelectInProjectView&lt;CR&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;信息篇&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">&quot;</span>弹出警告信息</span><br><span class="line">noremap &lt;Space&gt;ed :action ShowErrorDescription&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;弹出类型信息</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ti :action ExpressionTypeInfo&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>弹出参数信息</span><br><span class="line">noremap &lt;Space&gt;pi :action ParameterInfo&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;快速显示当前方法信息</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;jd :action QuickJavaDoc&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>弹出文件结构信息</span><br><span class="line">noremap &lt;Space&gt;fs mm`m:action FileStructurePopup&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;显示maven的依赖层级信息</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;sd  :action ShowUmlDiagram&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>弹出方法调用层级信息</span><br><span class="line">noremap &lt;Space&gt;ch :action CallHierarchy&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;查找引用了当前方法的文件信息</span></span><br><span class="line"><span class="string">nnoremap &lt;Space&gt;fu :action FindUsages&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>查找方法内使用该变量的引用信息</span><br><span class="line">nnoremap &lt;Space&gt;su :action ShowUsages&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;弹出方法结构信息</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;mh :action MethodHierarchy&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>弹出设置信息</span><br><span class="line">noremap &lt;Space&gt;ss  :action ShowSettings&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;弹出项目结构信息</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ps :action ShowProjectStructureSettings&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;项目篇&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">&quot;</span>关闭项目</span><br><span class="line">noremap &lt;Space&gt;cP :action CloseProject&lt;CR&gt;</span><br><span class="line">noremap &lt;Space&gt;CP :action CloseProject&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;打开项目</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;oP :action OpenFile&lt;CR&gt;</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;OP :action OpenFile&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>新建项目</span><br><span class="line">noremap &lt;Space&gt;nP :action NewProject&lt;CR&gt;</span><br><span class="line">noremap &lt;Space&gt;NP :action NewProject&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span>实用工具篇<span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"><span class="string">&quot;代码环绕</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;sw :action SurroundWith&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>整理代码</span><br><span class="line">noremap &lt;Space&gt;= :action ReformatCode&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;弹出菜单</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;sm :action ShowPopupMenu&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>保存模板</span><br><span class="line">noremap &lt;Space&gt;st :action SaveAsTemplate&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;复制当前文件的绝对路径</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;cap   :action CopyAbsolutePath&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>复制当前文件名</span><br><span class="line">noremap &lt;Space&gt;ccp   :action CopyContentRootPath&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;优化导入</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;oi :action OptimizeImports&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>改变视图</span><br><span class="line">nnoremap &lt;Space&gt;cv :action ChangeView&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;关闭到只剩当前tab栏</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;co :action CloseAllEditorsButActive&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>g4文件生成代码(需要安装anltr4插件)</span><br><span class="line">noremap &lt;Space&gt;ag :action antlr.Generate&lt;CR&gt;:action antlr.Generate&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;显示字节码</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;bc   :action ByteCodeViewer&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>快速翻译(需要安装翻译插件)</span><br><span class="line">noremap &lt;Space&gt;qq   :action $TranslateTextComponent&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;替换翻译(需要安装翻译插件)</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;tr :action $TranslateAndReplaceAction&lt;CR&gt;</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;gfu :action GenerateFullRestUrl&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>添加到收藏文件</span><br><span class="line">noremap &lt;Space&gt;atf :action AddToFavorites&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;复制文件元素</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;cE :action CopyElement&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>新建文件元素</span><br><span class="line">noremap &lt;Space&gt;nE :action NewElement&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;删除当前文件元素</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;dE :action SafeDelete&lt;CR&gt;</span></span><br><span class="line"><span class="string">nnoremap &lt;Space&gt;cp :action CheckinProject&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>idea智能提示</span><br><span class="line">nnoremap &lt;CR&gt;&lt;CR&gt; :action ShowIntentionActions&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;跳转下个报错处(这个与idea智能提示配起来,炒鸡爽)</span></span><br><span class="line"><span class="string">nnoremap &lt;Space&gt;&lt;CR&gt; :action GotoNextError&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>新建类,比nE快</span><br><span class="line">noremap &lt;Space&gt;nc :action NewClass&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;打开项目设置</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ps :action ShowProjectStructureSettings&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>露出文件夹</span><br><span class="line">noremap &lt;Space&gt;ri :action RevealIn&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;代码生成</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ga :action Generate&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>删除未修改的tab</span><br><span class="line">noremap &lt;Space&gt;cu :action CloseAllUnmodifiedEditors&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;Codota查找类似代码，需要提前安装Codota插件</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;oc :action OpenCodotaSearch&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>Codota激活窗口，需要提前安装Codota插件</span><br><span class="line">noremap &lt;Space&gt;AC :action ActivateCodotaToolWindow&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;Codota激活窗口，需要提前安装Codota插件</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;cl :action CodotaLeanSearchCrossRefAction&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>CSDN万能工具，需要提前安装CSDN插件</span><br><span class="line">noremap &lt;Space&gt;csdn :action SearchByCSDN&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;大小写，驼峰，下划线，中划线转换</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;uu :action de.netnexus.CamelCasePlugin.ToggleCamelCase&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>替换</span><br><span class="line">noremap &lt;Space&gt;rp :action ReplaceInPath&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;vim配置操作</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;vm :action VimActions&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>查看代码git作者</span><br><span class="line">noremap &lt;Space&gt;us :action Annotate&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;打开ddl语句</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;dl :action DatabaseView.OpenDdlInConsole&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>大小写切换，必须要先安装插件</span><br><span class="line">noremap &lt;Space&gt;u :action de.netnexus.CamelCasePlugin.ToggleCamelCase&lt;CR&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>SSM01-Spring中的Bean</title>
     <url>/posts/10301.html</url>
     <content><![CDATA[<p>简单的介绍了Spring中的架构以及IOC和DI。 <span id="more"></span></p>
@@ -2972,12 +2978,6 @@ prototype（非单例）</strong></p>
       <tags>
         <tag>Spring</tag>
       </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/posts/2.html</url>
-    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span>配置篇<span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line">set showmatch</span><br><span class="line">set hlsearch</span><br><span class="line">set incsearch</span><br><span class="line">set ignorecase</span><br><span class="line">set smartcase</span><br><span class="line">set history=<span class="number">3000000</span></span><br><span class="line">set commentary</span><br><span class="line">:set vb</span><br><span class="line">:set keep-english-in-normal</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span>基础篇<span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"><span class="string">&quot;debug神器</span></span><br><span class="line"><span class="string">nmap &lt;C-j&gt; :action StepOver&lt;CR&gt;</span></span><br><span class="line"><span class="string">nmap &lt;C-k&gt; :action Resume&lt;CR&gt;</span></span><br><span class="line"><span class="string">nmap &lt;C-h&gt; :action StepOut&lt;CR&gt;</span></span><br><span class="line"><span class="string">nmap &lt;C-l&gt; :action ForceStepInto&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>移动专精</span><br><span class="line">vmap &lt;C-j&gt; &lt;C-e&gt;</span><br><span class="line">vmap &lt;C-k&gt; &lt;C-y&gt;</span><br><span class="line">vmap &lt;C-h&gt; 10zh</span><br><span class="line">vmap &lt;C-l&gt; 10zl</span><br><span class="line"><span class="string">&quot;移动专精</span></span><br><span class="line"><span class="string">&quot;</span>imap &lt;C-j&gt; &lt;Esc&gt;ja</span><br><span class="line"><span class="string">&quot;imap &lt;C-k&gt; &lt;Esc&gt;ka</span></span><br><span class="line"><span class="string">&quot;</span>imap &lt;C-h&gt; &lt;Esc&gt;10zhi</span><br><span class="line"><span class="string">&quot;imap &lt;C-l&gt; &lt;Esc&gt;l10zla</span></span><br><span class="line"><span class="string">imap &lt;C-j&gt; &lt;Down&gt;</span></span><br><span class="line"><span class="string">imap &lt;C-k&gt; &lt;Up&gt;</span></span><br><span class="line"><span class="string">imap &lt;C-h&gt; &lt;Left&gt;</span></span><br><span class="line"><span class="string">imap &lt;C-l&gt; &lt;Right&gt;</span></span><br><span class="line"><span class="string">imap &lt;C-i&gt; &lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>左右视野</span><br><span class="line">nnoremap zH 50zh</span><br><span class="line">nnoremap zL 50zl</span><br><span class="line"><span class="string">&quot;^$符号太难按了</span></span><br><span class="line"><span class="string">map gh ^</span></span><br><span class="line"><span class="string">map gl $</span></span><br><span class="line"><span class="string">&quot;</span>代码提示</span><br><span class="line"><span class="string">&quot;imap &lt;C-n&gt; &lt;ESC&gt;:action HippieCompletion&lt;CR&gt;a</span></span><br><span class="line"><span class="string">&quot;</span>imap &lt;C-p&gt; &lt;ESC&gt;:action HippieBackwardCompletion&lt;CR&gt;a</span><br><span class="line"><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span>重构篇<span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"><span class="string">&quot;元素名称重构</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;re :action RenameElement&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>移动重构</span><br><span class="line">noremap &lt;Space&gt;mv :action Move&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;成员变量转换为静态变量重构(配合移动重构有奇效)</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ms :action MakeStatic&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>静态变量转换为成员变量重构</span><br><span class="line">noremap &lt;Space&gt;ci :action ConvertToInstanceMethod&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;内联重构(合并无效变量无效方法)</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;il :action Inline&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>抽取方法重构</span><br><span class="line">noremap &lt;Space&gt;em :action ExtractMethod&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;抽取接口重构</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ei :action ExtractInterface&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>字段的访问限制</span><br><span class="line">noremap &lt;Space&gt;ef :action EncapsulateFields&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;切换方法为方法对象</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;rmo :action ReplaceMethodWithMethodObject&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>引入临时变量</span><br><span class="line">noremap &lt;Space&gt;iv :action IntroduceVariable&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;引入常量</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ic :action IntroduceConstant&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>引入方法参数</span><br><span class="line">noremap &lt;Space&gt;ip :action IntroduceParameter&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;引入字段</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;if :action IntroduceField&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>引入参数对象(指定参数)</span><br><span class="line">noremap &lt;Space&gt;po :action IntroduceParameterObject&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;方法下放到子类</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;pd :action MemberPushDown&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>方法上移到父类</span><br><span class="line">noremap &lt;Space&gt;pu :action MembersPullUp&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;文件名称重构</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;RF :action RenameFile&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>修改方法签名</span><br><span class="line">noremap &lt;Space&gt;cs  :action ChangeSignature&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;抽取类</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ec :action ExtractClass&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>匿名类到内部类</span><br><span class="line">noremap &lt;Space&gt;ai :action AnonymousToInner&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span>跳转篇<span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"><span class="string">&quot;搜索任何位置</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;te :action SearchEverywhere&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>特殊变量跳转</span><br><span class="line">nnoremap &lt;Space&gt;ts mm`m:action GotoSymbol&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;url地址跳转</span></span><br><span class="line"><span class="string">noremap  &lt;Space&gt;tu  mm`m:action Toolkit.GotoService&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>动作跳转</span><br><span class="line">nnoremap &lt;Space&gt;ta mm`m:action GotoAction&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;文件跳转</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;tf mm`m:action GotoFile&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>测试类跳转</span><br><span class="line">noremap &lt;Space&gt;tt mm`m:action GotoTest&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;java类跳转</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;tc mm`m:action GotoClass&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>文本跳转</span><br><span class="line">noremap &lt;Space&gt;tp mm`m:action FindInPath&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;跳转下个报错处</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ne mm`m:action GotoNextError&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>跳转上个报错处</span><br><span class="line">noremap &lt;Space&gt;pe mm`m:action GotoPreviousError&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;从子类方法跳到父类的方法</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;gs mm`m:action GotoSuperMethod&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>跳到方法实现</span><br><span class="line">noremap &lt;Space&gt;gi mm`m:action GotoImplementation&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;跳转到下个改动处</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;g, mm`m:action JumpToLastChange&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>跳转到上个改动处</span><br><span class="line">noremap &lt;Space&gt;g; mm`m:action JumpToNextChange&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;最近查看文件间相互跳转</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;rf mm`m:action RecentFiles&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>最近改动文件间相互跳转</span><br><span class="line">noremap &lt;Space&gt;rF mm`m:action RecentChangedFiles&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;项目之间的跳转(上一个)</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;nw :action NextProjectWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>项目之间的跳转(下一个)</span><br><span class="line">noremap &lt;Space&gt;pw :action PreviousProjectWindow&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;跳转 需要安装AceJump插件</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;tj mm`m:action AceWordAction&lt;CR&gt;</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;jp mm`m:action AceDeclarationAction&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;SQL篇&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">&quot;</span>sql提交</span><br><span class="line">noremap &lt;Space&gt;sc :action Console.Transaction.Commit&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;sql回滚</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;sr :action Console.Transaction.Rollback&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>sql执行</span><br><span class="line">noremap &lt;Space&gt;se :action Console.Jdbc.Execute&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;sql执行计划</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ep :action Console.Jdbc.ExplainPlan&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>sql-raw执行计划</span><br><span class="line">noremap &lt;Space&gt;EP :action Console.Jdbc.ExplainPlan.Raw&lt;CR&gt;</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;打开数据库日志窗口,前提安装了MyBatis Log Plugin插件</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;sl :action TailMyBatisLog0&lt;CR&gt;</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;SL :action ActivateMyBatisLogToolWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;AL :action TailMyBatisLog0&lt;CR&gt;:action ActivateMyBatisLogToolWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;运行篇&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">&quot;</span>设置运行配置</span><br><span class="line">nnoremap &lt;Space&gt;rc :action RunConfiguration&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;运行上次运行的类</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;rr :action Run&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>运行当前(now)类</span><br><span class="line">noremap &lt;Space&gt;rn :action RunClass&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;debug上次运行的类</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;dd :action Debug&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>debug当前(now)类</span><br><span class="line">noremap &lt;Space&gt;dn :action DebugClass&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;统计单元测试覆盖率运行上个类</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;cc :action Coverage&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>统计单元测试覆盖率运行当前(now)类</span><br><span class="line">noremap &lt;Space&gt;cn :action RunCoverage&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;项目停止运行</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;sp   :action Stop&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;Debug篇&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">&quot;</span>开启或关闭当前行断点</span><br><span class="line">noremap &lt;Space&gt;bp :action ToggleLineBreakpoint&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;debug时快速计算表达式</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;qe :action QuickEvaluateExpression &lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>debug计算器</span><br><span class="line">noremap &lt;Space&gt;ee :action EvaluateExpression &lt;CR&gt;</span><br><span class="line"><span class="string">&quot;debug强制返回</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;fr :action Debugger.ForceEarlyReturn&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>添加新的debug观察</span><br><span class="line">noremap &lt;Space&gt;daw :action Debugger.AddToWatch&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;debug强制运行到光标处</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;fc :action ForceRunToCursor&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>安装了JRebel且在JRebel debug下才生效,热更新</span><br><span class="line">noremap &lt;Space&gt;hs :action Hotswap&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;安装了JRebel的debug运行</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;DD :action JRebel Debug&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>去除所有断点在当前文件中</span><br><span class="line">noremap &lt;Space&gt;rab :action Debugger.RemoveAllBreakpointsInFile&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;去除所有断点</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;raB :action Debugger.RemoveAllBreakpoints&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>弹出帧</span><br><span class="line">noremap &lt;Space&gt;df :action Debugger.PopFrame&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;显示当前断点位置</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;pp :action ShowExecutionPoint&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>流追踪技术</span><br><span class="line">noremap &lt;Space&gt;ds :action StreamTracerAction&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;哑断点技术</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;mb :action XDebugger.MuteBreakpoints&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>条件断点编辑</span><br><span class="line">noremap &lt;Space&gt;eb :action EditBreakpoint&lt;CR&gt;</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span>窗口篇<span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"><span class="string">&quot;激活maven窗口</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;AM  :action ActivateMavenToolWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>激活database窗口</span><br><span class="line">noremap &lt;Space&gt;AD  :action ActivateDatabaseToolWindow&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;激活todo的窗口</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;AT   :action ActivateTODOToolWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>激活Favorites的窗口</span><br><span class="line">noremap &lt;Space&gt;AF :action ActivateFavoritesToolWindow&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;激活project的窗口</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;AP :action ActivateProjectToolWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>激活git的窗口</span><br><span class="line">noremap &lt;Space&gt;AG :action ActivateVersionControlToolWindow&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;激活git的窗口</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;AS :action ActivateServicesToolWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>激活Breakpoints的窗口.</span><br><span class="line">noremap &lt;Space&gt;AB :action ViewBreakpoints&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;激活Rest的窗口(需要安装插件)</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;AR :action ActivateRestServicesToolWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>激活debug的运行窗口</span><br><span class="line">nnoremap &lt;Space&gt;wd :action ActivateDebugToolWindow&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;激活run的运行窗口</span></span><br><span class="line"><span class="string">nnoremap &lt;Space&gt;wr :action ActivateRunToolWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>隐藏窗口(windows hide)</span><br><span class="line">nnoremap &lt;Space&gt;wh :action HideActiveWindow&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;窗口最大化windows max</span></span><br><span class="line"><span class="string">nnoremap &lt;Space&gt;mm :action MaximizeToolWindow&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>隐藏所有窗口</span><br><span class="line">noremap &lt;Space&gt;ha :action HideAllWindows&lt;CR&gt;</span><br><span class="line">noremap &lt;Space&gt;&lt;Space&gt; :action HideAllWindows&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;激活窗口,选中当前位置</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;si :action SelectInProjectView&lt;CR&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;信息篇&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">&quot;</span>弹出警告信息</span><br><span class="line">noremap &lt;Space&gt;ed :action ShowErrorDescription&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;弹出类型信息</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ti :action ExpressionTypeInfo&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>弹出参数信息</span><br><span class="line">noremap &lt;Space&gt;pi :action ParameterInfo&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;快速显示当前方法信息</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;jd :action QuickJavaDoc&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>弹出文件结构信息</span><br><span class="line">noremap &lt;Space&gt;fs mm`m:action FileStructurePopup&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;显示maven的依赖层级信息</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;sd  :action ShowUmlDiagram&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>弹出方法调用层级信息</span><br><span class="line">noremap &lt;Space&gt;ch :action CallHierarchy&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;查找引用了当前方法的文件信息</span></span><br><span class="line"><span class="string">nnoremap &lt;Space&gt;fu :action FindUsages&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>查找方法内使用该变量的引用信息</span><br><span class="line">nnoremap &lt;Space&gt;su :action ShowUsages&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;弹出方法结构信息</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;mh :action MethodHierarchy&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>弹出设置信息</span><br><span class="line">noremap &lt;Space&gt;ss  :action ShowSettings&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;弹出项目结构信息</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ps :action ShowProjectStructureSettings&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;项目篇&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">&quot;</span>关闭项目</span><br><span class="line">noremap &lt;Space&gt;cP :action CloseProject&lt;CR&gt;</span><br><span class="line">noremap &lt;Space&gt;CP :action CloseProject&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;打开项目</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;oP :action OpenFile&lt;CR&gt;</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;OP :action OpenFile&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>新建项目</span><br><span class="line">noremap &lt;Space&gt;nP :action NewProject&lt;CR&gt;</span><br><span class="line">noremap &lt;Space&gt;NP :action NewProject&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span>实用工具篇<span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"><span class="string">&quot;代码环绕</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;sw :action SurroundWith&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>整理代码</span><br><span class="line">noremap &lt;Space&gt;= :action ReformatCode&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;弹出菜单</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;sm :action ShowPopupMenu&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>保存模板</span><br><span class="line">noremap &lt;Space&gt;st :action SaveAsTemplate&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;复制当前文件的绝对路径</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;cap   :action CopyAbsolutePath&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>复制当前文件名</span><br><span class="line">noremap &lt;Space&gt;ccp   :action CopyContentRootPath&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;优化导入</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;oi :action OptimizeImports&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>改变视图</span><br><span class="line">nnoremap &lt;Space&gt;cv :action ChangeView&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;关闭到只剩当前tab栏</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;co :action CloseAllEditorsButActive&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>g4文件生成代码(需要安装anltr4插件)</span><br><span class="line">noremap &lt;Space&gt;ag :action antlr.Generate&lt;CR&gt;:action antlr.Generate&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;显示字节码</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;bc   :action ByteCodeViewer&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>快速翻译(需要安装翻译插件)</span><br><span class="line">noremap &lt;Space&gt;qq   :action $TranslateTextComponent&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;替换翻译(需要安装翻译插件)</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;tr :action $TranslateAndReplaceAction&lt;CR&gt;</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;gfu :action GenerateFullRestUrl&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>添加到收藏文件</span><br><span class="line">noremap &lt;Space&gt;atf :action AddToFavorites&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;复制文件元素</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;cE :action CopyElement&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>新建文件元素</span><br><span class="line">noremap &lt;Space&gt;nE :action NewElement&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;删除当前文件元素</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;dE :action SafeDelete&lt;CR&gt;</span></span><br><span class="line"><span class="string">nnoremap &lt;Space&gt;cp :action CheckinProject&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>idea智能提示</span><br><span class="line">nnoremap &lt;CR&gt;&lt;CR&gt; :action ShowIntentionActions&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;跳转下个报错处(这个与idea智能提示配起来,炒鸡爽)</span></span><br><span class="line"><span class="string">nnoremap &lt;Space&gt;&lt;CR&gt; :action GotoNextError&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>新建类,比nE快</span><br><span class="line">noremap &lt;Space&gt;nc :action NewClass&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;打开项目设置</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ps :action ShowProjectStructureSettings&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>露出文件夹</span><br><span class="line">noremap &lt;Space&gt;ri :action RevealIn&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;代码生成</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;ga :action Generate&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>删除未修改的tab</span><br><span class="line">noremap &lt;Space&gt;cu :action CloseAllUnmodifiedEditors&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;Codota查找类似代码，需要提前安装Codota插件</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;oc :action OpenCodotaSearch&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>Codota激活窗口，需要提前安装Codota插件</span><br><span class="line">noremap &lt;Space&gt;AC :action ActivateCodotaToolWindow&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;Codota激活窗口，需要提前安装Codota插件</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;cl :action CodotaLeanSearchCrossRefAction&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>CSDN万能工具，需要提前安装CSDN插件</span><br><span class="line">noremap &lt;Space&gt;csdn :action SearchByCSDN&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;大小写，驼峰，下划线，中划线转换</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;uu :action de.netnexus.CamelCasePlugin.ToggleCamelCase&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>替换</span><br><span class="line">noremap &lt;Space&gt;rp :action ReplaceInPath&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;vim配置操作</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;vm :action VimActions&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>查看代码git作者</span><br><span class="line">noremap &lt;Space&gt;us :action Annotate&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;打开ddl语句</span></span><br><span class="line"><span class="string">noremap &lt;Space&gt;dl :action DatabaseView.OpenDdlInConsole&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>大小写切换，必须要先安装插件</span><br><span class="line">noremap &lt;Space&gt;u :action de.netnexus.CamelCasePlugin.ToggleCamelCase&lt;CR&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
   </entry>
   <entry>
     <title>SSM02-Spring中Bean的实例化与依赖注入</title>
@@ -3388,6 +3388,55 @@ class="citation" data-cites="PreDestroy">@PreDestroy</span></td>
       </tags>
   </entry>
   <entry>
+    <title>SSM04-Spring整合MyBatis</title>
+    <url>/posts/10304.html</url>
+    <content><![CDATA[<p>详细的描述了Spring整合myBatis和Spring整合Junit。 <span id="more"></span></p>
+<h1 id="spring整合mybatis">Spring整合myBatis</h1>
+<p>正常的mybatis核心代码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">App</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        </span><br><span class="line"><span class="comment">//----------------------------------------------------------------------------------------------------//</span></span><br><span class="line">        <span class="comment">// 1. 创建SqlSessionFactoryBuilder对象</span></span><br><span class="line">        <span class="type">SqlSessionFactoryBuilder</span> <span class="variable">sqlSessionFactoryBuilder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SqlSessionFactoryBuilder</span>();</span><br><span class="line">        <span class="comment">// 2. 加载SqlMapConfig.xml配置文件</span></span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> Resources.getResourceAsStream(<span class="string">&quot;SqlMapConfig.xml.bak&quot;</span>);</span><br><span class="line">        <span class="comment">// 3. 创建SqlSessionFactory对象</span></span><br><span class="line">        <span class="type">SqlSessionFactory</span> <span class="variable">sqlSessionFactory</span> <span class="operator">=</span> sqlSessionFactoryBuilder.build(inputStream);</span><br><span class="line"><span class="comment">//---------------------------------  一、初始化SqlSessionFactory对象   ----------------------------------//</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 4. 获取SqlSession</span></span><br><span class="line">        <span class="type">SqlSession</span> <span class="variable">sqlSession</span> <span class="operator">=</span> sqlSessionFactory.openSession();</span><br><span class="line">        <span class="comment">// 5. 执行SqlSession对象执行查询，获取结果User</span></span><br><span class="line">        <span class="type">AccountDao</span> <span class="variable">accountDao</span> <span class="operator">=</span> sqlSession.getMapper(AccountDao.class);</span><br><span class="line"></span><br><span class="line"><span class="comment">//---------------------------------  二、获取连接，获取实现   --------------------------------------------//</span></span><br><span class="line"></span><br><span class="line">        <span class="type">Account</span> <span class="variable">ac</span> <span class="operator">=</span> accountDao.findById(<span class="number">2</span>);</span><br><span class="line">        System.out.println(ac);</span><br><span class="line"></span><br><span class="line"><span class="comment">//---------------------------------  三、获取数据层接口   -----------------------------------------------//</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 6. 释放资源</span></span><br><span class="line">        sqlSession.close();</span><br><span class="line"></span><br><span class="line"><span class="comment">//---------------------------------  四、关闭连接   ----------------------------------------------------//</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么上述的代码需要将那个核心对象放入IoC中进行管理呢</p>
+<p><strong>SqlSessionFactory</strong> 最核心</p>
+<h2 id="原来的整合方法">原来的整合方法</h2>
+<p>xml配置：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">configuration</span></span></span><br><span class="line"><span class="meta">        <span class="keyword">PUBLIC</span> <span class="string">&quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span></span></span><br><span class="line"><span class="meta">        <span class="string">&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span> <span class="attr">resource</span>=<span class="string">&quot;jdbc.properties&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">&quot;com.itheima.domain&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">&quot;mysql&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">&quot;mysql&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">&quot;JDBC&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">transactionManager</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">&quot;POOLED&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;driver&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.driver&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;url&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.url&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.username&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.password&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">&quot;com.itheima.dao&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>主函数：</p>
+<p>即上述的mybatis核心代码</p>
+<p><strong>注意：xml配置与配置类的写法一一对应，原来的配置文件被新的配置类所代替，如下位配置类。</strong></p>
+<h2 id="更改后的">更改后的</h2>
+<p>配置类：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.mybatis.spring.SqlSessionFactoryBean;</span><br><span class="line"><span class="keyword">import</span> org.mybatis.spring.mapper.MapperScannerConfigurer;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.sql.DataSource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MybatisConfig</span> &#123;</span><br><span class="line">    <span class="comment">//定义bean，SqlSessionFactoryBean，用于产生SqlSessionFactory对象</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> SqlSessionFactoryBean <span class="title function_">sqlSessionFactory</span><span class="params">(DataSource dataSource)</span>&#123;</span><br><span class="line">        <span class="type">SqlSessionFactoryBean</span> <span class="variable">ssfb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SqlSessionFactoryBean</span>();</span><br><span class="line">        ssfb.setTypeAliasesPackage(<span class="string">&quot;com.itheima.domain&quot;</span>);</span><br><span class="line">        ssfb.setDataSource(dataSource);</span><br><span class="line">        <span class="keyword">return</span> ssfb;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//定义bean，返回MapperScannerConfigurer对象</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> MapperScannerConfigurer <span class="title function_">mapperScannerConfigurer</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">MapperScannerConfigurer</span> <span class="variable">msc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MapperScannerConfigurer</span>();</span><br><span class="line">        msc.setBasePackage(<span class="string">&quot;com.itheima.dao&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> msc;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意在主配置类中添加当前配置类的扫描</p>
+<p>注意：第二种方法中 pom.xml 新增两个坐标</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.10.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>主函数：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> com.itheima.config.SpringConfig;</span><br><span class="line"><span class="keyword">import</span> com.itheima.domain.Account;</span><br><span class="line"><span class="keyword">import</span> com.itheima.service.AccountService;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.ApplicationContext;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.AnnotationConfigApplicationContext;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">App2</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">ApplicationContext</span> <span class="variable">ctx</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AnnotationConfigApplicationContext</span>(SpringConfig.class);</span><br><span class="line"></span><br><span class="line">        <span class="type">AccountService</span> <span class="variable">accountService</span> <span class="operator">=</span> ctx.getBean(AccountService.class);</span><br><span class="line"></span><br><span class="line">        <span class="type">Account</span> <span class="variable">ac</span> <span class="operator">=</span> accountService.findById(<span class="number">1</span>);</span><br><span class="line">        System.out.println(ac);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="spring整合junit">Spring整合Junit</h1>
+<p>新增依赖</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.10.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>测试样例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.itheima.service;</span><br><span class="line"></span><br><span class="line">import com.itheima.config.SpringConfig;</span><br><span class="line">import org.junit.Test;</span><br><span class="line">import org.junit.runner.RunWith;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.test.context.ContextConfiguration;</span><br><span class="line">import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;</span><br><span class="line">//设置类运行器</span><br><span class="line">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="line">//设置Spring环境对应的配置类</span><br><span class="line">@ContextConfiguration(classes = SpringConfig.class)</span><br><span class="line">public class AccountServiceTest &#123;</span><br><span class="line">    //支持自动装配注入bean</span><br><span class="line">    @Autowired</span><br><span class="line">    private AccountService accountService;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void testFindById()&#123; System.out.println(accountService.findById(1)); &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void testFindAll()&#123; System.out.println(accountService.findAll()); &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意两点</p>
+<blockquote>
+<ul>
+<li><p>设置类运行器：<span class="citation"
+data-cites="RunWith">@RunWith</span>(SpringJUnit4ClassRunner.class)</p>
+<p>设置Spring环境对应的配置类：<span class="citation"
+data-cites="ContextConfiguration">@ContextConfiguration</span>(classes =
+SpringConfig.class)</p></li>
+<li><p>想用什么用@Autowired自动注入即可</p></li>
+</ul>
+</blockquote>
+]]></content>
+      <categories>
+        <category>SSM</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SSM05-Spring中的AOP概念</title>
     <url>/posts/10305.html</url>
     <content><![CDATA[<p>详细的描述了Spring中的AOP概念。 <span id="more"></span></p>
@@ -3595,55 +3644,6 @@ data-cites="Around注意事项">@Around注意事项</span></strong></p>
       </tags>
   </entry>
   <entry>
-    <title>SSM04-Spring整合MyBatis</title>
-    <url>/posts/10304.html</url>
-    <content><![CDATA[<p>详细的描述了Spring整合myBatis和Spring整合Junit。 <span id="more"></span></p>
-<h1 id="spring整合mybatis">Spring整合myBatis</h1>
-<p>正常的mybatis核心代码如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">App</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        </span><br><span class="line"><span class="comment">//----------------------------------------------------------------------------------------------------//</span></span><br><span class="line">        <span class="comment">// 1. 创建SqlSessionFactoryBuilder对象</span></span><br><span class="line">        <span class="type">SqlSessionFactoryBuilder</span> <span class="variable">sqlSessionFactoryBuilder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SqlSessionFactoryBuilder</span>();</span><br><span class="line">        <span class="comment">// 2. 加载SqlMapConfig.xml配置文件</span></span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> Resources.getResourceAsStream(<span class="string">&quot;SqlMapConfig.xml.bak&quot;</span>);</span><br><span class="line">        <span class="comment">// 3. 创建SqlSessionFactory对象</span></span><br><span class="line">        <span class="type">SqlSessionFactory</span> <span class="variable">sqlSessionFactory</span> <span class="operator">=</span> sqlSessionFactoryBuilder.build(inputStream);</span><br><span class="line"><span class="comment">//---------------------------------  一、初始化SqlSessionFactory对象   ----------------------------------//</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 4. 获取SqlSession</span></span><br><span class="line">        <span class="type">SqlSession</span> <span class="variable">sqlSession</span> <span class="operator">=</span> sqlSessionFactory.openSession();</span><br><span class="line">        <span class="comment">// 5. 执行SqlSession对象执行查询，获取结果User</span></span><br><span class="line">        <span class="type">AccountDao</span> <span class="variable">accountDao</span> <span class="operator">=</span> sqlSession.getMapper(AccountDao.class);</span><br><span class="line"></span><br><span class="line"><span class="comment">//---------------------------------  二、获取连接，获取实现   --------------------------------------------//</span></span><br><span class="line"></span><br><span class="line">        <span class="type">Account</span> <span class="variable">ac</span> <span class="operator">=</span> accountDao.findById(<span class="number">2</span>);</span><br><span class="line">        System.out.println(ac);</span><br><span class="line"></span><br><span class="line"><span class="comment">//---------------------------------  三、获取数据层接口   -----------------------------------------------//</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 6. 释放资源</span></span><br><span class="line">        sqlSession.close();</span><br><span class="line"></span><br><span class="line"><span class="comment">//---------------------------------  四、关闭连接   ----------------------------------------------------//</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>那么上述的代码需要将那个核心对象放入IoC中进行管理呢</p>
-<p><strong>SqlSessionFactory</strong> 最核心</p>
-<h2 id="原来的整合方法">原来的整合方法</h2>
-<p>xml配置：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">configuration</span></span></span><br><span class="line"><span class="meta">        <span class="keyword">PUBLIC</span> <span class="string">&quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span></span></span><br><span class="line"><span class="meta">        <span class="string">&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span> <span class="attr">resource</span>=<span class="string">&quot;jdbc.properties&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">&quot;com.itheima.domain&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">&quot;mysql&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">&quot;mysql&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">&quot;JDBC&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">transactionManager</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">&quot;POOLED&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;driver&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.driver&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;url&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.url&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.username&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.password&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">&quot;com.itheima.dao&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>主函数：</p>
-<p>即上述的mybatis核心代码</p>
-<p><strong>注意：xml配置与配置类的写法一一对应，原来的配置文件被新的配置类所代替，如下位配置类。</strong></p>
-<h2 id="更改后的">更改后的</h2>
-<p>配置类：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.mybatis.spring.SqlSessionFactoryBean;</span><br><span class="line"><span class="keyword">import</span> org.mybatis.spring.mapper.MapperScannerConfigurer;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.sql.DataSource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MybatisConfig</span> &#123;</span><br><span class="line">    <span class="comment">//定义bean，SqlSessionFactoryBean，用于产生SqlSessionFactory对象</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> SqlSessionFactoryBean <span class="title function_">sqlSessionFactory</span><span class="params">(DataSource dataSource)</span>&#123;</span><br><span class="line">        <span class="type">SqlSessionFactoryBean</span> <span class="variable">ssfb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SqlSessionFactoryBean</span>();</span><br><span class="line">        ssfb.setTypeAliasesPackage(<span class="string">&quot;com.itheima.domain&quot;</span>);</span><br><span class="line">        ssfb.setDataSource(dataSource);</span><br><span class="line">        <span class="keyword">return</span> ssfb;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//定义bean，返回MapperScannerConfigurer对象</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> MapperScannerConfigurer <span class="title function_">mapperScannerConfigurer</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">MapperScannerConfigurer</span> <span class="variable">msc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MapperScannerConfigurer</span>();</span><br><span class="line">        msc.setBasePackage(<span class="string">&quot;com.itheima.dao&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> msc;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意在主配置类中添加当前配置类的扫描</p>
-<p>注意：第二种方法中 pom.xml 新增两个坐标</p>
-</blockquote>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.10.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>主函数：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> com.itheima.config.SpringConfig;</span><br><span class="line"><span class="keyword">import</span> com.itheima.domain.Account;</span><br><span class="line"><span class="keyword">import</span> com.itheima.service.AccountService;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.ApplicationContext;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.AnnotationConfigApplicationContext;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">App2</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">ApplicationContext</span> <span class="variable">ctx</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AnnotationConfigApplicationContext</span>(SpringConfig.class);</span><br><span class="line"></span><br><span class="line">        <span class="type">AccountService</span> <span class="variable">accountService</span> <span class="operator">=</span> ctx.getBean(AccountService.class);</span><br><span class="line"></span><br><span class="line">        <span class="type">Account</span> <span class="variable">ac</span> <span class="operator">=</span> accountService.findById(<span class="number">1</span>);</span><br><span class="line">        System.out.println(ac);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="spring整合junit">Spring整合Junit</h1>
-<p>新增依赖</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.10.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>测试样例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.itheima.service;</span><br><span class="line"></span><br><span class="line">import com.itheima.config.SpringConfig;</span><br><span class="line">import org.junit.Test;</span><br><span class="line">import org.junit.runner.RunWith;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.test.context.ContextConfiguration;</span><br><span class="line">import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;</span><br><span class="line">//设置类运行器</span><br><span class="line">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="line">//设置Spring环境对应的配置类</span><br><span class="line">@ContextConfiguration(classes = SpringConfig.class)</span><br><span class="line">public class AccountServiceTest &#123;</span><br><span class="line">    //支持自动装配注入bean</span><br><span class="line">    @Autowired</span><br><span class="line">    private AccountService accountService;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void testFindById()&#123; System.out.println(accountService.findById(1)); &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void testFindAll()&#123; System.out.println(accountService.findAll()); &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意两点</p>
-<blockquote>
-<ul>
-<li><p>设置类运行器：<span class="citation"
-data-cites="RunWith">@RunWith</span>(SpringJUnit4ClassRunner.class)</p>
-<p>设置Spring环境对应的配置类：<span class="citation"
-data-cites="ContextConfiguration">@ContextConfiguration</span>(classes =
-SpringConfig.class)</p></li>
-<li><p>想用什么用@Autowired自动注入即可</p></li>
-</ul>
-</blockquote>
-]]></content>
-      <categories>
-        <category>SSM</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SSM06-Spring中的事务</title>
     <url>/posts/10306.html</url>
     <content><![CDATA[<p>详细的描述了Spring中的事务概念。 <span id="more"></span></p>
@@ -3735,6 +3735,18 @@ src="https://wang-nine.cn/images/SSM05-01%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8
 alt="SSM05-01事务传播行为" />
 <figcaption aria-hidden="true">SSM05-01事务传播行为</figcaption>
 </figure>
+]]></content>
+      <categories>
+        <category>SSM</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SSM08-REST风格</title>
+    <url>/posts/10308.html</url>
+    <content><![CDATA[<p>详细的描述了Spring中的REST开发风格 <span id="more"></span></p>
 ]]></content>
       <categories>
         <category>SSM</category>
@@ -3983,18 +3995,6 @@ data-cites="ResponseBody">@ResponseBody</span></p>
 <p>方法注解，SpringMVC控制器方法定义上方，设置当前控制器方法响应内容为当前返回值，无需解析</p>
 </blockquote>
 <p>内部是由类型转换器 HttpMessageConverter 接口发挥作用</p>
-]]></content>
-      <categories>
-        <category>SSM</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SSM08-REST风格</title>
-    <url>/posts/10308.html</url>
-    <content><![CDATA[<p>详细的描述了Spring中的REST开发风格 <span id="more"></span></p>
 ]]></content>
       <categories>
         <category>SSM</category>
@@ -4508,7 +4508,7 @@ mode.</li>
   </entry>
   <entry>
     <title>博客搭建教程总览</title>
-    <url>/posts/10001.html</url>
+    <url>/posts/10000.html</url>
     <content><![CDATA[<h3 id="hexobutterfly主题博客搭建01">Hexo+Butterfly主题博客搭建01</h3>
 <p><a
 href="https://wang-nine.cn/posts/10001.html">Hexo+Butterfly主题博客搭建01</a></p>
@@ -4909,8 +4909,8 @@ Decomposition)产生了较大的兴趣。借此机会，对之前上过的高等
 ]]></content>
   </entry>
   <entry>
-    <title>关于</title>
-    <url>/about/index.html</url>
+    <title>分类</title>
+    <url>/categories/index.html</url>
     <content><![CDATA[
 ]]></content>
   </entry>
@@ -4927,20 +4927,20 @@ Decomposition)产生了较大的兴趣。借此机会，对之前上过的高等
 ]]></content>
   </entry>
   <entry>
-    <title>资源</title>
-    <url>/resources/index.html</url>
-    <content><![CDATA[
-]]></content>
-  </entry>
-  <entry>
-    <title>分类</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[
-]]></content>
-  </entry>
-  <entry>
     <title>标签</title>
     <url>/tags/index.html</url>
+    <content><![CDATA[
+]]></content>
+  </entry>
+  <entry>
+    <title>关于</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[
+]]></content>
+  </entry>
+  <entry>
+    <title>资源</title>
+    <url>/resources/index.html</url>
     <content><![CDATA[
 ]]></content>
   </entry>
