@@ -1,4 +1,5 @@
 https://wang-nine.cn/posts/0.html
+https://wang-nine.cn/posts/1.html
 https://wang-nine.cn/posts/10602.html
 https://wang-nine.cn/posts/2.html
 https://wang-nine.cn/posts/3.html
@@ -7,4 +8,3 @@ https://wang-nine.cn/posts/10103.html
 https://wang-nine.cn/posts/10415.html
 https://wang-nine.cn/posts/1.html
 https://wang-nine.cn/posts/10601.html
-https://wang-nine.cn/posts/10310.html
