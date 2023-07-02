@@ -1,16 +1,16 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>玖 | 玖</title><meta name="author" content="Wang-nine"><meta name="copyright" content="Wang-nine"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="环境搭建  准备数据库表（dept，emp) 创建SpringBoot工程  引入web开发起步依赖，mybatis依赖（mybatis依赖和mysql驱动），lombok依赖  在application.properties中引入mybatis的配置信息 准备对应的实体类 准备对应的Mapper、Service(接口、实现类)、Controller基础结构  部门管理开发：">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>玖 | 玖</title><meta name="author" content="Wang-nine"><meta name="copyright" content="Wang-nine"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Mybatis MyBatis是一款优秀的持久层框架，&#x3D;&#x3D;用于简化JDBC的开发。&#x3D;&#x3D; JDBC JDBC：（Java DataBase Connectivity），就是使用ava语言操作关系型数据库的一套API。  sun公司官方定义的一套操作所有关系型数据库的规范，即接口。 各个数据库厂商去实现这套接口，提供数据库驱动jar包。 我们可以使用这套接口（JDBC）编程，真正执行的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="玖">
 <meta property="og:url" content="https://wang-nine.cn/posts/4.html">
 <meta property="og:site_name" content="玖">
-<meta property="og:description" content="环境搭建  准备数据库表（dept，emp) 创建SpringBoot工程  引入web开发起步依赖，mybatis依赖（mybatis依赖和mysql驱动），lombok依赖  在application.properties中引入mybatis的配置信息 准备对应的实体类 准备对应的Mapper、Service(接口、实现类)、Controller基础结构  部门管理开发：">
+<meta property="og:description" content="Mybatis MyBatis是一款优秀的持久层框架，&#x3D;&#x3D;用于简化JDBC的开发。&#x3D;&#x3D; JDBC JDBC：（Java DataBase Connectivity），就是使用ava语言操作关系型数据库的一套API。  sun公司官方定义的一套操作所有关系型数据库的规范，即接口。 各个数据库厂商去实现这套接口，提供数据库驱动jar包。 我们可以使用这套接口（JDBC）编程，真正执行的">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8007.jpg">
-<meta property="article:published_time" content="2023-06-29T12:36:16.074Z">
-<meta property="article:modified_time" content="2023-06-30T14:39:19.267Z">
+<meta property="og:image" content="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8003.jpg">
+<meta property="article:published_time" content="2023-06-29T18:37:09.294Z">
+<meta property="article:modified_time" content="2023-07-02T07:46:05.942Z">
 <meta property="article:author" content="Wang-nine">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8007.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://wang-nine.cn/posts/4.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+<meta name="twitter:image" content="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8003.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://wang-nine.cn/posts/4.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
   localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
@@ -57,7 +57,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2023-06-30 22:39:19'
+  postUpdate: '2023-07-02 15:46:05'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -161,210 +161,257 @@
       }
     }
     detectApple()
-    })(window)</script><link rel="stylesheet" href="/css/custom/background.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4081150_5yur020zy1i.css"><link rel="stylesheet" href="/css/custom/twikoo_beautify.css"><link rel="stylesheet" href="/css/custom/header_beautify.css"><link rel="stylesheet" href="/css/custom/starlight.css"><link rel="stylesheet" href="/css/custom/title_font.css"><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">54</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child" style="left:-55px;"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child" style="left:-55px;"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8007.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="玖"><span class="site-name">玖</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child" style="left:-55px;"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child" style="left:-55px;"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-29T12:36:16.074Z" title="发表于 2023-06-29 20:36:16">2023-06-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-30T14:39:19.267Z" title="更新于 2023-06-30 22:39:19">2023-06-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/4.html#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="环境搭建">环境搭建</h1>
+    })(window)</script><link rel="stylesheet" href="/css/custom/background.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4081150_5yur020zy1i.css"><link rel="stylesheet" href="/css/custom/twikoo_beautify.css"><link rel="stylesheet" href="/css/custom/header_beautify.css"><link rel="stylesheet" href="/css/custom/starlight.css"><link rel="stylesheet" href="/css/custom/title_font.css"><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">54</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child" style="left:-55px;"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child" style="left:-55px;"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8003.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="玖"><span class="site-name">玖</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child" style="left:-55px;"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child" style="left:-55px;"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-29T18:37:09.294Z" title="发表于 2023-06-30 02:37:09">2023-06-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-02T07:46:05.942Z" title="更新于 2023-07-02 15:46:05">2023-07-02</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/4.html#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="mybatis">Mybatis</h1>
+<p>MyBatis是一款优秀的持久层框架，==用于简化JDBC的开发。==</p>
+<h2 id="jdbc">JDBC</h2>
+<p>JDBC：（Java DataBase
+Connectivity），就是使用ava语言操作关系型数据库的一套API。</p>
 <ul>
-<li>准备数据库表（dept，emp)</li>
-<li>创建SpringBoot工程
+<li>sun公司官方定义的一套操作所有关系型数据库的规范，即接口。</li>
+<li>各个数据库厂商去实现这套接口，提供数据库驱动jar包。</li>
+<li>我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootTest</span> <span class="comment">//springboot整合单元测试的注解</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SpringbootMybatisQuickstartApplicationTests</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserMapper userMapper;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testListUser</span><span class="params">()</span>&#123;</span><br><span class="line">        List&lt;User&gt; userList = userMapper.list();</span><br><span class="line">        userList.stream().forEach(user -&gt; &#123;</span><br><span class="line">            System.out.println(user);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testJdbc</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//1. 注册驱动</span></span><br><span class="line">        Class.forName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2. 获取连接对象</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;jdbc:mysql://localhost:3306/mybatis&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> <span class="string">&quot;1234&quot;</span>;</span><br><span class="line">        <span class="type">Connection</span> <span class="variable">connection</span> <span class="operator">=</span> DriverManager.getConnection(url, username, password);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3. 获取执行SQL的对象Statement,执行SQL,返回结果</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;select * from user&quot;</span>;</span><br><span class="line">        <span class="type">Statement</span> <span class="variable">statement</span> <span class="operator">=</span> connection.createStatement();</span><br><span class="line">        <span class="type">ResultSet</span> <span class="variable">resultSet</span> <span class="operator">=</span> statement.executeQuery(sql);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4. 封装结果数据</span></span><br><span class="line">        List&lt;User&gt; userList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">while</span> (resultSet.next())&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">id</span> <span class="operator">=</span> resultSet.getInt(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> resultSet.getString(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">            <span class="type">short</span> <span class="variable">age</span> <span class="operator">=</span> resultSet.getShort(<span class="string">&quot;age&quot;</span>);</span><br><span class="line">            <span class="type">short</span> <span class="variable">gender</span> <span class="operator">=</span> resultSet.getShort(<span class="string">&quot;gender&quot;</span>);</span><br><span class="line">            <span class="type">String</span> <span class="variable">phone</span> <span class="operator">=</span> resultSet.getString(<span class="string">&quot;phone&quot;</span>);</span><br><span class="line"></span><br><span class="line">            <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>(id,name,age,gender,phone);</span><br><span class="line">            userList.add(user);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//5. 释放资源</span></span><br><span class="line">        statement.close();</span><br><span class="line">        connection.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="mybatis使用流程">MyBatis使用流程</h2>
 <ul>
-<li>引入web开发起步依赖，mybatis依赖（mybatis依赖和mysql驱动），lombok依赖</li>
-</ul></li>
-<li>在application.properties中引入mybatis的配置信息</li>
-<li>准备对应的实体类</li>
-<li>准备对应的Mapper、Service(接口、实现类)、Controller基础结构</li>
+<li>1.准备工作(创建springboot工程、数据库表user、实体类User)</li>
+<li>2.引入Mybatis的相关依赖，配置Mybatis</li>
+<li>3.编写SQL语句(注解/XML)</li>
+</ul>
+<h2 id="数据库连接池">数据库连接池</h2>
+<ul>
+<li>数据库连接池是个容器，负责分配、管理数据库连接(Connection)</li>
+<li>它允许应用程序重复使用一个现有的数据库连接，而不是再重新建立一个</li>
+<li>释放空闲时间超过最大空闲时间的连接，来避免因为没有释放连接而引起的数据库连接遗漏</li>
+</ul>
+<blockquote>
+<p>优点：</p>
+<ul>
+<li>资源重用</li>
+<li>提升系统响应速度</li>
+<li>避免数据库连接遗漏</li>
+</ul>
+</blockquote>
+<h2 id="lombok">lombok</h2>
+<p>Lombok是一个实用的Java类库，能通过注解的形式自动生成构造器、getter/setter、equals、hashcode、toString等方法，并可以自动化生成日志变量，简化java开发、提高效率。</p>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>注解</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="citation" data-cites="Getter">@Getter</span>/ <span
+class="citation" data-cites="Setter">@Setter</span></td>
+<td>为所有的属性提供get/set方法</td>
+</tr>
+<tr class="even">
+<td><span class="citation" data-cites="ToString">@ToString</span></td>
+<td>会给类自动生成易阅读的toString方法</td>
+</tr>
+<tr class="odd">
+<td><span class="citation"
+data-cites="EqualsAndHashcode">@EqualsAndHashcode</span></td>
+<td>根据类所拥有的非静态字段自动重写equals方法和 hashCode方法</td>
+</tr>
+<tr class="even">
+<td><strong><span class="citation"
+data-cites="Data">@Data</span></strong></td>
+<td>提供了更综合的生成代码功能(<span class="citation"
+data-cites="Getter">@Getter</span> + <span class="citation"
+data-cites="Setter">@Setter</span> +<span class="citation"
+data-cites="ToString">@ToString</span> +<span class="citation"
+data-cites="EqualsAndHashCode">@EqualsAndHashCode</span>)</td>
+</tr>
+<tr class="odd">
+<td><strong><span class="citation"
+data-cites="NoArgsConstructor">@NoArgsConstructor</span></strong></td>
+<td>为实体类生成无参的构造器方法</td>
+</tr>
+<tr class="even">
+<td><strong><span class="citation"
+data-cites="AllArgsConstructor">@AllArgsConstructor</span></strong></td>
+<td>为实体类生成除了static修饰的字段之外带有各参数的构造器方法。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="第一步准备工作">第一步：准备工作</h1>
+<ul>
+<li>准备好数据库表 Emp （员工表）</li>
+<li>创建一个新的springboot工程，选择引入对应的起步依赖（mybatis、mysql驱动、lombok）</li>
+<li>application.properties中引入数据库连接信息</li>
+<li>创建对应的实体类Emp（实体类属性采用驼峰命名）</li>
+<li>准备Mapper接口EmpMapper（加上Mapper接口）</li>
 </ul>
 <h1
-id="部门管理开发根据接口文档阅读开发restful风格">部门管理开发：根据接口文档阅读开发Restful风格</h1>
+id="第二步先开发简单的增删改查mapper">第二步：先开发简单的增删改查Mapper</h1>
 <ul>
-<li>明确三层架构的功能</li>
-<li>Controller
-<ul>
-<li>1.接收请求</li>
-<li>2.调用service层功能</li>
-<li>3.响应</li>
-</ul></li>
-<li>Service
-<ul>
-<li>调用mapper接口功能</li>
-</ul></li>
-<li>Mapper
-<ul>
-<li>执行对应的SQL语句与数据库进行互动</li>
-</ul></li>
+<li>使用@Delete <span class="citation"
+data-cites="Insert">@Insert</span> <span class="citation"
+data-cites="Select">@Select</span></li>
 </ul>
 <blockquote>
-<p>简化开发：二者效果相同</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestNapping(value = &quot;/depts&quot;, method = RequestNethod.GET)</span></span><br><span class="line"><span class="meta">@GetMapping(&quot;/ depts&quot;)</span></span><br></pre></td></tr></table></figure>
+<p>注意SQL语句中的占位符 #{变量名}</p>
+<p>注意接口方法的返回值现在先可以自己定义，在后期会统一换成自己设定的Result类，确保返回给前端的数据解析方便</p>
+</blockquote>
+<ul>
+<li><p>每次开发好一个接口方法时，进行测试，确保测试的覆盖率</p></li>
+<li><p>application.properties配置mybatis的日志，指定输出到控制台</p></li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#配置mybatis的日志，指定输出到控制台</span><br><span class="line">mybatis.configuration.log-impl=org.apache.ibatis.logging.stdout.StdoutImpl</span><br></pre></td></tr></table></figure>
+<p>==注意变量名与pojo中一致，表示获取实体类的属性==</p>
+<h2 id="预编译sql">预编译SQL</h2>
+<blockquote>
+<p>为什么java会使用预编译的SQL语句？</p>
+<ul>
+<li>性能更高</li>
+<li>更安全（防止SQL注入）</li>
+</ul>
 </blockquote>
 <blockquote>
-<p>注意在接口中注入Bean对象，例如Controller中注入Service对象，Service中注入Mapper对象，达到解耦的效果</p>
+<p>java项目在执行SQL语句时的步骤</p>
+<ul>
+<li>缓存
+<ul>
+<li>SQL语法解析检查</li>
+<li>优化SQL</li>
+<li>编译SQL</li>
+</ul></li>
+<li>执行SQL</li>
+</ul>
 </blockquote>
-<p>==接口测试，postman / 前后端联调==</p>
-<p>==日志：<span class="citation" data-cites="Slf4j">@Slf4j</span>==</p>
-<p>==注意某些路径的 <span class="citation"
-data-cites="PathVariable">@PathVariable</span>==</p>
-<p>==注意解析json格式的前端请求参数可以使用@RequestBody来将json封装到实体类中==</p>
-<p>==<span class="citation"
-data-cites="RequestMapping">@RequestMapping</span>(“/depts”)
-公共路径抽取：完整的请求路径，应该是类上的@RequestMapping
-的value属性＋方法上的@RequestMapping的value属性。==</p>
-<h1 id="员工管理开发">员工管理开发：</h1>
-<ul>
-<li>难点：分页查询</li>
-</ul>
-<h2 id="分页查询">分页查询</h2>
-<h3 id="需要两条sql语句">需要两条SQL语句</h3>
-<ul>
-<li>显示当前页面</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select * from emp limit ?, ?;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>显示所有数据</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select count(*) from emp;</span><br></pre></td></tr></table></figure>
-<h3 id="前端传来的数据">前端传来的数据</h3>
-<ul>
-<li>当前页码:page</li>
-<li>每页展示记录数:pageSize</li>
-</ul>
-<h3 id="后端响应的数据">后端响应的数据</h3>
-<ul>
-<li>数据列表:List select * from emp limit ?,?;</li>
-<li>总记录数:total select count (*) from emp;</li>
-</ul>
-<p>==目前需要返回两项数据，方法只能返回一个数据，使用实体类封装返回==</p>
-<p>==<span class="citation"
-data-cites="ResultParam">@ResultParam</span>(defaultvalue = ”默认值“)
-参数 可以设置参数的默认值==</p>
-<h3 id="分页查询插件pagehelper">分页查询插件PageHelper</h3>
-<figure>
-<img
-src="https://wang-nine.cn/images/%E6%9D%82%E9%A1%B904-02PageHelper.png"
-alt="杂项04-02PageHelper" />
-<figcaption aria-hidden="true">杂项04-02PageHelper</figcaption>
-</figure>
-<h1 id="文件上传">文件上传</h1>
-<figure>
-<img
-src="https://wang-nine.cn/images/%E6%9D%82%E9%A1%B904-02%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.png"
-alt="杂项04-02文件上传" />
-<figcaption aria-hidden="true">杂项04-02文件上传</figcaption>
-</figure>
-<h2 id="方法1将文件保存到本地">方法1：将文件保存到本地</h2>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*@PostMapping(&quot;/upload&quot;)</span></span><br><span class="line"><span class="comment">public Result upload(String username, Integer age, MultipartFile image) throws Exception &#123;</span></span><br><span class="line"><span class="comment">    log.info(&quot;文件上传：&#123;&#125;，&#123;&#125;，&#123;&#125;&quot;, username, age, image);</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    //获取原始文件名</span></span><br><span class="line"><span class="comment">    String originalFilename = image.getOriginalFilename();</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    //构造唯一的文件名（不能重复）-- uuid（通用唯一识别码）</span></span><br><span class="line"><span class="comment">    int index = originalFilename.lastIndexOf(&#x27;.&#x27;);</span></span><br><span class="line"><span class="comment">    String extname = originalFilename.substring(index);</span></span><br><span class="line"><span class="comment">    String newFileName = UUID.randomUUID().toString() + extname;</span></span><br><span class="line"><span class="comment">    log.info(&quot;新的文件名：&#123;&#125;&quot;, newFileName);</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    //将接收到的文件存储在服务器的磁盘目录中 D:\image</span></span><br><span class="line"><span class="comment">    image.transferTo(new File(&quot;D:\\image\\&quot; + newFileName));</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    return Result.success();</span></span><br><span class="line"><span class="comment">&#125;*/</span></span><br></pre></td></tr></table></figure>
-<h2 id="方法2将文件保存到alioss">方法2：将文件保存到AliOSS</h2>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@PostMapping(&quot;/upload&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Result <span class="title function_">upload</span><span class="params">(MultipartFile image)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    log.info(<span class="string">&quot;文件上传，文件名：&#123;&#125;&quot;</span>, image.getOriginalFilename());</span><br><span class="line"></span><br><span class="line">    <span class="comment">//调用阿里云OSS工具类</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> aliOSSUtils.upload(image);</span><br><span class="line">    log.info(<span class="string">&quot;文件上传完成，文件访问的url为：&#123;&#125;&quot;</span>, url);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Result.success(url);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>==修改员工需要查询回显和update语句==</p>
-<p>==配置注入使用@Value(“#{配置中的key}”)注解来防止硬编码==</p>
-<h1 id="登陆校验难点">登陆校验（难点）</h1>
-<p>==若按照普通的开发区编写映射页面，通过数据库判别是否用户名与密码正确式不可取的==</p>
-<p>如此的话，直接访问类似于 /emps /depts
-等页面可以直接进入控制台面板而跳过了判断是否为管理员的步骤</p>
-<p>因此，我们需要在 /login /depts /emps 之间建立一种联系</p>
-<p>实现思路：</p>
-<ul>
-<li>员工登陆成功存储一个标记</li>
-<li>在每一个方法接口前判断员工是否登陆，登陆则访问，未登录则返回给前端错误信息</li>
-<li>因此，需要两种技术==1.统一拦截== ==2.登陆标记缓存==
-<ul>
-<li>统一拦截
-<ul>
-<li>Servlet提供的过滤器Filter</li>
-<li>Spring提供的拦截器Interceptor</li>
-</ul></li>
-<li>用户登陆
-<ul>
-<li>会话技术</li>
-</ul></li>
-</ul></li>
-</ul>
-<h2 id="会话技术">会话技术</h2>
-<ul>
-<li><p>会话：指的是用户打开浏览器，访问web服务器的资源，会话建立，直到有一方断开连接，会话结束。在一次会话中可以包含<strong>多次</strong>请求和响应。</p></li>
-<li><p>会话跟踪：一种维护浏览器状态的方法，服务器需要识别多次请求是否来自于同一浏览器，以便在同一次会话的多次请求间<strong>共享数据</strong>。</p></li>
-</ul>
-<p>​ http协议是无状态协议，不会携带上一次会话的信息，因此无法数据共享</p>
-<ul>
-<li>会话跟踪方案
-<ul>
-<li>客户端会话跟踪技术：Cookie（存储在浏览器）</li>
-<li>服务端会话跟踪技术：Session（存储在服务器端）</li>
-<li>令牌技术</li>
-</ul></li>
-</ul>
+<p>为什么性能更高呢？</p>
 <blockquote>
-<ul>
-<li>Cookie：浏览器第一次请求时在服务器端设置Cookie，响应时携带Cookie，而后Cookie缓存在浏览器本地，之后的每次请求都会携带Cookie与客户端进行对比，服务器自动响应Cookie，浏览器自动保存Cookie，发起请求自动携带Cookie，三个自动表名Http支持Cookie技术
-<ul>
-<li>请求头Cookie</li>
-<li>响应头Set-Cookie</li>
-</ul></li>
-</ul>
+<p>例如：</p>
+<p>delete from emp where id = 1;</p>
+<p>delete from emp where id = 2;</p>
+<p>delete from emp where id = 3;</p>
+<p>上述三条不进行预编译会缓存编译三次</p>
+<p>预编译如下添加占位符：</p>
+<p>delete from emp where id = ?</p>
+<p>1 2 3</p>
+<p>缓存编译一次</p>
+</blockquote>
+<p>为什么更安全呢？</p>
+<p>SQL注入是通过操作输入的数据来修改事先定义好的SQL语句，以达到执行代码对服务器进行攻击的方法</p>
 <blockquote>
-<p>优点：HTTP协议支持</p>
-<p>缺点：1.移动端无法使用 2.不安全，用户可以自己禁用
-3.Cookie不能跨域（跨域：协议、IP/域名、端口不同）</p>
+<p>解决了SQL注入</p>
+<p>例如正常的账号 wang 密码 123456</p>
+<p>SQL语句：select conut(*) from emp where username = ‘wang’ and
+password = ‘123456’;</p>
+<p>SQL注入攻击：</p>
+<p>账号：whatever 密码 ‘ or ’1‘ = ’1</p>
+<p>SQL语句：select conut(*) from emp where username = ‘whatever’ and
+password = ‘==‘ or ’1‘ = ’1==’;</p>
+<p>上述语句必然成立，达到了攻击的效果</p>
+<p>预编译SQL：</p>
+<p>SQL语句：select count(*) from emp where username =? and password =
+?</p>
+<p>参数传递，避免了SQL注入</p>
 </blockquote>
 <ul>
-<li>Session：浏览器第一次请求时在服务器端设置Session（ID），响应时通过Cookie返回Session的ID，之后的每次请求都会携带Cookie中的Session的ID到服务器端对比</li>
+<li>==使用预编译SQL语句（#{}）==</li>
+<li>==使用拼接SQL语句（${}）==</li>
 </ul>
-<blockquote>
-<p>优点：存储在服务器端，安全</p>
-<p>缺点：1.服务器集群在负载均衡后有可能无法使用，因此无法在服务器集群环境下使用
-2.Cookie的缺点</p>
-</blockquote>
-<ul>
-<li>令牌技术（==建议使用==）：用户身份表示，登陆成功生成令牌，响应给浏览器，可以存储在Cookie或者其他存储空间中，之后的每次请求都会携带令牌，比对是否有效，而且想要共享数据只需要将数据保存在令牌中即可</li>
-</ul>
-<blockquote>
-<p>优点：1.支持PC、移动端 2、解决集群环境下的认证问题
-3、减轻了服务器端的存储压力</p>
-<p>缺点：需要自己去实现</p>
-</blockquote>
-</blockquote>
-<h2 id="jwtjson-web-token令牌">JWT（JSON Web Token）令牌</h2>
-<p>定义了一种简洁的、自包含的格式，用于在通信双方以json数据格式安全的传输信息。由于数字签名的存在，这些信息是可靠的。</p>
-<p>jwt令牌组成</p>
-<ul>
-<li>第一部分:Header(头)，记录令牌类型、签名算法等。例如: {"alg":"HS256"
-,"type":"JWT"}</li>
-<li>第二部分:Payload(有效载荷)，携带一些自定义信息、默认信息等。例如:
-{"id":" 1" ,"username":"Tom"}</li>
-<li>第三部分:Signature(签名)，防止Token被篡改、确保安全性。将header、
-payload，并加入指定秘钥，通过指定签名算法计算而来。</li>
-</ul>
-<p>pom.xml引入</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--JTW令牌--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.jsonwebtoken<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jjwt<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.9.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>jwt生成</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JwtUtils</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">signKey</span> <span class="operator">=</span> <span class="string">&quot;wangnine&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">Long</span> <span class="variable">expire</span> <span class="operator">=</span> <span class="number">43200000L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 生成JWT令牌</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> claims JWT第二部分负载 payload 中存储的内容</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">generateJwt</span><span class="params">(Map&lt;String, Object&gt; claims)</span>&#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">jwt</span> <span class="operator">=</span> Jwts.builder()</span><br><span class="line">                .addClaims(claims)</span><br><span class="line">                .signWith(SignatureAlgorithm.HS256, signKey)</span><br><span class="line">                .setExpiration(<span class="keyword">new</span> <span class="title class_">Date</span>(System.currentTimeMillis() + expire))</span><br><span class="line">                .compact();</span><br><span class="line">        <span class="keyword">return</span> jwt;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 解析JWT令牌</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> jwt JWT令牌</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> JWT第二部分负载 payload 中存储的内容</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Claims <span class="title function_">parseJWT</span><span class="params">(String jwt)</span>&#123;</span><br><span class="line">        <span class="type">Claims</span> <span class="variable">claims</span> <span class="operator">=</span> Jwts.parser()</span><br><span class="line">                .setSigningKey(signKey)</span><br><span class="line">                .parseClaimsJws(jwt)</span><br><span class="line">                .getBody();</span><br><span class="line">        <span class="keyword">return</span> claims;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="统一拦截技术">统一拦截技术</h2>
-<h3 id="filter过滤器">Filter过滤器</h3>
-<p>JavaWeb三大组件(Servlet、Filter、Listener)之一。</p>
-<ul>
-<li>过滤器可以把对资源的请求拦截下来，从而实现一些特殊的功能。</li>
-<li>过滤器一般完成一些通用的操作，比如:登录校验、统一编码处理、敏感字符处理等。</li>
-</ul>
-<p>相当于抽取了各个页面的登陆校验，优点aop的思想</p>
-<p>==如何实现过滤器==</p>
-<ul>
-<li>1.定义Filter:定义一个类，实现 Filter接口，并重写其所有方法。</li>
-<li>配置Filter:
-Filter类上加@WebFilter注解，配置拦截资源的路径。引导类上加@ServletComponentScan开启Servlet组件支持。</li>
-</ul>
-<p>结合了jwt后的代码如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="comment">//@WebFilter(urlPatterns = &quot;/*&quot;)  //拦截所有</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LoginCheckFilter</span> <span class="keyword">implements</span> <span class="title class_">Filter</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">doFilter</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)</span> <span class="keyword">throws</span> IOException, ServletException &#123;</span><br><span class="line">        <span class="type">HttpServletRequest</span> <span class="variable">req</span> <span class="operator">=</span> (HttpServletRequest) servletRequest;</span><br><span class="line">        <span class="type">HttpServletResponse</span> <span class="variable">resp</span> <span class="operator">=</span> (HttpServletResponse) servletResponse;</span><br><span class="line">        <span class="comment">//1.获取请求url</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> req.getRequestURL().toString();</span><br><span class="line">        log.info(<span class="string">&quot;请求的url：&#123;&#125;&quot;</span>, url);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2.判断请求的url中是否包含login，如果包含，说明是登录操作，直接放行</span></span><br><span class="line">        <span class="keyword">if</span>(url.contains(<span class="string">&quot;login&quot;</span>)) &#123;</span><br><span class="line">            log.info(<span class="string">&quot;登录操作，放行...&quot;</span>);</span><br><span class="line">            filterChain.doFilter(servletRequest, servletResponse);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.获取请求头中的token令牌</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">jwt</span> <span class="operator">=</span> req.getHeader(<span class="string">&quot;token&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4.判断令牌是否存在，如果不存在，则返回错误结果（未登录）</span></span><br><span class="line">        <span class="keyword">if</span>(!StringUtils.hasLength(jwt)) &#123;</span><br><span class="line">            log.info(<span class="string">&quot;请求头token为空，返回未登录的信息&quot;</span>);</span><br><span class="line">            <span class="type">Result</span> <span class="variable">error</span> <span class="operator">=</span> Result.error(<span class="string">&quot;NOT_LOGIN&quot;</span>);</span><br><span class="line">            <span class="comment">//手动将对象转换为json格式</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">notLogin</span> <span class="operator">=</span> JSONObject.toJSONString(error);</span><br><span class="line">            resp.getWriter().write(notLogin);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//5.解析token，如果解析失败，则返回错误结果（未登录）</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            JwtUtils.parseJWT(jwt);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            log.info(<span class="string">&quot;解析令牌失败，返回未登录的误信息&quot;</span>);</span><br><span class="line">            <span class="type">Result</span> <span class="variable">error</span> <span class="operator">=</span> Result.error(<span class="string">&quot;NOT_LOGIN&quot;</span>);</span><br><span class="line">            <span class="comment">//手动将对象转换为json格式</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">notLogin</span> <span class="operator">=</span> JSONObject.toJSONString(error);</span><br><span class="line">            resp.getWriter().write(notLogin);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//6.放行</span></span><br><span class="line">        log.info(<span class="string">&quot;令牌合法，放行&quot;</span>);</span><br><span class="line">        filterChain.doFilter(servletRequest, servletResponse);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对于init 和 destroy 有默认实现，二者只调用一次</span></span><br></pre></td></tr></table></figure>
-<h2 id="interceptor拦截器">Interceptor拦截器</h2>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LoginCheckInterceptor</span> <span class="keyword">implements</span> <span class="title class_">HandlerInterceptor</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span>   <span class="comment">//目标资源方法运行前运行，返回true放行，返回false不放行</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">preHandle</span><span class="params">(HttpServletRequest req, HttpServletResponse resp, Object handler)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//1.获取请求url</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> req.getRequestURL().toString();</span><br><span class="line">        log.info(<span class="string">&quot;请求的url：&#123;&#125;&quot;</span>, url);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2.判断请求的url中是否包含login，如果包含，说明是登录操作，直接放行</span></span><br><span class="line">        <span class="keyword">if</span>(url.contains(<span class="string">&quot;login&quot;</span>)) &#123;</span><br><span class="line">            log.info(<span class="string">&quot;登录操作，放行...&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.获取请求头中的token令牌</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">jwt</span> <span class="operator">=</span> req.getHeader(<span class="string">&quot;token&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4.判断令牌是否存在，如果不存在，则返回错误结果（未登录）</span></span><br><span class="line">        <span class="keyword">if</span>(!StringUtils.hasLength(jwt)) &#123;</span><br><span class="line">            log.info(<span class="string">&quot;请求头token为空，返回未登录的信息&quot;</span>);</span><br><span class="line">            <span class="type">Result</span> <span class="variable">error</span> <span class="operator">=</span> Result.error(<span class="string">&quot;NOT_LOGIN&quot;</span>);</span><br><span class="line">            <span class="comment">//手动将对象转换为json格式</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">notLogin</span> <span class="operator">=</span> JSONObject.toJSONString(error);</span><br><span class="line">            resp.getWriter().write(notLogin);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//5.解析token，如果解析失败，则返回错误结果（未登录）</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            JwtUtils.parseJWT(jwt);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            log.info(<span class="string">&quot;解析令牌失败，返回未登录的误信息&quot;</span>);</span><br><span class="line">            <span class="type">Result</span> <span class="variable">error</span> <span class="operator">=</span> Result.error(<span class="string">&quot;NOT_LOGIN&quot;</span>);</span><br><span class="line">            <span class="comment">//手动将对象转换为json格式</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">notLogin</span> <span class="operator">=</span> JSONObject.toJSONString(error);</span><br><span class="line">            resp.getWriter().write(notLogin);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//6.放行</span></span><br><span class="line">        log.info(<span class="string">&quot;令牌合法，放行&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span>   <span class="comment">//目标资源方法运行后运行</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">postHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;postHandle...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span>   <span class="comment">//视图渲染完毕后运行，最后运行</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">afterCompletion</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;afterCompletion...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="异常处理">异常处理</h1>
-<p>在Controller层定义一个全局异常处理器</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ExceptionHandler;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestControllerAdvice;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 全局异常处理器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@RestControllerAdvice</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GlobalExceptionHandler</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ExceptionHandler(Exception.class)</span>      <span class="comment">//捕获所有的异常</span></span><br><span class="line">    <span class="keyword">public</span> Result <span class="title function_">ex</span><span class="params">(Exception ex)</span> &#123;</span><br><span class="line">        ex.printStackTrace();</span><br><span class="line">        <span class="keyword">return</span> Result.error(<span class="string">&quot;对不起，操作失败，请联系管理员&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="如何拿到主键值">如何拿到主键值？</h2>
+<p>正常的属性方法getId无法拿到主键值，需要使用注解</p>
 <blockquote>
 <p><span class="citation"
-data-cites="RestControllerAdvice">@RestControllerAdvice</span></p>
-<p><span class="citation"
-data-cites="ExceptionHandler">@ExceptionHandler</span>(Exception.class)
-//捕获所有的异常</p>
+data-cites="Options">@Options</span>(keyProperty=“id”,
+useGeneratedKeys=true)</p>
+<p>useGeneratedKeys=true代表我们需要拿到主键，keyProperty=‘Id’表示我们需要将主键封装的emp的Id中去</p>
 </blockquote>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://wang-nine.cn">Wang-nine</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://wang-nine.cn/posts/4.html">https://wang-nine.cn/posts/4.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://wang-nine.cn" target="_blank">玖</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8007.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/3.html" title=""><img class="cover" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8003.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/posts/10103.html" title="JavaSE03-Java高级"><img class="cover" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8006.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JavaSE03-Java高级</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Wang-nine</div><div class="author-info__description">天生我才</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">54</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Wang-nine"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Wang-nine" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1826967276@qq.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a><a class="social-icon" href="https://www.zhihu.com/people/Wang-nine" target="_blank" title="知乎"><i class="iconfont icon-shejiaotubiao-46"></i></a><a class="social-icon" href="https://blog.csdn.net/qq_55748865" target="_blank" title="CSDN"><i class="iconfont icon-csdn"></i></a><a class="social-icon" href="https://www.cnblogs.com/wang-nine/" target="_blank" title="博客园"><i class="iconfont icon-bokeyuan"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">正在制作博客中...</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text">环境搭建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%83%A8%E9%97%A8%E7%AE%A1%E7%90%86%E5%BC%80%E5%8F%91%E6%A0%B9%E6%8D%AE%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E9%98%85%E8%AF%BB%E5%BC%80%E5%8F%91restful%E9%A3%8E%E6%A0%BC"><span class="toc-number">2.</span> <span class="toc-text">部门管理开发：根据接口文档阅读开发Restful风格</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%91%98%E5%B7%A5%E7%AE%A1%E7%90%86%E5%BC%80%E5%8F%91"><span class="toc-number">3.</span> <span class="toc-text">员工管理开发：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.1.</span> <span class="toc-text">分页查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9C%80%E8%A6%81%E4%B8%A4%E6%9D%A1sql%E8%AF%AD%E5%8F%A5"><span class="toc-number">3.1.1.</span> <span class="toc-text">需要两条SQL语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E4%BC%A0%E6%9D%A5%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-number">3.1.2.</span> <span class="toc-text">前端传来的数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E5%93%8D%E5%BA%94%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-number">3.1.3.</span> <span class="toc-text">后端响应的数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2%E6%8F%92%E4%BB%B6pagehelper"><span class="toc-number">3.1.4.</span> <span class="toc-text">分页查询插件PageHelper</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="toc-number">4.</span> <span class="toc-text">文件上传</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%951%E5%B0%86%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="toc-number">4.1.</span> <span class="toc-text">方法1：将文件保存到本地</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%952%E5%B0%86%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98%E5%88%B0alioss"><span class="toc-number">4.2.</span> <span class="toc-text">方法2：将文件保存到AliOSS</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%99%BB%E9%99%86%E6%A0%A1%E9%AA%8C%E9%9A%BE%E7%82%B9"><span class="toc-number">5.</span> <span class="toc-text">登陆校验（难点）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF"><span class="toc-number">5.1.</span> <span class="toc-text">会话技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jwtjson-web-token%E4%BB%A4%E7%89%8C"><span class="toc-number">5.2.</span> <span class="toc-text">JWT（JSON Web Token）令牌</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9F%E4%B8%80%E6%8B%A6%E6%88%AA%E6%8A%80%E6%9C%AF"><span class="toc-number">5.3.</span> <span class="toc-text">统一拦截技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#filter%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-number">5.3.1.</span> <span class="toc-text">Filter过滤器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#interceptor%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="toc-number">5.4.</span> <span class="toc-text">Interceptor拦截器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-number">6.</span> <span class="toc-text">异常处理</span></a></li></ol></div></div><div class="card-widget card-calendar"><div class="card-content"><div class="item-headline"><i class="fas fa-calendar"></i><span>文章写作日历</span></div><div class="widget" id="calendar"></div></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/1.html" title="无题"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8005.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/posts/1.html" title="无题">无题</a><time datetime="2023-07-01T15:22:08.986Z" title="发表于 2023-07-01 23:22:08">2023-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/2.html" title="无题"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8003.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/posts/2.html" title="无题">无题</a><time datetime="2023-07-01T07:42:19.737Z" title="发表于 2023-07-01 15:42:19">2023-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1.html" title="无题"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8006.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/posts/1.html" title="无题">无题</a><time datetime="2023-06-30T16:08:58.750Z" title="发表于 2023-07-01 00:08:58">2023-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/5.html" title="无题"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8001.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/posts/5.html" title="无题">无题</a><time datetime="2023-06-30T11:40:37.786Z" title="发表于 2023-06-30 19:40:37">2023-06-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/10415.html" title="MySQL12-MVCC多版本并发控制"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8001.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySQL12-MVCC多版本并发控制"/></a><div class="content"><a class="title" href="/posts/10415.html" title="MySQL12-MVCC多版本并发控制">MySQL12-MVCC多版本并发控制</a><time datetime="2023-06-30T07:00:00.000Z" title="发表于 2023-06-30 15:00:00">2023-06-30</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Wang-nine</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+<h2 id="数据封装">数据封装</h2>
+<ul>
+<li><p>实体类属性名和数据库表查询返回的字段名一致，mybatis会自动封装。</p></li>
+<li><p>实体类属性名和数据库表查询返回的字段名不一致，不能自动封装。</p></li>
+</ul>
+<p>如何封装</p>
+<ul>
+<li>1.为字段不同的字段起别名，就是SQL中的as起别名，将别名与实体类属性名一致即可</li>
+<li>2.通过@Results，<span class="citation"
+data-cites="Result注解手动映射封装">@Result注解手动映射封装</span>（不建议）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Results(&#123;</span></span><br><span class="line"><span class="meta">	@Result(column = &quot;dept_id&quot;, property = &quot;deptId&quot; ),</span></span><br><span class="line"><span class="meta">	@Result(column = &quot;create_time&quot;, property = &quot;createTime&quot;)</span></span><br><span class="line"><span class="meta">    @Result(column = &quot;update_time&quot;, property = &quot;updateTime&quot;)</span></span><br><span class="line"><span class="meta">&#125;)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>3.开启Mybatis驼峰命名映射开关（==建议，但是要确保开发时的命名规范==）</li>
+</ul>
+<p>application.properties配置mybatis的驼峰命名映射开关</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#开启mybatis的驼峰命名自动映射开关a_column ------&gt; aCloumn</span><br><span class="line">mybatis.configuration.map-underscore-to-camel-case=true</span><br></pre></td></tr></table></figure>
+<h2 id="注意的使用时机">注意${}的使用时机</h2>
+<p>#{}不能出现在引号中，所以类似于SQL中的like ‘%#{name}%’
+这类模糊匹配需要改为</p>
+<ul>
+<li>like ‘%${name}%’ ==性能低，存在SQL注入攻击问题==</li>
+<li>concat(‘%’, #{name}, ‘%’) ==性能高，更安全==</li>
+</ul>
+<h2 id="单独使用mybatis时的参数映射">单独使用Mybatis时的参数映射</h2>
+<figure>
+<img
+src="https://wang-nine.cn/images/%25E6%259D%2582%25E9%25A1%25B904-01%25E5%258F%2582%25E6%2595%25B0%25E6%2598%25A0%25E5%25B0%2584.png"
+alt="mybatis参数映射" />
+<figcaption aria-hidden="true">mybatis参数映射</figcaption>
+</figure>
+<h2 id="xml映射文件">XML映射文件</h2>
+<p><strong>规范</strong></p>
+<ul>
+<li>XML映射文件的名称与Mapper接口名称一致，并且将XML映射文件和Mapper接口放置在相同包下(同包同名)</li>
+<li>XML映射文件的namespace属性为Mapper接口全限定名一致。</li>
+<li>XML映射文件中sql语句的id与Mapper接口中的方法名一致，并保持返回类型一致。</li>
+</ul>
+<figure>
+<img
+src="https://wang-nine.cn/images/MyBatis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8.png"
+alt="MyBatis快速入门" />
+<figcaption aria-hidden="true">MyBatis快速入门</figcaption>
+</figure>
+<h2 id="动态sql">动态SQL</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 66%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>标签</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;if &gt; &lt;/if&gt;</td>
+<td>用于判断条件是否成立。使用test属性进行条件判断，如果条件为true，则拼接SQL</td>
+</tr>
+<tr class="even">
+<td>&lt;where&gt;&lt;/where&gt;</td>
+<td>where
+元素只会在子元素有内容的情况下才插入where子句。而且会自动去除子句的开头的AND或OR。</td>
+</tr>
+<tr class="odd">
+<td>&lt;set&gt;&lt;/set&gt;</td>
+<td>动态地在行首插入SET关键字，并会删掉额外的逗号。(用在update语句中)</td>
+</tr>
+<tr class="even">
+<td>&lt;foreach 五个属性&gt;&lt;/foreach&gt;</td>
+<td>collection:遍历的集合<br>item:遍历出来的元素<br>separator:分隔符<br/>open:遍历开始前拼接的SQL工片段<br>close:遍历结束后拼接的SQL片段</td>
+</tr>
+<tr class="odd">
+<td>&lt;sql id=&gt;&lt;/sql&gt;</td>
+<td>抽取相同的SQL片段</td>
+</tr>
+<tr class="even">
+<td>&lt;include refid=&gt;&lt;/include&gt;</td>
+<td>引用SQL片段</td>
+</tr>
+</tbody>
+</table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://wang-nine.cn">Wang-nine</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://wang-nine.cn/posts/4.html">https://wang-nine.cn/posts/4.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://wang-nine.cn" target="_blank">玖</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8003.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/10415.html" title="MySQL12-MVCC多版本并发控制"><img class="cover" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8006.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">MySQL12-MVCC多版本并发控制</div></div></a></div><div class="next-post pull-right"><a href="/posts/1.html" title=""><img class="cover" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8001.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Wang-nine</div><div class="author-info__description">天生我才</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">54</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Wang-nine"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Wang-nine" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1826967276@qq.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a><a class="social-icon" href="https://www.zhihu.com/people/Wang-nine" target="_blank" title="知乎"><i class="iconfont icon-shejiaotubiao-46"></i></a><a class="social-icon" href="https://blog.csdn.net/qq_55748865" target="_blank" title="CSDN"><i class="iconfont icon-csdn"></i></a><a class="social-icon" href="https://www.cnblogs.com/wang-nine/" target="_blank" title="博客园"><i class="iconfont icon-bokeyuan"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">正在制作博客中...</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mybatis"><span class="toc-number">1.</span> <span class="toc-text">Mybatis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#jdbc"><span class="toc-number">1.1.</span> <span class="toc-text">JDBC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mybatis%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">MyBatis使用流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0"><span class="toc-number">1.3.</span> <span class="toc-text">数据库连接池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lombok"><span class="toc-number">1.4.</span> <span class="toc-text">lombok</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">第一步：准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E5%85%88%E5%BC%80%E5%8F%91%E7%AE%80%E5%8D%95%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5mapper"><span class="toc-number">3.</span> <span class="toc-text">第二步：先开发简单的增删改查Mapper</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E7%BC%96%E8%AF%91sql"><span class="toc-number">3.1.</span> <span class="toc-text">预编译SQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%8B%BF%E5%88%B0%E4%B8%BB%E9%94%AE%E5%80%BC"><span class="toc-number">3.2.</span> <span class="toc-text">如何拿到主键值？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%B0%81%E8%A3%85"><span class="toc-number">3.3.</span> <span class="toc-text">数据封装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E7%9A%84%E4%BD%BF%E7%94%A8%E6%97%B6%E6%9C%BA"><span class="toc-number">3.4.</span> <span class="toc-text">注意${}的使用时机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E7%8B%AC%E4%BD%BF%E7%94%A8mybatis%E6%97%B6%E7%9A%84%E5%8F%82%E6%95%B0%E6%98%A0%E5%B0%84"><span class="toc-number">3.5.</span> <span class="toc-text">单独使用Mybatis时的参数映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xml%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6"><span class="toc-number">3.6.</span> <span class="toc-text">XML映射文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81sql"><span class="toc-number">3.7.</span> <span class="toc-text">动态SQL</span></a></li></ol></li></ol></div></div><div class="card-widget card-calendar"><div class="card-content"><div class="item-headline"><i class="fas fa-calendar"></i><span>文章写作日历</span></div><div class="widget" id="calendar"></div></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/1.html" title="无题"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8005.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/posts/1.html" title="无题">无题</a><time datetime="2023-07-01T15:22:08.986Z" title="发表于 2023-07-01 23:22:08">2023-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/2.html" title="无题"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8005.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/posts/2.html" title="无题">无题</a><time datetime="2023-07-01T07:42:19.737Z" title="发表于 2023-07-01 15:42:19">2023-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/7.html" title="无题"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8007.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/posts/7.html" title="无题">无题</a><time datetime="2023-06-30T16:08:58.750Z" title="发表于 2023-07-01 00:08:58">2023-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/5.html" title="无题"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8003.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/posts/5.html" title="无题">无题</a><time datetime="2023-06-30T11:40:37.786Z" title="发表于 2023-06-30 19:40:37">2023-06-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/10415.html" title="MySQL12-MVCC多版本并发控制"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8006.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySQL12-MVCC多版本并发控制"/></a><div class="content"><a class="title" href="/posts/10415.html" title="MySQL12-MVCC多版本并发控制">MySQL12-MVCC多版本并发控制</a><time datetime="2023-06-30T07:00:00.000Z" title="发表于 2023-06-30 15:00:00">2023-06-30</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Wang-nine</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
   window.MathJax = {
     tex: {
       inlineMath: [ ['$','$'], ["\\(","\\)"]],
