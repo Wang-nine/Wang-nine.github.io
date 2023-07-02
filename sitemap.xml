@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wang-nine.cn/posts/99999999.html</loc>
+    
+    <lastmod>2023-07-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wang-nine.cn/posts/7.html</loc>
     
     <lastmod>2023-07-02</lastmod>
@@ -39,15 +48,6 @@
   
   <url>
     <loc>https://wang-nine.cn/posts/3.html</loc>
-    
-    <lastmod>2023-07-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wang-nine.cn/posts/9.html</loc>
     
     <lastmod>2023-07-02</lastmod>
     
@@ -533,7 +533,7 @@
   </url>
   
   <url>
-    <loc>https://wang-nine.cn/resources/index.html</loc>
+    <loc>https://wang-nine.cn/tags/index.html</loc>
     
     <lastmod>2023-05-19</lastmod>
     
@@ -542,7 +542,7 @@
   </url>
   
   <url>
-    <loc>https://wang-nine.cn/tags/index.html</loc>
+    <loc>https://wang-nine.cn/resources/index.html</loc>
     
     <lastmod>2023-05-19</lastmod>
     
