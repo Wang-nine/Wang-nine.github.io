@@ -272,85 +272,6 @@
       </tags>
   </entry>
   <entry>
-    <title>HTML5+CSS3总览</title>
-    <url>/posts/10500.html</url>
-    <content><![CDATA[<h1 id="HTML5-CSS301-day01"><a href="#HTML5-CSS301-day01" class="headerlink" title="HTML5+CSS301-day01"></a>HTML5+CSS301-day01</h1><p><a href="https://wang-nine.cn/posts/10501.html">HTML5+CSS301-day01</a></p>
-<h1 id="HTML5-CSS302-day02"><a href="#HTML5-CSS302-day02" class="headerlink" title="HTML5+CSS302-day02"></a>HTML5+CSS302-day02</h1><p><a href="https://wang-nine.cn/posts/10502.html">HTML5+CSS302-day02</a></p>
-<h1 id="HTML5-CSS303-day03"><a href="#HTML5-CSS303-day03" class="headerlink" title="HTML5+CSS303-day03"></a>HTML5+CSS303-day03</h1><p><a href="https://wang-nine.cn/posts/10503.html">HTML5+CSS303-day02</a></p>
-]]></content>
-      <categories>
-        <category>HTML+CSS</category>
-      </categories>
-      <tags>
-        <tag>HTML+CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo+Butterfly主题博客搭建01</title>
-    <url>/posts/10001.html</url>
-    <content><![CDATA[<p>Hexo+Butterfly主题博客搭建01 ——— 个人博客搭建的基础环境配置工作<br><span id="more"></span></p>
-<h1 id="Node-js的配置"><a href="#Node-js的配置" class="headerlink" title="Node.js的配置"></a>Node.js的配置</h1><p><a href="https://nodejs.org/en/download">nodejs的官网</a></p>
-<p>选择适合自己系统的下载即可，大部分人应该是Windows Installer (.msi) 64位，选择msi位安装程序，mac和linux用户选择适合自己的版本即可。</p>
-<p>安装是一路默认选项即可，<strong>注意安装的路径可以根据自己的需求，一定要记住安装在哪里了</strong></p>
-<p>安装完成之后可以在cmd中测试是否安装成功</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<p><img src="https://wang-nine.cn/images/Hexo01-01%E6%9F%A5%E7%9C%8Bnode%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F.png" alt="Hexo01-01查看node是否安装成功"></p>
-<h1 id="Git的配置"><a href="#Git的配置" class="headerlink" title="Git的配置"></a>Git的配置</h1><p><a href="https://git-scm.com/">Git的官网</a></p>
-<p><img src="https://wang-nine.cn/images/Hexo01-02Git%E5%AE%89%E8%A3%85-1.png" alt="Hexo01-02Git安装-1"></p>
-<p>选择适合自己系统的下载即可，大部分人应该是Windows64位，所以直接点击Downloade for Windows即可。</p>
-<p>安装是一路默认选项即可，<strong>注意安装的路径可以根据自己的需求，一定要记住安装在哪里了</strong></p>
-<p>安装完成之后可以在cmd中测试是否安装成功</p>
-<h1 id="github的配置"><a href="#github的配置" class="headerlink" title="github的配置"></a>github的配置</h1><p>在github新建一个仓库</p>
-<blockquote>
-<p>名称为 <strong>你的名称.github.io</strong></p>
-</blockquote>
-<p>如图所示为我的仓库样例：</p>
-<p><img src="https://wang-nine.cn/images/Hexo01-03github%E7%9A%84%E9%85%8D%E7%BD%AE.png" alt="Hexo01-03github的配置"></p>
-<h1 id="博客的初始化"><a href="#博客的初始化" class="headerlink" title="博客的初始化"></a>博客的初始化</h1><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>所有必备的应用程序安装完成后，即可使用<code>npm</code>安装<code>Hexo</code>。不要觉得安装这个框架有多复杂，只需要一条命令就可以了。<code>npm</code>是安装工具，<code>install</code>表示安装，<code>-g</code>表示全局安装，<code>hexo-cli</code>表示安装的是hexo框架。</p>
-<p>在 git 命令行下输入下述的命令，<strong>若无法安装可能是因为权限不够，可以以管理员权限运行 gitbash</strong></p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h2 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h2><p>安装完框架之后新建一个存放博客的文件夹Blog，这里在D盘新建了一个Blog文件夹，在该文件夹下右键Git Bash Here并输入<code>hexo init</code>命令初始化这个文件夹。注意新建 Blog 文件夹和初始化这个文件夹只需要下面这条命令就可以了。</p>
-<h2 id="启动和配置博客"><a href="#启动和配置博客" class="headerlink" title="启动和配置博客"></a>启动和配置博客</h2><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo clean  # 清除缓存</span><br><span class="line">hexo g      # 生成静态网页</span><br><span class="line">hexo d      # 部署到Github</span><br><span class="line">hexo s 		# 是 hexo server 的缩写，启动本地服务器，用于预览主题。默认地址： http://localhost:4000/</span><br></pre></td></tr></table></figure>
-<p>此时输入 <code>hexo clean</code>  <code>hexo d</code>  <code>hexo h</code>  <code>hexo s</code> 命令即可初步查看自己的 Blog 页面<br>在浏览器输入 <a href="http://localhost:4000/">http://localhost:4000/</a> 即可访问<br>顺利的话，在浏览器输入：<code>用户名.github.io</code> 即可初步访问自己的博客</p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo-Butterfly主题博客搭建02</title>
-    <url>/posts/10002.html</url>
-    <content><![CDATA[<p>Hexo+Butterfly主题博客搭建02 ——— 下载有关butterfly主题并进行配置<br><span id="more"></span></p>
-<h1 id="Butterfly主题的安装"><a href="#Butterfly主题的安装" class="headerlink" title="Butterfly主题的安装"></a>Butterfly主题的安装</h1><ol>
-<li>在 hexo 项目根目录下执行操作clone主题</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
-<ol>
-<li>如果沒有 pug 以及 <a href="https://so.csdn.net/so/search?q=stylus&amp;spm=1001.2101.3001.7020">stylus</a> 的渲染器，还需要下载，否则在项目运行时会报错：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure>
-<ol>
-<li>修改项目根目录下的_config.yml文件（称为站点配置文件），开启主题</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line"># extensions</span><br><span class="line">## plugins: https://hexo.io/plugins/</span><br><span class="line">## themes: https://hexo.io/themes/</span><br><span class="line">#theme: landscape</span><br><span class="line">theme: butterfly</span><br></pre></td></tr></table></figure>
-<ol>
-<li>升级建议</li>
-</ol>
-<p>为了減少升级主题带来的不便，我们还需要做以下操作：<br>把主题文件夹中的 _config.yml 复制到 hexo 根目录下，同重命名为 _config.butterfly.yml</p>
-<p>hexo会自动合并主题中的  _config.yml  和   _config.butterfly.yml  里的配置，如果存在同名配置，会使用  _config.butterfly.yml  的配置，其优先度较高。</p>
-<h1 id="butterfly主题"><a href="#butterfly主题" class="headerlink" title="butterfly主题"></a>butterfly主题</h1>]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HTML5+CSS301-day02</title>
     <url>/posts/10502.html</url>
     <content><![CDATA[<p>第二天笔记<br><span id="more"></span></p>
@@ -487,6 +408,85 @@
       </categories>
       <tags>
         <tag>HTML+CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML5+CSS3总览</title>
+    <url>/posts/10500.html</url>
+    <content><![CDATA[<h1 id="HTML5-CSS301-day01"><a href="#HTML5-CSS301-day01" class="headerlink" title="HTML5+CSS301-day01"></a>HTML5+CSS301-day01</h1><p><a href="https://wang-nine.cn/posts/10501.html">HTML5+CSS301-day01</a></p>
+<h1 id="HTML5-CSS302-day02"><a href="#HTML5-CSS302-day02" class="headerlink" title="HTML5+CSS302-day02"></a>HTML5+CSS302-day02</h1><p><a href="https://wang-nine.cn/posts/10502.html">HTML5+CSS302-day02</a></p>
+<h1 id="HTML5-CSS303-day03"><a href="#HTML5-CSS303-day03" class="headerlink" title="HTML5+CSS303-day03"></a>HTML5+CSS303-day03</h1><p><a href="https://wang-nine.cn/posts/10503.html">HTML5+CSS303-day02</a></p>
+]]></content>
+      <categories>
+        <category>HTML+CSS</category>
+      </categories>
+      <tags>
+        <tag>HTML+CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-Butterfly主题博客搭建02</title>
+    <url>/posts/10002.html</url>
+    <content><![CDATA[<p>Hexo+Butterfly主题博客搭建02 ——— 下载有关butterfly主题并进行配置<br><span id="more"></span></p>
+<h1 id="Butterfly主题的安装"><a href="#Butterfly主题的安装" class="headerlink" title="Butterfly主题的安装"></a>Butterfly主题的安装</h1><ol>
+<li>在 hexo 项目根目录下执行操作clone主题</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
+<ol>
+<li>如果沒有 pug 以及 <a href="https://so.csdn.net/so/search?q=stylus&amp;spm=1001.2101.3001.7020">stylus</a> 的渲染器，还需要下载，否则在项目运行时会报错：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure>
+<ol>
+<li>修改项目根目录下的_config.yml文件（称为站点配置文件），开启主题</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line"># extensions</span><br><span class="line">## plugins: https://hexo.io/plugins/</span><br><span class="line">## themes: https://hexo.io/themes/</span><br><span class="line">#theme: landscape</span><br><span class="line">theme: butterfly</span><br></pre></td></tr></table></figure>
+<ol>
+<li>升级建议</li>
+</ol>
+<p>为了減少升级主题带来的不便，我们还需要做以下操作：<br>把主题文件夹中的 _config.yml 复制到 hexo 根目录下，同重命名为 _config.butterfly.yml</p>
+<p>hexo会自动合并主题中的  _config.yml  和   _config.butterfly.yml  里的配置，如果存在同名配置，会使用  _config.butterfly.yml  的配置，其优先度较高。</p>
+<h1 id="butterfly主题"><a href="#butterfly主题" class="headerlink" title="butterfly主题"></a>butterfly主题</h1>]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo+Butterfly主题博客搭建01</title>
+    <url>/posts/10001.html</url>
+    <content><![CDATA[<p>Hexo+Butterfly主题博客搭建01 ——— 个人博客搭建的基础环境配置工作<br><span id="more"></span></p>
+<h1 id="Node-js的配置"><a href="#Node-js的配置" class="headerlink" title="Node.js的配置"></a>Node.js的配置</h1><p><a href="https://nodejs.org/en/download">nodejs的官网</a></p>
+<p>选择适合自己系统的下载即可，大部分人应该是Windows Installer (.msi) 64位，选择msi位安装程序，mac和linux用户选择适合自己的版本即可。</p>
+<p>安装是一路默认选项即可，<strong>注意安装的路径可以根据自己的需求，一定要记住安装在哪里了</strong></p>
+<p>安装完成之后可以在cmd中测试是否安装成功</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p><img src="https://wang-nine.cn/images/Hexo01-01%E6%9F%A5%E7%9C%8Bnode%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F.png" alt="Hexo01-01查看node是否安装成功"></p>
+<h1 id="Git的配置"><a href="#Git的配置" class="headerlink" title="Git的配置"></a>Git的配置</h1><p><a href="https://git-scm.com/">Git的官网</a></p>
+<p><img src="https://wang-nine.cn/images/Hexo01-02Git%E5%AE%89%E8%A3%85-1.png" alt="Hexo01-02Git安装-1"></p>
+<p>选择适合自己系统的下载即可，大部分人应该是Windows64位，所以直接点击Downloade for Windows即可。</p>
+<p>安装是一路默认选项即可，<strong>注意安装的路径可以根据自己的需求，一定要记住安装在哪里了</strong></p>
+<p>安装完成之后可以在cmd中测试是否安装成功</p>
+<h1 id="github的配置"><a href="#github的配置" class="headerlink" title="github的配置"></a>github的配置</h1><p>在github新建一个仓库</p>
+<blockquote>
+<p>名称为 <strong>你的名称.github.io</strong></p>
+</blockquote>
+<p>如图所示为我的仓库样例：</p>
+<p><img src="https://wang-nine.cn/images/Hexo01-03github%E7%9A%84%E9%85%8D%E7%BD%AE.png" alt="Hexo01-03github的配置"></p>
+<h1 id="博客的初始化"><a href="#博客的初始化" class="headerlink" title="博客的初始化"></a>博客的初始化</h1><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>所有必备的应用程序安装完成后，即可使用<code>npm</code>安装<code>Hexo</code>。不要觉得安装这个框架有多复杂，只需要一条命令就可以了。<code>npm</code>是安装工具，<code>install</code>表示安装，<code>-g</code>表示全局安装，<code>hexo-cli</code>表示安装的是hexo框架。</p>
+<p>在 git 命令行下输入下述的命令，<strong>若无法安装可能是因为权限不够，可以以管理员权限运行 gitbash</strong></p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h2 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h2><p>安装完框架之后新建一个存放博客的文件夹Blog，这里在D盘新建了一个Blog文件夹，在该文件夹下右键Git Bash Here并输入<code>hexo init</code>命令初始化这个文件夹。注意新建 Blog 文件夹和初始化这个文件夹只需要下面这条命令就可以了。</p>
+<h2 id="启动和配置博客"><a href="#启动和配置博客" class="headerlink" title="启动和配置博客"></a>启动和配置博客</h2><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo clean  # 清除缓存</span><br><span class="line">hexo g      # 生成静态网页</span><br><span class="line">hexo d      # 部署到Github</span><br><span class="line">hexo s 		# 是 hexo server 的缩写，启动本地服务器，用于预览主题。默认地址： http://localhost:4000/</span><br></pre></td></tr></table></figure>
+<p>此时输入 <code>hexo clean</code>  <code>hexo d</code>  <code>hexo h</code>  <code>hexo s</code> 命令即可初步查看自己的 Blog 页面<br>在浏览器输入 <a href="http://localhost:4000/">http://localhost:4000/</a> 即可访问<br>顺利的话，在浏览器输入：<code>用户名.github.io</code> 即可初步访问自己的博客</p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
       </tags>
   </entry>
   <entry>
@@ -1416,121 +1416,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MySQL03-存储引擎</title>
-    <url>/posts/10403.html</url>
-    <content><![CDATA[<p>详细的描述了MySQL中的引擎之间的区别和选择。<br><span id="more"></span></p>
-<h1 id="MySQL体系结构"><a href="#MySQL体系结构" class="headerlink" title="MySQL体系结构"></a>MySQL体系结构</h1><p><img src="https://wang-nine.cn/images/MySQL02-01%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png" alt="MySQL02-01体系结构"></p>
-<h2 id="连接层"><a href="#连接层" class="headerlink" title="连接层"></a>连接层</h2><blockquote>
-<p>最上层是一些客户端和链接服务，主要完成一些类似于连接处理、授权认证、及相关的安全方案。服务器也会为安全接入的每个客户端验证它所具有的操作权限。</p>
-</blockquote>
-<h2 id="服务层"><a href="#服务层" class="headerlink" title="服务层"></a>服务层</h2><blockquote>
-<p>第二层架构主要完成大多数的核心服务功能，如SQL接口，并完成缓存的查询，SQL的分析和优化，部分内置函数的执行。所有跨存储引擎的功能也在这一层实现，如过程、函数等。</p>
-</blockquote>
-<h2 id="引擎层"><a href="#引擎层" class="headerlink" title="引擎层"></a>引擎层</h2><blockquote>
-<p>存储引擎真正的负责了MySQL中数据的存储和提取，服务器通过API和存储引擎进行通信。不同的存储引擎具有不同的功能，这样我们可以根据自己的需要，来选取合适的存储引擎。</p>
-</blockquote>
-<h2 id="存储层"><a href="#存储层" class="headerlink" title="存储层"></a>存储层</h2><blockquote>
-<p>主要是将数据存储在文件系统之上，并完成与存储引擎的交互。</p>
-</blockquote>
-<h1 id="存储引擎简介"><a href="#存储引擎简介" class="headerlink" title="存储引擎简介"></a>存储引擎简介</h1><p>建表语句中使用 ENGINE = 引擎名 可以指定使用何种引擎<br>查看当前数据库支持的引擎： SHOW ENGINES；</p>
-<h1 id="存储引擎的特点"><a href="#存储引擎的特点" class="headerlink" title="存储引擎的特点"></a>存储引擎的特点</h1><h2 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h2><p>简介<br>InnoDB是一种兼顾高可靠性和高性能的通用存储引擎，在MySQL 5.5之后，InnoDB是默认的MySQL存储引擎。</p>
-<p>特点（事务，外键，行级锁）<br>DML操作遵循ACID模型,支持<strong>事务</strong><br>支持<strong>外键</strong>FOREIGN KEY约束，保证数据的完整性和正确性<br><strong>行级锁</strong>，提高并发访问性能</p>
-<p>文件<br>xxx.ibd: xxx代表的是表名，innoDB引擎的每张表都会对应这样一个表空间文件，存储该表的表结构(frm、gdi) 、数据和索引。参数: innodb_file_per_table</p>
-<p><img src="https://wang-nine.cn/images/MySQL02-02InnoDB.png" alt="MySQL02-02InnoDB"></p>
-<h2 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h2><p>简介<br>MylSAM是MySQL早期的默认存储引擎。</p>
-<p>特点<br>不支持事务<br>不支持外键支持表锁<br>不支持行锁访问速度快</p>
-<p>文件<br>xxx.sdi:存储表结构信息<br>xxx.MYD:存储数据<br>xxx.MYI:存储索引</p>
-<h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><p>介绍<br>Memory引擎的表数据时存储在内存中的，由于受到硬件问题、或断电问题的影响，只能将这些表作为临时表或缓存使用。</p>
-<p>特点<br>内存存放<br>hash索引（默认)</p>
-<p>文件<br>xxx.sdi:存储表结构信息</p>
-<p>比较：（来自黑马程序员，侵删）</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">特点</th>
-<th style="text-align:center">InnoDB</th>
-<th style="text-align:center">MyISAM</th>
-<th style="text-align:center">Memory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">存储限制</td>
-<td style="text-align:center">64TB</td>
-<td style="text-align:center">有</td>
-<td style="text-align:center">有</td>
-</tr>
-<tr>
-<td style="text-align:center">事务安全</td>
-<td style="text-align:center"><strong>支持</strong></td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-</tr>
-<tr>
-<td style="text-align:center">锁机制</td>
-<td style="text-align:center"><strong>行锁</strong></td>
-<td style="text-align:center">表锁</td>
-<td style="text-align:center">表锁</td>
-</tr>
-<tr>
-<td style="text-align:center">B+Tree索引</td>
-<td style="text-align:center">支持</td>
-<td style="text-align:center">支持</td>
-<td style="text-align:center">支持</td>
-</tr>
-<tr>
-<td style="text-align:center">Hash索引</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">支持</td>
-</tr>
-<tr>
-<td style="text-align:center">全文索引</td>
-<td style="text-align:center">支持</td>
-<td style="text-align:center">支持</td>
-<td style="text-align:center">-</td>
-</tr>
-<tr>
-<td style="text-align:center">空间使用</td>
-<td style="text-align:center">高</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">N/A</td>
-</tr>
-<tr>
-<td style="text-align:center">内存使用</td>
-<td style="text-align:center">高</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">中等</td>
-</tr>
-<tr>
-<td style="text-align:center">批量插入速度</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">高</td>
-<td style="text-align:center">高</td>
-</tr>
-<tr>
-<td style="text-align:center">支持外键</td>
-<td style="text-align:center"><strong>支持</strong></td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="存储引擎的选择（总结自黑马程序员MySQL课程，侵删）"><a href="#存储引擎的选择（总结自黑马程序员MySQL课程，侵删）" class="headerlink" title="存储引擎的选择（总结自黑马程序员MySQL课程，侵删）"></a>存储引擎的选择（总结自黑马程序员MySQL课程，侵删）</h1><p>在选择存储引擎时，应该根据应用系统的特点选择合适的存储引擎。对于复杂的应用系统，还可以根据实际情况选择多种存储引擎进行组合。</p>
-<p>InnoDB:是Mysql的默认存储引擎，支持事务、外键。如果应用对事务的完整性有比较高的要求，在并发条件下要求数据的一致性，数据操怍除了插入和查询之外，还包含很多的更新、删除操作，那么InnoDB存储引擎是比较合适的选择。</p>
-<p>MyISAM:如果应用是以读操作和插入操作为主，只有很少的更新和删除操作，并且对事务的完整性、并发性要求不是很高，那么选择这个存储引擎是非常合适的。（被MongoDB取代）</p>
-<p>MEMORY:将所有数据保存在内存中，访问速度快，通常用于临时表及缓存。MEMORY的缺陷就是对表的大小有限制，太大的表无法缓存在内存中，而且无法保障数据的安全性。（被Redis取代）</p>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL02-事务</title>
     <url>/posts/10402.html</url>
     <content><![CDATA[<p>详细的描述了MySQL中的事务的四大特性以及事务的隔离级别。<br><span id="more"></span></p>
@@ -1816,6 +1701,121 @@
       </tags>
   </entry>
   <entry>
+    <title>MySQL03-存储引擎</title>
+    <url>/posts/10403.html</url>
+    <content><![CDATA[<p>详细的描述了MySQL中的引擎之间的区别和选择。<br><span id="more"></span></p>
+<h1 id="MySQL体系结构"><a href="#MySQL体系结构" class="headerlink" title="MySQL体系结构"></a>MySQL体系结构</h1><p><img src="https://wang-nine.cn/images/MySQL02-01%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png" alt="MySQL02-01体系结构"></p>
+<h2 id="连接层"><a href="#连接层" class="headerlink" title="连接层"></a>连接层</h2><blockquote>
+<p>最上层是一些客户端和链接服务，主要完成一些类似于连接处理、授权认证、及相关的安全方案。服务器也会为安全接入的每个客户端验证它所具有的操作权限。</p>
+</blockquote>
+<h2 id="服务层"><a href="#服务层" class="headerlink" title="服务层"></a>服务层</h2><blockquote>
+<p>第二层架构主要完成大多数的核心服务功能，如SQL接口，并完成缓存的查询，SQL的分析和优化，部分内置函数的执行。所有跨存储引擎的功能也在这一层实现，如过程、函数等。</p>
+</blockquote>
+<h2 id="引擎层"><a href="#引擎层" class="headerlink" title="引擎层"></a>引擎层</h2><blockquote>
+<p>存储引擎真正的负责了MySQL中数据的存储和提取，服务器通过API和存储引擎进行通信。不同的存储引擎具有不同的功能，这样我们可以根据自己的需要，来选取合适的存储引擎。</p>
+</blockquote>
+<h2 id="存储层"><a href="#存储层" class="headerlink" title="存储层"></a>存储层</h2><blockquote>
+<p>主要是将数据存储在文件系统之上，并完成与存储引擎的交互。</p>
+</blockquote>
+<h1 id="存储引擎简介"><a href="#存储引擎简介" class="headerlink" title="存储引擎简介"></a>存储引擎简介</h1><p>建表语句中使用 ENGINE = 引擎名 可以指定使用何种引擎<br>查看当前数据库支持的引擎： SHOW ENGINES；</p>
+<h1 id="存储引擎的特点"><a href="#存储引擎的特点" class="headerlink" title="存储引擎的特点"></a>存储引擎的特点</h1><h2 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h2><p>简介<br>InnoDB是一种兼顾高可靠性和高性能的通用存储引擎，在MySQL 5.5之后，InnoDB是默认的MySQL存储引擎。</p>
+<p>特点（事务，外键，行级锁）<br>DML操作遵循ACID模型,支持<strong>事务</strong><br>支持<strong>外键</strong>FOREIGN KEY约束，保证数据的完整性和正确性<br><strong>行级锁</strong>，提高并发访问性能</p>
+<p>文件<br>xxx.ibd: xxx代表的是表名，innoDB引擎的每张表都会对应这样一个表空间文件，存储该表的表结构(frm、gdi) 、数据和索引。参数: innodb_file_per_table</p>
+<p><img src="https://wang-nine.cn/images/MySQL02-02InnoDB.png" alt="MySQL02-02InnoDB"></p>
+<h2 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h2><p>简介<br>MylSAM是MySQL早期的默认存储引擎。</p>
+<p>特点<br>不支持事务<br>不支持外键支持表锁<br>不支持行锁访问速度快</p>
+<p>文件<br>xxx.sdi:存储表结构信息<br>xxx.MYD:存储数据<br>xxx.MYI:存储索引</p>
+<h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><p>介绍<br>Memory引擎的表数据时存储在内存中的，由于受到硬件问题、或断电问题的影响，只能将这些表作为临时表或缓存使用。</p>
+<p>特点<br>内存存放<br>hash索引（默认)</p>
+<p>文件<br>xxx.sdi:存储表结构信息</p>
+<p>比较：（来自黑马程序员，侵删）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">特点</th>
+<th style="text-align:center">InnoDB</th>
+<th style="text-align:center">MyISAM</th>
+<th style="text-align:center">Memory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">存储限制</td>
+<td style="text-align:center">64TB</td>
+<td style="text-align:center">有</td>
+<td style="text-align:center">有</td>
+</tr>
+<tr>
+<td style="text-align:center">事务安全</td>
+<td style="text-align:center"><strong>支持</strong></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">锁机制</td>
+<td style="text-align:center"><strong>行锁</strong></td>
+<td style="text-align:center">表锁</td>
+<td style="text-align:center">表锁</td>
+</tr>
+<tr>
+<td style="text-align:center">B+Tree索引</td>
+<td style="text-align:center">支持</td>
+<td style="text-align:center">支持</td>
+<td style="text-align:center">支持</td>
+</tr>
+<tr>
+<td style="text-align:center">Hash索引</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">支持</td>
+</tr>
+<tr>
+<td style="text-align:center">全文索引</td>
+<td style="text-align:center">支持</td>
+<td style="text-align:center">支持</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">空间使用</td>
+<td style="text-align:center">高</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">N/A</td>
+</tr>
+<tr>
+<td style="text-align:center">内存使用</td>
+<td style="text-align:center">高</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">中等</td>
+</tr>
+<tr>
+<td style="text-align:center">批量插入速度</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">高</td>
+<td style="text-align:center">高</td>
+</tr>
+<tr>
+<td style="text-align:center">支持外键</td>
+<td style="text-align:center"><strong>支持</strong></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="存储引擎的选择（总结自黑马程序员MySQL课程，侵删）"><a href="#存储引擎的选择（总结自黑马程序员MySQL课程，侵删）" class="headerlink" title="存储引擎的选择（总结自黑马程序员MySQL课程，侵删）"></a>存储引擎的选择（总结自黑马程序员MySQL课程，侵删）</h1><p>在选择存储引擎时，应该根据应用系统的特点选择合适的存储引擎。对于复杂的应用系统，还可以根据实际情况选择多种存储引擎进行组合。</p>
+<p>InnoDB:是Mysql的默认存储引擎，支持事务、外键。如果应用对事务的完整性有比较高的要求，在并发条件下要求数据的一致性，数据操怍除了插入和查询之外，还包含很多的更新、删除操作，那么InnoDB存储引擎是比较合适的选择。</p>
+<p>MyISAM:如果应用是以读操作和插入操作为主，只有很少的更新和删除操作，并且对事务的完整性、并发性要求不是很高，那么选择这个存储引擎是非常合适的。（被MongoDB取代）</p>
+<p>MEMORY:将所有数据保存在内存中，访问速度快，通常用于临时表及缓存。MEMORY的缺陷就是对表的大小有限制，太大的表无法缓存在内存中，而且无法保障数据的安全性。（被Redis取代）</p>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL4-索引02-性能分析</title>
     <url>/posts/10405.html</url>
     <content><![CDATA[<p>详细的描述了MySQL中的索引的性能分析。<br><span id="more"></span></p>
@@ -1988,27 +1988,6 @@
 <p>运：对索引列进行运算失效</p>
 <p>最：最左前缀法则</p>
 <p>快：全表比索引快，则不适用</p>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL07-存储函数</title>
-    <url>/posts/10409.html</url>
-    <content><![CDATA[<p>详细的描述了MySQL中的存储函数。<br><span id="more"></span></p>
-<h1 id="存储函数"><a href="#存储函数" class="headerlink" title="存储函数"></a>存储函数</h1><p>存储函数是有返回值的存储过程，存储函数的参数只能是IN类型的。</p>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE FUNCTION 存储函数名称([参数列表])</span><br><span class="line">RETURNS type [characteristic ...]</span><br><span class="line">BEGIN</span><br><span class="line">	--SQL语句</span><br><span class="line">	RETURN ...;</span><br><span class="line">END;</span><br><span class="line"></span><br><span class="line">characteristic说明:</span><br><span class="line"> + DETERMINISTIC:相同的输入参数总是产生相同的结果</span><br><span class="line"> + NO SQL:不包含SQL语句。</span><br><span class="line"> + READS SQL DATA:包含读取数据的语句，但不包含写入数据的语句。</span><br></pre></td></tr></table></figure>
-<h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 存储函数</span><br><span class="line">-- 计算从1到n的累加</span><br><span class="line">create function fun1(n int)</span><br><span class="line">returns int deterministic </span><br><span class="line">begin</span><br><span class="line">    declare total int default 0;</span><br><span class="line"></span><br><span class="line">    while n &gt; 0 do</span><br><span class="line">        set total := total + n;</span><br><span class="line">        set n := n - 1;</span><br><span class="line">    end while;</span><br><span class="line"></span><br><span class="line">    return total;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">select fun1(100);</span><br></pre></td></tr></table></figure>
-<p><strong>注意当未添加 deterministic 会产生如下bug：</strong></p>
-<p><img src="https://wang-nine.cn/images/MySQL06-01%E6%9C%AA%E6%8C%87%E5%AE%9A%E5%8F%82%E6%95%B0%E6%80%A7%E8%B4%A8%E7%9A%84bug.png" alt="MySQL06-01未指定参数性质的bug"></p>
-<p>运行结果：</p>
-<p><img src="https://wang-nine.cn/images/MySQL06-02%E5%AD%98%E5%82%A8%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt="MySQL06-02存储函数的运行结果"></p>
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p><strong>存储函数必须要有返回值，而且参数只能是输入类型的参数，其过程实现完全可以被存储过程所代替。</strong></p>
-<p><strong>因此存储函数的使用较少，这里仅做了解。</strong></p>
 ]]></content>
       <categories>
         <category>MySQL</category>
@@ -2227,6 +2206,116 @@
       </tags>
   </entry>
   <entry>
+    <title>MySQL08-触发器</title>
+    <url>/posts/10410.html</url>
+    <content><![CDATA[<p>详细的描述了MySQL中的触发器。<br><span id="more"></span></p>
+<h1 id="触发器简介"><a href="#触发器简介" class="headerlink" title="触发器简介"></a>触发器简介</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>​        触发器是与表有关的数据库对象，指在 insert / update / delete 之前或之后，触发并执行触发器中定义的SQL语句集合。触发器的这种特性可以协助应用在数据库端确保数据的完整性，日志记录，数据校验等操作。<br>​        使用别名 OLD 和 NEW 来引用触发器中发生变化的记录内容，这与其他的数据库是相似的。</p>
+<p>​        现在触发器还只支持行级触发（影响几行触发几次）</p>
+<p>​        现在触发器不支持语句级触发（执行一条语句触发一次）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>触发器类型</th>
+<th>NEW 和 OLD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INSERT触发器</td>
+<td>NEW表示将要或者已经新增的数据</td>
+</tr>
+<tr>
+<td>UPDATE型触发器</td>
+<td>OLD表示修改之前的数据，NEW表示将要或已经修改后的数据</td>
+</tr>
+<tr>
+<td>DELETE型触发器</td>
+<td>OLD表示将要或者已经删除的数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TRIGGER trigger_name</span><br><span class="line">BEFORE/AFTER INSERT/UPDATE/DELETE</span><br><span class="line">ON tbl_name FOR EACH ROW --行级触发器</span><br><span class="line">BEGIN</span><br><span class="line">	trigger_stmt;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+<h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW TRIGGERS;</span><br></pre></td></tr></table></figure>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP TRIGGER [schema_name.]Jtrigger_name; --如果没有指定schema_name，默认为当前数据库。</span><br></pre></td></tr></table></figure>
+<h3 id="INSERT-类型触发器样例"><a href="#INSERT-类型触发器样例" class="headerlink" title="INSERT 类型触发器样例"></a>INSERT 类型触发器样例</h3><p>样例：</p>
+<p>通过触发器记录 tb_user 表的数据变更日志，将变更日志插入到日志表user_logs中，包含增加，修改，删除；、、</p>
+<p>建表语句如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">create table user_logs(</span><br><span class="line">  id int(11) not null auto_increment,</span><br><span class="line">  operation varchar(20) not null comment &#x27;操作类型, insert/update/delete&#x27;,</span><br><span class="line">  operate_time datetime not null comment &#x27;操作时间&#x27;,</span><br><span class="line">  operate_id int(11) not null comment &#x27;操作的ID&#x27;,</span><br><span class="line">  operate_params varchar(500) comment &#x27;操作参数&#x27;,</span><br><span class="line">  primary key(`id`)</span><br><span class="line">)engine=innodb default charset=utf8;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 插入数据时的触发器</span><br><span class="line">create trigger tb_user_insert_trigger</span><br><span class="line">    after insert on tb_user for each row</span><br><span class="line">begin</span><br><span class="line">    insert into user_logs(id, operation, operate_time, operate_id, operate_params) values</span><br><span class="line">    (null, &#x27;insert&#x27;, now(), new.id, concat(&#x27;插入的数据内容为: id = &#x27;, new.id, &#x27; name = &#x27;, new.name, &#x27; phone = &#x27;, new.phone),</span><br><span class="line">     &#x27; email = &#x27;, new.email, &#x27; profession = &#x27;, new.profession);</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">-- 查看触发器指令</span><br><span class="line">show triggers;</span><br><span class="line"></span><br><span class="line">-- 插入数据</span><br><span class="line">insert into tb_user(id, name, phone, email, profession, age, gender, status, createtime)</span><br><span class="line">values (25,&#x27;Wang&#x27;,&#x27;99999999999&#x27;,&#x27;wang-nine@gmail.com&#x27;,&#x27;计科&#x27;,19,&#x27;1&#x27;,&#x27;1&#x27;,now());</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p><img src="https://wang-nine.cn/images/MySQL07-01%E6%9F%A5%E7%9C%8B%E8%A7%A6%E5%8F%91%E5%99%A8.png" alt="MySQL07-01查看触发器"></p>
+<p><img src="https://wang-nine.cn/images/MySQL07-02insert%E8%A7%A6%E5%8F%91%E5%99%A8.png" alt="MySQL07-02insert触发器"></p>
+<h3 id="UPDATE-类型触发器样例"><a href="#UPDATE-类型触发器样例" class="headerlink" title="UPDATE 类型触发器样例"></a>UPDATE 类型触发器样例</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 更新数据时的触发器</span><br><span class="line">create trigger tb_user_update_trigger</span><br><span class="line">    after update on tb_user for each row</span><br><span class="line">begin</span><br><span class="line">    insert into user_logs(id, operation, operate_time, operate_id, operate_params) values</span><br><span class="line">    (null, &#x27;update&#x27;, now(), new.id,</span><br><span class="line">     concat(&#x27;更新前的数据内容为: id = &#x27;, old.id, &#x27; name = &#x27;, old.name, &#x27; phone = &#x27;, old.phone,&#x27; email = &#x27;, old.email, &#x27; profession = &#x27;, old.profession,</span><br><span class="line">     &#x27;更新前的数据内容为: id = &#x27;, new.id, &#x27; name = &#x27;, new.name, &#x27; phone = &#x27;, new.phone,&#x27; email = &#x27;, new.email, &#x27; profession = &#x27;, new.profession));</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">-- 查看触发器指令</span><br><span class="line">show triggers;</span><br><span class="line"></span><br><span class="line">-- 更新数据</span><br><span class="line">update tb_user set age = 99 where id = 25;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p><img src="https://wang-nine.cn/images/MySQL07-03%E6%9F%A5%E7%9C%8B%E8%A7%A6%E5%8F%91%E5%99%A8.png" alt="MySQL07-03查看触发器"></p>
+<p><img src="https://wang-nine.cn/images/MySQL07-04update%E8%A7%A6%E5%8F%91%E5%99%A8.png" alt="MySQL07-04update触发器"></p>
+<h3 id="DELETE-类型触发器样例"><a href="#DELETE-类型触发器样例" class="headerlink" title="DELETE 类型触发器样例"></a>DELETE 类型触发器样例</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 删除数据时的触发器</span><br><span class="line">create trigger tb_user_delete_trigger</span><br><span class="line">    after delete on tb_user for each row</span><br><span class="line">begin</span><br><span class="line">    insert into user_logs(id, operation, operate_time, operate_id, operate_params) values</span><br><span class="line">    (null, &#x27;delete&#x27;, now(), old.id, concat(&#x27;插入的数据内容为: id = &#x27;, old.id, &#x27; name = &#x27;, old.name, &#x27; phone = &#x27;, old.phone,</span><br><span class="line">     &#x27; email = &#x27;, old.email, &#x27; profession = &#x27;, old.profession));</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">-- 查看触发器指令</span><br><span class="line">show triggers;</span><br><span class="line"></span><br><span class="line">-- 删除数据</span><br><span class="line">delete from tb_user where id = 25;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p><img src="https://wang-nine.cn/images/MySQL07-05%E6%9F%A5%E7%9C%8B%E8%A7%A6%E5%8F%91%E5%99%A8.png" alt="MySQL07-05查看触发器"></p>
+<p><img src="https://wang-nine.cn/images/MySQL07-06delete%E8%A7%A6%E5%8F%91%E5%99%A8.png" alt="MySQL07-06delete触发器"></p>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL07-存储函数</title>
+    <url>/posts/10409.html</url>
+    <content><![CDATA[<p>详细的描述了MySQL中的存储函数。<br><span id="more"></span></p>
+<h1 id="存储函数"><a href="#存储函数" class="headerlink" title="存储函数"></a>存储函数</h1><p>存储函数是有返回值的存储过程，存储函数的参数只能是IN类型的。</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE FUNCTION 存储函数名称([参数列表])</span><br><span class="line">RETURNS type [characteristic ...]</span><br><span class="line">BEGIN</span><br><span class="line">	--SQL语句</span><br><span class="line">	RETURN ...;</span><br><span class="line">END;</span><br><span class="line"></span><br><span class="line">characteristic说明:</span><br><span class="line"> + DETERMINISTIC:相同的输入参数总是产生相同的结果</span><br><span class="line"> + NO SQL:不包含SQL语句。</span><br><span class="line"> + READS SQL DATA:包含读取数据的语句，但不包含写入数据的语句。</span><br></pre></td></tr></table></figure>
+<h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 存储函数</span><br><span class="line">-- 计算从1到n的累加</span><br><span class="line">create function fun1(n int)</span><br><span class="line">returns int deterministic </span><br><span class="line">begin</span><br><span class="line">    declare total int default 0;</span><br><span class="line"></span><br><span class="line">    while n &gt; 0 do</span><br><span class="line">        set total := total + n;</span><br><span class="line">        set n := n - 1;</span><br><span class="line">    end while;</span><br><span class="line"></span><br><span class="line">    return total;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">select fun1(100);</span><br></pre></td></tr></table></figure>
+<p><strong>注意当未添加 deterministic 会产生如下bug：</strong></p>
+<p><img src="https://wang-nine.cn/images/MySQL06-01%E6%9C%AA%E6%8C%87%E5%AE%9A%E5%8F%82%E6%95%B0%E6%80%A7%E8%B4%A8%E7%9A%84bug.png" alt="MySQL06-01未指定参数性质的bug"></p>
+<p>运行结果：</p>
+<p><img src="https://wang-nine.cn/images/MySQL06-02%E5%AD%98%E5%82%A8%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt="MySQL06-02存储函数的运行结果"></p>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p><strong>存储函数必须要有返回值，而且参数只能是输入类型的参数，其过程实现完全可以被存储过程所代替。</strong></p>
+<p><strong>因此存储函数的使用较少，这里仅做了解。</strong></p>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL09-视图</title>
+    <url>/posts/10411.html</url>
+    <content><![CDATA[<p>详细的描述了MySQL中的视图。<br><span id="more"></span></p>
+<h1 id="视图的简介"><a href="#视图的简介" class="headerlink" title="视图的简介"></a>视图的简介</h1><p>视图(View)是一种虚拟存在的表。视图中的数据并不在数据库中实际存在，行和列数据来自定义视图的查询中使用的表，并且是在使用视图时动态生成的。<br>​通俗的讲，视图只保存了查询的SQL逻辑，不保存查询结果。所以我们在创建视图的时候，主要的工作在创建这条SQL查询语句上。</p>
+<h1 id="视图的语法"><a href="#视图的语法" class="headerlink" title="视图的语法"></a>视图的语法</h1><h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE [OR REPLACE] VIEW 视图名称 [(列名列表)] AS SELECT 语句[WITH[CASCADED|LOCAL] CHECK OPTION ]</span><br></pre></td></tr></table></figure>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW CREATE VIEW 视图名称; --查看创建视图语句</span><br><span class="line">SELECT * FROM 视图名称.......; --查看视图数据</span><br></pre></td></tr></table></figure>
+<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 方式一</span><br><span class="line">CREATE [OR REPLACE] VIEW 视图名称(列名列表)] AS SELECT语句 [WITH[CASCADED|LOCAL] CHECK OPTION]</span><br><span class="line">-- 方式二</span><br><span class="line">ALTER VIEW 视图名称(列名列表)] AS SELECT语句 [WITH[CASCADED|LOCAL] CHECK OPTION]</span><br></pre></td></tr></table></figure>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP VIEW [IF EXISTS] 视图名称[视图名称] ...</span><br></pre></td></tr></table></figure>
+<h1 id="视图的检查选项"><a href="#视图的检查选项" class="headerlink" title="视图的检查选项"></a>视图的检查选项</h1><blockquote>
+<p>​        当使用 WITH CHECK OPTION 子句创建视图时，My5QL会通过视图检查正在更改的每个行，例如插入，更新，删除，以使其符合视图的定义。</p>
+<p>​        MySQL允许基于另一个视图创建视图，它还会检查依赖视图中的规则以保持一致性。为了确定检查的范围，mysql 提供了两个选项: CASCADED和LOCAL，默认值为CASCADED。</p>
+</blockquote>
+<h2 id="cascaded"><a href="#cascaded" class="headerlink" title="cascaded"></a>cascaded</h2><p><img src="https://wang-nine.cn/images/MySQL08-01cascaded.png" alt="MySQL08-01cascaded"></p>
+<h2 id="local"><a href="#local" class="headerlink" title="local"></a>local</h2><p><img src="https://wang-nine.cn/images/MySQL08-02local.png" alt="MySQL08-02local"></p>
+<h1 id="视图的更新"><a href="#视图的更新" class="headerlink" title="视图的更新"></a>视图的更新</h1><p>要使视图可更新，视图中的行与基础表中的行之间必须存在一对一的关系。如果视图包含以下任何一项，则该视图不可更新:</p>
+<ol>
+<li>聚合函数或窗口函数(SUM()、MIN()、MAX()、COUNT()等)</li>
+<li>DISTINCT</li>
+<li>GROUP BY</li>
+<li>HAVING</li>
+<li>UNION 或者 UNION ALL</li>
+</ol>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL10-锁</title>
     <url>/posts/10412.html</url>
     <content><![CDATA[<p>详细的描述了MySQL中的锁。<br><span id="more"></span></p>
@@ -2414,95 +2503,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MySQL08-触发器</title>
-    <url>/posts/10410.html</url>
-    <content><![CDATA[<p>详细的描述了MySQL中的触发器。<br><span id="more"></span></p>
-<h1 id="触发器简介"><a href="#触发器简介" class="headerlink" title="触发器简介"></a>触发器简介</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>​        触发器是与表有关的数据库对象，指在 insert / update / delete 之前或之后，触发并执行触发器中定义的SQL语句集合。触发器的这种特性可以协助应用在数据库端确保数据的完整性，日志记录，数据校验等操作。<br>​        使用别名 OLD 和 NEW 来引用触发器中发生变化的记录内容，这与其他的数据库是相似的。</p>
-<p>​        现在触发器还只支持行级触发（影响几行触发几次）</p>
-<p>​        现在触发器不支持语句级触发（执行一条语句触发一次）</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>触发器类型</th>
-<th>NEW 和 OLD</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>INSERT触发器</td>
-<td>NEW表示将要或者已经新增的数据</td>
-</tr>
-<tr>
-<td>UPDATE型触发器</td>
-<td>OLD表示修改之前的数据，NEW表示将要或已经修改后的数据</td>
-</tr>
-<tr>
-<td>DELETE型触发器</td>
-<td>OLD表示将要或者已经删除的数据</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TRIGGER trigger_name</span><br><span class="line">BEFORE/AFTER INSERT/UPDATE/DELETE</span><br><span class="line">ON tbl_name FOR EACH ROW --行级触发器</span><br><span class="line">BEGIN</span><br><span class="line">	trigger_stmt;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
-<h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW TRIGGERS;</span><br></pre></td></tr></table></figure>
-<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP TRIGGER [schema_name.]Jtrigger_name; --如果没有指定schema_name，默认为当前数据库。</span><br></pre></td></tr></table></figure>
-<h3 id="INSERT-类型触发器样例"><a href="#INSERT-类型触发器样例" class="headerlink" title="INSERT 类型触发器样例"></a>INSERT 类型触发器样例</h3><p>样例：</p>
-<p>通过触发器记录 tb_user 表的数据变更日志，将变更日志插入到日志表user_logs中，包含增加，修改，删除；、、</p>
-<p>建表语句如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">create table user_logs(</span><br><span class="line">  id int(11) not null auto_increment,</span><br><span class="line">  operation varchar(20) not null comment &#x27;操作类型, insert/update/delete&#x27;,</span><br><span class="line">  operate_time datetime not null comment &#x27;操作时间&#x27;,</span><br><span class="line">  operate_id int(11) not null comment &#x27;操作的ID&#x27;,</span><br><span class="line">  operate_params varchar(500) comment &#x27;操作参数&#x27;,</span><br><span class="line">  primary key(`id`)</span><br><span class="line">)engine=innodb default charset=utf8;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 插入数据时的触发器</span><br><span class="line">create trigger tb_user_insert_trigger</span><br><span class="line">    after insert on tb_user for each row</span><br><span class="line">begin</span><br><span class="line">    insert into user_logs(id, operation, operate_time, operate_id, operate_params) values</span><br><span class="line">    (null, &#x27;insert&#x27;, now(), new.id, concat(&#x27;插入的数据内容为: id = &#x27;, new.id, &#x27; name = &#x27;, new.name, &#x27; phone = &#x27;, new.phone),</span><br><span class="line">     &#x27; email = &#x27;, new.email, &#x27; profession = &#x27;, new.profession);</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">-- 查看触发器指令</span><br><span class="line">show triggers;</span><br><span class="line"></span><br><span class="line">-- 插入数据</span><br><span class="line">insert into tb_user(id, name, phone, email, profession, age, gender, status, createtime)</span><br><span class="line">values (25,&#x27;Wang&#x27;,&#x27;99999999999&#x27;,&#x27;wang-nine@gmail.com&#x27;,&#x27;计科&#x27;,19,&#x27;1&#x27;,&#x27;1&#x27;,now());</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<p><img src="https://wang-nine.cn/images/MySQL07-01%E6%9F%A5%E7%9C%8B%E8%A7%A6%E5%8F%91%E5%99%A8.png" alt="MySQL07-01查看触发器"></p>
-<p><img src="https://wang-nine.cn/images/MySQL07-02insert%E8%A7%A6%E5%8F%91%E5%99%A8.png" alt="MySQL07-02insert触发器"></p>
-<h3 id="UPDATE-类型触发器样例"><a href="#UPDATE-类型触发器样例" class="headerlink" title="UPDATE 类型触发器样例"></a>UPDATE 类型触发器样例</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 更新数据时的触发器</span><br><span class="line">create trigger tb_user_update_trigger</span><br><span class="line">    after update on tb_user for each row</span><br><span class="line">begin</span><br><span class="line">    insert into user_logs(id, operation, operate_time, operate_id, operate_params) values</span><br><span class="line">    (null, &#x27;update&#x27;, now(), new.id,</span><br><span class="line">     concat(&#x27;更新前的数据内容为: id = &#x27;, old.id, &#x27; name = &#x27;, old.name, &#x27; phone = &#x27;, old.phone,&#x27; email = &#x27;, old.email, &#x27; profession = &#x27;, old.profession,</span><br><span class="line">     &#x27;更新前的数据内容为: id = &#x27;, new.id, &#x27; name = &#x27;, new.name, &#x27; phone = &#x27;, new.phone,&#x27; email = &#x27;, new.email, &#x27; profession = &#x27;, new.profession));</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">-- 查看触发器指令</span><br><span class="line">show triggers;</span><br><span class="line"></span><br><span class="line">-- 更新数据</span><br><span class="line">update tb_user set age = 99 where id = 25;</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<p><img src="https://wang-nine.cn/images/MySQL07-03%E6%9F%A5%E7%9C%8B%E8%A7%A6%E5%8F%91%E5%99%A8.png" alt="MySQL07-03查看触发器"></p>
-<p><img src="https://wang-nine.cn/images/MySQL07-04update%E8%A7%A6%E5%8F%91%E5%99%A8.png" alt="MySQL07-04update触发器"></p>
-<h3 id="DELETE-类型触发器样例"><a href="#DELETE-类型触发器样例" class="headerlink" title="DELETE 类型触发器样例"></a>DELETE 类型触发器样例</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 删除数据时的触发器</span><br><span class="line">create trigger tb_user_delete_trigger</span><br><span class="line">    after delete on tb_user for each row</span><br><span class="line">begin</span><br><span class="line">    insert into user_logs(id, operation, operate_time, operate_id, operate_params) values</span><br><span class="line">    (null, &#x27;delete&#x27;, now(), old.id, concat(&#x27;插入的数据内容为: id = &#x27;, old.id, &#x27; name = &#x27;, old.name, &#x27; phone = &#x27;, old.phone,</span><br><span class="line">     &#x27; email = &#x27;, old.email, &#x27; profession = &#x27;, old.profession));</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">-- 查看触发器指令</span><br><span class="line">show triggers;</span><br><span class="line"></span><br><span class="line">-- 删除数据</span><br><span class="line">delete from tb_user where id = 25;</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<p><img src="https://wang-nine.cn/images/MySQL07-05%E6%9F%A5%E7%9C%8B%E8%A7%A6%E5%8F%91%E5%99%A8.png" alt="MySQL07-05查看触发器"></p>
-<p><img src="https://wang-nine.cn/images/MySQL07-06delete%E8%A7%A6%E5%8F%91%E5%99%A8.png" alt="MySQL07-06delete触发器"></p>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL09-视图</title>
-    <url>/posts/10411.html</url>
-    <content><![CDATA[<p>详细的描述了MySQL中的视图。<br><span id="more"></span></p>
-<h1 id="视图的简介"><a href="#视图的简介" class="headerlink" title="视图的简介"></a>视图的简介</h1><p>视图(View)是一种虚拟存在的表。视图中的数据并不在数据库中实际存在，行和列数据来自定义视图的查询中使用的表，并且是在使用视图时动态生成的。<br>​通俗的讲，视图只保存了查询的SQL逻辑，不保存查询结果。所以我们在创建视图的时候，主要的工作在创建这条SQL查询语句上。</p>
-<h1 id="视图的语法"><a href="#视图的语法" class="headerlink" title="视图的语法"></a>视图的语法</h1><h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE [OR REPLACE] VIEW 视图名称 [(列名列表)] AS SELECT 语句[WITH[CASCADED|LOCAL] CHECK OPTION ]</span><br></pre></td></tr></table></figure>
-<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW CREATE VIEW 视图名称; --查看创建视图语句</span><br><span class="line">SELECT * FROM 视图名称.......; --查看视图数据</span><br></pre></td></tr></table></figure>
-<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 方式一</span><br><span class="line">CREATE [OR REPLACE] VIEW 视图名称(列名列表)] AS SELECT语句 [WITH[CASCADED|LOCAL] CHECK OPTION]</span><br><span class="line">-- 方式二</span><br><span class="line">ALTER VIEW 视图名称(列名列表)] AS SELECT语句 [WITH[CASCADED|LOCAL] CHECK OPTION]</span><br></pre></td></tr></table></figure>
-<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP VIEW [IF EXISTS] 视图名称[视图名称] ...</span><br></pre></td></tr></table></figure>
-<h1 id="视图的检查选项"><a href="#视图的检查选项" class="headerlink" title="视图的检查选项"></a>视图的检查选项</h1><blockquote>
-<p>​        当使用 WITH CHECK OPTION 子句创建视图时，My5QL会通过视图检查正在更改的每个行，例如插入，更新，删除，以使其符合视图的定义。</p>
-<p>​        MySQL允许基于另一个视图创建视图，它还会检查依赖视图中的规则以保持一致性。为了确定检查的范围，mysql 提供了两个选项: CASCADED和LOCAL，默认值为CASCADED。</p>
-</blockquote>
-<h2 id="cascaded"><a href="#cascaded" class="headerlink" title="cascaded"></a>cascaded</h2><p><img src="https://wang-nine.cn/images/MySQL08-01cascaded.png" alt="MySQL08-01cascaded"></p>
-<h2 id="local"><a href="#local" class="headerlink" title="local"></a>local</h2><p><img src="https://wang-nine.cn/images/MySQL08-02local.png" alt="MySQL08-02local"></p>
-<h1 id="视图的更新"><a href="#视图的更新" class="headerlink" title="视图的更新"></a>视图的更新</h1><p>要使视图可更新，视图中的行与基础表中的行之间必须存在一对一的关系。如果视图包含以下任何一项，则该视图不可更新:</p>
-<ol>
-<li>聚合函数或窗口函数(SUM()、MIN()、MAX()、COUNT()等)</li>
-<li>DISTINCT</li>
-<li>GROUP BY</li>
-<li>HAVING</li>
-<li>UNION 或者 UNION ALL</li>
-</ol>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL11-InnoDB引擎01-架构</title>
     <url>/posts/10413.html</url>
     <content><![CDATA[<p>详细的描述了MySQL中的InnoDB引擎的架构。<br><span id="more"></span></p>
@@ -2680,6 +2680,27 @@
       </tags>
   </entry>
   <entry>
+    <title>Redis00-基础</title>
+    <url>/posts/10700.html</url>
+    <content><![CDATA[<p>**<br>基于Redis以及SpringBoot，实现了较为完整的业务流程</p>
+<p>使用Redis解决了集群模式下的Session共享问题。</p>
+<p>使用拦截器实现了用户的登陆校验功能和登录时间刷新功能。</p>
+<p>使用Redis进行缓存，降低了数据库查询压力，解决了缓存穿透，雪崩，击穿的问题。</p>
+<p>使用Redis与简单的Lua脚本实现了Redis操作的原子化，实现高可用，解决了用户秒杀资格的检测，同时使用了乐观锁解决了超卖问题。<br>**</p>
+<p>==使用Redis解决了集群模式下的Session共享问题。==</p>
+<p><img src="https://wang-nine.cn/images/Redis00-01.png" alt="Redis00-01"></p>
+<p><img src="https://wang-nine.cn/images/Redis00-02.png" alt="Redis00-02"></p>
+<p><img src="https://wang-nine.cn/images/Redis00-03.png" alt="Redis00-03"></p>
+<p><img src="https://wang-nine.cn/images/Redis00-04.png" alt="Redis00-04"></p>
+]]></content>
+      <categories>
+        <category>Redis</category>
+      </categories>
+      <tags>
+        <tag>Redis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title></title>
     <url>/posts/2.html</url>
     <content><![CDATA[<h1 id="NoSQL"><a href="#NoSQL" class="headerlink" title="NoSQL"></a>NoSQL</h1><div class="table-container">
@@ -2774,27 +2795,6 @@
 </ul>
 <p>其中的commonds就是Redis的操作命令，例如:<br>ping : 与redis服务端做心跳测试，服务端正常会返回 pong<br>不指定commond时，会进入 redis-cli 的交互控制台:</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Redis00-基础</title>
-    <url>/posts/10700.html</url>
-    <content><![CDATA[<p>**<br>基于Redis以及SpringBoot，实现了较为完整的业务流程</p>
-<p>使用Redis解决了集群模式下的Session共享问题。</p>
-<p>使用拦截器实现了用户的登陆校验功能和登录时间刷新功能。</p>
-<p>使用Redis进行缓存，降低了数据库查询压力，解决了缓存穿透，雪崩，击穿的问题。</p>
-<p>使用Redis与简单的Lua脚本实现了Redis操作的原子化，实现高可用，解决了用户秒杀资格的检测，同时使用了乐观锁解决了超卖问题。<br>**</p>
-<p>==使用Redis解决了集群模式下的Session共享问题。==</p>
-<p><img src="https://wang-nine.cn/images/Redis00-01.png" alt="Redis00-01"></p>
-<p><img src="https://wang-nine.cn/images/Redis00-02.png" alt="Redis00-02"></p>
-<p><img src="https://wang-nine.cn/images/Redis00-03.png" alt="Redis00-03"></p>
-<p><img src="https://wang-nine.cn/images/Redis00-04.png" alt="Redis00-04"></p>
-]]></content>
-      <categories>
-        <category>Redis</category>
-      </categories>
-      <tags>
-        <tag>Redis</tag>
-      </tags>
   </entry>
   <entry>
     <title>Redis02-命令</title>
@@ -3297,6 +3297,74 @@
       </tags>
   </entry>
   <entry>
+    <title>Redis05-短信登陆</title>
+    <url>/posts/10705.html</url>
+    <content><![CDATA[<h1 id="短信登陆"><a href="#短信登陆" class="headerlink" title="短信登陆"></a>短信登陆</h1><h2 id="导入的表格"><a href="#导入的表格" class="headerlink" title="导入的表格"></a>导入的表格</h2><ul>
+<li>tb_user:用户表</li>
+<li>tb_userLinfo:用户详情表</li>
+<li>tb_shop:商户信息表</li>
+<li>tb_shop_type:商户类型表</li>
+<li>tb_blog:用户日记表(达人探店日记)</li>
+<li>tb_follow:用户关注表</li>
+<li>tb_voucher:优惠券表</li>
+<li>tb_voucher_order:优惠券的订单表</li>
+</ul>
+<p><img src="https://wang-nine.cn/images/Redis05-%E7%9F%AD%E4%BF%A1%E7%99%BB%E9%99%86.png" alt="Redis05-短信登陆"></p>
+<h1 id="基于Session实现登陆"><a href="#基于Session实现登陆" class="headerlink" title="基于Session实现登陆"></a>基于Session实现登陆</h1><p><img src="https://wang-nine.cn/images/Redis05-02Session.png" alt="Redis05-02Session"></p>
+<p>1.怎么基于session</p>
+<p>2.验证码如何比对</p>
+<p>3.是否要将所有的数据存入session？</p>
+<p>==集群的session共享问题==</p>
+<p>session共享问题:多台Tomcat并不共享session存储空间，当请求切换到不同tomcat服务时导致数据丢失的问题。</p>
+<p>session的替代方案应该满足:</p>
+<ul>
+<li>数据共享</li>
+<li>内存存储</li>
+<li>kev、value结构(和session一样)</li>
+</ul>
+<p>使用Redis！</p>
+<p>首先每个Tomcat可以去访问Redis，Redis是内存存储的，且Redis就是key，value结构</p>
+<p>问题：</p>
+<ul>
+<li>保存验证码</li>
+</ul>
+<p>存储在Redis中类型：String，那么key是什么？手机号（确保每个手机号有自己的验证码，不仅可以</p>
+<ul>
+<li>保存用户信息</li>
+</ul>
+<p>存储在Redis中类型：Hash，那么key是什么？==手机号（不推荐，放在请求头中，有暴露的风险） 建议随机token==</p>
+<p>（保存登录的用户信息，可以使用String结构，以SON字符串来保存，比较直观，</p>
+<p>Hash结构可以将对象中的每个字段独立存储，可以针对单个字段做CRUD，并且内存占用更少）</p>
+<ul>
+<li>登陆校验</li>
+</ul>
+<p>不再是sessionid，token才是登录凭着，但是token不是自动存储在浏览器，需要手动返回到浏览器。</p>
+<p><img src="https://wang-nine.cn/images/Redis05-03redis.png" alt="Redis05-03redis"></p>
+<p>==可以给验证码设置有效期，放在内存满==</p>
+<p>==注意像session（默认30min）一样给登陆时间做一个有效期，要不然登陆信息越来越多，最后会把redis装满==</p>
+<p>==另一个问题，有效期30min，从登陆开始算起，只要登陆了30min后就会踢出，那么如何访问刷新有效期？拦截器！==</p>
+<p>==上个问题可以在prehandle中修改，获取请求头的token，</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">preHandle</span><br><span class="line"></span><br><span class="line">调用时间：Controller方法处理之前</span><br><span class="line"></span><br><span class="line">执行顺序：链式Intercepter情况下，Intercepter按照声明的顺序一个接一个执行</span><br><span class="line"></span><br><span class="line">若返回false，则中断执行，注意：不会进入afterCompletion</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">postHandle</span><br><span class="line"></span><br><span class="line">调用前提：preHandle返回true</span><br><span class="line"></span><br><span class="line">调用时间：Controller方法处理完之后，DispatcherServlet进行视图的渲染之前，也就是说在这个方法中你可以对ModelAndView进行操作</span><br><span class="line"></span><br><span class="line">执行顺序：链式Intercepter情况下，Intercepter按照声明的顺序倒着执行。</span><br><span class="line"></span><br><span class="line">备注：postHandle虽然post打头，但post、get方法都能处理</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">afterCompletion</span><br><span class="line"></span><br><span class="line">调用前提：preHandle返回true</span><br><span class="line"></span><br><span class="line">调用时间：DispatcherServlet进行视图的渲染之后</span><br></pre></td></tr></table></figure>
+<p>Redis代替session需要考虑的问题:</p>
+<ul>
+<li>选择合适的数据结构</li>
+<li>选择合适的key</li>
+<li>选择合适的存储粒度</li>
+</ul>
+<p>==拦截器问题==</p>
+<p>拦截器拦住了需要登录的路径，若一直访问不需要登陆的网页则不会刷新，怎么办？</p>
+<p><img src="https://wang-nine.cn/images/Redis05-%E6%8B%A6%E6%88%AA%E5%99%A8%E4%BC%98%E5%8C%96.png" alt="Redis05-拦截器优化"></p>
+<p>如何控制拦截器顺序？</p>
+<p>.order属性</p>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> &#123;</span><br><span class="line">    registry.addInterceptor(<span class="keyword">new</span> <span class="title class_">RefreshTokenInterceptor</span>(stringRedisTemplate))</span><br><span class="line">            .addPathPatterns(</span><br><span class="line">                    <span class="string">&quot;/**&quot;</span></span><br><span class="line">            ).order(<span class="number">0</span>);</span><br><span class="line">    registry.addInterceptor(<span class="keyword">new</span> <span class="title class_">LoginInterceptor</span>())</span><br><span class="line">            .excludePathPatterns(</span><br><span class="line">                    <span class="string">&quot;/shop/**&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;/blog/hot&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;/shop/type/**&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;/upload/**&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;/vocher/**&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;/user/code&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;/user/login&quot;</span></span><br><span class="line">            ).order(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>order越小越先执行</p>
+]]></content>
+      <categories>
+        <category>Redis</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Redis04-SpringDataRedis</title>
     <url>/posts/10704.html</url>
     <content><![CDATA[<h1 id="SpringDataRedis"><a href="#SpringDataRedis" class="headerlink" title="SpringDataRedis"></a>SpringDataRedis</h1><p>SpringData是Spring中数据操作的模块，包含对各种数据库的集成，其中对Redis的集成模块就叫做SpringDataRedis</p>
@@ -3383,74 +3451,6 @@
       <tags>
         <tag>Redis</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Redis05-短信登陆</title>
-    <url>/posts/10705.html</url>
-    <content><![CDATA[<h1 id="短信登陆"><a href="#短信登陆" class="headerlink" title="短信登陆"></a>短信登陆</h1><h2 id="导入的表格"><a href="#导入的表格" class="headerlink" title="导入的表格"></a>导入的表格</h2><ul>
-<li>tb_user:用户表</li>
-<li>tb_userLinfo:用户详情表</li>
-<li>tb_shop:商户信息表</li>
-<li>tb_shop_type:商户类型表</li>
-<li>tb_blog:用户日记表(达人探店日记)</li>
-<li>tb_follow:用户关注表</li>
-<li>tb_voucher:优惠券表</li>
-<li>tb_voucher_order:优惠券的订单表</li>
-</ul>
-<p><img src="https://wang-nine.cn/images/Redis05-%E7%9F%AD%E4%BF%A1%E7%99%BB%E9%99%86.png" alt="Redis05-短信登陆"></p>
-<h1 id="基于Session实现登陆"><a href="#基于Session实现登陆" class="headerlink" title="基于Session实现登陆"></a>基于Session实现登陆</h1><p><img src="https://wang-nine.cn/images/Redis05-02Session.png" alt="Redis05-02Session"></p>
-<p>1.怎么基于session</p>
-<p>2.验证码如何比对</p>
-<p>3.是否要将所有的数据存入session？</p>
-<p>==集群的session共享问题==</p>
-<p>session共享问题:多台Tomcat并不共享session存储空间，当请求切换到不同tomcat服务时导致数据丢失的问题。</p>
-<p>session的替代方案应该满足:</p>
-<ul>
-<li>数据共享</li>
-<li>内存存储</li>
-<li>kev、value结构(和session一样)</li>
-</ul>
-<p>使用Redis！</p>
-<p>首先每个Tomcat可以去访问Redis，Redis是内存存储的，且Redis就是key，value结构</p>
-<p>问题：</p>
-<ul>
-<li>保存验证码</li>
-</ul>
-<p>存储在Redis中类型：String，那么key是什么？手机号（确保每个手机号有自己的验证码，不仅可以</p>
-<ul>
-<li>保存用户信息</li>
-</ul>
-<p>存储在Redis中类型：Hash，那么key是什么？==手机号（不推荐，放在请求头中，有暴露的风险） 建议随机token==</p>
-<p>（保存登录的用户信息，可以使用String结构，以SON字符串来保存，比较直观，</p>
-<p>Hash结构可以将对象中的每个字段独立存储，可以针对单个字段做CRUD，并且内存占用更少）</p>
-<ul>
-<li>登陆校验</li>
-</ul>
-<p>不再是sessionid，token才是登录凭着，但是token不是自动存储在浏览器，需要手动返回到浏览器。</p>
-<p><img src="https://wang-nine.cn/images/Redis05-03redis.png" alt="Redis05-03redis"></p>
-<p>==可以给验证码设置有效期，放在内存满==</p>
-<p>==注意像session（默认30min）一样给登陆时间做一个有效期，要不然登陆信息越来越多，最后会把redis装满==</p>
-<p>==另一个问题，有效期30min，从登陆开始算起，只要登陆了30min后就会踢出，那么如何访问刷新有效期？拦截器！==</p>
-<p>==上个问题可以在prehandle中修改，获取请求头的token，</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">preHandle</span><br><span class="line"></span><br><span class="line">调用时间：Controller方法处理之前</span><br><span class="line"></span><br><span class="line">执行顺序：链式Intercepter情况下，Intercepter按照声明的顺序一个接一个执行</span><br><span class="line"></span><br><span class="line">若返回false，则中断执行，注意：不会进入afterCompletion</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">postHandle</span><br><span class="line"></span><br><span class="line">调用前提：preHandle返回true</span><br><span class="line"></span><br><span class="line">调用时间：Controller方法处理完之后，DispatcherServlet进行视图的渲染之前，也就是说在这个方法中你可以对ModelAndView进行操作</span><br><span class="line"></span><br><span class="line">执行顺序：链式Intercepter情况下，Intercepter按照声明的顺序倒着执行。</span><br><span class="line"></span><br><span class="line">备注：postHandle虽然post打头，但post、get方法都能处理</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">afterCompletion</span><br><span class="line"></span><br><span class="line">调用前提：preHandle返回true</span><br><span class="line"></span><br><span class="line">调用时间：DispatcherServlet进行视图的渲染之后</span><br></pre></td></tr></table></figure>
-<p>Redis代替session需要考虑的问题:</p>
-<ul>
-<li>选择合适的数据结构</li>
-<li>选择合适的key</li>
-<li>选择合适的存储粒度</li>
-</ul>
-<p>==拦截器问题==</p>
-<p>拦截器拦住了需要登录的路径，若一直访问不需要登陆的网页则不会刷新，怎么办？</p>
-<p><img src="https://wang-nine.cn/images/Redis05-%E6%8B%A6%E6%88%AA%E5%99%A8%E4%BC%98%E5%8C%96.png" alt="Redis05-拦截器优化"></p>
-<p>如何控制拦截器顺序？</p>
-<p>.order属性</p>
-<p>例如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> &#123;</span><br><span class="line">    registry.addInterceptor(<span class="keyword">new</span> <span class="title class_">RefreshTokenInterceptor</span>(stringRedisTemplate))</span><br><span class="line">            .addPathPatterns(</span><br><span class="line">                    <span class="string">&quot;/**&quot;</span></span><br><span class="line">            ).order(<span class="number">0</span>);</span><br><span class="line">    registry.addInterceptor(<span class="keyword">new</span> <span class="title class_">LoginInterceptor</span>())</span><br><span class="line">            .excludePathPatterns(</span><br><span class="line">                    <span class="string">&quot;/shop/**&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;/blog/hot&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;/shop/type/**&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;/upload/**&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;/vocher/**&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;/user/code&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;/user/login&quot;</span></span><br><span class="line">            ).order(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>order越小越先执行</p>
-]]></content>
-      <categories>
-        <category>Redis</category>
-      </categories>
   </entry>
   <entry>
     <title>Redis06-缓存</title>
@@ -4407,6 +4407,93 @@
       </tags>
   </entry>
   <entry>
+    <title>SSM08-REST风格</title>
+    <url>/posts/10308.html</url>
+    <content><![CDATA[<p>详细的描述了Spring中的REST开发风格<br><span id="more"></span></p>
+<h1 id="REST简介"><a href="#REST简介" class="headerlink" title="REST简介"></a>REST简介</h1><p>REST (Representational state Transfer)，表现形式状态转换</p>
+<ul>
+<li><p>传统风格资源描述形式</p>
+<ul>
+<li><p><a href="http://localhost/user/getById?id=1">http://localhost/user/getById?id=1</a></p>
+</li>
+<li><p><a href="http://localhost/user/saveUser">http://localhost/user/saveUser</a></p>
+</li>
+</ul>
+</li>
+<li><p>REST风格描述形式</p>
+<ul>
+<li><a href="http://localhost/user/1">http://localhost/user/1</a></li>
+<li><a href="http://localhost/user">http://localhost/user</a></li>
+</ul>
+</li>
+<li><p>优点:</p>
+<ul>
+<li>隐藏资源的访问行为，无法通过地址得知对资源是何种操作</li>
+<li>书写简化</li>
+</ul>
+</li>
+<li><p>按照REST风格访问资源时使用行为动作区分对资源进行了何种操作</p>
+<ul>
+<li><a href="http://localhost/users">http://localhost/users</a>    查询全部用户信息    GET(查询)</li>
+<li><a href="http://localhost/users/1">http://localhost/users/1</a>    查询指定用户信息    GET(查询)</li>
+<li><a href="http://localhost/users">http://localhost/users</a>    添加用户信息    POST(新增/保存)</li>
+<li><a href="http://localhost/users">http://localhost/users</a>    修改用户信息    PUT(修改/更新)</li>
+<li><a href="http://localhost/users/1">http://localhost/users/1</a>    删除用户信息    DELETE(删除)</li>
+</ul>
+</li>
+<li>根据REST风格对资源进行访问称为 RESTful</li>
+</ul>
+<blockquote>
+<p>注意事项<br>上述行为是约定方式，约定不是规范，可以打破，所以称REST风格，而不是REST规范<br>描述模块的名称通常使用复数，也就是加s的格式描述，表示此类资源，而非单个资源，例如: users、books、account..</p>
+</blockquote>
+<h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设置当前请求方法为POST，表示REST风格中的添加操作</span></span><br><span class="line"><span class="meta">@RequestMapping(value = &quot;/users&quot;,method = RequestMethod.POST)</span></span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">save</span><span class="params">()</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;user save...&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&#123;&#x27;module&#x27;:&#x27;user save&#x27;&#125;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置当前请求方法为DELETE，表示REST风格中的删除操作</span></span><br><span class="line"><span class="comment">//@PathVariable注解用于设置路径变量（路径参数），要求路径上设置对应的占位符，并且占位符名称与方法形参名称相同</span></span><br><span class="line"><span class="meta">@RequestMapping(value = &quot;/users/&#123;id&#125;&quot;,method = RequestMethod.DELETE)</span></span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">delete</span><span class="params">(<span class="meta">@PathVariable</span> Integer id)</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;user delete...&quot;</span> + id);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&#123;&#x27;module&#x27;:&#x27;user delete&#x27;&#125;&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>@RequestMapping</p>
+<blockquote>
+<p>方法注解，SpringMVC控制器方法定义上方，设置当前控制器方法请求访问路径</p>
+<ul>
+<li>属性<ul>
+<li>value (默认)：请求访问路径</li>
+<li>method：http请求动作，标准动作(GET/POST/PUT/DELETE)</li>
+</ul>
+</li>
+<li>放在类上方时，即设置了公共路径</li>
+</ul>
+</blockquote>
+<p><strong>@RequestBody    @RequestParam    @Pathvariable</strong></p>
+<ul>
+<li>区别<ul>
+<li>@RequestParam用于接收url地址传参或表单传参</li>
+<li>@RequestBody用于接收json数据</li>
+<li>@Pathvariable用于接收路径参数，使用{参数名称}描述路径参数</li>
+</ul>
+</li>
+<li>应用<ul>
+<li>后期开发中，发送请求参数超过1个时，以json格式为主，@RequestBody应用较广</li>
+<li>如果发送非json格式数据，选用@RequestParam接收请求参数</li>
+<li>采用RESTful进行开发，当参数数量较少时，例如1个，可以采用@PathVariable接收请求路径变量，通常用于传递id值</li>
+</ul>
+</li>
+</ul>
+<p>@RestController</p>
+<blockquote>
+<p>类注解</p>
+<p>@RestController = @ResponseBody + @Controller</p>
+</blockquote>
+<p>@GetMapping    @PostMapping    @PutMapping    @DeleteMapping</p>
+<blockquote>
+<p>方法注解<br>基于SpringMVC的RESTful开发控制器方法定义上方<br>设置当前控制器方法请求访问路径与请求动作，每种对应一个请求动作，例如@GetMapping对应GET请求</p>
+</blockquote>
+<p>注意直接访问页面会404，需要添加访问过滤，本来使用Tomcat负责，现在由SpringMVC拦截，需要放行</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SpringMvcSupport</span> <span class="keyword">extends</span> <span class="title class_">WebMvcConfigurationSupport</span> &#123;</span><br><span class="line">    <span class="comment">//设置静态资源访问过滤，当前类需要设置为配置类，并被扫描加载</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">addResourceHandlers</span><span class="params">(ResourceHandlerRegistry registry)</span> &#123;</span><br><span class="line">        <span class="comment">//当访问/pages/????时候，从/pages目录下查找内容</span></span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/pages/**&quot;</span>).addResourceLocations(<span class="string">&quot;/pages/&quot;</span>);</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/js/**&quot;</span>).addResourceLocations(<span class="string">&quot;/js/&quot;</span>);</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/css/**&quot;</span>).addResourceLocations(<span class="string">&quot;/css/&quot;</span>);</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/plugins/**&quot;</span>).addResourceLocations(<span class="string">&quot;/plugins/&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>SSM</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SSM07-SpringMVC的请求与响应</title>
     <url>/posts/10307.html</url>
     <content><![CDATA[<p>详细的描述了SpringMVC中的请求与响应<br><span id="more"></span></p>
@@ -4609,93 +4696,6 @@
 <p>方法注解，SpringMVC控制器方法定义上方，设置当前控制器方法响应内容为当前返回值，无需解析</p>
 </blockquote>
 <p>内部是由类型转换器 HttpMessageConverter 接口发挥作用</p>
-]]></content>
-      <categories>
-        <category>SSM</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SSM08-REST风格</title>
-    <url>/posts/10308.html</url>
-    <content><![CDATA[<p>详细的描述了Spring中的REST开发风格<br><span id="more"></span></p>
-<h1 id="REST简介"><a href="#REST简介" class="headerlink" title="REST简介"></a>REST简介</h1><p>REST (Representational state Transfer)，表现形式状态转换</p>
-<ul>
-<li><p>传统风格资源描述形式</p>
-<ul>
-<li><p><a href="http://localhost/user/getById?id=1">http://localhost/user/getById?id=1</a></p>
-</li>
-<li><p><a href="http://localhost/user/saveUser">http://localhost/user/saveUser</a></p>
-</li>
-</ul>
-</li>
-<li><p>REST风格描述形式</p>
-<ul>
-<li><a href="http://localhost/user/1">http://localhost/user/1</a></li>
-<li><a href="http://localhost/user">http://localhost/user</a></li>
-</ul>
-</li>
-<li><p>优点:</p>
-<ul>
-<li>隐藏资源的访问行为，无法通过地址得知对资源是何种操作</li>
-<li>书写简化</li>
-</ul>
-</li>
-<li><p>按照REST风格访问资源时使用行为动作区分对资源进行了何种操作</p>
-<ul>
-<li><a href="http://localhost/users">http://localhost/users</a>    查询全部用户信息    GET(查询)</li>
-<li><a href="http://localhost/users/1">http://localhost/users/1</a>    查询指定用户信息    GET(查询)</li>
-<li><a href="http://localhost/users">http://localhost/users</a>    添加用户信息    POST(新增/保存)</li>
-<li><a href="http://localhost/users">http://localhost/users</a>    修改用户信息    PUT(修改/更新)</li>
-<li><a href="http://localhost/users/1">http://localhost/users/1</a>    删除用户信息    DELETE(删除)</li>
-</ul>
-</li>
-<li>根据REST风格对资源进行访问称为 RESTful</li>
-</ul>
-<blockquote>
-<p>注意事项<br>上述行为是约定方式，约定不是规范，可以打破，所以称REST风格，而不是REST规范<br>描述模块的名称通常使用复数，也就是加s的格式描述，表示此类资源，而非单个资源，例如: users、books、account..</p>
-</blockquote>
-<h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设置当前请求方法为POST，表示REST风格中的添加操作</span></span><br><span class="line"><span class="meta">@RequestMapping(value = &quot;/users&quot;,method = RequestMethod.POST)</span></span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">save</span><span class="params">()</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;user save...&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&#123;&#x27;module&#x27;:&#x27;user save&#x27;&#125;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置当前请求方法为DELETE，表示REST风格中的删除操作</span></span><br><span class="line"><span class="comment">//@PathVariable注解用于设置路径变量（路径参数），要求路径上设置对应的占位符，并且占位符名称与方法形参名称相同</span></span><br><span class="line"><span class="meta">@RequestMapping(value = &quot;/users/&#123;id&#125;&quot;,method = RequestMethod.DELETE)</span></span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">delete</span><span class="params">(<span class="meta">@PathVariable</span> Integer id)</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;user delete...&quot;</span> + id);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&#123;&#x27;module&#x27;:&#x27;user delete&#x27;&#125;&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>@RequestMapping</p>
-<blockquote>
-<p>方法注解，SpringMVC控制器方法定义上方，设置当前控制器方法请求访问路径</p>
-<ul>
-<li>属性<ul>
-<li>value (默认)：请求访问路径</li>
-<li>method：http请求动作，标准动作(GET/POST/PUT/DELETE)</li>
-</ul>
-</li>
-<li>放在类上方时，即设置了公共路径</li>
-</ul>
-</blockquote>
-<p><strong>@RequestBody    @RequestParam    @Pathvariable</strong></p>
-<ul>
-<li>区别<ul>
-<li>@RequestParam用于接收url地址传参或表单传参</li>
-<li>@RequestBody用于接收json数据</li>
-<li>@Pathvariable用于接收路径参数，使用{参数名称}描述路径参数</li>
-</ul>
-</li>
-<li>应用<ul>
-<li>后期开发中，发送请求参数超过1个时，以json格式为主，@RequestBody应用较广</li>
-<li>如果发送非json格式数据，选用@RequestParam接收请求参数</li>
-<li>采用RESTful进行开发，当参数数量较少时，例如1个，可以采用@PathVariable接收请求路径变量，通常用于传递id值</li>
-</ul>
-</li>
-</ul>
-<p>@RestController</p>
-<blockquote>
-<p>类注解</p>
-<p>@RestController = @ResponseBody + @Controller</p>
-</blockquote>
-<p>@GetMapping    @PostMapping    @PutMapping    @DeleteMapping</p>
-<blockquote>
-<p>方法注解<br>基于SpringMVC的RESTful开发控制器方法定义上方<br>设置当前控制器方法请求访问路径与请求动作，每种对应一个请求动作，例如@GetMapping对应GET请求</p>
-</blockquote>
-<p>注意直接访问页面会404，需要添加访问过滤，本来使用Tomcat负责，现在由SpringMVC拦截，需要放行</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SpringMvcSupport</span> <span class="keyword">extends</span> <span class="title class_">WebMvcConfigurationSupport</span> &#123;</span><br><span class="line">    <span class="comment">//设置静态资源访问过滤，当前类需要设置为配置类，并被扫描加载</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">addResourceHandlers</span><span class="params">(ResourceHandlerRegistry registry)</span> &#123;</span><br><span class="line">        <span class="comment">//当访问/pages/????时候，从/pages目录下查找内容</span></span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/pages/**&quot;</span>).addResourceLocations(<span class="string">&quot;/pages/&quot;</span>);</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/js/**&quot;</span>).addResourceLocations(<span class="string">&quot;/js/&quot;</span>);</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/css/**&quot;</span>).addResourceLocations(<span class="string">&quot;/css/&quot;</span>);</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/plugins/**&quot;</span>).addResourceLocations(<span class="string">&quot;/plugins/&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>SSM</category>
@@ -5293,6 +5293,86 @@
       </tags>
   </entry>
   <entry>
+    <title>分析</title>
+    <url>/posts/20230717.html</url>
+    <content><![CDATA[<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><h2 id="ApiModel"><a href="#ApiModel" class="headerlink" title="@ApiModel"></a>@ApiModel</h2><p>使用场景：在实体类上边使用，标记类时swagger的解析类</p>
+<p>什么是Swagger<br>OpenAPI规范（OpenAPI Specification 简称OAS）是Linux基金会的一个项目，试图通过定义一种用来描述API格式或API定义的语言，来规范RESTful服务开发过程，目前版本是V3.0，并且已经发布并开源在github上。</p>
+<p>Swagger是符合OpenAPI规范的接口开发工具，支持从设计和文档到测试和部署的整个API生命周期的开发</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">作用范围</th>
+<th style="text-align:left">API</th>
+<th style="text-align:left">使用位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">对象属性</td>
+<td style="text-align:left">@ApiModelProperty</td>
+<td style="text-align:left">用在出入参数对象的字段上</td>
+</tr>
+<tr>
+<td style="text-align:left">协议集描述</td>
+<td style="text-align:left">@Api</td>
+<td style="text-align:left">用于controller类上</td>
+</tr>
+<tr>
+<td style="text-align:left">协议描述</td>
+<td style="text-align:left">@ApiOperation</td>
+<td style="text-align:left">用在controller的方法上</td>
+</tr>
+<tr>
+<td style="text-align:left">Response集</td>
+<td style="text-align:left">@ApiResponses</td>
+<td style="text-align:left">用在controller的方法上</td>
+</tr>
+<tr>
+<td style="text-align:left">Response</td>
+<td style="text-align:left">@ApiResponse</td>
+<td style="text-align:left">用在 @ApiResponses里边</td>
+</tr>
+<tr>
+<td style="text-align:left">非对象参数集</td>
+<td style="text-align:left">@ApiImplicitParams</td>
+<td style="text-align:left">用在controller的方法上</td>
+</tr>
+<tr>
+<td style="text-align:left">非对象参数描述</td>
+<td style="text-align:left">@ApiImplicitParam</td>
+<td style="text-align:left">用在@ApiImplicitParams的方法里边</td>
+</tr>
+<tr>
+<td style="text-align:left">描述返回对象的意义</td>
+<td style="text-align:left">@ApiModel</td>
+<td style="text-align:left">用在返回对象类上</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="JsonNaming"><a href="#JsonNaming" class="headerlink" title="@JsonNaming"></a>@JsonNaming</h2><p>@JsonNaming批注用于为序列化中的属性选择命名策略，覆盖默认设置。 使用value元素，我们可以指定任何策略，包括自定义策略。</p>
+<p>除了默认值LOWER_CAMEL_CASE（例如lowerCamelCase）外，Jackson库还为我们提供了另外四种内置的属性命名策略，以方便使用：</p>
+<p>KEBAB_CASE：名称元素之间用连字符分隔，例如 kebab-case。</p>
+<p>LOWER_CASE：所有字母均为小写字母，没有分隔符，例如 lowercase。</p>
+<p>LOWER_DOT_CASE：所有字母均为小写字母，用点连接字符，例如 lower.case。</p>
+<p>SNAKE_CASE：所有字母均为小写，并在名称元素之间使用下划线作为分隔符，例如 snake_case。</p>
+<p>UPPER_CAMEL_CASE：所有名称元素，包括第一个，都以大写字母开头，后跟小写字母，并且没有分隔符，例如 UpperCamelCase。</p>
+<p>此示例将说明使用蛇形案例名称序列化属性的方法，其中将名为beanName的属性序列化为bean_name。</p>
+<h2 id="ConfigurationProperties-prefix-”xxxx”"><a href="#ConfigurationProperties-prefix-”xxxx”" class="headerlink" title="@ConfigurationProperties( prefix = ”xxxx” )"></a>@ConfigurationProperties( prefix = ”xxxx” )</h2><p>在 SpringBoot 中，当想需要获取到配置文件数据时，除了可以用 Spring 自带的 @Value 注解外，SpringBoot 还提供了一种更加方便的方式：@ConfigurationProperties。只要在 Bean 上添加上了这个注解，指定好配置文件的前缀，那么对应的配置文件数据就会自动填充到 Bean 中。</p>
+<p>比如在application.properties文件中有如下配置文件</p>
+<blockquote>
+<p>config.username=jay.zhou<br>config.password=3333</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>分析</category>
+      </categories>
+      <tags>
+        <tag>分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SpringCloud02-服务拆分</title>
     <url>/posts/10602.html</url>
     <content><![CDATA[<p>简单的介绍了SpringCloud中的Nacos。<br><span id="more"></span></p>
@@ -5387,86 +5467,6 @@
       </categories>
       <tags>
         <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>分析</title>
-    <url>/posts/20230717.html</url>
-    <content><![CDATA[<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><h2 id="ApiModel"><a href="#ApiModel" class="headerlink" title="@ApiModel"></a>@ApiModel</h2><p>使用场景：在实体类上边使用，标记类时swagger的解析类</p>
-<p>什么是Swagger<br>OpenAPI规范（OpenAPI Specification 简称OAS）是Linux基金会的一个项目，试图通过定义一种用来描述API格式或API定义的语言，来规范RESTful服务开发过程，目前版本是V3.0，并且已经发布并开源在github上。</p>
-<p>Swagger是符合OpenAPI规范的接口开发工具，支持从设计和文档到测试和部署的整个API生命周期的开发</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">作用范围</th>
-<th style="text-align:left">API</th>
-<th style="text-align:left">使用位置</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">对象属性</td>
-<td style="text-align:left">@ApiModelProperty</td>
-<td style="text-align:left">用在出入参数对象的字段上</td>
-</tr>
-<tr>
-<td style="text-align:left">协议集描述</td>
-<td style="text-align:left">@Api</td>
-<td style="text-align:left">用于controller类上</td>
-</tr>
-<tr>
-<td style="text-align:left">协议描述</td>
-<td style="text-align:left">@ApiOperation</td>
-<td style="text-align:left">用在controller的方法上</td>
-</tr>
-<tr>
-<td style="text-align:left">Response集</td>
-<td style="text-align:left">@ApiResponses</td>
-<td style="text-align:left">用在controller的方法上</td>
-</tr>
-<tr>
-<td style="text-align:left">Response</td>
-<td style="text-align:left">@ApiResponse</td>
-<td style="text-align:left">用在 @ApiResponses里边</td>
-</tr>
-<tr>
-<td style="text-align:left">非对象参数集</td>
-<td style="text-align:left">@ApiImplicitParams</td>
-<td style="text-align:left">用在controller的方法上</td>
-</tr>
-<tr>
-<td style="text-align:left">非对象参数描述</td>
-<td style="text-align:left">@ApiImplicitParam</td>
-<td style="text-align:left">用在@ApiImplicitParams的方法里边</td>
-</tr>
-<tr>
-<td style="text-align:left">描述返回对象的意义</td>
-<td style="text-align:left">@ApiModel</td>
-<td style="text-align:left">用在返回对象类上</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="JsonNaming"><a href="#JsonNaming" class="headerlink" title="@JsonNaming"></a>@JsonNaming</h2><p>@JsonNaming批注用于为序列化中的属性选择命名策略，覆盖默认设置。 使用value元素，我们可以指定任何策略，包括自定义策略。</p>
-<p>除了默认值LOWER_CAMEL_CASE（例如lowerCamelCase）外，Jackson库还为我们提供了另外四种内置的属性命名策略，以方便使用：</p>
-<p>KEBAB_CASE：名称元素之间用连字符分隔，例如 kebab-case。</p>
-<p>LOWER_CASE：所有字母均为小写字母，没有分隔符，例如 lowercase。</p>
-<p>LOWER_DOT_CASE：所有字母均为小写字母，用点连接字符，例如 lower.case。</p>
-<p>SNAKE_CASE：所有字母均为小写，并在名称元素之间使用下划线作为分隔符，例如 snake_case。</p>
-<p>UPPER_CAMEL_CASE：所有名称元素，包括第一个，都以大写字母开头，后跟小写字母，并且没有分隔符，例如 UpperCamelCase。</p>
-<p>此示例将说明使用蛇形案例名称序列化属性的方法，其中将名为beanName的属性序列化为bean_name。</p>
-<h2 id="ConfigurationProperties-prefix-”xxxx”"><a href="#ConfigurationProperties-prefix-”xxxx”" class="headerlink" title="@ConfigurationProperties( prefix = ”xxxx” )"></a>@ConfigurationProperties( prefix = ”xxxx” )</h2><p>在 SpringBoot 中，当想需要获取到配置文件数据时，除了可以用 Spring 自带的 @Value 注解外，SpringBoot 还提供了一种更加方便的方式：@ConfigurationProperties。只要在 Bean 上添加上了这个注解，指定好配置文件的前缀，那么对应的配置文件数据就会自动填充到 Bean 中。</p>
-<p>比如在application.properties文件中有如下配置文件</p>
-<blockquote>
-<p>config.username=jay.zhou<br>config.password=3333</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>分析</category>
-      </categories>
-      <tags>
-        <tag>分析</tag>
       </tags>
   </entry>
   <entry>
@@ -5721,219 +5721,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Mybatis基础入门</title>
-    <url>/posts/20004.html</url>
-    <content><![CDATA[<h1 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h1><p>MyBatis是一款优秀的持久层框架，==用于简化JDBC的开发。==</p>
-<h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><p>JDBC：（Java DataBase Connectivity），就是使用ava语言操作关系型数据库的一套API。</p>
-<ul>
-<li>sun公司官方定义的一套操作所有关系型数据库的规范，即接口。</li>
-<li>各个数据库厂商去实现这套接口，提供数据库驱动jar包。</li>
-<li>我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootTest</span> <span class="comment">//springboot整合单元测试的注解</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SpringbootMybatisQuickstartApplicationTests</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserMapper userMapper;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testListUser</span><span class="params">()</span>&#123;</span><br><span class="line">        List&lt;User&gt; userList = userMapper.list();</span><br><span class="line">        userList.stream().forEach(user -&gt; &#123;</span><br><span class="line">            System.out.println(user);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testJdbc</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//1. 注册驱动</span></span><br><span class="line">        Class.forName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2. 获取连接对象</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;jdbc:mysql://localhost:3306/mybatis&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> <span class="string">&quot;1234&quot;</span>;</span><br><span class="line">        <span class="type">Connection</span> <span class="variable">connection</span> <span class="operator">=</span> DriverManager.getConnection(url, username, password);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3. 获取执行SQL的对象Statement,执行SQL,返回结果</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;select * from user&quot;</span>;</span><br><span class="line">        <span class="type">Statement</span> <span class="variable">statement</span> <span class="operator">=</span> connection.createStatement();</span><br><span class="line">        <span class="type">ResultSet</span> <span class="variable">resultSet</span> <span class="operator">=</span> statement.executeQuery(sql);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4. 封装结果数据</span></span><br><span class="line">        List&lt;User&gt; userList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">while</span> (resultSet.next())&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">id</span> <span class="operator">=</span> resultSet.getInt(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> resultSet.getString(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">            <span class="type">short</span> <span class="variable">age</span> <span class="operator">=</span> resultSet.getShort(<span class="string">&quot;age&quot;</span>);</span><br><span class="line">            <span class="type">short</span> <span class="variable">gender</span> <span class="operator">=</span> resultSet.getShort(<span class="string">&quot;gender&quot;</span>);</span><br><span class="line">            <span class="type">String</span> <span class="variable">phone</span> <span class="operator">=</span> resultSet.getString(<span class="string">&quot;phone&quot;</span>);</span><br><span class="line"></span><br><span class="line">            <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>(id,name,age,gender,phone);</span><br><span class="line">            userList.add(user);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//5. 释放资源</span></span><br><span class="line">        statement.close();</span><br><span class="line">        connection.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="MyBatis使用流程"><a href="#MyBatis使用流程" class="headerlink" title="MyBatis使用流程"></a>MyBatis使用流程</h2><ul>
-<li>1.准备工作(创建springboot工程、数据库表user、实体类User)</li>
-<li>2.引入Mybatis的相关依赖，配置Mybatis</li>
-<li>3.编写SQL语句(注解/XML)</li>
-</ul>
-<h2 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h2><ul>
-<li>数据库连接池是个容器，负责分配、管理数据库连接(Connection)</li>
-<li>它允许应用程序重复使用一个现有的数据库连接，而不是再重新建立一个</li>
-<li>释放空闲时间超过最大空闲时间的连接，来避免因为没有释放连接而引起的数据库连接遗漏</li>
-</ul>
-<blockquote>
-<p>优点：</p>
-<ul>
-<li>资源重用</li>
-<li>提升系统响应速度</li>
-<li>避免数据库连接遗漏</li>
-</ul>
-</blockquote>
-<h2 id="lombok"><a href="#lombok" class="headerlink" title="lombok"></a>lombok</h2><p>Lombok是一个实用的Java类库，能通过注解的形式自动生成构造器、getter/setter、equals、hashcode、toString等方法，并可以自动化生成日志变量，简化java开发、提高效率。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>注解</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>@Getter/ @Setter</td>
-<td>为所有的属性提供get/set方法</td>
-</tr>
-<tr>
-<td>@ToString</td>
-<td>会给类自动生成易阅读的toString方法</td>
-</tr>
-<tr>
-<td>@EqualsAndHashcode</td>
-<td>根据类所拥有的非静态字段自动重写equals方法和 hashCode方法</td>
-</tr>
-<tr>
-<td><strong>@Data</strong></td>
-<td>提供了更综合的生成代码功能(@Getter + @Setter +@ToString +@EqualsAndHashCode)</td>
-</tr>
-<tr>
-<td><strong>@NoArgsConstructor</strong></td>
-<td>为实体类生成无参的构造器方法</td>
-</tr>
-<tr>
-<td><strong>@AllArgsConstructor</strong></td>
-<td>为实体类生成除了static修饰的字段之外带有各参数的构造器方法。</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="第一步：准备工作"><a href="#第一步：准备工作" class="headerlink" title="第一步：准备工作"></a>第一步：准备工作</h1><ul>
-<li>准备好数据库表 Emp （员工表）</li>
-<li>创建一个新的springboot工程，选择引入对应的起步依赖（mybatis、mysql驱动、lombok）</li>
-<li>application.properties中引入数据库连接信息</li>
-<li>创建对应的实体类Emp（实体类属性采用驼峰命名）</li>
-<li>准备Mapper接口EmpMapper（加上Mapper接口）</li>
-</ul>
-<h1 id="第二步：先开发简单的增删改查Mapper"><a href="#第二步：先开发简单的增删改查Mapper" class="headerlink" title="第二步：先开发简单的增删改查Mapper"></a>第二步：先开发简单的增删改查Mapper</h1><ul>
-<li>使用@Delete @Insert @Select</li>
-</ul>
-<blockquote>
-<p>注意SQL语句中的占位符 #{变量名}</p>
-<p>注意接口方法的返回值现在先可以自己定义，在后期会统一换成自己设定的Result类，确保返回给前端的数据解析方便</p>
-</blockquote>
-<ul>
-<li><p>每次开发好一个接口方法时，进行测试，确保测试的覆盖率</p>
-</li>
-<li><p>application.properties配置mybatis的日志，指定输出到控制台</p>
-</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#配置mybatis的日志，指定输出到控制台</span><br><span class="line">mybatis.configuration.log-impl=org.apache.ibatis.logging.stdout.StdoutImpl</span><br></pre></td></tr></table></figure>
-<p>==注意变量名与pojo中一致，表示获取实体类的属性==</p>
-<h2 id="预编译SQL"><a href="#预编译SQL" class="headerlink" title="预编译SQL"></a>预编译SQL</h2><blockquote>
-<p>为什么java会使用预编译的SQL语句？</p>
-<ul>
-<li>性能更高</li>
-<li>更安全（防止SQL注入）</li>
-</ul>
-<p>java项目在执行SQL语句时的步骤</p>
-<ul>
-<li>缓存<ul>
-<li>SQL语法解析检查</li>
-<li>优化SQL</li>
-<li>编译SQL</li>
-</ul>
-</li>
-<li>执行SQL</li>
-</ul>
-</blockquote>
-<p>为什么性能更高呢？</p>
-<blockquote>
-<p>例如：</p>
-<p>delete from emp where id = 1;</p>
-<p>delete from emp where id = 2;</p>
-<p>delete from emp where id = 3;</p>
-<p>上述三条不进行预编译会缓存编译三次</p>
-<p>预编译如下添加占位符：</p>
-<p>delete from emp where id = ?</p>
-<p>1 2 3</p>
-<p>缓存编译一次</p>
-</blockquote>
-<p>为什么更安全呢？</p>
-<p>SQL注入是通过操作输入的数据来修改事先定义好的SQL语句，以达到执行代码对服务器进行攻击的方法</p>
-<blockquote>
-<p>解决了SQL注入</p>
-<p>例如正常的账号 wang 密码 123456</p>
-<p>SQL语句：select conut(*) from emp where username = ‘wang’ and password = ‘123456’;</p>
-<p>SQL注入攻击：</p>
-<p>账号：whatever 密码 ‘ or ’1‘ = ’1</p>
-<p>SQL语句：select conut(*) from emp where username = ‘whatever’ and password = ‘==‘ or ’1‘ = ’1==’;</p>
-<p>上述语句必然成立，达到了攻击的效果</p>
-<p>预编译SQL：</p>
-<p>SQL语句：select count(*) from emp where username =? and password = ?</p>
-<p>参数传递，避免了SQL注入</p>
-</blockquote>
-<ul>
-<li>==使用预编译SQL语句（#{}）==</li>
-<li>==使用拼接SQL语句（${}）==</li>
-</ul>
-<h2 id="如何拿到主键值？"><a href="#如何拿到主键值？" class="headerlink" title="如何拿到主键值？"></a>如何拿到主键值？</h2><p>正常的属性方法getId无法拿到主键值，需要使用注解</p>
-<blockquote>
-<p>@Options(keyProperty=“id”, useGeneratedKeys=true)</p>
-<p> useGeneratedKeys=true代表我们需要拿到主键，keyProperty=‘Id’表示我们需要将主键封装的emp的Id中去</p>
-</blockquote>
-<h2 id="数据封装"><a href="#数据封装" class="headerlink" title="数据封装"></a>数据封装</h2><ul>
-<li><p>实体类属性名和数据库表查询返回的字段名一致，mybatis会自动封装。</p>
-</li>
-<li><p>实体类属性名和数据库表查询返回的字段名不一致，不能自动封装。</p>
-</li>
-</ul>
-<p>如何封装</p>
-<ul>
-<li>1.为字段不同的字段起别名，就是SQL中的as起别名，将别名与实体类属性名一致即可</li>
-<li>2.通过@Results，@Result注解手动映射封装（不建议）</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Results(&#123;</span></span><br><span class="line"><span class="meta">	@Result(column = &quot;dept_id&quot;, property = &quot;deptId&quot; ),</span></span><br><span class="line"><span class="meta">	@Result(column = &quot;create_time&quot;, property = &quot;createTime&quot;)</span></span><br><span class="line"><span class="meta">    @Result(column = &quot;update_time&quot;, property = &quot;updateTime&quot;)</span></span><br><span class="line"><span class="meta">&#125;)</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>3.开启Mybatis驼峰命名映射开关（==建议，但是要确保开发时的命名规范==）</li>
-</ul>
-<p>application.properties配置mybatis的驼峰命名映射开关</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#开启mybatis的驼峰命名自动映射开关a_column ------&gt; aCloumn</span><br><span class="line">mybatis.configuration.map-underscore-to-camel-case=true</span><br></pre></td></tr></table></figure>
-<h2 id="注意-的使用时机"><a href="#注意-的使用时机" class="headerlink" title="注意${}的使用时机"></a>注意${}的使用时机</h2><h1 id="不能出现在引号中，所以类似于SQL中的like-‘-name-’-这类模糊匹配需要改为"><a href="#不能出现在引号中，所以类似于SQL中的like-‘-name-’-这类模糊匹配需要改为" class="headerlink" title="{}不能出现在引号中，所以类似于SQL中的like ‘%#{name}%’ 这类模糊匹配需要改为"></a>{}不能出现在引号中，所以类似于SQL中的like ‘%#{name}%’ 这类模糊匹配需要改为</h1><ul>
-<li>like ‘%${name}%’    ==性能低，存在SQL注入攻击问题==</li>
-<li>concat(‘%’, #{name}, ‘%’) ==性能高，更安全==</li>
-</ul>
-<h2 id="单独使用Mybatis时的参数映射"><a href="#单独使用Mybatis时的参数映射" class="headerlink" title="单独使用Mybatis时的参数映射"></a>单独使用Mybatis时的参数映射</h2><p><img src="https://wang-nine.cn/images/%25E6%259D%2582%25E9%25A1%25B904-01%25E5%258F%2582%25E6%2595%25B0%25E6%2598%25A0%25E5%25B0%2584.png" alt="mybatis参数映射"></p>
-<h2 id="XML映射文件"><a href="#XML映射文件" class="headerlink" title="XML映射文件"></a>XML映射文件</h2><p><strong>规范</strong></p>
-<ul>
-<li>XML映射文件的名称与Mapper接口名称一致，并且将XML映射文件和Mapper接口放置在相同包下(同包同名)</li>
-<li>XML映射文件的namespace属性为Mapper接口全限定名一致。</li>
-<li>XML映射文件中sql语句的id与Mapper接口中的方法名一致，并保持返回类型一致。</li>
-</ul>
-<p><img src="https://wang-nine.cn/images/MyBatis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8.png" alt="MyBatis快速入门"></p>
-<h2 id="动态SQL"><a href="#动态SQL" class="headerlink" title="动态SQL"></a>动态SQL</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>标签</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\<if > \</if></td>
-<td>用于判断条件是否成立。使用test属性进行条件判断，如果条件为true，则拼接SQL</td>
-</tr>
-<tr>
-<td>\<where>\</where></td>
-<td>where 元素只会在子元素有内容的情况下才插入where子句。而且会自动去除子句的开头的AND或OR。</td>
-</tr>
-<tr>
-<td>\<set>\</set></td>
-<td>动态地在行首插入SET关键字，并会删掉额外的逗号。(用在update语句中)</td>
-</tr>
-<tr>
-<td>\<foreach 五个属性>\</foreach></td>
-<td>collection:遍历的集合<br>item:遍历出来的元素<br>separator:分隔符<br/>open:遍历开始前拼接的SQL工片段<br>close:遍历结束后拼接的SQL片段</td>
-</tr>
-<tr>
-<td>\<sql id=>\</sql></td>
-<td>抽取相同的SQL片段</td>
-</tr>
-<tr>
-<td>\<include refid=>\</include></td>
-<td>引用SQL片段</td>
-</tr>
-</tbody>
-</table>
-</div>
-]]></content>
-      <categories>
-        <category>Mybatis</category>
-      </categories>
-      <tags>
-        <tag>Mybatis</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>VIM基础教程</title>
     <url>/posts/20002.html</url>
     <content><![CDATA[<h2 id="1、vim-三种基本的工作模式"><a href="#1、vim-三种基本的工作模式" class="headerlink" title="1、vim 三种基本的工作模式"></a>1、vim 三种基本的工作模式</h2><p>vim有三种基本的工作模式，分别为：命令模式、末行模式、编辑模式。关于这三种工作模式的介绍，请见下文。</p>
@@ -6171,6 +5958,219 @@
       </categories>
       <tags>
         <tag>VIM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mybatis基础入门</title>
+    <url>/posts/20004.html</url>
+    <content><![CDATA[<h1 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h1><p>MyBatis是一款优秀的持久层框架，==用于简化JDBC的开发。==</p>
+<h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><p>JDBC：（Java DataBase Connectivity），就是使用ava语言操作关系型数据库的一套API。</p>
+<ul>
+<li>sun公司官方定义的一套操作所有关系型数据库的规范，即接口。</li>
+<li>各个数据库厂商去实现这套接口，提供数据库驱动jar包。</li>
+<li>我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootTest</span> <span class="comment">//springboot整合单元测试的注解</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SpringbootMybatisQuickstartApplicationTests</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserMapper userMapper;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testListUser</span><span class="params">()</span>&#123;</span><br><span class="line">        List&lt;User&gt; userList = userMapper.list();</span><br><span class="line">        userList.stream().forEach(user -&gt; &#123;</span><br><span class="line">            System.out.println(user);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testJdbc</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//1. 注册驱动</span></span><br><span class="line">        Class.forName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2. 获取连接对象</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;jdbc:mysql://localhost:3306/mybatis&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> <span class="string">&quot;1234&quot;</span>;</span><br><span class="line">        <span class="type">Connection</span> <span class="variable">connection</span> <span class="operator">=</span> DriverManager.getConnection(url, username, password);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3. 获取执行SQL的对象Statement,执行SQL,返回结果</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;select * from user&quot;</span>;</span><br><span class="line">        <span class="type">Statement</span> <span class="variable">statement</span> <span class="operator">=</span> connection.createStatement();</span><br><span class="line">        <span class="type">ResultSet</span> <span class="variable">resultSet</span> <span class="operator">=</span> statement.executeQuery(sql);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4. 封装结果数据</span></span><br><span class="line">        List&lt;User&gt; userList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">while</span> (resultSet.next())&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">id</span> <span class="operator">=</span> resultSet.getInt(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> resultSet.getString(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">            <span class="type">short</span> <span class="variable">age</span> <span class="operator">=</span> resultSet.getShort(<span class="string">&quot;age&quot;</span>);</span><br><span class="line">            <span class="type">short</span> <span class="variable">gender</span> <span class="operator">=</span> resultSet.getShort(<span class="string">&quot;gender&quot;</span>);</span><br><span class="line">            <span class="type">String</span> <span class="variable">phone</span> <span class="operator">=</span> resultSet.getString(<span class="string">&quot;phone&quot;</span>);</span><br><span class="line"></span><br><span class="line">            <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>(id,name,age,gender,phone);</span><br><span class="line">            userList.add(user);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//5. 释放资源</span></span><br><span class="line">        statement.close();</span><br><span class="line">        connection.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="MyBatis使用流程"><a href="#MyBatis使用流程" class="headerlink" title="MyBatis使用流程"></a>MyBatis使用流程</h2><ul>
+<li>1.准备工作(创建springboot工程、数据库表user、实体类User)</li>
+<li>2.引入Mybatis的相关依赖，配置Mybatis</li>
+<li>3.编写SQL语句(注解/XML)</li>
+</ul>
+<h2 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h2><ul>
+<li>数据库连接池是个容器，负责分配、管理数据库连接(Connection)</li>
+<li>它允许应用程序重复使用一个现有的数据库连接，而不是再重新建立一个</li>
+<li>释放空闲时间超过最大空闲时间的连接，来避免因为没有释放连接而引起的数据库连接遗漏</li>
+</ul>
+<blockquote>
+<p>优点：</p>
+<ul>
+<li>资源重用</li>
+<li>提升系统响应速度</li>
+<li>避免数据库连接遗漏</li>
+</ul>
+</blockquote>
+<h2 id="lombok"><a href="#lombok" class="headerlink" title="lombok"></a>lombok</h2><p>Lombok是一个实用的Java类库，能通过注解的形式自动生成构造器、getter/setter、equals、hashcode、toString等方法，并可以自动化生成日志变量，简化java开发、提高效率。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>注解</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@Getter/ @Setter</td>
+<td>为所有的属性提供get/set方法</td>
+</tr>
+<tr>
+<td>@ToString</td>
+<td>会给类自动生成易阅读的toString方法</td>
+</tr>
+<tr>
+<td>@EqualsAndHashcode</td>
+<td>根据类所拥有的非静态字段自动重写equals方法和 hashCode方法</td>
+</tr>
+<tr>
+<td><strong>@Data</strong></td>
+<td>提供了更综合的生成代码功能(@Getter + @Setter +@ToString +@EqualsAndHashCode)</td>
+</tr>
+<tr>
+<td><strong>@NoArgsConstructor</strong></td>
+<td>为实体类生成无参的构造器方法</td>
+</tr>
+<tr>
+<td><strong>@AllArgsConstructor</strong></td>
+<td>为实体类生成除了static修饰的字段之外带有各参数的构造器方法。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="第一步：准备工作"><a href="#第一步：准备工作" class="headerlink" title="第一步：准备工作"></a>第一步：准备工作</h1><ul>
+<li>准备好数据库表 Emp （员工表）</li>
+<li>创建一个新的springboot工程，选择引入对应的起步依赖（mybatis、mysql驱动、lombok）</li>
+<li>application.properties中引入数据库连接信息</li>
+<li>创建对应的实体类Emp（实体类属性采用驼峰命名）</li>
+<li>准备Mapper接口EmpMapper（加上Mapper接口）</li>
+</ul>
+<h1 id="第二步：先开发简单的增删改查Mapper"><a href="#第二步：先开发简单的增删改查Mapper" class="headerlink" title="第二步：先开发简单的增删改查Mapper"></a>第二步：先开发简单的增删改查Mapper</h1><ul>
+<li>使用@Delete @Insert @Select</li>
+</ul>
+<blockquote>
+<p>注意SQL语句中的占位符 #{变量名}</p>
+<p>注意接口方法的返回值现在先可以自己定义，在后期会统一换成自己设定的Result类，确保返回给前端的数据解析方便</p>
+</blockquote>
+<ul>
+<li><p>每次开发好一个接口方法时，进行测试，确保测试的覆盖率</p>
+</li>
+<li><p>application.properties配置mybatis的日志，指定输出到控制台</p>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#配置mybatis的日志，指定输出到控制台</span><br><span class="line">mybatis.configuration.log-impl=org.apache.ibatis.logging.stdout.StdoutImpl</span><br></pre></td></tr></table></figure>
+<p>==注意变量名与pojo中一致，表示获取实体类的属性==</p>
+<h2 id="预编译SQL"><a href="#预编译SQL" class="headerlink" title="预编译SQL"></a>预编译SQL</h2><blockquote>
+<p>为什么java会使用预编译的SQL语句？</p>
+<ul>
+<li>性能更高</li>
+<li>更安全（防止SQL注入）</li>
+</ul>
+<p>java项目在执行SQL语句时的步骤</p>
+<ul>
+<li>缓存<ul>
+<li>SQL语法解析检查</li>
+<li>优化SQL</li>
+<li>编译SQL</li>
+</ul>
+</li>
+<li>执行SQL</li>
+</ul>
+</blockquote>
+<p>为什么性能更高呢？</p>
+<blockquote>
+<p>例如：</p>
+<p>delete from emp where id = 1;</p>
+<p>delete from emp where id = 2;</p>
+<p>delete from emp where id = 3;</p>
+<p>上述三条不进行预编译会缓存编译三次</p>
+<p>预编译如下添加占位符：</p>
+<p>delete from emp where id = ?</p>
+<p>1 2 3</p>
+<p>缓存编译一次</p>
+</blockquote>
+<p>为什么更安全呢？</p>
+<p>SQL注入是通过操作输入的数据来修改事先定义好的SQL语句，以达到执行代码对服务器进行攻击的方法</p>
+<blockquote>
+<p>解决了SQL注入</p>
+<p>例如正常的账号 wang 密码 123456</p>
+<p>SQL语句：select conut(*) from emp where username = ‘wang’ and password = ‘123456’;</p>
+<p>SQL注入攻击：</p>
+<p>账号：whatever 密码 ‘ or ’1‘ = ’1</p>
+<p>SQL语句：select conut(*) from emp where username = ‘whatever’ and password = ‘==‘ or ’1‘ = ’1==’;</p>
+<p>上述语句必然成立，达到了攻击的效果</p>
+<p>预编译SQL：</p>
+<p>SQL语句：select count(*) from emp where username =? and password = ?</p>
+<p>参数传递，避免了SQL注入</p>
+</blockquote>
+<ul>
+<li>==使用预编译SQL语句（#{}）==</li>
+<li>==使用拼接SQL语句（${}）==</li>
+</ul>
+<h2 id="如何拿到主键值？"><a href="#如何拿到主键值？" class="headerlink" title="如何拿到主键值？"></a>如何拿到主键值？</h2><p>正常的属性方法getId无法拿到主键值，需要使用注解</p>
+<blockquote>
+<p>@Options(keyProperty=“id”, useGeneratedKeys=true)</p>
+<p> useGeneratedKeys=true代表我们需要拿到主键，keyProperty=‘Id’表示我们需要将主键封装的emp的Id中去</p>
+</blockquote>
+<h2 id="数据封装"><a href="#数据封装" class="headerlink" title="数据封装"></a>数据封装</h2><ul>
+<li><p>实体类属性名和数据库表查询返回的字段名一致，mybatis会自动封装。</p>
+</li>
+<li><p>实体类属性名和数据库表查询返回的字段名不一致，不能自动封装。</p>
+</li>
+</ul>
+<p>如何封装</p>
+<ul>
+<li>1.为字段不同的字段起别名，就是SQL中的as起别名，将别名与实体类属性名一致即可</li>
+<li>2.通过@Results，@Result注解手动映射封装（不建议）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Results(&#123;</span></span><br><span class="line"><span class="meta">	@Result(column = &quot;dept_id&quot;, property = &quot;deptId&quot; ),</span></span><br><span class="line"><span class="meta">	@Result(column = &quot;create_time&quot;, property = &quot;createTime&quot;)</span></span><br><span class="line"><span class="meta">    @Result(column = &quot;update_time&quot;, property = &quot;updateTime&quot;)</span></span><br><span class="line"><span class="meta">&#125;)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>3.开启Mybatis驼峰命名映射开关（==建议，但是要确保开发时的命名规范==）</li>
+</ul>
+<p>application.properties配置mybatis的驼峰命名映射开关</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#开启mybatis的驼峰命名自动映射开关a_column ------&gt; aCloumn</span><br><span class="line">mybatis.configuration.map-underscore-to-camel-case=true</span><br></pre></td></tr></table></figure>
+<h2 id="注意-的使用时机"><a href="#注意-的使用时机" class="headerlink" title="注意${}的使用时机"></a>注意${}的使用时机</h2><h1 id="不能出现在引号中，所以类似于SQL中的like-‘-name-’-这类模糊匹配需要改为"><a href="#不能出现在引号中，所以类似于SQL中的like-‘-name-’-这类模糊匹配需要改为" class="headerlink" title="{}不能出现在引号中，所以类似于SQL中的like ‘%#{name}%’ 这类模糊匹配需要改为"></a>{}不能出现在引号中，所以类似于SQL中的like ‘%#{name}%’ 这类模糊匹配需要改为</h1><ul>
+<li>like ‘%${name}%’    ==性能低，存在SQL注入攻击问题==</li>
+<li>concat(‘%’, #{name}, ‘%’) ==性能高，更安全==</li>
+</ul>
+<h2 id="单独使用Mybatis时的参数映射"><a href="#单独使用Mybatis时的参数映射" class="headerlink" title="单独使用Mybatis时的参数映射"></a>单独使用Mybatis时的参数映射</h2><p><img src="https://wang-nine.cn/images/%25E6%259D%2582%25E9%25A1%25B904-01%25E5%258F%2582%25E6%2595%25B0%25E6%2598%25A0%25E5%25B0%2584.png" alt="mybatis参数映射"></p>
+<h2 id="XML映射文件"><a href="#XML映射文件" class="headerlink" title="XML映射文件"></a>XML映射文件</h2><p><strong>规范</strong></p>
+<ul>
+<li>XML映射文件的名称与Mapper接口名称一致，并且将XML映射文件和Mapper接口放置在相同包下(同包同名)</li>
+<li>XML映射文件的namespace属性为Mapper接口全限定名一致。</li>
+<li>XML映射文件中sql语句的id与Mapper接口中的方法名一致，并保持返回类型一致。</li>
+</ul>
+<p><img src="https://wang-nine.cn/images/MyBatis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8.png" alt="MyBatis快速入门"></p>
+<h2 id="动态SQL"><a href="#动态SQL" class="headerlink" title="动态SQL"></a>动态SQL</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\<if > \</if></td>
+<td>用于判断条件是否成立。使用test属性进行条件判断，如果条件为true，则拼接SQL</td>
+</tr>
+<tr>
+<td>\<where>\</where></td>
+<td>where 元素只会在子元素有内容的情况下才插入where子句。而且会自动去除子句的开头的AND或OR。</td>
+</tr>
+<tr>
+<td>\<set>\</set></td>
+<td>动态地在行首插入SET关键字，并会删掉额外的逗号。(用在update语句中)</td>
+</tr>
+<tr>
+<td>\<foreach 五个属性>\</foreach></td>
+<td>collection:遍历的集合<br>item:遍历出来的元素<br>separator:分隔符<br/>open:遍历开始前拼接的SQL工片段<br>close:遍历结束后拼接的SQL片段</td>
+</tr>
+<tr>
+<td>\<sql id=>\</sql></td>
+<td>抽取相同的SQL片段</td>
+</tr>
+<tr>
+<td>\<include refid=>\</include></td>
+<td>引用SQL片段</td>
+</tr>
+</tbody>
+</table>
+</div>
+]]></content>
+      <categories>
+        <category>Mybatis</category>
+      </categories>
+      <tags>
+        <tag>Mybatis</tag>
       </tags>
   </entry>
   <entry>
@@ -7085,6 +7085,31 @@
       </tags>
   </entry>
   <entry>
+    <title>JUC</title>
+    <url>/posts/20007.html</url>
+    <content><![CDATA[<h1 id="Java-util-concurrent"><a href="#Java-util-concurrent" class="headerlink" title="Java.util.concurrent"></a>Java.util.concurrent</h1><p>进程:指在系统中正在运行的一个应用程序﹔程序一旦运行就是进程﹔进程——资源分配的最小单位。。<br>线程:系统分配处理器时间资源的基本单元，或者说进程之内独立执行的一个单元执行流。线程——程序执行的最小单位。</p>
+<h2 id="线程的状态（可以通过Thread-State枚举类查看）"><a href="#线程的状态（可以通过Thread-State枚举类查看）" class="headerlink" title="线程的状态（可以通过Thread.State枚举类查看）"></a>线程的状态（可以通过Thread.State枚举类查看）</h2><ul>
+<li>NEW （新建态）</li>
+<li>RUNNABLE（准备就绪）</li>
+<li>BLOCKED（阻塞）</li>
+<li>WAITING（不见不散）</li>
+<li>TIMED WAITING（过时不候）</li>
+<li>TERMINATED（终止） </li>
+</ul>
+<h2 id="Wait和Sleep的区别"><a href="#Wait和Sleep的区别" class="headerlink" title="Wait和Sleep的区别"></a>Wait和Sleep的区别</h2><ul>
+<li>sleep是Thread的静态方法，wait是 Object的方法，任何对象实例都能调用</li>
+<li>sleep不会释放锁，它也不需要占用锁。wait会释放锁，但调用它的前提是当前线程占有锁(即代码要在synchronized中)</li>
+<li>它们都可以被interrupted方法中断</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JUC</category>
+      </categories>
+      <tags>
+        <tag>JUC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>项目重构</title>
     <url>/posts/20006.html</url>
     <content><![CDATA[<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><ul>
@@ -7253,31 +7278,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JUC</title>
-    <url>/posts/20007.html</url>
-    <content><![CDATA[<h1 id="Java-util-concurrent"><a href="#Java-util-concurrent" class="headerlink" title="Java.util.concurrent"></a>Java.util.concurrent</h1><p>进程:指在系统中正在运行的一个应用程序﹔程序一旦运行就是进程﹔进程——资源分配的最小单位。。<br>线程:系统分配处理器时间资源的基本单元，或者说进程之内独立执行的一个单元执行流。线程——程序执行的最小单位。</p>
-<h2 id="线程的状态（可以通过Thread-State枚举类查看）"><a href="#线程的状态（可以通过Thread-State枚举类查看）" class="headerlink" title="线程的状态（可以通过Thread.State枚举类查看）"></a>线程的状态（可以通过Thread.State枚举类查看）</h2><ul>
-<li>NEW （新建态）</li>
-<li>RUNNABLE（准备就绪）</li>
-<li>BLOCKED（阻塞）</li>
-<li>WAITING（不见不散）</li>
-<li>TIMED WAITING（过时不候）</li>
-<li>TERMINATED（终止） </li>
-</ul>
-<h2 id="Wait和Sleep的区别"><a href="#Wait和Sleep的区别" class="headerlink" title="Wait和Sleep的区别"></a>Wait和Sleep的区别</h2><ul>
-<li>sleep是Thread的静态方法，wait是 Object的方法，任何对象实例都能调用</li>
-<li>sleep不会释放锁，它也不需要占用锁。wait会释放锁，但调用它的前提是当前线程占有锁(即代码要在synchronized中)</li>
-<li>它们都可以被interrupted方法中断</li>
-</ul>
-]]></content>
-      <categories>
-        <category>JUC</category>
-      </categories>
-      <tags>
-        <tag>JUC</tag>
-      </tags>
-  </entry>
-  <entry>
     <title></title>
     <url>/posts/5.html</url>
     <content><![CDATA[<p> 事务隔离</p>
@@ -7310,18 +7310,8 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>分类</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>关于</title>
     <url>/about/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>资源</title>
-    <url>/resources/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -7330,8 +7320,18 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>标签</title>
     <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>资源</title>
+    <url>/resources/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
