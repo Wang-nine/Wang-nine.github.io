@@ -1,0 +1,330 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>玖 | 玖</title><meta name="author" content="Wang-nine"><meta name="copyright" content="Wang-nine"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="基于小波变换的数字水印技术数字水印通常可以分为鲁棒数字水印和易损数字水印两类，从狭义上讲，数字水印一般特指鲁棒数字水印，本章主要针对鲁棒数字水印进行案例讲解与分析。鲁棒数字水印主要用于在数字作品中标示著作权信息，利用这种水印技术在多媒体内容的数据中嵌入标示信息。在发生版权纠纷时，标示信息用于保护数据的版权所有者。用于版权保护的数字水印要求有很强的鲁棒性和安全性。   易损数字水印与鲁棒水印的要求相">
+<meta property="og:type" content="article">
+<meta property="og:title" content="玖">
+<meta property="og:url" content="https://wang-nine.cn/posts/0.html">
+<meta property="og:site_name" content="玖">
+<meta property="og:description" content="基于小波变换的数字水印技术数字水印通常可以分为鲁棒数字水印和易损数字水印两类，从狭义上讲，数字水印一般特指鲁棒数字水印，本章主要针对鲁棒数字水印进行案例讲解与分析。鲁棒数字水印主要用于在数字作品中标示著作权信息，利用这种水印技术在多媒体内容的数据中嵌入标示信息。在发生版权纠纷时，标示信息用于保护数据的版权所有者。用于版权保护的数字水印要求有很强的鲁棒性和安全性。   易损数字水印与鲁棒水印的要求相">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8006.png">
+<meta property="article:published_time" content="2023-11-15T11:28:11.796Z">
+<meta property="article:modified_time" content="2023-11-15T11:28:11.798Z">
+<meta property="article:author" content="Wang-nine">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8006.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://wang-nine.cn/posts/0.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '玖',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-11-15 19:28:11'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom/background.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4081150_5yur020zy1i.css"><link rel="stylesheet" href="/css/custom/twikoo_beautify.css"><link rel="stylesheet" href="/css/custom/header_beautify.css"><link rel="stylesheet" href="/css/custom/starlight.css"><link rel="stylesheet" href="/css/custom/title_font.css"><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">64</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child" style="left:-55px;"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child" style="left:-55px;"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8006.png')"><nav id="nav"><span id="blog-info"><a href="/" title="玖"><span class="site-name">玖</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child" style="left:-55px;"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child" style="left:-55px;"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-11-15T11:28:11.796Z" title="发表于 2023-11-15 19:28:11">2023-11-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-15T11:28:11.798Z" title="更新于 2023-11-15 19:28:11">2023-11-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>11分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/0.html#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="基于小波变换的数字水印技术"><a href="#基于小波变换的数字水印技术" class="headerlink" title="基于小波变换的数字水印技术"></a>基于小波变换的数字水印技术</h1><p>数字水印通常可以分为鲁棒数字水印和易损数字水印两类，从狭义上讲，数字水印一般特指鲁棒数字水印，本章主要针对鲁棒数字水印进行案例讲解与分析。鲁棒数字水印主要用于在数字作品中标示著作权信息，利用这种水印技术在多媒体内容的数据中嵌入标示信息。在发生版权纠纷时，标示信息用于保护数据的版权所有者。用于版权保护的数字水印要求有很强的鲁棒性和安全性。</p>
+<p>  易损数字水印与鲁棒水印的要求相反，主要用于完整性保护，这种水印同样是在内容数据中嵌入不可见的信息。当内容发生改变时，这些水印信息会发生相应的改变，从而可以鉴定原始数据是否被篡改。易损水印必须对信号的改动很敏感，人们根据易损水印的状态就可以判断数据是否被篡改过。不同领域对数字水印有不同的要求，但一般而言，鲁棒数字水印应具备如下特点。</p>
+<p>  <strong>(1)不可感知性：</strong> 就是嵌入水印后的图像和未嵌入水印的图像，必须满足人们感知上的需求，在视觉上没有任何差别，不影响产品的质量和价值。</p>
+<p>  <strong>(2)鲁棒性：</strong> 嵌入水印后的图像在受到攻击时，水印依然存在于载体数据中，并可以被恢复和检测处理。</p>
+<p>  <strong>(3)安全性：</strong> 嵌入的水印难以被篡改或伪造，只有授权机构才能检测出来，非法用户不能检测、提取或者去除水印信息。</p>
+<p>  <strong>(4)计算复杂度:</strong> 在不同的应用中，对于水印的嵌入算法和提取算法的计算复杂度要求是不同的，复杂度直接与水印系统的实时性相关。</p>
+<p>  <strong>(5)水印容量:</strong> 水印容量是指载体数据字中可嵌入多少水印信息，可以从几兆到几个比特不等。</p>
+<h2 id="数字水印技术原理"><a href="#数字水印技术原理" class="headerlink" title="数字水印技术原理"></a>数字水印技术原理</h2><p>  数字水印技术实际上就是通过对水印载体的分析、水印信息的处理、水印嵌入点的选择、嵌入方式的设计、嵌入调制的控制和提取检测方法等相关技术环节进行合理优化，寻求满足不可感知性、鲁棒性和安全性等约束条件下的准最优化设计问题。在实际应用中，一个完整水印系统的设计通常包括水印的生成、嵌入、检测和提取四个部分。</p>
+<p><strong>1.水印生成</strong></p>
+<p>通常基于伪随机数发生器或混沌系统来产生水印信号，从水印的鲁棒性和安全性方面来考虑，常常需要对原水印进行预处理来适应水印嵌入算法。</p>
+<p><strong>2.水印嵌入</strong></p>
+<p>在尽量保证水印不可感知性的前提下，嵌入最大强度的水印，可提高水印的稳健性。水印的嵌入过程如下图所示，其中，虚线框表示嵌入算法不一定需要该数据。常用的水印嵌入准则有加法准则、乘法准则和融合准则。</p>
+<p><strong>3.水印检测</strong></p>
+<p>指判断水印载体中是否存在水印的过程。水印的检测过程如下图所示，虚框表示判断水印检测不一定需要这些数据。</p>
+<p><strong>4.水印提取</strong></p>
+<p>指水印被比较精确地提取的过程。水印的提取和检测可以需要原始图像的参与(明检测)，也可不需要原始图像的参与(盲检测)。水印的提取过程如下图所示，虚框表示提取水印不一定需要这些数据。</p>
+<p><strong>1.空间域算法</strong></p>
+<p>空间域方法是数字水印最早的一类算法，它阐明了关于数字水印的一些重要概念。空间域算法-般通过改变图像的灰度值来加入数字水印，大多采用替换法，用水印信号替换载体中的数据，主要有LSB ( Least Significant Bit)、Patchwork、 纹理块映射编码等方法。</p>
+<p>  (1)LSB方法的主要原理是利用人眼视觉特性对于数字图像亮色等级分辨率的有限性，将水印信号替换原图像中像素灰度值的最不重要位或者次不重要位。这种方法简单易行，且能嵌入较多信息，但是抵抗攻击的能力较差，攻击者简单地利用信号处理技术就能完全破坏消息。正是由于这一点，LSB算法能够有效地确定一幅图在何处被修改了。</p>
+<p>  (2) Patchwork 算法是一种基于统计学的方法，它是将图像分成两个子集，其中一个子集的亮度增加，另一个子集的亮度减少同样的量，这个量以不可见为标准，整幅图像的平均灰度值保持不变，在这个调整过程中完成水印的嵌入。在Patchwork算法中，一个密钥用来初始化一个伪随机数，而这个伪随机数将产生载体中放置水印的位置。</p>
+<p>Patchwork方法的隐蔽性好，对有损压缩和FIR滤波有一定的抵抗力，但其缺陷是嵌入信息量有限，对多拷贝平均攻击的抵抗力较弱。</p>
+<p>  (3)纹理块映射编码方法是将一个基于纹理的水印嵌入到图像的具有相似纹理的一部分当中，该算法是基于图像的纹理结构的，因而很难察觉，同时对于滤波、压缩和旋转等操作具有抵抗能力。</p>
+<p><strong>2.变换域算法</strong></p>
+<p>目前变换域算法主要包括傅里叶变换域(DFT)、离散余弦域(DCT)和离散小波变换(DWT)。基于频域的数字水印技术相对于空间域的数字水印技术通常具有更多优势,抗攻击能力更强，比如- -般的几何变换对空域算法影响较大，而对频域算法却影响较小。但是变换域算法嵌入和提取水印的操作复杂，隐藏信息量不能太多。</p>
+<p>  (1)傅里叶变换是一种经典而有效的数学工具，DFT水印技术是利用图像的DFT相位和幅值嵌入信息，一般利用相位信息嵌入水印比利用幅值信息鲁棒性更好，而利用幅值嵌入水印则对旋转、缩放、平移等操作具有不变性。DFT水印技术的优点是具有仿射不变性，还可以利用相位嵌入水印，但DFT技术与国际压缩标准不兼容导致抗压缩能力弱，且算法比较复杂、效率较低，因此限制了它的应用。</p>
+<p>  (2)DCT水印技术的主要思想是在图像的DCT变换域_上选择中低频系数叠加水印信息,选择中低频系数是因为人眼的感觉主要集中在这一频段, 攻击者在破坏水印的过程中，不可避免地会引起图像质量的严重下降，而一般的图像处理过程也不会改变这部分数据。该算法不仅在视觉上具有很强的隐蔽性、鲁棒性和安全性，而且可经受- -定程度的有损压缩、滤波、剪切、缩放、平移、旋转、扫描等操作。</p>
+<p>  (3) DWT是一种“时间一尺度”信号的多分辨率分析方法，它具有良好的空频分解和模拟人类视觉系统的特，而且嵌入式零树小波编码(EZW)将在新一代的压缩标准(JPEG2000，MPEG4/7 等)中被采用，符合国际压缩标准，小波域的水印算法具有良好的发展前景。DWT水印算法的优点是水印检测按子带分级扩充水印序列进行，即如果先检测出的水印序列已经满足水印存在的相似函数要求，则检测可以终止，否则继续搜寻下一子带扩充水印序列直至相似函数出现一个峰值或使所有子带搜索结束。因此含有水印的载体在质量破坏不大的情况下，水印检测可以在搜索少数几个子带后终止，提高了水印检测的效率。</p>
+<p>​    结合Arnold变换的基于DWT的数字水印的嵌入。充分利用了小波变换的特点，采用Haar小波，把原始图像及水印图像进行三级小波分解，然后在多分辨率分解后的频段嵌入水印信号，得到嵌入水印的图像。<br>​    数字水印最重要的性质就是鲁棒性和不可感知性，两者存在一定的矛盾。鲁棒性要求加大水印信息的强度，而水印信息强度的增大反过来又会影响水印的不可感知性，因此必须权衡这两方面的性质，达到鲁棒性和不可感知性的平衡。图像的边缘和纹理部分能隐藏较大的数据量，而图像的平坦部分对噪声相对敏感。由多分辨率分析的思想,图像平坦的部分集中了图像绝大部分的能量,对应着小波变换后的低频子带。而高频部分则对应于图像的边缘和纹理，即细节部分。若考虑水印的鲁棒性，应将水印信息嵌入到图像的低频子带，但低频段的变化对人眼的视觉影响较大，很难兼顾重构图像的不可感知性。若将水印信息嵌入高频子带，可以很好地将水印隐藏，但这样的水印却无法抵抗有损压缩、低通滤波等简单的图像处理。因此，如果能在水印嵌入时充分结合高、低频的特性，就有可能得效果较好的水印嵌入方法。<br>​    综合以上考虑，本文中的算法采用水印信息多分辨率重复嵌入思想。首先将水印图像进行Arnold 置乱，然后将原始图像进行三级离散小波分解后的系数进行排序分组，并针对不同分组，采用不同强度的嵌入系数，进行相应水印分解子图的重复嵌入。各子图分组数目即为水印重复嵌入的次数。</p>
+<p>L是最低频段滤波后的低尺度逼近，同级分辨率下,HL包含水平方向高通、垂直方向低通滤波后的细节信息，LH保留的是水平方向低通、垂直方向高通滤波后所得细节信息，HH保留的是水平方向和垂直方向高通滤波后的细节信息。</p>
+<p>DWT数字水印算法嵌入步骤<br>水印嵌入算法的步骤如下:<br>①分别读取原始图像X和水印图像W。<br>②对水印图像W进行k次Arnold变换，将置乱后的水印记为W。并将系数与变换次数作为密钥key 保存。<br>③对置乱后的水印 Wa 采用Haar小波进行一级小波分解，得到一级分辨率下的一个逼近子图cal和三个细节子图chl,cvl,cd1。<br>④将原始图像X采用Haar小波进行三级小波分解,得到不同分辨率级下的多个细节子图和一个逼近子图，具体分解子图为: cA3,cH3,cV3,cD3,cH 2,cV2,cD2,cH 1,cV1,cD1 。<br>⑤将 Wa 一级小波分解后的各子图分别嵌入原始图像第三级小波分解后的对应子图中，不同的分组选取不同的系数:</p>
+<p>其中，a1,a2,a3,a4 是对应的加权因子。cA3’,cH3’,cV3’,cD3’分别为原始图像三级小波分解嵌入水印后的相应子图。<br>⑥对嵌入水印后的小波系数进行三级小波重构，得到嵌入水印的图像XW。</p>
+<p>DWT数字水印算法提取步骤<br>水印的提取过程其实是嵌入过程的逆过程，具体步骤如下:<br>①分别读入原始图像X和已嵌入水印的图像XW。<br>②将原始图像X和已嵌入水印的图像XW分别采用 Haar小波进行三级小波分解，分别得到不同分辨率级下的多个细节子图和一个逼近子图。<br>③用cA3和 cA3 ‘, cH3和cH3’, cV3和 cV3’，cD3和 cD3’进行嵌入算法的逆运算提取水印图像一级分解的子图: ca1,ch1,cv1,cd1，对提取的小波系数进行一级小波逆变换，得到水印置乱变换后的图像。<br>④根据嵌入时的密钥key进行Arnold反变换，得到提取出的水印W。</p>
+<p><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/d225709faded4c37b30760808e00fdd8.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAUGxhbmV0UlQ=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="请添加图片描述"></p>
+<p><strong>3.其他水印算法</strong></p>
+<p>  基于压缩域、基于NEC算法和生理模型的数字水印算法。其实数字水印算法正在不断地发展和前进中日益完善，但是仍然存在许多不足，具有更加深入的发展空间，这就需要我们在不断的学习和探索中寻找具有更好性能的新算法。</p>
+<p><strong>1 载体图像小波变换</strong></p>
+<p>  数字图像经过小波分解后被分割成4个频带:水平方向(LH)、 垂直方向(HL)、对角线方向(HH)和低频部分(LL)，其中低频部分可以继续分解，如图25-4 所示。图像能量主要集中于低频部分，是原始图像的逼近子图，具有较强的抵抗外来影响的能力，稳定性较好:其他三个子带表征了原图像在水平、垂直和对角线部分的边缘细节信息，容易受外来噪声、图像操作等影响，稳定性较差。</p>
+<p> 选择不同的小波基对嵌入水印的性能有很大影响，刘九芬等人研究了水印算法中小波基的选择和正交小波基的性质与鲁棒性的关系，其研究结果表明正交基的正则性、消失矩阶数、支撑长度及小波能量在低频带的集中程度对水印鲁棒性的影响极小;另外，其研究结果还表明Haar小波比较适合图像水印。</p>
+<p><strong>2.水印图像的预处理</strong></p>
+<p>  为了保证水印的安全性，在嵌入水印前需要对水印进行加密处理。置乱预处理是一种简单常用的加密方法，水印图像置乱可以消除像素间的相关性，从而提高水印的鲁棒性。图像置乱算法有很多，如幻方置乱、Hilbert 置乱、随机数置乱，本文采用Amold置乱算法，将有意义的水印内容掩盖。</p>
+<p><strong>3.小波数字水印的嵌入</strong></p>
+<p>  根据人类视觉系统的照明和纹理掩蔽特性，将水印嵌入到图像的纹理和边缘(HH、HL和LH细节子图中的一些有较大值的小波系数上)不易被觉察，但对图像的滤波和有损压缩操作容易丢失信息。小波变换低频部分(LL) 集中了图像的大部分能量，它是视觉上最重要的部分，在这部分嵌入水印容易引起图像失真。但从鲁棒性出发，水印应当嵌入到视觉最重要的区域。</p>
+<p><strong>4.小波水印的检查提取</strong></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://wang-nine.cn">Wang-nine</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://wang-nine.cn/posts/0.html">https://wang-nine.cn/posts/0.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://wang-nine.cn" target="_blank">玖</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8006.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/5.html" title=""><img class="cover" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8003.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Wang-nine</div><div class="author-info__description">天生我才</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">64</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Wang-nine"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Wang-nine" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1826967276@qq.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a><a class="social-icon" href="https://www.zhihu.com/people/Wang-nine" target="_blank" title="知乎"><i class="iconfont icon-shejiaotubiao-46"></i></a><a class="social-icon" href="https://blog.csdn.net/qq_55748865" target="_blank" title="CSDN"><i class="iconfont icon-csdn"></i></a><a class="social-icon" href="https://www.cnblogs.com/wang-nine/" target="_blank" title="博客园"><i class="iconfont icon-bokeyuan"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">正在制作博客中...</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2%E7%9A%84%E6%95%B0%E5%AD%97%E6%B0%B4%E5%8D%B0%E6%8A%80%E6%9C%AF"><span class="toc-number">1.</span> <span class="toc-text">基于小波变换的数字水印技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E6%B0%B4%E5%8D%B0%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">数字水印技术原理</span></a></li></ol></li></ol></div></div><div class="card-widget card-calendar"><div class="card-content"><div class="item-headline"><i class="fas fa-calendar"></i><span>文章写作日历</span></div><div class="widget" id="calendar"></div></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/0.html" title="无题"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8006.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/posts/0.html" title="无题">无题</a><time datetime="2023-11-15T11:28:11.796Z" title="发表于 2023-11-15 19:28:11">2023-11-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/5.html" title="无题"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8003.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/posts/5.html" title="无题">无题</a><time datetime="2023-11-13T14:06:06.690Z" title="发表于 2023-11-13 22:06:06">2023-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/2.html" title="无题"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8006.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/posts/2.html" title="无题">无题</a><time datetime="2023-11-13T14:06:06.635Z" title="发表于 2023-11-13 22:06:06">2023-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1.html" title="无题"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8002.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/posts/1.html" title="无题">无题</a><time datetime="2023-11-13T14:06:06.608Z" title="发表于 2023-11-13 22:06:06">2023-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/20230717.html" title="分析"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8003.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="分析"/></a><div class="content"><a class="title" href="/posts/20230717.html" title="分析">分析</a><time datetime="2023-07-16T16:00:00.000Z" title="发表于 2023-07-17 00:00:00">2023-07-17</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Wang-nine</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><br>
+<img src="/img/loading.gif" data-original="https://static.dy208.cn/o_1dfilp8ruo521thr1hvf18ji17soa.png">
+<a href="http://www.beian.miit.gov.cn/"  style="color:#f72b07" target="_blank">陕ICP备2023006499号-1</a></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'twikoo-7gm4lugp635e66a4',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'twikoo-7gm4lugp635e66a4',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.textContent = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script src="/js/custom/jquery.min.js"></script><script src="/js/custom/foot.js"></script><canvas id="universe"></canvas><script src="/js/custom/universe.js"></script><script src="/js/custom/switch.js" async></script><script type="text/javascript" src="https://cdn1.tianli0.top/npm/jquery@latest/dist/jquery.min.js"></script><script type="text/javascript" src="/js/languages.js"></script><script data-pjax type="text/javascript" src="/js/calendar.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="天,生,我,材,必,有,用,！" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax src="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<div class="recent-post-item" id="gitcalendarBar" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("https://git-calender.nickxu.top/api?Wang-nine",['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'],'Wang-nine')
+    }
+  </script><!-- hexo injector body_end end -->
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: true,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body></html>
