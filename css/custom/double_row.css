@@ -25,3 +25,9 @@
 .layout>.recent-posts .pagination>:not(.space){
 	box-shadow: 0 8px 16px -4px #2c2d300c;
 }
+
+/* 翻页按钮居中 */
+#pagination {
+	width: 100%;
+	margin: auto;
+  }
