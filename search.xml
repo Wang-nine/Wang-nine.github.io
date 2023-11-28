@@ -574,327 +574,6 @@
       </tags>
   </entry>
   <entry>
-    <title>HTML5+CSS303-day04</title>
-    <url>/posts/10504.html</url>
-    <content><![CDATA[<p>第四天笔记</p>
-<span id="more"></span>
-<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h2><ul>
-<li><strong>定义：由两个或多个基础选择器，通过不同的方式组合而成。</strong></li>
-<li><strong>作用：更准确、更高效的选择目标元素（标签）。</strong></li>
-</ul>
-<h3 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h3><p><strong>后代选择器：选中某元素的后代元素。</strong></p>
-<p><strong>选择器写法：父选择器 子选择器 {CSS属性} 父子选择器之间用空格隔开</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">	<span class="selector-tag">div</span> <span class="selector-tag">span</span> &#123;</span></span><br><span class="line"><span class="language-css">		<span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">	&#125;</span></span><br><span class="line"><span class="language-css">&lt;style&gt;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">&lt;<span class="selector-tag">span</span>&gt;<span class="selector-tag">span</span>标签&lt;/<span class="selector-tag">span</span>&gt;</span></span><br><span class="line"><span class="language-css">&lt;<span class="selector-tag">div</span>&gt;</span></span><br><span class="line"><span class="language-css">	&lt;<span class="selector-tag">span</span>&gt;这是<span class="selector-tag">div</span>的儿子&lt;/<span class="selector-tag">span</span>&gt;</span></span><br><span class="line"><span class="language-css">&lt;/<span class="selector-tag">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="子代选择器"><a href="#子代选择器" class="headerlink" title="子代选择器"></a>子代选择器</h3><p><strong>子代选择器：选中某元素的子代元素。</strong></p>
-<p><strong>选择器写法：父选择器 &gt; 子选择器 {CSS属性} 父子选择器之间用 &gt; 隔开</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">	<span class="selector-tag">div</span> &gt; <span class="selector-tag">span</span> &#123;</span></span><br><span class="line"><span class="language-css">		<span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">	&#125;</span></span><br><span class="line"><span class="language-css">&lt;style&gt;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">&lt;<span class="selector-tag">div</span>&gt;</span></span><br><span class="line"><span class="language-css">	&lt;<span class="selector-tag">span</span>&gt;这是<span class="selector-tag">div</span>里面的&lt;/<span class="selector-tag">span</span>&gt;</span></span><br><span class="line"><span class="language-css">	&lt;<span class="selector-tag">p</span>&gt;</span></span><br><span class="line"><span class="language-css">		&lt;<span class="selector-tag">span</span>&gt;这是<span class="selector-tag">div</span>里面的<span class="selector-tag">p</span>里面的&lt;/<span class="selector-tag">span</span>&gt;</span></span><br><span class="line"><span class="language-css">	&lt;/<span class="selector-tag">p</span>&gt;</span></span><br><span class="line"><span class="language-css">&lt;/<span class="selector-tag">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="并集选择器"><a href="#并集选择器" class="headerlink" title="并集选择器"></a>并集选择器</h3><p><strong>并集选择器：选中多组标签设置相同的样式。</strong></p>
-<p><strong>选择器写法：选择器1，选择器2，…，选择器n {CSS属性}，选择器之间用逗号隔开</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">	<span class="selector-tag">div</span>,</span></span><br><span class="line"><span class="language-css">	<span class="selector-tag">p</span>,</span></span><br><span class="line"><span class="language-css">	<span class="selector-tag">span</span> &#123;</span></span><br><span class="line"><span class="language-css">		<span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">	&#125;</span></span><br><span class="line"><span class="language-css">&lt;style&gt;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">&lt;<span class="selector-tag">div</span>&gt;<span class="selector-tag">div</span>标签&lt;/<span class="selector-tag">div</span>&gt;</span></span><br><span class="line"><span class="language-css">&lt;<span class="selector-tag">p</span>&gt;<span class="selector-tag">p</span>标签&lt;/<span class="selector-tag">p</span>&gt;</span></span><br><span class="line"><span class="language-css">&lt;<span class="selector-tag">span</span>&gt;<span class="selector-tag">span</span>标签&lt;/<span class="selector-tag">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="交集选择器—-了解"><a href="#交集选择器—-了解" class="headerlink" title="交集选择器—-了解"></a>交集选择器—-了解</h3><p><strong>交集选择器：选中同时满足多个条件的元素。</strong></p>
-<p><strong>选择器写法：选择器1选择器2 {CSS属性}，选择器之间连写，没有任何符号</strong></p>
-<p><strong>注意：如果交集选择器中有标签选择器，标签选择器必须书写在最前面</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">	p.box &#123;</span></span><br><span class="line"><span class="language-xml">		color: red;</span></span><br><span class="line"><span class="language-xml">	&#125;</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-xml"></span></span></span><br><span class="line"><span class="language-xml"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-xml"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span>p标签，使用了类选择器 box<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p标签<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span>div标签，使用了类选择器 box<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br></pre></td></tr></table></figure>
-<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><p><strong>伪类选择器：伪类表示元素状态，选中元素的某个状态设置样式。</strong></p>
-<p><strong>鼠标悬停状态：选择器:hover {SSS属性}</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">	<span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">		<span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">	&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">	<span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">		<span class="attribute">color</span>: green;</span></span><br><span class="line"><span class="language-css">	&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>a标签<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span> class=&quot;box&quot;&gt;div 标签<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="伪类：超链接"><a href="#伪类：超链接" class="headerlink" title="伪类：超链接"></a>伪类：超链接</h3><p>超链接一共有四个状态</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>:link</td>
-<td>访问前</td>
-</tr>
-<tr>
-<td>:visited</td>
-<td>访问后</td>
-</tr>
-<tr>
-<td>:hover</td>
-<td>鼠标悬停</td>
-</tr>
-<tr>
-<td>:active</td>
-<td>点击时: 激活</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>提示：如果要给超链接设置以上四个状态，需要按 LVHA 的顺序书写。</strong></p>
-<h2 id="CSS-特性"><a href="#CSS-特性" class="headerlink" title="CSS 特性"></a>CSS 特性</h2><p>CSS 特性：化简代码 / 定位问题，并解决问题</p>
-<ul>
-<li><strong>继承性</strong></li>
-<li><strong>层叠性</strong></li>
-<li><strong>优先级</strong></li>
-</ul>
-<h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><p><strong>继承性：子级标签默认继承父级的文字控制属性</strong></p>
-<p><strong>注意：若标签自己有属性则不继承</strong></p>
-<h3 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h3><p><strong>特点：</strong></p>
-<ul>
-<li><strong>相同的属性会覆盖：后面的 CSS 属性覆盖前面的 CSS 属性</strong></li>
-<li><strong>不同的属性会叠加：不同的 CSS 属性都生效</strong></li>
-</ul>
-<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p><strong>优先级：也叫权重，当一个标签使用了多种选择器时，基于不同种类的选择器的匹配规则。</strong></p>
-<p><strong>规则：选择器优先级高的样式生效。</strong></p>
-<p><strong>公式：通配符选择器 &lt; 标签选择器 &lt; 类选择器 &lt; id 选择器 &lt; 行内样式 &lt; !Important</strong></p>
-<p><strong>(选中标签的范围越大，优先级越低)</strong></p>
-<h3 id="优先级-叠加计算原则"><a href="#优先级-叠加计算原则" class="headerlink" title="优先级 - 叠加计算原则"></a>优先级 - 叠加计算原则</h3><p><strong>叠加计算：如果是复合选择器，则需要权重叠加计算。</strong></p>
-<p><strong>公式：（每一级之间不存在进位）</strong></p>
-<p><strong>（行内样式,，id 选择器个数，类选择器个数，标签选择器个数）</strong></p>
-<p><strong>规则：</strong></p>
-<ul>
-<li><strong>从左向右依次比较选个数，同一级个数多的优先级高，如果个数相同，则向后比较</strong></li>
-<li><strong>!Important 权重最高</strong></li>
-<li><strong>继承权重最低</strong></li>
-</ul>
-<h2 id="Emmet-写法"><a href="#Emmet-写法" class="headerlink" title="Emmet 写法"></a>Emmet 写法</h2><p><strong>Emmet 写法: 代码的简写方式，输入缩写 VS code 会自动生成对应的代码。</strong></p>
-<ul>
-<li>HTML</li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>说明</th>
-<th>标签结构</th>
-<th>Emmet</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>类选择器</td>
-<td>\<div class="box">\</div></td>
-<td>标签名.类名</td>
-</tr>
-<tr>
-<td>id 选择器</td>
-<td>\<div id="box">\</div></td>
-<td>标签名#id名</td>
-</tr>
-<tr>
-<td>同级标签</td>
-<td>\<div>\</div>\<p>\</p></td>
-<td>div+p</td>
-</tr>
-<tr>
-<td>父子级标签</td>
-<td>\<div>\<p>\</p>\</div></td>
-<td>div&gt;p</td>
-</tr>
-<tr>
-<td>多个相同标签</td>
-<td>\<span>1\</span>\<span>2\</span>\<span>3\</span></td>
-<td>span*3</td>
-</tr>
-<tr>
-<td>有内容的标签</td>
-<td>\<div>内容\</div></td>
-<td>div{内容}</td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li>CSS</li>
-</ul>
-<p>首字母写法</p>
-<h2 id="背景属性"><a href="#背景属性" class="headerlink" title="背景属性"></a>背景属性</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>描述</th>
-<th>属性</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>背景色</td>
-<td>background-color</td>
-</tr>
-<tr>
-<td>背景图</td>
-<td>background-image</td>
-</tr>
-<tr>
-<td>背景图平铺方式</td>
-<td>background-repeat</td>
-</tr>
-<tr>
-<td>背景图位置</td>
-<td>background-position</td>
-</tr>
-<tr>
-<td>背景图缩放</td>
-<td>background-size</td>
-</tr>
-<tr>
-<td>背景图固定</td>
-<td>background-attachment</td>
-</tr>
-<tr>
-<td>背景复合属性</td>
-<td>background</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="背景图"><a href="#背景图" class="headerlink" title="背景图"></a>背景图</h3><p><strong>网页中，使用背景图实现装饰性的图片效果。</strong></p>
-<p><strong>属性名： background-image (bgi)</strong></p>
-<p><strong>属性值：url (背景图 URL)</strong></p>
-<p><strong>注意：背景图默认平铺效果</strong></p>
-<h3 id="背景图平铺方式"><a href="#背景图平铺方式" class="headerlink" title="背景图平铺方式"></a>背景图平铺方式</h3><p><strong>属性名：background-repeat (bgr)</strong></p>
-<p><strong>属性值：</strong></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>效果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>no-repeat</td>
-<td>不平铺，盒子左上角显示一张背景图</td>
-</tr>
-<tr>
-<td>repeat</td>
-<td>平铺，默认效果</td>
-</tr>
-<tr>
-<td>repeat-x</td>
-<td>水平方向平铺</td>
-</tr>
-<tr>
-<td>repeat-y</td>
-<td>垂直方向平铺</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="背景图位置"><a href="#背景图位置" class="headerlink" title="背景图位置"></a>背景图位置</h3><p><strong>属性名：background-position (bgp)</strong></p>
-<p><strong>属性值：水平方向位置 （正数右移，负数左移），垂直方向位置（正数下移，负数上移）</strong></p>
-<ul>
-<li><strong>关键字</strong></li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>关键字</th>
-<th>位置</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>left</td>
-<td>左侧</td>
-</tr>
-<tr>
-<td>right</td>
-<td>右侧</td>
-</tr>
-<tr>
-<td>center</td>
-<td>居中</td>
-</tr>
-<tr>
-<td>top</td>
-<td>顶部</td>
-</tr>
-<tr>
-<td>bottom</td>
-<td>底部</td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li><strong>坐标（数字+px，正负都可以）</strong></li>
-</ul>
-<p><strong>示例代码：</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">	width: 400px;</span><br><span class="line">	height: 400px;</span><br><span class="line">	background-color: pink;</span><br><span class="line">	background-image: url(./image/pic.jpg);</span><br><span class="line">	background-repeat: no-repeat;</span><br><span class="line"></span><br><span class="line">	background-position: center bottom;</span><br><span class="line">	background-position: 50px -100px</span><br><span class="line">	background-position: 50px center;</span><br><span class="line"></span><br><span class="line">	background-attachedment: fixed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>提示：</strong></p>
-<ul>
-<li><strong>关键字取值方式写法，可以颠倒取值顺序</strong></li>
-<li><strong>可以只写一个关键字，另一个方向默认为居中数字只写一个值表示水平方向，垂直方向为居中</strong></li>
-</ul>
-<h3 id="背景图缩放"><a href="#背景图缩放" class="headerlink" title="背景图缩放"></a>背景图缩放</h3><p><strong>属性名：background-size (bgz)</strong></p>
-<p><strong>常用属性值：</strong></p>
-<ul>
-<li><strong>关键字：</strong><ul>
-<li><strong>cover：等比例缩放背景图片以完全覆盖背景区，可能背景图片部分看不见</strong></li>
-<li><strong>contain：等比例缩放背景图片以完全装入背景区，可能背景区部分空白</strong></li>
-</ul>
-</li>
-<li><strong>百分比：根据盒子尺寸计算图片大小（100%图片的宽度跟盒子宽度一样，图片的高度按照图片比例等比缩放）</strong></li>
-<li><strong>数字+单位（例如：px）（较少用）</strong></li>
-</ul>
-<h3 id="背景图固定"><a href="#背景图固定" class="headerlink" title="背景图固定"></a>背景图固定</h3><p><strong>属性名：background-attachment (bga)</strong></p>
-<p><strong>属性值：fixed</strong></p>
-<h3 id="背景复合属性"><a href="#背景复合属性" class="headerlink" title="背景复合属性"></a>背景复合属性</h3><p><strong>属性名：background（bg）</strong></p>
-<p><strong>属性值：==背景色   背景图   背景图平铺方式   背景图位置/背景图缩放   背景图固定==<br>（空格隔开各个属性值，不区分顺序)</strong></p>
-<h2 id="显示模式"><a href="#显示模式" class="headerlink" title="显示模式"></a>显示模式</h2><p>显示模式：标签（元素）的显示方式。</p>
-<p>作用：布局网页的时候，根据标签的显示模式选择合适的标签摆放内容。</p>
-<h3 id="块级元素（例如-div）"><a href="#块级元素（例如-div）" class="headerlink" title="块级元素（例如 div）"></a>块级元素（例如 div）</h3><ul>
-<li><strong>独占</strong>一行</li>
-<li>宽度默认是父级的 <strong>100%</strong></li>
-<li>添加<strong>宽高</strong>属性生效</li>
-</ul>
-<h3 id="行内元素（例如-span）"><a href="#行内元素（例如-span）" class="headerlink" title="行内元素（例如 span）"></a>行内元素（例如 span）</h3><ul>
-<li><strong>一行</strong>可以显示<strong>多个</strong></li>
-<li>设置<strong>宽高</strong>属性<strong>不生效</strong></li>
-<li>宽高尺寸由<strong>内容撑开</strong></li>
-<li><strong>vertical-align 行内块和行内垂直方向对齐方式</strong></li>
-</ul>
-<h3 id="行内块元素（例如-img）"><a href="#行内块元素（例如-img）" class="headerlink" title="行内块元素（例如 img）"></a>行内块元素（例如 img）</h3><ul>
-<li><strong>一行</strong>可以显示<strong>多个</strong></li>
-<li>设置<strong>宽高</strong>尺寸<strong>生效</strong></li>
-<li>宽高尺寸默认由<strong>内容撑开</strong></li>
-<li><strong>vertical-align 行内块和行内垂直方向对齐方式</strong></li>
-</ul>
-<h3 id="转换显示模式"><a href="#转换显示模式" class="headerlink" title="转换显示模式"></a>转换显示模式</h3><p>属性名：display</p>
-<p>属性值：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>效果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>block</td>
-<td>块级</td>
-</tr>
-<tr>
-<td>inline-block</td>
-<td>行内块</td>
-</tr>
-<tr>
-<td>inline</td>
-<td>行内</td>
-</tr>
-</tbody>
-</table>
-</div>
-]]></content>
-      <categories>
-        <category>HTML+CSS</category>
-      </categories>
-      <tags>
-        <tag>HTML-CSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HTML5+CSS303-day05</title>
     <url>/posts/10505.html</url>
     <content><![CDATA[<p>第五天笔记</p>
@@ -1436,6 +1115,327 @@
 <td>#RRGGBB</td>
 <td>#000000，#ffcc00，简写：#000，#fc0</td>
 <td>开发使用（从设计稿复制）</td>
+</tr>
+</tbody>
+</table>
+</div>
+]]></content>
+      <categories>
+        <category>HTML+CSS</category>
+      </categories>
+      <tags>
+        <tag>HTML-CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML5+CSS303-day04</title>
+    <url>/posts/10504.html</url>
+    <content><![CDATA[<p>第四天笔记</p>
+<span id="more"></span>
+<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h2><ul>
+<li><strong>定义：由两个或多个基础选择器，通过不同的方式组合而成。</strong></li>
+<li><strong>作用：更准确、更高效的选择目标元素（标签）。</strong></li>
+</ul>
+<h3 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h3><p><strong>后代选择器：选中某元素的后代元素。</strong></p>
+<p><strong>选择器写法：父选择器 子选择器 {CSS属性} 父子选择器之间用空格隔开</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">	<span class="selector-tag">div</span> <span class="selector-tag">span</span> &#123;</span></span><br><span class="line"><span class="language-css">		<span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">	&#125;</span></span><br><span class="line"><span class="language-css">&lt;style&gt;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">&lt;<span class="selector-tag">span</span>&gt;<span class="selector-tag">span</span>标签&lt;/<span class="selector-tag">span</span>&gt;</span></span><br><span class="line"><span class="language-css">&lt;<span class="selector-tag">div</span>&gt;</span></span><br><span class="line"><span class="language-css">	&lt;<span class="selector-tag">span</span>&gt;这是<span class="selector-tag">div</span>的儿子&lt;/<span class="selector-tag">span</span>&gt;</span></span><br><span class="line"><span class="language-css">&lt;/<span class="selector-tag">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="子代选择器"><a href="#子代选择器" class="headerlink" title="子代选择器"></a>子代选择器</h3><p><strong>子代选择器：选中某元素的子代元素。</strong></p>
+<p><strong>选择器写法：父选择器 &gt; 子选择器 {CSS属性} 父子选择器之间用 &gt; 隔开</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">	<span class="selector-tag">div</span> &gt; <span class="selector-tag">span</span> &#123;</span></span><br><span class="line"><span class="language-css">		<span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">	&#125;</span></span><br><span class="line"><span class="language-css">&lt;style&gt;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">&lt;<span class="selector-tag">div</span>&gt;</span></span><br><span class="line"><span class="language-css">	&lt;<span class="selector-tag">span</span>&gt;这是<span class="selector-tag">div</span>里面的&lt;/<span class="selector-tag">span</span>&gt;</span></span><br><span class="line"><span class="language-css">	&lt;<span class="selector-tag">p</span>&gt;</span></span><br><span class="line"><span class="language-css">		&lt;<span class="selector-tag">span</span>&gt;这是<span class="selector-tag">div</span>里面的<span class="selector-tag">p</span>里面的&lt;/<span class="selector-tag">span</span>&gt;</span></span><br><span class="line"><span class="language-css">	&lt;/<span class="selector-tag">p</span>&gt;</span></span><br><span class="line"><span class="language-css">&lt;/<span class="selector-tag">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="并集选择器"><a href="#并集选择器" class="headerlink" title="并集选择器"></a>并集选择器</h3><p><strong>并集选择器：选中多组标签设置相同的样式。</strong></p>
+<p><strong>选择器写法：选择器1，选择器2，…，选择器n {CSS属性}，选择器之间用逗号隔开</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">	<span class="selector-tag">div</span>,</span></span><br><span class="line"><span class="language-css">	<span class="selector-tag">p</span>,</span></span><br><span class="line"><span class="language-css">	<span class="selector-tag">span</span> &#123;</span></span><br><span class="line"><span class="language-css">		<span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">	&#125;</span></span><br><span class="line"><span class="language-css">&lt;style&gt;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">&lt;<span class="selector-tag">div</span>&gt;<span class="selector-tag">div</span>标签&lt;/<span class="selector-tag">div</span>&gt;</span></span><br><span class="line"><span class="language-css">&lt;<span class="selector-tag">p</span>&gt;<span class="selector-tag">p</span>标签&lt;/<span class="selector-tag">p</span>&gt;</span></span><br><span class="line"><span class="language-css">&lt;<span class="selector-tag">span</span>&gt;<span class="selector-tag">span</span>标签&lt;/<span class="selector-tag">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="交集选择器—-了解"><a href="#交集选择器—-了解" class="headerlink" title="交集选择器—-了解"></a>交集选择器—-了解</h3><p><strong>交集选择器：选中同时满足多个条件的元素。</strong></p>
+<p><strong>选择器写法：选择器1选择器2 {CSS属性}，选择器之间连写，没有任何符号</strong></p>
+<p><strong>注意：如果交集选择器中有标签选择器，标签选择器必须书写在最前面</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">	p.box &#123;</span></span><br><span class="line"><span class="language-xml">		color: red;</span></span><br><span class="line"><span class="language-xml">	&#125;</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-xml"></span></span></span><br><span class="line"><span class="language-xml"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-xml"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span>p标签，使用了类选择器 box<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p标签<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span>div标签，使用了类选择器 box<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br></pre></td></tr></table></figure>
+<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><p><strong>伪类选择器：伪类表示元素状态，选中元素的某个状态设置样式。</strong></p>
+<p><strong>鼠标悬停状态：选择器:hover {SSS属性}</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">	<span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">		<span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">	&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">	<span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">		<span class="attribute">color</span>: green;</span></span><br><span class="line"><span class="language-css">	&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>a标签<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span> class=&quot;box&quot;&gt;div 标签<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="伪类：超链接"><a href="#伪类：超链接" class="headerlink" title="伪类：超链接"></a>伪类：超链接</h3><p>超链接一共有四个状态</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:link</td>
+<td>访问前</td>
+</tr>
+<tr>
+<td>:visited</td>
+<td>访问后</td>
+</tr>
+<tr>
+<td>:hover</td>
+<td>鼠标悬停</td>
+</tr>
+<tr>
+<td>:active</td>
+<td>点击时: 激活</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>提示：如果要给超链接设置以上四个状态，需要按 LVHA 的顺序书写。</strong></p>
+<h2 id="CSS-特性"><a href="#CSS-特性" class="headerlink" title="CSS 特性"></a>CSS 特性</h2><p>CSS 特性：化简代码 / 定位问题，并解决问题</p>
+<ul>
+<li><strong>继承性</strong></li>
+<li><strong>层叠性</strong></li>
+<li><strong>优先级</strong></li>
+</ul>
+<h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><p><strong>继承性：子级标签默认继承父级的文字控制属性</strong></p>
+<p><strong>注意：若标签自己有属性则不继承</strong></p>
+<h3 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h3><p><strong>特点：</strong></p>
+<ul>
+<li><strong>相同的属性会覆盖：后面的 CSS 属性覆盖前面的 CSS 属性</strong></li>
+<li><strong>不同的属性会叠加：不同的 CSS 属性都生效</strong></li>
+</ul>
+<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p><strong>优先级：也叫权重，当一个标签使用了多种选择器时，基于不同种类的选择器的匹配规则。</strong></p>
+<p><strong>规则：选择器优先级高的样式生效。</strong></p>
+<p><strong>公式：通配符选择器 &lt; 标签选择器 &lt; 类选择器 &lt; id 选择器 &lt; 行内样式 &lt; !Important</strong></p>
+<p><strong>(选中标签的范围越大，优先级越低)</strong></p>
+<h3 id="优先级-叠加计算原则"><a href="#优先级-叠加计算原则" class="headerlink" title="优先级 - 叠加计算原则"></a>优先级 - 叠加计算原则</h3><p><strong>叠加计算：如果是复合选择器，则需要权重叠加计算。</strong></p>
+<p><strong>公式：（每一级之间不存在进位）</strong></p>
+<p><strong>（行内样式,，id 选择器个数，类选择器个数，标签选择器个数）</strong></p>
+<p><strong>规则：</strong></p>
+<ul>
+<li><strong>从左向右依次比较选个数，同一级个数多的优先级高，如果个数相同，则向后比较</strong></li>
+<li><strong>!Important 权重最高</strong></li>
+<li><strong>继承权重最低</strong></li>
+</ul>
+<h2 id="Emmet-写法"><a href="#Emmet-写法" class="headerlink" title="Emmet 写法"></a>Emmet 写法</h2><p><strong>Emmet 写法: 代码的简写方式，输入缩写 VS code 会自动生成对应的代码。</strong></p>
+<ul>
+<li>HTML</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>说明</th>
+<th>标签结构</th>
+<th>Emmet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类选择器</td>
+<td>\<div class="box">\</div></td>
+<td>标签名.类名</td>
+</tr>
+<tr>
+<td>id 选择器</td>
+<td>\<div id="box">\</div></td>
+<td>标签名#id名</td>
+</tr>
+<tr>
+<td>同级标签</td>
+<td>\<div>\</div>\<p>\</p></td>
+<td>div+p</td>
+</tr>
+<tr>
+<td>父子级标签</td>
+<td>\<div>\<p>\</p>\</div></td>
+<td>div&gt;p</td>
+</tr>
+<tr>
+<td>多个相同标签</td>
+<td>\<span>1\</span>\<span>2\</span>\<span>3\</span></td>
+<td>span*3</td>
+</tr>
+<tr>
+<td>有内容的标签</td>
+<td>\<div>内容\</div></td>
+<td>div{内容}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>CSS</li>
+</ul>
+<p>首字母写法</p>
+<h2 id="背景属性"><a href="#背景属性" class="headerlink" title="背景属性"></a>背景属性</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>描述</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>背景色</td>
+<td>background-color</td>
+</tr>
+<tr>
+<td>背景图</td>
+<td>background-image</td>
+</tr>
+<tr>
+<td>背景图平铺方式</td>
+<td>background-repeat</td>
+</tr>
+<tr>
+<td>背景图位置</td>
+<td>background-position</td>
+</tr>
+<tr>
+<td>背景图缩放</td>
+<td>background-size</td>
+</tr>
+<tr>
+<td>背景图固定</td>
+<td>background-attachment</td>
+</tr>
+<tr>
+<td>背景复合属性</td>
+<td>background</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="背景图"><a href="#背景图" class="headerlink" title="背景图"></a>背景图</h3><p><strong>网页中，使用背景图实现装饰性的图片效果。</strong></p>
+<p><strong>属性名： background-image (bgi)</strong></p>
+<p><strong>属性值：url (背景图 URL)</strong></p>
+<p><strong>注意：背景图默认平铺效果</strong></p>
+<h3 id="背景图平铺方式"><a href="#背景图平铺方式" class="headerlink" title="背景图平铺方式"></a>背景图平铺方式</h3><p><strong>属性名：background-repeat (bgr)</strong></p>
+<p><strong>属性值：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>no-repeat</td>
+<td>不平铺，盒子左上角显示一张背景图</td>
+</tr>
+<tr>
+<td>repeat</td>
+<td>平铺，默认效果</td>
+</tr>
+<tr>
+<td>repeat-x</td>
+<td>水平方向平铺</td>
+</tr>
+<tr>
+<td>repeat-y</td>
+<td>垂直方向平铺</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="背景图位置"><a href="#背景图位置" class="headerlink" title="背景图位置"></a>背景图位置</h3><p><strong>属性名：background-position (bgp)</strong></p>
+<p><strong>属性值：水平方向位置 （正数右移，负数左移），垂直方向位置（正数下移，负数上移）</strong></p>
+<ul>
+<li><strong>关键字</strong></li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>left</td>
+<td>左侧</td>
+</tr>
+<tr>
+<td>right</td>
+<td>右侧</td>
+</tr>
+<tr>
+<td>center</td>
+<td>居中</td>
+</tr>
+<tr>
+<td>top</td>
+<td>顶部</td>
+</tr>
+<tr>
+<td>bottom</td>
+<td>底部</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><strong>坐标（数字+px，正负都可以）</strong></li>
+</ul>
+<p><strong>示例代码：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">	width: 400px;</span><br><span class="line">	height: 400px;</span><br><span class="line">	background-color: pink;</span><br><span class="line">	background-image: url(./image/pic.jpg);</span><br><span class="line">	background-repeat: no-repeat;</span><br><span class="line"></span><br><span class="line">	background-position: center bottom;</span><br><span class="line">	background-position: 50px -100px</span><br><span class="line">	background-position: 50px center;</span><br><span class="line"></span><br><span class="line">	background-attachedment: fixed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><strong>关键字取值方式写法，可以颠倒取值顺序</strong></li>
+<li><strong>可以只写一个关键字，另一个方向默认为居中数字只写一个值表示水平方向，垂直方向为居中</strong></li>
+</ul>
+<h3 id="背景图缩放"><a href="#背景图缩放" class="headerlink" title="背景图缩放"></a>背景图缩放</h3><p><strong>属性名：background-size (bgz)</strong></p>
+<p><strong>常用属性值：</strong></p>
+<ul>
+<li><strong>关键字：</strong><ul>
+<li><strong>cover：等比例缩放背景图片以完全覆盖背景区，可能背景图片部分看不见</strong></li>
+<li><strong>contain：等比例缩放背景图片以完全装入背景区，可能背景区部分空白</strong></li>
+</ul>
+</li>
+<li><strong>百分比：根据盒子尺寸计算图片大小（100%图片的宽度跟盒子宽度一样，图片的高度按照图片比例等比缩放）</strong></li>
+<li><strong>数字+单位（例如：px）（较少用）</strong></li>
+</ul>
+<h3 id="背景图固定"><a href="#背景图固定" class="headerlink" title="背景图固定"></a>背景图固定</h3><p><strong>属性名：background-attachment (bga)</strong></p>
+<p><strong>属性值：fixed</strong></p>
+<h3 id="背景复合属性"><a href="#背景复合属性" class="headerlink" title="背景复合属性"></a>背景复合属性</h3><p><strong>属性名：background（bg）</strong></p>
+<p><strong>属性值：==背景色   背景图   背景图平铺方式   背景图位置/背景图缩放   背景图固定==<br>（空格隔开各个属性值，不区分顺序)</strong></p>
+<h2 id="显示模式"><a href="#显示模式" class="headerlink" title="显示模式"></a>显示模式</h2><p>显示模式：标签（元素）的显示方式。</p>
+<p>作用：布局网页的时候，根据标签的显示模式选择合适的标签摆放内容。</p>
+<h3 id="块级元素（例如-div）"><a href="#块级元素（例如-div）" class="headerlink" title="块级元素（例如 div）"></a>块级元素（例如 div）</h3><ul>
+<li><strong>独占</strong>一行</li>
+<li>宽度默认是父级的 <strong>100%</strong></li>
+<li>添加<strong>宽高</strong>属性生效</li>
+</ul>
+<h3 id="行内元素（例如-span）"><a href="#行内元素（例如-span）" class="headerlink" title="行内元素（例如 span）"></a>行内元素（例如 span）</h3><ul>
+<li><strong>一行</strong>可以显示<strong>多个</strong></li>
+<li>设置<strong>宽高</strong>属性<strong>不生效</strong></li>
+<li>宽高尺寸由<strong>内容撑开</strong></li>
+<li><strong>vertical-align 行内块和行内垂直方向对齐方式</strong></li>
+</ul>
+<h3 id="行内块元素（例如-img）"><a href="#行内块元素（例如-img）" class="headerlink" title="行内块元素（例如 img）"></a>行内块元素（例如 img）</h3><ul>
+<li><strong>一行</strong>可以显示<strong>多个</strong></li>
+<li>设置<strong>宽高</strong>尺寸<strong>生效</strong></li>
+<li>宽高尺寸默认由<strong>内容撑开</strong></li>
+<li><strong>vertical-align 行内块和行内垂直方向对齐方式</strong></li>
+</ul>
+<h3 id="转换显示模式"><a href="#转换显示模式" class="headerlink" title="转换显示模式"></a>转换显示模式</h3><p>属性名：display</p>
+<p>属性值：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>block</td>
+<td>块级</td>
+</tr>
+<tr>
+<td>inline-block</td>
+<td>行内块</td>
+</tr>
+<tr>
+<td>inline</td>
+<td>行内</td>
 </tr>
 </tbody>
 </table>
@@ -2544,17 +2544,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JavaSE03-Java高级</title>
-    <url>/posts/10103.html</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JavaSE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title></title>
     <url>/posts/1.html</url>
     <content><![CDATA[<h2 id="MySQL8-0-26-Linux版安装"><a href="#MySQL8-0-26-Linux版安装" class="headerlink" title="MySQL8.0.26-Linux版安装"></a>MySQL8.0.26-Linux版安装</h2><h3 id="1-准备一台Linux服务器"><a href="#1-准备一台Linux服务器" class="headerlink" title="1. 准备一台Linux服务器"></a>1. 准备一台Linux服务器</h3><p>云服务器或者虚拟机都可以;</p>
@@ -2580,6 +2569,17 @@
 <h3 id="11-重新连接MySQL"><a href="#11-重新连接MySQL" class="headerlink" title="11. 重新连接MySQL"></a>11. 重新连接MySQL</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
 <p>然后输入密码</p>
 <h3 id="12-通过DataGrip远程连接MySQL"><a href="#12-通过DataGrip远程连接MySQL" class="headerlink" title="12. 通过DataGrip远程连接MySQL"></a>12. 通过DataGrip远程连接MySQL</h3>]]></content>
+  </entry>
+  <entry>
+    <title>JavaSE03-Java高级</title>
+    <url>/posts/10103.html</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JavaSE</tag>
+      </tags>
   </entry>
   <entry>
     <title>MySQL01-基础语法</title>
@@ -3451,6 +3451,83 @@
       </tags>
   </entry>
   <entry>
+    <title>MySQL04-索引03-使用规则</title>
+    <url>/posts/10406.html</url>
+    <content><![CDATA[<p>详细的描述了MySQL中的索引的使用规则和设计原则。</p>
+<span id="more"></span>
+<h1 id="使用规则"><a href="#使用规则" class="headerlink" title="使用规则"></a>使用规则</h1><h2 id="联合索引"><a href="#联合索引" class="headerlink" title="联合索引"></a>联合索引</h2><h3 id="最左前缀法则"><a href="#最左前缀法则" class="headerlink" title="最左前缀法则"></a>最左前缀法则</h3><blockquote>
+<p>如果索引了多列(联合索引)，要遵守最左前缀法则。最左前缀法则指的是查询从索引的最左列开始，并且不跳过索引中的列。如果跳跃某一列，索引将部分失效(后面的字段索引失效)。</p>
+</blockquote>
+<h3 id="范围查询"><a href="#范围查询" class="headerlink" title="范围查询"></a>范围查询</h3><blockquote>
+<p>联合索引中，出现范围查询(&gt;,&lt;)，范围查询右侧的列索引失效</p>
+</blockquote>
+<h2 id="索引失效"><a href="#索引失效" class="headerlink" title="索引失效"></a>索引失效</h2><h3 id="索引列运算"><a href="#索引列运算" class="headerlink" title="索引列运算"></a>索引列运算</h3><blockquote>
+<p>不要在索引列上进行运算操作,索引将失效。</p>
+</blockquote>
+<h3 id="字符串不加引号"><a href="#字符串不加引号" class="headerlink" title="字符串不加引号"></a>字符串不加引号</h3><blockquote>
+<p>字符串类型字段使用时，不加引号，索引将失效。会在内部自动进行隐式类型转换。</p>
+</blockquote>
+<h3 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h3><blockquote>
+<p>如果仅仅是尾部模糊匹配，索引不会失效。如果是头部模糊匹配，索引失效。</p>
+</blockquote>
+<h3 id="or连接的条件"><a href="#or连接的条件" class="headerlink" title="or连接的条件"></a>or连接的条件</h3><blockquote>
+<p>用or分割开的条件，如果or前的条件中的列有索引，而后面的列中没有索引，那么涉及的索引都不会被用到。</p>
+<p>解决办法：针对另一个数据列也建立索引即可</p>
+</blockquote>
+<h3 id="数据分布影响"><a href="#数据分布影响" class="headerlink" title="数据分布影响"></a>数据分布影响</h3><blockquote>
+<p>如果MysQL评估使用索引比全表更慢，则不使用索引。</p>
+</blockquote>
+<h2 id="SQL提示"><a href="#SQL提示" class="headerlink" title="SQL提示"></a>SQL提示</h2><h3 id="SQL提示-1"><a href="#SQL提示-1" class="headerlink" title="SQL提示"></a>SQL提示</h3><blockquote>
+<p>SQL提示，是优化数据库的一个重要手段，简单来说，就是在SQL语句中加入一些人为的提示来达到优化操作的目的。</p>
+<p>放在where条件前，use/ignore/force index(索引名)</p>
+<p>use index:   建议使用索引，数据库可以选择不使用</p>
+<p>ignore index:   忽略某个索引</p>
+<p>force index:   强制使用某个索引</p>
+</blockquote>
+<h2 id="覆盖索引"><a href="#覆盖索引" class="headerlink" title="覆盖索引"></a>覆盖索引</h2><h3 id="覆盖索引-1"><a href="#覆盖索引-1" class="headerlink" title="覆盖索引"></a>覆盖索引</h3><blockquote>
+<p>尽量使用覆盖索引（查询使用了索引，并且需要返回的列，在该索引中已经全部能够找到)，减少select *。</p>
+<p>尽量避免回表查询</p>
+<p>extra中：<br>using index condition :查找使用了索引,但是需要回表查询数据<br>using where; using index:查找使用了索引，但是需要的数据都在索引列中能找到，所以不需要回表查询数据</p>
+</blockquote>
+<h2 id="前缀索引"><a href="#前缀索引" class="headerlink" title="前缀索引"></a>前缀索引</h2><h3 id="前缀索引-1"><a href="#前缀索引-1" class="headerlink" title="前缀索引"></a>前缀索引</h3><blockquote>
+<p>当字段类型为字符串(varchar, text等）时，有时候需要索引很长的字符串，这会让索引变得很大，查询时，浪费大量的磁盘IO，影响查询效率。此时可以只将字符串的一部分前缀，建立索引，这样可以大大节约索引空间，从而提高索引效率。</p>
+<p>语法：<br>create index idx_xxx on table_name(column(n)) ;        - - n为前缀长度</p>
+<p>前缀长度的选择：<br>可以根据索引的选择性来决定，选择性是指不重复的索引值（基数）和数据表的记录总数的比值，索引选择性越高则查询效率越高，<br>唯一索引的选择性是1，这是最好的索引选择性，性能也是最好的。<br>可以使用聚合函数查询选择性<br>select count(distinct substring(xxx,1,5))/ count(*) from table ;  - - 即长度为5的选择性</p>
+</blockquote>
+<h2 id="单列-联合索引"><a href="#单列-联合索引" class="headerlink" title="单列/联合索引"></a>单列/联合索引</h2><h3 id="单列索引与联合索引"><a href="#单列索引与联合索引" class="headerlink" title="单列索引与联合索引"></a>单列索引与联合索引</h3><blockquote>
+<p>单列索引:即一个索引只包含单个列。</p>
+<p>联合索引:即一个索引包含了多个列。</p>
+<p>在业务场景中，如果存在多个查询条件，考虑针对于查询字段建立索引时，建议建立联合索引，而非单列索引。</p>
+<p>多条件联合查询时，MySQL优化器会评估哪个字段的索引效率更高，会选择该索引完成本次查询。</p>
+</blockquote>
+<h1 id="索引设计原则（总结自黑马程序员，侵删）"><a href="#索引设计原则（总结自黑马程序员，侵删）" class="headerlink" title="索引设计原则（总结自黑马程序员，侵删）"></a>索引设计原则（总结自黑马程序员，侵删）</h1><h3 id="索引设计原则"><a href="#索引设计原则" class="headerlink" title="索引设计原则"></a>索引设计原则</h3><blockquote>
+<ol>
+<li>针对于数据量较大，且查询比较频繁的表建立索引。</li>
+<li>针对于常作为查询条件（where)、排序(order by)、分组(group by)操作的字段建立索引。</li>
+<li>尽量选择区分度高的列作为索引，尽量建立唯一索引，区分度越高，使用索引的效率越高。</li>
+<li>如果是字符串类型的字段，字段的长度较长，可以针对于字段的特点，建立前缀索引。</li>
+<li>尽量使用联合索引，减少单列索引，查询时，联合索引很多时候可以覆盖索引，节省存储空间，避免回表，提高查询效率。</li>
+<li>要控制索引的数量，索引并不是多多益善，索引越多，维护索引结构的代价也就越大，会影响增删改的效率。</li>
+<li>如果索引列不能存储NULL值，请在创建表时使用NOT NULL约束它。当优化器知道每列是否包含NULL值时，它可以更好地确定哪个索引最有效地用于查询。</li>
+</ol>
+</blockquote>
+<p>==模型数空运最快==</p>
+<p>模：字符串的模糊匹配</p>
+<p>型：数据类型</p>
+<p>数：索引字段使用函数会失效</p>
+<p>空：不限制索引 not null</p>
+<p>运：对索引列进行运算失效</p>
+<p>最：最左前缀法则</p>
+<p>快：全表比索引快，则不适用</p>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL05-SQL优化</title>
     <url>/posts/10407.html</url>
     <content><![CDATA[<p>详细的描述了MySQL中的SQL语句的优化。</p>
@@ -3665,28 +3742,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MySQL07-存储函数</title>
-    <url>/posts/10409.html</url>
-    <content><![CDATA[<p>详细的描述了MySQL中的存储函数。</p>
-<span id="more"></span>
-<h1 id="存储函数"><a href="#存储函数" class="headerlink" title="存储函数"></a>存储函数</h1><p>存储函数是有返回值的存储过程，存储函数的参数只能是IN类型的。</p>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE FUNCTION 存储函数名称([参数列表])</span><br><span class="line">RETURNS type [characteristic ...]</span><br><span class="line">BEGIN</span><br><span class="line">	--SQL语句</span><br><span class="line">	RETURN ...;</span><br><span class="line">END;</span><br><span class="line"></span><br><span class="line">characteristic说明:</span><br><span class="line"> + DETERMINISTIC:相同的输入参数总是产生相同的结果</span><br><span class="line"> + NO SQL:不包含SQL语句。</span><br><span class="line"> + READS SQL DATA:包含读取数据的语句，但不包含写入数据的语句。</span><br></pre></td></tr></table></figure>
-<h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 存储函数</span><br><span class="line">-- 计算从1到n的累加</span><br><span class="line">create function fun1(n int)</span><br><span class="line">returns int deterministic </span><br><span class="line">begin</span><br><span class="line">    declare total int default 0;</span><br><span class="line"></span><br><span class="line">    while n &gt; 0 do</span><br><span class="line">        set total := total + n;</span><br><span class="line">        set n := n - 1;</span><br><span class="line">    end while;</span><br><span class="line"></span><br><span class="line">    return total;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">select fun1(100);</span><br></pre></td></tr></table></figure>
-<p><strong>注意当未添加 deterministic 会产生如下bug：</strong></p>
-<p><img src="https://wang-nine.cn/images/MySQL06-01%E6%9C%AA%E6%8C%87%E5%AE%9A%E5%8F%82%E6%95%B0%E6%80%A7%E8%B4%A8%E7%9A%84bug.png" alt="MySQL06-01未指定参数性质的bug"></p>
-<p>运行结果：</p>
-<p><img src="https://wang-nine.cn/images/MySQL06-02%E5%AD%98%E5%82%A8%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt="MySQL06-02存储函数的运行结果"></p>
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p><strong>存储函数必须要有返回值，而且参数只能是输入类型的参数，其过程实现完全可以被存储过程所代替。</strong></p>
-<p><strong>因此存储函数的使用较少，这里仅做了解。</strong></p>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL08-触发器</title>
     <url>/posts/10410.html</url>
     <content><![CDATA[<p>详细的描述了MySQL中的触发器。</p>
@@ -3746,29 +3801,42 @@
       </tags>
   </entry>
   <entry>
-    <title>MySQL09-视图</title>
-    <url>/posts/10411.html</url>
-    <content><![CDATA[<p>详细的描述了MySQL中的视图。</p>
+    <title>MySQL07-存储函数</title>
+    <url>/posts/10409.html</url>
+    <content><![CDATA[<p>详细的描述了MySQL中的存储函数。</p>
 <span id="more"></span>
-<h1 id="视图的简介"><a href="#视图的简介" class="headerlink" title="视图的简介"></a>视图的简介</h1><p>视图(View)是一种虚拟存在的表。视图中的数据并不在数据库中实际存在，行和列数据来自定义视图的查询中使用的表，并且是在使用视图时动态生成的。<br>​通俗的讲，视图只保存了查询的SQL逻辑，不保存查询结果。所以我们在创建视图的时候，主要的工作在创建这条SQL查询语句上。</p>
-<h1 id="视图的语法"><a href="#视图的语法" class="headerlink" title="视图的语法"></a>视图的语法</h1><h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE [OR REPLACE] VIEW 视图名称 [(列名列表)] AS SELECT 语句[WITH[CASCADED|LOCAL] CHECK OPTION ]</span><br></pre></td></tr></table></figure>
-<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW CREATE VIEW 视图名称; --查看创建视图语句</span><br><span class="line">SELECT * FROM 视图名称.......; --查看视图数据</span><br></pre></td></tr></table></figure>
-<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 方式一</span><br><span class="line">CREATE [OR REPLACE] VIEW 视图名称(列名列表)] AS SELECT语句 [WITH[CASCADED|LOCAL] CHECK OPTION]</span><br><span class="line">-- 方式二</span><br><span class="line">ALTER VIEW 视图名称(列名列表)] AS SELECT语句 [WITH[CASCADED|LOCAL] CHECK OPTION]</span><br></pre></td></tr></table></figure>
-<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP VIEW [IF EXISTS] 视图名称[视图名称] ...</span><br></pre></td></tr></table></figure>
-<h1 id="视图的检查选项"><a href="#视图的检查选项" class="headerlink" title="视图的检查选项"></a>视图的检查选项</h1><blockquote>
-<p>​        当使用 WITH CHECK OPTION 子句创建视图时，My5QL会通过视图检查正在更改的每个行，例如插入，更新，删除，以使其符合视图的定义。</p>
-<p>​        MySQL允许基于另一个视图创建视图，它还会检查依赖视图中的规则以保持一致性。为了确定检查的范围，mysql 提供了两个选项: CASCADED和LOCAL，默认值为CASCADED。</p>
-</blockquote>
-<h2 id="cascaded"><a href="#cascaded" class="headerlink" title="cascaded"></a>cascaded</h2><p><img src="https://wang-nine.cn/images/MySQL08-01cascaded.png" alt="MySQL08-01cascaded"></p>
-<h2 id="local"><a href="#local" class="headerlink" title="local"></a>local</h2><p><img src="https://wang-nine.cn/images/MySQL08-02local.png" alt="MySQL08-02local"></p>
-<h1 id="视图的更新"><a href="#视图的更新" class="headerlink" title="视图的更新"></a>视图的更新</h1><p>要使视图可更新，视图中的行与基础表中的行之间必须存在一对一的关系。如果视图包含以下任何一项，则该视图不可更新:</p>
-<ol>
-<li>聚合函数或窗口函数(SUM()、MIN()、MAX()、COUNT()等)</li>
-<li>DISTINCT</li>
-<li>GROUP BY</li>
-<li>HAVING</li>
-<li>UNION 或者 UNION ALL</li>
-</ol>
+<h1 id="存储函数"><a href="#存储函数" class="headerlink" title="存储函数"></a>存储函数</h1><p>存储函数是有返回值的存储过程，存储函数的参数只能是IN类型的。</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE FUNCTION 存储函数名称([参数列表])</span><br><span class="line">RETURNS type [characteristic ...]</span><br><span class="line">BEGIN</span><br><span class="line">	--SQL语句</span><br><span class="line">	RETURN ...;</span><br><span class="line">END;</span><br><span class="line"></span><br><span class="line">characteristic说明:</span><br><span class="line"> + DETERMINISTIC:相同的输入参数总是产生相同的结果</span><br><span class="line"> + NO SQL:不包含SQL语句。</span><br><span class="line"> + READS SQL DATA:包含读取数据的语句，但不包含写入数据的语句。</span><br></pre></td></tr></table></figure>
+<h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 存储函数</span><br><span class="line">-- 计算从1到n的累加</span><br><span class="line">create function fun1(n int)</span><br><span class="line">returns int deterministic </span><br><span class="line">begin</span><br><span class="line">    declare total int default 0;</span><br><span class="line"></span><br><span class="line">    while n &gt; 0 do</span><br><span class="line">        set total := total + n;</span><br><span class="line">        set n := n - 1;</span><br><span class="line">    end while;</span><br><span class="line"></span><br><span class="line">    return total;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">select fun1(100);</span><br></pre></td></tr></table></figure>
+<p><strong>注意当未添加 deterministic 会产生如下bug：</strong></p>
+<p><img src="https://wang-nine.cn/images/MySQL06-01%E6%9C%AA%E6%8C%87%E5%AE%9A%E5%8F%82%E6%95%B0%E6%80%A7%E8%B4%A8%E7%9A%84bug.png" alt="MySQL06-01未指定参数性质的bug"></p>
+<p>运行结果：</p>
+<p><img src="https://wang-nine.cn/images/MySQL06-02%E5%AD%98%E5%82%A8%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt="MySQL06-02存储函数的运行结果"></p>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p><strong>存储函数必须要有返回值，而且参数只能是输入类型的参数，其过程实现完全可以被存储过程所代替。</strong></p>
+<p><strong>因此存储函数的使用较少，这里仅做了解。</strong></p>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL11-InnoDB引擎01-架构</title>
+    <url>/posts/10413.html</url>
+    <content><![CDATA[<p>详细的描述了MySQL中的InnoDB引擎的架构。</p>
+<span id="more"></span>
+<h1 id="逻辑存储结构"><a href="#逻辑存储结构" class="headerlink" title="逻辑存储结构"></a>逻辑存储结构</h1><p><img src="https://wang-nine.cn/images/MySQL10-01%E9%80%BB%E8%BE%91%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84.png" alt="MySQL10-01逻辑存储结构"></p>
+<h1 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h1><h2 id="总架构"><a href="#总架构" class="headerlink" title="总架构"></a>总架构</h2><p><img src="https://wang-nine.cn/images/MySQL10-02%E6%80%BB%E6%9E%B6%E6%9E%84.png" alt="MySQL10-02总架构"></p>
+<h2 id="内存结构"><a href="#内存结构" class="headerlink" title="内存结构"></a>内存结构</h2><h3 id="缓冲池"><a href="#缓冲池" class="headerlink" title="缓冲池"></a>缓冲池</h3><p><img src="https://wang-nine.cn/images/MySQL10-03-01%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png" alt="MySQL10-03-01内存结构"></p>
+<h3 id="更改缓冲区"><a href="#更改缓冲区" class="headerlink" title="更改缓冲区"></a>更改缓冲区</h3><p><img src="https://wang-nine.cn/images/MySQL10-03-02%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png" alt="MySQL10-03-02内存结构"></p>
+<h3 id="自适应哈希"><a href="#自适应哈希" class="headerlink" title="自适应哈希"></a>自适应哈希</h3><p><img src="https://wang-nine.cn/images/MySQL10-03-03%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png" alt="MySQL10-03-03内存结构"></p>
+<h3 id="日志缓冲区"><a href="#日志缓冲区" class="headerlink" title="日志缓冲区"></a>日志缓冲区</h3><p><img src="https://wang-nine.cn/images/MySQL10-03-04%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png" alt="MySQL10-03-04内存结构"></p>
+<h2 id="磁盘结构"><a href="#磁盘结构" class="headerlink" title="磁盘结构"></a>磁盘结构</h2><h3 id="系统表空间与单个表文件空间"><a href="#系统表空间与单个表文件空间" class="headerlink" title="系统表空间与单个表文件空间"></a>系统表空间与单个表文件空间</h3><p><img src="https://wang-nine.cn/images/MySQL10-04-01%E7%A3%81%E7%9B%98%E7%BB%93%E6%9E%84.png" alt="MySQL10-04-01磁盘结构"></p>
+<h3 id="通用表空间与撤销表空间与临时表空间"><a href="#通用表空间与撤销表空间与临时表空间" class="headerlink" title="通用表空间与撤销表空间与临时表空间"></a>通用表空间与撤销表空间与临时表空间</h3><p><img src="https://wang-nine.cn/images/MySQL10-04-02%E7%A3%81%E7%9B%98%E7%BB%93%E6%9E%84.png" alt="MySQL10-04-02磁盘结构"></p>
+<h3 id="双写缓冲区与重做日志"><a href="#双写缓冲区与重做日志" class="headerlink" title="双写缓冲区与重做日志"></a>双写缓冲区与重做日志</h3><p><img src="https://wang-nine.cn/images/MySQL10-04-03%E7%A3%81%E7%9B%98%E7%BB%93%E6%9E%84.png" alt="MySQL10-04-03磁盘结构"></p>
+<h2 id="后台线程"><a href="#后台线程" class="headerlink" title="后台线程"></a>后台线程</h2><p><img src="https://wang-nine.cn/images/MySQL10-05%E5%90%8E%E5%8F%B0%E7%BA%BF%E7%A8%8B.png" alt="MySQL10-05后台线程"></p>
 ]]></content>
       <categories>
         <category>MySQL</category>
@@ -3967,29 +4035,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MySQL11-InnoDB引擎01-架构</title>
-    <url>/posts/10413.html</url>
-    <content><![CDATA[<p>详细的描述了MySQL中的InnoDB引擎的架构。</p>
-<span id="more"></span>
-<h1 id="逻辑存储结构"><a href="#逻辑存储结构" class="headerlink" title="逻辑存储结构"></a>逻辑存储结构</h1><p><img src="https://wang-nine.cn/images/MySQL10-01%E9%80%BB%E8%BE%91%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84.png" alt="MySQL10-01逻辑存储结构"></p>
-<h1 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h1><h2 id="总架构"><a href="#总架构" class="headerlink" title="总架构"></a>总架构</h2><p><img src="https://wang-nine.cn/images/MySQL10-02%E6%80%BB%E6%9E%B6%E6%9E%84.png" alt="MySQL10-02总架构"></p>
-<h2 id="内存结构"><a href="#内存结构" class="headerlink" title="内存结构"></a>内存结构</h2><h3 id="缓冲池"><a href="#缓冲池" class="headerlink" title="缓冲池"></a>缓冲池</h3><p><img src="https://wang-nine.cn/images/MySQL10-03-01%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png" alt="MySQL10-03-01内存结构"></p>
-<h3 id="更改缓冲区"><a href="#更改缓冲区" class="headerlink" title="更改缓冲区"></a>更改缓冲区</h3><p><img src="https://wang-nine.cn/images/MySQL10-03-02%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png" alt="MySQL10-03-02内存结构"></p>
-<h3 id="自适应哈希"><a href="#自适应哈希" class="headerlink" title="自适应哈希"></a>自适应哈希</h3><p><img src="https://wang-nine.cn/images/MySQL10-03-03%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png" alt="MySQL10-03-03内存结构"></p>
-<h3 id="日志缓冲区"><a href="#日志缓冲区" class="headerlink" title="日志缓冲区"></a>日志缓冲区</h3><p><img src="https://wang-nine.cn/images/MySQL10-03-04%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png" alt="MySQL10-03-04内存结构"></p>
-<h2 id="磁盘结构"><a href="#磁盘结构" class="headerlink" title="磁盘结构"></a>磁盘结构</h2><h3 id="系统表空间与单个表文件空间"><a href="#系统表空间与单个表文件空间" class="headerlink" title="系统表空间与单个表文件空间"></a>系统表空间与单个表文件空间</h3><p><img src="https://wang-nine.cn/images/MySQL10-04-01%E7%A3%81%E7%9B%98%E7%BB%93%E6%9E%84.png" alt="MySQL10-04-01磁盘结构"></p>
-<h3 id="通用表空间与撤销表空间与临时表空间"><a href="#通用表空间与撤销表空间与临时表空间" class="headerlink" title="通用表空间与撤销表空间与临时表空间"></a>通用表空间与撤销表空间与临时表空间</h3><p><img src="https://wang-nine.cn/images/MySQL10-04-02%E7%A3%81%E7%9B%98%E7%BB%93%E6%9E%84.png" alt="MySQL10-04-02磁盘结构"></p>
-<h3 id="双写缓冲区与重做日志"><a href="#双写缓冲区与重做日志" class="headerlink" title="双写缓冲区与重做日志"></a>双写缓冲区与重做日志</h3><p><img src="https://wang-nine.cn/images/MySQL10-04-03%E7%A3%81%E7%9B%98%E7%BB%93%E6%9E%84.png" alt="MySQL10-04-03磁盘结构"></p>
-<h2 id="后台线程"><a href="#后台线程" class="headerlink" title="后台线程"></a>后台线程</h2><p><img src="https://wang-nine.cn/images/MySQL10-05%E5%90%8E%E5%8F%B0%E7%BA%BF%E7%A8%8B.png" alt="MySQL10-05后台线程"></p>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL11-InnoDB引擎02-事务原理</title>
     <url>/posts/10414.html</url>
     <content><![CDATA[<p>详细的描述了MySQL中的InnoDB引擎的事务原理。</p>
@@ -4012,6 +4057,38 @@
 <p>Undo log销毁: undo log在事务执行时产生，事务提交时，并不会立即删除undo log，因为这些日志可能还用于MVCC。</p>
 <p>Undo log存储: undo log采用段的方式进行管理和记录，存放在前面介绍的 rollback segment回滚段中，内部包含1024个undo log segment。</p>
 </blockquote>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL09-视图</title>
+    <url>/posts/10411.html</url>
+    <content><![CDATA[<p>详细的描述了MySQL中的视图。</p>
+<span id="more"></span>
+<h1 id="视图的简介"><a href="#视图的简介" class="headerlink" title="视图的简介"></a>视图的简介</h1><p>视图(View)是一种虚拟存在的表。视图中的数据并不在数据库中实际存在，行和列数据来自定义视图的查询中使用的表，并且是在使用视图时动态生成的。<br>​通俗的讲，视图只保存了查询的SQL逻辑，不保存查询结果。所以我们在创建视图的时候，主要的工作在创建这条SQL查询语句上。</p>
+<h1 id="视图的语法"><a href="#视图的语法" class="headerlink" title="视图的语法"></a>视图的语法</h1><h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE [OR REPLACE] VIEW 视图名称 [(列名列表)] AS SELECT 语句[WITH[CASCADED|LOCAL] CHECK OPTION ]</span><br></pre></td></tr></table></figure>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW CREATE VIEW 视图名称; --查看创建视图语句</span><br><span class="line">SELECT * FROM 视图名称.......; --查看视图数据</span><br></pre></td></tr></table></figure>
+<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 方式一</span><br><span class="line">CREATE [OR REPLACE] VIEW 视图名称(列名列表)] AS SELECT语句 [WITH[CASCADED|LOCAL] CHECK OPTION]</span><br><span class="line">-- 方式二</span><br><span class="line">ALTER VIEW 视图名称(列名列表)] AS SELECT语句 [WITH[CASCADED|LOCAL] CHECK OPTION]</span><br></pre></td></tr></table></figure>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP VIEW [IF EXISTS] 视图名称[视图名称] ...</span><br></pre></td></tr></table></figure>
+<h1 id="视图的检查选项"><a href="#视图的检查选项" class="headerlink" title="视图的检查选项"></a>视图的检查选项</h1><blockquote>
+<p>​        当使用 WITH CHECK OPTION 子句创建视图时，My5QL会通过视图检查正在更改的每个行，例如插入，更新，删除，以使其符合视图的定义。</p>
+<p>​        MySQL允许基于另一个视图创建视图，它还会检查依赖视图中的规则以保持一致性。为了确定检查的范围，mysql 提供了两个选项: CASCADED和LOCAL，默认值为CASCADED。</p>
+</blockquote>
+<h2 id="cascaded"><a href="#cascaded" class="headerlink" title="cascaded"></a>cascaded</h2><p><img src="https://wang-nine.cn/images/MySQL08-01cascaded.png" alt="MySQL08-01cascaded"></p>
+<h2 id="local"><a href="#local" class="headerlink" title="local"></a>local</h2><p><img src="https://wang-nine.cn/images/MySQL08-02local.png" alt="MySQL08-02local"></p>
+<h1 id="视图的更新"><a href="#视图的更新" class="headerlink" title="视图的更新"></a>视图的更新</h1><p>要使视图可更新，视图中的行与基础表中的行之间必须存在一对一的关系。如果视图包含以下任何一项，则该视图不可更新:</p>
+<ol>
+<li>聚合函数或窗口函数(SUM()、MIN()、MAX()、COUNT()等)</li>
+<li>DISTINCT</li>
+<li>GROUP BY</li>
+<li>HAVING</li>
+<li>UNION 或者 UNION ALL</li>
+</ol>
 ]]></content>
       <categories>
         <category>MySQL</category>
@@ -4261,6 +4338,35 @@
 </ul>
 <p>其中的commonds就是Redis的操作命令，例如:<br>ping : 与redis服务端做心跳测试，服务端正常会返回 pong<br>不指定commond时，会进入 redis-cli 的交互控制台:</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Redis03-Jedis</title>
+    <url>/posts/10703.html</url>
+    <content><![CDATA[<h1 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h1><h2 id="样例程序"><a href="#样例程序" class="headerlink" title="样例程序"></a>样例程序</h2><ul>
+<li>1.引入依赖</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>redis.clients<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jedis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.7.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.建立连接</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> Jedis jedis;</span><br><span class="line"></span><br><span class="line"><span class="meta">@BeforeEach</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setUp</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="comment">//建立连接</span></span><br><span class="line">	jedis = <span class="keyword">new</span> <span class="title class_">Jedis</span>(<span class="string">&quot;192.168.150.101&quot;</span>，<span class="number">6379</span>);</span><br><span class="line">    <span class="comment">//设置密码</span></span><br><span class="line">	jedis.auth(<span class="string">&quot;123456&quot;</span>);</span><br><span class="line">    <span class="comment">//选择库</span></span><br><span class="line">	jedis.select(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>测试String</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testString</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="comment">//插入数据，方法名称就是redis命令名称，非常简单</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">result</span> <span class="operator">=</span> jedis.set(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;张三&quot;</span>); </span><br><span class="line">    System.out.println(<span class="string">&quot;result = &quot;</span> + result);</span><br><span class="line">    <span class="comment">//获取数据</span></span><br><span class="line">	<span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> jedis.get(<span class="string">&quot;name&quot;</span>) ;</span><br><span class="line">	System.out.println(<span class="string">&quot;name = &quot;</span> + name) ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>释放资源</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@AfterEach</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">tearDown</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="comment">//释放资源</span></span><br><span class="line">	<span class="keyword">if</span> (jedis != <span class="literal">null</span>) &#123;</span><br><span class="line">		jedis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Jedis连接池"><a href="#Jedis连接池" class="headerlink" title="Jedis连接池"></a>Jedis连接池</h2><p>Jedis本身是线程不安全的，并且频繁的创建和销毁连接会有性能损耗，因此我们推荐大家使用Jedis连接池代替Jedis的直连方式</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JedisConnectionFactory</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> JedisPool jedisPool;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="comment">//配置连接池</span></span><br><span class="line">        <span class="type">JedisPoolConfig</span> <span class="variable">poolConfig</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JedisPoolConfig</span>();</span><br><span class="line">        poolConfig.setMaxTotal(<span class="number">8</span>);  <span class="comment">//最大连接数</span></span><br><span class="line">        poolConfig.setMaxIdle(<span class="number">8</span>);   <span class="comment">//最大空闲连接</span></span><br><span class="line">        poolConfig.setMinIdle(<span class="number">0</span>);   <span class="comment">//最小空闲连接</span></span><br><span class="line">        poolConfig.setMaxWaitMillis(<span class="number">1000</span>);  <span class="comment">//没有连接可用的等待时长，默认-1，持续等待</span></span><br><span class="line">        <span class="comment">//创建连接池对象</span></span><br><span class="line">        jedisPool = <span class="keyword">new</span> <span class="title class_">JedisPool</span>(poolConfig, <span class="string">&quot;192.168.72.128&quot;</span>, <span class="number">6379</span>, <span class="number">1000</span>, <span class="string">&quot;123456&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Jedis <span class="title function_">getJedis</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> jedisPool.getResource();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Redis</category>
+      </categories>
+      <tags>
+        <tag>Redis</tag>
+      </tags>
   </entry>
   <entry>
     <title>Redis02-命令</title>
@@ -4734,35 +4840,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Redis03-Jedis</title>
-    <url>/posts/10703.html</url>
-    <content><![CDATA[<h1 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h1><h2 id="样例程序"><a href="#样例程序" class="headerlink" title="样例程序"></a>样例程序</h2><ul>
-<li>1.引入依赖</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>redis.clients<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jedis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.7.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>2.建立连接</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> Jedis jedis;</span><br><span class="line"></span><br><span class="line"><span class="meta">@BeforeEach</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setUp</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="comment">//建立连接</span></span><br><span class="line">	jedis = <span class="keyword">new</span> <span class="title class_">Jedis</span>(<span class="string">&quot;192.168.150.101&quot;</span>，<span class="number">6379</span>);</span><br><span class="line">    <span class="comment">//设置密码</span></span><br><span class="line">	jedis.auth(<span class="string">&quot;123456&quot;</span>);</span><br><span class="line">    <span class="comment">//选择库</span></span><br><span class="line">	jedis.select(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>测试String</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testString</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="comment">//插入数据，方法名称就是redis命令名称，非常简单</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">result</span> <span class="operator">=</span> jedis.set(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;张三&quot;</span>); </span><br><span class="line">    System.out.println(<span class="string">&quot;result = &quot;</span> + result);</span><br><span class="line">    <span class="comment">//获取数据</span></span><br><span class="line">	<span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> jedis.get(<span class="string">&quot;name&quot;</span>) ;</span><br><span class="line">	System.out.println(<span class="string">&quot;name = &quot;</span> + name) ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>释放资源</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@AfterEach</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">tearDown</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="comment">//释放资源</span></span><br><span class="line">	<span class="keyword">if</span> (jedis != <span class="literal">null</span>) &#123;</span><br><span class="line">		jedis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Jedis连接池"><a href="#Jedis连接池" class="headerlink" title="Jedis连接池"></a>Jedis连接池</h2><p>Jedis本身是线程不安全的，并且频繁的创建和销毁连接会有性能损耗，因此我们推荐大家使用Jedis连接池代替Jedis的直连方式</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JedisConnectionFactory</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> JedisPool jedisPool;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="comment">//配置连接池</span></span><br><span class="line">        <span class="type">JedisPoolConfig</span> <span class="variable">poolConfig</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JedisPoolConfig</span>();</span><br><span class="line">        poolConfig.setMaxTotal(<span class="number">8</span>);  <span class="comment">//最大连接数</span></span><br><span class="line">        poolConfig.setMaxIdle(<span class="number">8</span>);   <span class="comment">//最大空闲连接</span></span><br><span class="line">        poolConfig.setMinIdle(<span class="number">0</span>);   <span class="comment">//最小空闲连接</span></span><br><span class="line">        poolConfig.setMaxWaitMillis(<span class="number">1000</span>);  <span class="comment">//没有连接可用的等待时长，默认-1，持续等待</span></span><br><span class="line">        <span class="comment">//创建连接池对象</span></span><br><span class="line">        jedisPool = <span class="keyword">new</span> <span class="title class_">JedisPool</span>(poolConfig, <span class="string">&quot;192.168.72.128&quot;</span>, <span class="number">6379</span>, <span class="number">1000</span>, <span class="string">&quot;123456&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Jedis <span class="title function_">getJedis</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> jedisPool.getResource();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Redis</category>
-      </categories>
-      <tags>
-        <tag>Redis</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Redis04-SpringDataRedis</title>
     <url>/posts/10704.html</url>
     <content><![CDATA[<h1 id="SpringDataRedis"><a href="#SpringDataRedis" class="headerlink" title="SpringDataRedis"></a>SpringDataRedis</h1><p>SpringData是Spring中数据操作的模块，包含对各种数据库的集成，其中对Redis的集成模块就叫做SpringDataRedis</p>
@@ -5070,146 +5147,6 @@
       </categories>
   </entry>
   <entry>
-    <title>MySQL04-索引03-使用规则</title>
-    <url>/posts/10406.html</url>
-    <content><![CDATA[<p>详细的描述了MySQL中的索引的使用规则和设计原则。</p>
-<span id="more"></span>
-<h1 id="使用规则"><a href="#使用规则" class="headerlink" title="使用规则"></a>使用规则</h1><h2 id="联合索引"><a href="#联合索引" class="headerlink" title="联合索引"></a>联合索引</h2><h3 id="最左前缀法则"><a href="#最左前缀法则" class="headerlink" title="最左前缀法则"></a>最左前缀法则</h3><blockquote>
-<p>如果索引了多列(联合索引)，要遵守最左前缀法则。最左前缀法则指的是查询从索引的最左列开始，并且不跳过索引中的列。如果跳跃某一列，索引将部分失效(后面的字段索引失效)。</p>
-</blockquote>
-<h3 id="范围查询"><a href="#范围查询" class="headerlink" title="范围查询"></a>范围查询</h3><blockquote>
-<p>联合索引中，出现范围查询(&gt;,&lt;)，范围查询右侧的列索引失效</p>
-</blockquote>
-<h2 id="索引失效"><a href="#索引失效" class="headerlink" title="索引失效"></a>索引失效</h2><h3 id="索引列运算"><a href="#索引列运算" class="headerlink" title="索引列运算"></a>索引列运算</h3><blockquote>
-<p>不要在索引列上进行运算操作,索引将失效。</p>
-</blockquote>
-<h3 id="字符串不加引号"><a href="#字符串不加引号" class="headerlink" title="字符串不加引号"></a>字符串不加引号</h3><blockquote>
-<p>字符串类型字段使用时，不加引号，索引将失效。会在内部自动进行隐式类型转换。</p>
-</blockquote>
-<h3 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h3><blockquote>
-<p>如果仅仅是尾部模糊匹配，索引不会失效。如果是头部模糊匹配，索引失效。</p>
-</blockquote>
-<h3 id="or连接的条件"><a href="#or连接的条件" class="headerlink" title="or连接的条件"></a>or连接的条件</h3><blockquote>
-<p>用or分割开的条件，如果or前的条件中的列有索引，而后面的列中没有索引，那么涉及的索引都不会被用到。</p>
-<p>解决办法：针对另一个数据列也建立索引即可</p>
-</blockquote>
-<h3 id="数据分布影响"><a href="#数据分布影响" class="headerlink" title="数据分布影响"></a>数据分布影响</h3><blockquote>
-<p>如果MysQL评估使用索引比全表更慢，则不使用索引。</p>
-</blockquote>
-<h2 id="SQL提示"><a href="#SQL提示" class="headerlink" title="SQL提示"></a>SQL提示</h2><h3 id="SQL提示-1"><a href="#SQL提示-1" class="headerlink" title="SQL提示"></a>SQL提示</h3><blockquote>
-<p>SQL提示，是优化数据库的一个重要手段，简单来说，就是在SQL语句中加入一些人为的提示来达到优化操作的目的。</p>
-<p>放在where条件前，use/ignore/force index(索引名)</p>
-<p>use index:   建议使用索引，数据库可以选择不使用</p>
-<p>ignore index:   忽略某个索引</p>
-<p>force index:   强制使用某个索引</p>
-</blockquote>
-<h2 id="覆盖索引"><a href="#覆盖索引" class="headerlink" title="覆盖索引"></a>覆盖索引</h2><h3 id="覆盖索引-1"><a href="#覆盖索引-1" class="headerlink" title="覆盖索引"></a>覆盖索引</h3><blockquote>
-<p>尽量使用覆盖索引（查询使用了索引，并且需要返回的列，在该索引中已经全部能够找到)，减少select *。</p>
-<p>尽量避免回表查询</p>
-<p>extra中：<br>using index condition :查找使用了索引,但是需要回表查询数据<br>using where; using index:查找使用了索引，但是需要的数据都在索引列中能找到，所以不需要回表查询数据</p>
-</blockquote>
-<h2 id="前缀索引"><a href="#前缀索引" class="headerlink" title="前缀索引"></a>前缀索引</h2><h3 id="前缀索引-1"><a href="#前缀索引-1" class="headerlink" title="前缀索引"></a>前缀索引</h3><blockquote>
-<p>当字段类型为字符串(varchar, text等）时，有时候需要索引很长的字符串，这会让索引变得很大，查询时，浪费大量的磁盘IO，影响查询效率。此时可以只将字符串的一部分前缀，建立索引，这样可以大大节约索引空间，从而提高索引效率。</p>
-<p>语法：<br>create index idx_xxx on table_name(column(n)) ;        - - n为前缀长度</p>
-<p>前缀长度的选择：<br>可以根据索引的选择性来决定，选择性是指不重复的索引值（基数）和数据表的记录总数的比值，索引选择性越高则查询效率越高，<br>唯一索引的选择性是1，这是最好的索引选择性，性能也是最好的。<br>可以使用聚合函数查询选择性<br>select count(distinct substring(xxx,1,5))/ count(*) from table ;  - - 即长度为5的选择性</p>
-</blockquote>
-<h2 id="单列-联合索引"><a href="#单列-联合索引" class="headerlink" title="单列/联合索引"></a>单列/联合索引</h2><h3 id="单列索引与联合索引"><a href="#单列索引与联合索引" class="headerlink" title="单列索引与联合索引"></a>单列索引与联合索引</h3><blockquote>
-<p>单列索引:即一个索引只包含单个列。</p>
-<p>联合索引:即一个索引包含了多个列。</p>
-<p>在业务场景中，如果存在多个查询条件，考虑针对于查询字段建立索引时，建议建立联合索引，而非单列索引。</p>
-<p>多条件联合查询时，MySQL优化器会评估哪个字段的索引效率更高，会选择该索引完成本次查询。</p>
-</blockquote>
-<h1 id="索引设计原则（总结自黑马程序员，侵删）"><a href="#索引设计原则（总结自黑马程序员，侵删）" class="headerlink" title="索引设计原则（总结自黑马程序员，侵删）"></a>索引设计原则（总结自黑马程序员，侵删）</h1><h3 id="索引设计原则"><a href="#索引设计原则" class="headerlink" title="索引设计原则"></a>索引设计原则</h3><blockquote>
-<ol>
-<li>针对于数据量较大，且查询比较频繁的表建立索引。</li>
-<li>针对于常作为查询条件（where)、排序(order by)、分组(group by)操作的字段建立索引。</li>
-<li>尽量选择区分度高的列作为索引，尽量建立唯一索引，区分度越高，使用索引的效率越高。</li>
-<li>如果是字符串类型的字段，字段的长度较长，可以针对于字段的特点，建立前缀索引。</li>
-<li>尽量使用联合索引，减少单列索引，查询时，联合索引很多时候可以覆盖索引，节省存储空间，避免回表，提高查询效率。</li>
-<li>要控制索引的数量，索引并不是多多益善，索引越多，维护索引结构的代价也就越大，会影响增删改的效率。</li>
-<li>如果索引列不能存储NULL值，请在创建表时使用NOT NULL约束它。当优化器知道每列是否包含NULL值时，它可以更好地确定哪个索引最有效地用于查询。</li>
-</ol>
-</blockquote>
-<p>==模型数空运最快==</p>
-<p>模：字符串的模糊匹配</p>
-<p>型：数据类型</p>
-<p>数：索引字段使用函数会失效</p>
-<p>空：不限制索引 not null</p>
-<p>运：对索引列进行运算失效</p>
-<p>最：最左前缀法则</p>
-<p>快：全表比索引快，则不适用</p>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Redis07-秒杀</title>
-    <url>/posts/10707.html</url>
-    <content><![CDATA[<h1 id="全局唯一ID"><a href="#全局唯一ID" class="headerlink" title="全局唯一ID"></a>全局唯一ID</h1><p>一般的订单会出什么问题呢？</p>
-<p>第一点：数据量大</p>
-<p>第二点：要具备唯一性（数据量过大时分表，可能出现重复id的问题）</p>
-<p>因此要使用==全局唯一ID==在分布式系统下用来生成全局唯一ID的工具</p>
-<p>需要满足：</p>
-<ul>
-<li>唯一性</li>
-<li>高可用</li>
-<li>高性能</li>
-<li>递增性（有利于索引和插入）Redis的incr</li>
-<li>安全性（自增不能规律过于明显）</li>
-</ul>
-<p>为了增加ID的安全性，我们可以不直接使用Redis自增的数值，而是拼接一些其它信息:</p>
-<p><img src="../../../images/Redis07-01全局唯一ID.png" alt="Redis07-01全局唯一ID"></p>
-<p>全局唯一ID生成策略:.</p>
-<ul>
-<li>UUID</li>
-<li>Redis自增snowflake算法</li>
-<li>数据库自增</li>
-<li>Redis自增ID策略:<ul>
-<li>每天一个key，方便统计订单量.</li>
-<li>ID构造是时间戳＋计数器</li>
-</ul>
-</li>
-</ul>
-<p>下单时需要判断两点:</p>
-<ul>
-<li>秒杀是否开始或结束，如果尚未开始或已经结束则无法下单</li>
-<li>库存是否充足，不足则无法下单</li>
-</ul>
-<p><img src="https://wang-nine.cn/images/Redis07-02%E7%A7%92%E6%9D%80%E6%B5%81%E7%A8%8B.png" alt="Redis07-02秒杀流程"></p>
-<p>==高并发情况下会出现超卖==</p>
-<p><img src="../../../images/Redis07-02超卖.png" alt="Redis07-02超卖"></p>
-<p><img src="https://wang-nine.cn/images/Redis07-03%E6%82%B2%E8%A7%82%E9%94%81%E4%B8%8E%E4%B9%90%E8%A7%82%E9%94%81.png" alt="Redis07-03悲观锁与乐观锁"></p>
-<p>乐观锁的实现方式：</p>
-<ul>
-<li>版本号法</li>
-<li>CAS</li>
-</ul>
-<p>1．悲观锁:添加同步锁，让线程串行执行</p>
-<ul>
-<li><p>优点:简单粗暴</p>
-</li>
-<li><p>缺点:性能一般</p>
-</li>
-</ul>
-<p>2.乐观锁:不加锁，在更新时判断是否有其它线程在修改</p>
-<ul>
-<li>优点∶性能好</li>
-<li>缺点∶存在成功率低的问题</li>
-</ul>
-<p>修改秒杀业务，要求同一个优惠券，一个用户只能下一单</p>
-<p>p54</p>
-<p>集群下的并发安全问题</p>
-<p><img src="../../../images/Redis07-04集群并发问题.png" alt="image-20230706150459403"></p>
-]]></content>
-      <categories>
-        <category>Redis</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Redis08-分布式锁</title>
     <url>/posts/10708.html</url>
     <content><![CDATA[<p><img src="https://wang-nine.cn/images/Redis08-01%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81.png" alt="Redis08-01分布式锁"></p>
@@ -5422,6 +5359,69 @@
       <tags>
         <tag>Spring</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Redis07-秒杀</title>
+    <url>/posts/10707.html</url>
+    <content><![CDATA[<h1 id="全局唯一ID"><a href="#全局唯一ID" class="headerlink" title="全局唯一ID"></a>全局唯一ID</h1><p>一般的订单会出什么问题呢？</p>
+<p>第一点：数据量大</p>
+<p>第二点：要具备唯一性（数据量过大时分表，可能出现重复id的问题）</p>
+<p>因此要使用==全局唯一ID==在分布式系统下用来生成全局唯一ID的工具</p>
+<p>需要满足：</p>
+<ul>
+<li>唯一性</li>
+<li>高可用</li>
+<li>高性能</li>
+<li>递增性（有利于索引和插入）Redis的incr</li>
+<li>安全性（自增不能规律过于明显）</li>
+</ul>
+<p>为了增加ID的安全性，我们可以不直接使用Redis自增的数值，而是拼接一些其它信息:</p>
+<p><img src="../../../images/Redis07-01全局唯一ID.png" alt="Redis07-01全局唯一ID"></p>
+<p>全局唯一ID生成策略:.</p>
+<ul>
+<li>UUID</li>
+<li>Redis自增snowflake算法</li>
+<li>数据库自增</li>
+<li>Redis自增ID策略:<ul>
+<li>每天一个key，方便统计订单量.</li>
+<li>ID构造是时间戳＋计数器</li>
+</ul>
+</li>
+</ul>
+<p>下单时需要判断两点:</p>
+<ul>
+<li>秒杀是否开始或结束，如果尚未开始或已经结束则无法下单</li>
+<li>库存是否充足，不足则无法下单</li>
+</ul>
+<p><img src="https://wang-nine.cn/images/Redis07-02%E7%A7%92%E6%9D%80%E6%B5%81%E7%A8%8B.png" alt="Redis07-02秒杀流程"></p>
+<p>==高并发情况下会出现超卖==</p>
+<p><img src="../../../images/Redis07-02超卖.png" alt="Redis07-02超卖"></p>
+<p><img src="https://wang-nine.cn/images/Redis07-03%E6%82%B2%E8%A7%82%E9%94%81%E4%B8%8E%E4%B9%90%E8%A7%82%E9%94%81.png" alt="Redis07-03悲观锁与乐观锁"></p>
+<p>乐观锁的实现方式：</p>
+<ul>
+<li>版本号法</li>
+<li>CAS</li>
+</ul>
+<p>1．悲观锁:添加同步锁，让线程串行执行</p>
+<ul>
+<li><p>优点:简单粗暴</p>
+</li>
+<li><p>缺点:性能一般</p>
+</li>
+</ul>
+<p>2.乐观锁:不加锁，在更新时判断是否有其它线程在修改</p>
+<ul>
+<li>优点∶性能好</li>
+<li>缺点∶存在成功率低的问题</li>
+</ul>
+<p>修改秒杀业务，要求同一个优惠券，一个用户只能下一单</p>
+<p>p54</p>
+<p>集群下的并发安全问题</p>
+<p><img src="../../../images/Redis07-04集群并发问题.png" alt="image-20230706150459403"></p>
+]]></content>
+      <categories>
+        <category>Redis</category>
+      </categories>
   </entry>
   <entry>
     <title>SSM02-Spring中Bean的实例化与依赖注入</title>
@@ -5706,6 +5706,90 @@
       </tags>
   </entry>
   <entry>
+    <title>SSM06-Spring中的事务</title>
+    <url>/posts/10306.html</url>
+    <content><![CDATA[<p>详细的描述了Spring中的事务概念。</p>
+<span id="more"></span>
+<h1 id="事务的简介"><a href="#事务的简介" class="headerlink" title="事务的简介"></a>事务的简介</h1><p>事务作用：在数据层保障一系列的数据库操作同成功同失败<br>Spring事务作用：在数据层或业务层保障一系列的数据库操作同成功同失败</p>
+<p>如何开启事务管理？</p>
+<p>步骤如下：</p>
+<ol>
+<li>在业务层接口上添加Spring事务管理</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">xxxxx</span> &#123;</span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> xxx &#123;</span><br><span class="line">        代码体</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意事项</strong>：<br>Spring注解式事务通常添加在业务层接口中而不会添加到业务层实现类中，降低耦合<br>注解式事务可以添加到业务方法上表示当前方法开启事务，也可以添加到接口上表示当前接口所有方法开启事务</p>
+<ol>
+<li>设置事务管理器</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="keyword">public</span> PlatformTransactionManager <span class="title function_">transactionManager</span><span class="params">(DataSource dataSource)</span>&#123;</span><br><span class="line">	<span class="type">DataSourceTransactionManager</span> <span class="variable">ptm</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DataSourceTransactionManager</span>();</span><br><span class="line">    ptm.setDataSource(dataSource);</span><br><span class="line">	<span class="keyword">return</span> ptm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>在主配置类中开启事务型驱动</p>
+<p>添加如下注解：</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@EnableTransactionmanagement</span></span><br></pre></td></tr></table></figure>
+<h1 id="Spring事务角色"><a href="#Spring事务角色" class="headerlink" title="Spring事务角色"></a>Spring事务角色</h1><p>事务角色</p>
+<h2 id="事务管理员"><a href="#事务管理员" class="headerlink" title="事务管理员"></a>事务管理员</h2><p>发起事务方，在Spring中通常指代业务层开启事务的方法</p>
+<h2 id="事务协调员"><a href="#事务协调员" class="headerlink" title="事务协调员"></a>事务协调员</h2><p>加入事务方，在Spring中通常指代数据层方法，也可以是业务层方法</p>
+<h1 id="事务属性"><a href="#事务属性" class="headerlink" title="事务属性"></a>事务属性</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:center">作用</th>
+<th style="text-align:center">实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">readOnly</td>
+<td style="text-align:center">设置是否为只读事务</td>
+<td style="text-align:center">readOnly = true   只读事务</td>
+</tr>
+<tr>
+<td style="text-align:center">timeout</td>
+<td style="text-align:center">设置事务的超过时间</td>
+<td style="text-align:center">timeout = -1   永不超时</td>
+</tr>
+<tr>
+<td style="text-align:center">rollbackFor</td>
+<td style="text-align:center">设置事务回滚异常(class)</td>
+<td style="text-align:center">rollbackFor = (NullPointException.class)</td>
+</tr>
+<tr>
+<td style="text-align:center">rollbackForClassName</td>
+<td style="text-align:center">设置事务回滚异常(String)</td>
+<td style="text-align:center">同上格式为字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">noRollbackFor</td>
+<td style="text-align:center">设置事务不回滚异常(class)</td>
+<td style="text-align:center">noRollbackFor = (NullPointException.class)</td>
+</tr>
+<tr>
+<td style="text-align:center">noRollbackForClassName</td>
+<td style="text-align:center">设置事务不回滚异常(String)</td>
+<td style="text-align:center">同上格式为字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">propagation</td>
+<td style="text-align:center">设置事务传播行为</td>
+<td style="text-align:center">…</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>事务传播行为</strong>：事务协调员对事务管理员所携带事务的处理态度</p>
+<p><img src="https://wang-nine.cn/images/SSM05-01%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA.png" alt="SSM05-01事务传播行为"></p>
+]]></content>
+      <categories>
+        <category>SSM</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SSM05-Spring中的AOP概念</title>
     <url>/posts/10305.html</url>
     <content><![CDATA[<p>详细的描述了Spring中的AOP概念。</p>
@@ -5879,90 +5963,6 @@
 </ul>
 <p>样例代码如下（来自黑马程序员，侵删）</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima.aop;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.JoinPoint;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.ProceedingJoinPoint;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.*;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyAdvice</span> &#123;</span><br><span class="line">    <span class="meta">@Pointcut(&quot;execution(* com.itheima.dao.BookDao.findName(..))&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">pt</span><span class="params">()</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//JoinPoint：用于描述切入点的对象，必须配置成通知方法中的第一个参数，可用于获取原始方法调用的参数</span></span><br><span class="line"><span class="comment">//    @Before(&quot;pt()&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">before</span><span class="params">(JoinPoint jp)</span> &#123;</span><br><span class="line">        Object[] args = jp.getArgs();</span><br><span class="line">        System.out.println(Arrays.toString(args));</span><br><span class="line">        System.out.println(<span class="string">&quot;before advice ...&quot;</span> );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    @After(&quot;pt()&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">after</span><span class="params">(JoinPoint jp)</span> &#123;</span><br><span class="line">        Object[] args = jp.getArgs();</span><br><span class="line">        System.out.println(Arrays.toString(args));</span><br><span class="line">        System.out.println(<span class="string">&quot;after advice ...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//ProceedingJoinPoint：专用于环绕通知，是JoinPoint子类，可以实现对原始方法的调用</span></span><br><span class="line"><span class="comment">//    @Around(&quot;pt()&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">around</span><span class="params">(ProceedingJoinPoint pjp)</span> &#123;</span><br><span class="line">        Object[] args = pjp.getArgs();</span><br><span class="line">        System.out.println(Arrays.toString(args));</span><br><span class="line">        args[<span class="number">0</span>] = <span class="number">666</span>;</span><br><span class="line">        <span class="type">Object</span> <span class="variable">ret</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            ret = pjp.proceed(args);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Throwable t) &#123;</span><br><span class="line">            t.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//设置返回后通知获取原始方法的返回值，要求returning属性值必须与方法形参名相同</span></span><br><span class="line">    <span class="meta">@AfterReturning(value = &quot;pt()&quot;,returning = &quot;ret&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">afterReturning</span><span class="params">(JoinPoint jp,String ret)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;afterReturning advice ...&quot;</span>+ret);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//设置抛出异常后通知获取原始方法运行时抛出的异常对象，要求throwing属性值必须与方法形参名相同</span></span><br><span class="line">    <span class="meta">@AfterThrowing(value = &quot;pt()&quot;,throwing = &quot;t&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">afterThrowing</span><span class="params">(Throwable t)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;afterThrowing advice ...&quot;</span>+t);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>SSM</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SSM06-Spring中的事务</title>
-    <url>/posts/10306.html</url>
-    <content><![CDATA[<p>详细的描述了Spring中的事务概念。</p>
-<span id="more"></span>
-<h1 id="事务的简介"><a href="#事务的简介" class="headerlink" title="事务的简介"></a>事务的简介</h1><p>事务作用：在数据层保障一系列的数据库操作同成功同失败<br>Spring事务作用：在数据层或业务层保障一系列的数据库操作同成功同失败</p>
-<p>如何开启事务管理？</p>
-<p>步骤如下：</p>
-<ol>
-<li>在业务层接口上添加Spring事务管理</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">xxxxx</span> &#123;</span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> xxx &#123;</span><br><span class="line">        代码体</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>注意事项</strong>：<br>Spring注解式事务通常添加在业务层接口中而不会添加到业务层实现类中，降低耦合<br>注解式事务可以添加到业务方法上表示当前方法开启事务，也可以添加到接口上表示当前接口所有方法开启事务</p>
-<ol>
-<li>设置事务管理器</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="keyword">public</span> PlatformTransactionManager <span class="title function_">transactionManager</span><span class="params">(DataSource dataSource)</span>&#123;</span><br><span class="line">	<span class="type">DataSourceTransactionManager</span> <span class="variable">ptm</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DataSourceTransactionManager</span>();</span><br><span class="line">    ptm.setDataSource(dataSource);</span><br><span class="line">	<span class="keyword">return</span> ptm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li><p>在主配置类中开启事务型驱动</p>
-<p>添加如下注解：</p>
-</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@EnableTransactionmanagement</span></span><br></pre></td></tr></table></figure>
-<h1 id="Spring事务角色"><a href="#Spring事务角色" class="headerlink" title="Spring事务角色"></a>Spring事务角色</h1><p>事务角色</p>
-<h2 id="事务管理员"><a href="#事务管理员" class="headerlink" title="事务管理员"></a>事务管理员</h2><p>发起事务方，在Spring中通常指代业务层开启事务的方法</p>
-<h2 id="事务协调员"><a href="#事务协调员" class="headerlink" title="事务协调员"></a>事务协调员</h2><p>加入事务方，在Spring中通常指代数据层方法，也可以是业务层方法</p>
-<h1 id="事务属性"><a href="#事务属性" class="headerlink" title="事务属性"></a>事务属性</h1><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">属性</th>
-<th style="text-align:center">作用</th>
-<th style="text-align:center">实例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">readOnly</td>
-<td style="text-align:center">设置是否为只读事务</td>
-<td style="text-align:center">readOnly = true   只读事务</td>
-</tr>
-<tr>
-<td style="text-align:center">timeout</td>
-<td style="text-align:center">设置事务的超过时间</td>
-<td style="text-align:center">timeout = -1   永不超时</td>
-</tr>
-<tr>
-<td style="text-align:center">rollbackFor</td>
-<td style="text-align:center">设置事务回滚异常(class)</td>
-<td style="text-align:center">rollbackFor = (NullPointException.class)</td>
-</tr>
-<tr>
-<td style="text-align:center">rollbackForClassName</td>
-<td style="text-align:center">设置事务回滚异常(String)</td>
-<td style="text-align:center">同上格式为字符串</td>
-</tr>
-<tr>
-<td style="text-align:center">noRollbackFor</td>
-<td style="text-align:center">设置事务不回滚异常(class)</td>
-<td style="text-align:center">noRollbackFor = (NullPointException.class)</td>
-</tr>
-<tr>
-<td style="text-align:center">noRollbackForClassName</td>
-<td style="text-align:center">设置事务不回滚异常(String)</td>
-<td style="text-align:center">同上格式为字符串</td>
-</tr>
-<tr>
-<td style="text-align:center">propagation</td>
-<td style="text-align:center">设置事务传播行为</td>
-<td style="text-align:center">…</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>事务传播行为</strong>：事务协调员对事务管理员所携带事务的处理态度</p>
-<p><img src="https://wang-nine.cn/images/SSM05-01%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA.png" alt="SSM05-01事务传播行为"></p>
 ]]></content>
       <categories>
         <category>SSM</category>
@@ -6361,51 +6361,6 @@
       </tags>
   </entry>
   <entry>
-    <title>SSM10-SSM整合深入</title>
-    <url>/posts/10310.html</url>
-    <content><![CDATA[<p>详细的描述了Spring中的SSM整合深入</p>
-<span id="more"></span>
-<h1 id="SSM整合深入"><a href="#SSM整合深入" class="headerlink" title="SSM整合深入"></a>SSM整合深入</h1><h2 id="表现层与前端数据协议"><a href="#表现层与前端数据协议" class="headerlink" title="表现层与前端数据协议"></a>表现层与前端数据协议</h2><ul>
-<li><p>前端接收数据格式—创建结果模型类，封装数据到data属性中（操作的结果）</p>
-</li>
-<li><p>前端接收数据格式—封装操作结果到code属性中（操作的结果：true还是false）</p>
-</li>
-<li><p>前端接收数据格式—封装特殊消息到message(msg)属性中（给用户看的）</p>
-</li>
-</ul>
-<p>综上，设计一个统一数据返回结果类</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Result</span> &#123;</span><br><span class="line">	<span class="keyword">private</span> Object data;</span><br><span class="line">    <span class="keyword">private</span> Integer code;</span><br><span class="line">    <span class="keyword">private</span> String msg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Result类中的字段并不是固定的，可以根据需要自行增减提供若干个构造方法，方便操作</p>
-</blockquote>
-<p>针对Code也可以设计一个返回结果编码类</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.wang.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Code</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Integer</span> <span class="variable">SAVE_OK</span> <span class="operator">=</span> <span class="number">20011</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Integer</span> <span class="variable">DELETE_OK</span> <span class="operator">=</span> <span class="number">20021</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Integer</span> <span class="variable">UPDATE_OK</span> <span class="operator">=</span> <span class="number">20031</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Integer</span> <span class="variable">GET_OK</span> <span class="operator">=</span> <span class="number">20041</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Integer</span> <span class="variable">SAVE_ERR</span> <span class="operator">=</span> <span class="number">20010</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Integer</span> <span class="variable">DELETE_ERR</span> <span class="operator">=</span> <span class="number">20020</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Integer</span> <span class="variable">UPDATE_ERR</span> <span class="operator">=</span> <span class="number">20030</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Integer</span> <span class="variable">GET_ERR</span> <span class="operator">=</span> <span class="number">20040</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="SSM异常处理器"><a href="#SSM异常处理器" class="headerlink" title="SSM异常处理器"></a>SSM异常处理器</h2><ul>
-<li>出现异常现象的常见位置与常见诱因如下:<ul>
-<li>框架内部抛出的异常:因使用不合规导致</li>
-<li>数据层抛出的异常:因外部服务器故障导致（例如:服务器访问超时）</li>
-<li>业务层抛出的异常:因业务逻辑书写错误导致（例如:遍历业务书写操作，导致索引异常等）</li>
-<li>表现层抛出的异常:因数据收集、校验等规则导致（例如:不匹配的数据类型间导致异常）</li>
-<li>工具类抛出的异常:因工具类书写不严谨不够健壮导致（例如:必要释放的连接长期未释放等）</li>
-</ul>
-</li>
-</ul>
-<p>问题如下</p>
-<p>1.各个层级均出现异常，异常处理代码书写在哪一层？</p>
-<p>==所有的异常均抛出到表现层进行处理== 向上抛到表现层</p>
-<p>2.表现层处理异常，每个方法中单独书写，代码书写量巨大且意义不强，如何解决?</p>
-<p>AOP思想</p>
-<p>实现代码与杂项4-项目中的全局异常处理器相同：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 全局异常处理器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@RestControllerAdvice</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GlobalExceptionHandler</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ExceptionHandler(Exception.class)</span>      <span class="comment">//捕获所有的异常</span></span><br><span class="line">    <span class="keyword">public</span> Result <span class="title function_">ex</span><span class="params">(Exception ex)</span> &#123;</span><br><span class="line">        ex.printStackTrace();</span><br><span class="line">        <span class="keyword">return</span> Result.error(<span class="string">&quot;对不起，操作失败，请联系管理员&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>SSM</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SSM12-MybatisPlus</title>
     <url>/posts/10312.html</url>
     <content><![CDATA[<h1 id="基础案例"><a href="#基础案例" class="headerlink" title="基础案例"></a>基础案例</h1><p>==极其精简化了dao层的书写==</p>
@@ -6531,6 +6486,51 @@
 <h1 id="SSM06-Spring中的事务"><a href="#SSM06-Spring中的事务" class="headerlink" title="SSM06-Spring中的事务"></a>SSM06-Spring中的事务</h1><p><a href="https://wang-nine.cn/posts/10306.html">SSM06-Spring中的事务</a></p>
 <h1 id="SSM07-SpringMVC的请求与响应"><a href="#SSM07-SpringMVC的请求与响应" class="headerlink" title="SSM07-SpringMVC的请求与响应"></a>SSM07-SpringMVC的请求与响应</h1><p><a href="https://wang-nine.cn/posts/10307.html">SSM07-SpringMVC的请求与响应</a></p>
 <h1 id="SSM08-REST风格"><a href="#SSM08-REST风格" class="headerlink" title="SSM08-REST风格"></a>SSM08-REST风格</h1><p><a href="https://wang-nine.cn/posts/10308.html">SSM08-REST风格</a></p>
+]]></content>
+      <categories>
+        <category>SSM</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SSM10-SSM整合深入</title>
+    <url>/posts/10310.html</url>
+    <content><![CDATA[<p>详细的描述了Spring中的SSM整合深入</p>
+<span id="more"></span>
+<h1 id="SSM整合深入"><a href="#SSM整合深入" class="headerlink" title="SSM整合深入"></a>SSM整合深入</h1><h2 id="表现层与前端数据协议"><a href="#表现层与前端数据协议" class="headerlink" title="表现层与前端数据协议"></a>表现层与前端数据协议</h2><ul>
+<li><p>前端接收数据格式—创建结果模型类，封装数据到data属性中（操作的结果）</p>
+</li>
+<li><p>前端接收数据格式—封装操作结果到code属性中（操作的结果：true还是false）</p>
+</li>
+<li><p>前端接收数据格式—封装特殊消息到message(msg)属性中（给用户看的）</p>
+</li>
+</ul>
+<p>综上，设计一个统一数据返回结果类</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Result</span> &#123;</span><br><span class="line">	<span class="keyword">private</span> Object data;</span><br><span class="line">    <span class="keyword">private</span> Integer code;</span><br><span class="line">    <span class="keyword">private</span> String msg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Result类中的字段并不是固定的，可以根据需要自行增减提供若干个构造方法，方便操作</p>
+</blockquote>
+<p>针对Code也可以设计一个返回结果编码类</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.wang.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Code</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Integer</span> <span class="variable">SAVE_OK</span> <span class="operator">=</span> <span class="number">20011</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Integer</span> <span class="variable">DELETE_OK</span> <span class="operator">=</span> <span class="number">20021</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Integer</span> <span class="variable">UPDATE_OK</span> <span class="operator">=</span> <span class="number">20031</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Integer</span> <span class="variable">GET_OK</span> <span class="operator">=</span> <span class="number">20041</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Integer</span> <span class="variable">SAVE_ERR</span> <span class="operator">=</span> <span class="number">20010</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Integer</span> <span class="variable">DELETE_ERR</span> <span class="operator">=</span> <span class="number">20020</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Integer</span> <span class="variable">UPDATE_ERR</span> <span class="operator">=</span> <span class="number">20030</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Integer</span> <span class="variable">GET_ERR</span> <span class="operator">=</span> <span class="number">20040</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="SSM异常处理器"><a href="#SSM异常处理器" class="headerlink" title="SSM异常处理器"></a>SSM异常处理器</h2><ul>
+<li>出现异常现象的常见位置与常见诱因如下:<ul>
+<li>框架内部抛出的异常:因使用不合规导致</li>
+<li>数据层抛出的异常:因外部服务器故障导致（例如:服务器访问超时）</li>
+<li>业务层抛出的异常:因业务逻辑书写错误导致（例如:遍历业务书写操作，导致索引异常等）</li>
+<li>表现层抛出的异常:因数据收集、校验等规则导致（例如:不匹配的数据类型间导致异常）</li>
+<li>工具类抛出的异常:因工具类书写不严谨不够健壮导致（例如:必要释放的连接长期未释放等）</li>
+</ul>
+</li>
+</ul>
+<p>问题如下</p>
+<p>1.各个层级均出现异常，异常处理代码书写在哪一层？</p>
+<p>==所有的异常均抛出到表现层进行处理== 向上抛到表现层</p>
+<p>2.表现层处理异常，每个方法中单独书写，代码书写量巨大且意义不强，如何解决?</p>
+<p>AOP思想</p>
+<p>实现代码与杂项4-项目中的全局异常处理器相同：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 全局异常处理器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@RestControllerAdvice</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GlobalExceptionHandler</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ExceptionHandler(Exception.class)</span>      <span class="comment">//捕获所有的异常</span></span><br><span class="line">    <span class="keyword">public</span> Result <span class="title function_">ex</span><span class="params">(Exception ex)</span> &#123;</span><br><span class="line">        ex.printStackTrace();</span><br><span class="line">        <span class="keyword">return</span> Result.error(<span class="string">&quot;对不起，操作失败，请联系管理员&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>SSM</category>
@@ -6812,73 +6812,6 @@
       </tags>
   </entry>
   <entry>
-    <title>SpringCloud04-Ribbon负载均衡</title>
-    <url>/posts/10604.html</url>
-    <content><![CDATA[<p>简单的介绍了SpringCloud中的Ribbon负载均衡。</p>
-<span id="more"></span>
-<h1 id="负载均衡原理"><a href="#负载均衡原理" class="headerlink" title="负载均衡原理"></a>负载均衡原理</h1><h2 id="负载均衡流程"><a href="#负载均衡流程" class="headerlink" title="负载均衡流程"></a>负载均衡流程</h2><p>Ribbon拦截请求寻找Eureka返回服务列表，进行负载均衡</p>
-<p><img src="https://wang-nine.cn/images/SpringCloud04-01%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E6%B5%81%E7%A8%8B.png" alt="SpringCloud04-01负载均衡流程"></p>
-<h2 id="负载均衡策略"><a href="#负载均衡策略" class="headerlink" title="负载均衡策略"></a>负载均衡策略</h2><p>IRule</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>内置负载均衡规则类</th>
-<th>规则描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>RoundRobinRule</td>
-<td>简单轮询服务列表来选择服务器。它是Ribbon默认的负载均衡规则。</td>
-</tr>
-<tr>
-<td>AvailabilityFilteringRule</td>
-<td>对以下两种服务器进行忽略: (1）在默认情况下，这台服务器如果3次连接失败，这台服务器就会被设置为“短路”状态。短路状态将持续30秒，如果再次连接失败，短路的持续时间就会几何级地增加。(2）并发数过高的服务器。如果一个服务器的并发连接数过高，配置了AvailabilityFilteringRule规则的客户端也会将其忽略。并发连接数的上限，可以由客户端的<clientName>.<clientConfigNameSpace>.ActiveConnectionsLimit属性进行配置。</td>
-</tr>
-<tr>
-<td>weightedResponseTimeRule</td>
-<td>为每一个服务器赋予一个权重值。服务器响应时间越长，这个服务器的权重就越小。这个规则会随机选择服务器，这个权重值会影响服务器的选择。</td>
-</tr>
-<tr>
-<td>ZoneAvoidanceRule</td>
-<td>以区域可用的服务器为基础进行服务器的选择。使用Zone对服务器进行分类，这个Zone可以理解为一个机房、一个机架等。而后再对Zone内的多个服务做轮询。</td>
-</tr>
-<tr>
-<td>BestAvailableRule</td>
-<td>忽略哪些短路的服务器，并选择并发数较低的服务器。</td>
-</tr>
-<tr>
-<td>RandomRule</td>
-<td>随机选择一个可用的服务器。</td>
-</tr>
-<tr>
-<td>RetryRule</td>
-<td>重试机制的选择逻辑。</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="调整负载均衡策略"><a href="#调整负载均衡策略" class="headerlink" title="调整负载均衡策略"></a>调整负载均衡策略</h2><p>通过定义IRule实现可以修改负载均衡规则，有两种方式:</p>
-<ul>
-<li>1.代码方式:在order-service中的OrderApplication类中，定义一个新的IRule:==全局生效==</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="keyword">public</span> IRule <span class="title function_">randomRule</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">RandomRule</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>2 配置文件方式:在order-service的application.yml文件中，添加新的配置也可以修改规则:==某个微服务范围生效==</li>
-</ul>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">userservice:</span></span><br><span class="line">	<span class="attr">ribbon:</span></span><br><span class="line">		<span class="attr">NFLoadBalancerRuleClassName:</span> <span class="string">com.netflix.loadbalancer.RandomRule</span> <span class="comment">#负载均衡规则</span></span><br></pre></td></tr></table></figure>
-<h2 id="饥饿加载"><a href="#饥饿加载" class="headerlink" title="饥饿加载"></a>饥饿加载</h2><p>Ribbon默认是采用懒加载，即第一次访问时才会去创建LoadBalanceClient，请求时间会很长。而饥饿加载则会在项目启动时创建，降低第一次访问的耗时，通过下面配置开启饥饿加载:</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">ribbon:</span></span><br><span class="line">	<span class="attr">eager-load:</span></span><br><span class="line">		<span class="attr">enabled:</span> <span class="literal">true</span> <span class="comment"># 开启饥饿加载</span></span><br><span class="line">		<span class="attr">clients:</span> <span class="string">userservice</span> <span class="comment"># 指定对userservice这个服务饥饿加载</span></span><br><span class="line">			<span class="bullet">-</span> <span class="string">userservice1</span></span><br><span class="line">			<span class="bullet">-</span> <span class="string">userservice2</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>SpringCloud</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SpringCloud02-服务拆分</title>
     <url>/posts/10602.html</url>
     <content><![CDATA[<p>简单的介绍了SpringCloud中的Nacos。</p>
@@ -7062,6 +6995,348 @@
     <content><![CDATA[<h3 id="Hexo-Butterfly主题博客搭建01"><a href="#Hexo-Butterfly主题博客搭建01" class="headerlink" title="Hexo+Butterfly主题博客搭建01"></a>Hexo+Butterfly主题博客搭建01</h3><p><a href="https://wang-nine.cn/posts/10001.html">Hexo+Butterfly主题博客搭建01</a></p>
 <h3 id="Hexo-Butterfly主题博客搭建02"><a href="#Hexo-Butterfly主题博客搭建02" class="headerlink" title="Hexo+Butterfly主题博客搭建02"></a>Hexo+Butterfly主题博客搭建02</h3><p><a href="https://wang-nine.cn/posts/10002.html">Hexo+Butterfly主题博客搭建02</a></p>
 <h3 id="Hexo-Butterfly主题博客搭建03"><a href="#Hexo-Butterfly主题博客搭建03" class="headerlink" title="Hexo+Butterfly主题博客搭建03"></a>Hexo+Butterfly主题博客搭建03</h3><p><a href="https://wang-nine.cn/posts/10003.html">Hexo+Butterfly主题博客搭建03</a></p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SpringCloud04-Ribbon负载均衡</title>
+    <url>/posts/10604.html</url>
+    <content><![CDATA[<p>简单的介绍了SpringCloud中的Ribbon负载均衡。</p>
+<span id="more"></span>
+<h1 id="负载均衡原理"><a href="#负载均衡原理" class="headerlink" title="负载均衡原理"></a>负载均衡原理</h1><h2 id="负载均衡流程"><a href="#负载均衡流程" class="headerlink" title="负载均衡流程"></a>负载均衡流程</h2><p>Ribbon拦截请求寻找Eureka返回服务列表，进行负载均衡</p>
+<p><img src="https://wang-nine.cn/images/SpringCloud04-01%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E6%B5%81%E7%A8%8B.png" alt="SpringCloud04-01负载均衡流程"></p>
+<h2 id="负载均衡策略"><a href="#负载均衡策略" class="headerlink" title="负载均衡策略"></a>负载均衡策略</h2><p>IRule</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>内置负载均衡规则类</th>
+<th>规则描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RoundRobinRule</td>
+<td>简单轮询服务列表来选择服务器。它是Ribbon默认的负载均衡规则。</td>
+</tr>
+<tr>
+<td>AvailabilityFilteringRule</td>
+<td>对以下两种服务器进行忽略: (1）在默认情况下，这台服务器如果3次连接失败，这台服务器就会被设置为“短路”状态。短路状态将持续30秒，如果再次连接失败，短路的持续时间就会几何级地增加。(2）并发数过高的服务器。如果一个服务器的并发连接数过高，配置了AvailabilityFilteringRule规则的客户端也会将其忽略。并发连接数的上限，可以由客户端的<clientName>.<clientConfigNameSpace>.ActiveConnectionsLimit属性进行配置。</td>
+</tr>
+<tr>
+<td>weightedResponseTimeRule</td>
+<td>为每一个服务器赋予一个权重值。服务器响应时间越长，这个服务器的权重就越小。这个规则会随机选择服务器，这个权重值会影响服务器的选择。</td>
+</tr>
+<tr>
+<td>ZoneAvoidanceRule</td>
+<td>以区域可用的服务器为基础进行服务器的选择。使用Zone对服务器进行分类，这个Zone可以理解为一个机房、一个机架等。而后再对Zone内的多个服务做轮询。</td>
+</tr>
+<tr>
+<td>BestAvailableRule</td>
+<td>忽略哪些短路的服务器，并选择并发数较低的服务器。</td>
+</tr>
+<tr>
+<td>RandomRule</td>
+<td>随机选择一个可用的服务器。</td>
+</tr>
+<tr>
+<td>RetryRule</td>
+<td>重试机制的选择逻辑。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="调整负载均衡策略"><a href="#调整负载均衡策略" class="headerlink" title="调整负载均衡策略"></a>调整负载均衡策略</h2><p>通过定义IRule实现可以修改负载均衡规则，有两种方式:</p>
+<ul>
+<li>1.代码方式:在order-service中的OrderApplication类中，定义一个新的IRule:==全局生效==</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="keyword">public</span> IRule <span class="title function_">randomRule</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">RandomRule</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2 配置文件方式:在order-service的application.yml文件中，添加新的配置也可以修改规则:==某个微服务范围生效==</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">userservice:</span></span><br><span class="line">	<span class="attr">ribbon:</span></span><br><span class="line">		<span class="attr">NFLoadBalancerRuleClassName:</span> <span class="string">com.netflix.loadbalancer.RandomRule</span> <span class="comment">#负载均衡规则</span></span><br></pre></td></tr></table></figure>
+<h2 id="饥饿加载"><a href="#饥饿加载" class="headerlink" title="饥饿加载"></a>饥饿加载</h2><p>Ribbon默认是采用懒加载，即第一次访问时才会去创建LoadBalanceClient，请求时间会很长。而饥饿加载则会在项目启动时创建，降低第一次访问的耗时，通过下面配置开启饥饿加载:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">ribbon:</span></span><br><span class="line">	<span class="attr">eager-load:</span></span><br><span class="line">		<span class="attr">enabled:</span> <span class="literal">true</span> <span class="comment"># 开启饥饿加载</span></span><br><span class="line">		<span class="attr">clients:</span> <span class="string">userservice</span> <span class="comment"># 指定对userservice这个服务饥饿加载</span></span><br><span class="line">			<span class="bullet">-</span> <span class="string">userservice1</span></span><br><span class="line">			<span class="bullet">-</span> <span class="string">userservice2</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>SpringCloud</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/posts/1.html</url>
+    <content><![CDATA[<h1 id="基于小波变换的数字水印技术"><a href="#基于小波变换的数字水印技术" class="headerlink" title="基于小波变换的数字水印技术"></a>基于小波变换的数字水印技术</h1><p>数字水印通常可以分为鲁棒数字水印和易损数字水印两类，从狭义上讲，数字水印一般特指鲁棒数字水印，本章主要针对鲁棒数字水印进行案例讲解与分析。鲁棒数字水印主要用于在数字作品中标示著作权信息，利用这种水印技术在多媒体内容的数据中嵌入标示信息。在发生版权纠纷时，标示信息用于保护数据的版权所有者。用于版权保护的数字水印要求有很强的鲁棒性和安全性。</p>
+<p>  易损数字水印与鲁棒水印的要求相反，主要用于完整性保护，这种水印同样是在内容数据中嵌入不可见的信息。当内容发生改变时，这些水印信息会发生相应的改变，从而可以鉴定原始数据是否被篡改。易损水印必须对信号的改动很敏感，人们根据易损水印的状态就可以判断数据是否被篡改过。不同领域对数字水印有不同的要求，但一般而言，鲁棒数字水印应具备如下特点。</p>
+<p>  <strong>(1)不可感知性：</strong> 就是嵌入水印后的图像和未嵌入水印的图像，必须满足人们感知上的需求，在视觉上没有任何差别，不影响产品的质量和价值。</p>
+<p>  <strong>(2)鲁棒性：</strong> 嵌入水印后的图像在受到攻击时，水印依然存在于载体数据中，并可以被恢复和检测处理。</p>
+<p>  <strong>(3)安全性：</strong> 嵌入的水印难以被篡改或伪造，只有授权机构才能检测出来，非法用户不能检测、提取或者去除水印信息。</p>
+<p>  <strong>(4)计算复杂度:</strong> 在不同的应用中，对于水印的嵌入算法和提取算法的计算复杂度要求是不同的，复杂度直接与水印系统的实时性相关。</p>
+<p>  <strong>(5)水印容量:</strong> 水印容量是指载体数据字中可嵌入多少水印信息，可以从几兆到几个比特不等。</p>
+<h2 id="数字水印技术原理"><a href="#数字水印技术原理" class="headerlink" title="数字水印技术原理"></a>数字水印技术原理</h2><p>  数字水印技术实际上就是通过对水印载体的分析、水印信息的处理、水印嵌入点的选择、嵌入方式的设计、嵌入调制的控制和提取检测方法等相关技术环节进行合理优化，寻求满足不可感知性、鲁棒性和安全性等约束条件下的准最优化设计问题。在实际应用中，一个完整水印系统的设计通常包括水印的生成、嵌入、检测和提取四个部分。</p>
+<p><strong>1.水印生成</strong></p>
+<p>通常基于伪随机数发生器或混沌系统来产生水印信号，从水印的鲁棒性和安全性方面来考虑，常常需要对原水印进行预处理来适应水印嵌入算法。</p>
+<p><strong>2.水印嵌入</strong></p>
+<p>在尽量保证水印不可感知性的前提下，嵌入最大强度的水印，可提高水印的稳健性。水印的嵌入过程如下图所示，其中，虚线框表示嵌入算法不一定需要该数据。常用的水印嵌入准则有加法准则、乘法准则和融合准则。</p>
+<p><strong>3.水印检测</strong></p>
+<p>指判断水印载体中是否存在水印的过程。水印的检测过程如下图所示，虚框表示判断水印检测不一定需要这些数据。</p>
+<p><strong>4.水印提取</strong></p>
+<p>指水印被比较精确地提取的过程。水印的提取和检测可以需要原始图像的参与(明检测)，也可不需要原始图像的参与(盲检测)。水印的提取过程如下图所示，虚框表示提取水印不一定需要这些数据。</p>
+<p><strong>1.空间域算法</strong></p>
+<p>空间域方法是数字水印最早的一类算法，它阐明了关于数字水印的一些重要概念。空间域算法-般通过改变图像的灰度值来加入数字水印，大多采用替换法，用水印信号替换载体中的数据，主要有LSB ( Least Significant Bit)、Patchwork、 纹理块映射编码等方法。</p>
+<p>  (1)LSB方法的主要原理是利用人眼视觉特性对于数字图像亮色等级分辨率的有限性，将水印信号替换原图像中像素灰度值的最不重要位或者次不重要位。这种方法简单易行，且能嵌入较多信息，但是抵抗攻击的能力较差，攻击者简单地利用信号处理技术就能完全破坏消息。正是由于这一点，LSB算法能够有效地确定一幅图在何处被修改了。</p>
+<p>  (2) Patchwork 算法是一种基于统计学的方法，它是将图像分成两个子集，其中一个子集的亮度增加，另一个子集的亮度减少同样的量，这个量以不可见为标准，整幅图像的平均灰度值保持不变，在这个调整过程中完成水印的嵌入。在Patchwork算法中，一个密钥用来初始化一个伪随机数，而这个伪随机数将产生载体中放置水印的位置。</p>
+<p>Patchwork方法的隐蔽性好，对有损压缩和FIR滤波有一定的抵抗力，但其缺陷是嵌入信息量有限，对多拷贝平均攻击的抵抗力较弱。</p>
+<p>  (3)纹理块映射编码方法是将一个基于纹理的水印嵌入到图像的具有相似纹理的一部分当中，该算法是基于图像的纹理结构的，因而很难察觉，同时对于滤波、压缩和旋转等操作具有抵抗能力。</p>
+<p><strong>2.变换域算法</strong></p>
+<p>目前变换域算法主要包括傅里叶变换域(DFT)、离散余弦域(DCT)和离散小波变换(DWT)。基于频域的数字水印技术相对于空间域的数字水印技术通常具有更多优势,抗攻击能力更强，比如- -般的几何变换对空域算法影响较大，而对频域算法却影响较小。但是变换域算法嵌入和提取水印的操作复杂，隐藏信息量不能太多。</p>
+<p>  (1)傅里叶变换是一种经典而有效的数学工具，DFT水印技术是利用图像的DFT相位和幅值嵌入信息，一般利用相位信息嵌入水印比利用幅值信息鲁棒性更好，而利用幅值嵌入水印则对旋转、缩放、平移等操作具有不变性。DFT水印技术的优点是具有仿射不变性，还可以利用相位嵌入水印，但DFT技术与国际压缩标准不兼容导致抗压缩能力弱，且算法比较复杂、效率较低，因此限制了它的应用。</p>
+<p>  (2)DCT水印技术的主要思想是在图像的DCT变换域_上选择中低频系数叠加水印信息,选择中低频系数是因为人眼的感觉主要集中在这一频段, 攻击者在破坏水印的过程中，不可避免地会引起图像质量的严重下降，而一般的图像处理过程也不会改变这部分数据。该算法不仅在视觉上具有很强的隐蔽性、鲁棒性和安全性，而且可经受- -定程度的有损压缩、滤波、剪切、缩放、平移、旋转、扫描等操作。</p>
+<p>  (3) DWT是一种“时间一尺度”信号的多分辨率分析方法，它具有良好的空频分解和模拟人类视觉系统的特，而且嵌入式零树小波编码(EZW)将在新一代的压缩标准(JPEG2000，MPEG4/7 等)中被采用，符合国际压缩标准，小波域的水印算法具有良好的发展前景。DWT水印算法的优点是水印检测按子带分级扩充水印序列进行，即如果先检测出的水印序列已经满足水印存在的相似函数要求，则检测可以终止，否则继续搜寻下一子带扩充水印序列直至相似函数出现一个峰值或使所有子带搜索结束。因此含有水印的载体在质量破坏不大的情况下，水印检测可以在搜索少数几个子带后终止，提高了水印检测的效率。</p>
+<p>​    结合Arnold变换的基于DWT的数字水印的嵌入。充分利用了小波变换的特点，采用Haar小波，把原始图像及水印图像进行三级小波分解，然后在多分辨率分解后的频段嵌入水印信号，得到嵌入水印的图像。<br>​    数字水印最重要的性质就是鲁棒性和不可感知性，两者存在一定的矛盾。鲁棒性要求加大水印信息的强度，而水印信息强度的增大反过来又会影响水印的不可感知性，因此必须权衡这两方面的性质，达到鲁棒性和不可感知性的平衡。图像的边缘和纹理部分能隐藏较大的数据量，而图像的平坦部分对噪声相对敏感。由多分辨率分析的思想,图像平坦的部分集中了图像绝大部分的能量,对应着小波变换后的低频子带。而高频部分则对应于图像的边缘和纹理，即细节部分。若考虑水印的鲁棒性，应将水印信息嵌入到图像的低频子带，但低频段的变化对人眼的视觉影响较大，很难兼顾重构图像的不可感知性。若将水印信息嵌入高频子带，可以很好地将水印隐藏，但这样的水印却无法抵抗有损压缩、低通滤波等简单的图像处理。因此，如果能在水印嵌入时充分结合高、低频的特性，就有可能得效果较好的水印嵌入方法。<br>​    综合以上考虑，本文中的算法采用水印信息多分辨率重复嵌入思想。首先将水印图像进行Arnold 置乱，然后将原始图像进行三级离散小波分解后的系数进行排序分组，并针对不同分组，采用不同强度的嵌入系数，进行相应水印分解子图的重复嵌入。各子图分组数目即为水印重复嵌入的次数。</p>
+<p>L是最低频段滤波后的低尺度逼近，同级分辨率下,HL包含水平方向高通、垂直方向低通滤波后的细节信息，LH保留的是水平方向低通、垂直方向高通滤波后所得细节信息，HH保留的是水平方向和垂直方向高通滤波后的细节信息。</p>
+<p>DWT数字水印算法嵌入步骤<br>水印嵌入算法的步骤如下:<br>①分别读取原始图像X和水印图像W。<br>②对水印图像W进行k次Arnold变换，将置乱后的水印记为W。并将系数与变换次数作为密钥key 保存。<br>③对置乱后的水印 Wa 采用Haar小波进行一级小波分解，得到一级分辨率下的一个逼近子图cal和三个细节子图chl,cvl,cd1。<br>④将原始图像X采用Haar小波进行三级小波分解,得到不同分辨率级下的多个细节子图和一个逼近子图，具体分解子图为: cA3,cH3,cV3,cD3,cH 2,cV2,cD2,cH 1,cV1,cD1 。<br>⑤将 Wa 一级小波分解后的各子图分别嵌入原始图像第三级小波分解后的对应子图中，不同的分组选取不同的系数:</p>
+<p>其中，a1,a2,a3,a4 是对应的加权因子。cA3’,cH3’,cV3’,cD3’分别为原始图像三级小波分解嵌入水印后的相应子图。<br>⑥对嵌入水印后的小波系数进行三级小波重构，得到嵌入水印的图像XW。</p>
+<p>DWT数字水印算法提取步骤<br>水印的提取过程其实是嵌入过程的逆过程，具体步骤如下:<br>①分别读入原始图像X和已嵌入水印的图像XW。<br>②将原始图像X和已嵌入水印的图像XW分别采用 Haar小波进行三级小波分解，分别得到不同分辨率级下的多个细节子图和一个逼近子图。<br>③用cA3和 cA3 ‘, cH3和cH3’, cV3和 cV3’，cD3和 cD3’进行嵌入算法的逆运算提取水印图像一级分解的子图: ca1,ch1,cv1,cd1，对提取的小波系数进行一级小波逆变换，得到水印置乱变换后的图像。<br>④根据嵌入时的密钥key进行Arnold反变换，得到提取出的水印W。</p>
+<p><img src="https://img-blog.csdnimg.cn/d225709faded4c37b30760808e00fdd8.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAUGxhbmV0UlQ=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="请添加图片描述"></p>
+<p><strong>3.其他水印算法</strong></p>
+<p>  基于压缩域、基于NEC算法和生理模型的数字水印算法。其实数字水印算法正在不断地发展和前进中日益完善，但是仍然存在许多不足，具有更加深入的发展空间，这就需要我们在不断的学习和探索中寻找具有更好性能的新算法。</p>
+<p><strong>1 载体图像小波变换</strong></p>
+<p>  数字图像经过小波分解后被分割成4个频带:水平方向(LH)、 垂直方向(HL)、对角线方向(HH)和低频部分(LL)，其中低频部分可以继续分解，如图25-4 所示。图像能量主要集中于低频部分，是原始图像的逼近子图，具有较强的抵抗外来影响的能力，稳定性较好:其他三个子带表征了原图像在水平、垂直和对角线部分的边缘细节信息，容易受外来噪声、图像操作等影响，稳定性较差。</p>
+<p> 选择不同的小波基对嵌入水印的性能有很大影响，刘九芬等人研究了水印算法中小波基的选择和正交小波基的性质与鲁棒性的关系，其研究结果表明正交基的正则性、消失矩阶数、支撑长度及小波能量在低频带的集中程度对水印鲁棒性的影响极小;另外，其研究结果还表明Haar小波比较适合图像水印。</p>
+<p><strong>2.水印图像的预处理</strong></p>
+<p>  为了保证水印的安全性，在嵌入水印前需要对水印进行加密处理。置乱预处理是一种简单常用的加密方法，水印图像置乱可以消除像素间的相关性，从而提高水印的鲁棒性。图像置乱算法有很多，如幻方置乱、Hilbert 置乱、随机数置乱，本文采用Amold置乱算法，将有意义的水印内容掩盖。</p>
+<p><strong>3.小波数字水印的嵌入</strong></p>
+<p>  根据人类视觉系统的照明和纹理掩蔽特性，将水印嵌入到图像的纹理和边缘(HH、HL和LH细节子图中的一些有较大值的小波系数上)不易被觉察，但对图像的滤波和有损压缩操作容易丢失信息。小波变换低频部分(LL) 集中了图像的大部分能量，它是视觉上最重要的部分，在这部分嵌入水印容易引起图像失真。但从鲁棒性出发，水印应当嵌入到视觉最重要的区域。</p>
+<p><strong>4.小波水印的检查提取</strong></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>博客更新文档</title>
+    <url>/posts/1.html</url>
+    <content><![CDATA[<p>[toc]</p>
+<h3 id="新增或修改的文件结构"><a href="#新增或修改的文件结构" class="headerlink" title="新增或修改的文件结构"></a>新增或修改的文件结构</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">│</span><br><span class="line">├─_config.yml(修改)</span><br><span class="line">│</span><br><span class="line">├─_config.butterfly.yml(修改)</span><br><span class="line">│</span><br><span class="line">└─themes</span><br><span class="line">    └─butterfly</span><br><span class="line">        ├─layout</span><br><span class="line">        │   ├─includes</span><br><span class="line">        │	│	├─custom</span><br><span class="line">        │	│	│	└─switch.pug(明暗切换动画)</span><br><span class="line">        │	│	│</span><br><span class="line">        │	│	├─header</span><br><span class="line">        │	│	│	└─menu_item.pug(修改，添加子菜单栏居中)</span><br><span class="line">        │	│	│</span><br><span class="line">        │   │   ├─wedget</span><br><span class="line">        │   │   │   ├─card_calendar.pug(新增写作日历)</span><br><span class="line">        │	│	│	├─card_webinfo.pug(新增写作日历)</span><br><span class="line">        │	│	│	└─index.pug(修改，添加写作日历)</span><br><span class="line">		│	│	│</span><br><span class="line">        │	│	└─rightside.pug(黑暗模式一图流)</span><br><span class="line">        │	│	</span><br><span class="line">        │	│	</span><br><span class="line">        │   ├─head.pug(新增，引入昼夜切换)	</span><br><span class="line">        │	├─rightside.pug(修改，昼夜切换)</span><br><span class="line">        │   └─sliderbar.pug</span><br><span class="line">        └─source</span><br><span class="line">            ├─css</span><br><span class="line">            │   ├─_layout</span><br><span class="line">            │   │   ├─calendar.styl(新增日历样式)</span><br><span class="line">            │   │   ├─footer.styl(修改，删除底部蓝条)</span><br><span class="line">            │   │   └─switch.styl(新增，明暗切换样式)</span><br><span class="line">            │   ├─custom</span><br><span class="line">            │   │   ├─background.css(黑暗模式一图流配置)</span><br><span class="line">            │	│	├─fontface.css(字体样式)</span><br><span class="line">            │	│	├─header_beautify.css(子菜单美化)</span><br><span class="line">            │	│	├─slideshow.css</span><br><span class="line">            │	│	├─starlight.css(星光背景)</span><br><span class="line">            │	│	├─twikoo_beautify.css(Twikoo评论美化)</span><br><span class="line">            │	│	└─double_row.css(双栏布局美化)</span><br><span class="line">            │	├─FangZhengKaiTiJianTi-1.ttf(字体美化)</span><br><span class="line">            │	│</span><br><span class="line">            │   └─img(新增，主题图片)</span><br><span class="line">            │   </span><br><span class="line">            └─js</span><br><span class="line">            	└─custom</span><br><span class="line">            		├─foot.js(页脚修改)</span><br><span class="line">            		├─jquery.js(页脚修改支持)</span><br><span class="line">            		├─sakura.js(樱花背景动效)</span><br><span class="line">            		├─snow.js(雪花背景动效)</span><br><span class="line">            		├─snowflake.js(雪花背景动效)</span><br><span class="line">            		├─switch.js(切换明暗模式)</span><br><span class="line">            		└─universe.js(星空背景)</span><br></pre></td></tr></table></figure>
+<h3 id="注意：abbrlink"><a href="#注意：abbrlink" class="headerlink" title="注意：abbrlink"></a>注意：abbrlink</h3><h4 id="100-开头为博客搭建相关"><a href="#100-开头为博客搭建相关" class="headerlink" title="100 开头为博客搭建相关"></a>100 开头为博客搭建相关</h4><h4 id="101-开头为JavaSE相关"><a href="#101-开头为JavaSE相关" class="headerlink" title="101 开头为JavaSE相关"></a>101 开头为JavaSE相关</h4><h4 id="102-开头为-JavaWeb相关"><a href="#102-开头为-JavaWeb相关" class="headerlink" title="102 开头为 JavaWeb相关"></a>102 开头为 JavaWeb相关</h4><h4 id="103-开头为ssm相关"><a href="#103-开头为ssm相关" class="headerlink" title="103 开头为ssm相关"></a>103 开头为ssm相关</h4><h4 id="104-开头为MySQL相关"><a href="#104-开头为MySQL相关" class="headerlink" title="104 开头为MySQL相关"></a>104 开头为MySQL相关</h4><h4 id="105开头为HTML-CSS相关"><a href="#105开头为HTML-CSS相关" class="headerlink" title="105开头为HTML+CSS相关"></a>105开头为HTML+CSS相关</h4><h4 id="106开头为SpringCloud相关"><a href="#106开头为SpringCloud相关" class="headerlink" title="106开头为SpringCloud相关"></a>106开头为SpringCloud相关</h4><h4 id="107开头为Redis相关"><a href="#107开头为Redis相关" class="headerlink" title="107开头为Redis相关"></a>107开头为Redis相关</h4><h4 id="2-开头为杂项"><a href="#2-开头为杂项" class="headerlink" title="2 开头为杂项"></a>2 开头为杂项</h4><h4 id="9开头为刷题笔记"><a href="#9开头为刷题笔记" class="headerlink" title="9开头为刷题笔记"></a>9开头为刷题笔记</h4><h3 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h3><h4 id="2023-05-18"><a href="#2023-05-18" class="headerlink" title="2023-05-18"></a>2023-05-18</h4><h5 id="更新相关"><a href="#更新相关" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="bug相关"><a href="#bug相关" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h5><ul>
+<li>初步创建github仓库，安装了nodejs和hexo，初始化了hexo博客</li>
+</ul>
+<h4 id="2023-05-19"><a href="#2023-05-19" class="headerlink" title="2023-05-19"></a>2023-05-19</h4><h5 id="更新相关-1"><a href="#更新相关-1" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="bug相关-1"><a href="#bug相关-1" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="杂项-1"><a href="#杂项-1" class="headerlink" title="杂项"></a>杂项</h5><p>采用next主题，进行了主题优化</p>
+<h4 id="2023-05-20"><a href="#2023-05-20" class="headerlink" title="2023-05-20"></a>2023-05-20</h4><h5 id="更新相关-2"><a href="#更新相关-2" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="bug相关-2"><a href="#bug相关-2" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="杂项-2"><a href="#杂项-2" class="headerlink" title="杂项"></a>杂项</h5><p>放弃使用next主题，改用butterfly主题</p>
+<h4 id="2023-05-21"><a href="#2023-05-21" class="headerlink" title="2023-05-21"></a>2023-05-21</h4><h5 id="更新相关-3"><a href="#更新相关-3" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="bug相关-3"><a href="#bug相关-3" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="杂项-3"><a href="#杂项-3" class="headerlink" title="杂项"></a>杂项</h5><p>计划将博客迁移到腾讯云上，购买了腾讯云服务器与域名，申请了ssl证书，在等待24小时后进行备案</p>
+<h4 id="2023-05-22"><a href="#2023-05-22" class="headerlink" title="2023-05-22"></a>2023-05-22</h4><h5 id="更新相关-4"><a href="#更新相关-4" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="bug相关-4"><a href="#bug相关-4" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="杂项-4"><a href="#杂项-4" class="headerlink" title="杂项"></a>杂项</h5><p>进行备案，同时将空闲的服务器制作成了饥荒游戏的服务器</p>
+<h4 id="2023-05-23"><a href="#2023-05-23" class="headerlink" title="2023-05-23"></a>2023-05-23</h4><h5 id="更新相关-5"><a href="#更新相关-5" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="bug相关-5"><a href="#bug相关-5" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="杂项-5"><a href="#杂项-5" class="headerlink" title="杂项"></a>杂项</h5><p>备案验证</p>
+<h4 id="2023-05-24"><a href="#2023-05-24" class="headerlink" title="2023-05-24"></a>2023-05-24</h4><h5 id="更新相关-6"><a href="#更新相关-6" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
+<li><p>主题优化，更改了博客的背景样式包括不同页面的背景，底部角标如运行时间等，背景透明度</p>
+</li>
+<li><p>添加了樱花特效与雪花特效，选择了樱花特效</p>
+</li>
+<li><p>添加了评论系统</p>
+</li>
+<li><p>添加了文章随机封面</p>
+</li>
+<li><p>更改了代码块显示</p>
+</li>
+<li><p>添加了本地搜索功能</p>
+</li>
+<li><p>修改了头像以及主页封面等</p>
+</li>
+<li><p>添加了文章版权信息</p>
+</li>
+<li><p>更改了图片放大查看</p>
+</li>
+<li><p>添加了相关文章功能</p>
+</li>
+<li><p>更改了侧边栏显示</p>
+</li>
+<li><p>更改了公告栏设置</p>
+</li>
+<li><p>更改了toc目录</p>
+</li>
+<li><p>更改了鼠标点击效果</p>
+</li>
+<li><p>更改了打字效果</p>
+</li>
+<li><p>更改了footer背景</p>
+</li>
+<li><p>添加了字数统计功能</p>
+</li>
+<li><p>更改了分享功能</p>
+</li>
+<li><p>更新了懒加载功能</p>
+</li>
+<li><p>在iconfont中添加了自定义图标</p>
+</li>
+</ul>
+<h5 id="bug相关-6"><a href="#bug相关-6" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="杂项-6"><a href="#杂项-6" class="headerlink" title="杂项"></a>杂项</h5><ul>
+<li>无</li>
+</ul>
+<h4 id="2023-05-25"><a href="#2023-05-25" class="headerlink" title="2023-05-25"></a>2023-05-25</h4><h5 id="更新相关-7"><a href="#更新相关-7" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="bug相关-7"><a href="#bug相关-7" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="杂项-7"><a href="#杂项-7" class="headerlink" title="杂项"></a>杂项</h5><p>备案成功，一整天在尝试将自己的博客由github迁移到腾讯云上，晚上成功，博客进行了cdn加速，在国内的访问速度也非常快了</p>
+<h4 id="2023-05-26"><a href="#2023-05-26" class="headerlink" title="2023-05-26"></a>2023-05-26</h4><h5 id="更新相关-8"><a href="#更新相关-8" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
+<li>让域名被百度引擎收录</li>
+<li>添加了博客日历功能</li>
+<li>git贡献日历（已经删除）</li>
+</ul>
+<h5 id="bug相关-8"><a href="#bug相关-8" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
+<li>晚上发现博客更新后会出现cname失效的bug，在dns解析页面删除了存储桶的解析后bug解决（花了一晚上。。）</li>
+</ul>
+<h5 id="杂项-8"><a href="#杂项-8" class="headerlink" title="杂项"></a>杂项</h5><ul>
+<li>知道了腾讯云CDN加速需要收费，不过收费较为便宜</li>
+</ul>
+<h4 id="2023-05-27"><a href="#2023-05-27" class="headerlink" title="2023-05-27"></a>2023-05-27</h4><h5 id="更新相关-9"><a href="#更新相关-9" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
+<li>添加了博客搜索功能</li>
+<li>更新了评论功能，绑定了域名，新增部署，创建了定时任务，设置了安全域名</li>
+<li>更新了评论功能，绑定了qq邮箱，绑定授权码</li>
+<li>添加了评论回复显示身份功能</li>
+<li>Valine评论功能废弃（改用Twikwoo。。。）</li>
+</ul>
+<h5 id="bug相关-9"><a href="#bug相关-9" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
+<li><p>发现错误，baidu_url_submit配置的count过大，即git命令行出现{“error”:400,”message”:”over quota”}代码，更改count为20后无错误</p>
+</li>
+<li><p><strong>上述错误仍然出现，不知道什么原因。</strong></p>
+</li>
+<li><p>遇到了严重问题，github.io跳转失败，CDN加速无法添加A记录？（失败，github自带CDN加速，而自己的网站已经开启了CDN加速，除非使用子域名解决CNAME冲突？以后有需求再说吧，目前是国内wang-nine.cn访问，国外wang-nine.github.io）</p>
+</li>
+</ul>
+<h5 id="杂项-9"><a href="#杂项-9" class="headerlink" title="杂项"></a>杂项</h5><ul>
+<li>尝试更新valine，接入自己的域名，但是卡在了部署证书这一步，在论坛反应后等待</li>
+<li>晚上发现已绑定（奇怪。）尝试更新评论系统吧</li>
+<li>卡在了魔改valine的这一步，彻底放弃了，尝试更新更好的twikoo评论系统</li>
+</ul>
+<h4 id="2023-05-28"><a href="#2023-05-28" class="headerlink" title="2023-05-28"></a>2023-05-28</h4><h5 id="更新相关-10"><a href="#更新相关-10" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
+<li>更新twikoo评论功能</li>
+<li>MongoDB申请存储管理挂载twikoo评论(暂时不予采用)</li>
+<li>腾讯云开发赠送学生免费6个月(采用腾讯云开发对twikoo评论进行配置)</li>
+<li>新增公式支持功能</li>
+</ul>
+<h5 id="bug相关-10"><a href="#bug相关-10" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="杂项-10"><a href="#杂项-10" class="headerlink" title="杂项"></a>杂项</h5><ul>
+<li>无</li>
+</ul>
+<h4 id="2023-05-29"><a href="#2023-05-29" class="headerlink" title="2023-05-29"></a>2023-05-29</h4><h5 id="更新相关-11"><a href="#更新相关-11" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
+<li>更新Twikoo评论样式美化(在D:\Blog\themes\butterfly\source\css\custom中引入了css)</li>
+<li>更新了分离搜索栏与菜单栏</li>
+<li>更新了顶栏常驻</li>
+<li>更新了文档支持公式</li>
+</ul>
+<h5 id="bug相关-11"><a href="#bug相关-11" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
+<li>顶部导航栏居中出了问题</li>
+<li>子菜单栏居中出了问题</li>
+</ul>
+<h5 id="杂项-11"><a href="#杂项-11" class="headerlink" title="杂项"></a>杂项</h5><ul>
+<li>无</li>
+</ul>
+<h4 id="2023-05-30"><a href="#2023-05-30" class="headerlink" title="2023-05-30"></a>2023-05-30</h4><h5 id="更新相关-12"><a href="#更新相关-12" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
+<li>实现了子菜单栏居中的效果</li>
+<li>删除了顶栏常驻效果</li>
+<li>删除了分离搜索栏和菜单栏</li>
+<li>将博客的字体改为了楷体</li>
+<li>更新了博客中文章双栏显示（失败）</li>
+<li>美化了博客中双栏显示的效果（失败）</li>
+<li>修复了双栏显示后页码不居中的bug（失败）</li>
+<li>增加了轮播图的功能（在文章配置中添加swiper_index属性，越大越先出现）</li>
+</ul>
+<h5 id="bug相关-12"><a href="#bug相关-12" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
+<li>阅读量和评论数一直加载中（已解决）</li>
+</ul>
+<h5 id="杂项-12"><a href="#杂项-12" class="headerlink" title="杂项"></a>杂项</h5><ul>
+<li>无</li>
+</ul>
+<h4 id="2023-05-31"><a href="#2023-05-31" class="headerlink" title="2023-05-31"></a>2023-05-31</h4><h5 id="更新相关-13"><a href="#更新相关-13" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
+<li>取消了日历功能（取消）（加上了）</li>
+<li>增加了夜晚模式下的流星背景特效</li>
+<li>增加了首页轮播图</li>
+<li>增加了一图流</li>
+<li>增加了日夜切换动画</li>
+<li>增加了首页轮播图</li>
+</ul>
+<h5 id="bug相关-13"><a href="#bug相关-13" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
+<li>首页透明度bug（使用一图流解决）</li>
+<li>黑夜模式首页背景不同bug（使用一图流解决）</li>
+<li>封面不加载</li>
+</ul>
+<h5 id="杂项-13"><a href="#杂项-13" class="headerlink" title="杂项"></a>杂项</h5><ul>
+<li>无</li>
+</ul>
+<h4 id="2023-06-01"><a href="#2023-06-01" class="headerlink" title="2023-06-01"></a>2023-06-01</h4><h5 id="更新相关-14"><a href="#更新相关-14" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="bug相关-14"><a href="#bug相关-14" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
+<li>博客第二页未更新（重新在cos中上传即可）</li>
+</ul>
+<h5 id="杂项-14"><a href="#杂项-14" class="headerlink" title="杂项"></a>杂项</h5><ul>
+<li>无</li>
+</ul>
+<h4 id="2023-06-02"><a href="#2023-06-02" class="headerlink" title="2023-06-02"></a>2023-06-02</h4><h5 id="更新相关-15"><a href="#更新相关-15" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
+<li>删除了轮播图</li>
+</ul>
+<h5 id="bug相关-15"><a href="#bug相关-15" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="杂项-15"><a href="#杂项-15" class="headerlink" title="杂项"></a>杂项</h5><ul>
+<li>无</li>
+</ul>
+<h4 id="2023-06-24"><a href="#2023-06-24" class="headerlink" title="2023-06-24"></a>2023-06-24</h4><h5 id="更新相关-16"><a href="#更新相关-16" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
+<li>无</li>
+</ul>
+<h5 id="bug相关-16"><a href="#bug相关-16" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
+<li>直接gitbash上传四件套可以解决博客第二页未更新bug</li>
+</ul>
+<h5 id="杂项-16"><a href="#杂项-16" class="headerlink" title="杂项"></a>杂项</h5><ul>
+<li>无</li>
+</ul>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -7915,278 +8190,215 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/posts/1.html</url>
-    <content><![CDATA[<h1 id="基于小波变换的数字水印技术"><a href="#基于小波变换的数字水印技术" class="headerlink" title="基于小波变换的数字水印技术"></a>基于小波变换的数字水印技术</h1><p>数字水印通常可以分为鲁棒数字水印和易损数字水印两类，从狭义上讲，数字水印一般特指鲁棒数字水印，本章主要针对鲁棒数字水印进行案例讲解与分析。鲁棒数字水印主要用于在数字作品中标示著作权信息，利用这种水印技术在多媒体内容的数据中嵌入标示信息。在发生版权纠纷时，标示信息用于保护数据的版权所有者。用于版权保护的数字水印要求有很强的鲁棒性和安全性。</p>
-<p>  易损数字水印与鲁棒水印的要求相反，主要用于完整性保护，这种水印同样是在内容数据中嵌入不可见的信息。当内容发生改变时，这些水印信息会发生相应的改变，从而可以鉴定原始数据是否被篡改。易损水印必须对信号的改动很敏感，人们根据易损水印的状态就可以判断数据是否被篡改过。不同领域对数字水印有不同的要求，但一般而言，鲁棒数字水印应具备如下特点。</p>
-<p>  <strong>(1)不可感知性：</strong> 就是嵌入水印后的图像和未嵌入水印的图像，必须满足人们感知上的需求，在视觉上没有任何差别，不影响产品的质量和价值。</p>
-<p>  <strong>(2)鲁棒性：</strong> 嵌入水印后的图像在受到攻击时，水印依然存在于载体数据中，并可以被恢复和检测处理。</p>
-<p>  <strong>(3)安全性：</strong> 嵌入的水印难以被篡改或伪造，只有授权机构才能检测出来，非法用户不能检测、提取或者去除水印信息。</p>
-<p>  <strong>(4)计算复杂度:</strong> 在不同的应用中，对于水印的嵌入算法和提取算法的计算复杂度要求是不同的，复杂度直接与水印系统的实时性相关。</p>
-<p>  <strong>(5)水印容量:</strong> 水印容量是指载体数据字中可嵌入多少水印信息，可以从几兆到几个比特不等。</p>
-<h2 id="数字水印技术原理"><a href="#数字水印技术原理" class="headerlink" title="数字水印技术原理"></a>数字水印技术原理</h2><p>  数字水印技术实际上就是通过对水印载体的分析、水印信息的处理、水印嵌入点的选择、嵌入方式的设计、嵌入调制的控制和提取检测方法等相关技术环节进行合理优化，寻求满足不可感知性、鲁棒性和安全性等约束条件下的准最优化设计问题。在实际应用中，一个完整水印系统的设计通常包括水印的生成、嵌入、检测和提取四个部分。</p>
-<p><strong>1.水印生成</strong></p>
-<p>通常基于伪随机数发生器或混沌系统来产生水印信号，从水印的鲁棒性和安全性方面来考虑，常常需要对原水印进行预处理来适应水印嵌入算法。</p>
-<p><strong>2.水印嵌入</strong></p>
-<p>在尽量保证水印不可感知性的前提下，嵌入最大强度的水印，可提高水印的稳健性。水印的嵌入过程如下图所示，其中，虚线框表示嵌入算法不一定需要该数据。常用的水印嵌入准则有加法准则、乘法准则和融合准则。</p>
-<p><strong>3.水印检测</strong></p>
-<p>指判断水印载体中是否存在水印的过程。水印的检测过程如下图所示，虚框表示判断水印检测不一定需要这些数据。</p>
-<p><strong>4.水印提取</strong></p>
-<p>指水印被比较精确地提取的过程。水印的提取和检测可以需要原始图像的参与(明检测)，也可不需要原始图像的参与(盲检测)。水印的提取过程如下图所示，虚框表示提取水印不一定需要这些数据。</p>
-<p><strong>1.空间域算法</strong></p>
-<p>空间域方法是数字水印最早的一类算法，它阐明了关于数字水印的一些重要概念。空间域算法-般通过改变图像的灰度值来加入数字水印，大多采用替换法，用水印信号替换载体中的数据，主要有LSB ( Least Significant Bit)、Patchwork、 纹理块映射编码等方法。</p>
-<p>  (1)LSB方法的主要原理是利用人眼视觉特性对于数字图像亮色等级分辨率的有限性，将水印信号替换原图像中像素灰度值的最不重要位或者次不重要位。这种方法简单易行，且能嵌入较多信息，但是抵抗攻击的能力较差，攻击者简单地利用信号处理技术就能完全破坏消息。正是由于这一点，LSB算法能够有效地确定一幅图在何处被修改了。</p>
-<p>  (2) Patchwork 算法是一种基于统计学的方法，它是将图像分成两个子集，其中一个子集的亮度增加，另一个子集的亮度减少同样的量，这个量以不可见为标准，整幅图像的平均灰度值保持不变，在这个调整过程中完成水印的嵌入。在Patchwork算法中，一个密钥用来初始化一个伪随机数，而这个伪随机数将产生载体中放置水印的位置。</p>
-<p>Patchwork方法的隐蔽性好，对有损压缩和FIR滤波有一定的抵抗力，但其缺陷是嵌入信息量有限，对多拷贝平均攻击的抵抗力较弱。</p>
-<p>  (3)纹理块映射编码方法是将一个基于纹理的水印嵌入到图像的具有相似纹理的一部分当中，该算法是基于图像的纹理结构的，因而很难察觉，同时对于滤波、压缩和旋转等操作具有抵抗能力。</p>
-<p><strong>2.变换域算法</strong></p>
-<p>目前变换域算法主要包括傅里叶变换域(DFT)、离散余弦域(DCT)和离散小波变换(DWT)。基于频域的数字水印技术相对于空间域的数字水印技术通常具有更多优势,抗攻击能力更强，比如- -般的几何变换对空域算法影响较大，而对频域算法却影响较小。但是变换域算法嵌入和提取水印的操作复杂，隐藏信息量不能太多。</p>
-<p>  (1)傅里叶变换是一种经典而有效的数学工具，DFT水印技术是利用图像的DFT相位和幅值嵌入信息，一般利用相位信息嵌入水印比利用幅值信息鲁棒性更好，而利用幅值嵌入水印则对旋转、缩放、平移等操作具有不变性。DFT水印技术的优点是具有仿射不变性，还可以利用相位嵌入水印，但DFT技术与国际压缩标准不兼容导致抗压缩能力弱，且算法比较复杂、效率较低，因此限制了它的应用。</p>
-<p>  (2)DCT水印技术的主要思想是在图像的DCT变换域_上选择中低频系数叠加水印信息,选择中低频系数是因为人眼的感觉主要集中在这一频段, 攻击者在破坏水印的过程中，不可避免地会引起图像质量的严重下降，而一般的图像处理过程也不会改变这部分数据。该算法不仅在视觉上具有很强的隐蔽性、鲁棒性和安全性，而且可经受- -定程度的有损压缩、滤波、剪切、缩放、平移、旋转、扫描等操作。</p>
-<p>  (3) DWT是一种“时间一尺度”信号的多分辨率分析方法，它具有良好的空频分解和模拟人类视觉系统的特，而且嵌入式零树小波编码(EZW)将在新一代的压缩标准(JPEG2000，MPEG4/7 等)中被采用，符合国际压缩标准，小波域的水印算法具有良好的发展前景。DWT水印算法的优点是水印检测按子带分级扩充水印序列进行，即如果先检测出的水印序列已经满足水印存在的相似函数要求，则检测可以终止，否则继续搜寻下一子带扩充水印序列直至相似函数出现一个峰值或使所有子带搜索结束。因此含有水印的载体在质量破坏不大的情况下，水印检测可以在搜索少数几个子带后终止，提高了水印检测的效率。</p>
-<p>​    结合Arnold变换的基于DWT的数字水印的嵌入。充分利用了小波变换的特点，采用Haar小波，把原始图像及水印图像进行三级小波分解，然后在多分辨率分解后的频段嵌入水印信号，得到嵌入水印的图像。<br>​    数字水印最重要的性质就是鲁棒性和不可感知性，两者存在一定的矛盾。鲁棒性要求加大水印信息的强度，而水印信息强度的增大反过来又会影响水印的不可感知性，因此必须权衡这两方面的性质，达到鲁棒性和不可感知性的平衡。图像的边缘和纹理部分能隐藏较大的数据量，而图像的平坦部分对噪声相对敏感。由多分辨率分析的思想,图像平坦的部分集中了图像绝大部分的能量,对应着小波变换后的低频子带。而高频部分则对应于图像的边缘和纹理，即细节部分。若考虑水印的鲁棒性，应将水印信息嵌入到图像的低频子带，但低频段的变化对人眼的视觉影响较大，很难兼顾重构图像的不可感知性。若将水印信息嵌入高频子带，可以很好地将水印隐藏，但这样的水印却无法抵抗有损压缩、低通滤波等简单的图像处理。因此，如果能在水印嵌入时充分结合高、低频的特性，就有可能得效果较好的水印嵌入方法。<br>​    综合以上考虑，本文中的算法采用水印信息多分辨率重复嵌入思想。首先将水印图像进行Arnold 置乱，然后将原始图像进行三级离散小波分解后的系数进行排序分组，并针对不同分组，采用不同强度的嵌入系数，进行相应水印分解子图的重复嵌入。各子图分组数目即为水印重复嵌入的次数。</p>
-<p>L是最低频段滤波后的低尺度逼近，同级分辨率下,HL包含水平方向高通、垂直方向低通滤波后的细节信息，LH保留的是水平方向低通、垂直方向高通滤波后所得细节信息，HH保留的是水平方向和垂直方向高通滤波后的细节信息。</p>
-<p>DWT数字水印算法嵌入步骤<br>水印嵌入算法的步骤如下:<br>①分别读取原始图像X和水印图像W。<br>②对水印图像W进行k次Arnold变换，将置乱后的水印记为W。并将系数与变换次数作为密钥key 保存。<br>③对置乱后的水印 Wa 采用Haar小波进行一级小波分解，得到一级分辨率下的一个逼近子图cal和三个细节子图chl,cvl,cd1。<br>④将原始图像X采用Haar小波进行三级小波分解,得到不同分辨率级下的多个细节子图和一个逼近子图，具体分解子图为: cA3,cH3,cV3,cD3,cH 2,cV2,cD2,cH 1,cV1,cD1 。<br>⑤将 Wa 一级小波分解后的各子图分别嵌入原始图像第三级小波分解后的对应子图中，不同的分组选取不同的系数:</p>
-<p>其中，a1,a2,a3,a4 是对应的加权因子。cA3’,cH3’,cV3’,cD3’分别为原始图像三级小波分解嵌入水印后的相应子图。<br>⑥对嵌入水印后的小波系数进行三级小波重构，得到嵌入水印的图像XW。</p>
-<p>DWT数字水印算法提取步骤<br>水印的提取过程其实是嵌入过程的逆过程，具体步骤如下:<br>①分别读入原始图像X和已嵌入水印的图像XW。<br>②将原始图像X和已嵌入水印的图像XW分别采用 Haar小波进行三级小波分解，分别得到不同分辨率级下的多个细节子图和一个逼近子图。<br>③用cA3和 cA3 ‘, cH3和cH3’, cV3和 cV3’，cD3和 cD3’进行嵌入算法的逆运算提取水印图像一级分解的子图: ca1,ch1,cv1,cd1，对提取的小波系数进行一级小波逆变换，得到水印置乱变换后的图像。<br>④根据嵌入时的密钥key进行Arnold反变换，得到提取出的水印W。</p>
-<p><img src="https://img-blog.csdnimg.cn/d225709faded4c37b30760808e00fdd8.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAUGxhbmV0UlQ=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="请添加图片描述"></p>
-<p><strong>3.其他水印算法</strong></p>
-<p>  基于压缩域、基于NEC算法和生理模型的数字水印算法。其实数字水印算法正在不断地发展和前进中日益完善，但是仍然存在许多不足，具有更加深入的发展空间，这就需要我们在不断的学习和探索中寻找具有更好性能的新算法。</p>
-<p><strong>1 载体图像小波变换</strong></p>
-<p>  数字图像经过小波分解后被分割成4个频带:水平方向(LH)、 垂直方向(HL)、对角线方向(HH)和低频部分(LL)，其中低频部分可以继续分解，如图25-4 所示。图像能量主要集中于低频部分，是原始图像的逼近子图，具有较强的抵抗外来影响的能力，稳定性较好:其他三个子带表征了原图像在水平、垂直和对角线部分的边缘细节信息，容易受外来噪声、图像操作等影响，稳定性较差。</p>
-<p> 选择不同的小波基对嵌入水印的性能有很大影响，刘九芬等人研究了水印算法中小波基的选择和正交小波基的性质与鲁棒性的关系，其研究结果表明正交基的正则性、消失矩阶数、支撑长度及小波能量在低频带的集中程度对水印鲁棒性的影响极小;另外，其研究结果还表明Haar小波比较适合图像水印。</p>
-<p><strong>2.水印图像的预处理</strong></p>
-<p>  为了保证水印的安全性，在嵌入水印前需要对水印进行加密处理。置乱预处理是一种简单常用的加密方法，水印图像置乱可以消除像素间的相关性，从而提高水印的鲁棒性。图像置乱算法有很多，如幻方置乱、Hilbert 置乱、随机数置乱，本文采用Amold置乱算法，将有意义的水印内容掩盖。</p>
-<p><strong>3.小波数字水印的嵌入</strong></p>
-<p>  根据人类视觉系统的照明和纹理掩蔽特性，将水印嵌入到图像的纹理和边缘(HH、HL和LH细节子图中的一些有较大值的小波系数上)不易被觉察，但对图像的滤波和有损压缩操作容易丢失信息。小波变换低频部分(LL) 集中了图像的大部分能量，它是视觉上最重要的部分，在这部分嵌入水印容易引起图像失真。但从鲁棒性出发，水印应当嵌入到视觉最重要的区域。</p>
-<p><strong>4.小波水印的检查提取</strong></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>博客更新文档</title>
-    <url>/posts/1.html</url>
-    <content><![CDATA[<p>[toc]</p>
-<h3 id="新增或修改的文件结构"><a href="#新增或修改的文件结构" class="headerlink" title="新增或修改的文件结构"></a>新增或修改的文件结构</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">│</span><br><span class="line">├─_config.yml(修改)</span><br><span class="line">│</span><br><span class="line">├─_config.butterfly.yml(修改)</span><br><span class="line">│</span><br><span class="line">└─themes</span><br><span class="line">    └─butterfly</span><br><span class="line">        ├─layout</span><br><span class="line">        │   ├─includes</span><br><span class="line">        │	│	├─custom</span><br><span class="line">        │	│	│	└─switch.pug(明暗切换动画)</span><br><span class="line">        │	│	│</span><br><span class="line">        │	│	├─header</span><br><span class="line">        │	│	│	└─menu_item.pug(修改，添加子菜单栏居中)</span><br><span class="line">        │	│	│</span><br><span class="line">        │   │   ├─wedget</span><br><span class="line">        │   │   │   ├─card_calendar.pug(新增写作日历)</span><br><span class="line">        │	│	│	├─card_webinfo.pug(新增写作日历)</span><br><span class="line">        │	│	│	└─index.pug(修改，添加写作日历)</span><br><span class="line">		│	│	│</span><br><span class="line">        │	│	└─rightside.pug(黑暗模式一图流)</span><br><span class="line">        │	│	</span><br><span class="line">        │	│	</span><br><span class="line">        │   ├─head.pug(新增，引入昼夜切换)	</span><br><span class="line">        │	├─rightside.pug(修改，昼夜切换)</span><br><span class="line">        │   └─sliderbar.pug</span><br><span class="line">        └─source</span><br><span class="line">            ├─css</span><br><span class="line">            │   ├─_layout</span><br><span class="line">            │   │   ├─calendar.styl(新增日历样式)</span><br><span class="line">            │   │   ├─footer.styl(修改，删除底部蓝条)</span><br><span class="line">            │   │   └─switch.styl(新增，明暗切换样式)</span><br><span class="line">            │   ├─custom</span><br><span class="line">            │   │   ├─background.css(黑暗模式一图流配置)</span><br><span class="line">            │	│	├─fontface.css(字体样式)</span><br><span class="line">            │	│	├─header_beautify.css(子菜单美化)</span><br><span class="line">            │	│	├─slideshow.css</span><br><span class="line">            │	│	├─starlight.css(星光背景)</span><br><span class="line">            │	│	├─twikoo_beautify.css(Twikoo评论美化)</span><br><span class="line">            │	│	└─double_row.css(双栏布局美化)</span><br><span class="line">            │	├─FangZhengKaiTiJianTi-1.ttf(字体美化)</span><br><span class="line">            │	│</span><br><span class="line">            │   └─img(新增，主题图片)</span><br><span class="line">            │   </span><br><span class="line">            └─js</span><br><span class="line">            	└─custom</span><br><span class="line">            		├─foot.js(页脚修改)</span><br><span class="line">            		├─jquery.js(页脚修改支持)</span><br><span class="line">            		├─sakura.js(樱花背景动效)</span><br><span class="line">            		├─snow.js(雪花背景动效)</span><br><span class="line">            		├─snowflake.js(雪花背景动效)</span><br><span class="line">            		├─switch.js(切换明暗模式)</span><br><span class="line">            		└─universe.js(星空背景)</span><br></pre></td></tr></table></figure>
-<h3 id="注意：abbrlink"><a href="#注意：abbrlink" class="headerlink" title="注意：abbrlink"></a>注意：abbrlink</h3><h4 id="100-开头为博客搭建相关"><a href="#100-开头为博客搭建相关" class="headerlink" title="100 开头为博客搭建相关"></a>100 开头为博客搭建相关</h4><h4 id="101-开头为JavaSE相关"><a href="#101-开头为JavaSE相关" class="headerlink" title="101 开头为JavaSE相关"></a>101 开头为JavaSE相关</h4><h4 id="102-开头为-JavaWeb相关"><a href="#102-开头为-JavaWeb相关" class="headerlink" title="102 开头为 JavaWeb相关"></a>102 开头为 JavaWeb相关</h4><h4 id="103-开头为ssm相关"><a href="#103-开头为ssm相关" class="headerlink" title="103 开头为ssm相关"></a>103 开头为ssm相关</h4><h4 id="104-开头为MySQL相关"><a href="#104-开头为MySQL相关" class="headerlink" title="104 开头为MySQL相关"></a>104 开头为MySQL相关</h4><h4 id="105开头为HTML-CSS相关"><a href="#105开头为HTML-CSS相关" class="headerlink" title="105开头为HTML+CSS相关"></a>105开头为HTML+CSS相关</h4><h4 id="106开头为SpringCloud相关"><a href="#106开头为SpringCloud相关" class="headerlink" title="106开头为SpringCloud相关"></a>106开头为SpringCloud相关</h4><h4 id="107开头为Redis相关"><a href="#107开头为Redis相关" class="headerlink" title="107开头为Redis相关"></a>107开头为Redis相关</h4><h4 id="2-开头为杂项"><a href="#2-开头为杂项" class="headerlink" title="2 开头为杂项"></a>2 开头为杂项</h4><h4 id="9开头为刷题笔记"><a href="#9开头为刷题笔记" class="headerlink" title="9开头为刷题笔记"></a>9开头为刷题笔记</h4><h3 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h3><h4 id="2023-05-18"><a href="#2023-05-18" class="headerlink" title="2023-05-18"></a>2023-05-18</h4><h5 id="更新相关"><a href="#更新相关" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
-<li>无</li>
+    <title>Mybatis基础入门</title>
+    <url>/posts/20004.html</url>
+    <content><![CDATA[<h1 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h1><p>MyBatis是一款优秀的持久层框架，==用于简化JDBC的开发。==</p>
+<h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><p>JDBC：（Java DataBase Connectivity），就是使用ava语言操作关系型数据库的一套API。</p>
+<ul>
+<li>sun公司官方定义的一套操作所有关系型数据库的规范，即接口。</li>
+<li>各个数据库厂商去实现这套接口，提供数据库驱动jar包。</li>
+<li>我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。</li>
 </ul>
-<h5 id="bug相关"><a href="#bug相关" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
-<li>无</li>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootTest</span> <span class="comment">//springboot整合单元测试的注解</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SpringbootMybatisQuickstartApplicationTests</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserMapper userMapper;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testListUser</span><span class="params">()</span>&#123;</span><br><span class="line">        List&lt;User&gt; userList = userMapper.list();</span><br><span class="line">        userList.stream().forEach(user -&gt; &#123;</span><br><span class="line">            System.out.println(user);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testJdbc</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//1. 注册驱动</span></span><br><span class="line">        Class.forName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2. 获取连接对象</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;jdbc:mysql://localhost:3306/mybatis&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> <span class="string">&quot;1234&quot;</span>;</span><br><span class="line">        <span class="type">Connection</span> <span class="variable">connection</span> <span class="operator">=</span> DriverManager.getConnection(url, username, password);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3. 获取执行SQL的对象Statement,执行SQL,返回结果</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;select * from user&quot;</span>;</span><br><span class="line">        <span class="type">Statement</span> <span class="variable">statement</span> <span class="operator">=</span> connection.createStatement();</span><br><span class="line">        <span class="type">ResultSet</span> <span class="variable">resultSet</span> <span class="operator">=</span> statement.executeQuery(sql);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4. 封装结果数据</span></span><br><span class="line">        List&lt;User&gt; userList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">while</span> (resultSet.next())&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">id</span> <span class="operator">=</span> resultSet.getInt(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> resultSet.getString(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">            <span class="type">short</span> <span class="variable">age</span> <span class="operator">=</span> resultSet.getShort(<span class="string">&quot;age&quot;</span>);</span><br><span class="line">            <span class="type">short</span> <span class="variable">gender</span> <span class="operator">=</span> resultSet.getShort(<span class="string">&quot;gender&quot;</span>);</span><br><span class="line">            <span class="type">String</span> <span class="variable">phone</span> <span class="operator">=</span> resultSet.getString(<span class="string">&quot;phone&quot;</span>);</span><br><span class="line"></span><br><span class="line">            <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>(id,name,age,gender,phone);</span><br><span class="line">            userList.add(user);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//5. 释放资源</span></span><br><span class="line">        statement.close();</span><br><span class="line">        connection.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="MyBatis使用流程"><a href="#MyBatis使用流程" class="headerlink" title="MyBatis使用流程"></a>MyBatis使用流程</h2><ul>
+<li>1.准备工作(创建springboot工程、数据库表user、实体类User)</li>
+<li>2.引入Mybatis的相关依赖，配置Mybatis</li>
+<li>3.编写SQL语句(注解/XML)</li>
 </ul>
-<h5 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h5><ul>
-<li>初步创建github仓库，安装了nodejs和hexo，初始化了hexo博客</li>
+<h2 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h2><ul>
+<li>数据库连接池是个容器，负责分配、管理数据库连接(Connection)</li>
+<li>它允许应用程序重复使用一个现有的数据库连接，而不是再重新建立一个</li>
+<li>释放空闲时间超过最大空闲时间的连接，来避免因为没有释放连接而引起的数据库连接遗漏</li>
 </ul>
-<h4 id="2023-05-19"><a href="#2023-05-19" class="headerlink" title="2023-05-19"></a>2023-05-19</h4><h5 id="更新相关-1"><a href="#更新相关-1" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
-<li>无</li>
+<blockquote>
+<p>优点：</p>
+<ul>
+<li>资源重用</li>
+<li>提升系统响应速度</li>
+<li>避免数据库连接遗漏</li>
 </ul>
-<h5 id="bug相关-1"><a href="#bug相关-1" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
-<li>无</li>
+</blockquote>
+<h2 id="lombok"><a href="#lombok" class="headerlink" title="lombok"></a>lombok</h2><p>Lombok是一个实用的Java类库，能通过注解的形式自动生成构造器、getter/setter、equals、hashcode、toString等方法，并可以自动化生成日志变量，简化java开发、提高效率。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>注解</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@Getter/ @Setter</td>
+<td>为所有的属性提供get/set方法</td>
+</tr>
+<tr>
+<td>@ToString</td>
+<td>会给类自动生成易阅读的toString方法</td>
+</tr>
+<tr>
+<td>@EqualsAndHashcode</td>
+<td>根据类所拥有的非静态字段自动重写equals方法和 hashCode方法</td>
+</tr>
+<tr>
+<td><strong>@Data</strong></td>
+<td>提供了更综合的生成代码功能(@Getter + @Setter +@ToString +@EqualsAndHashCode)</td>
+</tr>
+<tr>
+<td><strong>@NoArgsConstructor</strong></td>
+<td>为实体类生成无参的构造器方法</td>
+</tr>
+<tr>
+<td><strong>@AllArgsConstructor</strong></td>
+<td>为实体类生成除了static修饰的字段之外带有各参数的构造器方法。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="第一步：准备工作"><a href="#第一步：准备工作" class="headerlink" title="第一步：准备工作"></a>第一步：准备工作</h1><ul>
+<li>准备好数据库表 Emp （员工表）</li>
+<li>创建一个新的springboot工程，选择引入对应的起步依赖（mybatis、mysql驱动、lombok）</li>
+<li>application.properties中引入数据库连接信息</li>
+<li>创建对应的实体类Emp（实体类属性采用驼峰命名）</li>
+<li>准备Mapper接口EmpMapper（加上Mapper接口）</li>
 </ul>
-<h5 id="杂项-1"><a href="#杂项-1" class="headerlink" title="杂项"></a>杂项</h5><p>采用next主题，进行了主题优化</p>
-<h4 id="2023-05-20"><a href="#2023-05-20" class="headerlink" title="2023-05-20"></a>2023-05-20</h4><h5 id="更新相关-2"><a href="#更新相关-2" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
-<li>无</li>
+<h1 id="第二步：先开发简单的增删改查Mapper"><a href="#第二步：先开发简单的增删改查Mapper" class="headerlink" title="第二步：先开发简单的增删改查Mapper"></a>第二步：先开发简单的增删改查Mapper</h1><ul>
+<li>使用@Delete @Insert @Select</li>
 </ul>
-<h5 id="bug相关-2"><a href="#bug相关-2" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
-<li>无</li>
-</ul>
-<h5 id="杂项-2"><a href="#杂项-2" class="headerlink" title="杂项"></a>杂项</h5><p>放弃使用next主题，改用butterfly主题</p>
-<h4 id="2023-05-21"><a href="#2023-05-21" class="headerlink" title="2023-05-21"></a>2023-05-21</h4><h5 id="更新相关-3"><a href="#更新相关-3" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
-<li>无</li>
-</ul>
-<h5 id="bug相关-3"><a href="#bug相关-3" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
-<li>无</li>
-</ul>
-<h5 id="杂项-3"><a href="#杂项-3" class="headerlink" title="杂项"></a>杂项</h5><p>计划将博客迁移到腾讯云上，购买了腾讯云服务器与域名，申请了ssl证书，在等待24小时后进行备案</p>
-<h4 id="2023-05-22"><a href="#2023-05-22" class="headerlink" title="2023-05-22"></a>2023-05-22</h4><h5 id="更新相关-4"><a href="#更新相关-4" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
-<li>无</li>
-</ul>
-<h5 id="bug相关-4"><a href="#bug相关-4" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
-<li>无</li>
-</ul>
-<h5 id="杂项-4"><a href="#杂项-4" class="headerlink" title="杂项"></a>杂项</h5><p>进行备案，同时将空闲的服务器制作成了饥荒游戏的服务器</p>
-<h4 id="2023-05-23"><a href="#2023-05-23" class="headerlink" title="2023-05-23"></a>2023-05-23</h4><h5 id="更新相关-5"><a href="#更新相关-5" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
-<li>无</li>
-</ul>
-<h5 id="bug相关-5"><a href="#bug相关-5" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
-<li>无</li>
-</ul>
-<h5 id="杂项-5"><a href="#杂项-5" class="headerlink" title="杂项"></a>杂项</h5><p>备案验证</p>
-<h4 id="2023-05-24"><a href="#2023-05-24" class="headerlink" title="2023-05-24"></a>2023-05-24</h4><h5 id="更新相关-6"><a href="#更新相关-6" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
-<li><p>主题优化，更改了博客的背景样式包括不同页面的背景，底部角标如运行时间等，背景透明度</p>
+<blockquote>
+<p>注意SQL语句中的占位符 #{变量名}</p>
+<p>注意接口方法的返回值现在先可以自己定义，在后期会统一换成自己设定的Result类，确保返回给前端的数据解析方便</p>
+</blockquote>
+<ul>
+<li><p>每次开发好一个接口方法时，进行测试，确保测试的覆盖率</p>
 </li>
-<li><p>添加了樱花特效与雪花特效，选择了樱花特效</p>
-</li>
-<li><p>添加了评论系统</p>
-</li>
-<li><p>添加了文章随机封面</p>
-</li>
-<li><p>更改了代码块显示</p>
-</li>
-<li><p>添加了本地搜索功能</p>
-</li>
-<li><p>修改了头像以及主页封面等</p>
-</li>
-<li><p>添加了文章版权信息</p>
-</li>
-<li><p>更改了图片放大查看</p>
-</li>
-<li><p>添加了相关文章功能</p>
-</li>
-<li><p>更改了侧边栏显示</p>
-</li>
-<li><p>更改了公告栏设置</p>
-</li>
-<li><p>更改了toc目录</p>
-</li>
-<li><p>更改了鼠标点击效果</p>
-</li>
-<li><p>更改了打字效果</p>
-</li>
-<li><p>更改了footer背景</p>
-</li>
-<li><p>添加了字数统计功能</p>
-</li>
-<li><p>更改了分享功能</p>
-</li>
-<li><p>更新了懒加载功能</p>
-</li>
-<li><p>在iconfont中添加了自定义图标</p>
+<li><p>application.properties配置mybatis的日志，指定输出到控制台</p>
 </li>
 </ul>
-<h5 id="bug相关-6"><a href="#bug相关-6" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
-<li>无</li>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#配置mybatis的日志，指定输出到控制台</span><br><span class="line">mybatis.configuration.log-impl=org.apache.ibatis.logging.stdout.StdoutImpl</span><br></pre></td></tr></table></figure>
+<p>==注意变量名与pojo中一致，表示获取实体类的属性==</p>
+<h2 id="预编译SQL"><a href="#预编译SQL" class="headerlink" title="预编译SQL"></a>预编译SQL</h2><blockquote>
+<p>为什么java会使用预编译的SQL语句？</p>
+<ul>
+<li>性能更高</li>
+<li>更安全（防止SQL注入）</li>
 </ul>
-<h5 id="杂项-6"><a href="#杂项-6" class="headerlink" title="杂项"></a>杂项</h5><ul>
-<li>无</li>
+<p>java项目在执行SQL语句时的步骤</p>
+<ul>
+<li>缓存<ul>
+<li>SQL语法解析检查</li>
+<li>优化SQL</li>
+<li>编译SQL</li>
 </ul>
-<h4 id="2023-05-25"><a href="#2023-05-25" class="headerlink" title="2023-05-25"></a>2023-05-25</h4><h5 id="更新相关-7"><a href="#更新相关-7" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
-<li>无</li>
-</ul>
-<h5 id="bug相关-7"><a href="#bug相关-7" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
-<li>无</li>
-</ul>
-<h5 id="杂项-7"><a href="#杂项-7" class="headerlink" title="杂项"></a>杂项</h5><p>备案成功，一整天在尝试将自己的博客由github迁移到腾讯云上，晚上成功，博客进行了cdn加速，在国内的访问速度也非常快了</p>
-<h4 id="2023-05-26"><a href="#2023-05-26" class="headerlink" title="2023-05-26"></a>2023-05-26</h4><h5 id="更新相关-8"><a href="#更新相关-8" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
-<li>让域名被百度引擎收录</li>
-<li>添加了博客日历功能</li>
-<li>git贡献日历（已经删除）</li>
-</ul>
-<h5 id="bug相关-8"><a href="#bug相关-8" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
-<li>晚上发现博客更新后会出现cname失效的bug，在dns解析页面删除了存储桶的解析后bug解决（花了一晚上。。）</li>
-</ul>
-<h5 id="杂项-8"><a href="#杂项-8" class="headerlink" title="杂项"></a>杂项</h5><ul>
-<li>知道了腾讯云CDN加速需要收费，不过收费较为便宜</li>
-</ul>
-<h4 id="2023-05-27"><a href="#2023-05-27" class="headerlink" title="2023-05-27"></a>2023-05-27</h4><h5 id="更新相关-9"><a href="#更新相关-9" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
-<li>添加了博客搜索功能</li>
-<li>更新了评论功能，绑定了域名，新增部署，创建了定时任务，设置了安全域名</li>
-<li>更新了评论功能，绑定了qq邮箱，绑定授权码</li>
-<li>添加了评论回复显示身份功能</li>
-<li>Valine评论功能废弃（改用Twikwoo。。。）</li>
-</ul>
-<h5 id="bug相关-9"><a href="#bug相关-9" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
-<li><p>发现错误，baidu_url_submit配置的count过大，即git命令行出现{“error”:400,”message”:”over quota”}代码，更改count为20后无错误</p>
 </li>
-<li><p><strong>上述错误仍然出现，不知道什么原因。</strong></p>
+<li>执行SQL</li>
+</ul>
+</blockquote>
+<p>为什么性能更高呢？</p>
+<blockquote>
+<p>例如：</p>
+<p>delete from emp where id = 1;</p>
+<p>delete from emp where id = 2;</p>
+<p>delete from emp where id = 3;</p>
+<p>上述三条不进行预编译会缓存编译三次</p>
+<p>预编译如下添加占位符：</p>
+<p>delete from emp where id = ?</p>
+<p>1 2 3</p>
+<p>缓存编译一次</p>
+</blockquote>
+<p>为什么更安全呢？</p>
+<p>SQL注入是通过操作输入的数据来修改事先定义好的SQL语句，以达到执行代码对服务器进行攻击的方法</p>
+<blockquote>
+<p>解决了SQL注入</p>
+<p>例如正常的账号 wang 密码 123456</p>
+<p>SQL语句：select conut(*) from emp where username = ‘wang’ and password = ‘123456’;</p>
+<p>SQL注入攻击：</p>
+<p>账号：whatever 密码 ‘ or ’1‘ = ’1</p>
+<p>SQL语句：select conut(*) from emp where username = ‘whatever’ and password = ‘==‘ or ’1‘ = ’1==’;</p>
+<p>上述语句必然成立，达到了攻击的效果</p>
+<p>预编译SQL：</p>
+<p>SQL语句：select count(*) from emp where username =? and password = ?</p>
+<p>参数传递，避免了SQL注入</p>
+</blockquote>
+<ul>
+<li>==使用预编译SQL语句（#{}）==</li>
+<li>==使用拼接SQL语句（${}）==</li>
+</ul>
+<h2 id="如何拿到主键值？"><a href="#如何拿到主键值？" class="headerlink" title="如何拿到主键值？"></a>如何拿到主键值？</h2><p>正常的属性方法getId无法拿到主键值，需要使用注解</p>
+<blockquote>
+<p>@Options(keyProperty=“id”, useGeneratedKeys=true)</p>
+<p>useGeneratedKeys=true代表我们需要拿到主键，keyProperty=‘Id’表示我们需要将主键封装的emp的Id中去</p>
+</blockquote>
+<h2 id="数据封装"><a href="#数据封装" class="headerlink" title="数据封装"></a>数据封装</h2><ul>
+<li><p>实体类属性名和数据库表查询返回的字段名一致，mybatis会自动封装。</p>
 </li>
-<li><p>遇到了严重问题，github.io跳转失败，CDN加速无法添加A记录？（失败，github自带CDN加速，而自己的网站已经开启了CDN加速，除非使用子域名解决CNAME冲突？以后有需求再说吧，目前是国内wang-nine.cn访问，国外wang-nine.github.io）</p>
+<li><p>实体类属性名和数据库表查询返回的字段名不一致，不能自动封装。</p>
 </li>
 </ul>
-<h5 id="杂项-9"><a href="#杂项-9" class="headerlink" title="杂项"></a>杂项</h5><ul>
-<li>尝试更新valine，接入自己的域名，但是卡在了部署证书这一步，在论坛反应后等待</li>
-<li>晚上发现已绑定（奇怪。）尝试更新评论系统吧</li>
-<li>卡在了魔改valine的这一步，彻底放弃了，尝试更新更好的twikoo评论系统</li>
+<p>如何封装</p>
+<ul>
+<li>1.为字段不同的字段起别名，就是SQL中的as起别名，将别名与实体类属性名一致即可</li>
+<li>2.通过@Results，@Result注解手动映射封装（不建议）</li>
 </ul>
-<h4 id="2023-05-28"><a href="#2023-05-28" class="headerlink" title="2023-05-28"></a>2023-05-28</h4><h5 id="更新相关-10"><a href="#更新相关-10" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
-<li>更新twikoo评论功能</li>
-<li>MongoDB申请存储管理挂载twikoo评论(暂时不予采用)</li>
-<li>腾讯云开发赠送学生免费6个月(采用腾讯云开发对twikoo评论进行配置)</li>
-<li>新增公式支持功能</li>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Results(&#123;</span></span><br><span class="line"><span class="meta">	@Result(column = &quot;dept_id&quot;, property = &quot;deptId&quot; ),</span></span><br><span class="line"><span class="meta">	@Result(column = &quot;create_time&quot;, property = &quot;createTime&quot;)</span></span><br><span class="line"><span class="meta">    @Result(column = &quot;update_time&quot;, property = &quot;updateTime&quot;)</span></span><br><span class="line"><span class="meta">&#125;)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>3.开启Mybatis驼峰命名映射开关（==建议，但是要确保开发时的命名规范==）</li>
 </ul>
-<h5 id="bug相关-10"><a href="#bug相关-10" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
-<li>无</li>
+<p>application.properties配置mybatis的驼峰命名映射开关</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#开启mybatis的驼峰命名自动映射开关a_column ------&gt; aCloumn</span><br><span class="line">mybatis.configuration.map-underscore-to-camel-case=true</span><br></pre></td></tr></table></figure>
+<h2 id="注意-的使用时机"><a href="#注意-的使用时机" class="headerlink" title="注意${}的使用时机"></a>注意${}的使用时机</h2><h1 id="不能出现在引号中，所以类似于SQL中的like-‘-name-’-这类模糊匹配需要改为"><a href="#不能出现在引号中，所以类似于SQL中的like-‘-name-’-这类模糊匹配需要改为" class="headerlink" title="{}不能出现在引号中，所以类似于SQL中的like ‘%#{name}%’ 这类模糊匹配需要改为"></a>{}不能出现在引号中，所以类似于SQL中的like ‘%#{name}%’ 这类模糊匹配需要改为</h1><ul>
+<li>like ‘%${name}%’    ==性能低，存在SQL注入攻击问题==</li>
+<li>concat(‘%’, #{name}, ‘%’) ==性能高，更安全==</li>
 </ul>
-<h5 id="杂项-10"><a href="#杂项-10" class="headerlink" title="杂项"></a>杂项</h5><ul>
-<li>无</li>
+<h2 id="XML映射文件"><a href="#XML映射文件" class="headerlink" title="XML映射文件"></a>XML映射文件</h2><p><strong>规范</strong></p>
+<ul>
+<li>XML映射文件的名称与Mapper接口名称一致，并且将XML映射文件和Mapper接口放置在相同包下(同包同名)</li>
+<li>XML映射文件的namespace属性为Mapper接口全限定名一致。</li>
+<li>XML映射文件中sql语句的id与Mapper接口中的方法名一致，并保持返回类型一致。</li>
 </ul>
-<h4 id="2023-05-29"><a href="#2023-05-29" class="headerlink" title="2023-05-29"></a>2023-05-29</h4><h5 id="更新相关-11"><a href="#更新相关-11" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
-<li>更新Twikoo评论样式美化(在D:\Blog\themes\butterfly\source\css\custom中引入了css)</li>
-<li>更新了分离搜索栏与菜单栏</li>
-<li>更新了顶栏常驻</li>
-<li>更新了文档支持公式</li>
-</ul>
-<h5 id="bug相关-11"><a href="#bug相关-11" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
-<li>顶部导航栏居中出了问题</li>
-<li>子菜单栏居中出了问题</li>
-</ul>
-<h5 id="杂项-11"><a href="#杂项-11" class="headerlink" title="杂项"></a>杂项</h5><ul>
-<li>无</li>
-</ul>
-<h4 id="2023-05-30"><a href="#2023-05-30" class="headerlink" title="2023-05-30"></a>2023-05-30</h4><h5 id="更新相关-12"><a href="#更新相关-12" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
-<li>实现了子菜单栏居中的效果</li>
-<li>删除了顶栏常驻效果</li>
-<li>删除了分离搜索栏和菜单栏</li>
-<li>将博客的字体改为了楷体</li>
-<li>更新了博客中文章双栏显示（失败）</li>
-<li>美化了博客中双栏显示的效果（失败）</li>
-<li>修复了双栏显示后页码不居中的bug（失败）</li>
-<li>增加了轮播图的功能（在文章配置中添加swiper_index属性，越大越先出现）</li>
-</ul>
-<h5 id="bug相关-12"><a href="#bug相关-12" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
-<li>阅读量和评论数一直加载中（已解决）</li>
-</ul>
-<h5 id="杂项-12"><a href="#杂项-12" class="headerlink" title="杂项"></a>杂项</h5><ul>
-<li>无</li>
-</ul>
-<h4 id="2023-05-31"><a href="#2023-05-31" class="headerlink" title="2023-05-31"></a>2023-05-31</h4><h5 id="更新相关-13"><a href="#更新相关-13" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
-<li>取消了日历功能（取消）（加上了）</li>
-<li>增加了夜晚模式下的流星背景特效</li>
-<li>增加了首页轮播图</li>
-<li>增加了一图流</li>
-<li>增加了日夜切换动画</li>
-<li>增加了首页轮播图</li>
-</ul>
-<h5 id="bug相关-13"><a href="#bug相关-13" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
-<li>首页透明度bug（使用一图流解决）</li>
-<li>黑夜模式首页背景不同bug（使用一图流解决）</li>
-<li>封面不加载</li>
-</ul>
-<h5 id="杂项-13"><a href="#杂项-13" class="headerlink" title="杂项"></a>杂项</h5><ul>
-<li>无</li>
-</ul>
-<h4 id="2023-06-01"><a href="#2023-06-01" class="headerlink" title="2023-06-01"></a>2023-06-01</h4><h5 id="更新相关-14"><a href="#更新相关-14" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
-<li>无</li>
-</ul>
-<h5 id="bug相关-14"><a href="#bug相关-14" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
-<li>博客第二页未更新（重新在cos中上传即可）</li>
-</ul>
-<h5 id="杂项-14"><a href="#杂项-14" class="headerlink" title="杂项"></a>杂项</h5><ul>
-<li>无</li>
-</ul>
-<h4 id="2023-06-02"><a href="#2023-06-02" class="headerlink" title="2023-06-02"></a>2023-06-02</h4><h5 id="更新相关-15"><a href="#更新相关-15" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
-<li>删除了轮播图</li>
-</ul>
-<h5 id="bug相关-15"><a href="#bug相关-15" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
-<li>无</li>
-</ul>
-<h5 id="杂项-15"><a href="#杂项-15" class="headerlink" title="杂项"></a>杂项</h5><ul>
-<li>无</li>
-</ul>
-<h4 id="2023-06-24"><a href="#2023-06-24" class="headerlink" title="2023-06-24"></a>2023-06-24</h4><h5 id="更新相关-16"><a href="#更新相关-16" class="headerlink" title="更新相关"></a>更新相关</h5><ul>
-<li>无</li>
-</ul>
-<h5 id="bug相关-16"><a href="#bug相关-16" class="headerlink" title="bug相关"></a>bug相关</h5><ul>
-<li>直接gitbash上传四件套可以解决博客第二页未更新bug</li>
-</ul>
-<h5 id="杂项-16"><a href="#杂项-16" class="headerlink" title="杂项"></a>杂项</h5><ul>
-<li>无</li>
-</ul>
+<p><img src="https://wang-nine.cn//images/MyBatis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8.png" alt="image-20231128144916042"></p>
+<h2 id="动态SQL"><a href="#动态SQL" class="headerlink" title="动态SQL"></a>动态SQL</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\<if> \</if></td>
+<td>用于判断条件是否成立。使用test属性进行条件判断，如果条件为true，则拼接SQL</td>
+</tr>
+<tr>
+<td>\<where>\</where></td>
+<td>where 元素只会在子元素有内容的情况下才插入where子句。而且会自动去除子句的开头的AND或OR。</td>
+</tr>
+<tr>
+<td>\<set>\</set></td>
+<td>动态地在行首插入SET关键字，并会删掉额外的逗号。(用在update语句中)</td>
+</tr>
+<tr>
+<td>\<foreach 五个属性>\</foreach></td>
+<td>collection:遍历的集合<br>item:遍历出来的元素<br>separator:分隔符<br>open:遍历开始前拼接的SQL工片段<br>close:遍历结束后拼接的SQL片段</td>
+</tr>
+<tr>
+<td>\<sql id=>\</sql></td>
+<td>抽取相同的SQL片段</td>
+</tr>
+<tr>
+<td>\<include refid=>\</include></td>
+<td>引用SQL片段</td>
+</tr>
+</tbody>
+</table>
+</div>
 ]]></content>
       <categories>
-        <category>博客搭建</category>
+        <category>Mybatis</category>
       </categories>
       <tags>
-        <tag>博客搭建</tag>
+        <tag>Mybatis</tag>
       </tags>
   </entry>
   <entry>
@@ -8545,218 +8757,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Mybatis基础入门</title>
-    <url>/posts/20004.html</url>
-    <content><![CDATA[<h1 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h1><p>MyBatis是一款优秀的持久层框架，==用于简化JDBC的开发。==</p>
-<h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><p>JDBC：（Java DataBase Connectivity），就是使用ava语言操作关系型数据库的一套API。</p>
-<ul>
-<li>sun公司官方定义的一套操作所有关系型数据库的规范，即接口。</li>
-<li>各个数据库厂商去实现这套接口，提供数据库驱动jar包。</li>
-<li>我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootTest</span> <span class="comment">//springboot整合单元测试的注解</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SpringbootMybatisQuickstartApplicationTests</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserMapper userMapper;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testListUser</span><span class="params">()</span>&#123;</span><br><span class="line">        List&lt;User&gt; userList = userMapper.list();</span><br><span class="line">        userList.stream().forEach(user -&gt; &#123;</span><br><span class="line">            System.out.println(user);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testJdbc</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//1. 注册驱动</span></span><br><span class="line">        Class.forName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2. 获取连接对象</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;jdbc:mysql://localhost:3306/mybatis&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> <span class="string">&quot;1234&quot;</span>;</span><br><span class="line">        <span class="type">Connection</span> <span class="variable">connection</span> <span class="operator">=</span> DriverManager.getConnection(url, username, password);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3. 获取执行SQL的对象Statement,执行SQL,返回结果</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;select * from user&quot;</span>;</span><br><span class="line">        <span class="type">Statement</span> <span class="variable">statement</span> <span class="operator">=</span> connection.createStatement();</span><br><span class="line">        <span class="type">ResultSet</span> <span class="variable">resultSet</span> <span class="operator">=</span> statement.executeQuery(sql);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4. 封装结果数据</span></span><br><span class="line">        List&lt;User&gt; userList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">while</span> (resultSet.next())&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">id</span> <span class="operator">=</span> resultSet.getInt(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> resultSet.getString(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">            <span class="type">short</span> <span class="variable">age</span> <span class="operator">=</span> resultSet.getShort(<span class="string">&quot;age&quot;</span>);</span><br><span class="line">            <span class="type">short</span> <span class="variable">gender</span> <span class="operator">=</span> resultSet.getShort(<span class="string">&quot;gender&quot;</span>);</span><br><span class="line">            <span class="type">String</span> <span class="variable">phone</span> <span class="operator">=</span> resultSet.getString(<span class="string">&quot;phone&quot;</span>);</span><br><span class="line"></span><br><span class="line">            <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>(id,name,age,gender,phone);</span><br><span class="line">            userList.add(user);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//5. 释放资源</span></span><br><span class="line">        statement.close();</span><br><span class="line">        connection.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="MyBatis使用流程"><a href="#MyBatis使用流程" class="headerlink" title="MyBatis使用流程"></a>MyBatis使用流程</h2><ul>
-<li>1.准备工作(创建springboot工程、数据库表user、实体类User)</li>
-<li>2.引入Mybatis的相关依赖，配置Mybatis</li>
-<li>3.编写SQL语句(注解/XML)</li>
-</ul>
-<h2 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h2><ul>
-<li>数据库连接池是个容器，负责分配、管理数据库连接(Connection)</li>
-<li>它允许应用程序重复使用一个现有的数据库连接，而不是再重新建立一个</li>
-<li>释放空闲时间超过最大空闲时间的连接，来避免因为没有释放连接而引起的数据库连接遗漏</li>
-</ul>
-<blockquote>
-<p>优点：</p>
-<ul>
-<li>资源重用</li>
-<li>提升系统响应速度</li>
-<li>避免数据库连接遗漏</li>
-</ul>
-</blockquote>
-<h2 id="lombok"><a href="#lombok" class="headerlink" title="lombok"></a>lombok</h2><p>Lombok是一个实用的Java类库，能通过注解的形式自动生成构造器、getter/setter、equals、hashcode、toString等方法，并可以自动化生成日志变量，简化java开发、提高效率。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>注解</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>@Getter/ @Setter</td>
-<td>为所有的属性提供get/set方法</td>
-</tr>
-<tr>
-<td>@ToString</td>
-<td>会给类自动生成易阅读的toString方法</td>
-</tr>
-<tr>
-<td>@EqualsAndHashcode</td>
-<td>根据类所拥有的非静态字段自动重写equals方法和 hashCode方法</td>
-</tr>
-<tr>
-<td><strong>@Data</strong></td>
-<td>提供了更综合的生成代码功能(@Getter + @Setter +@ToString +@EqualsAndHashCode)</td>
-</tr>
-<tr>
-<td><strong>@NoArgsConstructor</strong></td>
-<td>为实体类生成无参的构造器方法</td>
-</tr>
-<tr>
-<td><strong>@AllArgsConstructor</strong></td>
-<td>为实体类生成除了static修饰的字段之外带有各参数的构造器方法。</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="第一步：准备工作"><a href="#第一步：准备工作" class="headerlink" title="第一步：准备工作"></a>第一步：准备工作</h1><ul>
-<li>准备好数据库表 Emp （员工表）</li>
-<li>创建一个新的springboot工程，选择引入对应的起步依赖（mybatis、mysql驱动、lombok）</li>
-<li>application.properties中引入数据库连接信息</li>
-<li>创建对应的实体类Emp（实体类属性采用驼峰命名）</li>
-<li>准备Mapper接口EmpMapper（加上Mapper接口）</li>
-</ul>
-<h1 id="第二步：先开发简单的增删改查Mapper"><a href="#第二步：先开发简单的增删改查Mapper" class="headerlink" title="第二步：先开发简单的增删改查Mapper"></a>第二步：先开发简单的增删改查Mapper</h1><ul>
-<li>使用@Delete @Insert @Select</li>
-</ul>
-<blockquote>
-<p>注意SQL语句中的占位符 #{变量名}</p>
-<p>注意接口方法的返回值现在先可以自己定义，在后期会统一换成自己设定的Result类，确保返回给前端的数据解析方便</p>
-</blockquote>
-<ul>
-<li><p>每次开发好一个接口方法时，进行测试，确保测试的覆盖率</p>
-</li>
-<li><p>application.properties配置mybatis的日志，指定输出到控制台</p>
-</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#配置mybatis的日志，指定输出到控制台</span><br><span class="line">mybatis.configuration.log-impl=org.apache.ibatis.logging.stdout.StdoutImpl</span><br></pre></td></tr></table></figure>
-<p>==注意变量名与pojo中一致，表示获取实体类的属性==</p>
-<h2 id="预编译SQL"><a href="#预编译SQL" class="headerlink" title="预编译SQL"></a>预编译SQL</h2><blockquote>
-<p>为什么java会使用预编译的SQL语句？</p>
-<ul>
-<li>性能更高</li>
-<li>更安全（防止SQL注入）</li>
-</ul>
-<p>java项目在执行SQL语句时的步骤</p>
-<ul>
-<li>缓存<ul>
-<li>SQL语法解析检查</li>
-<li>优化SQL</li>
-<li>编译SQL</li>
-</ul>
-</li>
-<li>执行SQL</li>
-</ul>
-</blockquote>
-<p>为什么性能更高呢？</p>
-<blockquote>
-<p>例如：</p>
-<p>delete from emp where id = 1;</p>
-<p>delete from emp where id = 2;</p>
-<p>delete from emp where id = 3;</p>
-<p>上述三条不进行预编译会缓存编译三次</p>
-<p>预编译如下添加占位符：</p>
-<p>delete from emp where id = ?</p>
-<p>1 2 3</p>
-<p>缓存编译一次</p>
-</blockquote>
-<p>为什么更安全呢？</p>
-<p>SQL注入是通过操作输入的数据来修改事先定义好的SQL语句，以达到执行代码对服务器进行攻击的方法</p>
-<blockquote>
-<p>解决了SQL注入</p>
-<p>例如正常的账号 wang 密码 123456</p>
-<p>SQL语句：select conut(*) from emp where username = ‘wang’ and password = ‘123456’;</p>
-<p>SQL注入攻击：</p>
-<p>账号：whatever 密码 ‘ or ’1‘ = ’1</p>
-<p>SQL语句：select conut(*) from emp where username = ‘whatever’ and password = ‘==‘ or ’1‘ = ’1==’;</p>
-<p>上述语句必然成立，达到了攻击的效果</p>
-<p>预编译SQL：</p>
-<p>SQL语句：select count(*) from emp where username =? and password = ?</p>
-<p>参数传递，避免了SQL注入</p>
-</blockquote>
-<ul>
-<li>==使用预编译SQL语句（#{}）==</li>
-<li>==使用拼接SQL语句（${}）==</li>
-</ul>
-<h2 id="如何拿到主键值？"><a href="#如何拿到主键值？" class="headerlink" title="如何拿到主键值？"></a>如何拿到主键值？</h2><p>正常的属性方法getId无法拿到主键值，需要使用注解</p>
-<blockquote>
-<p>@Options(keyProperty=“id”, useGeneratedKeys=true)</p>
-<p>useGeneratedKeys=true代表我们需要拿到主键，keyProperty=‘Id’表示我们需要将主键封装的emp的Id中去</p>
-</blockquote>
-<h2 id="数据封装"><a href="#数据封装" class="headerlink" title="数据封装"></a>数据封装</h2><ul>
-<li><p>实体类属性名和数据库表查询返回的字段名一致，mybatis会自动封装。</p>
-</li>
-<li><p>实体类属性名和数据库表查询返回的字段名不一致，不能自动封装。</p>
-</li>
-</ul>
-<p>如何封装</p>
-<ul>
-<li>1.为字段不同的字段起别名，就是SQL中的as起别名，将别名与实体类属性名一致即可</li>
-<li>2.通过@Results，@Result注解手动映射封装（不建议）</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Results(&#123;</span></span><br><span class="line"><span class="meta">	@Result(column = &quot;dept_id&quot;, property = &quot;deptId&quot; ),</span></span><br><span class="line"><span class="meta">	@Result(column = &quot;create_time&quot;, property = &quot;createTime&quot;)</span></span><br><span class="line"><span class="meta">    @Result(column = &quot;update_time&quot;, property = &quot;updateTime&quot;)</span></span><br><span class="line"><span class="meta">&#125;)</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>3.开启Mybatis驼峰命名映射开关（==建议，但是要确保开发时的命名规范==）</li>
-</ul>
-<p>application.properties配置mybatis的驼峰命名映射开关</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#开启mybatis的驼峰命名自动映射开关a_column ------&gt; aCloumn</span><br><span class="line">mybatis.configuration.map-underscore-to-camel-case=true</span><br></pre></td></tr></table></figure>
-<h2 id="注意-的使用时机"><a href="#注意-的使用时机" class="headerlink" title="注意${}的使用时机"></a>注意${}的使用时机</h2><h1 id="不能出现在引号中，所以类似于SQL中的like-‘-name-’-这类模糊匹配需要改为"><a href="#不能出现在引号中，所以类似于SQL中的like-‘-name-’-这类模糊匹配需要改为" class="headerlink" title="{}不能出现在引号中，所以类似于SQL中的like ‘%#{name}%’ 这类模糊匹配需要改为"></a>{}不能出现在引号中，所以类似于SQL中的like ‘%#{name}%’ 这类模糊匹配需要改为</h1><ul>
-<li>like ‘%${name}%’    ==性能低，存在SQL注入攻击问题==</li>
-<li>concat(‘%’, #{name}, ‘%’) ==性能高，更安全==</li>
-</ul>
-<h2 id="XML映射文件"><a href="#XML映射文件" class="headerlink" title="XML映射文件"></a>XML映射文件</h2><p><strong>规范</strong></p>
-<ul>
-<li>XML映射文件的名称与Mapper接口名称一致，并且将XML映射文件和Mapper接口放置在相同包下(同包同名)</li>
-<li>XML映射文件的namespace属性为Mapper接口全限定名一致。</li>
-<li>XML映射文件中sql语句的id与Mapper接口中的方法名一致，并保持返回类型一致。</li>
-</ul>
-<p><img src="https://wang-nine.cn//images/MyBatis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8.png" alt="image-20231128144916042"></p>
-<h2 id="动态SQL"><a href="#动态SQL" class="headerlink" title="动态SQL"></a>动态SQL</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>标签</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\<if> \</if></td>
-<td>用于判断条件是否成立。使用test属性进行条件判断，如果条件为true，则拼接SQL</td>
-</tr>
-<tr>
-<td>\<where>\</where></td>
-<td>where 元素只会在子元素有内容的情况下才插入where子句。而且会自动去除子句的开头的AND或OR。</td>
-</tr>
-<tr>
-<td>\<set>\</set></td>
-<td>动态地在行首插入SET关键字，并会删掉额外的逗号。(用在update语句中)</td>
-</tr>
-<tr>
-<td>\<foreach 五个属性>\</foreach></td>
-<td>collection:遍历的集合<br>item:遍历出来的元素<br>separator:分隔符<br>open:遍历开始前拼接的SQL工片段<br>close:遍历结束后拼接的SQL片段</td>
-</tr>
-<tr>
-<td>\<sql id=>\</sql></td>
-<td>抽取相同的SQL片段</td>
-</tr>
-<tr>
-<td>\<include refid=>\</include></td>
-<td>引用SQL片段</td>
-</tr>
-</tbody>
-</table>
-</div>
-]]></content>
-      <categories>
-        <category>Mybatis</category>
-      </categories>
-      <tags>
-        <tag>Mybatis</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SpringBoot基础原理</title>
     <url>/posts/20005.html</url>
     <content><![CDATA[<p>优先级(低→高)</p>
@@ -9053,6 +9053,11 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>关于</title>
     <url>/about/index.html</url>
     <content><![CDATA[]]></content>
@@ -9060,11 +9065,6 @@
   <entry>
     <title>相册</title>
     <url>/gallery/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>分类</title>
-    <url>/categories/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
