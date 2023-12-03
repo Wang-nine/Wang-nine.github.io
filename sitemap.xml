@@ -695,7 +695,7 @@
   </url>
   
   <url>
-    <loc>https://wang-nine.cn/tags/index.html</loc>
+    <loc>https://wang-nine.cn/categories/index.html</loc>
     
     <lastmod>2023-05-19</lastmod>
     
@@ -704,7 +704,7 @@
   </url>
   
   <url>
-    <loc>https://wang-nine.cn/categories/index.html</loc>
+    <loc>https://wang-nine.cn/tags/index.html</loc>
     
     <lastmod>2023-05-19</lastmod>
     
@@ -752,14 +752,14 @@
   </url>
   
   <url>
-    <loc>https://wang-nine.cn/tags/MySQL/</loc>
+    <loc>https://wang-nine.cn/tags/JavaScript/</loc>
     <lastmod>2023-12-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wang-nine.cn/tags/JavaScript/</loc>
+    <loc>https://wang-nine.cn/tags/MySQL/</loc>
     <lastmod>2023-12-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -801,13 +801,6 @@
   </url>
   
   <url>
-    <loc>https://wang-nine.cn/tags/SpringBoot/</loc>
-    <lastmod>2023-12-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://wang-nine.cn/tags/Mybatis/</loc>
     <lastmod>2023-12-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -823,6 +816,13 @@
   
   <url>
     <loc>https://wang-nine.cn/tags/JUC/</loc>
+    <lastmod>2023-12-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wang-nine.cn/tags/SpringBoot/</loc>
     <lastmod>2023-12-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -852,14 +852,14 @@
   </url>
   
   <url>
-    <loc>https://wang-nine.cn/categories/MySQL/</loc>
+    <loc>https://wang-nine.cn/categories/JavaScript/</loc>
     <lastmod>2023-12-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wang-nine.cn/categories/JavaScript/</loc>
+    <loc>https://wang-nine.cn/categories/MySQL/</loc>
     <lastmod>2023-12-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -908,13 +908,6 @@
   </url>
   
   <url>
-    <loc>https://wang-nine.cn/categories/SpringBoot/</loc>
-    <lastmod>2023-12-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://wang-nine.cn/categories/Mybatis/</loc>
     <lastmod>2023-12-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -930,6 +923,13 @@
   
   <url>
     <loc>https://wang-nine.cn/categories/JUC/</loc>
+    <lastmod>2023-12-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wang-nine.cn/categories/SpringBoot/</loc>
     <lastmod>2023-12-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
