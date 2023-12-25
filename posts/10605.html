@@ -1,0 +1,453 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>SpringCloud05-Nacos | 玖</title><meta name="author" content="Wang-nine"><meta name="copyright" content="Wang-nine"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="简单的介绍了SpringCloud中的Nacos。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringCloud05-Nacos">
+<meta property="og:url" content="https://wang-nine.cn/posts/10605.html">
+<meta property="og:site_name" content="玖">
+<meta property="og:description" content="简单的介绍了SpringCloud中的Nacos。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8007.jpg">
+<meta property="article:published_time" content="2023-06-30T14:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-20T06:26:27.635Z">
+<meta property="article:author" content="Wang-nine">
+<meta property="article:tag" content="SpringCloud">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8007.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://wang-nine.cn/posts/10605.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'SpringCloud05-Nacos',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-12-20 14:26:27'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom/background.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/custom/double_row.css"><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4081150_5yur020zy1i.css"><link rel="stylesheet" href="/css/custom/twikoo_beautify.css"><link rel="stylesheet" href="/css/custom/header_beautify.css"><link rel="stylesheet" href="/css/custom/starlight.css"><link rel="stylesheet" href="/css/custom/title_font.css"><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">74</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child" style="left:-55px;"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child" style="left:-55px;"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8007.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="玖"><span class="site-name">玖</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child" style="left:-55px;"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child" style="left:-55px;"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">SpringCloud05-Nacos</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-30T14:00:00.000Z" title="发表于 2023-06-30 22:00:00">2023-06-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-12-20T06:26:27.635Z" title="更新于 2023-12-20 14:26:27">2023-12-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/SpringCloud/">SpringCloud</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="SpringCloud05-Nacos"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/10605.html#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>简单的介绍了SpringCloud中的Nacos。</p>
+<span id="more"></span>
+<h1 id="Nacos注册中心"><a href="#Nacos注册中心" class="headerlink" title="Nacos注册中心"></a>Nacos注册中心</h1><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">startup.cmd -m standalone</span><br></pre></td></tr></table></figure>
+<h2 id="注册与发现"><a href="#注册与发现" class="headerlink" title="注册与发现"></a>注册与发现</h2><p>由于SpringCloud Commons定义了统一的接口规范</p>
+<p>所以只需要改变引入的依赖和地址即可</p>
+<ol>
+<li><strong>在cloud-demo父工程中添加spring-cloud-alilbaba的管理依赖:</strong></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alibaba.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-alibaba-dependencies&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;<span class="number">2.2</span><span class="number">.5</span>.RELEASE&lt;/version&gt;</span><br><span class="line">    &lt;type&gt;pom&lt;/type&gt;</span><br><span class="line">    &lt;scope&gt;<span class="keyword">import</span>&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>注释掉order-service和user-service中原有的eureka依赖。</strong></li>
+<li><strong>添加nacos的客户端依赖</strong></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;!-- nacos客户端依赖 --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;com.alibaba.cloud&lt;/groupId&gt;</span><br><span class="line">	&lt;arifactId&gt;spring-cloud-starter-alibaba-nacos-discovery&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>修改user-service&amp;order-service中的application.yml文件，注释eureka地址，添加nacos地址</strong></li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">cloud:</span></span><br><span class="line">		<span class="attr">discovery:</span></span><br><span class="line">			<span class="attr">nacos:</span></span><br><span class="line">				<span class="attr">server-addr:</span> <span class="string">localhost:8848</span> <span class="comment"># nacos服务端地址</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p><strong>启动并测试</strong></p>
+</li>
+<li><p><strong>总结</strong></p>
+<ol>
+<li>Nacos服务搭建<ul>
+<li>下载安装包</li>
+<li>解压</li>
+<li>在bin目录下运行指令: startup.cmd -m standalone</li>
+</ul>
+</li>
+<li>Nacos服务注册或发现<ul>
+<li>引入nacos.discovery依赖</li>
+<li>配置nacos地址spring.cloud.discovery.nacos.server-addr</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="Nacos服务分级存储模型"><a href="#Nacos服务分级存储模型" class="headerlink" title="Nacos服务分级存储模型"></a>Nacos服务分级存储模型</h2><p>xxxxxxxxxx6 1ribbon:2    eager-load:3        enabled: true # 开启饥饿加载4        clients: userservice # 指定对userservice这个服务饥饿加载5            - userservice16            - userservice2yaml</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">cloud:</span></span><br><span class="line">		<span class="attr">nacos:</span></span><br><span class="line">			<span class="attr">server-addr:</span> <span class="string">localhost:8848</span> <span class="comment"># nacos服务端地址</span></span><br><span class="line">			<span class="attr">discovery:</span></span><br><span class="line">				<span class="attr">cluster-name:</span> <span class="string">HZ</span> <span class="comment">#配置集群名称，也就是机房位置，例如:HZ，杭州</span></span><br></pre></td></tr></table></figure>
+<p><strong>总结</strong></p>
+<ol>
+<li><p>Nacos服务分级存储模型</p>
+<ul>
+<li>一级是服务，例如userservice</li>
+<li>二级是集群，例如杭州或上海</li>
+<li>三级是实例，例如杭州机房的某台部署了userservice的服务器</li>
+</ul>
+</li>
+<li>如何设置实例的集群属性<ul>
+<li>修改application.yml文件，添加spring.cloud.nacos.discovery.cluster-name属性即可<br>心</li>
+</ul>
+</li>
+</ol>
+<h3 id="那么如何设置orderservice也进行集群属性配置使得远程调用可以优先调用本地的集群"><a href="#那么如何设置orderservice也进行集群属性配置使得远程调用可以优先调用本地的集群" class="headerlink" title="那么如何设置orderservice也进行集群属性配置使得远程调用可以优先调用本地的集群?"></a>那么如何设置orderservice也进行集群属性配置使得远程调用可以优先调用本地的集群?</h3><ul>
+<li><strong>1.修改order-service中的application.yml，设置集群</strong></li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">cloud:</span></span><br><span class="line">		<span class="attr">nacos:</span></span><br><span class="line">			<span class="attr">server-addr:</span> <span class="string">localhost:8848</span> <span class="comment"># nacos服务端地址</span></span><br><span class="line">			<span class="attr">discovery:</span></span><br><span class="line">				<span class="attr">cluster-name:</span> <span class="string">HZ</span> <span class="comment"># 配置集群名称，也就是机房位置，例如:HZ，杭州</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>2.在order-service中设置负载均衡的IRule为NacosRule，这个规则会优先寻找与自己同集群的服务</strong></li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">userservice:</span></span><br><span class="line">	<span class="attr">ribbon:</span></span><br><span class="line">		<span class="attr">NFLoadBalancerRuleClassName:</span> <span class="string">com.alibaba.cloud.nacos.ribbon.NacosRule</span> <span class="comment"># 负载均衡规则</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>3.注意将user-service的权重都设置为1</strong></li>
+</ul>
+<p><strong>Nacos负载均衡的策略：先访问本地的集群，在本地的集群内随机负载均衡</strong></p>
+<h3 id="那么如何进行根据权重负载均衡呢"><a href="#那么如何进行根据权重负载均衡呢" class="headerlink" title="那么如何进行根据权重负载均衡呢?"></a>那么如何进行根据权重负载均衡呢?</h3><p>Nacos提供了权重配置来控制访问的频次</p>
+<p>在Nacos页面进行权重配置即可</p>
+<p><strong>权重为0即为停止访问，可以用来停机进行版本升级，再小量的提升权重，放入小部分用户进行测试，若无问题则调整群众，进行一个平滑的升级</strong></p>
+<h2 id="Nacos的环境隔离-namespace"><a href="#Nacos的环境隔离-namespace" class="headerlink" title="Nacos的环境隔离-namespace"></a>Nacos的环境隔离-namespace</h2><p><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/SpringCloud05-01Nacos%E7%8E%AF%E5%A2%83%E9%9A%94%E7%A6%BB.png" alt="SpringCloud05-01Nacos环境隔离"></p>
+<p>修改命名空间：修改order-service的application.yml，添加namespace:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">cloud:</span></span><br><span class="line">		<span class="attr">nacos:</span></span><br><span class="line">			<span class="attr">server-addr:</span> <span class="string">localhost:8848</span> <span class="comment"># nacos服务端地址</span></span><br><span class="line">			<span class="attr">discovery:</span></span><br><span class="line">				<span class="attr">cluster-name:</span> <span class="string">HZ</span> <span class="comment"># 配置集群名称，也就是机房位置，例如:HZ，杭州</span></span><br><span class="line">				<span class="attr">namespace:</span> <span class="string">492a7d5d-237b-46a1-a99a-fa8e98e4b0f9</span> <span class="comment">#命名空间，填ID</span></span><br></pre></td></tr></table></figure>
+<p><strong>Nacos环境隔离</strong></p>
+<ul>
+<li>namespace用来做环境隔离</li>
+<li>每个namespace都有唯一id</li>
+<li>不同namespace下的服务不可见</li>
+</ul>
+<h1 id="Nacos注册中心细节"><a href="#Nacos注册中心细节" class="headerlink" title="Nacos注册中心细节"></a>Nacos注册中心细节</h1><p><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/SpringCloud05-02Nacos%E7%BB%86%E8%8A%82.png" alt="SpringCloud05-02Nacos细节"></p>
+<p>非临时实例：yml中的discovery:ephemeral: false</p>
+<p>1.Nacos与eureka的共同点</p>
+<ul>
+<li>都支持服务注册和服务拉取</li>
+<li>都支持服务提供者心跳方式做健康检测</li>
+</ul>
+<p>2.Nacos与Eureka的区别</p>
+<ul>
+<li>Nacos支持服务端主动检测提供者状态:临时实例采用心跳模式，非临时实例采用主动检测模式</li>
+<li>临时实例心跳不正常会被剔除，非临时实例则不会被剔除</li>
+<li>Nacos支持服务列表变更的消息推送模式，服务列表更新更及时</li>
+<li>Nacos集群默认采用AP方式，当集群中存在非临时实例时，采用CP模式;Eureka采用AP方式</li>
+</ul>
+<h1 id="Nacos配置管理"><a href="#Nacos配置管理" class="headerlink" title="Nacos配置管理"></a>Nacos配置管理</h1><h2 id="统一配置管理"><a href="#统一配置管理" class="headerlink" title="统一配置管理"></a>统一配置管理</h2><p>需求：</p>
+<ul>
+<li>配置更改热更新</li>
+</ul>
+<p>如何管理：Nacos表单填写配置名称</p>
+<ul>
+<li>Data ID: 配置文件的id:[服务名称]-[profile].[后缀名]</li>
+<li>Group：分组：默认即可</li>
+<li>格式：建议yaml</li>
+</ul>
+<p>有个问题：Nacos的地址存于application.yml ，如何先读取到naocs地址呢？</p>
+<p>有个bootstrap.yml优先级高于本地的配置文件，写在其中即可</p>
+<p><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/SpringCloud05-03Nacos%E9%85%8D%E7%BD%AE%E8%AF%BB%E5%8F%96.png" alt="SpringCloud05-03Nacos配置读取"></p>
+<p><strong>配置步骤如下</strong></p>
+<ul>
+<li>1.引入Nacos的配置管理客户端依赖:</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- nacos配置管理依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-alibaba-nacos-config<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.在userservice中的resource目录添加一个bootstrap.yml文件，这个文件是引导文件，优先级高于application.yml:</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">application:</span></span><br><span class="line">		<span class="attr">name :</span> <span class="string">userservice</span> <span class="comment">#服务名称</span></span><br><span class="line">	<span class="attr">profiles:</span></span><br><span class="line">		<span class="attr">active:</span> <span class="string">dev</span> <span class="comment">#开发环境，这里是dev</span></span><br><span class="line">	<span class="attr">cloud:</span></span><br><span class="line">		<span class="attr">nacos:</span></span><br><span class="line">			<span class="attr">server-addr:</span> <span class="string">localhost:8848</span> <span class="comment">#Nacos地址</span></span><br><span class="line">			<span class="attr">config:</span></span><br><span class="line">				<span class="attr">file-extension:</span> <span class="string">yaml</span> <span class="comment">#文件后缀名</span></span><br></pre></td></tr></table></figure>
+<p>中间的三项配置即为Data ID</p>
+<p>==将配置交给Nacos管理的步骤==</p>
+<ul>
+<li>1.在Nacos中添加配置文件</li>
+<li>在微服务中引入nacos的config依赖</li>
+<li>在微服务中添加bootstrap.yml，配置nacos地址、当前环境、服务名称、文件后缀名。这些决定了程序启动时去nacos读取哪个文件</li>
+</ul>
+<p>==如何进行热更新==</p>
+<p><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/SpringCloud05-04Nacos%E7%83%AD%E6%9B%B4%E6%96%B001.png" alt="SpringCloud05-04Nacos热更新01"></p>
+<p><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/SpringCloud05-04Nacos%E7%83%AD%E6%9B%B4%E6%96%B002.png" alt="SpringCloud05-04Nacos热更新02"></p>
+<p>Nacos配置更改后，微服务可以实现热更新，方式:</p>
+<p>通过@Value注解注入，结合@RefreshScope来刷新</p>
+<p>通过@ConfigurationProperties注入</p>
+<p><strong>自动刷新注意事项：</strong></p>
+<ul>
+<li>不是所有的配置都适合放到配置中心，维护起来比较麻烦</li>
+<li>建议将一些关键参数，需要运行时调整的参数放到nacos配置中心，一般都是自定义配置</li>
+</ul>
+<p><strong>共享配置</strong></p>
+<ul>
+<li>微服务会从nacos读取的配置文件：<ul>
+<li>[服务名]-[spring.profile.active].yaml，环境配置</li>
+<li>[服务名].yaml，默认配置，多环境共享</li>
+</ul>
+</li>
+<li>优先级：<ul>
+<li>[服务名]-[环境].yaml &gt;[服务名].yaml &gt;本地配置</li>
+</ul>
+</li>
+</ul>
+<h1 id="Nacos集群"><a href="#Nacos集群" class="headerlink" title="Nacos集群"></a>Nacos集群</h1><p><img src="/img/loading.gif" data-original="https://wang-nine.cn//images/SpringCloud05-05Nacos%E9%9B%86%E7%BE%A4.png" alt="image-20231216174727586"></p>
+<p><strong>集群搭建步骤：</strong></p>
+<ul>
+<li>搭建MySQL集群并初始化数据库表</li>
+<li>下载解压nacos</li>
+<li>修改集群配置（节点信息）、数据库配置</li>
+<li>分别启动多个nacos节点</li>
+<li>nginx反向代理</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://wang-nine.cn">Wang-nine</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://wang-nine.cn/posts/10605.html">https://wang-nine.cn/posts/10605.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://wang-nine.cn" target="_blank">玖</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/SpringCloud/">SpringCloud</a></div><div class="post_share"><div class="social-share" data-image="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8007.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/10700.html" title="Redis00-基础"><img class="cover" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8003.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Redis00-基础</div></div></a></div><div class="next-post pull-right"><a href="/posts/10415.html" title="MySQL12-MVCC多版本并发控制"><img class="cover" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8005.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">MySQL12-MVCC多版本并发控制</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/10601.html" title="SpringCloud01-微服务简介"><img class="cover" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8002.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-28</div><div class="title">SpringCloud01-微服务简介</div></div></a></div><div><a href="/posts/10603.html" title="SpringCloud03-Eureka"><img class="cover" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8002.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-29</div><div class="title">SpringCloud03-Eureka</div></div></a></div><div><a href="/posts/10602.html" title="SpringCloud02-服务拆分"><img class="cover" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8002.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-29</div><div class="title">SpringCloud02-服务拆分</div></div></a></div><div><a href="/posts/10604.html" title="SpringCloud04-Ribbon负载均衡"><img class="cover" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8005.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-29</div><div class="title">SpringCloud04-Ribbon负载均衡</div></div></a></div><div><a href="/posts/10607.html" title="SpringCloud07-Gateway"><img class="cover" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8001.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-18</div><div class="title">SpringCloud07-Gateway</div></div></a></div><div><a href="/posts/10606.html" title="SpringCloud06-Feign"><img class="cover" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8001.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-16</div><div class="title">SpringCloud06-Feign</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Wang-nine</div><div class="author-info__description">天生我才</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">74</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Wang-nine"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Wang-nine" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1826967276@qq.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a><a class="social-icon" href="https://www.zhihu.com/people/Wang-nine" target="_blank" title="知乎"><i class="iconfont icon-shejiaotubiao-46"></i></a><a class="social-icon" href="https://blog.csdn.net/qq_55748865" target="_blank" title="CSDN"><i class="iconfont icon-csdn"></i></a><a class="social-icon" href="https://www.cnblogs.com/wang-nine/" target="_blank" title="博客园"><i class="iconfont icon-bokeyuan"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">正在制作博客中...</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Nacos%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83"><span class="toc-number">1.</span> <span class="toc-text">Nacos注册中心</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8"><span class="toc-number">1.1.</span> <span class="toc-text">启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0"><span class="toc-number">1.2.</span> <span class="toc-text">注册与发现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nacos%E6%9C%8D%E5%8A%A1%E5%88%86%E7%BA%A7%E5%AD%98%E5%82%A8%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">Nacos服务分级存储模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%A3%E4%B9%88%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AEorderservice%E4%B9%9F%E8%BF%9B%E8%A1%8C%E9%9B%86%E7%BE%A4%E5%B1%9E%E6%80%A7%E9%85%8D%E7%BD%AE%E4%BD%BF%E5%BE%97%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8%E5%8F%AF%E4%BB%A5%E4%BC%98%E5%85%88%E8%B0%83%E7%94%A8%E6%9C%AC%E5%9C%B0%E7%9A%84%E9%9B%86%E7%BE%A4"><span class="toc-number">1.3.1.</span> <span class="toc-text">那么如何设置orderservice也进行集群属性配置使得远程调用可以优先调用本地的集群?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%A3%E4%B9%88%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E6%A0%B9%E6%8D%AE%E6%9D%83%E9%87%8D%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E5%91%A2"><span class="toc-number">1.3.2.</span> <span class="toc-text">那么如何进行根据权重负载均衡呢?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nacos%E7%9A%84%E7%8E%AF%E5%A2%83%E9%9A%94%E7%A6%BB-namespace"><span class="toc-number">1.4.</span> <span class="toc-text">Nacos的环境隔离-namespace</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Nacos%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83%E7%BB%86%E8%8A%82"><span class="toc-number">2.</span> <span class="toc-text">Nacos注册中心细节</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Nacos%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">Nacos配置管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86"><span class="toc-number">3.1.</span> <span class="toc-text">统一配置管理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Nacos%E9%9B%86%E7%BE%A4"><span class="toc-number">4.</span> <span class="toc-text">Nacos集群</span></a></li></ol></div></div><div class="card-widget card-calendar"><div class="card-content"><div class="item-headline"><i class="fas fa-calendar"></i><span>文章写作日历</span></div><div class="widget" id="calendar"></div></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/10609.html" title="SpringCloud09-MQ"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8004.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringCloud09-MQ"/></a><div class="content"><a class="title" href="/posts/10609.html" title="SpringCloud09-MQ">SpringCloud09-MQ</a><time datetime="2023-12-24T09:00:00.000Z" title="发表于 2023-12-24 17:00:00">2023-12-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/10608.html" title="SpringCloud08-Docker"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8004.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringCloud08-Docker"/></a><div class="content"><a class="title" href="/posts/10608.html" title="SpringCloud08-Docker">SpringCloud08-Docker</a><time datetime="2023-12-20T06:30:00.000Z" title="发表于 2023-12-20 14:30:00">2023-12-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/10607.html" title="SpringCloud07-Gateway"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8001.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringCloud07-Gateway"/></a><div class="content"><a class="title" href="/posts/10607.html" title="SpringCloud07-Gateway">SpringCloud07-Gateway</a><time datetime="2023-12-18T05:00:00.000Z" title="发表于 2023-12-18 13:00:00">2023-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/10606.html" title="SpringCloud06-Feign"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8001.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringCloud06-Feign"/></a><div class="content"><a class="title" href="/posts/10606.html" title="SpringCloud06-Feign">SpringCloud06-Feign</a><time datetime="2023-12-16T09:00:00.000Z" title="发表于 2023-12-16 17:00:00">2023-12-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/10505.html" title="HTML5+CSS305-移动端Web"><img src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8002.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTML5+CSS305-移动端Web"/></a><div class="content"><a class="title" href="/posts/10505.html" title="HTML5+CSS305-移动端Web">HTML5+CSS305-移动端Web</a><time datetime="2023-12-07T05:30:00.000Z" title="发表于 2023-12-07 13:30:00">2023-12-07</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Wang-nine</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><a href="https://beian.miit.gov.cn/"  style="color:#f72b07" target="_blank">陕ICP备2023006499号-1</a></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'twikoo-7gm4lugp635e66a4',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'twikoo-7gm4lugp635e66a4',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.textContent = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script src="/js/custom/jquery.min.js"></script><script src="/js/custom/foot.js"></script><canvas id="universe"></canvas><script src="/js/custom/universe.js"></script><script src="/js/custom/switch.js" async></script><script type="text/javascript" src="https://cdn1.tianli0.top/npm/jquery@latest/dist/jquery.min.js"></script><script type="text/javascript" src="/js/languages.js"></script><script data-pjax type="text/javascript" src="/js/calendar.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="天,生,我,材,必,有,用,！" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="posts/10300.html" alt=""><img width="48" height="48" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8005.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-05-20</span><a class="blog-slider__title" href="posts/10300.html" alt="">SSM总览</a><div class="blog-slider__text">ssm教程总览</div><a class="blog-slider__button" href="posts/10300.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="posts/10700.html" alt=""><img width="48" height="48" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8003.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-06-30</span><a class="blog-slider__title" href="posts/10700.html" alt="">Redis00-基础</a><div class="blog-slider__text">Redis教程总览</div><a class="blog-slider__button" href="posts/10700.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="posts/10400.html" alt=""><img width="48" height="48" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8007.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-05-20</span><a class="blog-slider__title" href="posts/10400.html" alt="">MySQL总览</a><div class="blog-slider__text">MySQL数据库教程总览</div><a class="blog-slider__button" href="posts/10400.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="posts/10801.html" alt=""><img width="48" height="48" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8007.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-12-01</span><a class="blog-slider__title" href="posts/10801.html" alt="">JavaScript01-基础</a><div class="blog-slider__text">JavaScript01-基础</div><a class="blog-slider__button" href="posts/10801.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="posts/10800.html" alt=""><img width="48" height="48" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8006.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-12-01</span><a class="blog-slider__title" href="posts/10800.html" alt="">JavaScript总览</a><div class="blog-slider__text">JavaScript教程总览</div><a class="blog-slider__button" href="posts/10800.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="posts/10000.html" alt=""><img width="48" height="48" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8004.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-05-20</span><a class="blog-slider__title" href="posts/10000.html" alt="">博客搭建教程总览</a><div class="blog-slider__text">Hexo+Butterfly主题博客搭建教程总览</div><a class="blog-slider__button" href="posts/10000.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="posts/10500.html" alt=""><img width="48" height="48" src="/img/loading.gif" data-original="https://wang-nine.cn/images/%E5%8D%9A%E5%AE%A2%E5%A3%81%E7%BA%B8004.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-05-20</span><a class="blog-slider__title" href="posts/10500.html" alt="">HTML5+CSS3总览</a><div class="blog-slider__text">前端教程总览</div><a class="blog-slider__button" href="posts/10500.html" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><!-- hexo injector body_end end -->
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: true,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body></html>
