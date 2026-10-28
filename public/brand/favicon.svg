@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Wang-nine 小猫标记</title>
+  <desc id="desc">暮蓝底色上的奶油色猫脸与青色围巾。</desc>
+  <rect width="64" height="64" rx="16" fill="#243953"/>
+  <path fill="#f7efdf" d="M13 29c-2-7-2-15 0-20 7 2 12 7 15 11h8c3-4 8-9 15-11 2 5 2 13 0 20 4 4 6 9 4 14-3 8-12 11-23 11s-20-3-23-11c-2-5 0-10 4-14z"/>
+  <path fill="#e7c5ba" d="m17 16 7 7-7 3zM47 16l-7 7 7 3z"/>
+  <g fill="#263d55">
+    <ellipse cx="23" cy="36" rx="2" ry="3"/>
+    <ellipse cx="41" cy="36" rx="2" ry="3"/>
+    <path d="m29 42 3-2 3 2-3 3z"/>
+  </g>
+  <path fill="#7eafb5" d="M19 49q13 5 26 0l-1 6q-12 5-24 0z"/>
+</svg>
