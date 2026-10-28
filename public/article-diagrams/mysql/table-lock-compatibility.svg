@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="100%" role="img" aria-labelledby="title desc">
+  <title id="title">显式表读锁、表写锁与行锁的边界</title>
+  <desc id="desc">另一连接持有 LOCK TABLES READ 时，其他连接可读而写入等待；持有 WRITE 时，其他连接读写均等待。此表不描述普通 InnoDB 快照读。行锁的共享排他兼容规则另列。</desc>
+  <style>text{font-family:system-ui,'Microsoft YaHei',sans-serif;fill:#263d55;font-size:20px}.heading{font-size:32px;font-weight:700}.label{font-size:24px;font-weight:700}.note{font-size:18px}</style>
+  <rect width="1200" height="620" rx="24" fill="#ecf3eb"/>
+  <text x="48" y="60" class="heading">显式表锁：观察“其他连接”能否读写</text>
+  <text x="48" y="96" class="note">原理示意 · 对同一张表使用 LOCK TABLES；不把表锁规则套到 MVCC 快照读</text>
+  <rect x="48" y="144" width="1104" height="72" rx="12" fill="#d1e5e4"/>
+  <text x="72" y="188" class="label">连接 A 持有</text><text x="576" y="188" class="label">连接 B 读</text><text x="888" y="188" class="label">连接 B 写</text>
+  <rect x="48" y="232" width="1104" height="88" rx="12" fill="#f7efdf"/>
+  <text x="72" y="284">表读锁 READ</text><text x="576" y="284">允许</text><text x="888" y="284">等待</text>
+  <rect x="48" y="336" width="1104" height="88" rx="12" fill="#f7efdf"/>
+  <text x="72" y="388">表写锁 WRITE</text><text x="576" y="388">等待</text><text x="888" y="388">等待</text>
+  <text x="48" y="476" class="label">行级锁是另一种粒度</text>
+  <text x="48" y="516">同一索引记录：S 与 S 兼容；X 与 S、X 均冲突。</text>
+  <text x="48" y="552">锁定读需要相应的记录锁；普通一致性读根据 ReadView 选取可见版本。</text>
+  <text x="48" y="588" class="note">释放显式表锁：UNLOCK TABLES 或连接断开。兼容性用文字表达，不依赖颜色。</text>
+</svg>

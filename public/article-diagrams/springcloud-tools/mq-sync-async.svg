@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-labelledby="title desc">
+  <title id="title">同步调用与消息队列异步调用对比</title><desc id="desc">同步调用中调用方发出请求并等待处理方响应。异步调用中生产者发布消息到 Broker，消费者独立消费；发布确认与消费者业务完成是不同阶段，可靠性需要重试和幂等处理配合。</desc>
+  <!-- Contract: existing illustration palette; 8px grid; type 32/24/20. -->
+  <style>text{font-family:system-ui,sans-serif;fill:#263d55;font-size:20px}.title{font-size:32px;font-weight:700}.node{font-size:24px;font-weight:600}.edge{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#a)}.reply{stroke-dasharray:8 6}</style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#366775"/></marker></defs>
+  <rect width="960" height="560" fill="#ecf3eb"/><text x="40" y="56" class="title">同步等待结果，异步分离处理</text><text x="40" y="88">原理示意 · 不包含耗时或吞吐量测试数据</text>
+  <text x="40" y="144" class="node">同步调用</text>
+  <rect x="40" y="168" width="240" height="96" rx="16" fill="#d1e5e4"/><text x="64" y="208" class="node">调用方</text><text x="64" y="240">等待本次处理结果</text>
+  <rect x="680" y="168" width="240" height="96" rx="16" fill="#d1e5e4"/><text x="704" y="208" class="node">处理方</text><text x="704" y="240">执行业务并响应</text>
+  <path d="M280 192H680" class="edge"/><text x="440" y="176">请求</text><path d="M680 240H280" class="edge reply"/><text x="440" y="272">响应结果</text>
+  <text x="40" y="336" class="node">异步调用</text>
+  <rect x="40" y="360" width="240" height="96" rx="16" fill="#d1e5e4"/><text x="64" y="400" class="node">生产者</text><text x="64" y="432">发布事件或任务</text>
+  <rect x="360" y="360" width="240" height="96" rx="16" fill="#f7efdf"/><text x="384" y="400" class="node">Broker / MQ</text><text x="384" y="432">缓冲与投递消息</text>
+  <rect x="680" y="360" width="240" height="96" rx="16" fill="#d1e5e4"/><text x="704" y="400" class="node">消费者</text><text x="704" y="432">独立执行业务</text>
+  <path d="M280 408H360M600 408H680" class="edge"/><text x="288" y="384">发布</text><text x="608" y="384">消费</text>
+  <text x="40" y="496">发布确认 ≠ 消费者业务完成；结果可通过后续事件或查询获取。</text><text x="40" y="536">异步解耦与削峰依赖合理容量、持久化、失败重试和幂等设计。</text>
+</svg>

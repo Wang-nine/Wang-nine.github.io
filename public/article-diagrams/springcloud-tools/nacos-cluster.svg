@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-labelledby="title desc">
+  <title id="title">Nacos 集群与配置持久化</title><desc id="desc">客户端通过代理入口连接多个 Nacos 节点。节点维护集群关系，配置数据连接共享 MySQL 存储。图中的数据库仅表示配置持久化，不表示所有注册数据都由 MySQL 保存。</desc>
+  <!-- Contract: DESIGN.md cloud/haze/cream/ink/pine; 8px grid; typography 32/24/20. -->
+  <style>text{font-family:system-ui,sans-serif;fill:#263d55;font-size:20px}.title{font-size:32px;font-weight:700}.node{font-size:24px;font-weight:600}.edge{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#a)}</style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#366775"/></marker></defs>
+  <rect width="960" height="560" fill="#ecf3eb"/><text x="40" y="56" class="title">Nacos 集群：入口、节点、存储</text><text x="40" y="88">原理示意 · 端口与代理规则按所用版本配置</text>
+  <rect x="40" y="128" width="232" height="72" rx="16" fill="#d1e5e4"/><text x="64" y="172" class="node">微服务客户端</text>
+  <rect x="368" y="128" width="552" height="72" rx="16" fill="#f7efdf"/><text x="400" y="172" class="node">Nginx 代理入口 · 分发客户端连接</text><path d="M272 164H368" class="edge"/>
+  <path d="M648 200V232H176V264M648 232H784V264M480 232V264" class="edge"/>
+  <g fill="#d1e5e4"><rect x="40" y="264" width="272" height="88" rx="16"/><rect x="344" y="264" width="272" height="88" rx="16"/><rect x="648" y="264" width="272" height="88" rx="16"/></g>
+  <text x="72" y="316" class="node">Nacos 节点 A</text><text x="376" y="316" class="node">Nacos 节点 B</text><text x="680" y="316" class="node">Nacos 节点 C</text>
+  <path d="M176 352V392H480V424M784 352V392H480M480 352V424" class="edge"/>
+  <rect x="216" y="424" width="528" height="64" rx="16" fill="#f7efdf"/><text x="248" y="464" class="node">MySQL：共享的配置持久化存储</text>
+  <text x="40" y="528">节点互联由集群配置维护；代理不能替代节点之间的通信与存活管理。</text>
+</svg>

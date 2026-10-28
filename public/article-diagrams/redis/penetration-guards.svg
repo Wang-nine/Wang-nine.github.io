@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">用空值缓存与布隆过滤降低缓存穿透</title>
+  <desc id="desc">空值缓存将数据库查空结果短期保存，后续命中空值后直接返回。布隆过滤器判定一定不存在时拦截，判定可能存在时仍须查询缓存和数据库，不能当作存在证明。</desc>
+  <defs><style>text{font-family:"Microsoft YaHei","PingFang SC",sans-serif;fill:#263d55;font-size:22px}.title{font-size:32px;font-weight:700}.head{font-size:24px;font-weight:700}.note{font-size:20px}.box{fill:#d1e5e4;stroke:#263d55;stroke-width:2}.line{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#arrow)}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 10 5 0 10" fill="#366775"/></marker></defs>
+  <rect width="960" height="560" fill="#ecf3eb"/><text x="40" y="54" class="title">缓存穿透：让“不存在”也有处理路径</text>
+  <text x="40" y="116" class="head">方案一 · 缓存空对象</text>
+  <rect x="40" y="150" width="250" height="90" rx="8" class="box"/><text x="165" y="186" text-anchor="middle">缓存未命中</text><text x="165" y="219" text-anchor="middle">数据库也查空</text><path d="M290 195H365" class="line"/>
+  <rect x="375" y="150" width="240" height="90" rx="8" class="box"/><text x="495" y="186" text-anchor="middle">写入空值标记</text><text x="495" y="219" text-anchor="middle">设置较短 TTL</text><path d="M615 195H680" class="line"/>
+  <rect x="690" y="150" width="230" height="90" rx="8" class="box"/><text x="805" y="186" text-anchor="middle">后续命中空标记</text><text x="805" y="219" text-anchor="middle">直接返回不存在</text>
+  <text x="40" y="284" class="note">要区分“无缓存”和“缓存的空值”；新增数据后也要考虑空值记录的失效。</text>
+  <text x="40" y="342" class="head">方案二 · 布隆过滤器</text>
+  <rect x="40" y="376" width="250" height="80" rx="8" class="box"/><text x="165" y="424" text-anchor="middle">查询布隆过滤器</text>
+  <path d="M290 399H480" class="line"/><text x="316" y="382" class="note">一定不存在</text><rect x="490" y="370" width="430" height="56" rx="8" class="box"/><text x="514" y="406">直接拒绝该数据查询</text>
+  <path d="M290 437H400V477H480" class="line"/><text x="300" y="518" class="note">可能存在</text><rect x="490" y="450" width="430" height="56" rx="8" class="box"/><text x="514" y="486">继续查缓存，必要时查数据库</text>
+  <text x="490" y="540" class="note">可能误判；过滤器需与数据维护保持协调。</text>
+</svg>

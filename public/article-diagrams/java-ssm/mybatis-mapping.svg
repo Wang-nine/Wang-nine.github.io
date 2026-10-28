@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+<title id="title">MyBatis：接口、XML 与结果映射</title>
+<desc id="desc">Mapper 代理按接口全限定名和方法名定位 XML 语句，经 JDBC 执行 SQL，再将结果列映射到实体属性并返回调用者。</desc>
+<style>:root{--paper:#f7efdf;--panel:#ecf3eb;--wash:#d1e5e4;--ink:#263d55;--line:#366775}text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:var(--ink);font-size:18px}.title{font-size:20px;font-weight:700}.small{font-size:16px}.box{fill:var(--panel);stroke:var(--line);stroke-width:1.5}.wash{fill:var(--wash)}.flow{fill:none;stroke:var(--line);stroke-width:2;marker-end:url(#arrow)}</style>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8" fill="#366775"/></marker></defs>
+<path fill="#f7efdf" d="M0 0H960V560H0z"/>
+<text x="36" y="44" class="title">MyBatis 映射链路 · 原理示意</text>
+<text x="36" y="76" class="small">名称对应负责定位 SQL；结果映射负责把数据库列转换为 Java 属性。</text>
+<rect x="36" y="112" width="232" height="112" rx="8" class="box"/>
+<text x="56" y="145" class="title">Mapper 接口 / 代理</text><text x="56" y="178">接口全限定名</text><text x="56" y="206">方法名与参数</text>
+<path d="M268 168H366" class="flow"/><text x="280" y="147" class="small">定位语句</text>
+<rect x="368" y="112" width="252" height="112" rx="8" class="box wash"/>
+<text x="388" y="145" class="title">同名 XML 映射文件</text><text x="388" y="178">namespace = 接口全限定名</text><text x="388" y="206">语句 id = 方法名</text>
+<path d="M620 168H716" class="flow"/><text x="635" y="147" class="small">绑定参数</text>
+<rect x="720" y="112" width="204" height="112" rx="8" class="box"/>
+<text x="740" y="145" class="title">JDBC / 数据库</text><text x="740" y="178">执行 SQL</text><text x="740" y="206">返回结果集</text>
+<path d="M822 224V310" class="flow"/><text x="836" y="272" class="small">查询结果</text>
+<rect x="600" y="314" width="324" height="116" rx="8" class="box wash"/>
+<text x="620" y="347" class="title">结果列 → 实体属性</text><text x="620" y="380">同名 / 别名 / 显式结果映射</text><text x="620" y="408">下划线转驼峰：需开启配置</text>
+<path d="M600 372H402" class="flow"/><text x="433" y="352" class="small">封装并返回</text>
+<rect x="36" y="314" width="364" height="116" rx="8" class="box"/>
+<text x="56" y="347" class="title">调用方接收实体或集合</text><text x="56" y="380">SQL 的结果映射与接口返回类型对应</text><text x="56" y="408">例如员工记录封装为 Emp 对象</text>
+<text x="36" y="481">#{…} 用于参数绑定，不是直接拼接 SQL 文本。</text>
+<text x="36" y="515" class="small">本文按同包同名组织文件；还需确保 XML 作为运行时资源被正确加载。</text>
+</svg>

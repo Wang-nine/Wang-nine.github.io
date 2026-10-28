@@ -1,0 +1,11 @@
+[
+  {
+    "url": "http://wang-nine.cn/images/MySQL03-01-02B+%E6%A0%91.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![B+树索引结构示意](/article-diagrams/supplemental/b-plus-tree.svg)\n\n说明：图中数字均为示例键值。根节点以 20、40 作为分隔键，通过子指针将查找路由到相应键区间；全部示例记录保存在叶节点中，分隔键对应的记录也在叶层。叶节点内部及节点之间按键有序，相邻叶节点用双向链连接，体现 InnoDB 叶层顺序访问的概念。例如查询 20 ≤ 键 ≤ 48 时，先从根节点定位到包含 20 的叶节点，再沿叶链向右读取至 48。图中的“记录”泛指叶子索引记录：InnoDB 聚集索引的叶子保存行记录，二级索引的叶子包含索引列与对应主键；此图不表示实际物理页中的键排列、页内记录组织或容量。",
+    "assets": [
+      "/article-diagrams/supplemental/b-plus-tree.svg"
+    ],
+    "basis": "针对 src/content/posts/legacy/10404.md 第 68–78 行的 B+树结构样例及 InnoDB 双向叶链说明新绘制的原创概念图，不是原图片恢复、原图复刻或实际 InnoDB 页格式图。内容同时依据该文第 108–111 行对聚集索引和二级索引叶子内容的区分；根分隔键 20、40 与叶层九个键均为自行构造的教学示例，不宣称来自原图。原文提供的概念演示来源为 https://www.cs.usfca.edu/~galles/visualization/BPlusTree.html；未复制其图像、代码或版式。该精确 HTTP URL 在文章中出现一次，属于初次仅统计 HTTPS 时遗漏的独立项；父任务合并口径为 149 个 HTTPS URL、152 次引用，加本项后共 150 个不同 URL、153 次引用。"
+  }
+]

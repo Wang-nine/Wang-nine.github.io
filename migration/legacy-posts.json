@@ -1,0 +1,3588 @@
+[
+  {
+    "id": "1",
+    "sourcePath": "posts/1.html",
+    "sourceSha256": "61c4d955239221f19f3ea30a5518eb2c15eee9c4f59ad7e117cb9e23a67928a9",
+    "title": "博客更新文档",
+    "published": "2023-05-23T16:00:00.000Z",
+    "updated": "2023-12-01T13:41:38.008Z",
+    "slug": "1",
+    "legacyUrl": "/posts/1.html",
+    "canonicalPath": "/posts/1/",
+    "category": "工具与工程",
+    "tags": [
+      "博客搭建"
+    ],
+    "originalCategories": [
+      "博客搭建"
+    ],
+    "originalTags": [
+      "博客搭建"
+    ],
+    "description": "采用next主题，进行了主题优化",
+    "markdownPath": "src/content/posts/legacy/1.md",
+    "counts": {
+      "sourceBytes": 77282,
+      "markdownBytes": 8714,
+      "sourceProseChars": 2008,
+      "renderedProseChars": 2008,
+      "codeBlocks": 1,
+      "codeLines": 54,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10000",
+    "sourcePath": "posts/10000.html",
+    "sourceSha256": "28a5aef8b0ac72836a25824b1b7b46d83da085dabb72606660bffe2f4d143611",
+    "title": "博客搭建教程总览",
+    "published": "2023-05-19T16:00:00.000Z",
+    "updated": "2023-11-28T13:42:46.810Z",
+    "slug": "10000",
+    "legacyUrl": "/posts/10000.html",
+    "canonicalPath": "/posts/10000/",
+    "category": "工具与工程",
+    "tags": [
+      "博客搭建"
+    ],
+    "originalCategories": [
+      "博客搭建"
+    ],
+    "originalTags": [
+      "博客搭建"
+    ],
+    "description": "Hexo+Butterfly主题博客搭建01",
+    "markdownPath": "src/content/posts/legacy/10000.md",
+    "counts": {
+      "sourceBytes": 41947,
+      "markdownBytes": 712,
+      "sourceProseChars": 126,
+      "renderedProseChars": 126,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 3,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10001",
+    "sourcePath": "posts/10001.html",
+    "sourceSha256": "d106f3f39a2e867088a081b0569222f8a65c63f08f30adacff2d67bf0e6a2532",
+    "title": "Hexo+Butterfly主题博客搭建01",
+    "published": "2023-05-23T16:00:00.000Z",
+    "updated": "2023-11-25T13:03:10.230Z",
+    "slug": "10001",
+    "legacyUrl": "/posts/10001.html",
+    "canonicalPath": "/posts/10001/",
+    "category": "工具与工程",
+    "tags": [
+      "博客搭建"
+    ],
+    "originalCategories": [
+      "博客搭建"
+    ],
+    "originalTags": [
+      "博客搭建"
+    ],
+    "description": "Hexo+Butterfly主题博客搭建01 ——— 个人博客搭建的基础环境配置工作",
+    "markdownPath": "src/content/posts/legacy/10001.md",
+    "counts": {
+      "sourceBytes": 46510,
+      "markdownBytes": 3241,
+      "sourceProseChars": 747,
+      "renderedProseChars": 747,
+      "codeBlocks": 4,
+      "codeLines": 7,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 3,
+      "images": 3,
+      "localizedAssets": 0,
+      "unresolvedAssets": 3,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/Hexo01-01%E6%9F%A5%E7%9C%8Bnode%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Hexo01-02Git%E5%AE%89%E8%A3%85-1.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Hexo01-03github%E7%9A%84%E9%85%8D%E7%BD%AE.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "3 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10002",
+    "sourcePath": "posts/10002.html",
+    "sourceSha256": "f9df52d7df411224fb05c3e4c3749cb87d81bb3711d3e7699f6cea687afe574b",
+    "title": "Hexo-Butterfly主题博客搭建02",
+    "published": "2023-05-24T07:00:00.000Z",
+    "updated": "2023-11-25T13:03:13.962Z",
+    "slug": "10002",
+    "legacyUrl": "/posts/10002.html",
+    "canonicalPath": "/posts/10002/",
+    "category": "工具与工程",
+    "tags": [
+      "博客搭建"
+    ],
+    "originalCategories": [
+      "博客搭建"
+    ],
+    "originalTags": [
+      "博客搭建"
+    ],
+    "description": "Hexo+Butterfly主题博客搭建02 ——— 下载有关butterfly主题并进行配置",
+    "markdownPath": "src/content/posts/legacy/10002.md",
+    "counts": {
+      "sourceBytes": 42944,
+      "markdownBytes": 1646,
+      "sourceProseChars": 316,
+      "renderedProseChars": 316,
+      "codeBlocks": 3,
+      "codeLines": 7,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 1,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10003",
+    "sourcePath": "posts/10003.html",
+    "sourceSha256": "554e7ccab9884f08b803c9298e46ab47d4b3735ec18bbd451b8374786847de4c",
+    "title": "Hexo-Butterfly主题博客搭建03",
+    "published": "2023-05-25T07:00:00.000Z",
+    "updated": "2023-11-25T13:03:17.812Z",
+    "slug": "10003",
+    "legacyUrl": "/posts/10003.html",
+    "canonicalPath": "/posts/10003/",
+    "category": "工具与工程",
+    "tags": [
+      "博客搭建"
+    ],
+    "originalCategories": [
+      "博客搭建"
+    ],
+    "originalTags": [
+      "博客搭建"
+    ],
+    "description": "",
+    "markdownPath": "src/content/posts/legacy/10003.md",
+    "counts": {
+      "sourceBytes": 40068,
+      "markdownBytes": 410,
+      "sourceProseChars": 0,
+      "renderedProseChars": 0,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10101",
+    "sourcePath": "posts/10101.html",
+    "sourceSha256": "5ca990a8158476fe310d6eda700865f3c51ba81a197988eb17966b67422f4f34",
+    "title": "Java中的多线程",
+    "published": "2023-05-19T14:00:00.000Z",
+    "updated": "2023-12-08T11:42:34.811Z",
+    "slug": "10101",
+    "legacyUrl": "/posts/10101.html",
+    "canonicalPath": "/posts/10101/",
+    "category": "Java",
+    "tags": [
+      "JavaSE"
+    ],
+    "originalCategories": [
+      "JavaSE"
+    ],
+    "originalTags": [
+      "JavaSE"
+    ],
+    "description": "详细的描述了Java中多线程的创建、使用、同步问题，以及线程池的创建、使用问题，详细的描述了定时器的创建和使用，详细的分析了Java中六种不同的线程转态以及转换。",
+    "markdownPath": "src/content/posts/legacy/10101.md",
+    "counts": {
+      "sourceBytes": 140226,
+      "markdownBytes": 36249,
+      "sourceProseChars": 3424,
+      "renderedProseChars": 3424,
+      "codeBlocks": 21,
+      "codeLines": 640,
+      "tables": 14,
+      "tableCells": 102,
+      "links": 0,
+      "images": 9,
+      "localizedAssets": 0,
+      "unresolvedAssets": 9,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/JavaSE01-01%E9%94%99%E8%AF%AF%E6%A0%B7%E4%BE%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/JavaSE01-02%E6%AD%A3%E7%A1%AE%E6%A0%B7%E4%BE%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/JavaSE01-03%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1%E6%A0%B7%E4%BE%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/JavaSE01-04%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%8B%92%E7%BB%9D%E7%AD%96%E7%95%A5%E6%A0%B7%E4%BE%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/JavaSE01-05Runnable%E7%BA%BF%E7%A8%8B%E6%B1%A0%E8%BF%90%E8%A1%8C%E6%A0%B7%E4%BE%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/JavaSE01-06Callable%E7%BA%BF%E7%A8%8B%E6%B1%A0%E8%BF%90%E8%A1%8C%E6%A0%B7%E4%BE%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/JavaSE01-06Timer%E6%A0%B7%E4%BE%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/JavaSE01-07ScheduledExecutorService%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%A0%B7%E4%BE%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/JavaSE01-08%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "9 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10102",
+    "sourcePath": "posts/10102.html",
+    "sourceSha256": "7a481dfb204cd3d6c2373f238c4ab3a7b991ec1e3ca508a2c761b134f93dcdd6",
+    "title": "JavaSE02-Java中的文件与方法递归与IO流",
+    "published": "2023-06-24T15:00:00.000Z",
+    "updated": "2023-11-25T13:04:00.477Z",
+    "slug": "10102",
+    "legacyUrl": "/posts/10102.html",
+    "canonicalPath": "/posts/10102/",
+    "category": "Java",
+    "tags": [
+      "JavaSE"
+    ],
+    "originalCategories": [
+      "JavaSE"
+    ],
+    "originalTags": [
+      "JavaSE"
+    ],
+    "description": "详细的描述了Java中 File类的使用，一步一步剖析了IO流如何创建、如何使用以及其中的注意事项。",
+    "markdownPath": "src/content/posts/legacy/10102.md",
+    "counts": {
+      "sourceBytes": 49672,
+      "markdownBytes": 4831,
+      "sourceProseChars": 669,
+      "renderedProseChars": 669,
+      "codeBlocks": 1,
+      "codeLines": 11,
+      "tables": 4,
+      "tableCells": 42,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10103",
+    "sourcePath": "posts/10103.html",
+    "sourceSha256": "0b59d26755d0e5e517bc6670c017f1a32058ab9ddb87bad269bb263c5887ac64",
+    "title": "JavaSE03-Java高级",
+    "published": "2023-06-28T17:00:00.000Z",
+    "updated": "2023-11-25T13:04:01.445Z",
+    "slug": "10103",
+    "legacyUrl": "/posts/10103.html",
+    "canonicalPath": "/posts/10103/",
+    "category": "Java",
+    "tags": [
+      "JavaSE"
+    ],
+    "originalCategories": [
+      "JavaSE"
+    ],
+    "originalTags": [
+      "JavaSE"
+    ],
+    "description": "",
+    "markdownPath": "src/content/posts/legacy/10103.md",
+    "counts": {
+      "sourceBytes": 39153,
+      "markdownBytes": 366,
+      "sourceProseChars": 0,
+      "renderedProseChars": 0,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10300",
+    "sourcePath": "posts/10300.html",
+    "sourceSha256": "93d0662307a25d1cc3b9d5332bebfa85cceba681393f8e3458fa1b7e81833d88",
+    "title": "SSM总览",
+    "published": "2023-05-19T16:00:00.000Z",
+    "updated": "2023-11-28T13:52:59.425Z",
+    "slug": "10300",
+    "legacyUrl": "/posts/10300.html",
+    "canonicalPath": "/posts/10300/",
+    "category": "后端开发",
+    "tags": [
+      "Spring"
+    ],
+    "originalCategories": [
+      "SSM"
+    ],
+    "originalTags": [
+      "Spring"
+    ],
+    "description": "SSM01-Spring中的Bean",
+    "markdownPath": "src/content/posts/legacy/10300.md",
+    "counts": {
+      "sourceBytes": 44832,
+      "markdownBytes": 1024,
+      "sourceProseChars": 290,
+      "renderedProseChars": 290,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 8,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10301",
+    "sourcePath": "posts/10301.html",
+    "sourceSha256": "8c80ace727d690a93e71f1b319a17c628e66d8a77f60fb4ebb203404b8223b04",
+    "title": "SSM01-Spring中的Bean",
+    "published": "2023-05-23T04:00:00.000Z",
+    "updated": "2023-11-25T13:07:13.533Z",
+    "slug": "10301",
+    "legacyUrl": "/posts/10301.html",
+    "canonicalPath": "/posts/10301/",
+    "category": "后端开发",
+    "tags": [
+      "Spring"
+    ],
+    "originalCategories": [
+      "SSM"
+    ],
+    "originalTags": [
+      "Spring"
+    ],
+    "description": "简单的介绍了Spring中的架构以及IOC和DI。",
+    "markdownPath": "src/content/posts/legacy/10301.md",
+    "counts": {
+      "sourceBytes": 60665,
+      "markdownBytes": 6749,
+      "sourceProseChars": 1061,
+      "renderedProseChars": 1061,
+      "codeBlocks": 10,
+      "codeLines": 111,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 5,
+      "localizedAssets": 0,
+      "unresolvedAssets": 5,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/SSM01-01SpringFrameWork%E6%9E%B6%E6%9E%84.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SSM01-02%E9%9D%9ESpring%E7%8E%AF%E5%A2%83%E6%A0%B7%E4%BE%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SSM01-03%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SSM01-04Spring%E7%8E%AF%E5%A2%83%E6%A0%B7%E4%BE%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SSM01-05DI.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "5 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10302",
+    "sourcePath": "posts/10302.html",
+    "sourceSha256": "b5efc9107dd2a7a7b5e32828df9eff309dc29a45501e072ba7b174e91cf7d30c",
+    "title": "SSM02-Spring中Bean的实例化与依赖注入",
+    "published": "2023-05-23T09:00:00.000Z",
+    "updated": "2023-11-25T13:07:17.000Z",
+    "slug": "10302",
+    "legacyUrl": "/posts/10302.html",
+    "canonicalPath": "/posts/10302/",
+    "category": "后端开发",
+    "tags": [
+      "Spring"
+    ],
+    "originalCategories": [
+      "SSM"
+    ],
+    "originalTags": [
+      "Spring"
+    ],
+    "description": "详细的描述了Spring中Bean的实例化与依赖注入。",
+    "markdownPath": "src/content/posts/legacy/10302.md",
+    "counts": {
+      "sourceBytes": 91276,
+      "markdownBytes": 13898,
+      "sourceProseChars": 1854,
+      "renderedProseChars": 1854,
+      "codeBlocks": 21,
+      "codeLines": 230,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 8,
+      "localizedAssets": 0,
+      "unresolvedAssets": 8,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/SSM02-01%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SSM02-02%E9%9D%99%E6%80%81%E5%B7%A5%E5%8E%82.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SSM02-03FactoryBean.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SSM02-03FactoryBean.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SSM02-04%E9%9B%86%E5%90%88%E6%B3%A8%E5%85%A5.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SSM02-05%E5%AE%B9%E5%99%A8%E7%9B%B8%E5%85%B3.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SSM02-06bean%E7%9B%B8%E5%85%B3.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SSM02-07%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E7%9B%B8%E5%85%B3.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "8 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10303",
+    "sourcePath": "posts/10303.html",
+    "sourceSha256": "b3d693b9e4c3bbf5e20e640182966f5a2da4886d5999401b916135dbb294218f",
+    "title": "SSM03-Spring的纯注解开发模式",
+    "published": "2023-05-23T17:03:00.000Z",
+    "updated": "2023-11-25T13:07:21.937Z",
+    "slug": "10303",
+    "legacyUrl": "/posts/10303.html",
+    "canonicalPath": "/posts/10303/",
+    "category": "后端开发",
+    "tags": [
+      "Spring"
+    ],
+    "originalCategories": [
+      "SSM"
+    ],
+    "originalTags": [
+      "Spring"
+    ],
+    "description": "详细的描述了Spring中的注解开发。",
+    "markdownPath": "src/content/posts/legacy/10303.md",
+    "counts": {
+      "sourceBytes": 68609,
+      "markdownBytes": 9010,
+      "sourceProseChars": 1049,
+      "renderedProseChars": 1049,
+      "codeBlocks": 14,
+      "codeLines": 150,
+      "tables": 1,
+      "tableCells": 18,
+      "links": 0,
+      "images": 4,
+      "localizedAssets": 0,
+      "unresolvedAssets": 4,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/SSM03-01%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%E5%AE%9A%E4%B9%89Bean%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SSM03-02%E7%BA%AF%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%E4%BB%A3%E6%9B%BF.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SSM03-03%E7%BA%AF%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%E5%AE%9A%E4%B9%89Bean%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SSM03-04bean%E7%9A%84%E7%AE%A1%E7%90%86.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "4 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10304",
+    "sourcePath": "posts/10304.html",
+    "sourceSha256": "fd5a83c307e20a2f4a379dbedef566bc20b5c09d54e82ec01c8e07833d05c3bc",
+    "title": "SSM04-Spring整合MyBatis",
+    "published": "2023-05-27T11:00:00.000Z",
+    "updated": "2023-11-25T13:07:25.197Z",
+    "slug": "10304",
+    "legacyUrl": "/posts/10304.html",
+    "canonicalPath": "/posts/10304/",
+    "category": "后端开发",
+    "tags": [
+      "Spring"
+    ],
+    "originalCategories": [
+      "SSM"
+    ],
+    "originalTags": [
+      "Spring"
+    ],
+    "description": "详细的描述了Spring整合myBatis和Spring整合Junit。",
+    "markdownPath": "src/content/posts/legacy/10304.md",
+    "counts": {
+      "sourceBytes": 61262,
+      "markdownBytes": 6614,
+      "sourceProseChars": 377,
+      "renderedProseChars": 377,
+      "codeBlocks": 7,
+      "codeLines": 140,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10305",
+    "sourcePath": "posts/10305.html",
+    "sourceSha256": "acb85b6ed0c71fa28fd18ae53bb82ff2ce279043368555f39130e73c5ca1c059",
+    "title": "SSM05-Spring中的AOP概念",
+    "published": "2023-05-30T13:00:00.000Z",
+    "updated": "2023-12-07T05:05:11.290Z",
+    "slug": "10305",
+    "legacyUrl": "/posts/10305.html",
+    "canonicalPath": "/posts/10305/",
+    "category": "后端开发",
+    "tags": [
+      "Spring"
+    ],
+    "originalCategories": [
+      "SSM"
+    ],
+    "originalTags": [
+      "Spring"
+    ],
+    "description": "详细的描述了Spring中的AOP概念。",
+    "markdownPath": "src/content/posts/legacy/10305.md",
+    "counts": {
+      "sourceBytes": 61072,
+      "markdownBytes": 9140,
+      "sourceProseChars": 2470,
+      "renderedProseChars": 2470,
+      "codeBlocks": 5,
+      "codeLines": 42,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 2,
+      "localizedAssets": 0,
+      "unresolvedAssets": 2,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/SSM04-01AOP%E6%A0%B7%E4%BE%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn//images/SSM05-02AOP",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "2 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10306",
+    "sourcePath": "posts/10306.html",
+    "sourceSha256": "aceb4e0bef36dc55c4ae6457f1be387af2913b5537e353433ce73de986dd2310",
+    "title": "SSM06-Spring中的事务",
+    "published": "2023-06-03T10:00:00.000Z",
+    "updated": "2023-11-25T13:07:31.729Z",
+    "slug": "10306",
+    "legacyUrl": "/posts/10306.html",
+    "canonicalPath": "/posts/10306/",
+    "category": "后端开发",
+    "tags": [
+      "Spring"
+    ],
+    "originalCategories": [
+      "SSM"
+    ],
+    "originalTags": [
+      "Spring"
+    ],
+    "description": "详细的描述了Spring中的事务概念。",
+    "markdownPath": "src/content/posts/legacy/10306.md",
+    "counts": {
+      "sourceBytes": 47157,
+      "markdownBytes": 2589,
+      "sourceProseChars": 344,
+      "renderedProseChars": 344,
+      "codeBlocks": 3,
+      "codeLines": 13,
+      "tables": 1,
+      "tableCells": 24,
+      "links": 0,
+      "images": 1,
+      "localizedAssets": 0,
+      "unresolvedAssets": 1,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/SSM05-01%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "1 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10307",
+    "sourcePath": "posts/10307.html",
+    "sourceSha256": "5cfb1f22b4c4cf7accb4795d4de2ef6a40cffc9df9f8a109846a185341b01b6d",
+    "title": "SSM07-SpringMVC的请求与响应",
+    "published": "2023-06-03T11:00:00.000Z",
+    "updated": "2023-11-25T13:07:36.382Z",
+    "slug": "10307",
+    "legacyUrl": "/posts/10307.html",
+    "canonicalPath": "/posts/10307/",
+    "category": "后端开发",
+    "tags": [
+      "Spring"
+    ],
+    "originalCategories": [
+      "SSM"
+    ],
+    "originalTags": [
+      "Spring"
+    ],
+    "description": "详细的描述了SpringMVC中的请求与响应",
+    "markdownPath": "src/content/posts/legacy/10307.md",
+    "counts": {
+      "sourceBytes": 84737,
+      "markdownBytes": 15735,
+      "sourceProseChars": 2545,
+      "renderedProseChars": 2545,
+      "codeBlocks": 15,
+      "codeLines": 254,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10308",
+    "sourcePath": "posts/10308.html",
+    "sourceSha256": "447e51a4aec604500b53662a480173e278f1a07c54aebb8d52c0ac267a0d075a",
+    "title": "SSM08-REST风格",
+    "published": "2023-06-24T14:00:00.000Z",
+    "updated": "2023-11-27T15:06:28.576Z",
+    "slug": "10308",
+    "legacyUrl": "/posts/10308.html",
+    "canonicalPath": "/posts/10308/",
+    "category": "后端开发",
+    "tags": [
+      "Spring"
+    ],
+    "originalCategories": [
+      "SSM"
+    ],
+    "originalTags": [
+      "Spring"
+    ],
+    "description": "详细的描述了Spring中的REST开发风格",
+    "markdownPath": "src/content/posts/legacy/10308.md",
+    "counts": {
+      "sourceBytes": 49604,
+      "markdownBytes": 4814,
+      "sourceProseChars": 1113,
+      "renderedProseChars": 1113,
+      "codeBlocks": 2,
+      "codeLines": 32,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 9,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10309",
+    "sourcePath": "posts/10309.html",
+    "sourceSha256": "13b7f653b2331bd2b4b16c2aec76b0b9a150a938715fc544c0abaa1e12820427",
+    "title": "SSM09-SSM整合",
+    "published": "2023-06-26T14:00:00.000Z",
+    "updated": "2023-11-28T07:20:01.565Z",
+    "slug": "10309",
+    "legacyUrl": "/posts/10309.html",
+    "canonicalPath": "/posts/10309/",
+    "category": "后端开发",
+    "tags": [
+      "Spring"
+    ],
+    "originalCategories": [
+      "SSM"
+    ],
+    "originalTags": [
+      "Spring"
+    ],
+    "description": "详细的描述了Spring中的SSM整合",
+    "markdownPath": "src/content/posts/legacy/10309.md",
+    "counts": {
+      "sourceBytes": 103745,
+      "markdownBytes": 15989,
+      "sourceProseChars": 852,
+      "renderedProseChars": 852,
+      "codeBlocks": 13,
+      "codeLines": 493,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 1,
+      "images": 2,
+      "localizedAssets": 0,
+      "unresolvedAssets": 2,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/SSM09-01%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SSM09-02postman%E6%B5%8B%E8%AF%95.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "2 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10310",
+    "sourcePath": "posts/10310.html",
+    "sourceSha256": "5bf7b5a99a1e4dc62b6a4b85fde8b827d899c259e87d805ffcaa7bda98134a73",
+    "title": "SSM10-SSM整合深入",
+    "published": "2023-06-27T10:00:00.000Z",
+    "updated": "2023-11-28T06:45:10.876Z",
+    "slug": "10310",
+    "legacyUrl": "/posts/10310.html",
+    "canonicalPath": "/posts/10310/",
+    "category": "后端开发",
+    "tags": [
+      "Spring"
+    ],
+    "originalCategories": [
+      "SSM"
+    ],
+    "originalTags": [
+      "Spring"
+    ],
+    "description": "详细的描述了Spring中的SSM整合深入",
+    "markdownPath": "src/content/posts/legacy/10310.md",
+    "counts": {
+      "sourceBytes": 48349,
+      "markdownBytes": 2902,
+      "sourceProseChars": 503,
+      "renderedProseChars": 503,
+      "codeBlocks": 3,
+      "codeLines": 31,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10312",
+    "sourcePath": "posts/10312.html",
+    "sourceSha256": "822aee7545849d36e734bcb93993dc95719449587cc79d2620c5533dfeea21b9",
+    "title": "SSM12-MybatisPlus",
+    "published": "2023-06-28T10:00:00.000Z",
+    "updated": "2023-11-28T06:58:30.151Z",
+    "slug": "10312",
+    "legacyUrl": "/posts/10312.html",
+    "canonicalPath": "/posts/10312/",
+    "category": "后端开发",
+    "tags": [
+      "Spring"
+    ],
+    "originalCategories": [
+      "SSM"
+    ],
+    "originalTags": [
+      "Spring"
+    ],
+    "description": "==极其精简化了dao层的书写==",
+    "markdownPath": "src/content/posts/legacy/10312.md",
+    "counts": {
+      "sourceBytes": 61556,
+      "markdownBytes": 6881,
+      "sourceProseChars": 391,
+      "renderedProseChars": 391,
+      "codeBlocks": 17,
+      "codeLines": 155,
+      "tables": 1,
+      "tableCells": 24,
+      "links": 0,
+      "images": 2,
+      "localizedAssets": 0,
+      "unresolvedAssets": 2,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/SSM12-01%E6%9F%A5%E8%AF%A2%E6%8A%95%E5%BD%B1.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SSM12-02ID.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "2 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10400",
+    "sourcePath": "posts/10400.html",
+    "sourceSha256": "9e3fe311702b59df763468c3c4811e49254db89895c9b1b5ec704b62afc397e9",
+    "title": "MySQL总览",
+    "published": "2023-05-19T16:00:00.000Z",
+    "updated": "2023-11-28T13:43:37.021Z",
+    "slug": "10400",
+    "legacyUrl": "/posts/10400.html",
+    "canonicalPath": "/posts/10400/",
+    "category": "数据库",
+    "tags": [
+      "MySQL"
+    ],
+    "originalCategories": [
+      "MySQL"
+    ],
+    "originalTags": [
+      "MySQL"
+    ],
+    "description": "MySQL01-事务",
+    "markdownPath": "src/content/posts/legacy/10400.md",
+    "counts": {
+      "sourceBytes": 45402,
+      "markdownBytes": 1054,
+      "sourceProseChars": 248,
+      "renderedProseChars": 248,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 11,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10401",
+    "sourcePath": "posts/10401.html",
+    "sourceSha256": "a55849f3e1525e1026767d34a19bfb5299a46ec61140a8b1d9f37a5f3429d9f3",
+    "title": "MySQL01-基础语法",
+    "published": "2023-05-21T14:00:00.000Z",
+    "updated": "2023-11-25T13:04:11.966Z",
+    "slug": "10401",
+    "legacyUrl": "/posts/10401.html",
+    "canonicalPath": "/posts/10401/",
+    "category": "数据库",
+    "tags": [
+      "MySQL"
+    ],
+    "originalCategories": [
+      "MySQL"
+    ],
+    "originalTags": [
+      "MySQL"
+    ],
+    "description": "详细的描述了MySQL中的基础语法。",
+    "markdownPath": "src/content/posts/legacy/10401.md",
+    "counts": {
+      "sourceBytes": 63311,
+      "markdownBytes": 7158,
+      "sourceProseChars": 660,
+      "renderedProseChars": 660,
+      "codeBlocks": 27,
+      "codeLines": 46,
+      "tables": 4,
+      "tableCells": 123,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10402",
+    "sourcePath": "posts/10402.html",
+    "sourceSha256": "7ce6522130741ba0eac6b499f42e9af11fc7cf1fedf7067faca80b24e7d875f8",
+    "title": "MySQL02-事务",
+    "published": "2023-05-22T14:00:00.000Z",
+    "updated": "2023-11-25T13:04:15.600Z",
+    "slug": "10402",
+    "legacyUrl": "/posts/10402.html",
+    "canonicalPath": "/posts/10402/",
+    "category": "数据库",
+    "tags": [
+      "MySQL"
+    ],
+    "originalCategories": [
+      "MySQL"
+    ],
+    "originalTags": [
+      "MySQL"
+    ],
+    "description": "详细的描述了MySQL中的事务的四大特性以及事务的隔离级别。",
+    "markdownPath": "src/content/posts/legacy/10402.md",
+    "counts": {
+      "sourceBytes": 53219,
+      "markdownBytes": 2570,
+      "sourceProseChars": 491,
+      "renderedProseChars": 491,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 2,
+      "tableCells": 28,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10403",
+    "sourcePath": "posts/10403.html",
+    "sourceSha256": "b3abb7dea6cb0f4632f5f188fc00cece4eaf00ce2a398899bc9a40fa037bcd9a",
+    "title": "MySQL03-存储引擎",
+    "published": "2023-05-23T08:00:00.000Z",
+    "updated": "2023-11-25T13:04:19.016Z",
+    "slug": "10403",
+    "legacyUrl": "/posts/10403.html",
+    "canonicalPath": "/posts/10403/",
+    "category": "数据库",
+    "tags": [
+      "MySQL"
+    ],
+    "originalCategories": [
+      "MySQL"
+    ],
+    "originalTags": [
+      "MySQL"
+    ],
+    "description": "详细的描述了MySQL中的引擎之间的区别和选择。",
+    "markdownPath": "src/content/posts/legacy/10403.md",
+    "counts": {
+      "sourceBytes": 50431,
+      "markdownBytes": 4302,
+      "sourceProseChars": 1094,
+      "renderedProseChars": 1094,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 1,
+      "tableCells": 44,
+      "links": 0,
+      "images": 2,
+      "localizedAssets": 0,
+      "unresolvedAssets": 2,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/MySQL02-01%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL02-02InnoDB.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "2 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10404",
+    "sourcePath": "posts/10404.html",
+    "sourceSha256": "96d9380bfb154af835ea3b97411120b3d3063ce4b65db1e6306cb78bffb68768",
+    "title": "MySQL04-索引01-结构",
+    "published": "2023-05-23T17:00:00.000Z",
+    "updated": "2023-11-25T13:04:26.609Z",
+    "slug": "10404",
+    "legacyUrl": "/posts/10404.html",
+    "canonicalPath": "/posts/10404/",
+    "category": "数据库",
+    "tags": [
+      "MySQL"
+    ],
+    "originalCategories": [
+      "MySQL"
+    ],
+    "originalTags": [
+      "MySQL"
+    ],
+    "description": "详细的描述了MySQL中的索引的结构。",
+    "markdownPath": "src/content/posts/legacy/10404.md",
+    "counts": {
+      "sourceBytes": 52781,
+      "markdownBytes": 5687,
+      "sourceProseChars": 1061,
+      "renderedProseChars": 1061,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 5,
+      "tableCells": 65,
+      "links": 2,
+      "images": 2,
+      "localizedAssets": 0,
+      "unresolvedAssets": 1,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/MySQL03-01-01B%E6%A0%91.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "1 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10405",
+    "sourcePath": "posts/10405.html",
+    "sourceSha256": "7fcdeca4ed9abd9ae399669073b09d32f62f2b25f69b50fb9e25fd99bae7a8b6",
+    "title": "MySQL4-索引02-性能分析",
+    "published": "2023-05-24T06:00:00.000Z",
+    "updated": "2023-11-25T13:04:30.330Z",
+    "slug": "10405",
+    "legacyUrl": "/posts/10405.html",
+    "canonicalPath": "/posts/10405/",
+    "category": "数据库",
+    "tags": [
+      "MySQL"
+    ],
+    "originalCategories": [
+      "MySQL"
+    ],
+    "originalTags": [
+      "MySQL"
+    ],
+    "description": "详细的描述了MySQL中的索引的性能分析。",
+    "markdownPath": "src/content/posts/legacy/10405.md",
+    "counts": {
+      "sourceBytes": 58173,
+      "markdownBytes": 8862,
+      "sourceProseChars": 3348,
+      "renderedProseChars": 3348,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10406",
+    "sourcePath": "posts/10406.html",
+    "sourceSha256": "be5db514c1af8df0f8815b183969c08088f2073883d6a6cbba89e493f61535c9",
+    "title": "MySQL04-索引03-使用规则",
+    "published": "2023-05-27T07:00:00.000Z",
+    "updated": "2023-11-25T13:05:27.842Z",
+    "slug": "10406",
+    "legacyUrl": "/posts/10406.html",
+    "canonicalPath": "/posts/10406/",
+    "category": "数据库",
+    "tags": [
+      "MySQL"
+    ],
+    "originalCategories": [
+      "MySQL"
+    ],
+    "originalTags": [
+      "MySQL"
+    ],
+    "description": "详细的描述了MySQL中的索引的使用规则和设计原则。",
+    "markdownPath": "src/content/posts/legacy/10406.md",
+    "counts": {
+      "sourceBytes": 52728,
+      "markdownBytes": 5074,
+      "sourceProseChars": 1478,
+      "renderedProseChars": 1478,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10407",
+    "sourcePath": "posts/10407.html",
+    "sourceSha256": "db4644b445e6fde4bc8c311a0e59ddae75e45f8ed1c45070589247748cd0adbe",
+    "title": "MySQL05-SQL优化",
+    "published": "2023-05-29T07:00:00.000Z",
+    "updated": "2023-11-25T13:05:32.121Z",
+    "slug": "10407",
+    "legacyUrl": "/posts/10407.html",
+    "canonicalPath": "/posts/10407/",
+    "category": "数据库",
+    "tags": [
+      "MySQL"
+    ],
+    "originalCategories": [
+      "MySQL"
+    ],
+    "originalTags": [
+      "MySQL"
+    ],
+    "description": "详细的描述了MySQL中的SQL语句的优化。",
+    "markdownPath": "src/content/posts/legacy/10407.md",
+    "counts": {
+      "sourceBytes": 57767,
+      "markdownBytes": 5568,
+      "sourceProseChars": 1857,
+      "renderedProseChars": 1857,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10408",
+    "sourcePath": "posts/10408.html",
+    "sourceSha256": "389cd76ba7c35a11e75a6fd418a51d07f8546a6d1334ef80e734c2a5f6394881",
+    "title": "MySQL06-存储过程",
+    "published": "2023-06-04T14:30:00.000Z",
+    "updated": "2023-12-07T05:01:29.648Z",
+    "slug": "10408",
+    "legacyUrl": "/posts/10408.html",
+    "canonicalPath": "/posts/10408/",
+    "category": "数据库",
+    "tags": [
+      "MySQL"
+    ],
+    "originalCategories": [
+      "MySQL"
+    ],
+    "originalTags": [
+      "MySQL"
+    ],
+    "description": "详细的描述了MySQL中的存储过程。",
+    "markdownPath": "src/content/posts/legacy/10408.md",
+    "counts": {
+      "sourceBytes": 83367,
+      "markdownBytes": 15118,
+      "sourceProseChars": 1193,
+      "renderedProseChars": 1193,
+      "codeBlocks": 39,
+      "codeLines": 289,
+      "tables": 1,
+      "tableCells": 12,
+      "links": 1,
+      "images": 9,
+      "localizedAssets": 0,
+      "unresolvedAssets": 9,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/MySQL05-01%E6%97%A0%E5%8F%82%E6%95%B0if%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL05-02%E6%9C%89%E5%8F%82%E6%95%B0if%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL05-03%E6%9C%89%E5%8F%82%E6%95%B0%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL05-03case%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL05-04while%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL05-04while%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL05-04while%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL05-05loop%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL05-06cursor%E4%B8%AD%E7%9A%84bug.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "9 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10409",
+    "sourcePath": "posts/10409.html",
+    "sourceSha256": "20e445037fc3f74b3b4d61e6a75bbf6994c24db52e4a8f1d2aabb2e8c1c9d5eb",
+    "title": "MySQL07-存储函数",
+    "published": "2023-06-05T15:50:00.000Z",
+    "updated": "2023-11-25T13:05:40.840Z",
+    "slug": "10409",
+    "legacyUrl": "/posts/10409.html",
+    "canonicalPath": "/posts/10409/",
+    "category": "数据库",
+    "tags": [
+      "MySQL"
+    ],
+    "originalCategories": [
+      "MySQL"
+    ],
+    "originalTags": [
+      "MySQL"
+    ],
+    "description": "详细的描述了MySQL中的存储函数。",
+    "markdownPath": "src/content/posts/legacy/10409.md",
+    "counts": {
+      "sourceBytes": 44527,
+      "markdownBytes": 1841,
+      "sourceProseChars": 146,
+      "renderedProseChars": 146,
+      "codeBlocks": 2,
+      "codeLines": 27,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 2,
+      "localizedAssets": 0,
+      "unresolvedAssets": 2,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/MySQL06-01%E6%9C%AA%E6%8C%87%E5%AE%9A%E5%8F%82%E6%95%B0%E6%80%A7%E8%B4%A8%E7%9A%84bug.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL06-02%E5%AD%98%E5%82%A8%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "2 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10410",
+    "sourcePath": "posts/10410.html",
+    "sourceSha256": "d84e57f474012d48ae11171f037f898362e4bb4258bedb1415426b0641ed1fb8",
+    "title": "MySQL08-触发器",
+    "published": "2023-06-05T15:50:00.000Z",
+    "updated": "2023-12-18T13:55:33.376Z",
+    "slug": "10410",
+    "legacyUrl": "/posts/10410.html",
+    "canonicalPath": "/posts/10410/",
+    "category": "数据库",
+    "tags": [
+      "MySQL"
+    ],
+    "originalCategories": [
+      "MySQL"
+    ],
+    "originalTags": [
+      "MySQL"
+    ],
+    "description": "详细的描述了MySQL中的触发器。",
+    "markdownPath": "src/content/posts/legacy/10410.md",
+    "counts": {
+      "sourceBytes": 51364,
+      "markdownBytes": 4908,
+      "sourceProseChars": 318,
+      "renderedProseChars": 318,
+      "codeBlocks": 7,
+      "codeLines": 60,
+      "tables": 1,
+      "tableCells": 8,
+      "links": 0,
+      "images": 6,
+      "localizedAssets": 0,
+      "unresolvedAssets": 6,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/MySQL07-01%E6%9F%A5%E7%9C%8B%E8%A7%A6%E5%8F%91%E5%99%A8.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL07-02insert%E8%A7%A6%E5%8F%91%E5%99%A8.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL07-03%E6%9F%A5%E7%9C%8B%E8%A7%A6%E5%8F%91%E5%99%A8.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL07-04update%E8%A7%A6%E5%8F%91%E5%99%A8.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL07-05%E6%9F%A5%E7%9C%8B%E8%A7%A6%E5%8F%91%E5%99%A8.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL07-06delete%E8%A7%A6%E5%8F%91%E5%99%A8.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "6 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10411",
+    "sourcePath": "posts/10411.html",
+    "sourceSha256": "1a996a898cb577da488f814e01abf18f4e27b84a83053e20fabd9af6db237368",
+    "title": "MySQL09-视图",
+    "published": "2023-06-06T11:00:00.000Z",
+    "updated": "2023-11-25T13:05:47.648Z",
+    "slug": "10411",
+    "legacyUrl": "/posts/10411.html",
+    "canonicalPath": "/posts/10411/",
+    "category": "数据库",
+    "tags": [
+      "MySQL"
+    ],
+    "originalCategories": [
+      "MySQL"
+    ],
+    "originalTags": [
+      "MySQL"
+    ],
+    "description": "详细的描述了MySQL中的视图。",
+    "markdownPath": "src/content/posts/legacy/10411.md",
+    "counts": {
+      "sourceBytes": 46380,
+      "markdownBytes": 2368,
+      "sourceProseChars": 436,
+      "renderedProseChars": 436,
+      "codeBlocks": 4,
+      "codeLines": 8,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 2,
+      "localizedAssets": 0,
+      "unresolvedAssets": 2,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/MySQL08-01cascaded.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL08-02local.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "2 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10412",
+    "sourcePath": "posts/10412.html",
+    "sourceSha256": "db2e79c10cba27a478fd5cfa54c39b97122476b6ab8d599a29fd3e03ddae379c",
+    "title": "MySQL10-锁",
+    "published": "2023-06-07T10:00:00.000Z",
+    "updated": "2023-11-25T13:05:50.409Z",
+    "slug": "10412",
+    "legacyUrl": "/posts/10412.html",
+    "canonicalPath": "/posts/10412/",
+    "category": "数据库",
+    "tags": [
+      "MySQL"
+    ],
+    "originalCategories": [
+      "MySQL"
+    ],
+    "originalTags": [
+      "MySQL"
+    ],
+    "description": "详细的描述了MySQL中的锁。",
+    "markdownPath": "src/content/posts/legacy/10412.md",
+    "counts": {
+      "sourceBytes": 59372,
+      "markdownBytes": 8917,
+      "sourceProseChars": 2133,
+      "renderedProseChars": 2133,
+      "codeBlocks": 10,
+      "codeLines": 10,
+      "tables": 3,
+      "tableCells": 45,
+      "links": 0,
+      "images": 2,
+      "localizedAssets": 0,
+      "unresolvedAssets": 2,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/MySQL09-01%E5%85%A8%E5%B1%80%E9%94%81.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL09-02%E8%AF%BB%E5%86%99%E9%94%81.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "2 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10413",
+    "sourcePath": "posts/10413.html",
+    "sourceSha256": "3275a2532400ab6a1dee100ddd0a46194032c5eae6b7c2223c8685012362454a",
+    "title": "MySQL11-InnoDB引擎01-架构",
+    "published": "2023-06-06T16:00:00.000Z",
+    "updated": "2023-11-25T13:05:53.087Z",
+    "slug": "10413",
+    "legacyUrl": "/posts/10413.html",
+    "canonicalPath": "/posts/10413/",
+    "category": "数据库",
+    "tags": [
+      "MySQL"
+    ],
+    "originalCategories": [
+      "MySQL"
+    ],
+    "originalTags": [
+      "MySQL"
+    ],
+    "description": "详细的描述了MySQL中的InnoDB引擎的架构。",
+    "markdownPath": "src/content/posts/legacy/10413.md",
+    "counts": {
+      "sourceBytes": 47320,
+      "markdownBytes": 1922,
+      "sourceProseChars": 105,
+      "renderedProseChars": 105,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 10,
+      "localizedAssets": 0,
+      "unresolvedAssets": 10,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/MySQL10-01%E9%80%BB%E8%BE%91%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL10-02%E6%80%BB%E6%9E%B6%E6%9E%84.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL10-03-01%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL10-03-02%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL10-03-03%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL10-03-04%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL10-04-01%E7%A3%81%E7%9B%98%E7%BB%93%E6%9E%84.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL10-04-02%E7%A3%81%E7%9B%98%E7%BB%93%E6%9E%84.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL10-04-03%E7%A3%81%E7%9B%98%E7%BB%93%E6%9E%84.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL10-05%E5%90%8E%E5%8F%B0%E7%BA%BF%E7%A8%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "10 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10414",
+    "sourcePath": "posts/10414.html",
+    "sourceSha256": "09285265ff86d6c729054756a613987ca951140bb990e6c1ea18e32aeda81813",
+    "title": "MySQL11-InnoDB引擎02-事务原理",
+    "published": "2023-06-10T16:00:00.000Z",
+    "updated": "2023-11-25T13:05:56.856Z",
+    "slug": "10414",
+    "legacyUrl": "/posts/10414.html",
+    "canonicalPath": "/posts/10414/",
+    "category": "数据库",
+    "tags": [
+      "MySQL"
+    ],
+    "originalCategories": [
+      "MySQL"
+    ],
+    "originalTags": [
+      "MySQL"
+    ],
+    "description": "详细的描述了MySQL中的InnoDB引擎的事务原理。",
+    "markdownPath": "src/content/posts/legacy/10414.md",
+    "counts": {
+      "sourceBytes": 45059,
+      "markdownBytes": 2593,
+      "sourceProseChars": 748,
+      "renderedProseChars": 748,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 1,
+      "localizedAssets": 0,
+      "unresolvedAssets": 1,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/MySQL10-06%E4%BA%8B%E5%8A%A1%E5%8E%9F%E7%90%86.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "1 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10415",
+    "sourcePath": "posts/10415.html",
+    "sourceSha256": "aa3cce661de72a0edf18ada190313c1ffe855c6a08fb45e42171b85d47d0d06d",
+    "title": "MySQL12-MVCC多版本并发控制",
+    "published": "2023-06-30T07:00:00.000Z",
+    "updated": "2023-11-25T13:06:01.185Z",
+    "slug": "10415",
+    "legacyUrl": "/posts/10415.html",
+    "canonicalPath": "/posts/10415/",
+    "category": "数据库",
+    "tags": [
+      "MySQL"
+    ],
+    "originalCategories": [
+      "MySQL"
+    ],
+    "originalTags": [
+      "MySQL"
+    ],
+    "description": "读取的是记录的最新版本，读取时还要保证其他并发事务不能修改当前记录，会对读取的记录进行加锁。对于我们日常的操作，如:select … lock in share mode(共享锁)，select … for update、update、in…",
+    "markdownPath": "src/content/posts/legacy/10415.md",
+    "counts": {
+      "sourceBytes": 45990,
+      "markdownBytes": 3408,
+      "sourceProseChars": 761,
+      "renderedProseChars": 761,
+      "codeBlocks": 1,
+      "codeLines": 1,
+      "tables": 2,
+      "tableCells": 18,
+      "links": 0,
+      "images": 2,
+      "localizedAssets": 0,
+      "unresolvedAssets": 2,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/MySQL12-01undolog.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/MySQL12-02Readview.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "2 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10500",
+    "sourcePath": "posts/10500.html",
+    "sourceSha256": "96cebf3a2e4a80d983ca15289198d210887d1e76f61b9f81cd74827b92b4ca4f",
+    "title": "HTML5+CSS3总览",
+    "published": "2023-05-19T16:00:00.000Z",
+    "updated": "2023-12-07T05:17:09.042Z",
+    "slug": "10500",
+    "legacyUrl": "/posts/10500.html",
+    "canonicalPath": "/posts/10500/",
+    "category": "前端开发",
+    "tags": [
+      "HTML-CSS"
+    ],
+    "originalCategories": [
+      "HTML+CSS"
+    ],
+    "originalTags": [
+      "HTML-CSS"
+    ],
+    "description": "HTML5+CSS301-HTML",
+    "markdownPath": "src/content/posts/legacy/10500.md",
+    "counts": {
+      "sourceBytes": 42777,
+      "markdownBytes": 748,
+      "sourceProseChars": 160,
+      "renderedProseChars": 160,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 5,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10501",
+    "sourcePath": "posts/10501.html",
+    "sourceSha256": "f647d028b63a474bc3cdeb6b144c3e9d0434c0ef95415ba4fbd17f6df4e50c30",
+    "title": "HTML5+CSS301-HTML",
+    "published": "2023-06-03T16:00:00.000Z",
+    "updated": "2023-12-07T04:57:11.087Z",
+    "slug": "10501",
+    "legacyUrl": "/posts/10501.html",
+    "canonicalPath": "/posts/10501/",
+    "category": "前端开发",
+    "tags": [
+      "HTML-CSS"
+    ],
+    "originalCategories": [
+      "HTML+CSS"
+    ],
+    "originalTags": [
+      "HTML-CSS"
+    ],
+    "description": "第一天笔记",
+    "markdownPath": "src/content/posts/legacy/10501.md",
+    "counts": {
+      "sourceBytes": 68952,
+      "markdownBytes": 9624,
+      "sourceProseChars": 1878,
+      "renderedProseChars": 1878,
+      "codeBlocks": 8,
+      "codeLines": 23,
+      "tables": 13,
+      "tableCells": 143,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 1
+    },
+    "unresolvedAssets": [],
+    "warnings": [
+      "media placeholder preserved as inert HTML code: <audio>"
+    ]
+  },
+  {
+    "id": "10502",
+    "sourcePath": "posts/10502.html",
+    "sourceSha256": "20caaec16d7c5e380557a139b7b2741cd377d86db8273a785fb42bc447fbc390",
+    "title": "HTML5+CSS302-CSS",
+    "published": "2023-11-23T11:30:00.000Z",
+    "updated": "2023-12-25T07:18:02.428Z",
+    "slug": "10502",
+    "legacyUrl": "/posts/10502.html",
+    "canonicalPath": "/posts/10502/",
+    "category": "前端开发",
+    "tags": [
+      "HTML-CSS"
+    ],
+    "originalCategories": [
+      "HTML+CSS"
+    ],
+    "originalTags": [
+      "HTML-CSS"
+    ],
+    "description": "第三天笔记",
+    "markdownPath": "src/content/posts/legacy/10502.md",
+    "counts": {
+      "sourceBytes": 172822,
+      "markdownBytes": 43851,
+      "sourceProseChars": 9118,
+      "renderedProseChars": 9118,
+      "codeBlocks": 40,
+      "codeLines": 292,
+      "tables": 26,
+      "tableCells": 334,
+      "links": 2,
+      "images": 1,
+      "localizedAssets": 0,
+      "unresolvedAssets": 1,
+      "warnings": 2
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn//images/HTML5%2BCSS03-01%E5%AD%97%E4%BD%93.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "1 body image(s) unresolved; original URLs kept",
+      "unconvertible table preserved as sanitized raw HTML"
+    ]
+  },
+  {
+    "id": "10503",
+    "sourcePath": "posts/10503.html",
+    "sourceSha256": "3c11ed63eb6cbf637a80a8075e670dbfa07989b1f9b683bd96aafdaa766fcad7",
+    "title": "HTML5+CSS303-综合页面设计",
+    "published": "2023-11-28T05:30:00.000Z",
+    "updated": "2023-12-07T05:13:04.761Z",
+    "slug": "10503",
+    "legacyUrl": "/posts/10503.html",
+    "canonicalPath": "/posts/10503/",
+    "category": "前端开发",
+    "tags": [
+      "HTML-CSS"
+    ],
+    "originalCategories": [
+      "HTML+CSS"
+    ],
+    "originalTags": [
+      "HTML-CSS"
+    ],
+    "description": "第七天笔记",
+    "markdownPath": "src/content/posts/legacy/10503.md",
+    "counts": {
+      "sourceBytes": 150837,
+      "markdownBytes": 21825,
+      "sourceProseChars": 819,
+      "renderedProseChars": 819,
+      "codeBlocks": 3,
+      "codeLines": 741,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 1,
+      "localizedAssets": 0,
+      "unresolvedAssets": 1,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn//images/HTML5%2BCSS03-07%E9%A2%84%E8%A7%88.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "1 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10504",
+    "sourcePath": "posts/10504.html",
+    "sourceSha256": "f8c099da64b9bbaa0b9917fe98e8747f51e445e37bc8836ae77003edcf00fea1",
+    "title": "HTML5+CSS304-前端项目学习",
+    "published": "2023-12-01T12:00:00.000Z",
+    "updated": "2023-12-07T05:16:22.935Z",
+    "slug": "10504",
+    "legacyUrl": "/posts/10504.html",
+    "canonicalPath": "/posts/10504/",
+    "category": "前端开发",
+    "tags": [
+      "HTML-CSS"
+    ],
+    "originalCategories": [
+      "HTML+CSS"
+    ],
+    "originalTags": [
+      "HTML-CSS"
+    ],
+    "description": "第九天笔记",
+    "markdownPath": "src/content/posts/legacy/10504.md",
+    "counts": {
+      "sourceBytes": 242452,
+      "markdownBytes": 34554,
+      "sourceProseChars": 743,
+      "renderedProseChars": 743,
+      "codeBlocks": 6,
+      "codeLines": 1407,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10505",
+    "sourcePath": "posts/10505.html",
+    "sourceSha256": "2d6ba61160bd6db4281c2cca6a10b3e0bb2f0fcdb596f6ffc8792e7cfbfd2e59",
+    "title": "HTML5+CSS305-移动端Web",
+    "published": "2023-12-07T05:30:00.000Z",
+    "updated": "2023-12-08T05:09:55.342Z",
+    "slug": "10505",
+    "legacyUrl": "/posts/10505.html",
+    "canonicalPath": "/posts/10505/",
+    "category": "前端开发",
+    "tags": [
+      "HTML-CSS"
+    ],
+    "originalCategories": [
+      "HTML+CSS"
+    ],
+    "originalTags": [
+      "HTML-CSS"
+    ],
+    "description": "第十天笔记",
+    "markdownPath": "src/content/posts/legacy/10505.md",
+    "counts": {
+      "sourceBytes": 40909,
+      "markdownBytes": 433,
+      "sourceProseChars": 11,
+      "renderedProseChars": 11,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10600",
+    "sourcePath": "posts/10600.html",
+    "sourceSha256": "4ef039b4ba70c64dbfc9a119a6996d0535fc2122854f0cc0ea6c6e3e958c31f4",
+    "title": "SpringCloud00-总览",
+    "published": "2023-06-28T11:00:00.000Z",
+    "updated": "2023-12-24T09:15:20.217Z",
+    "slug": "10600",
+    "legacyUrl": "/posts/10600.html",
+    "canonicalPath": "/posts/10600/",
+    "category": "后端开发",
+    "tags": [
+      "Spring"
+    ],
+    "originalCategories": [
+      "SpringCloud"
+    ],
+    "originalTags": [
+      "Spring"
+    ],
+    "description": "SpringCloud01-微服务简介",
+    "markdownPath": "src/content/posts/legacy/10600.md",
+    "counts": {
+      "sourceBytes": 45271,
+      "markdownBytes": 1018,
+      "sourceProseChars": 334,
+      "renderedProseChars": 334,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 9,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10601",
+    "sourcePath": "posts/10601.html",
+    "sourceSha256": "53e1161086c9842ab6a555092d88b47c7d8ef39b05d7d3fdaf705514fe076f1c",
+    "title": "SpringCloud01-微服务简介",
+    "published": "2023-06-28T11:00:00.000Z",
+    "updated": "2023-12-20T06:26:19.162Z",
+    "slug": "10601",
+    "legacyUrl": "/posts/10601.html",
+    "canonicalPath": "/posts/10601/",
+    "category": "后端开发",
+    "tags": [
+      "SpringCloud"
+    ],
+    "originalCategories": [
+      "SpringCloud"
+    ],
+    "originalTags": [
+      "SpringCloud"
+    ],
+    "description": "简单的介绍了SpringCloud中的微服务技术栈。",
+    "markdownPath": "src/content/posts/legacy/10601.md",
+    "counts": {
+      "sourceBytes": 47615,
+      "markdownBytes": 3279,
+      "sourceProseChars": 678,
+      "renderedProseChars": 678,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 1,
+      "tableCells": 24,
+      "links": 0,
+      "images": 2,
+      "localizedAssets": 0,
+      "unresolvedAssets": 2,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/SpringCloud01-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%8A%80%E6%9C%AF%E6%A0%88.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud02-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%8A%80%E6%9C%AF%E6%A0%88",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "2 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10602",
+    "sourcePath": "posts/10602.html",
+    "sourceSha256": "2450233a5762914de48d2a97103a285d81c150f30e75c9751142fef849a46a5a",
+    "title": "SpringCloud02-服务拆分",
+    "published": "2023-06-29T14:00:00.000Z",
+    "updated": "2023-12-20T06:26:22.528Z",
+    "slug": "10602",
+    "legacyUrl": "/posts/10602.html",
+    "canonicalPath": "/posts/10602/",
+    "category": "后端开发",
+    "tags": [
+      "SpringCloud"
+    ],
+    "originalCategories": [
+      "SpringCloud"
+    ],
+    "originalTags": [
+      "SpringCloud"
+    ],
+    "description": "简单的介绍了SpringCloud中的服务拆分。",
+    "markdownPath": "src/content/posts/legacy/10602.md",
+    "counts": {
+      "sourceBytes": 43310,
+      "markdownBytes": 1175,
+      "sourceProseChars": 171,
+      "renderedProseChars": 171,
+      "codeBlocks": 2,
+      "codeLines": 9,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10603",
+    "sourcePath": "posts/10603.html",
+    "sourceSha256": "46d72a97a0e4301eefe92278fce1204588f14abb39528462acd8dda790469a1e",
+    "title": "SpringCloud03-Eureka",
+    "published": "2023-06-29T15:00:00.000Z",
+    "updated": "2023-12-20T06:26:24.069Z",
+    "slug": "10603",
+    "legacyUrl": "/posts/10603.html",
+    "canonicalPath": "/posts/10603/",
+    "category": "后端开发",
+    "tags": [
+      "SpringCloud"
+    ],
+    "originalCategories": [
+      "SpringCloud"
+    ],
+    "originalTags": [
+      "SpringCloud"
+    ],
+    "description": "简单的介绍了SpringCloud中的注册中心Eureka。",
+    "markdownPath": "src/content/posts/legacy/10603.md",
+    "counts": {
+      "sourceBytes": 51485,
+      "markdownBytes": 4310,
+      "sourceProseChars": 1196,
+      "renderedProseChars": 1196,
+      "codeBlocks": 6,
+      "codeLines": 31,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 1,
+      "localizedAssets": 0,
+      "unresolvedAssets": 1,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud03-01Eureka%E7%9A%84%E4%BD%9C%E7%94%A8.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "1 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10604",
+    "sourcePath": "posts/10604.html",
+    "sourceSha256": "580eea31d0d9d556a91d207a459f08ab075d189e25c5f517eb438ca598cef69e",
+    "title": "SpringCloud04-Ribbon负载均衡",
+    "published": "2023-06-29T14:30:00.000Z",
+    "updated": "2023-12-20T06:26:25.635Z",
+    "slug": "10604",
+    "legacyUrl": "/posts/10604.html",
+    "canonicalPath": "/posts/10604/",
+    "category": "后端开发",
+    "tags": [
+      "SpringCloud"
+    ],
+    "originalCategories": [
+      "SpringCloud"
+    ],
+    "originalTags": [
+      "SpringCloud"
+    ],
+    "description": "简单的介绍了SpringCloud中的Ribbon负载均衡。",
+    "markdownPath": "src/content/posts/legacy/10604.md",
+    "counts": {
+      "sourceBytes": 47240,
+      "markdownBytes": 3155,
+      "sourceProseChars": 320,
+      "renderedProseChars": 320,
+      "codeBlocks": 3,
+      "codeLines": 13,
+      "tables": 1,
+      "tableCells": 16,
+      "links": 0,
+      "images": 1,
+      "localizedAssets": 0,
+      "unresolvedAssets": 1,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/SpringCloud04-01%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E6%B5%81%E7%A8%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "1 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10605",
+    "sourcePath": "posts/10605.html",
+    "sourceSha256": "066f19da6604bbe316d1056272eef8dbb28e8928abb2c2398789270641278e6a",
+    "title": "SpringCloud05-Nacos",
+    "published": "2023-06-30T14:00:00.000Z",
+    "updated": "2023-12-20T06:26:27.635Z",
+    "slug": "10605",
+    "legacyUrl": "/posts/10605.html",
+    "canonicalPath": "/posts/10605/",
+    "category": "后端开发",
+    "tags": [
+      "SpringCloud"
+    ],
+    "originalCategories": [
+      "SpringCloud"
+    ],
+    "originalTags": [
+      "SpringCloud"
+    ],
+    "description": "简单的介绍了SpringCloud中的Nacos。",
+    "markdownPath": "src/content/posts/legacy/10605.md",
+    "counts": {
+      "sourceBytes": 58930,
+      "markdownBytes": 7764,
+      "sourceProseChars": 2025,
+      "renderedProseChars": 2025,
+      "codeBlocks": 10,
+      "codeLines": 55,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 6,
+      "localizedAssets": 0,
+      "unresolvedAssets": 6,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/SpringCloud05-01Nacos%E7%8E%AF%E5%A2%83%E9%9A%94%E7%A6%BB.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SpringCloud05-02Nacos%E7%BB%86%E8%8A%82.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SpringCloud05-03Nacos%E9%85%8D%E7%BD%AE%E8%AF%BB%E5%8F%96.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SpringCloud05-04Nacos%E7%83%AD%E6%9B%B4%E6%96%B001.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/SpringCloud05-04Nacos%E7%83%AD%E6%9B%B4%E6%96%B002.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud05-05Nacos%E9%9B%86%E7%BE%A4.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "6 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10606",
+    "sourcePath": "posts/10606.html",
+    "sourceSha256": "4d21f5967345d2f9d8baa40dcf6a182294f37897ab8ff829391b62a400df68cc",
+    "title": "SpringCloud06-Feign",
+    "published": "2023-12-16T09:00:00.000Z",
+    "updated": "2023-12-20T06:26:29.398Z",
+    "slug": "10606",
+    "legacyUrl": "/posts/10606.html",
+    "canonicalPath": "/posts/10606/",
+    "category": "后端开发",
+    "tags": [
+      "SpringCloud"
+    ],
+    "originalCategories": [
+      "SpringCloud"
+    ],
+    "originalTags": [
+      "SpringCloud"
+    ],
+    "description": "简单的介绍了SpringCloud中的Feign。",
+    "markdownPath": "src/content/posts/legacy/10606.md",
+    "counts": {
+      "sourceBytes": 56391,
+      "markdownBytes": 5559,
+      "sourceProseChars": 922,
+      "renderedProseChars": 922,
+      "codeBlocks": 13,
+      "codeLines": 55,
+      "tables": 1,
+      "tableCells": 18,
+      "links": 0,
+      "images": 2,
+      "localizedAssets": 0,
+      "unresolvedAssets": 2,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud06-01%E6%96%B9%E5%BC%8F%E4%B8%80",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud06-02%E6%96%B9%E5%BC%8F%E4%BA%8C",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "2 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10607",
+    "sourcePath": "posts/10607.html",
+    "sourceSha256": "ce1aa0174d55e7ef3fd89563181de3c9cb20305cb7577ca50e4d44c092209aca",
+    "title": "SpringCloud07-Gateway",
+    "published": "2023-12-18T05:00:00.000Z",
+    "updated": "2023-12-20T06:26:31.426Z",
+    "slug": "10607",
+    "legacyUrl": "/posts/10607.html",
+    "canonicalPath": "/posts/10607/",
+    "category": "后端开发",
+    "tags": [
+      "SpringCloud"
+    ],
+    "originalCategories": [
+      "SpringCloud"
+    ],
+    "originalTags": [
+      "SpringCloud"
+    ],
+    "description": "简单的介绍了SpringCloud中的Gateway。",
+    "markdownPath": "src/content/posts/legacy/10607.md",
+    "counts": {
+      "sourceBytes": 57869,
+      "markdownBytes": 7108,
+      "sourceProseChars": 1055,
+      "renderedProseChars": 1055,
+      "codeBlocks": 4,
+      "codeLines": 72,
+      "tables": 1,
+      "tableCells": 35,
+      "links": 0,
+      "images": 4,
+      "localizedAssets": 0,
+      "unresolvedAssets": 4,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud07-01%E7%BD%91%E5%85%B3%E7%9A%84%E4%BD%9C%E7%94%A8.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud07-02%E8%B7%AF%E7%94%B1%E8%BF%87%E6%BB%A4%E5%99%A8",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud07-03%E9%BB%98%E8%AE%A4%E8%B7%AF%E7%94%B1%E5%99%A8.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud07-03%E8%BF%87%E6%BB%A4%E5%99%A8%E9%93%BE.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "4 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10608",
+    "sourcePath": "posts/10608.html",
+    "sourceSha256": "d4beeca217d5e96cfc5561e4f768c4bba157f28987ef2ce4ef25a41448888ea6",
+    "title": "SpringCloud08-Docker",
+    "published": "2023-12-20T06:30:00.000Z",
+    "updated": "2023-12-24T09:12:27.564Z",
+    "slug": "10608",
+    "legacyUrl": "/posts/10608.html",
+    "canonicalPath": "/posts/10608/",
+    "category": "后端开发",
+    "tags": [
+      "SpringCloud"
+    ],
+    "originalCategories": [
+      "SpringCloud"
+    ],
+    "originalTags": [
+      "SpringCloud"
+    ],
+    "description": "简单的介绍了SpringCloud中的Docker。",
+    "markdownPath": "src/content/posts/legacy/10608.md",
+    "counts": {
+      "sourceBytes": 73796,
+      "markdownBytes": 13555,
+      "sourceProseChars": 2465,
+      "renderedProseChars": 2465,
+      "codeBlocks": 18,
+      "codeLines": 146,
+      "tables": 1,
+      "tableCells": 12,
+      "links": 4,
+      "images": 8,
+      "localizedAssets": 0,
+      "unresolvedAssets": 8,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud08-01Docker%E4%B8%8E%E8%99%9A%E6%8B%9F%E6%9C%BA.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud08-02docker%E6%9E%B6%E6%9E%84.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud08-01%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud08-02%E5%AE%B9%E5%99%A8%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud08-03%E5%AE%B9%E5%99%A8%E7%9A%84%E4%BE%8B%E5%AD%90",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud08-04%E6%95%B0%E6%8D%AE%E5%8D%B7.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud08-05%E6%95%B0%E6%8D%AE%E5%8D%B7%E4%B8%A4%E7%A7%8D%E6%8C%82%E8%BD%BD%E6%96%B9%E5%BC%8F.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud08-07%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "8 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10609",
+    "sourcePath": "posts/10609.html",
+    "sourceSha256": "4c2e45ada80ad176a8e1f4b3126bef557c398486760ca611d1450dfedb19c986",
+    "title": "SpringCloud09-MQ",
+    "published": "2023-12-24T09:00:00.000Z",
+    "updated": "2023-12-25T07:48:52.249Z",
+    "slug": "10609",
+    "legacyUrl": "/posts/10609.html",
+    "canonicalPath": "/posts/10609/",
+    "category": "后端开发",
+    "tags": [
+      "SpringCloud"
+    ],
+    "originalCategories": [
+      "SpringCloud"
+    ],
+    "originalTags": [
+      "SpringCloud"
+    ],
+    "description": "简单的介绍了SpringCloud中的MQ。",
+    "markdownPath": "src/content/posts/legacy/10609.md",
+    "counts": {
+      "sourceBytes": 47963,
+      "markdownBytes": 2325,
+      "sourceProseChars": 367,
+      "renderedProseChars": 367,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 1,
+      "tableCells": 40,
+      "links": 0,
+      "images": 2,
+      "localizedAssets": 0,
+      "unresolvedAssets": 2,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud09-01%E5%90%8C%E6%AD%A5%E8%B0%83%E7%94%A8.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn//images/SpringCloud09-02%E5%BC%82%E6%AD%A5%E8%B0%83%E7%94%A8.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "2 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10700",
+    "sourcePath": "posts/10700.html",
+    "sourceSha256": "56dd835b8b3d48c2ae6846012cd704c0b4150cb083efd219d8d9cae9458be8c1",
+    "title": "Redis00-基础",
+    "published": "2023-06-30T15:00:00.000Z",
+    "updated": "2023-11-28T13:52:04.184Z",
+    "slug": "10700",
+    "legacyUrl": "/posts/10700.html",
+    "canonicalPath": "/posts/10700/",
+    "category": "数据库",
+    "tags": [
+      "Redis"
+    ],
+    "originalCategories": [
+      "Redis"
+    ],
+    "originalTags": [
+      "Redis"
+    ],
+    "description": "基于Redis以及SpringBoot，实现了较为完整的业务流程",
+    "markdownPath": "src/content/posts/legacy/10700.md",
+    "counts": {
+      "sourceBytes": 40893,
+      "markdownBytes": 1249,
+      "sourceProseChars": 208,
+      "renderedProseChars": 208,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 4,
+      "localizedAssets": 0,
+      "unresolvedAssets": 4,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/Redis00-01.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis00-02.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis00-03.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis00-04.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "4 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10701",
+    "sourcePath": "posts/10701.html",
+    "sourceSha256": "17c821e3b5fdadbce81fde9977aed59095bd7d9d61cccb18f7a79dff4174a35a",
+    "title": "Redis00-基础",
+    "published": "2023-07-01T15:00:00.000Z",
+    "updated": "2023-11-28T13:52:23.991Z",
+    "slug": "10701",
+    "legacyUrl": "/posts/10701.html",
+    "canonicalPath": "/posts/10701/",
+    "category": "数据库",
+    "tags": [
+      "Redis"
+    ],
+    "originalCategories": [
+      "Redis"
+    ],
+    "originalTags": [
+      "Redis"
+    ],
+    "description": "Redis诞生于2009年全称是Remote Dictionary Server，远程词典服务器，是一个基于内存的键值型NoSQL数据库。",
+    "markdownPath": "src/content/posts/legacy/10701.md",
+    "counts": {
+      "sourceBytes": 46493,
+      "markdownBytes": 2772,
+      "sourceProseChars": 461,
+      "renderedProseChars": 461,
+      "codeBlocks": 10,
+      "codeLines": 20,
+      "tables": 1,
+      "tableCells": 24,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10702",
+    "sourcePath": "posts/10702.html",
+    "sourceSha256": "119e935061cb4ec38b6d39fc436bc4c26840914804210ec1952b587ac7d556dc",
+    "title": "Redis02-命令",
+    "published": "2023-07-02T09:00:00.000Z",
+    "updated": "2023-11-28T13:49:49.452Z",
+    "slug": "10702",
+    "legacyUrl": "/posts/10702.html",
+    "canonicalPath": "/posts/10702/",
+    "category": "数据库",
+    "tags": [
+      "Redis"
+    ],
+    "originalCategories": [
+      "Redis"
+    ],
+    "originalTags": [
+      "Redis"
+    ],
+    "description": "Redis是一个key-value的数据库，key一般是String类型，不过value的类型多种多样:",
+    "markdownPath": "src/content/posts/legacy/10702.md",
+    "counts": {
+      "sourceBytes": 54221,
+      "markdownBytes": 8002,
+      "sourceProseChars": 1108,
+      "renderedProseChars": 1108,
+      "codeBlocks": 1,
+      "codeLines": 1,
+      "tables": 10,
+      "tableCells": 163,
+      "links": 1,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10703",
+    "sourcePath": "posts/10703.html",
+    "sourceSha256": "4f4c291a27719239b4d7f43e415ef2ad6ad8558bc09519285e609d637ea8ec18",
+    "title": "Redis03-Jedis",
+    "published": "2023-07-02T11:00:00.000Z",
+    "updated": "2023-11-28T13:50:34.028Z",
+    "slug": "10703",
+    "legacyUrl": "/posts/10703.html",
+    "canonicalPath": "/posts/10703/",
+    "category": "数据库",
+    "tags": [
+      "Redis"
+    ],
+    "originalCategories": [
+      "Redis"
+    ],
+    "originalTags": [
+      "Redis"
+    ],
+    "description": "Jedis本身是线程不安全的，并且频繁的创建和销毁连接会有性能损耗，因此我们推荐大家使用Jedis连接池代替Jedis的直连方式",
+    "markdownPath": "src/content/posts/legacy/10703.md",
+    "counts": {
+      "sourceBytes": 47703,
+      "markdownBytes": 2234,
+      "sourceProseChars": 101,
+      "renderedProseChars": 101,
+      "codeBlocks": 5,
+      "codeLines": 50,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10704",
+    "sourcePath": "posts/10704.html",
+    "sourceSha256": "0f7c662a2e2dba0c119d071bb9c39528a9ba4bb59900a132c32af14cecf3534e",
+    "title": "Redis04-SpringDataRedis",
+    "published": "2023-07-02T13:00:00.000Z",
+    "updated": "2023-11-25T13:06:20.873Z",
+    "slug": "10704",
+    "legacyUrl": "/posts/10704.html",
+    "canonicalPath": "/posts/10704/",
+    "category": "数据库",
+    "tags": [
+      "Redis"
+    ],
+    "originalCategories": [
+      "Redis"
+    ],
+    "originalTags": [
+      "Redis"
+    ],
+    "description": "SpringData是Spring中数据操作的模块，包含对各种数据库的集成，其中对Redis的集成模块就叫做SpringDataRedis",
+    "markdownPath": "src/content/posts/legacy/10704.md",
+    "counts": {
+      "sourceBytes": 57232,
+      "markdownBytes": 6340,
+      "sourceProseChars": 824,
+      "renderedProseChars": 824,
+      "codeBlocks": 7,
+      "codeLines": 108,
+      "tables": 1,
+      "tableCells": 21,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10705",
+    "sourcePath": "posts/10705.html",
+    "sourceSha256": "a811cfe89651dd5a583e0b70701fda29871ec04ffaf0918be05746d4201ed0a6",
+    "title": "Redis05-短信登陆",
+    "published": "2023-07-03T13:00:00.000Z",
+    "updated": "2023-11-28T13:49:51.606Z",
+    "slug": "10705",
+    "legacyUrl": "/posts/10705.html",
+    "canonicalPath": "/posts/10705/",
+    "category": "数据库",
+    "tags": [],
+    "originalCategories": [
+      "Redis"
+    ],
+    "originalTags": [],
+    "description": "1.怎么基于session",
+    "markdownPath": "src/content/posts/legacy/10705.md",
+    "counts": {
+      "sourceBytes": 46587,
+      "markdownBytes": 4318,
+      "sourceProseChars": 849,
+      "renderedProseChars": 849,
+      "codeBlocks": 2,
+      "codeLines": 44,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 4,
+      "localizedAssets": 0,
+      "unresolvedAssets": 4,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/Redis05-%E7%9F%AD%E4%BF%A1%E7%99%BB%E9%99%86.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis05-02Session.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis05-03redis.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis05-%E6%8B%A6%E6%88%AA%E5%99%A8%E4%BC%98%E5%8C%96.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "4 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10706",
+    "sourcePath": "posts/10706.html",
+    "sourceSha256": "84e31f160df9f5a20eb1c3c7ef013b1e060811ad37f2fb75ba6f6d633cb27256",
+    "title": "Redis06-缓存",
+    "published": "2023-07-03T14:00:00.000Z",
+    "updated": "2023-11-25T13:06:41.704Z",
+    "slug": "10706",
+    "legacyUrl": "/posts/10706.html",
+    "canonicalPath": "/posts/10706/",
+    "category": "数据库",
+    "tags": [],
+    "originalCategories": [
+      "Redis"
+    ],
+    "originalTags": [],
+    "description": "缓存就是数据交换的缓冲区（称作Cache [ kae]] )，是存贮数据的临时地方，一般读写性能较高。",
+    "markdownPath": "src/content/posts/legacy/10706.md",
+    "counts": {
+      "sourceBytes": 46478,
+      "markdownBytes": 4661,
+      "sourceProseChars": 871,
+      "renderedProseChars": 871,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 2,
+      "tableCells": 25,
+      "links": 0,
+      "images": 5,
+      "localizedAssets": 0,
+      "unresolvedAssets": 5,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/Redis06-01%E7%BC%93%E5%AD%98.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis06-02%E7%BC%93%E5%AD%98%E6%9B%B4%E6%96%B0.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis06-03%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis06-03%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis06-04%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "5 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10707",
+    "sourcePath": "posts/10707.html",
+    "sourceSha256": "be2d5c25ba93c9cf9dcc83e4175eececa4d8c3cc936801f8a0a9270cf71a404b",
+    "title": "Redis07-秒杀",
+    "published": "2023-07-04T13:30:00.000Z",
+    "updated": "2023-11-25T13:06:46.518Z",
+    "slug": "10707",
+    "legacyUrl": "/posts/10707.html",
+    "canonicalPath": "/posts/10707/",
+    "category": "数据库",
+    "tags": [],
+    "originalCategories": [
+      "Redis"
+    ],
+    "originalTags": [],
+    "description": "一般的订单会出什么问题呢？",
+    "markdownPath": "src/content/posts/legacy/10707.md",
+    "counts": {
+      "sourceBytes": 42097,
+      "markdownBytes": 2281,
+      "sourceProseChars": 419,
+      "renderedProseChars": 419,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 5,
+      "localizedAssets": 0,
+      "unresolvedAssets": 5,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/Redis07-01%E5%85%A8%E5%B1%80%E5%94%AF%E4%B8%80ID.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis07-02%E7%A7%92%E6%9D%80%E6%B5%81%E7%A8%8B.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis07-02%E8%B6%85%E5%8D%96.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis07-03%E6%82%B2%E8%A7%82%E9%94%81%E4%B8%8E%E4%B9%90%E8%A7%82%E9%94%81.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis07-04%E9%9B%86%E7%BE%A4%E5%B9%B6%E5%8F%91%E9%97%AE%E9%A2%98.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "5 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10708",
+    "sourcePath": "posts/10708.html",
+    "sourceSha256": "9fb8bbbc8b4eb486e9f354f589dc00f71afbfe173bea0645521aecc3044f0bc4",
+    "title": "Redis08-分布式锁",
+    "published": "2023-07-05T13:30:00.000Z",
+    "updated": "2023-11-25T13:06:50.381Z",
+    "slug": "10708",
+    "legacyUrl": "/posts/10708.html",
+    "canonicalPath": "/posts/10708/",
+    "category": "数据库",
+    "tags": [],
+    "originalCategories": [
+      "Redis"
+    ],
+    "originalTags": [],
+    "description": "分布式锁的核心是实现多进程之间互斥，而满足这一点的方式有很多，常见的有三种:",
+    "markdownPath": "src/content/posts/legacy/10708.md",
+    "counts": {
+      "sourceBytes": 45301,
+      "markdownBytes": 4048,
+      "sourceProseChars": 540,
+      "renderedProseChars": 540,
+      "codeBlocks": 1,
+      "codeLines": 6,
+      "tables": 1,
+      "tableCells": 20,
+      "links": 0,
+      "images": 13,
+      "localizedAssets": 0,
+      "unresolvedAssets": 13,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/Redis08-01%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis08-01%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%812.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis08-01%E5%88%86%E5%B8%83%E5%BC%8F%E8%AF%AF%E5%88%A02.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis08-01%E5%88%86%E5%B8%83%E5%BC%8F%E8%AF%AF%E5%88%A0%E8%A7%A3%E5%86%B3.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis08-02%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%8E%9F%E5%AD%90%E6%80%A7.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis08-03%E8%B0%83%E7%94%A8%E8%84%9A%E6%9C%AC.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis08-04Lua.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis08-lua.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis08-Redission%E7%AE%80%E5%8D%95%E7%9A%84%E7%94%A8%E6%B3%95.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis08-Redission%E5%8F%AF%E9%87%8D%E5%85%A5%E5%8E%9F%E7%90%86.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis08-Redission%E5%8A%A0%E9%94%81.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis08-Redission%E8%A7%A3%E9%94%81.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis08-Redission%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%8E%9F%E7%90%86.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "13 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10709",
+    "sourcePath": "posts/10709.html",
+    "sourceSha256": "bb8febce6354d56d5ebe34007f1b979081989e256111bda54081c097ca44a77f",
+    "title": "Redis09-消息队列",
+    "published": "2023-07-08T11:30:00.000Z",
+    "updated": "2023-11-25T13:06:53.122Z",
+    "slug": "10709",
+    "legacyUrl": "/posts/10709.html",
+    "canonicalPath": "/posts/10709/",
+    "category": "数据库",
+    "tags": [],
+    "originalCategories": [
+      "Redis"
+    ],
+    "originalTags": [],
+    "description": "消息队列(Message Queue)，字面意思就是存放消息的队列。最简单的消息队列模型包括3个角色:",
+    "markdownPath": "src/content/posts/legacy/10709.md",
+    "counts": {
+      "sourceBytes": 42900,
+      "markdownBytes": 2300,
+      "sourceProseChars": 586,
+      "renderedProseChars": 586,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 3,
+      "localizedAssets": 0,
+      "unresolvedAssets": 3,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/Redis09-02pubsub.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis09-03Stream.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Redis09-03Stream02.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "3 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "10800",
+    "sourcePath": "posts/10800.html",
+    "sourceSha256": "16e241152192c9d48d469e8c1eaff47c30a57969d0df50f56a23be558392315c",
+    "title": "JavaScript总览",
+    "published": "2023-12-01T15:00:00.000Z",
+    "updated": "2023-12-01T13:56:15.087Z",
+    "slug": "10800",
+    "legacyUrl": "/posts/10800.html",
+    "canonicalPath": "/posts/10800/",
+    "category": "前端开发",
+    "tags": [
+      "JavaScript"
+    ],
+    "originalCategories": [
+      "JavaScript"
+    ],
+    "originalTags": [
+      "JavaScript"
+    ],
+    "description": "",
+    "markdownPath": "src/content/posts/legacy/10800.md",
+    "counts": {
+      "sourceBytes": 38740,
+      "markdownBytes": 383,
+      "sourceProseChars": 0,
+      "renderedProseChars": 0,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "10801",
+    "sourcePath": "posts/10801.html",
+    "sourceSha256": "13e2047b6f102fcde2e1a4fdf1499e10962cc37fad031f5f7518bb5cedf39382",
+    "title": "JavaScript01-基础",
+    "published": "2023-12-01T15:00:00.000Z",
+    "updated": "2023-12-07T13:48:39.232Z",
+    "slug": "10801",
+    "legacyUrl": "/posts/10801.html",
+    "canonicalPath": "/posts/10801/",
+    "category": "前端开发",
+    "tags": [
+      "JavaScript"
+    ],
+    "originalCategories": [
+      "JavaScript"
+    ],
+    "originalTags": [
+      "JavaScript"
+    ],
+    "description": "1.JavaScript 是什么（是什么？）",
+    "markdownPath": "src/content/posts/legacy/10801.md",
+    "counts": {
+      "sourceBytes": 54209,
+      "markdownBytes": 7467,
+      "sourceProseChars": 2077,
+      "renderedProseChars": 2077,
+      "codeBlocks": 13,
+      "codeLines": 17,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 1
+    },
+    "unresolvedAssets": [],
+    "warnings": [
+      "literal unclosed <script> in prose escaped to text"
+    ]
+  },
+  {
+    "id": "20002",
+    "sourcePath": "posts/20002.html",
+    "sourceSha256": "9bb2f05f0d8ee4183a24188132ece67b23330b1f8b6df46aa00ca59b11499aed",
+    "title": "VIM基础教程",
+    "published": "2023-06-20T16:00:00.000Z",
+    "updated": "2023-11-28T13:27:23.592Z",
+    "slug": "20002",
+    "legacyUrl": "/posts/20002.html",
+    "canonicalPath": "/posts/20002/",
+    "category": "工具与工程",
+    "tags": [
+      "VIM"
+    ],
+    "originalCategories": [
+      "VIM"
+    ],
+    "originalTags": [
+      "VIM"
+    ],
+    "description": "vim有三种基本的工作模式，分别为：命令模式、末行模式、编辑模式。关于这三种工作模式的介绍，请见下文。",
+    "markdownPath": "src/content/posts/legacy/20002.md",
+    "counts": {
+      "sourceBytes": 62243,
+      "markdownBytes": 8213,
+      "sourceProseChars": 2011,
+      "renderedProseChars": 2011,
+      "codeBlocks": 1,
+      "codeLines": 5,
+      "tables": 4,
+      "tableCells": 102,
+      "links": 2,
+      "images": 13,
+      "localizedAssets": 0,
+      "unresolvedAssets": 13,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/Vim01.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Vim02.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Vim03.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Vim04.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Vim05.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Vim06.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Vim07.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Vim08.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Vim09.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Vim10.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Vim11.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Vim12.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/Vim13.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "13 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "20004",
+    "sourcePath": "posts/20004.html",
+    "sourceSha256": "0064bda438be50e73bd628d9526d88ebe17a795afe0a67d193fb4158a3698a40",
+    "title": "Mybatis基础入门",
+    "published": "2023-06-22T16:00:00.000Z",
+    "updated": "2023-11-28T13:25:00.153Z",
+    "slug": "20004",
+    "legacyUrl": "/posts/20004.html",
+    "canonicalPath": "/posts/20004/",
+    "category": "后端开发",
+    "tags": [
+      "Mybatis"
+    ],
+    "originalCategories": [
+      "Mybatis"
+    ],
+    "originalTags": [
+      "Mybatis"
+    ],
+    "description": "MyBatis是一款优秀的持久层框架，==用于简化JDBC的开发。==",
+    "markdownPath": "src/content/posts/legacy/20004.md",
+    "counts": {
+      "sourceBytes": 59077,
+      "markdownBytes": 8874,
+      "sourceProseChars": 1933,
+      "renderedProseChars": 1933,
+      "codeBlocks": 4,
+      "codeLines": 61,
+      "tables": 2,
+      "tableCells": 28,
+      "links": 0,
+      "images": 1,
+      "localizedAssets": 0,
+      "unresolvedAssets": 1,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn//images/MyBatis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "1 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "20005",
+    "sourcePath": "posts/20005.html",
+    "sourceSha256": "aab31a7e3e0501d15eb210d036e75a5fd5037a92e839ca4a01c9e7dbc1c38e88",
+    "title": "SpringBoot基础原理",
+    "published": "2023-06-23T16:00:00.000Z",
+    "updated": "2023-11-25T13:02:54.393Z",
+    "slug": "20005",
+    "legacyUrl": "/posts/20005.html",
+    "canonicalPath": "/posts/20005/",
+    "category": "后端开发",
+    "tags": [
+      "SpringBoot"
+    ],
+    "originalCategories": [
+      "SpringBoot"
+    ],
+    "originalTags": [
+      "SpringBoot"
+    ],
+    "description": "优先级(低→高)",
+    "markdownPath": "src/content/posts/legacy/20005.md",
+    "counts": {
+      "sourceBytes": 42200,
+      "markdownBytes": 2126,
+      "sourceProseChars": 549,
+      "renderedProseChars": 549,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 1,
+      "tableCells": 12,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "20006",
+    "sourcePath": "posts/20006.html",
+    "sourceSha256": "a84348201437d28081381f578d41c887ea2237ba7e2f7f1e5963318bde5504e1",
+    "title": "项目重构",
+    "published": "2023-06-24T16:00:00.000Z",
+    "updated": "2023-12-05T12:58:41.393Z",
+    "slug": "20006",
+    "legacyUrl": "/posts/20006.html",
+    "canonicalPath": "/posts/20006/",
+    "category": "后端开发",
+    "tags": [
+      "重构"
+    ],
+    "originalCategories": [
+      "项目重构"
+    ],
+    "originalTags": [
+      "重构"
+    ],
+    "description": "简化开发：二者效果相同",
+    "markdownPath": "src/content/posts/legacy/20006.md",
+    "counts": {
+      "sourceBytes": 74898,
+      "markdownBytes": 14163,
+      "sourceProseChars": 2337,
+      "renderedProseChars": 2337,
+      "codeBlocks": 10,
+      "codeLines": 193,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 2,
+      "localizedAssets": 0,
+      "unresolvedAssets": 2,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/%E6%9D%82%E9%A1%B904-02PageHelper.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      },
+      {
+        "url": "https://wang-nine.cn/images/%E6%9D%82%E9%A1%B904-02%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "2 body image(s) unresolved; original URLs kept"
+    ]
+  },
+  {
+    "id": "20007",
+    "sourcePath": "posts/20007.html",
+    "sourceSha256": "0b50067ff4f03f25c59e052faadc7046641e3f017cb9656d108a705743d7aaa4",
+    "title": "JUC",
+    "published": "2023-06-25T16:00:00.000Z",
+    "updated": "2023-11-25T13:03:05.767Z",
+    "slug": "20007",
+    "legacyUrl": "/posts/20007.html",
+    "canonicalPath": "/posts/20007/",
+    "category": "Java",
+    "tags": [
+      "JUC"
+    ],
+    "originalCategories": [
+      "JUC"
+    ],
+    "originalTags": [
+      "JUC"
+    ],
+    "description": "进程:指在系统中正在运行的一个应用程序﹔程序一旦运行就是进程﹔进程——资源分配的最小单位。。 线程:系统分配处理器时间资源的基本单元，或者说进程之内独立执行的一个单元执行流。线程——程序执行的最小单位。",
+    "markdownPath": "src/content/posts/legacy/20007.md",
+    "counts": {
+      "sourceBytes": 41481,
+      "markdownBytes": 1499,
+      "sourceProseChars": 330,
+      "renderedProseChars": 330,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "20230717",
+    "sourcePath": "posts/20230717.html",
+    "sourceSha256": "005d3ed892e88c6c2c7e0870faa01d2c28aed6d5d6a44533a5c5930fb201514b",
+    "title": "分析",
+    "published": "2023-07-16T16:00:00.000Z",
+    "updated": "2023-11-27T15:04:02.098Z",
+    "slug": "20230717",
+    "legacyUrl": "/posts/20230717.html",
+    "canonicalPath": "/posts/20230717/",
+    "category": "随笔",
+    "tags": [
+      "分析"
+    ],
+    "originalCategories": [
+      "分析"
+    ],
+    "originalTags": [
+      "分析"
+    ],
+    "description": "使用场景：在实体类上边使用，标记类时swagger的解析类",
+    "markdownPath": "src/content/posts/legacy/20230717.md",
+    "counts": {
+      "sourceBytes": 44147,
+      "markdownBytes": 3064,
+      "sourceProseChars": 867,
+      "renderedProseChars": 867,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 1,
+      "tableCells": 27,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 0
+    },
+    "unresolvedAssets": [],
+    "warnings": []
+  },
+  {
+    "id": "5",
+    "sourcePath": "posts/5.html",
+    "sourceSha256": "dd17cf97dbfaf80c37cf70165ed068daffce5df125f39065e1402edca51bde5c",
+    "title": "无题",
+    "published": "2023-11-13T14:06:06.690Z",
+    "updated": "2023-12-05T15:17:16.259Z",
+    "slug": "5",
+    "legacyUrl": "/posts/5.html",
+    "canonicalPath": "/posts/5/",
+    "category": "随笔",
+    "tags": [],
+    "originalCategories": [],
+    "originalTags": [],
+    "description": "事务隔离",
+    "markdownPath": "src/content/posts/legacy/5.md",
+    "counts": {
+      "sourceBytes": 38559,
+      "markdownBytes": 595,
+      "sourceProseChars": 126,
+      "renderedProseChars": 126,
+      "codeBlocks": 0,
+      "codeLines": 0,
+      "tables": 0,
+      "tableCells": 0,
+      "links": 0,
+      "images": 0,
+      "localizedAssets": 0,
+      "unresolvedAssets": 0,
+      "warnings": 1
+    },
+    "unresolvedAssets": [],
+    "warnings": [
+      "no legacy category; mapped to 随笔"
+    ]
+  },
+  {
+    "id": "999999999",
+    "sourcePath": "posts/999999999.html",
+    "sourceSha256": "1d35f3af924cfb71f90b9bb9cf1ba118afe99867299507ecfc07a732e8a0f471",
+    "title": "后端",
+    "published": "2023-07-02T15:00:00.000Z",
+    "updated": "2023-11-25T13:35:34.222Z",
+    "slug": "999999999",
+    "legacyUrl": "/posts/999999999.html",
+    "canonicalPath": "/posts/999999999/",
+    "category": "后端开发",
+    "tags": [
+      "后端"
+    ],
+    "originalCategories": [
+      "后端"
+    ],
+    "originalTags": [
+      "后端"
+    ],
+    "description": "Java语言的特点是：一次编译，到处运行，即平台无关性；是纯粹的面向对象的语言。",
+    "markdownPath": "src/content/posts/legacy/999999999.md",
+    "counts": {
+      "sourceBytes": 242957,
+      "markdownBytes": 109440,
+      "sourceProseChars": 35852,
+      "renderedProseChars": 35852,
+      "codeBlocks": 11,
+      "codeLines": 185,
+      "tables": 2,
+      "tableCells": 26,
+      "links": 2,
+      "images": 1,
+      "localizedAssets": 0,
+      "unresolvedAssets": 1,
+      "warnings": 1
+    },
+    "unresolvedAssets": [
+      {
+        "url": "https://wang-nine.cn/images/%E9%9D%A2%E7%BB%8F01-jvm%E5%86%85%E5%AD%98%E5%88%92%E5%88%86.png",
+        "reason": "unavailable: <urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "warnings": [
+      "1 body image(s) unresolved; original URLs kept"
+    ]
+  }
+]

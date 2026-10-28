@@ -1,0 +1,325 @@
+[
+  {
+    "url": "https://wang-nine.cn//images/HTML5%2BCSS03-01%E5%AD%97%E4%BD%93.png",
+    "kind": "text",
+    "replacementMarkdown": "字体修饰可以按职责分开记忆：`font-size` 控制字号，`font-weight` 控制粗细，`font-style` 控制倾斜，`line-height` 控制行高，`font-family` 指定字体与回退顺序。先分别调整这些属性观察差异，再使用 `font` 简写；简写中的字号与字体族不可省略，行高紧随字号并用斜杠连接。多字体列表从左向右匹配，最后保留通用字体族作为回退。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10502.md：字体修饰属性及其后 font-size、font-weight、font-style、line-height、font-family、font 简写各节。整理正文已有语义，不声称还原原图字体样式。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/HTML5%2BCSS03-07%E9%A2%84%E8%A7%88.png",
+    "kind": "text",
+    "replacementMarkdown": "页面从上到下由页头、横幅、精品推荐、课程列表和页脚组成。页头版心内依次安排 logo、导航、搜索与用户信息；横幅左侧放分类导航，右侧放课程表；下方课程区用可换行的 Flex 列表组织卡片。阅读后面的代码时，先核对各区域的嵌套关系，再检查宽度、间距和文字样式。示例 CSS 使用固定 `1200px` 版心，窄屏时需要另行设计适配，不能把桌面布局直接视为响应式布局。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10503.md：完整布局说明、index.html 中 header/banner/recommend/course/footer 与 index.css 的 wrapper、Flex 声明。由源码归纳结构，不伪造软件预览或课程素材。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud02-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%8A%80%E6%9C%AF%E6%A0%88",
+    "kind": "text",
+    "replacementMarkdown": "Spring Boot 负责单个服务的应用组织与启动，Spring Cloud 则围绕多个服务协作提供治理组件。可以沿一条调用链理解它们：服务先注册实例信息，消费者按服务名发现实例，再通过 HTTP 客户端发起调用；外部请求由网关统一路由，跨服务的配置、监控与容错由相应组件配合。前面的组件对照表属于本文学习时的技术背景，实际选型还应核对 Spring Boot、Spring Cloud 与 Alibaba 组件的版本兼容关系。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10601.md：SpringCloud 基于 SpringBoot、服务治理问题与组件差异对比。该无扩展名 URL 原样保留；未把原图猜测为特定版本依赖矩阵。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud03-01Eureka%E7%9A%84%E4%BD%9C%E7%94%A8.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![Eureka 中实例注册、服务发现与直接 HTTP 调用的关系](/article-diagrams/springcloud-tools/eureka-discovery.svg)\n\n原理示意：提供者注册地址并发送心跳，消费者获取实例列表并在客户端选择目标。业务请求直接发给目标实例，不通过 Eureka Server 中转；服务发现的缓存与更新也意味着异常感知并非瞬时完成。",
+    "assets": ["public/article-diagrams/springcloud-tools/eureka-discovery.svg"],
+    "basis": "src/content/posts/legacy/10603.md：提供者与消费者、Eureka 作用、userservice 服务名调用和 @LoadBalanced。原创概念图，不是 Eureka 控制台截图。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud05-05Nacos%E9%9B%86%E7%BE%A4.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![Nacos 集群的代理入口、多个节点与配置存储关系](/article-diagrams/springcloud-tools/nacos-cluster.svg)\n\n原理示意：多个 Nacos 节点组成集群，按部署方案通过代理提供入口，配置数据使用共享的 MySQL 持久化存储。数据库连线只表示配置存储，不表示所有服务注册信息都写入 MySQL；节点互联、客户端协议和代理端口还需按实际版本配置。",
+    "assets": ["public/article-diagrams/springcloud-tools/nacos-cluster.svg"],
+    "basis": "src/content/posts/legacy/10605.md：Nacos 集群章节的 MySQL、节点配置、多节点启动与 nginx 反向代理步骤。图刻意不指定原文未给出的节点 IP、端口或所有注册数据的存储机制。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud06-01%E6%96%B9%E5%BC%8F%E4%B8%80",
+    "kind": "diagram",
+    "replacementMarkdown": "![公共父接口由 Feign 客户端继承、服务端 Controller 实现](/article-diagrams/springcloud-tools/feign-inheritance.svg)\n\n原理示意：公共父接口统一方法契约，两端分别继承或实现，但运行时仍是跨进程的 HTTP 调用。接口复用会把契约变更传递到两端；尤其要核对当前版本对映射注解继承的支持，不能只凭 Java 接口继承就认定远程路由已经正确配置。",
+    "assets": ["public/article-diagrams/springcloud-tools/feign-inheritance.svg"],
+    "basis": "src/content/posts/legacy/10606.md：实践分析方式一明确给消费者 Feignclient 与提供者 controller 定义统一父接口。只绘契约关系，不声称此继承方式适用于所有 OpenFeign 版本。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud06-02%E6%96%B9%E5%BC%8F%E4%BA%8C",
+    "kind": "diagram",
+    "replacementMarkdown": "![多个消费者依赖包含客户端接口与传输对象的独立 Feign 模块](/article-diagrams/springcloud-tools/feign-module.svg)\n\n原理示意：把客户端接口、相关传输对象和默认配置抽成独立模块供消费者依赖，服务端保留自己的 Controller 实现。模块依赖只解决代码可见性；还要让 `@EnableFeignClients` 的扫描范围或显式客户端列表覆盖该接口，才能注册并注入调用代理。",
+    "assets": ["public/article-diagrams/springcloud-tools/feign-module.svg"],
+    "basis": "src/content/posts/legacy/10606.md：实践分析方式二及紧接的 basePackages、clients 扫描范围说明。原创模块依赖图，不引入原文之外的实际项目模块名或运行结果。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud07-01%E7%BD%91%E5%85%B3%E7%9A%84%E4%BD%9C%E7%94%A8.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![客户端经网关完成入口校验、路由匹配和服务转发](/article-diagrams/springcloud-tools/gateway-routing.svg)\n\n原理示意：网关集中承接外部流量，把认证、权限校验、限流与路由等入口职责组织起来。本文的 `/user/**` 匹配用户服务，`lb://userservice` 表示通过服务发现与负载均衡选择实例；这些策略需要相应配置或实现，不会仅因引入网关依赖便全部自动生效。",
+    "assets": ["public/article-diagrams/springcloud-tools/gateway-routing.svg"],
+    "basis": "src/content/posts/legacy/10607.md：为什么需要网关、网关作用，以及 Path=/user/** 和 lb://userservice 配置。其他微服务仅表示可扩展的路由目标，不伪造已配置的订单路由。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud07-02%E8%B7%AF%E7%94%B1%E8%BF%87%E6%BB%A4%E5%99%A8",
+    "kind": "text",
+    "replacementMarkdown": "路由过滤器配置在某条路由的 `filters` 下，只处理匹配该路由的请求。理解时分清三个步骤：`predicates` 判断请求是否匹配，`uri` 指定转发目标，`filters` 在转发前后处理请求或响应。例如统一添加请求头、调整路径或补充响应头，属于过滤器职责而不是新的业务接口。配置语法与可用工厂以当前 Gateway 版本为准，不把过滤器数量当作固定常量。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10607.md：路由配置四项、GatewayFilter 节，以及与 GlobalFilter 的比较。以功能说明替代配置图片，不假定原图中的具体过滤器工厂或参数。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud07-03%E8%BF%87%E6%BB%A4%E5%99%A8%E9%93%BE.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![Gateway 前置处理按 order 升序进入、后置处理沿嵌套链反向返回](/article-diagrams/springcloud-tools/gateway-filter-chain.svg)\n\n原理示意：正常放行时，前置处理按 `order` 从小到大进入过滤器链，响应的后置处理沿已建立的嵌套顺序返回。直接结束响应会短路后续处理；同一 `order` 下的类型顺序需结合版本和实际注册方式核对，不能仅依赖类型名称判断。",
+    "assets": ["public/article-diagrams/springcloud-tools/gateway-filter-chain.svg"],
+    "basis": "src/content/posts/legacy/10607.md：AuthorizeFilter 的 getOrder=-1、chain.filter 与 setComplete 分支，以及过滤器链执行顺序。图中 -1/1/2 为顺序说明，不是实际执行日志；未强化正文中同 order 的版本相关断言。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud07-03%E9%BB%98%E8%AE%A4%E8%B7%AF%E7%94%B1%E5%99%A8.png",
+    "kind": "text",
+    "replacementMarkdown": "当多条路由需要相同的过滤规则时，可以把公共规则放到 `spring.cloud.gateway.default-filters`，避免在每条路由中重复声明。它表示默认应用的路由过滤器配置，并不是替请求选择目标的“默认路由器”。单条路由仍可声明自己的 `filters`；需要自定义通用逻辑时，再考虑下面介绍的 `GlobalFilter`，并检查公共规则与局部规则是否产生重复处理。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10607.md：该图位于路由过滤器与全局过滤器之间，后文提到 defaultFilter。依据 default-filters 语义补齐说明，不把图片文件名中的默认路由器当作组件名称。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud08-01%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4.png",
+    "kind": "text",
+    "replacementMarkdown": "镜像操作按目的区分：`docker pull` 从仓库拉取镜像，`docker images` 查看本地镜像，`docker image inspect` 查看元数据，`docker tag` 为已有镜像增加引用，`docker push` 推送到指定仓库，`docker rmi` 删除本地镜像引用。归档迁移使用下面的 `save` 与 `load`，它们不是创建或启动容器的命令。省略标签通常使用 `latest`，但这个标签只是约定名称，不保证始终对应时间上最新或兼容的版本。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10608.md：镜像名称、镜像相关命令与 save/load 示例。补充命令职责并澄清 latest 语义；未编造镜像 ID、下载状态或控制台输出。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud08-01Docker%E4%B8%8E%E8%99%9A%E6%8B%9F%E6%9C%BA.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![Linux 容器共享宿主内核，虚拟机各有客户机系统与内核](/article-diagrams/springcloud-tools/docker-vm.svg)\n\n原理示意：Linux 容器隔离应用进程与资源，但共享其运行宿主的 Linux 内核；虚拟机则在虚拟化层上运行各自的客户机系统。这里比较的是隔离层次，不是性能测试：启动耗时、占用空间和性能仍取决于镜像、负载与平台，Docker Desktop 运行 Linux 容器时通常还包含 Linux 虚拟机这一层。",
+    "assets": ["public/article-diagrams/springcloud-tools/docker-vm.svg"],
+    "basis": "src/content/posts/legacy/10608.md：Docker 与虚拟机、环境依赖与隔离说明。原创分层图；不用 MB/GB、秒/分钟构造测量数据，也不把 Linux 内核共享推广到 Windows 原生内核。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud08-02%E5%AE%B9%E5%99%A8%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![Docker 镜像创建容器、停止重启及删除的生命周期](/article-diagrams/springcloud-tools/docker-lifecycle.svg)\n\n原理示意：`run` 基于镜像创建并启动新容器，`stop` 停止已有容器，`start` 重新启动同一个容器，`rm` 删除容器。镜像、容器可写层与外部数据卷是不同对象；再次执行 `run` 不等于恢复原容器，删除容器也不等于删除镜像或命名数据卷。",
+    "assets": ["public/article-diagrams/springcloud-tools/docker-lifecycle.svg"],
+    "basis": "src/content/posts/legacy/10608.md：镜像与容器定义、容器命令、状态、删除与进入容器说明。原创状态图，未声称展示实际容器运行状态。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud08-02docker%E6%9E%B6%E6%9E%84.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![Docker CLI 经 API 连接守护进程，由守护进程管理镜像容器并连接仓库](/article-diagrams/springcloud-tools/docker-architecture.svg)\n\n原理示意：客户端把命令交给 Docker daemon，实际的镜像拉取、容器创建和资源管理发生在守护进程所在主机。Registry 保存可分发的镜像，`pull` 与 `push` 分别拉取与推送镜像内容；镜像到达本机后，还需要创建并启动容器才能运行应用。",
+    "assets": ["public/article-diagrams/springcloud-tools/docker-architecture.svg"],
+    "basis": "src/content/posts/legacy/10608.md：Docker 架构的 client/server 定义及 DockerHub、Registry、镜像与容器章节。原创 C/S 关系图，不模拟管理软件界面。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud08-03%E5%AE%B9%E5%99%A8%E7%9A%84%E4%BE%8B%E5%AD%90",
+    "kind": "text",
+    "replacementMarkdown": "以 Nginx 为例，可使用 `docker run --name web -p 8080:80 -d nginx:latest` 创建一个后台容器：`web` 是容器名称，`8080:80` 把宿主机端口映射到容器内端口，`-d` 表示后台运行。运行前确认宿主端口未被占用；随后可用 `docker ps` 查看状态，用 `docker logs web` 排查启动问题。需要保留同一个容器时使用 `stop` 与 `start`，不要重复创建同名容器。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10608.md：容器例子位置及紧接的 --name、-p、-d、logs、ps 说明。命令为参数教学示例，未执行，也不提供虚构的 ID、响应内容或成功截图。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud08-04%E6%95%B0%E6%8D%AE%E5%8D%B7.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![命名数据卷和宿主目录在容器可写层之外提供存储](/article-diagrams/springcloud-tools/docker-storage.svg)\n\n原理示意：把网页、数据库文件等需要保留的数据挂载到容器外部，使容器升级与数据生命周期分离。命名卷由 Docker 管理，绑定挂载指向指定宿主路径；删除容器通常不删除这些外部数据，但主动删除卷或宿主文件仍会造成数据丢失，挂载不能替代备份。",
+    "assets": ["public/article-diagrams/springcloud-tools/docker-storage.svg"],
+    "basis": "src/content/posts/legacy/10608.md：容器与数据耦合的问题、volume 操作和后面的挂载方式。原创存储关系图，不将数据卷描述为自动备份或同步机制。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud08-05%E6%95%B0%E6%8D%AE%E5%8D%B7%E4%B8%A4%E7%A7%8D%E6%8C%82%E8%BD%BD%E6%96%B9%E5%BC%8F.png",
+    "kind": "text",
+    "replacementMarkdown": "两种挂载方式可通过来源区分：`-v html:/usr/share/nginx/html` 使用名为 `html` 的数据卷，`-v /srv/site:/usr/share/nginx/html` 则直接绑定宿主目录。前者由 Docker 管理存储位置，后者依赖宿主目录结构与权限，更适合直接编辑网站文件。冒号右侧始终是容器路径；只需读取的内容可增加 `:ro`。挂载会遮蔽目标目录原有内容，部署前应确认来源数据和访问权限。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10608.md：两种挂载方式图片及紧接的数据卷名、宿主文件和宿主目录挂载说明。沿用上一幅存储原理图并提供参数对照，避免相邻位置重复同一图片。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud08-07%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93.png",
+    "kind": "text",
+    "replacementMarkdown": "私有 Registry 的工作流程是：先为本地镜像设置包含仓库地址的名称，再按仓库要求完成认证并推送；其他主机使用同一地址拉取镜像，再创建容器。前文的 `registry-data:/var/lib/registry` 用来持久化仓库内容，图形管理页面只是访问仓库的入口，不是镜像本身的存储位置。生产部署应配置 TLS、访问控制与备份，不应把学习环境中的 HTTP 信任配置直接当作生产方案。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10608.md：公共与私有镜像仓库、registry-data 挂载、registry 与 ui 的 Compose 配置以及 HTTP 信任配置。用实际职责与操作顺序替代 UI 截图，不猜测仓库内已有镜像。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud09-01%E5%90%8C%E6%AD%A5%E8%B0%83%E7%94%A8.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![同步调用等待处理结果，与通过消息队列异步消费的对比](/article-diagrams/springcloud-tools/mq-sync-async.svg)\n\n原理示意：同步调用的调用方需要等待本次请求的处理结果，才能继续依赖该结果的流程。若多个调用串行发生，端到端延迟会累积；一处变慢或失败还可能沿依赖链传播，因此需要明确超时、错误处理与隔离边界，不能仅凭同步方式就推断系统一定发生级联故障。",
+    "assets": ["public/article-diagrams/springcloud-tools/mq-sync-async.svg"],
+    "basis": "src/content/posts/legacy/10609.md：同步调用的即时结果、等待、性能与级联失败风险。与异步章节共用原创对比图，不添加交易场景、耗时数字或执行数据。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SpringCloud09-02%E5%BC%82%E6%AD%A5%E8%B0%83%E7%94%A8.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![生产者经 Broker 发布消息、消费者独立处理的异步关系](/article-diagrams/springcloud-tools/mq-sync-async.svg)\n\n原理示意：异步调用把消息提交与后续业务处理分开，消费者按自己的处理能力消费队列中的消息。生产者收到发布确认，并不等于消费者已经完成业务；故障隔离和流量削峰也依赖 Broker 容量、消息持久化、失败重试及消费者幂等。需要最终结果时，可另行设计结果事件或状态查询。",
+    "assets": ["public/article-diagrams/springcloud-tools/mq-sync-async.svg"],
+    "basis": "src/content/posts/legacy/10609.md：异步调用的解耦、吞吐、故障隔离、流量削峰与 Broker 可靠性依赖，以及 MQ/Broker 定义。复用同一对比图承接上下节，不声称提供端到端恰好一次保证。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/%E6%9D%82%E9%A1%B904-02%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.png",
+    "kind": "text",
+    "replacementMarkdown": "文件上传请求使用 `multipart/form-data`，让普通字段与文件作为不同部分传给后端。接口联调时，对本文带普通参数的示例填写 `username`、`age`，将 `image` 字段设为文件并选择本地文件；字段名应与接收参数一致。服务端用 `MultipartFile` 读取文件，校验大小与实际类型后生成安全的唯一名称，再保存到本地目录或交给 OSS 工具。浏览器提交 `FormData` 时应让浏览器生成含 boundary 的请求头，不要手写一个缺少 boundary 的 Content-Type。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/20006.md：文件上传、username/age/MultipartFile image 的本地存储代码与 aliOSSUtils.upload(image) 代码。按 HTTP multipart 语义给出联调步骤，不模拟 Postman 界面，不声称原代码已做完整安全校验。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/%E6%9D%82%E9%A1%B904-02PageHelper.png",
+    "kind": "text",
+    "replacementMarkdown": "使用 PageHelper 时，先确保项目已引入匹配的依赖并注册分页拦截器，再在要分页的 MyBatis 查询前紧邻调用 `PageHelper.startPage(page, pageSize)`，随后立即执行目标查询，避免夹入其他查询。分页插件负责改写分页 SQL，并可按配置执行总数查询；返回时将本页数据与总记录数封装到同一个响应对象。检查页码与每页条数的范围、排序是否稳定，以及筛选条件是否同时作用于数据和总数，不要分页之后再对结果重复做内存切片。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/20006.md：分页查询 page/pageSize、limit/count 两条 SQL、列表与 total 封装，以及 PageHelper 标题。原文没有完整 PageHelper 配置，故仅说明调用时序与前置条件，不伪造查询结果或依赖版本。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Hexo01-01%E6%9F%A5%E7%9C%8Bnode%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F.png",
+    "kind": "text",
+    "replacementMarkdown": "安装后重新打开终端，分别执行上面的 `node -v` 与 `npm -v`。两条命令都能返回版本号，才说明当前终端可以找到对应程序；具体版本以本机实际输出为准。如果提示命令无法识别，先确认安装过程已完成、终端已重开，再检查安装目录是否加入 `PATH`。若机器上装过多个版本，还应检查命令实际解析到的路径，避免后续安装 Hexo 时使用了另一套环境。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10001.md：Node.js 安装及 node -v/npm -v 检查命令。只给判定方法与排查步骤，无虚构版本号或执行成功记录。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Hexo01-02Git%E5%AE%89%E8%A3%85-1.png",
+    "kind": "text",
+    "replacementMarkdown": "在 Git 官网进入下载区域，按操作系统与处理器架构选择安装包，不要只依据网页上的某个按钮位置判断版本。Windows 用户安装时留意安装目录、默认编辑器以及命令行可用范围；如果希望在普通终端中使用 Git，应选择包含相应 PATH 集成的方案。完成安装后重开终端并执行 `git --version`，以能否返回实际版本信息检查命令是否可用，再继续准备博客仓库。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10001.md：Git 官网、按系统下载安装、记住路径和安装后 cmd 测试。使用功能性导航，不猜测官网按钮文案、安装向导页数或原图 UI 版本。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Hexo01-03github%E7%9A%84%E9%85%8D%E7%BD%AE.png",
+    "precedingText": "如图所示为我的仓库样例：\n\n",
+    "kind": "text",
+    "replacementMarkdown": "个人主页仓库的配置要点：\n\n仓库的关键配置是所有者与名称匹配：个人主页仓库命名为 `<用户名>.github.io`，其中用户名使用实际的 GitHub 账号名，而不是昵称。登录后从仓库创建入口填写名称，创建后核对仓库地址和所有者。随后在仓库设置中找到 Pages 的发布配置，按采用的部署方式选择分支发布或工作流发布；建好仓库本身并不代表站点已经发布，还需要后续生成并部署博客内容。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10001.md：github 配置、新建 用户名.github.io 仓库及后续 Hexo 部署。原截图前的“如图所示为我的仓库样例：”在移除截图后改为“个人主页仓库的配置要点：”，避免继续暗示存在样例图；以名称规则和功能导航替代，不冒充作者仓库的当前设置，不修改任何 Git/SSH 配置。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SpringCloud01-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%8A%80%E6%9C%AF%E6%A0%88.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![微服务请求入口、服务治理、业务集群与运行支撑的分层关系](/article-diagrams/springcloud-tools/microservice-stack.svg)\n\n原理示意：业务服务负责各自能力，网关处理统一入口，注册与配置中心提供治理信息，缓存、搜索与消息队列提供运行能力。日志、监控和部署贯穿这些服务的生命周期；图按职责归类，不表示所有组件都属于 Spring Cloud，也不要求小型系统一次性引入全部组件。",
+    "assets": ["public/article-diagrams/springcloud-tools/microservice-stack.svg"],
+    "basis": "src/content/posts/legacy/10601.md：微服务技术栈的完整条目与微服务架构特征。原创职责图，避免把 Docker、Jenkins、缓存或搜索误称为 Spring Cloud 内置组件。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SpringCloud04-01%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E6%B5%81%E7%A8%8B.png",
+    "kind": "text",
+    "replacementMarkdown": "在本文的 Ribbon 调用链中，`@LoadBalanced` 的 `RestTemplate` 先由拦截器识别 URL 中的服务名，再通过服务发现获得可用实例列表，交给 `IRule` 选择目标实例，最后用选中实例的主机和端口发出 HTTP 请求。负载均衡发生在消费者一侧，Eureka 并不代理业务流量；实例列表通常还涉及客户端缓存与更新，不应理解为每次业务请求都同步查询一次注册中心。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10604.md：Ribbon 拦截请求、Eureka 返回服务列表、IRule 策略；结合已读 10603.md 的 @LoadBalanced 调用上下文。仅描述该历史教程栈，不宣称当前所有 Spring Cloud 项目默认采用 Ribbon。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SpringCloud05-01Nacos%E7%8E%AF%E5%A2%83%E9%9A%94%E7%A6%BB.png",
+    "kind": "text",
+    "replacementMarkdown": "环境隔离先从 namespace 入手：在 Nacos 的命名空间管理区域为开发、测试等环境分别建立空间，并记录各自的 ID。微服务通过 `spring.cloud.nacos.discovery.namespace` 指向目标空间，消费者与提供者必须处在相同的发现范围内才能互相发现。下方配置填写的是命名空间 ID，不是显示名称；`cluster-name` 表示服务实例的集群属性，不能替代 namespace 的环境隔离职责。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10605.md：环境隔离 namespace、唯一 ID、不同空间服务不可见，以及 application.yml 的 namespace/cluster-name。功能性导航，不复制原图中未知的空间名称或运行状态。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SpringCloud05-02Nacos%E7%BB%86%E8%8A%82.png",
+    "kind": "text",
+    "replacementMarkdown": "服务注册与发现可以拆成四件事：提供者登记实例，客户端维护实例健康信息，消费者订阅或获取服务列表，消费者再按规则选择实例调用。本文采用的 Nacos 客户端配置通过 `discovery.ephemeral` 区分临时与持久实例；两者的健康检测和失联后的处理方式应结合服务端版本与协议理解。排查时先核对 namespace、服务名、集群名和实例健康状态，再判断是否是发现或负载均衡问题，不要只看到实例记录仍在就认定它可接收业务流量。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10605.md：Nacos 注册中心细节、ephemeral:false、心跳/主动检测和列表变更推送。限定本文旧栈背景，不把心跳协议或 AP/CP 描述扩张为所有 Nacos 版本的无条件规则。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SpringCloud05-03Nacos%E9%85%8D%E7%BD%AE%E8%AF%BB%E5%8F%96.png",
+    "kind": "text",
+    "replacementMarkdown": "本文的启动顺序是先读取引导配置，再连接 Nacos 获取远程配置，随后建立应用环境并创建业务对象。`bootstrap.yml` 提供连接地址、服务名、激活环境和后缀，客户端据此定位 Data ID；按文中的 `userservice`、`dev`、`yaml` 组合，对应的环境配置名为 `userservice-dev.yaml`。还需核对配置所属的 namespace 与 Group。该说明针对文中启用 bootstrap 的旧版集成方式，升级时应先核对配置加载机制，不能假设仅新增同名文件就必然生效。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10605.md：Nacos 配置读取问题、bootstrap.yml 与 service/profile/file-extension 示例及 Data ID 规则。文件名由正文配置推导，不是伪造远程配置读取结果。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SpringCloud05-04Nacos%E7%83%AD%E6%9B%B4%E6%96%B001.png",
+    "kind": "text",
+    "replacementMarkdown": "热更新先确认配置发布到了应用实际读取的 namespace、Group 与 Data ID，再检查客户端是否收到配置变更。对于通过 `@Value` 注入的运行参数，本文配合 `@RefreshScope` 让相关对象在刷新后重新取值；发布配置与业务对象实际使用新值是两个环节。验证时应读取应用暴露的相关行为或参数，不要仅凭配置中心内容已保存就认定所有对象都已经刷新。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10605.md：热更新两图所在段落、@Value 与 @RefreshScope 方式。按段落语义组织配置发布与对象刷新说明，不猜测第一个截图的具体内容。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SpringCloud05-04Nacos%E7%83%AD%E6%9B%B4%E6%96%B002.png",
+    "kind": "text",
+    "replacementMarkdown": "另一种方式是用 `@ConfigurationProperties` 把同一前缀下的配置绑定到配置对象，并让业务代码读取该对象。能否动态重新绑定还取决于该对象是否正确注册、客户端刷新机制和具体版本，不能把注解本身视为热更新开关。可以只调整一个可观察的业务参数，再检查后续请求是否读取新值；连接池、启动结构等配置不一定支持在线变更，应单独确认其生命周期与重建要求。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10605.md：@ConfigurationProperties 注入方式及自动刷新注意事项。与前条区分为配置对象绑定，不声称已完成刷新测试，也不猜测第二张截图的 UI。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Vim01.png",
+    "kind": "text",
+    "replacementMarkdown": "先区分输入内容与执行命令：普通模式下按键用于移动和编辑，不会直接写入文本；按 `i` 进入插入模式后才开始输入正文，按 `Esc` 回到普通模式。若不确定当前状态，先按 `Esc` 再执行下一步，比连续尝试不同按键更容易判断行为。后续的移动、删除与复制示例，除非另有说明，都以普通模式为起点。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/20002.md：三种基本模式与模式切换总结。Vim01–05 原图细节不可判定，按该段已有模式知识分项补写，不声称逐图复原。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Vim02.png",
+    "kind": "text",
+    "replacementMarkdown": "进入插入模式要先选好位置：`i` 在光标前插入，`a` 在光标后追加；`I` 移到当前行第一个非空白字符前插入，`A` 移到行尾追加。练习时在同一行分别尝试这些入口，输入少量文字后按 `Esc`，观察光标位置与文本变化。这里的大写和小写是不同命令，不能把 `I` 简单当作 `i` 的另一种写法。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/20002.md：NORMAL→INSERT 中 i/I/a/A 的说明。澄清 I 是首个非空白字符位置；仅总结本段能力，不推断原图示例文本。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Vim03.png",
+    "kind": "text",
+    "replacementMarkdown": "需要新增一行时，在普通模式按 `o` 会在当前行下方打开新行并进入插入模式，按 `O` 则在上方打开新行。它们不同于只移动光标的命令，也不同于在原行内部插入字符；如果只是想定位到邻行，应使用移动命令。输入完成后按 `Esc` 返回普通模式，下一次按键才会继续作为编辑指令解释。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/20002.md：open a new line 的 o/O 与 Esc 说明。为模式总结补充可操作语义，不生成编辑器截图或声称实际键入结果。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Vim04.png",
+    "kind": "text",
+    "replacementMarkdown": "可视模式用于先选范围再执行操作：普通模式按 `v` 开始按字符选择，随后通过移动命令扩大或缩小选区，再决定复制、删除或修改。放弃当前选择时按 `Esc` 返回普通模式，不必执行破坏性操作来退出。要留意状态栏显示的模式，避免把选择阶段的移动按键误认为已经在插入正文。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/20002.md：NORMAL 与 VISUAL 通过 v/Esc 切换，以及后文操作符。该段按基础可视模式整理，不假定 VSCodeVim 插件映射。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Vim05.png",
+    "kind": "text",
+    "replacementMarkdown": "普通模式按 `:` 进入命令行后，可以输入保存、退出或设置命令，按回车执行，按 `Esc` 取消本次命令输入。`jj` 或把 `CapsLock` 当作退出键并不是 Vim 原生的统一行为，它们需要相应映射或系统配置；迁移到新环境时先使用 `Esc`。单字符替换 `r` 也不同于持续输入的插入模式，不应把所有编辑入口混为一类。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/20002.md：冒号与 Esc 切换、jj/CapsLock 及前文 r/R 的混合说明。明确自定义映射与原生命令边界，避免照搬正文中的模式泛化。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Vim06.png",
+    "kind": "text",
+    "replacementMarkdown": "光标移动先从 `h`、`j`、`k`、`l` 开始：分别向左、下、上、右移动。可以在命令前加次数，例如 `3j` 向下移动三行，这里的数字属于移动次数，不会写入正文。移动只改变位置，不会删改文本；在普通模式熟悉方向后，再把相同的移动范围组合进删除或复制命令，能更清楚地判断操作影响。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/20002.md：光标移动章节及 h/j/k/l 表格。Vim06–09 缺乏原图细节，按本节明确列出的移动类别组织互补说明。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Vim07.png",
+    "kind": "text",
+    "replacementMarkdown": "按单词移动时，`w` 去下一个单词开头，`b` 返回当前或前一个单词开头，`e` 到当前或下一个单词结尾，`ge` 向后寻找前一个单词结尾。大写的 `W`、`B`、`E` 以空白分隔的较大文本块为单位，对包含标点的代码行尤其有区别。练习时把光标放在单词中间再比较各命令，注意起始位置会影响实际落点。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/20002.md：w/b/e/ge 解释与大写长单词移动表格。无伪造光标轨迹截图，示例要求学生观察而非报告运行结果。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Vim08.png",
+    "kind": "text",
+    "replacementMarkdown": "行内与文件级定位分开记忆：`0` 到行的第一个字符，`^` 到第一个非空白字符，`$` 到行尾；`gg` 到文件首行，`G` 到末行，`nG` 或 `ngg` 到指定行号。处理有缩进的代码时，`0` 与 `^` 的落点不同，前者包含缩进位置。先准确到行，再用单词或字符查找细调，通常比重复逐字符移动更容易控制。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/20002.md：移动表格中的行首、非空字符、行尾、首尾行和指定行。补充同义的 nG，不猜测 Vim08 具体示意布局。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Vim09.png",
+    "kind": "text",
+    "replacementMarkdown": "当前行内查找字符可用 `f{字符}` 向前落在目标字符上，`t{字符}` 向前停在目标字符之前；大写 `F` 与 `T` 反向查找。按 `;` 沿原方向重复，按 `,` 反向重复，不需要重新输入目标字符。跨越更大文本结构时，可以使用 `(`、`)` 按句子移动，或 `{`、`}` 按段落边界移动，先分清搜索范围再选择命令。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/20002.md：f/F/t/T、分号逗号及句段移动表格。按功能归纳，不声称知道 Vim09 原图指针或目标字符。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Vim10.png",
+    "kind": "text",
+    "replacementMarkdown": "移动命令描述从当前位置到目标位置的范围，文本对象则描述当前位置所属的一块结构。使用文本对象时通常先输入操作符或进入可视模式，再选择范围，例如 `iw` 表示单词内部，`aw` 包含单词及相关空白。把“要做什么”和“作用在哪一块”分开思考，能避免先手动选很长一段文本，再猜测是否漏选边界。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/20002.md：动作 motion 章节、it/is/ip 与后续操作符章节的组合语境。补充标准文本对象概念，不把未见的 Vim10 图形当作证据。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Vim11.png",
+    "kind": "text",
+    "replacementMarkdown": "文本对象的 `i` 表示内部范围，`a` 通常连同外围分隔或相关空白一起选取。`it` 面向标签内部，`is` 面向句子内部，`ip` 面向段落内部；它们是操作范围，不是普通模式下任意单独敲击就会完成编辑的命令。可以先用 `v` 配合对象检查选区，再决定执行复制或修改；不同对象的边界规则不同，遇到嵌套结构时尤其要先确认范围。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/20002.md：动作 motion 下 it/inner tag、is/inner sentence、ip/inner paragraph。说明对象与操作符的关系，不提供依赖插件的未知键位。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Vim12.png",
+    "kind": "text",
+    "replacementMarkdown": "操作符按“操作 + 范围”组合：`d` 删除指定范围，`c` 删除后进入插入模式，`y` 复制范围；例如 `yy` 复制当前行，`dd` 删除当前行。`p` 是把寄存器内容放到当前位置之后的命令，不需要再跟一个移动范围。表中的 `b`、`B` 可用于特定括号文本对象，而不是通用操作符；`e` 在原生 Vim 中是移到单词结尾，不能当作默认全选命令。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/20002.md：操作符表格。保留 d/c/y/p 核心语义并澄清 b/B/e 分类，防止把原文中不严谨的全选与括号说明固化进替换内容。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Vim13.png",
+    "kind": "text",
+    "replacementMarkdown": "大小写转换使用明确的操作范围：`gU` 把范围转为大写，`gu` 转为小写，`g~` 切换大小写；例如 `gUw` 对当前移动范围执行大写转换，`guu` 将当前行转为小写。可视模式中先选定文本，再按 `U` 或 `u` 也能转换选区。普通模式单独的 `u` 是撤销，不是转小写；也不要把所有 `g` 前缀命令都理解成跳转，应按完整命令记忆。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/20002.md：大小写章节及其 g/U/u 说明。以原生 Vim 的完整命令语义替代无法确定的示意截图，明确普通模式 u 与大小写操作的区别。"
+  }
+]

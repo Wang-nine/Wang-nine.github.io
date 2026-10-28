@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" role="img" aria-labelledby="title desc">
+  <title id="title">事务的 undo、redo、锁与 MVCC</title>
+  <desc id="desc">事务修改产生 undo 与 redo。undo 支持失败回滚及历史版本重建，redo 支持崩溃恢复与持久性，锁和 MVCC 协调并发隔离。一致性由约束、正确事务逻辑及这些机制共同维护，并非 redo 单独实现。</desc>
+  <style>text{font-family:system-ui,'Microsoft YaHei',sans-serif;fill:#263d55;font-size:20px}.heading{font-size:32px;font-weight:700}.label{font-size:24px;font-weight:700}.note{font-size:18px}.node{fill:#f7efdf}.arrow{fill:none;stroke:#263d55;stroke-width:3;marker-end:url(#arrow)}</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#263d55"/></marker></defs>
+  <rect width="1200" height="700" rx="24" fill="#ecf3eb"/>
+  <text x="48" y="60" class="heading">事务：不同机制各自负责什么</text><text x="48" y="96" class="note">原理示意 · 机制分工，不表示严格执行时序</text>
+  <rect x="408" y="144" width="384" height="80" rx="12" fill="#d1e5e4"/>
+  <text x="456" y="192" class="label">事务中的数据修改</text>
+  <path d="M456 224 216 312M600 224V312M744 224 984 312" class="arrow"/>
+  <rect x="48" y="312" width="336" height="192" rx="12" class="node"/>
+  <text x="72" y="356" class="label">Undo</text><text x="72" y="400">记录撤销所需信息</text><text x="72" y="440">回滚 → 原子性</text><text x="72" y="476">历史版本 → MVCC</text>
+  <rect x="432" y="312" width="336" height="192" rx="12" class="node"/>
+  <text x="456" y="356" class="label">Redo + WAL</text><text x="456" y="400">记录页修改的重做信息</text><text x="456" y="440">日志先于数据页持久化</text><text x="456" y="476">崩溃恢复 → 持久性</text>
+  <rect x="816" y="312" width="336" height="192" rx="12" class="node"/>
+  <text x="840" y="356" class="label">锁 + MVCC</text><text x="840" y="400">协调并发访问</text><text x="840" y="440">锁定读 / 可见版本选择</text><text x="840" y="476">按隔离级别提供隔离</text>
+  <text x="48" y="560">一致性：数据库约束、正确业务事务逻辑与上述机制共同维护，不由 redo 单独保证。</text>
+  <text x="48" y="604">提交的持久性受日志刷盘策略影响；提交时不要求把所有脏页立即写回数据文件。</text>
+  <text x="48" y="652" class="note">回滚撤销未提交修改；不要把“回滚”理解为使这些修改永久保留。</text>
+</svg>

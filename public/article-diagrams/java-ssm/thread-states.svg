@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" role="img" aria-labelledby="title desc">
+<title id="title">Java 线程六种状态及典型转换</title>
+<desc id="desc">NEW 经 start 到 RUNNABLE，执行结束到 TERMINATED。竞争监视器失败到 BLOCKED，获得锁后返回。wait 到 WAITING，通知后重新竞争监视器；sleep 到 TIMED_WAITING，超时后返回可运行。带超时的 wait 也需重新获锁。</desc>
+<style>:root{--paper:#f7efdf;--panel:#ecf3eb;--wash:#d1e5e4;--ink:#263d55;--line:#366775}text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:var(--ink);font-size:18px}.title{font-size:20px;font-weight:700}.small{font-size:16px}.box{fill:var(--panel);stroke:var(--line);stroke-width:1.5}.wash{fill:var(--wash)}.flow{fill:none;stroke:var(--line);stroke-width:2;marker-end:url(#arrow)}</style>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8" fill="#366775"/></marker></defs><path fill="#f7efdf" d="M0 0H960V700H0z"/>
+<text x="36" y="44" class="title">Thread.State 的六种状态 · 原理示意</text><text x="36" y="76" class="small">只画典型路径；RUNNABLE 同时包含等待 CPU 调度与正在执行，不另设 RUNNING 状态。</text>
+<rect x="36" y="134" width="176" height="82" rx="8" class="box"/><text x="56" y="166" class="title">NEW</text><text x="56" y="197">尚未启动</text>
+<path d="M212 175H364" class="flow"/><text x="260" y="154" class="small">start()</text>
+<rect x="368" y="134" width="230" height="82" rx="8" class="box wash"/><text x="388" y="166" class="title">RUNNABLE</text><text x="388" y="197">可运行 / 执行中</text>
+<path d="M598 175H746" class="flow"/><text x="626" y="143" class="small">run() 结束</text><text x="626" y="163" class="small">含未捕获异常</text>
+<rect x="750" y="134" width="174" height="82" rx="8" class="box"/><text x="766" y="166">TERMINATED</text><text x="766" y="197">已终止</text>
+<rect x="36" y="350" width="218" height="86" rx="8" class="box"/><text x="56" y="383" class="title">BLOCKED</text><text x="56" y="416">等待监视器锁</text>
+<path d="M392 216V280H145V346" class="flow"/><text x="160" y="266" class="small">进入 synchronized 时竞争失败</text>
+<path d="M254 405H328V199H364" class="flow"/><text x="264" y="430" class="small">获锁</text>
+<rect x="368" y="350" width="230" height="86" rx="8" class="box"/><text x="388" y="383" class="title">WAITING</text><text x="388" y="416">无限期等待</text>
+<path d="M483 216V346" class="flow"/><text x="495" y="302" class="small">wait() / join()</text>
+<path d="M368 393H258" class="flow"/><text x="264" y="346" class="small">wait 被通知</text><text x="264" y="366" class="small">后重新竞争锁</text>
+<rect x="690" y="350" width="234" height="86" rx="8" class="box"/><text x="710" y="383" class="title">TIMED_WAITING</text><text x="710" y="416">限期等待</text>
+<path d="M574 216V264H807V346" class="flow"/><text x="664" y="252" class="small">sleep / wait(t) / join(t)</text>
+<path d="M864 350V300H598V205" class="flow"/><text x="697" y="323" class="small">sleep 超时 / join 结束等</text>
+<rect x="36" y="490" width="888" height="164" rx="8" class="box wash"/><text x="56" y="525" class="title">等待结束 ≠ 已获得 CPU 或监视器锁</text>
+<text x="56" y="561">• wait() 释放当前对象监视器；唤醒或超时后须先重新获锁才能返回。</text><text x="56" y="597">• sleep() 不释放已持有的监视器；到时仅表示可以再次参与调度。</text><text x="56" y="633">• join() 等待目标线程结束；带时限的等待进入 TIMED_WAITING。</text>
+</svg>

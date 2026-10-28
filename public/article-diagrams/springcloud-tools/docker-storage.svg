@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-labelledby="title desc">
+  <title id="title">Docker 命名数据卷与绑定挂载</title><desc id="desc">左侧由 Docker 管理的命名卷 html 挂载到容器的网页目录；右侧由用户管理的宿主路径绑定到容器内同一目录。两种方式都把数据置于容器可写层之外，删除容器不自动删除这些外部数据。</desc>
+  <!-- Contract: existing illustration palette; 8px grid; title 32, nodes 24, paths 20. -->
+  <style>text{font-family:system-ui,sans-serif;fill:#263d55;font-size:20px}.title{font-size:32px;font-weight:700}.node{font-size:24px;font-weight:600}.edge{fill:none;stroke:#366775;stroke-width:3;marker-start:url(#a);marker-end:url(#a)}</style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#366775"/></marker></defs>
+  <rect width="960" height="560" fill="#ecf3eb"/><text x="40" y="56" class="title">数据独立于容器：两种挂载方式</text><text x="40" y="88">原理示意 · 图中路径是挂载关系示例，不是执行结果</text>
+  <text x="40" y="144" class="node">命名数据卷 / volume</text><text x="504" y="144" class="node">绑定挂载 / bind mount</text>
+  <rect x="40" y="168" width="408" height="96" rx="16" fill="#f7efdf"/><text x="64" y="208" class="node">卷名 html</text><text x="64" y="240">存储位置与生命周期由 Docker 管理</text>
+  <rect x="504" y="168" width="416" height="96" rx="16" fill="#f7efdf"/><text x="528" y="208" class="node">宿主目录 /srv/site</text><text x="528" y="240">目录位置与权限由部署者管理</text>
+  <path d="M240 264V352M712 264V352" class="edge"/><text x="264" y="312">挂载</text><text x="736" y="312">挂载</text>
+  <rect x="40" y="352" width="408" height="96" rx="16" fill="#d1e5e4"/><text x="64" y="392" class="node">Nginx 容器</text><text x="64" y="424">/usr/share/nginx/html</text>
+  <rect x="504" y="352" width="416" height="96" rx="16" fill="#d1e5e4"/><text x="528" y="392" class="node">Nginx 容器</text><text x="528" y="424">/usr/share/nginx/html</text>
+  <text x="40" y="488">读写或只读由挂载选项决定；共享写入仍需应用自行协调，不是自动同步方案。</text><text x="40" y="528">删除容器不自动删除这些数据；删除卷、宿主文件或执行清理命令仍可能丢失数据。</text>
+</svg>

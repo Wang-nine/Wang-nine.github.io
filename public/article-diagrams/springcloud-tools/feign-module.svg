@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-labelledby="title desc">
+  <title id="title">Feign 客户端模块抽取</title><desc id="desc">独立的客户端模块包含 UserClient、传输对象和默认配置，多个消费者依赖该模块。消费者调用通过 Feign 发往用户服务，不需要依赖提供者的 Controller 实现。</desc>
+  <!-- Contract: cloud background, haze nodes, cream shared contract; 8px grid; 32/24/20 type. -->
+  <style>text{font-family:system-ui,sans-serif;fill:#263d55;font-size:20px}.title{font-size:32px;font-weight:700}.node{font-size:24px;font-weight:600}.edge{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#a)}.dependency{stroke-dasharray:8 6}</style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#366775"/></marker></defs>
+  <rect width="960" height="560" fill="#ecf3eb"/><text x="40" y="56" class="title">方案二：抽取客户端模块</text><text x="40" y="88">原理示意 · 虚线为模块依赖，实线为运行时请求</text>
+  <rect x="40" y="136" width="256" height="80" rx="16" fill="#d1e5e4"/><text x="64" y="184" class="node">order-service</text>
+  <rect x="40" y="280" width="256" height="80" rx="16" fill="#d1e5e4"/><text x="64" y="328" class="node">其他消费者</text>
+  <rect x="392" y="136" width="272" height="224" rx="16" fill="#f7efdf"/><text x="416" y="176" class="node">feign-api 模块</text><text x="416" y="224">UserClient 接口</text><text x="416" y="264">接口传输对象</text><text x="416" y="304">默认 Feign 配置</text>
+  <path d="M296 176H392M296 320H392" class="edge dependency"/>
+  <rect x="744" y="184" width="176" height="128" rx="16" fill="#d1e5e4"/><text x="760" y="224" class="node">user-service</text><text x="760" y="264">Controller</text><text x="760" y="296">提供 HTTP API</text>
+  <path d="M664 248H744" class="edge"/><text x="672" y="224">HTTP</text>
+  <rect x="40" y="408" width="880" height="112" rx="16" fill="#d1e5e4"/><text x="64" y="448">扫描检查：依赖模块并不会自动保证 Feign 接口被注册。</text><text x="64" y="488">在 @EnableFeignClients 中指定 basePackages 或 clients，覆盖模块所在位置。</text>
+</svg>

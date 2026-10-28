@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 920" width="100%" role="img" aria-labelledby="title desc">
+  <title id="title">B 树与 B+ 树的记录位置及叶链对照</title>
+  <desc id="desc">使用相同示例键 5、10、20、25、30、40、45、50 对照。B 树根节点含 20 和 40 的记录，叶节点不再重复这两条记录。B+ 树根节点只有分隔键 20 和 40，全部记录位于叶子，三个叶子按键序双向链接。</desc>
+  <style>text{font-family:system-ui,'Microsoft YaHei',sans-serif;fill:#263d55;font-size:20px}.heading{font-size:32px;font-weight:700}.label{font-size:24px;font-weight:700}.note{font-size:18px}.node{fill:#f7efdf;stroke:#263d55;stroke-width:2}.arrow{fill:none;stroke:#263d55;stroke-width:3;marker-end:url(#arrow)}.link{fill:none;stroke:#263d55;stroke-width:3;marker-start:url(#arrow);marker-end:url(#arrow)}</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#263d55"/></marker></defs>
+  <rect width="1200" height="920" rx="24" fill="#ecf3eb"/>
+  <text x="48" y="60" class="heading">同一组示例键：记录究竟放在哪里？</text>
+  <text x="48" y="96" class="note">原理示意 · 所有键值均为示例；“记录”表示键对应的数据或记录引用</text>
+  <text x="48" y="152" class="label">B 树：内部节点也保存记录</text>
+  <rect x="408" y="184" width="384" height="64" rx="12" class="node"/>
+  <text x="440" y="224">20 + 记录　│　40 + 记录</text>
+  <path d="M456 248 216 320M600 248V320M744 248 984 320" class="arrow"/>
+  <rect x="72" y="320" width="288" height="88" rx="12" class="node"/>
+  <rect x="456" y="320" width="288" height="88" rx="12" class="node"/>
+  <rect x="840" y="320" width="288" height="88" rx="12" class="node"/>
+  <text x="96" y="356">5 + 记录</text><text x="96" y="388">10 + 记录</text>
+  <text x="480" y="356">25 + 记录</text><text x="480" y="388">30 + 记录</text>
+  <text x="864" y="356">45 + 记录</text><text x="864" y="388">50 + 记录</text>
+  <text x="72" y="448" class="note">查找 20 时可在根命中；叶子中不再保存该记录。子树键域分别小于 20、介于 20 与 40、大于 40。</text>
+  <path d="M48 484H1152" stroke="#263d55" stroke-width="1"/>
+  <text x="48" y="536" class="label">B+ 树：内部节点负责导航，记录全部在叶子</text>
+  <rect x="408" y="568" width="384" height="64" rx="12" fill="#d1e5e4"/>
+  <text x="440" y="608">分隔键：20　│　40（无记录）</text>
+  <path d="M456 632 216 704M600 632V704M744 632 984 704" class="arrow"/>
+  <rect x="72" y="704" width="288" height="96" rx="12" class="node"/>
+  <rect x="456" y="704" width="288" height="96" rx="12" class="node"/>
+  <rect x="840" y="704" width="288" height="96" rx="12" class="node"/>
+  <text x="96" y="744">5、10</text><text x="96" y="776">每个键均带记录</text>
+  <text x="480" y="744">20、25、30</text><text x="480" y="776">每个键均带记录</text>
+  <text x="864" y="744">40、45、50</text><text x="864" y="776">每个键均带记录</text>
+  <path d="M368 752H448M752 752H832" class="link"/>
+  <text x="72" y="848" class="note">这里采用 InnoDB 式双向叶链。定位范围起点后，沿叶链顺序扫描；分隔键在叶子中仍有对应记录。</text>
+  <text x="72" y="884" class="note">此图只说明结构差异，不表示实际页容量、树高或磁盘读取次数。</text>
+</svg>

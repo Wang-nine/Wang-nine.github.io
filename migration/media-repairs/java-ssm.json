@@ -1,0 +1,240 @@
+[
+  {
+    "url": "https://wang-nine.cn//images/MyBatis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![MyBatis 接口与 XML 语句及结果映射关系](/article-diagrams/java-ssm/mybatis-mapping.svg)\n\n原理示意：Mapper 代理通过接口全限定名对应 XML 的 namespace，通过方法名对应语句 id。执行时绑定参数，再把查询结果封装为实体或集合；列名与属性名不一致时，需要别名、显式映射或开启驼峰映射，不能仅靠文件同名完成结果转换。",
+    "assets": ["/article-diagrams/java-ssm/mybatis-mapping.svg"],
+    "basis": "src/content/posts/legacy/20004.md:209–249 数据封装、驼峰配置及 XML 映射规范；82–86 使用流程。依据这些规则原创映射链路图，不复刻未知截图，未虚构 EmpMapper 的具体方法或查询数据。"
+  },
+  {
+    "url": "https://wang-nine.cn//images/SSM05-02AOP",
+    "kind": "diagram",
+    "replacementMarkdown": "![AOP 通知获取参数、返回值和异常的分支](/article-diagrams/java-ssm/aop-data.svg)\n\n原理示意：普通通知可通过 JoinPoint 读取方法参数，环绕通知使用 ProceedingJoinPoint，并以 proceed() 调用后续执行链。正常返回与抛出异常是不同分支，分别由返回后通知和异常后通知接收数据；环绕通知若接收了原始结果，应把结果返回给调用者。图中不规定多个切面的执行次序。",
+    "assets": ["/article-diagrams/java-ssm/aop-data.svg"],
+    "basis": "src/content/posts/legacy/10305.md:187–245 通知类型、around 返回值示例、获取参数/返回值/异常。末尾图片没有可读代码，改用前文能确定的语义绘制分支图；不猜测原截图的方法签名与日志。URL 保留双斜杠且无扩展名。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/%E9%9D%A2%E7%BB%8F01-jvm%E5%86%85%E5%AD%98%E5%88%92%E5%88%86.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![JVM 线程私有区域、共享区域及直接内存](/article-diagrams/java-ssm/jvm-memory.svg)\n\n原理示意：每个线程独有程序计数器、虚拟机栈与本地方法栈，堆和方法区则由线程共享。栈帧中的引用可以指向堆对象；运行时常量池属于方法区。直接内存位于规范定义的运行时数据区之外，可由堆中的 DirectByteBuffer 对象关联。这里区分逻辑职责，不表示实际物理地址或内存大小比例。",
+    "assets": ["/article-diagrams/java-ssm/jvm-memory.svg"],
+    "basis": "src/content/posts/legacy/999999999.md:806–826 Jvm内存划分完整小节，并参照364–378的运行时数据区描述。原创私有/共享/堆外关系图；区分规范方法区与 HotSpot JDK8 元空间实现，不把静态字段或 JIT 代码一概画进元空间。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/JavaSE01-01%E9%94%99%E8%AF%AF%E6%A0%B7%E4%BE%8B.png",
+    "kind": "text",
+    "replacementMarkdown": "两个取钱线程共享同一个 Account，但余额判断和扣款之间没有互斥保护。如果两者都在第一次扣款完成前通过余额检查，就可能都进入取款分支，破坏余额不能被重复支取的约束。问题在于检查与更新不是一个不可分割的操作；某次看似正常的打印顺序并不能证明线程安全，也不能把某个最终余额当作每次运行的固定结果。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10101.md:302–427，共享账户初始余额100000、两个 DrawThread 以及未同步 DrawMoney 的检查/打印/扣款顺序。文字只解释允许发生的竞态，不声称复现实测输出或固定负余额。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/JavaSE01-02%E6%AD%A3%E7%A1%AE%E6%A0%B7%E4%BE%8B.png",
+    "kind": "text",
+    "replacementMarkdown": "同步代码块把余额检查、取款提示和余额更新都放在同一个 Account 对象的监视器保护下。按本例初始余额与取款金额，先获锁的一方完成扣款后，另一方再检查时余额已不足；谁先取到钱仍由调度决定。关键不是指定打印顺序，而是让所有访问同一账户的取款线程使用同一把锁，避免同时通过旧余额检查。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10101.md:405–420 初始条件，433–471 synchronized(this) 实现。描述代码保证与不确定的调度先后，不生成控制台记录。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/JavaSE01-03%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1%E6%A0%B7%E4%BE%8B.png",
+    "kind": "text",
+    "replacementMarkdown": "这里三个存钱线程与两个取钱线程围绕同一账户协作：存钱逻辑检查余额是否为零，取钱逻辑检查余额是否足够，并通过账户对象的 notifyAll() 与 wait() 传递继续工作的机会。wait() 会释放该对象的监视器，notifyAll() 不会立即释放锁，也不保证谁先执行。实际使用应在 while 条件循环中等待并在醒来后重查条件，不能把本例的 if 与固定人物交替当成可靠的生产者消费者协议。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10101.md:541–721，完整读取 Account、DrawThread、DepositThread 与主程序。依据 if 分支和 wait/notifyAll 说明演示意图，同时指出重新检查条件的必要性；不编造交替日志或声称当前实现保证严格一存一取。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/JavaSE01-04%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%8B%92%E7%BB%9D%E7%AD%96%E7%95%A5%E6%A0%B7%E4%BE%8B.png",
+    "kind": "text",
+    "replacementMarkdown": "本例线程池的核心线程数为三、最大线程数为五，等待队列容量为五，并配置 AbortPolicy。在前面提交的任务仍被长时间休眠占住、尚未完成的条件下，前三个任务启动核心线程，接着五个任务入队，再来两个任务使用扩展线程；继续提交就会触发拒绝并抛出 RejectedExecutionException。这是配置和任务占用情况的推导，不代表任何负载下第十一个任务都必然被拒绝。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10101.md:771–844，MyRunnable 内 Thread.sleep(1000000)、ThreadPoolExecutor(3,5,6,SECONDS,ArrayBlockingQueue(5),…,AbortPolicy) 与11次 execute。按未完成前提解释饱和，不捏造异常堆栈、线程编号或时间。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/JavaSE01-05Runnable%E7%BA%BF%E7%A8%8B%E6%B1%A0%E8%BF%90%E8%A1%8C%E6%A0%B7%E4%BE%8B.png",
+    "kind": "text",
+    "replacementMarkdown": "每次 execute(target) 都提交一次 Runnable 执行，即使传入同一个任务对象，也不代表线程池只执行一次。任务先循环打印，再进入长时间休眠；休眠期间工作线程仍被这次任务占用，队列中的任务必须等待工作线程腾出位置。线程复用发生在一次任务结束之后，因此不能把多个线程名称的交错输出等同于队列任务已经全部完成，也不应依赖输出的固定顺序。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10101.md:776–847，MyRunnable 的打印循环与休眠，同一 target 被重复 execute。仅解释任务与工作线程的关系，无伪造 HelloWorld 输出或完成时间。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/JavaSE01-06Callable%E7%BA%BF%E7%A8%8B%E6%B1%A0%E8%BF%90%E8%A1%8C%E6%A0%B7%E4%BE%8B.png",
+    "kind": "text",
+    "replacementMarkdown": "四次 submit 分别提交参数为一百、二百、三百和四百的 MyCallable，每个任务按前面的 call() 实现累加从一到该上限的整数，并把说明字符串作为结果。主线程按 f1、f2、f3、f4 的顺序调用 get()，所以结果的读取顺序由这几行代码决定，并不表示任务按同样顺序完成；若对应任务尚未结束，get() 会等待，任务失败则通过 Future 暴露异常。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10101.md:203–224 MyCallable 定义、849–887 线程池提交与按顺序 get。未生成求和结果列表以冒充运行截图，也未把 get 误写为直接执行 call。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/JavaSE01-06Timer%E6%A0%B7%E4%BE%8B.png",
+    "kind": "text",
+    "replacementMarkdown": "两个任务都提交给同一个 Timer，而 Timer 只有一条执行任务的线程。任务 A 内部休眠五秒时，这条线程仍被占用，任务 B 即使已到计划时间也只能等待；设置两秒周期并不保证任务能准点开始，也不能简单把实际周期恒定相加成七秒。若任务抛出未捕获的运行时异常并终止 Timer 线程，其余待调度任务也会受到影响，因此应把串行占用与定时参数分别理解。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10101.md:919–976，new Timer、两个 schedule(task,0,2000)、A 中 sleep(5000)。依据实际参数而非错误的“三秒后”注释，解释单线程延迟；不重建日期、时间戳或虚构固定时间线。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/JavaSE01-07ScheduledExecutorService%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%A0%B7%E4%BE%8B.png",
+    "kind": "text",
+    "replacementMarkdown": "本例创建三条工作线程，分别周期调度任务 A、B、C。A 长时间休眠会占用一条工作线程，但同一周期任务不会因此并发重入；B 的除零异常会终止 B 这次周期任务后续的调度，而不是让整个线程池和 C 一起停止。只要仍有可用工作线程，C 可以继续被调度，但线程池资源不足时其他任务仍会延迟，因此“互不影响”应理解为任务异常被隔离，而非无条件准点执行。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10101.md:992–1042，newScheduledThreadPool(3)、A sleep(100000)、B 10/0、C 正常任务和 scheduleAtFixedRate。纠正后文绝对化表达的适用边界，不伪造调度输出与线程死亡记录。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/JavaSE01-08%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![Java 线程六种状态及典型转换条件](/article-diagrams/java-ssm/thread-states.svg)\n\n原理示意：NEW 调用 start() 后进入 RUNNABLE，后者同时包括等待调度与执行中的情况。竞争对象监视器失败进入 BLOCKED，等待其他线程动作可进入 WAITING，带时限的等待进入 TIMED_WAITING。wait() 释放监视器，醒来后还要重新竞争锁；sleep() 则不释放已经持有的锁，超时也不意味着马上得到执行机会。",
+    "assets": ["/article-diagrams/java-ssm/thread-states.svg"],
+    "basis": "src/content/posts/legacy/10101.md:1056–1082 线程生命周期；Java SE17 Thread.State 官方定义 https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Thread.State.html。图示为典型路径非完整状态机；wait(t)超时亦须重新获取监视器，未额外虚构 RUNNING 枚举。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM01-01SpringFrameWork%E6%9E%B6%E6%9E%84.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![Spring Framework 以核心容器为基础的能力分层](/article-diagrams/java-ssm/spring-modules.svg)\n\n原理示意：核心容器负责 Bean 的创建、依赖装配和应用上下文，是理解本篇 IoC 与 DI 的入口。在这一基础上，AOP 提供方法增强，数据访问与事务模块协调数据库操作，Web MVC 处理请求与响应。图中按职责分层说明各部分如何使用核心能力，不把它当作某一版本所有模块及依赖的完整清单。",
+    "assets": ["/article-diagrams/java-ssm/spring-modules.svg"],
+    "basis": "src/content/posts/legacy/10301.md:17–37 架构、IoC 和 DI，133–138 明示 Spring5.2.10；结合同组10305 AOP、10306事务、10309 MVC/JDBC整合上下文绘制能力图。原文架构位无模块细节，故不臆造版本专属模块全图或保留第三方课件样式。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM01-02%E9%9D%9ESpring%E7%8E%AF%E5%A2%83%E6%A0%B7%E4%BE%8B.png",
+    "kind": "text",
+    "replacementMarkdown": "在不使用 Spring 的写法中，主函数主动创建 ServiceImpl，而 ServiceImpl 的属性初始化又主动创建 DaoImpl。调用 service.save() 时，业务层先执行自己的提示语句，再调用 dao.save() 执行数据层逻辑。这段例子的重点是两层协作及对象创建位置：实现类名称直接写进调用代码，更换依赖实现时需要修改这些创建语句，而不只是修改外部配置。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10301.md:48–127，ServiceImpl 属性 new DaoImpl、save 委托、App new ServiceImpl。说明调用顺序与耦合，不捏造运行环境或新控制台内容。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM01-03%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.png",
+    "kind": "text",
+    "replacementMarkdown": "在项目的 resources 资源目录中创建 applicationContext.xml，使它随构建进入运行时类路径。文件以 beans 为根元素，声明正文随后给出的 Spring beans 命名空间与 XML Schema，再用 bean 的 id 指定容器内名称、class 指定实现类全限定名。这里的文件名应与 ClassPathXmlApplicationContext 构造器传入的资源名一致；配置文件的位置和内容才是要点，不依赖编辑器界面的具体样式。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10301.md:129–181，resources 建文件说明、完整 XML 与 ClassPathXmlApplicationContext 读取语句。正文未列 IDE 菜单，故不猜测菜单步骤、项目名或截图布局。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM01-04Spring%E7%8E%AF%E5%A2%83%E6%A0%B7%E4%BE%8B.png",
+    "kind": "text",
+    "replacementMarkdown": "主函数现在先读取 applicationContext.xml 建立容器，再按名称 Service 取出业务对象，随后仍然调用同一个 save() 方法，所以业务调用链的职责没有改变。不过此时 ServiceImpl 内部的 Dao 仍然由属性初始化中的 new 创建，配置中另外声明一个 Dao Bean 不会自动替换它。这个阶段完成的是对象获取方式的切换，下一步还需用依赖注入建立两个 Bean 之间的关系。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10301.md:72–80 ServiceImpl、158–160 两个 Bean 定义、164–198 主函数及“仍然耦合”的问题。避免误称本阶段已经注入 Dao，未虚构输出。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM01-05DI.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![容器通过 setDao 装配 Service 与 Dao](/article-diagrams/java-ssm/setter-di.svg)\n\n原理示意：容器创建 Service 与 Dao 后，依据 property 的 name 找到 dao 属性对应的 setter，再把 ref 指向的 Dao Bean 传入。Service 不再自行 new DaoImpl，但运行时仍按原来的业务链路调用 dao.save()。因此调用职责保持不变，改变的是依赖对象的来源；属性名与 Bean 名称是不同的配置概念。",
+    "assets": ["/article-diagrams/java-ssm/setter-di.svg"],
+    "basis": "src/content/posts/legacy/10301.md:200–257，移除 new、private Dao dao、setDao 和 property name=dao ref=Dao。图按实际 Bean id 大小写及 setter 语义原创，不用结果截图表示容器内结构。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM02-01%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95.png",
+    "kind": "text",
+    "replacementMarkdown": "这一节讨论的是直接按 class 配置、又没有提供构造参数时的实例化方式：容器需要找到可调用的无参构造器，再完成对象创建。补上无参构造器解决的是该配置下的实例化条件，并不意味着 Spring 一律禁止有参构造；后文的 constructor-arg 就是在显式描述构造参数。排查创建失败时应继续查看异常原因链，区分构造器选择、依赖缺失与初始化失败。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10302.md:17–29 构造方法小节，236–251 构造器注入。该截图位置没有完整类定义或异常堆栈，故不杜撰构造器提示语，明确原文无参说法的适用配置范围。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM02-02%E9%9D%99%E6%80%81%E5%B7%A5%E5%8E%82.png",
+    "kind": "text",
+    "replacementMarkdown": "这里 bean 的 class 指向 DaoFactory，factory-method 指向静态方法 getDao。容器调用这个方法取得它返回的 DaoImpl，并把该返回对象作为名称为 daoFactory 的 Bean 提供给应用。因此按 daoFactory 名称获取 Bean 的使用者拿到的是 Dao 类型的产品，而不是工厂本身；主函数再调用 dao.save()。对象创建逻辑被集中到工厂方法，调用者无需直接写出产品实现类的构造语句。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10302.md:31–77，静态 DaoFactory.getDao、factory-method=getDao 与按 daoFactory 获取 Dao。叙述确定的创建和调用流程，不冒充实际启动日志。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM02-03FactoryBean.png",
+    "kind": "text",
+    "replacementMarkdown": "工厂方式的共同目标是让容器对外提供 Dao 产品，主函数继续按产品的 Bean 名称获取对象并调用 save()。实例工厂配置使用 factory-bean 找到工厂对象，再由 factory-method 指定生产方法；FactoryBean 方式则实现统一的 getObject() 与 getObjectType() 契约。使用 FactoryBean 时，普通名称取到产品，带 & 前缀的名称才取得工厂自身。两者都要正确提供创建逻辑，不能只凭调用端相同就认定配置已经等价。",
+    "assets": [],
+    "basis": "同一 URL 在 src/content/posts/legacy/10302.md:97 与148 两处出现，分别位于实例工厂与 FactoryBean 小节；完整读取79–148。采用同时适用的对照说明，不把两幅位置误作同一次运行。原文实例工厂称“工厂代码同上”，但先前 getDao 为 static，需实例方法才构成通常的实例工厂配置，故不声称该片段已运行成功。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM02-04%E9%9B%86%E5%90%88%E6%B3%A8%E5%85%A5.png",
+    "kind": "text",
+    "replacementMarkdown": "DataDaoImpl 的五个 setter 分别接收数组、List、Set、Map 和 Properties。XML 中 array 与 list 保留配置的元素顺序，set 表达不重复元素，因此配置里重复的 java 不应成为两个独立集合元素；map 与 props 则把键对应到值。save() 会逐项打印这些已注入的属性，检查重点是容器类型与内容是否符合配置，而不是照着某个 Set、Map 或 Properties 的显示顺序判断注入是否正确。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10302.md:288–436，完整 DataDaoImpl、五种集合 XML 及主函数。文字根据 set 中重复 java 与 setter 类型解释，不虚构遍历输出、Properties 顺序或集合实现类型。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM02-05%E5%AE%B9%E5%99%A8%E7%9B%B8%E5%85%B3.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![Spring 容器加载配置、创建 Bean 与获取对象的路径](/article-diagrams/java-ssm/container-overview.svg)\n\n原理示意：类路径配置与文件系统配置分别交给相应的 ApplicationContext 实现读取，再由容器创建对象、装配依赖并执行初始化。应用按名称和类型获取 Bean；普通上下文通常在刷新时创建非懒加载单例，懒加载设置可推迟创建。关闭容器则为其管理的单例触发销毁回调，不应把所有作用域都理解成同样的生命周期。",
+    "assets": ["/article-diagrams/java-ssm/container-overview.svg"],
+    "basis": "src/content/posts/legacy/10302.md:196–216 生命周期与容器关闭、440–466 两种加载方式/获取 Bean/ApplicationContext 和 BeanFactory 对比。518处仅有总结标题，图重组本篇实际内容而非猜测原课件清单；按名称+类型获取不受其他名称同类型 Bean 的通常歧义影响。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM02-06bean%E7%9B%B8%E5%85%B3.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![受管单例 Bean 从实例化到容器关闭的生命周期](/article-diagrams/java-ssm/bean-lifecycle.svg)\n\n原理示意：Bean 先实例化，再接受依赖注入，随后执行初始化回调，之后才供应用使用；容器关闭时对受管单例执行销毁回调。XML 可以通过 init-method 与 destroy-method 指定方法，注解写法则标记相应方法。singleton 在容器内共享实例，prototype 每次请求可创建新实例，其完整销毁过程不由容器代管。",
+    "assets": ["/article-diagrams/java-ssm/bean-lifecycle.svg"],
+    "basis": "src/content/posts/legacy/10302.md:17–216 实例化与生命周期，10301.md:259–263 scope；同组10303.md:154–219给出可确定的singleton、@PostConstruct、@PreDestroy及两次getBean示例，作为图中的注解对照。保留XML小节的用途，不复用为无关结构图；没有模拟内存地址或启动输出。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM02-07%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E7%9B%B8%E5%85%B3.png",
+    "kind": "text",
+    "replacementMarkdown": "依赖注入可以先按入口区分：setter 注入使用 property，构造器注入使用 constructor-arg；再按数据区分，ref 指向另一个 Bean，value 提供简单值。集合使用 array、list、set、map、props 描述内容。自动装配则让容器按规则寻找依赖，按类型时要解决候选歧义，按名称时要对应属性与 Bean 名称。选择方式应结合强制依赖与可选依赖，而不是把所有对象都机械地改成同一种装配形式。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10302.md:218–284 setter/constructor-arg/ref/value/byType/byName，288–414 集合；253–260 强制与可选依赖选择。末尾只有总结标题，故据本篇正文综合说明，不臆造第三方总结图片中的条目或版式。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM03-01%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%E5%AE%9A%E4%B9%89Bean%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png",
+    "kind": "text",
+    "replacementMarkdown": "DaoImpl 上的 @Component 注解显式提供 dao 这个 Bean 名称，XML 中对 wang 包的组件扫描负责发现这个类并注册它。主函数从容器按 dao 取出对象后调用 save()，展示的是注解定义对象、XML 保留扫描入口的组合方式。需要特别核对资源名：示例主函数读取 applicationContext.xml.bak，实际保存的配置文件必须与这个名称一致，否则还没有进入业务方法就会在加载配置阶段失败。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10303.md:47–105，@Component(dao)、XML component-scan 和 App4读取applicationContext.xml.bak。特意保留资源名一致性检查，不暗改正文为另一个文件名、不虚构运行成功证据。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM03-02%E7%BA%AF%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%E4%BB%A3%E6%9B%BF.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![XML 组件扫描与 Java 配置类的对应关系](/article-diagrams/java-ssm/annotation-config.svg)\n\n原理示意：@Configuration 把 SpringConfig 声明为配置类，@ComponentScan 指定扫描 wang 包，表达原来 XML 的包扫描入口；两种路径都能发现标注组件的 DaoImpl。切换为纯注解时，容器入口也应改为读取配置类。这里对应的是本例的组件扫描配置，不代表加一个注解就能自动搬走全部 XML 功能，其他配置仍需逐项转换。",
+    "assets": ["/article-diagrams/java-ssm/annotation-config.svg"],
+    "basis": "src/content/posts/legacy/10303.md:66–82 XML、107–145 SpringConfig与容器入口对照。仅画当前样例可验证的对应关系；134的多个扫描字符串按包理解，不照抄“扫描多个类”的不准确表述。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM03-03%E7%BA%AF%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%E5%AE%9A%E4%B9%89Bean%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png",
+    "kind": "text",
+    "replacementMarkdown": "主函数改用 AnnotationConfigApplicationContext(SpringConfig.class) 后，容器从配置类读取扫描范围，不再靠原来的 XML 文件寻找 DaoImpl。只要扫描范围包含带组件注解的实现类，注册名称仍与获取方式对应，原来获取 Bean 并调用 save() 的职责就可以保持不变。验证纯注解切换时，应确认配置类与扫描结果完整，而不是仅凭删除 XML 后的一段提示语判断所有配置都已经迁移。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10303.md:113–150，SpringConfig的两项注解及ClassPathXmlApplicationContext到AnnotationConfigApplicationContext的替换。说明本例条件，不宣称复现截图或工程整体无XML依赖。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM03-04bean%E7%9A%84%E7%AE%A1%E7%90%86.png",
+    "kind": "text",
+    "replacementMarkdown": "本例 DaoImpl 被设置为 singleton，主函数连续两次按 Dao 类型获取对象，因此在候选唯一的前提下，两次引用都指向同一个受管实例。@PostConstruct 标记初始化回调，ctx.close() 则触发该单例的 @PreDestroy 回调。注意主函数只是打印两次对象引用，并没有调用 save()，所以不能把业务方法提示语当作这一段代码的必然输出；对象打印出来的具体地址样式也不是判断单例的固定值。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10303.md:154–219，singleton DaoImpl与init/destroy注解，AppForAnnotation只getBean两次、println两次再close。基于实际主函数纠正容易误加save输出的推测，无虚构对象哈希或运行日志。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM04-01AOP%E6%A0%B7%E4%BE%8B.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![切面通过代理将通知组合到目标方法调用](/article-diagrams/java-ssm/aop-concepts.svg)\n\n原理示意：连接点是可匹配的方法执行，切入点描述哪些方法需要增强，通知实现要加入的共性功能，切面把二者绑定。调用者使用容器提供的代理，代理组织通知与目标方法的执行，目标对象仍保留原始业务职责。是否经过代理是重要边界，同一对象内部的 this 调用不会自动再次触发代理增强。",
+    "assets": ["/article-diagrams/java-ssm/aop-concepts.svg"],
+    "basis": "src/content/posts/legacy/10305.md:19–46 核心术语、48–60 计时案例与124–136代理工作流程。独立重绘概念关系，不沿用黑马课件图片；明确Spring代理调用边界，不把所有方法调用都描述成必然增强。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM05-01%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![Spring 事务传播的共享事务、独立事务与保存点关系](/article-diagrams/java-ssm/transaction-propagation.svg)\n\n原理示意：已有事务时，REQUIRED 加入同一个物理事务，REQUIRES_NEW 挂起外层并新建独立事务，NESTED 在支持时使用同一事务内的保存点。没有外层事务时，这三种通常都开启事务；SUPPORTS、MANDATORY、NEVER 与 NOT_SUPPORTED 则分别决定是否加入、是否强制存在或排除事务。传播描述的是调用边界的处理方式，需经过事务代理且由具体事务管理器支持。",
+    "assets": ["/article-diagrams/java-ssm/transaction-propagation.svg"],
+    "basis": "src/content/posts/legacy/10306.md:59–85 事务角色与propagation属性；原文没有策略明细，补充依据Spring官方 https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative/tx-propagation.html 中REQUIRED、REQUIRES_NEW、NESTED定义。原创示意，不声称恢复原图；保留保存点支持、额外连接和代理边界限制。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM09-01%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![SSM 图书管理系统的请求、业务、持久层与容器配置](/article-diagrams/java-ssm/ssm-request-flow.svg)\n\n原理示意：图书请求先由 DispatcherServlet 分派给 BookController，再委托 BookService 与 MyBatis 创建的 BookDao 代理访问数据库。结果按调用链返回，由 MVC 转为 JSON 响应。ServletConfig 分别加载根容器与 MVC 子容器配置，前者管理业务、数据源和持久层，后者管理控制器；这解释了程序如何协作，而不是把目录结构当作实际请求路径。",
+    "assets": ["/article-diagrams/java-ssm/ssm-request-flow.svg"],
+    "basis": "src/content/posts/legacy/10309.md:17–69 整合思路，120–251五个配置类，254–429 Controller/Dao/Service，432–443 Book实体。按源码实际注解SQL而非虚构XML Mapper目录绘图，未复制IDE项目树或猜测未列文件。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM09-02postman%E6%B5%8B%E8%AF%95.png",
+    "kind": "text",
+    "replacementMarkdown": "按 BookController 的路由，可在 Postman 依次验证：GET /books 查询列表，GET /books/{id} 查询指定图书，POST /books 新增，PUT /books 修改，DELETE /books/{id} 删除。新增和修改请求使用 JSON 请求体，字段对应 Book 的 type、name、description，修改时还需携带 id，并设置 Content-Type 为 application/json。不要只看布尔返回值：本例写操作直接返回 true，验证增删改是否真正生效还应重新查询相应记录；路径中的 id 应使用当前数据中的真实主键。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10309.md:108–114 测试说明、268–298五条路由、317–327 SQL、407–420无条件return true、439–443实体字段。仅给可据源码执行的检查流程，未编造HTTP状态、响应体、测试通过数、主机地址或数据库已有记录。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM12-01%E6%9F%A5%E8%AF%A2%E6%8A%95%E5%BD%B1.png",
+    "kind": "text",
+    "replacementMarkdown": "查询投影解决的是“返回哪些列”，与前面年龄上下限解决的“保留哪些行”不同。先确定调用方真正需要的字段，再让查询只选择这些列；若用实体承接部分列，未查询属性通常不会被填入数据，不能把它们当成完整记录直接覆盖更新。涉及统计或分组时，结果形状也可能不再对应完整 User，应选择合适的结果对象或映射方式，并核对实际生成的 SELECT 列表。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10312.md:145–192 条件查询与“查询投影”标题，194–218字段映射与select=false。全篇未展示投影截图中的字段/API，采用关系查询语义说明而不猜测具体API链、表结构、聚合结果或查询输出。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/SSM12-02ID.png",
+    "kind": "text",
+    "replacementMarkdown": "主键策略首先要区分由谁提供标识：AUTO 依赖数据库自增，INPUT 要求应用在插入前设置主键，ASSIGN_ID 通常由框架的标识生成器分配，默认使用雪花算法，ASSIGN_UUID 面向字符串主键生成标识。NONE 表示没有单独指定策略，可跟随全局配置，并不等于数据库一定自增。应同时核对实体主键类型、数据库列定义、字段级 @TableId 与全局 id-type，避免只改一处配置就假定所有新增记录都会采用同一种方式。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10312.md:229–246 主键注解、五种策略与全局assign_id；MyBatis-Plus官方 https://baomidou.com/reference/annotation/#tableid 的IdType说明核对NONE跟随全局及生成器契约。未猜测原图ID样值或给出不受支持的全局唯一性测试结论。"
+  }
+]

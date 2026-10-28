@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+<title id="title">Spring 容器从配置到 Bean 使用</title>
+<desc id="desc">类路径 XML 或文件系统 XML 进入各自的 ApplicationContext 实现，容器解析定义、创建对象、注入依赖和初始化。应用按名称及类型获取 Bean，关闭容器触发受管单例的销毁回调。</desc>
+<style>:root{--paper:#f7efdf;--panel:#ecf3eb;--wash:#d1e5e4;--ink:#263d55;--line:#366775}text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:var(--ink);font-size:18px}.title{font-size:20px;font-weight:700}.small{font-size:16px}.box{fill:var(--panel);stroke:var(--line);stroke-width:1.5}.wash{fill:var(--wash)}.flow{fill:none;stroke:var(--line);stroke-width:2;marker-end:url(#arrow)}</style>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8" fill="#366775"/></marker></defs><path fill="#f7efdf" d="M0 0H960V540H0z"/>
+<text x="36" y="44" class="title">Spring 容器使用路径 · 原理示意</text><text x="36" y="76" class="small">ApplicationContext 扩展 BeanFactory 的基础能力，并提供事件、资源等应用级支持。</text>
+<rect x="36" y="112" width="420" height="96" rx="8" class="box"/><text x="56" y="147" class="title">类路径中的 XML</text><text x="56" y="181">ClassPathXmlApplicationContext</text>
+<rect x="504" y="112" width="420" height="96" rx="8" class="box"/><text x="524" y="147" class="title">文件系统中的 XML</text><text x="524" y="181">FileSystemXmlApplicationContext</text>
+<path d="M246 208V246H480V282" class="flow"/><path d="M714 208V246H480" fill="none" stroke="#366775" stroke-width="2"/>
+<rect x="36" y="286" width="888" height="86" rx="8" class="box wash"/><text x="56" y="319" class="title">容器：读取定义 → 创建对象 → 依赖注入 → 初始化</text><text x="56" y="352">常规上下文刷新时预实例化非懒加载单例；lazy-init 可推迟到实际需要时。</text>
+<path d="M480 372V414" class="flow"/>
+<rect x="36" y="418" width="888" height="80" rx="8" class="box"/><text x="56" y="449">getBean("dao", Dao.class) → 使用 Bean → close() / 关闭钩子</text><text x="56" y="480" class="small">按名称与类型获取可消除强制转换；只按类型获取时还需保证候选可唯一确定。</text>
+</svg>

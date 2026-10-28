@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="100%" role="img" aria-labelledby="title desc">
+  <title id="title">全局读锁与逻辑备份</title>
+  <desc id="desc">持锁连接获取全局读锁后，备份读取可以继续；其他连接的数据写入与结构变更等待。备份完成由持锁连接解锁，等待操作才可继续。流程不代表实际执行记录或等待时间。</desc>
+  <style>text{font-family:system-ui,'Microsoft YaHei',sans-serif;fill:#263d55;font-size:20px}.heading{font-size:32px;font-weight:700}.label{font-size:24px;font-weight:700}.note{font-size:18px}.node{fill:#f7efdf}.arrow{fill:none;stroke:#263d55;stroke-width:3;marker-end:url(#arrow)}</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#263d55"/></marker></defs>
+  <rect width="1200" height="620" rx="24" fill="#ecf3eb"/>
+  <text x="48" y="60" class="heading">全局读锁：用写入等待换取备份期间的数据稳定</text>
+  <text x="48" y="96" class="note">原理示意 · 操作顺序，不表示实测耗时</text>
+  <rect x="48" y="144" width="432" height="112" rx="12" fill="#d1e5e4"/>
+  <text x="72" y="184" class="label">① 持锁连接获取全局读锁</text>
+  <text x="72" y="224">FLUSH TABLES WITH READ LOCK</text>
+  <path d="M480 200H648" class="arrow"/>
+  <rect x="648" y="144" width="504" height="112" rx="12" class="node"/>
+  <text x="672" y="184" class="label">② 逻辑备份读取各表</text><text x="672" y="224">普通读取可继续；备份连接导出数据</text>
+  <rect x="48" y="304" width="432" height="112" rx="12" class="node"/>
+  <text x="72" y="344" class="label">其他连接：写入 / DDL</text><text x="72" y="384">INSERT、UPDATE、ALTER 等请求</text>
+  <path d="M480 360H648" class="arrow"/>
+  <rect x="648" y="304" width="504" height="112" rx="12" fill="#d1e5e4"/>
+  <text x="672" y="344" class="label">等待全局读锁释放</text><text x="672" y="384">读锁持有期间不能继续相应写操作</text>
+  <path d="M900 416V456" class="arrow"/>
+  <rect x="48" y="456" width="1104" height="80" rx="12" class="node"/>
+  <text x="72" y="504">③ 备份完成 → 持锁连接执行 UNLOCK TABLES → 解除阻塞</text>
+  <text x="48" y="580" class="note">InnoDB 的 --single-transaction 是另一种一致性备份方案；混合引擎与并发 DDL 需单独考虑。</text>
+</svg>

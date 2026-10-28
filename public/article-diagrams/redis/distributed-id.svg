@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">用时间信息与 Redis 自增序列组合分布式 ID</title>
+  <desc id="desc">多个应用实例使用同一业务和日期命名空间的 Redis 计数器，通过 INCR 获得互异序列，再与约定的时间字段编码组合。此方案不同于带机器标识的 Snowflake。</desc>
+  <defs><style>text{font-family:"Microsoft YaHei","PingFang SC",sans-serif;fill:#263d55;font-size:22px}.title{font-size:32px;font-weight:700}.head{font-size:24px;font-weight:700}.note{font-size:20px}.box{fill:#d1e5e4;stroke:#263d55;stroke-width:2}.line{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#arrow)}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 10 5 0 10" fill="#366775"/></marker></defs>
+  <rect width="960" height="560" fill="#ecf3eb"/><text x="40" y="54" class="title">全局唯一 ID：统一序列域，再约定组合编码</text>
+  <rect x="40" y="112" width="200" height="64" rx="8" class="box"/><text x="140" y="153" text-anchor="middle">应用实例 A</text><rect x="40" y="216" width="200" height="64" rx="8" class="box"/><text x="140" y="257" text-anchor="middle">应用实例 B</text>
+  <path d="M240 144H300V181H350M240 248H300V215H350" class="line"/>
+  <rect x="360" y="112" width="560" height="168" rx="8" class="box"/><text x="384" y="153" class="head">Redis 原子自增</text><text x="384" y="196">计数器 key：业务前缀 + 日期</text><text x="384" y="239">同一命名空间使用同一计数器，INCR 返回序列</text>
+  <path d="M640 280V332" class="line"/>
+  <rect x="40" y="344" width="880" height="96" rx="8" fill="#fff1cf" stroke="#263d55" stroke-width="2"/><path d="M480 344V440" stroke="#263d55" stroke-width="2"/>
+  <text x="260" y="383" text-anchor="middle" class="head">时间信息</text><text x="260" y="418" text-anchor="middle" class="note">明确时间基准与日期边界</text><text x="700" y="383" text-anchor="middle" class="head">自增序列</text><text x="700" y="418" text-anchor="middle" class="note">明确位宽与溢出处理</text>
+  <text x="40" y="490" class="note">采用固定宽度或无歧义编码组合；不能随意拼接后就假定唯一，也不等于不可猜测。</text><text x="40" y="528" class="note">Redis 自增组合方案 ≠ Snowflake；后者通常还包含机器标识，本文不推定具体位数。</text>
+</svg>

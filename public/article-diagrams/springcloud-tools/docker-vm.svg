@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-labelledby="title desc">
+  <title id="title">Linux 容器与虚拟机隔离层次</title><desc id="desc">左侧两个容器各自包含应用与用户态依赖，通过容器运行时共享宿主 Linux 内核；右侧两台虚拟机分别拥有客户机操作系统与内核，位于虚拟化层之上。两种方式都依托硬件。</desc>
+  <!-- Contract: DESIGN.md illustration palette; 8px grid; type 32/24/20. -->
+  <style>text{font-family:system-ui,sans-serif;fill:#263d55;font-size:20px}.title{font-size:32px;font-weight:700}.node{font-size:24px;font-weight:600}.panel{fill:#d1e5e4}.warm{fill:#f7efdf}</style>
+  <rect width="960" height="560" fill="#ecf3eb"/><text x="40" y="56" class="title">容器与虚拟机：隔离发生在哪一层？</text><text x="40" y="88">原理示意 · 以 Linux 容器和常见虚拟机为例</text>
+  <text x="40" y="144" class="node">Docker / Linux 容器</text><text x="504" y="144" class="node">虚拟机</text>
+  <g class="panel"><rect x="40" y="168" width="192" height="112" rx="16"/><rect x="256" y="168" width="192" height="112" rx="16"/><rect x="504" y="168" width="192" height="64" rx="16"/><rect x="720" y="168" width="200" height="64" rx="16"/></g>
+  <text x="64" y="208" class="node">容器 A</text><text x="64" y="248">应用 + 依赖</text><text x="280" y="208" class="node">容器 B</text><text x="280" y="248">应用 + 依赖</text><text x="528" y="208">应用 A + 依赖</text><text x="744" y="208">应用 B + 依赖</text>
+  <g class="warm"><rect x="504" y="248" width="192" height="80" rx="16"/><rect x="720" y="248" width="200" height="80" rx="16"/><rect x="40" y="296" width="408" height="48" rx="16"/></g>
+  <text x="528" y="280">客户机系统 A</text><text x="528" y="312">独立内核</text><text x="744" y="280">客户机系统 B</text><text x="744" y="312">独立内核</text><text x="64" y="328">容器运行时 · 进程与资源隔离</text>
+  <rect x="40" y="360" width="408" height="64" rx="16" class="panel"/><text x="64" y="400" class="node">共享宿主 Linux 内核</text>
+  <rect x="504" y="360" width="416" height="64" rx="16" class="panel"/><text x="528" y="400" class="node">虚拟化层 / Hypervisor</text>
+  <rect x="40" y="440" width="880" height="48" rx="16" class="warm"/><text x="64" y="472">硬件资源：CPU · 内存 · 磁盘 · 网络</text><text x="40" y="528">Docker Desktop 的 Linux 容器通常借助 Linux 虚拟机；不是直接共享 Windows 内核。</text>
+</svg>

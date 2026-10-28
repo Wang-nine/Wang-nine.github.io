@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">用 Lua 将所有者比较与删除合成原子解锁</title>
+  <desc id="desc">单独 GET 校验再 DEL 存在时间窗口。正确路径将锁键 KEYS[1] 与预期所有者 ARGV[1] 传入同一个 Lua 脚本，匹配则删除该键，不匹配则保留；该原子性范围不包括数据库业务。</desc>
+  <defs><style>text{font-family:"Microsoft YaHei","PingFang SC",sans-serif;fill:#263d55;font-size:22px}.title{font-size:32px;font-weight:700}.head{font-size:24px;font-weight:700}.note{font-size:20px}.box{fill:#d1e5e4;stroke:#263d55;stroke-width:2}.line{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#arrow)}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 10 5 0 10" fill="#366775"/></marker></defs>
+  <rect width="960" height="600" fill="#ecf3eb"/><text x="40" y="54" class="title">检查归属与删除，必须是一个不可插队的步骤</text>
+  <text x="40" y="112" class="head">分开的两条命令仍有竞争窗口</text>
+  <rect x="40" y="140" width="250" height="72" rx="8" class="box"/><text x="64" y="185">GET：读到自己的标识</text><path d="M290 176H360" class="line"/>
+  <rect x="370" y="140" width="250" height="72" rx="8" fill="#fff1cf" stroke="#263d55" stroke-width="2"/><text x="394" y="171">停顿、过期</text><text x="394" y="200" class="note">别人重新获得同名锁</text><path d="M620 176H690" class="line"/>
+  <rect x="700" y="140" width="220" height="72" rx="8" class="box"/><text x="724" y="185">DEL：误删别人的锁</text>
+  <rect x="40" y="272" width="880" height="248" rx="8" fill="#d1e5e4" stroke="#263d55" stroke-width="2"/>
+  <text x="64" y="313" class="head">Redis 内执行同一个 Lua 脚本</text><text x="64" y="353">输入：KEYS[1] = 锁键；ARGV[1] = 本次加锁的唯一标识</text>
+  <rect x="80" y="384" width="310" height="64" rx="8" fill="#ecf3eb" stroke="#263d55" stroke-width="2"/><text x="104" y="425">GET KEYS[1] 与标识比较</text>
+  <path d="M390 405H570M390 435H470V482H570" class="line"/><text x="442" y="392" class="note">相同</text><text x="411" y="474" class="note">不同</text>
+  <text x="590" y="413">DEL KEYS[1]，返回删除结果</text><text x="590" y="490">不删除，返回未释放</text>
+  <text x="40" y="565" class="note">同一脚本内没有其他客户端命令插入比较与删除之间；这不是跨 Redis、数据库的事务。</text>
+</svg>

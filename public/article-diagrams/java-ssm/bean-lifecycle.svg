@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 580" role="img" aria-labelledby="title desc">
+<title id="title">受管单例 Bean 的生命周期</title>
+<desc id="desc">对象实例化后注入依赖，执行初始化回调，再供应用使用；容器关闭时执行销毁回调。示例中的两次按类型获取都指向同一个单例，prototype 的销毁不由容器完整托管。</desc>
+<style>:root{--paper:#f7efdf;--panel:#ecf3eb;--wash:#d1e5e4;--ink:#263d55;--line:#366775}text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:var(--ink);font-size:18px}.title{font-size:20px;font-weight:700}.small{font-size:16px}.box{fill:var(--panel);stroke:var(--line);stroke-width:1.5}.wash{fill:var(--wash)}.flow{fill:none;stroke:var(--line);stroke-width:2;marker-end:url(#arrow)}</style>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8" fill="#366775"/></marker></defs><path fill="#f7efdf" d="M0 0H960V580H0z"/>
+<text x="36" y="44" class="title">受管单例 Bean 生命周期 · 原理示意</text><text x="36" y="76" class="small">对应 DaoImpl 的 singleton、@PostConstruct 与 @PreDestroy 示例；省略容器扩展点。</text>
+<rect x="36" y="116" width="252" height="96" rx="8" class="box"/><text x="56" y="150" class="title">1  实例化</text><text x="56" y="185">构造对象</text>
+<path d="M288 164H350" class="flow"/>
+<rect x="354" y="116" width="252" height="96" rx="8" class="box"/><text x="374" y="150" class="title">2  依赖注入</text><text x="374" y="185">设置属性与依赖引用</text>
+<path d="M606 164H668" class="flow"/>
+<rect x="672" y="116" width="252" height="96" rx="8" class="box wash"/><text x="692" y="150" class="title">3  初始化回调</text><text x="692" y="185">@PostConstruct</text>
+<path d="M798 212V282" class="flow"/>
+<rect x="548" y="286" width="376" height="114" rx="8" class="box wash"/><text x="568" y="321" class="title">4  获取并使用同一个单例</text><text x="568" y="356">dao1 与 dao2 指向同一 Bean</text><text x="568" y="385" class="small">本例只打印引用，没有调用 save()</text>
+<path d="M548 343H414" class="flow"/><text x="431" y="321" class="small">close()</text>
+<rect x="36" y="286" width="374" height="114" rx="8" class="box"/><text x="56" y="321" class="title">5  销毁回调</text><text x="56" y="356">@PreDestroy</text><text x="56" y="385" class="small">容器关闭时释放受管资源</text>
+<text x="36" y="466">singleton：每个容器、每个 Bean 定义通常只有一个共享实例。</text><text x="36" y="502">prototype：每次请求创建新实例，容器不负责其完整销毁过程。</text><text x="36" y="538" class="small">初始化和销毁方法名不是固定约定：XML 可指定方法，注解则标记相应回调。</text>
+</svg>

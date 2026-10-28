@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 880" width="100%" role="img" aria-labelledby="title desc">
+  <title id="title">ReadView 的可见性规则与 RC、RR 创建时机</title>
+  <desc id="desc">先判断版本修改事务是否为视图创建者，是则可见。否则，小于最小活跃事务号的版本可见，大于等于快照上界的版本不可见，中间区间检查是否位于活跃集合。RC 每次一致性读新建视图，RR 通常首次一致性读创建并复用。</desc>
+  <style>text{font-family:system-ui,'Microsoft YaHei',sans-serif;fill:#263d55;font-size:20px}.heading{font-size:32px;font-weight:700}.label{font-size:24px;font-weight:700}.note{font-size:18px}.node{fill:#f7efdf}.arrow{fill:none;stroke:#263d55;stroke-width:3;marker-end:url(#arrow)}</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#263d55"/></marker></defs>
+  <rect width="1200" height="880" rx="24" fill="#ecf3eb"/>
+  <text x="48" y="60" class="heading">ReadView：判断一个版本能否被当前快照读取</text>
+  <text x="48" y="96" class="note">原理示意 · trx_id 指该版本的修改事务 ID；以下规则先判断自身修改</text>
+  <rect x="48" y="144" width="1104" height="72" rx="12" fill="#d1e5e4"/>
+  <text x="72" y="188" class="label">trx_id = creator_trx_id ？</text><text x="672" y="188">是 → 自身修改可见；否 → 继续判断</text>
+  <path d="M600 216V272" class="arrow"/>
+  <rect x="48" y="272" width="1104" height="240" rx="12" class="node"/>
+  <text x="72" y="316" class="label">相对快照边界判断</text>
+  <text x="72" y="364">trx_id &lt; min_trx_id</text><text x="672" y="364">可见：在快照前已提交</text>
+  <text x="72" y="412">trx_id ≥ max_trx_id</text><text x="672" y="412">不可见：快照边界之后的事务</text>
+  <text x="72" y="460">min_trx_id ≤ trx_id &lt; max_trx_id</text><text x="672" y="460">在 m_ids 中 → 不可见；不在 → 可见</text>
+  <text x="72" y="492" class="note">m_ids：快照创建时的活跃事务集合；max_trx_id：视图建立时的事务 ID 上界。</text>
+  <path d="M600 512V560" class="arrow"/>
+  <rect x="48" y="560" width="1104" height="80" rx="12" fill="#d1e5e4"/>
+  <text x="72" y="608">版本不可见 → 沿 undo 链检查更早版本；全部不满足 → 此快照不返回该行</text>
+  <text x="48" y="696" class="label">一致性读创建视图的时机</text>
+  <text x="48" y="740">READ COMMITTED：每次一致性读建立新视图，可观察到期间新提交的数据。</text>
+  <text x="48" y="784">REPEATABLE READ：通常首次一致性读建立视图，后续一致性读复用。</text>
+  <text x="48" y="832" class="note">显式一致性快照可提前建立视图；上述复用规则不意味着锁定读也使用旧快照。</text>
+</svg>

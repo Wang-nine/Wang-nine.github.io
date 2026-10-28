@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" width="100%" role="img" aria-labelledby="title desc">
+  <title id="title">Undo 版本链与 MVCC 快照读</title>
+  <desc id="desc">示例当前行由事务 30 修改，回滚指针指向 undo 信息以重建事务 20 和事务 10 的更早版本。快照读逐版本检查 ReadView 可见性，不能只选最大事务号。示例事务号与状态不是原始业务数据。</desc>
+  <style>text{font-family:system-ui,'Microsoft YaHei',sans-serif;fill:#263d55;font-size:20px}.heading{font-size:32px;font-weight:700}.label{font-size:24px;font-weight:700}.note{font-size:18px}.node{fill:#f7efdf}.arrow{fill:none;stroke:#263d55;stroke-width:3;marker-end:url(#arrow)}</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#263d55"/></marker></defs>
+  <rect width="1200" height="660" rx="24" fill="#ecf3eb"/>
+  <text x="48" y="60" class="heading">Undo：沿版本链寻找对当前快照可见的记录</text><text x="48" y="96" class="note">原理示意 · 事务号与状态值均为示例；历史行由 undo 信息重建，并非完整副本列表</text>
+  <rect x="48" y="168" width="312" height="216" rx="12" fill="#d1e5e4"/>
+  <text x="72" y="212" class="label">当前行</text><text x="72" y="256">示例：status = C</text><text x="72" y="296">DB_TRX_ID = 30</text><text x="72" y="344">DB_ROLL_PTR → undo</text>
+  <path d="M360 276H444" class="arrow"/>
+  <rect x="444" y="168" width="312" height="216" rx="12" class="node"/>
+  <text x="468" y="212" class="label">更早版本</text><text x="468" y="256">示例：status = B</text><text x="468" y="296">修改事务 ID = 20</text><text x="468" y="344">继续沿 undo 重建</text>
+  <path d="M756 276H840" class="arrow"/>
+  <rect x="840" y="168" width="312" height="216" rx="12" class="node"/>
+  <text x="864" y="212" class="label">更早版本</text><text x="864" y="256">示例：status = A</text><text x="864" y="296">修改事务 ID = 10</text><text x="864" y="344">直至可见或无更早版本</text>
+  <text x="48" y="448" class="label">逐个版本检查，而不是直接读取“最新值”</text>
+  <text x="48" y="492">当前版本不可见 → 读取 undo 重建前一版本 → 再判断；命中首个可见版本后读取。</text>
+  <text x="48" y="536">若不存在可见版本，当前快照不返回这条记录；自身修改与删除标记也参与判断。</text>
+  <text x="48" y="584" class="note">Update / delete undo 可能在提交后仍被旧快照使用，只有不再需要时才可清理。</text>
+  <text x="48" y="620" class="note">Insert undo 主要用于回滚；版本链不是永久保留所有修改历史的审计日志。</text>
+</svg>

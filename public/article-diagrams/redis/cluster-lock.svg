@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">本地锁边界与 Redis 分布式互斥</title>
+  <desc id="desc">两个进程的本地锁不能相互排斥。对相同业务资源使用相同 Redis 锁键，通过带 NX 与过期参数的 SET 竞争，只有获锁者进入临界区，失败者不能继续执行该临界区。</desc>
+  <defs><style>text{font-family:"Microsoft YaHei","PingFang SC",sans-serif;fill:#263d55;font-size:22px}.title{font-size:32px;font-weight:700}.head{font-size:24px;font-weight:700}.note{font-size:20px}.box{fill:#d1e5e4;stroke:#263d55;stroke-width:2}.line{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#arrow)}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 10 5 0 10" fill="#366775"/></marker></defs>
+  <rect width="960" height="560" fill="#ecf3eb"/><text x="40" y="54" class="title">分布式互斥：竞争必须到达同一个协调点</text>
+  <rect x="40" y="112" width="300" height="96" rx="8" class="box"/><text x="64" y="152" class="head">进程 A</text><text x="64" y="186" class="note">本地锁仅约束进程内线程</text>
+  <rect x="620" y="112" width="300" height="96" rx="8" class="box"/><text x="644" y="152" class="head">进程 B</text><text x="644" y="186">本地锁与 A 的锁相互独立</text>
+  <path d="M190 208V247H390V275M770 208V247H570V275" class="line"/>
+  <rect x="140" y="286" width="680" height="104" rx="8" class="box"/><text x="480" y="325" text-anchor="middle" class="head">Redis · 相同资源使用同一 lockKey</text><text x="480" y="364" text-anchor="middle">SET lockKey ownerToken NX EX 租期</text>
+  <path d="M290 390V438M670 390V438" class="line"/>
+  <rect x="40" y="450" width="410" height="56" rx="8" class="box"/><text x="64" y="486">获取成功 → 进入受保护业务</text><rect x="510" y="450" width="410" height="56" rx="8" class="box"/><text x="534" y="486">获取失败 → 等待、重试或返回</text>
+  <text x="40" y="543" class="note">此处说明单一协调节点上的互斥；租期超时与主从切换仍需另行考虑。</text>
+</svg>

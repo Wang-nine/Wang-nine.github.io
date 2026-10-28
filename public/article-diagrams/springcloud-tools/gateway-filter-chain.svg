@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-labelledby="title desc">
+  <title id="title">Gateway 过滤器链前置与后置处理</title><desc id="desc">三个过滤器按 order 升序进行前置处理，请求抵达服务后，后置处理沿相反顺序返回。示例只说明正常放行路径；过滤器可短路，后置处理取决于响应式链的具体实现。</desc>
+  <!-- Contract: existing illustration palette, 8px grid, title 32, node 24, labels 20. -->
+  <style>text{font-family:system-ui,sans-serif;fill:#263d55;font-size:20px}.title{font-size:32px;font-weight:700}.node{font-size:24px;font-weight:600}.edge{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#a)}</style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#366775"/></marker></defs>
+  <rect width="960" height="560" fill="#ecf3eb"/><text x="40" y="56" class="title">过滤器链：去程与回程</text><text x="40" y="88">原理示意 · 不同 order 的正常放行路径</text>
+  <text x="40" y="160">前置处理 → order 从小到大</text>
+  <g fill="#d1e5e4"><rect x="40" y="192" width="216" height="80" rx="16"/><rect x="320" y="192" width="216" height="80" rx="16"/><rect x="600" y="192" width="216" height="80" rx="16"/></g>
+  <text x="64" y="224" class="node">过滤器 A</text><text x="64" y="256">order = -1</text><text x="344" y="224" class="node">过滤器 B</text><text x="344" y="256">order = 1</text><text x="624" y="224" class="node">过滤器 C</text><text x="624" y="256">order = 2</text>
+  <path d="M256 232H320M536 232H600M816 232H864V352H816" class="edge"/><text x="840" y="304">服务</text>
+  <g fill="#f7efdf"><rect x="40" y="312" width="216" height="80" rx="16"/><rect x="320" y="312" width="216" height="80" rx="16"/><rect x="600" y="312" width="216" height="80" rx="16"/></g>
+  <text x="64" y="360" class="node">A 后置处理</text><text x="344" y="360" class="node">B 后置处理</text><text x="624" y="360" class="node">C 后置处理</text><path d="M600 352H536M320 352H256" class="edge"/>
+  <text x="40" y="440">后置处理 ← 按已嵌套链的相反顺序返回</text><text x="40" y="488">若某个过滤器直接结束响应，下游过滤器和目标服务可能不会执行。</text><text x="40" y="528">同 order 的先后依赖具体版本与注册方式，不用本图推断固定的类型优先级。</text>
+</svg>

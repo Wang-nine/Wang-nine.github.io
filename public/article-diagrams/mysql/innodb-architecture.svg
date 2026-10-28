@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="100%" role="img" aria-labelledby="title desc">
+  <title id="title">InnoDB 内存结构与磁盘结构的职责</title>
+  <desc id="desc">内存中的缓冲池保存页，日志缓冲保存 redo；页经双写保护后刷新到数据文件，redo 单独写入日志。Change buffer 占用缓冲池且持久化于系统表空间，AHI 是按访问模式建立的可选内存辅助索引。</desc>
+  <style>text{font-family:system-ui,'Microsoft YaHei',sans-serif;fill:#263d55;font-size:20px}.heading{font-size:32px;font-weight:700}.label{font-size:24px;font-weight:700}.note{font-size:18px}.node{fill:#f7efdf}.arrow{fill:none;stroke:#263d55;stroke-width:3;marker-end:url(#arrow)}</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#263d55"/></marker></defs>
+  <rect width="1200" height="760" rx="24" fill="#ecf3eb"/>
+  <text x="48" y="60" class="heading">InnoDB：内存缓存与持久化路径</text>
+  <text x="48" y="96" class="note">原理示意 · 概念布局，不表示实际内存占比、文件大小或线程数量</text>
+  <rect x="48" y="132" width="480" height="464" rx="16" fill="#d1e5e4"/>
+  <rect x="672" y="132" width="480" height="464" rx="16" fill="#d1e5e4"/>
+  <text x="72" y="176" class="label">内存</text><text x="696" y="176" class="label">磁盘</text>
+  <rect x="72" y="200" width="432" height="176" rx="12" class="node"/>
+  <text x="96" y="240" class="label">Buffer pool</text><text x="96" y="280">缓存数据页、索引页及脏页</text>
+  <text x="96" y="316" class="note">Change buffer 使用其中部分空间</text><text x="96" y="348" class="note">AHI：按需构建的内存辅助索引</text>
+  <path d="M504 248H696" class="arrow"/><text x="552" y="224" class="note">刷新页</text>
+  <rect x="696" y="200" width="432" height="72" rx="12" class="node"/>
+  <text x="720" y="244">Doublewrite：完整页写入保护</text>
+  <path d="M912 272V320" class="arrow"/>
+  <rect x="696" y="320" width="432" height="96" rx="12" class="node"/>
+  <text x="720" y="360">数据 / 索引所在的表空间</text><text x="720" y="392" class="note">系统、独立表、通用；另有 undo / 临时空间</text>
+  <rect x="72" y="456" width="432" height="112" rx="12" class="node"/>
+  <text x="96" y="496" class="label">Log buffer</text><text x="96" y="536">暂存 redo 日志记录，而非数据页</text>
+  <path d="M504 512H696" class="arrow"/><text x="552" y="488" class="note">写日志</text>
+  <rect x="696" y="456" width="432" height="112" rx="12" class="node"/>
+  <text x="720" y="496" class="label">Redo log</text><text x="720" y="536">用于崩溃恢复的重做记录</text>
+  <text x="48" y="644">页刷盘前，对应 redo 必须先持久化（WAL）；提交不等于全部脏页立即刷盘。</text>
+  <text x="48" y="680" class="note">Change buffer 的持久化部分在系统表空间；磁盘块表示职责，不表示各类文件互相包含。</text>
+  <text x="48" y="716" class="note">双写以启用完整页保护为前提；8.0.20 起使用独立双写文件，具体文件布局随版本变化。</text>
+</svg>

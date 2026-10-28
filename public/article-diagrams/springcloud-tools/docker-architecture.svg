@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-labelledby="title desc">
+  <title id="title">Docker 客户端、守护进程和镜像仓库</title><desc id="desc">客户端通过 API 给 Docker 守护进程发送命令。守护进程管理本地镜像和容器，向 Registry 拉取或推送镜像；容器不会因为镜像下载而自动启动。</desc>
+  <!-- Contract: existing illustration palette; 8px grid; 32/24/20 typography. -->
+  <style>text{font-family:system-ui,sans-serif;fill:#263d55;font-size:20px}.title{font-size:32px;font-weight:700}.node{font-size:24px;font-weight:600}.edge{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#a)}</style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#366775"/></marker></defs>
+  <rect width="960" height="560" fill="#ecf3eb"/><text x="40" y="56" class="title">Docker 的 C/S 架构</text><text x="40" y="88">原理示意 · 客户端发指令，守护进程管理资源</text>
+  <rect x="40" y="144" width="216" height="136" rx="16" fill="#d1e5e4"/><text x="64" y="184" class="node">客户端 CLI</text><text x="64" y="224">docker pull</text><text x="64" y="256">docker run</text>
+  <rect x="384" y="144" width="272" height="136" rx="16" fill="#f7efdf"/><text x="408" y="184" class="node">Docker daemon</text><text x="408" y="224">处理 API 请求</text><text x="408" y="256">管理镜像、容器与存储</text>
+  <rect x="760" y="144" width="160" height="136" rx="16" fill="#d1e5e4"/><text x="776" y="192" class="node">Registry</text><text x="776" y="232">镜像仓库</text>
+  <path d="M256 208H384M760 208H656" class="edge"/><text x="280" y="176">API</text><text x="672" y="176">pull 镜像</text><path d="M656 256H760" class="edge"/><text x="672" y="296">push 镜像</text>
+  <rect x="384" y="360" width="232" height="96" rx="16" fill="#d1e5e4"/><text x="408" y="400" class="node">本地镜像</text><text x="408" y="432">应用与依赖的模板</text>
+  <rect x="688" y="360" width="232" height="96" rx="16" fill="#d1e5e4"/><text x="712" y="400" class="node">运行容器</text><text x="712" y="432">隔离的应用进程</text>
+  <path d="M500 280V360M616 408H688" class="edge"/><text x="632" y="384">run</text>
+  <text x="40" y="520">镜像拉取到守护进程所在主机；客户端可在本机，也可通过安全连接访问远端。</text>
+</svg>

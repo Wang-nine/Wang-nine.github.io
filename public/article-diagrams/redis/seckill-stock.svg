@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">秒杀资格检查与条件扣库存</title>
+  <desc id="desc">请求先检查活动时间，再通过数据库条件更新把库存大于零与扣减合为一次操作，根据影响行数决定是否继续。订单写入失败需要与扣库存共同回滚，一人一单是另一个约束。</desc>
+  <defs><style>text{font-family:"Microsoft YaHei","PingFang SC",sans-serif;fill:#263d55;font-size:22px}.title{font-size:32px;font-weight:700}.head{font-size:24px;font-weight:700}.note{font-size:20px}.box{fill:#d1e5e4;stroke:#263d55;stroke-width:2}.line{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#arrow)}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 10 5 0 10" fill="#366775"/></marker></defs>
+  <rect width="960" height="600" fill="#ecf3eb"/><text x="40" y="54" class="title">秒杀下单：先验资格不能代替原子库存约束</text>
+  <rect x="40" y="112" width="250" height="80" rx="8" class="box"/><text x="165" y="161" text-anchor="middle">收到优惠券下单请求</text><path d="M290 152H390" class="line"/>
+  <rect x="400" y="112" width="520" height="80" rx="8" class="box"/><text x="424" y="145">检查活动开始、结束时间</text><text x="424" y="177" class="note">未开始或已结束 → 拒绝，不继续扣库存</text>
+  <path d="M660 192V244" class="line"/><text x="680" y="230" class="note">活动进行中</text>
+  <rect x="40" y="256" width="880" height="112" rx="8" class="box"/><text x="64" y="295" class="head">数据库条件更新 · 以优惠券标识定位库存行</text><text x="64" y="338">一次操作中检查 stock &gt; 0 并执行 stock = stock − 1</text>
+  <path d="M250 368V420M720 368V420" class="line"/>
+  <rect x="40" y="432" width="410" height="80" rx="8" class="box"/><text x="64" y="467">未更新到记录 → 不创建订单</text><text x="64" y="499" class="note">库存不足或记录不满足条件</text>
+  <rect x="510" y="432" width="410" height="80" rx="8" class="box"/><text x="534" y="467">成功扣减 → 同一事务内写订单</text><text x="534" y="499" class="note">订单写入失败时回滚库存扣减</text>
+  <text x="40" y="565" class="note">一人一单还需独立约束用户与优惠券的组合；仅保证库存非负并不能防止重复购买。</text>
+</svg>

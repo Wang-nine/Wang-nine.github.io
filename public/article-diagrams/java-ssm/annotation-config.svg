@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+<title id="title">XML 与纯注解配置的对应关系</title>
+<desc id="desc">XML 组件扫描配置由 ClassPathXmlApplicationContext 读取；Java 配置类通过 Configuration 和 ComponentScan 描述扫描入口，由 AnnotationConfigApplicationContext 读取。两条路径都能发现带 Component 注解的 DaoImpl 并注册 Dao Bean。</desc>
+<style>:root{--paper:#f7efdf;--panel:#ecf3eb;--wash:#d1e5e4;--ink:#263d55;--line:#366775}text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:var(--ink);font-size:18px}.title{font-size:20px;font-weight:700}.small{font-size:16px}.box{fill:var(--panel);stroke:var(--line);stroke-width:1.5}.wash{fill:var(--wash)}.flow{fill:none;stroke:var(--line);stroke-width:2;marker-end:url(#arrow)}</style>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8" fill="#366775"/></marker></defs><path fill="#f7efdf" d="M0 0H960V560H0z"/>
+<text x="36" y="44" class="title">从 XML 扫描到 Java 配置类 · 原理示意</text><text x="36" y="76" class="small">这里替换的是本文的配置入口与组件扫描；其他 XML 配置仍需分别迁移，不会自动转换。</text>
+<rect x="36" y="116" width="420" height="170" rx="8" class="box"/><text x="56" y="151" class="title">XML 路径</text><text x="56" y="188">applicationContext.xml</text><text x="56" y="222">component-scan：base-package="wang"</text><text x="56" y="260" class="small">由 ClassPathXmlApplicationContext 读取</text>
+<rect x="504" y="116" width="420" height="170" rx="8" class="box wash"/><text x="524" y="151" class="title">纯注解路径</text><text x="524" y="188">SpringConfig + @Configuration</text><text x="524" y="222">@ComponentScan("wang")</text><text x="524" y="260" class="small">由 AnnotationConfigApplicationContext 读取</text>
+<path d="M246 286V326H480V366" class="flow"/><path d="M714 286V326H480" fill="none" stroke="#366775" stroke-width="2"/>
+<rect x="36" y="370" width="888" height="90" rx="8" class="box"/><text x="56" y="405" class="title">扫描 wang 及子包 → 发现 @Component("dao") DaoImpl → 注册 Bean</text><text x="56" y="439">应用仍通过 getBean("dao") 获取对象；业务方法的职责不因配置形式改变。</text>
+<text x="36" y="510" class="small">@ComponentScan 的多个字符串表示多个待扫描包，不是逐个列出所有实现类。</text>
+</svg>

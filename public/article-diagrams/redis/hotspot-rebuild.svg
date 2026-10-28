@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">热点缓存重建的互斥锁与逻辑过期方案</title>
+  <desc id="desc">互斥重建让一个获锁请求回查数据库并回填，其他请求等待或重试。逻辑过期保留旧数据，过期后先返回旧值，由单个获锁后台任务重建；实际键不存在仍需单独处理。</desc>
+  <defs><style>text{font-family:"Microsoft YaHei","PingFang SC",sans-serif;fill:#263d55;font-size:22px}.title{font-size:32px;font-weight:700}.head{font-size:24px;font-weight:700}.note{font-size:20px}.box{fill:#d1e5e4;stroke:#263d55;stroke-width:2}.line{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#arrow)}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 10 5 0 10" fill="#366775"/></marker></defs>
+  <rect width="960" height="600" fill="#ecf3eb"/><text x="40" y="54" class="title">击穿治理：控制谁来重建，以及读者是否等待</text>
+  <path d="M480 100V510" stroke="#648f9f" stroke-width="2" stroke-dasharray="8 8"/>
+  <text x="40" y="118" class="head">互斥重建</text><text x="520" y="118" class="head">逻辑过期</text>
+  <rect x="40" y="150" width="400" height="64" rx="8" class="box"/><text x="64" y="191">缓存未命中 → 尝试获取重建锁</text>
+  <path d="M160 214V270" class="line"/><text x="62" y="252" class="note">获锁</text><rect x="40" y="280" width="240" height="104" rx="8" class="box"/><text x="64" y="321">再次检查缓存</text><text x="64" y="357">仍缺失才回源、回填</text>
+  <path d="M360 214V405H285" class="line"/><text x="310" y="271" class="note">未获锁</text><rect x="40" y="400" width="240" height="64" rx="8" class="box"/><text x="64" y="441">等待或重试后读缓存</text>
+  <text x="40" y="502" class="note">获锁者需保证最终释放重建锁。</text>
+  <rect x="520" y="150" width="400" height="64" rx="8" class="box"/><text x="544" y="191">读到旧数据，发现逻辑时间已过</text>
+  <path d="M610 214V270M830 214V270" class="line"/>
+  <rect x="520" y="280" width="180" height="104" rx="8" class="box"/><text x="544" y="321">立即返回旧值</text><text x="544" y="357" class="note">接受暂时陈旧</text>
+  <rect x="730" y="280" width="190" height="104" rx="8" class="box"/><text x="750" y="321">尝试获取重建锁</text><text x="750" y="357" class="note">仅获锁者启动</text>
+  <path d="M825 384V405" class="line"/><rect x="520" y="416" width="400" height="64" rx="8" class="box"/><text x="544" y="457">后台回源并更新数据及逻辑时间</text>
+  <text x="520" y="518" class="note">未获锁者不重复启动后台重建。</text>
+  <text x="40" y="568" class="note">逻辑过期依赖旧值仍在缓存；冷启动或真实键缺失不能直接返回不存在的旧数据。</text>
+</svg>

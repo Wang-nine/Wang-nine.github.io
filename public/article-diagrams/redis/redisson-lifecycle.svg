@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+  <title id="title">Redisson 可重入锁的计数、等待和续期</title>
+  <desc id="desc">Hash 记录客户端与线程标识和重入计数。同一所有者重入时加一，解锁减一，归零才释放并发布通知。其他线程等待通知后重新竞争；watchdog 在适用的锁模式下续期，而非保证业务永不失锁。</desc>
+  <defs><style>text{font-family:"Microsoft YaHei","PingFang SC",sans-serif;fill:#263d55;font-size:22px}.title{font-size:32px;font-weight:700}.head{font-size:24px;font-weight:700}.note{font-size:20px}.box{fill:#d1e5e4;stroke:#263d55;stroke-width:2}.line{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#arrow)}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 10 5 0 10" fill="#366775"/></marker></defs>
+  <rect width="960" height="640" fill="#ecf3eb"/><text x="40" y="54" class="title">Redisson：可重入不等于多个线程同时持有</text>
+  <rect x="40" y="110" width="880" height="80" rx="8" class="box"/><text x="64" y="145" class="head">锁 Hash：所有者标识 → 重入计数</text><text x="64" y="177" class="note">所有者需区分客户端与线程；只有相同所有者才能增加自己的计数。</text>
+  <path d="M190 190V238M480 190V238M770 190V238" class="line"/>
+  <rect x="40" y="250" width="260" height="112" rx="8" class="box"/><text x="64" y="290" class="head">键不存在</text><text x="64" y="326">创建所有者，计数为 1</text>
+  <rect x="350" y="250" width="260" height="112" rx="8" class="box"/><text x="374" y="290" class="head">同一所有者重入</text><text x="374" y="326">计数加 1，更新租期</text>
+  <rect x="660" y="250" width="260" height="112" rx="8" class="box"/><text x="684" y="290" class="head">其他线程竞争</text><text x="684" y="326">等待后重新尝试获取</text>
+  <text x="40" y="407" class="head">解锁：先核对所有者，再减少重入计数</text>
+  <path d="M260 424V446M730 424V446" class="line"/>
+  <rect x="40" y="458" width="410" height="64" rx="8" class="box"/><text x="64" y="499">计数仍大于 0 → 继续持锁</text><rect x="510" y="458" width="410" height="64" rx="8" class="box"/><text x="534" y="499">计数归零 → 删除锁并通知等待者</text>
+  <text x="40" y="565" class="note">watchdog：适用模式下周期续期；显式指定固定租期时不能一概假定自动续期。</text><text x="40" y="599" class="note">PubSub 通知用于唤醒重试，不代表锁已授予，也不代表严格 FIFO 公平顺序。</text>
+</svg>

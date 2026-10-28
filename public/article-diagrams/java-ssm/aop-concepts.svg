@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+<title id="title">AOP 的切面、切入点、通知与代理</title>
+<desc id="desc">切面绑定匹配方法的切入点和共性通知，代理据此在方法调用过程中组合通知与目标方法。通过代理进入的调用可以被增强，同一个目标内部的 this 调用不再次经过代理。</desc>
+<style>:root{--paper:#f7efdf;--panel:#ecf3eb;--wash:#d1e5e4;--ink:#263d55;--line:#366775}text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:var(--ink);font-size:18px}.title{font-size:20px;font-weight:700}.small{font-size:16px}.box{fill:var(--panel);stroke:var(--line);stroke-width:1.5}.wash{fill:var(--wash)}.flow{fill:none;stroke:var(--line);stroke-width:2;marker-end:url(#arrow)}</style>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8" fill="#366775"/></marker></defs><path fill="#f7efdf" d="M0 0H960V560H0z"/>
+<text x="36" y="44" class="title">AOP 把共性逻辑与业务逻辑组合 · 原理示意</text><text x="36" y="76" class="small">Spring AOP 的连接点是方法执行；切入点挑选方法，通知定义增强动作。</text>
+<rect x="244" y="112" width="680" height="136" rx="8" class="box wash"/><text x="264" y="146" class="title">切面 Aspect = 匹配规则 + 增强逻辑的绑定关系</text><text x="264" y="184">Pointcut：例如匹配 Dao 接口的 save 方法</text><text x="264" y="220">Advice：例如执行前记录时间，或环绕方法统计耗时</text>
+<path d="M534 248V310" class="flow"/><text x="550" y="287" class="small">提供匹配规则与通知链</text>
+<rect x="36" y="314" width="188" height="108" rx="8" class="box"/><text x="56" y="350" class="title">调用者</text><text x="56" y="385">获取受管 Bean</text>
+<path d="M224 368H354" class="flow"/><text x="246" y="347" class="small">方法调用</text>
+<rect x="358" y="314" width="330" height="108" rx="8" class="box wash"/><text x="378" y="350" class="title">代理 Proxy</text><text x="378" y="385">组织通知与原始方法的执行</text>
+<path d="M688 368H750" class="flow"/>
+<rect x="754" y="314" width="170" height="108" rx="8" class="box"/><text x="774" y="350" class="title">目标 Target</text><text x="774" y="385">原始业务方法</text>
+<text x="36" y="478">增强发生在经过代理的调用边界；目标方法仍可独立表达原始业务。</text><text x="36" y="514" class="small">同一对象内部的 this 方法调用不会重新经过该代理，不能默认触发另一轮切面增强。</text>
+</svg>

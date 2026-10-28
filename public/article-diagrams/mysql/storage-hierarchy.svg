@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" role="img" aria-labelledby="title desc">
+  <title id="title">InnoDB 表空间、段、区、页与行的逻辑关系</title>
+  <desc id="desc">从表空间到索引段、区、页、页内记录的层级示意。段也可分配零散页，区并非段分配空间的唯一路径。默认 16 KiB 页对应一个区含 64 页，其他页大小配置不同。</desc>
+  <style>text{font-family:system-ui,'Microsoft YaHei',sans-serif;fill:#263d55;font-size:20px}.heading{font-size:32px;font-weight:700}.label{font-size:24px;font-weight:700}.note{font-size:18px}.arrow{fill:none;stroke:#263d55;stroke-width:3;marker-end:url(#arrow)}</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#263d55"/></marker></defs>
+  <rect width="1200" height="700" rx="24" fill="#ecf3eb"/>
+  <text x="48" y="60" class="heading">InnoDB：从空间分配到页内记录</text><text x="48" y="96" class="note">原理示意 · 逻辑层级，不按真实文件字节比例绘制</text>
+  <rect x="48" y="132" width="1104" height="72" rx="12" fill="#d1e5e4"/>
+  <text x="72" y="176" class="label">表空间 Tablespace</text><text x="456" y="176">组织数据文件中的页</text>
+  <path d="M264 204V236" class="arrow"/>
+  <rect x="96" y="236" width="1056" height="72" rx="12" fill="#f7efdf"/>
+  <text x="120" y="280" class="label">段 Segment</text><text x="456" y="280">索引的叶节点段 / 非叶节点段</text>
+  <path d="M264 308V340" class="arrow"/>
+  <rect x="144" y="340" width="1008" height="72" rx="12" fill="#d1e5e4"/>
+  <text x="168" y="384" class="label">区 Extent</text><text x="456" y="384">连续页的空间分配单位</text>
+  <path d="M264 412V444" class="arrow"/>
+  <rect x="192" y="444" width="960" height="72" rx="12" fill="#f7efdf"/>
+  <text x="216" y="488" class="label">页 Page</text><text x="456" y="488">数据与索引的页级管理；默认页大小 16 KiB</text>
+  <path d="M336 516V548" class="arrow"/>
+  <rect x="240" y="548" width="912" height="72" rx="12" fill="#d1e5e4"/>
+  <text x="264" y="592" class="label">行 / 记录</text><text x="456" y="592">记录组织在页内；长字段可能引用溢出页</text>
+  <text x="48" y="664" class="note">默认 16 KiB 页下，一个区为 64 页（1 MiB）；段还可分配零散页，不是只能整区分配。</text>
+</svg>

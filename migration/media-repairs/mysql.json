@@ -1,0 +1,247 @@
+[
+  {
+    "url": "https://wang-nine.cn/images/MySQL02-01%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![MySQL 连接层、服务层、引擎层与持久存储的调用关系](/article-diagrams/mysql/server-architecture.svg)\n\n原理示意：客户端请求先经过连接管理与身份认证，再由服务层解析、优化和执行 SQL，最后通过存储引擎接口访问数据。不同引擎的存储方式不同，不能把 MEMORY 的表数据也理解为磁盘文件；查询结果沿调用链返回。",
+    "assets": ["/article-diagrams/mysql/server-architecture.svg"],
+    "basis": "src/content/posts/legacy/10403.md:17–35，四层职责说明。依原文语义原创绘制调用图，不复原原图片；不沿用服务层文字中的旧版查询缓存，以免暗示 MySQL 8.0 仍有该功能。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL02-02InnoDB.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![InnoDB 独立表空间内的数据与索引及回表关系](/article-diagrams/mysql/innodb-table-index.svg)\n\n原理示意：采用独立表空间布局时，表的数据和索引位于对应的 `.ibd` 文件。聚集索引的叶子保存完整行，二级索引叶子携带主键；当所需列不能由二级索引覆盖时，再凭主键回表。图中的姓名和主键仅为示例，事务、外键与行级锁则是引擎能力。",
+    "assets": ["/article-diagrams/mysql/innodb-table-index.svg"],
+    "basis": "src/content/posts/legacy/10403.md:44–57，InnoDB 特点和 innodb_file_per_table；10404.md:106–120，聚集索引、二级索引与回表。原创关系图，不声称恢复原图。官方补充：https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/innodb-file-space.html，独立表空间只是一种布局，避免沿用所有表必有独立文件的绝对说法。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL03-01-01B%E6%A0%91.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![B 树内部节点含记录与 B+ 树叶子集中存记录、叶链相连的对照](/article-diagrams/mysql/btree-bplus-comparison.svg)\n\n原理示意：两棵树使用同一组示例键。B 树中的二十和四十对应记录保存在根中，不再重复放入叶子；B+ 树的内部节点只用分隔键导航，全部键对应的记录都在叶子。下半图按 InnoDB 的形式画出双向叶链，便于说明范围扫描，不表示实际页容量或磁盘读取次数。",
+    "assets": ["/article-diagrams/mysql/btree-bplus-comparison.svg"],
+    "basis": "src/content/posts/legacy/10404.md:64–78、91–95，B 树/B+ 树记录位置、相邻叶指针与范围访问。原创八键结构例，未推断原图键值；packet 仅分配 B 树 URL，未额外添加该文 http B+ 树 URL 的映射。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL05-01%E6%97%A0%E5%8F%82%E6%95%B0if%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.png",
+    "kind": "text",
+    "replacementMarkdown": "此例中，局部变量 `score` 初始为 `58`，既不满足优秀分支，也不满足及格分支，因此进入最后的分支，将 `result` 设为“不及格”。过程末尾的 `SELECT result` 返回这一等级文本；这是根据分支与初值推导的含义，不涉及用户表中的数据。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10408.md:169–195，p1() 的 DEFAULT 58、两级阈值与 SELECT result。替换为代码推导说明，非原截图内容或实际执行记录。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL05-02%E6%9C%89%E5%8F%82%E6%95%B0if%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.png",
+    "kind": "text",
+    "replacementMarkdown": "此例中，传入的分数为 `68`，未达到优秀阈值，但满足及格条件，因此输出参数 `result` 被赋为“及格”。调用结束后，输出值写入当前会话变量 `@result`，随后 `SELECT @result` 读取该等级；不要把输出参数与过程内部直接返回结果集混为一谈。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10408.md:214–238，p1(IN score, OUT result)、CALL p1(68,@result) 与 SELECT。按明确输入推导结果，不复原客户端界面；同名无参示例与此例视为分别定义的教学过程。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL05-03%E6%9C%89%E5%8F%82%E6%95%B0%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.png",
+    "kind": "text",
+    "replacementMarkdown": "此例中，`@score` 先设为 `163`，再作为输入输出参数传给过程。过程把分数乘以 `0.5`，按算术可得 `81.5`，并将新值写回同一个会话变量。随后的 `SELECT @score` 读取换算后的百分制分数，体现输入输出参数既接收值又带回修改值的作用。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10408.md:240–254，p2(INOUT score DOUBLE)、163×0.5。只陈述代码可推导的数值和参数语义，不声称执行过 SQL 或取得原结果图。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL05-03case%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.png",
+    "kind": "text",
+    "replacementMarkdown": "此例中，月份参数为 `4`，命中四月至六月的分支，因而将结果设为“第二季度”。末尾的字符串拼接表达式会形成“您输入的月份为4所属的季度为第二季度”。这里实际判断的是季度而不是气象季节；其余合法月份按各自区间分类，区间之外进入非法参数分支。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10408.md:278–310，p3 的 CASE 范围、CALL p3(4) 与 CONCAT 原文字面量。明确输入支持逐字推导字符串，但不将其包装成实际查询截图。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL05-04while%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.png",
+    "kind": "text",
+    "replacementMarkdown": "此例中，初始参数为 `10`、累计值为零，循环逐次把当前参数加入累计值，再将参数减一，直到退出。因此，从十累加到一可推导出 `total = 55`，末尾的 `SELECT total` 读取该累计值。这一输入下，先判断的循环、后判断的循环以及显式退出的循环可得到相同总和，但退出条件的检查位置不同。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10408.md:325–346、362–384、408–433。同一精确 URL 在 p4(10)、p5(10)、p6(10) 后共出现三次，映射只保留一次；说明覆盖三者共同的初始化、累加及 SELECT，不把它仅写成 WHILE 独有结果。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL05-05loop%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.png",
+    "kind": "text",
+    "replacementMarkdown": "此例中，`p7(10)` 只累加十以内的正偶数。遇到奇数时，先把参数减一，再通过 `ITERATE` 跳过本轮余下语句；偶数则加入累计值。因而十、八、六、四、二之和为 `30`，最后的 `SELECT total` 读取该值；当参数降到零时，由 `LEAVE` 退出循环。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10408.md:435–466，p7 的奇偶判断、ITERATE 前递减、LEAVE 及 CALL p7(10)。据具体控制流推导三十，不提供虚构执行截图。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL05-06cursor%E4%B8%AD%E7%9A%84bug.png",
+    "kind": "text",
+    "replacementMarkdown": "此例中，游标读取年龄不大于三十的用户姓名和专业，但 `WHILE TRUE` 本身没有退出条件。结果集耗尽后，下一次 `FETCH` 会触发 `NOT FOUND` 条件（SQLSTATE `'02000'`）。按 MySQL 的处理器规则，正常产生的 `NOT FOUND` 在没有处理器时默认执行 `CONTINUE`，而不是 `EXIT`，所以过程不会自动退出控制流：它会继续执行后面的 `INSERT`，再次进入循环并执行下一次 `FETCH`。要结束循环，必须在过程中显式处理耗尽，例如像后面的改进例那样用退出型处理器捕获该条件并关闭游标；实际插入次数和最终表内容取决于运行时的游标与表状态，不能仅凭这段代码确定。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10408.md:500–543、569–611，原 p8 未声明 NOT FOUND 处理器，改进例声明 EXIT HANDLER FOR SQLSTATE '02000'。按 MySQL 8.0 官方处理器规则，正常产生的 NOT FOUND 在无处理器时默认 CONTINUE，而不是 EXIT；据此说明耗尽后控制流继续，不虚构实际 SQL 执行或固定插入行数。官方：https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/declare-handler.html。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL06-01%E6%9C%AA%E6%8C%87%E5%AE%9A%E5%8F%82%E6%95%B0%E6%80%A7%E8%B4%A8%E7%9A%84bug.png",
+    "kind": "text",
+    "replacementMarkdown": "此例中，函数仅按输入整数做累加，相同输入能确定相同结果，因此声明 `DETERMINISTIC` 有明确依据。若启用了二进制日志，且函数创建者信任设置保持严格，创建函数时未声明确定性、无数据访问或只读数据等特征，可能被拒绝。这里讨论的是创建阶段的日志安全限制，并非所有环境中省略确定性声明都会出错。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10409.md:31–60，函数特征与未声明确定性的注意段。通过官方 stored-programs-logging 文档核对二进制日志与 log_bin_trust_function_creators 条件（Context7 /websites/dev_mysql_doc 返回官方条目：https://dev.mysql.com/doc/refman/26.7/en/stored-programs-logging.html）。原环境配置未知，不重建原错误号、权限状态或完整错误框。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL06-02%E5%AD%98%E5%82%A8%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png",
+    "kind": "text",
+    "replacementMarkdown": "此例中，函数从传入的 `100` 开始，每轮先累加再递减，直到参数不再为正，最后通过 `RETURN total` 返回总和。由一至一百的等差求和可得 `5050`，因此 `SELECT fun1(100)` 读取的是这一标量值；这与存储过程中直接执行查询返回结果集的写法不同。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10409.md:39–64，fun1 初值、WHILE、RETURN 与 SELECT fun1(100)。由 100×101÷2 推导数值，不声称在数据库运行验证或恢复截图。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL07-01%E6%9F%A5%E7%9C%8B%E8%A7%A6%E5%8F%91%E5%99%A8.png",
+    "kind": "text",
+    "replacementMarkdown": "此处的 `SHOW TRIGGERS` 用于查看当前数据库中已创建的触发器定义信息，重点核对名称、触发事件、关联表、触发时机与触发语句，而不是查看用户变更日志。目标定义是用户表上的逐行插入后触发器；但上方插入日志语句的拼接括号提前结束，须先修正列值数量不匹配的问题，不能仅凭这段文本认定创建已经成功。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10410.md:49–53、80–100，SHOW TRIGGERS 与 tb_user_insert_trigger。85–87 行五列对应的 VALUES 因 CONCAT 提前闭合而超出五项，直接指出代码问题；原数据库状态未知，不虚构 SHOW 的返回行或创建时间。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL07-02insert%E8%A7%A6%E5%8F%91%E5%99%A8.png",
+    "kind": "text",
+    "replacementMarkdown": "此例的意图是：用户记录成功插入后，逐行触发器读取 `NEW` 中的新行字段，再向日志表写入操作类型、用户主键与描述。上方日志插入语句需要把邮箱、专业也纳入同一个拼接表达式，使值的数量与目标列一致。修正并成功创建后，插入的用户主键为 `25`，日志引用 `NEW.id`；日志自增编号和执行时间则由运行环境决定。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10410.md:69–102，user_logs 表结构、AFTER INSERT、NEW 与明确 INSERT 输入。将代码意图与原示例括号错误分开；条件性说明 NEW.id=25，不伪造日志编号、NOW() 时间或成功执行截图。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL07-03%E6%9F%A5%E7%9C%8B%E8%A7%A6%E5%8F%91%E5%99%A8.png",
+    "kind": "text",
+    "replacementMarkdown": "此处查看触发器时，应核对更新触发器是否关联 `tb_user`、事件是否为更新、时机是否在更新之后，以及是否声明逐行执行。`SHOW TRIGGERS` 展示的是触发器元信息，不会展示某次更新前后的用户数据，也不等同于查询日志表；实际返回哪些定义取决于当前数据库中已成功创建的对象。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10410.md:104–126，tb_user_update_trigger、AFTER UPDATE、FOR EACH ROW 和 SHOW TRIGGERS。未取得实例元数据，故只解释应核对的定义字段，不列造返回行。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL07-04update%E8%A7%A6%E5%8F%91%E5%99%A8.png",
+    "kind": "text",
+    "replacementMarkdown": "此例中，若主键为 `25` 的用户存在且年龄实际发生变化，更新后的 `NEW.age` 为 `99`，更新前的值则来自 `OLD.age`。不过触发器的日志拼接只包含主键、姓名、电话、邮箱和专业，并未记录年龄，所以这次年龄变化不会直接显示在描述字段里；两段文案还都写成了“更新前”，应与 `OLD`、`NEW` 的真实含义区分。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10410.md:107–128，UPDATE age=99 WHERE id=25 与 CONCAT 的实际字段及重复文字。用户旧年龄、行是否存在和其他触发器未知，不断言受影响行数；避免把 NEW.age 的逻辑推导伪装成日志中已有该列。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL07-05%E6%9F%A5%E7%9C%8B%E8%A7%A6%E5%8F%91%E5%99%A8.png",
+    "kind": "text",
+    "replacementMarkdown": "此处的查看命令用于确认删除触发器的定义：事件为删除，时机在删除之后，并对每个被删除的用户行执行一次。删除场景只能从 `OLD` 读取原行字段，不存在删除后的新行可供 `NEW` 引用。查看定义不会删除用户，也不会直接返回删除操作写入日志表的内容。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10410.md:30–34、130–151，DELETE 对应 OLD，tb_user_delete_trigger 的 AFTER DELETE 与 SHOW TRIGGERS。基于定义解释，不构造对象列表、definer 或时间。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL07-06delete%E8%A7%A6%E5%8F%91%E5%99%A8.png",
+    "kind": "text",
+    "replacementMarkdown": "此例中，删除语句针对主键为 `25` 的用户；若该行存在并成功删除，触发器就用 `OLD` 保存的原行字段生成删除日志，操作类型取字面量 `delete`。描述字符串虽然写着“插入的数据内容为”，并不改变它属于删除事件这一事实。若目标行不存在便没有相应的逐行触发，不能预设日志条数、自增编号或操作时间。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10410.md:133–153，DELETE WHERE id=25、OLD、operation='delete' 与误写的描述前缀。按实际代码条件化说明，不编造 user_logs 查询结果或旧用户行内容。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL08-01cascaded.png",
+    "kind": "text",
+    "replacementMarkdown": "`WITH CASCADED CHECK OPTION` 约束通过可更新视图执行的插入和更新：新行必须满足当前视图条件，并递归满足所依赖视图的条件，即使底层视图没有显式声明检查选项也要检查。未写检查范围关键字时默认为级联检查；它不是给删除操作附加同样的新行条件，也不会把虚拟视图变成保存查询结果的实体表。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10411.md:19–28、52–60，原段仅有视图检查概念，无可还原的具体 SQL 或数据。依 MySQL 8.0 官方 https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/view-check-option.html 补足递归规则，纠正原段将 DELETE 也列入的泛化。原创语义说明，不重建图内未知视图。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL08-02local.png",
+    "kind": "text",
+    "replacementMarkdown": "`WITH LOCAL CHECK OPTION` 检查当前视图条件，并继续沿依赖关系处理底层视图自身的检查规则；底层视图若没有检查选项，就不强制检查它自己的条件，但仍继续向下递归。因此，局部检查不等于完全忽略所有底层检查，也不能绕过底层已声明的级联约束。这里关注的是插入和更新后行是否仍满足相应可见条件。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10411.md:52–64，仅有 LOCAL 标题，没有具体嵌套视图代码。以 MySQL 8.0 官方 https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/view-check-option.html 的逐层规则补充，未杜撰视图名、筛选阈值或插入结果。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL09-01%E5%85%A8%E5%B1%80%E9%94%81.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![全局读锁持有期间的备份读取、写入等待及解锁顺序](/article-diagrams/mysql/global-read-lock.svg)\n\n原理示意：持锁连接执行 `FLUSH TABLES WITH READ LOCK` 后，备份可以读取稳定的数据，而其他连接的相应写入和结构变更需要等待。备份结束应由持锁连接执行 `UNLOCK TABLES`。这是一条操作关系图，不表示实际等待时长；纯 InnoDB 的一致性事务备份是另一种方案。",
+    "assets": ["/article-diagrams/mysql/global-read-lock.svg"],
+    "basis": "src/content/posts/legacy/10412.md:21–48，全局锁、逻辑备份、写入阻塞与 single-transaction。原创流程图，不使用文中连接口令；原文 unlock table 单数写法在说明中采用 UNLOCK TABLES。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL09-02%E8%AF%BB%E5%86%99%E9%94%81.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![显式表读锁与表写锁对其他连接读写的兼容情况](/article-diagrams/mysql/table-lock-compatibility.svg)\n\n原理示意：针对同一张表，某连接持有显式表读锁时，其他连接仍可读，但写入需要等待；持有显式表写锁时，其他连接的读写都需要等待。此处讨论 `LOCK TABLES`，不是把普通 InnoDB 快照读当作共享行锁；图下方另列索引记录上共享锁与排他锁的兼容关系。",
+    "assets": ["/article-diagrams/mysql/table-lock-compatibility.svg"],
+    "basis": "src/content/posts/legacy/10412.md:63–86，显式表锁与兼容性；129–165，行锁 S/X 和普通 SELECT 对照。原创文字矩阵并明确两类粒度，不伪造数据库会话阻塞截图。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL10-01%E9%80%BB%E8%BE%91%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![InnoDB 表空间、段、区、页及页内记录的逻辑层级](/article-diagrams/mysql/storage-hierarchy.svg)\n\n原理示意：表空间组织存储页，索引使用段管理叶节点与非叶节点的空间，区由连续页构成，记录再组织在页内。默认页大小为十六千字节时，一个区包含六十四页；该关系不能无条件套到所有页大小配置，段也可以先分配零散页，长字段还可能引用溢出页。",
+    "assets": ["/article-diagrams/mysql/storage-hierarchy.svg"],
+    "basis": "src/content/posts/legacy/10413.md:17–19，原文仅给逻辑存储结构标题。依据官方 MySQL 8.0 https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/innodb-file-space.html 的 Pages, Extents, Segments, and Tablespaces 补足并原创绘制，不推断原图数值或布局。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL10-02%E6%80%BB%E6%9E%B6%E6%9E%84.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![InnoDB 缓冲池、日志缓冲与磁盘表空间、双写和重做日志的关系](/article-diagrams/mysql/innodb-architecture.svg)\n\n原理示意：缓冲池缓存数据页和索引页，日志缓冲区暂存重做记录。脏页经过相应保护路径写回表空间，而重做日志独立持久化，用于崩溃恢复。两条路径并不意味着提交时全部脏页已经落盘；更改缓冲、自适应哈希及不同表空间也不能混为同一种缓存文件。",
+    "assets": ["/article-diagrams/mysql/innodb-architecture.svg"],
+    "basis": "src/content/posts/legacy/10413.md:21–57，架构与各内存/磁盘组件标题；10414.md:34–44，redo/undo 用途。组件职责补充自 MySQL 8.0 官方 https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/innodb-architecture.html 及 innodb-doublewrite-buffer.html；原创重组关系图，非官方图复制或原图恢复。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL10-03-01%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![Buffer pool 的页命中、未命中装入与脏页刷新路径](/article-diagrams/mysql/buffer-pool.svg)\n\n原理示意：读写请求访问的是缓冲池中的页，命中时直接使用，未命中时才需要从相应表空间装入。修改后的页成为脏页，之后由刷新机制写回数据文件，相关重做记录必须先满足持久化要求。缓冲池不是查询结果缓存，也不能仅凭这张关系图推断命中率、磁盘读取量或查询耗时。",
+    "assets": ["/article-diagrams/mysql/buffer-pool.svg"],
+    "basis": "src/content/posts/legacy/10413.md:27–31，缓冲池标题；10414.md:36–37，脏页与 redo 恢复背景。官方补充：https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/innodb-in-memory-structures.html（Buffer Pool 章节入口）及 innodb-architecture.html。原创页缓存路径图，不推定原图性能数据。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL10-03-02%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png",
+    "kind": "text",
+    "replacementMarkdown": "更改缓冲区针对尚未在缓冲池中的、符合条件的非唯一二级索引页，暂存其索引项变更，等到页面被读入或后台合并时再应用。它不是缓存所有表行修改的通用队列，也不能替代重做日志。其内存部分占用缓冲池，持久化部分位于系统表空间；是否启用以及哪些操作可缓冲，取决于配置与索引条件。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10413.md:33–35，更改缓冲区只有标题。依据 MySQL 8.0 官方 https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/innodb-change-buffer.html 补充未缓存的二级索引页、合并、缓冲池与系统表空间职责。原创解释，不恢复原图或制造性能倍数。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL10-03-03%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png",
+    "kind": "text",
+    "replacementMarkdown": "自适应哈希索引由 InnoDB 观察索引访问模式后，按需为经常访问的索引页建立内存中的辅助查找结构。它可能只涉及部分索引键前缀，不是把整棵索引永久转换成哈希表，也不是用户创建的一种独立哈希索引。原有树形索引仍然存在；是否受益、是否启用，应结合实际工作负载判断。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10413.md:37–39，自适应哈希标题；10404.md:89，自动构建说明。官方补充：https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/innodb-adaptive-hash.html，按需、键前缀、访问热点与负载相关性。未编造原图热点键或测速。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL10-03-04%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![日志缓冲写入重做日志与脏页双写刷新的两条路径](/article-diagrams/mysql/redo-doublewrite.svg)\n\n原理示意：日志缓冲区保存待写入磁盘的重做记录，而不是待刷新的完整数据页。日志写入与刷盘时机受提交及刷新策略控制，不能把日志仍在内存理解为已经具备断电后的持久性。下方的双写页路径是另一类保护：页落盘前，相关重做记录须先持久化。",
+    "assets": ["/article-diagrams/mysql/redo-doublewrite.svg"],
+    "basis": "src/content/posts/legacy/10413.md:41–43，日志缓冲区；10414.md:34–37，redo buffer/file。官方补充：https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/innodb-redo-log-buffer.html，innodb_flush_log_at_trx_commit 等策略；innodb-doublewrite-buffer.html，完整页保护。图为原创职责对照，非实际刷新记录。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL10-04-01%E7%A3%81%E7%9B%98%E7%BB%93%E6%9E%84.png",
+    "kind": "text",
+    "replacementMarkdown": "系统表空间与独立表空间的职责不同。系统表空间保存更改缓冲等共享结构，也可按布局容纳表和索引；独立表空间则把单表的数据与索引组织在对应文件中。`innodb_file_per_table` 控制新建表的默认布局，但不代表所有既有表都自动搬入独立文件；数据字典与双写区域的位置还需要结合具体版本判断。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10413.md:45–49，系统与单表文件空间标题；10403.md:54–55，参数线索。官方补充：https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/innodb-system-tablespace.html 与 innodb-file-space.html。原图无正文细节，按职责解释；不沿用旧版本字典、双写全部常驻 ibdata1 的断言。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL10-04-02%E7%A3%81%E7%9B%98%E7%BB%93%E6%9E%84.png",
+    "kind": "text",
+    "replacementMarkdown": "通用表空间允许多个表共享同一表空间，不能与一表一文件的布局混同。撤销表空间组织撤销日志，为事务回滚和一致性读重建历史版本提供信息；临时表空间则服务于相应临时表活动，不是保存持久业务行的替代位置。这几类名称表示用途与生命周期的差异，并不意味着每次更新都会向所有类型的文件各写一份相同数据。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10413.md:51–53，通用/撤销/临时表空间标题；10414.md:39–46，undo；10415.md:51–57，历史版本用途。官方入口：https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/innodb-tablespace.html 及 innodb-file-space.html。原创职责说明，不虚构原图文件名、路径或容量。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL10-04-03%E7%A3%81%E7%9B%98%E7%BB%93%E6%9E%84.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![双写保留完整页副本与重做日志记录页修改的职责对照](/article-diagrams/mysql/redo-doublewrite.svg)\n\n原理示意：启用完整双写保护时，脏页先进入双写区域，再写入数据文件的最终位置，以便在页写入中断时取得完整副本。重做日志则记录必要的修改，用于崩溃恢复；二者不是同一种日志，也不是把日志简单复制两遍。双写区域的具体文件位置随版本变化，图中不固定文件名和个数。",
+    "assets": ["/article-diagrams/mysql/redo-doublewrite.svg"],
+    "basis": "src/content/posts/legacy/10413.md:55–57，双写/重做标题；10414.md:34–37，redo。官方 MySQL 8.0 https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/innodb-doublewrite-buffer.html 明确先双写再最终数据文件、8.0.20 起独立文件及不同保护模式。原创原理图，不仿造磁盘监控截图。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL10-05%E5%90%8E%E5%8F%B0%E7%BA%BF%E7%A8%8B.png",
+    "kind": "text",
+    "replacementMarkdown": "后台工作把前台事务产生的状态逐步整理为可持续运行的存储结构：页面清理负责推动脏页刷新，清理历史版本的工作在旧版本不再被回滚或一致性读需要后回收相应信息，异步读写由相关后台机制协作处理。更改缓冲也可能延后合并；这些任务并非每次提交都同步执行完毕，不能从职责名称推断固定线程数或执行耗时。",
+    "assets": [],
+    "basis": "src/content/posts/legacy/10413.md:59–61，仅有后台线程标题；10414.md:44 与10415.md:55–57，undo 不能一概提交即删。官方依据：https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/innodb-change-buffer.html（后台合并与刷新）、innodb-file-space.html（purge 后回收）。为标题补充通用职责，不重建未知原图线程拓扑或固定数量。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL10-06%E4%BA%8B%E5%8A%A1%E5%8E%9F%E7%90%86.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![事务中 undo、redo、WAL、锁与 MVCC 的机制分工](/article-diagrams/mysql/transaction-mechanisms.svg)\n\n原理示意：撤销信息支持失败时回滚，重做日志配合先写日志原则支持崩溃恢复，锁与多版本机制按隔离级别协调并发访问。数据一致性还依赖约束及正确的业务事务逻辑，并非重做日志单独实现。提交的持久性与刷盘策略有关，也不意味着每个修改过的数据页都已立即写回磁盘。",
+    "assets": ["/article-diagrams/mysql/transaction-mechanisms.svg"],
+    "basis": "src/content/posts/legacy/10414.md:17–46，ACID、redo/undo；10412.md:129–165，锁；10415.md:15–33，MVCC。原创机制关系图；原文标题 redolog(一致性) 与正文持久性不一致，替换依据正确职责区分，不把错误标题画进图。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL12-01undolog.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![通过回滚指针和 undo 重建更早版本，再判断快照可见性](/article-diagrams/mysql/mvcc-version-chain.svg)\n\n原理示意：记录上的修改事务标识和回滚指针把当前状态与撤销信息联系起来。快照读若发现当前版本不可见，就沿撤销信息重建更早版本，直到找到可见记录或确认不存在。图中的事务号与状态值都只是示例；更新、删除的撤销信息可能在提交后仍被旧快照需要，不能立即全部清除。",
+    "assets": ["/article-diagrams/mysql/mvcc-version-chain.svg"],
+    "basis": "src/content/posts/legacy/10415.md:37–59，DB_TRX_ID、DB_ROLL_PTR、insert 与 update/delete undo 用途；10414.md:39–44。原创示例链而非原记录内容；强调重建而非声称每条 undo 都是整行副本。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/MySQL12-02Readview.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![ReadView 的自身事务、事务上界与活跃集合可见性规则](/article-diagrams/mysql/readview-visibility.svg)\n\n原理示意：先判断是否为自身修改，再比较版本修改事务号与快照边界。处于中间区间的版本，还要检查修改事务是否在创建快照时的活跃集合中，不能只按事务号大小判断。读已提交级别每次一致性读建立新视图，可重复读通常首次建立后复用；不可见时继续沿撤销链查找，而锁定读不按旧快照选版本。",
+    "assets": ["/article-diagrams/mysql/readview-visibility.svg"],
+    "basis": "src/content/posts/legacy/10415.md:61–78，四字段及 RC/RR 生成时机；37–42，版本事务与回滚指针。原创可见性规则图，不构造原图活跃事务号或并发执行结果；将 max_trx_id 解释为视图创建时上界，避免把它说成系统此刻最大已分配 ID 的永久函数。"
+  }
+]

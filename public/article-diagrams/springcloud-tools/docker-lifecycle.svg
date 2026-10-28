@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-labelledby="title desc">
+  <title id="title">Docker 镜像与容器生命周期</title><desc id="desc">镜像经 run 创建并启动容器。运行容器经 stop 变为已停止，已停止容器经 start 再运行，经 rm 删除容器。删除容器不等于删除镜像，也不自动删除命名数据卷。</desc>
+  <!-- Contract: cloud/haze/cream/ink/pine palette; 8px grid; type 32/24/20. -->
+  <style>text{font-family:system-ui,sans-serif;fill:#263d55;font-size:20px}.title{font-size:32px;font-weight:700}.node{font-size:24px;font-weight:600}.edge{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#a)}</style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#366775"/></marker></defs>
+  <rect width="960" height="560" fill="#ecf3eb"/><text x="40" y="56" class="title">容器命令，按状态理解</text><text x="40" y="88">原理示意 · 镜像是模板，容器有自己的生命周期</text>
+  <rect x="40" y="208" width="192" height="96" rx="16" fill="#f7efdf"/><text x="64" y="248" class="node">本地镜像</text><text x="64" y="280">nginx:latest</text>
+  <rect x="360" y="208" width="216" height="96" rx="16" fill="#d1e5e4"/><text x="384" y="248" class="node">运行中容器</text><text x="384" y="280">独立的容器身份</text>
+  <rect x="704" y="208" width="216" height="96" rx="16" fill="#d1e5e4"/><text x="728" y="248" class="node">已停止容器</text><text x="728" y="280">保留可写层</text>
+  <path d="M232 256H360M576 240H704" class="edge"/><text x="264" y="232">run</text><text x="616" y="216">stop</text>
+  <path d="M812 208V152H468V208" class="edge"/><text x="600" y="144">start：启动同一个容器</text>
+  <rect x="704" y="384" width="216" height="64" rx="16" fill="#f7efdf"/><text x="728" y="424" class="node">容器被删除</text><path d="M812 304V384" class="edge"/><text x="832" y="352">rm</text>
+  <text x="40" y="360">ps：查看运行容器；ps -a：包含已停止容器</text><text x="40" y="400">logs：读取日志；exec：在运行容器内执行命令</text><text x="40" y="488">再次 run 通常创建新容器；start 复用已有容器，不重新应用 run 的挂载参数。</text><text x="40" y="528">rm 删除容器可写层，不等于删除镜像，也不自动删除命名数据卷。</text>
+</svg>

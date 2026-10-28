@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-labelledby="title desc">
+  <title id="title">微服务技术栈：请求、治理与基础设施</title>
+  <desc id="desc">客户端通过网关访问业务服务。注册中心提供实例信息，配置中心提供配置，缓存、搜索、消息队列支撑业务；日志监控与部署贯穿服务运行。</desc>
+  <!-- Diagram contract: DESIGN.md illustration palette; 8px grid; title 32, node 24, annotation 20; static, local system fonts only. -->
+  <style>:root{--paper:#ecf3eb;--panel:#d1e5e4;--warm:#f7efdf;--ink:#263d55;--line:#366775}text{font-family:system-ui,sans-serif;fill:var(--ink);font-size:20px}.title{font-size:32px;font-weight:700}.node{font-size:24px;font-weight:600}.panel{fill:var(--panel)}.warm{fill:var(--warm)}.edge{fill:none;stroke:var(--line);stroke-width:3;marker-end:url(#arrow)}</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#366775"/></marker></defs>
+  <rect width="960" height="560" fill="#ecf3eb"/>
+  <text x="40" y="56" class="title">微服务技术栈</text><text x="40" y="88">原理示意 · 业务调用与治理职责分开理解</text>
+  <rect x="384" y="120" width="232" height="80" rx="16" class="warm"/><text x="408" y="152" class="node">注册 / 配置中心</text><text x="408" y="180">实例发现与配置管理</text>
+  <path d="M500 200V248" class="edge"/><text x="624" y="224">治理信息，不代理业务请求</text>
+  <rect x="40" y="248" width="176" height="88" rx="16" class="panel"/><text x="80" y="300" class="node">客户端</text>
+  <rect x="280" y="248" width="184" height="88" rx="16" class="panel"/><text x="304" y="284" class="node">服务网关</text><text x="304" y="316">认证、路由、限流</text>
+  <rect x="528" y="248" width="392" height="88" rx="16" class="panel"/><text x="552" y="284" class="node">业务服务集群</text><text x="552" y="316">按业务拆分 · 服务间远程调用</text>
+  <path d="M216 292H280M464 292H528M724 336V384" class="edge"/>
+  <rect x="528" y="384" width="392" height="64" rx="16" class="warm"/><text x="552" y="424">分布式缓存 / 搜索 / 消息队列</text>
+  <rect x="40" y="480" width="880" height="48" rx="16" class="panel"/><text x="64" y="512">运行支撑：日志与链路监控 · Jenkins 自动部署 · Docker 打包与容器编排</text>
+</svg>

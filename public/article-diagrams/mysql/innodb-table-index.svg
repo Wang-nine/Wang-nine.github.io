@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" width="100%" role="img" aria-labelledby="title desc">
+  <title id="title">InnoDB 表空间、聚集索引与二级索引</title>
+  <desc id="desc">启用独立表空间并使用该布局的 InnoDB 表，其数据和索引位于表的 ibd 文件。示例二级索引的姓名键关联主键 25，回表后从聚集索引取完整行；键值仅为示例。</desc>
+  <style>text{font-family:system-ui,'Microsoft YaHei',sans-serif;fill:#263d55;font-size:20px}.heading{font-size:32px;font-weight:700}.label{font-size:24px;font-weight:700}.note{font-size:18px}.node{fill:#f7efdf}.arrow{fill:none;stroke:#263d55;stroke-width:3;marker-end:url(#arrow)}</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#263d55"/></marker></defs>
+  <rect width="1200" height="650" rx="24" fill="#ecf3eb"/>
+  <text x="48" y="60" class="heading">InnoDB：数据和索引如何关联</text>
+  <text x="48" y="96" class="note">原理示意 · 主键、姓名均为示例；不是表文件转储或查询截图</text>
+  <rect x="48" y="132" width="1104" height="336" rx="16" fill="#d1e5e4"/>
+  <text x="72" y="176" class="label">表的独立表空间：table_name.ibd</text>
+  <rect x="72" y="216" width="408" height="192" rx="12" class="node"/>
+  <text x="96" y="260" class="label">二级索引叶子记录</text>
+  <text x="96" y="308">示例：name = 小林</text><text x="96" y="348">索引键 + 主键：id = 25</text>
+  <path d="M480 312H696" class="arrow"/><text x="528" y="288">按主键回表</text>
+  <rect x="696" y="216" width="432" height="192" rx="12" class="node"/>
+  <text x="720" y="260" class="label">聚集索引叶子记录</text>
+  <text x="720" y="308">示例：id = 25</text><text x="720" y="348">完整行：主键 + 其他列</text>
+  <text x="72" y="444" class="note">只有查询所需列不全在二级索引中时，才需要上述回表步骤。</text>
+  <text x="48" y="520" class="label">引擎能力</text>
+  <text x="48" y="560">事务（ACID） · 外键约束 · 索引记录上的行级锁</text>
+  <text x="48" y="606" class="note">独立表空间是一种布局，不等于所有 InnoDB 表都必须各占一个 .ibd 文件。</text>
+</svg>

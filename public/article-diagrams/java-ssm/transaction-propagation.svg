@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" role="img" aria-labelledby="title desc">
+<title id="title">事务传播：加入、新建和保存点</title>
+<desc id="desc">已有外层事务时，REQUIRED 加入同一物理事务，REQUIRES_NEW 挂起外层并创建独立物理事务，NESTED 在支持时使用同一事务内的保存点；另列无事务调用与其他传播行为。</desc>
+<style>:root{--paper:#f7efdf;--panel:#ecf3eb;--wash:#d1e5e4;--ink:#263d55;--line:#366775}text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:var(--ink);font-size:18px}.title{font-size:20px;font-weight:700}.small{font-size:16px}.box{fill:var(--panel);stroke:var(--line);stroke-width:1.5}.wash{fill:var(--wash)}.flow{fill:none;stroke:var(--line);stroke-width:2;marker-end:url(#arrow)}</style>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8" fill="#366775"/></marker></defs><path fill="#f7efdf" d="M0 0H960V700H0z"/>
+<text x="36" y="44" class="title">事务传播决定被调用方法如何用事务 · 原理示意</text><text x="36" y="76" class="small">前提：调用经过事务代理，事务管理器支持相应能力；外层事务记为 T1。</text>
+<rect x="36" y="112" width="888" height="94" rx="8" class="box"/><text x="56" y="147" class="title">REQUIRED · 默认</text><text x="56" y="184">外层 T1</text><path d="M170 178H348" class="flow"/><text x="255" y="163" class="small">调用并加入</text><text x="366" y="184">内层仍用 T1：同一个物理事务，提交 / 回滚相互关联</text>
+<rect x="36" y="230" width="888" height="94" rx="8" class="box wash"/><text x="56" y="265" class="title">REQUIRES_NEW</text><text x="56" y="302">挂起 T1</text><path d="M170 296H348" class="flow"/><text x="255" y="281" class="small">开启 T2</text><text x="366" y="302">T2 独立提交 / 回滚；返回后恢复 T1</text>
+<rect x="36" y="348" width="888" height="94" rx="8" class="box"/><text x="56" y="383" class="title">NESTED</text><text x="56" y="420">外层 T1</text><path d="M170 414H348" class="flow"/><text x="202" y="399" class="small">建立保存点</text><text x="366" y="420">仍属 T1：可回滚到保存点，并非独立事务 T2</text>
+<text x="36" y="489">没有外层事务：以上三种通常都新建事务；NESTED 需底层支持保存点。</text>
+<rect x="36" y="520" width="888" height="140" rx="8" class="box wash"/><text x="56" y="553">SUPPORTS：有事务就加入，没有则非事务执行。</text><text x="56" y="584">MANDATORY：必须已有事务；NEVER：必须没有事务，否则报错。</text><text x="56" y="615">NOT_SUPPORTED：非事务执行；若有外层事务则挂起。</text><text x="56" y="644" class="small">REQUIRES_NEW 通常需额外数据库连接；共享事务被标记 rollback-only 后不能独立提交内层。</text>
+</svg>

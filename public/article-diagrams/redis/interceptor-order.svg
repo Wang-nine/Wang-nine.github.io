@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">先刷新登录态，再进行路径登录校验</title>
+  <desc id="desc">所有请求先经过 order 为零的刷新拦截器，有有效 token 才读取用户信息并刷新 TTL；随后受保护路径进入 order 为一的登录拦截器，公开路径不要求登录。</desc>
+  <defs><style>text{font-family:"Microsoft YaHei","PingFang SC",sans-serif;fill:#263d55;font-size:22px}.title{font-size:32px;font-weight:700}.head{font-size:24px;font-weight:700}.note{font-size:20px}.box{fill:#d1e5e4;stroke:#263d55;stroke-width:2}.line{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#arrow)}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 10 5 0 10" fill="#366775"/></marker></defs>
+  <rect width="960" height="560" fill="#ecf3eb"/><text x="40" y="54" class="title">拦截器分工：刷新不应只覆盖受保护路径</text>
+  <rect x="40" y="110" width="180" height="104" rx="8" class="box"/><text x="130" y="151" text-anchor="middle">全部请求</text><text x="130" y="186" text-anchor="middle" class="note">包括公开页面</text>
+  <path d="M220 162H290" class="line"/>
+  <rect x="300" y="110" width="610" height="104" rx="8" class="box"/><text x="324" y="149" class="head">刷新拦截器 · order(0)</text><text x="324" y="186">有效 token：读取用户、保存上下文、刷新 TTL</text>
+  <text x="302" y="250" class="note">无 token 或登录态失效：不续期，也不在这里拒绝公开访问。</text>
+  <path d="M450 214V290H260V319M760 214V319" class="line"/>
+  <rect x="60" y="326" width="400" height="112" rx="8" class="box"/><text x="84" y="367" class="head">公开路径</text><text x="84" y="406">跳过登录校验，进入业务处理</text>
+  <rect x="510" y="326" width="400" height="112" rx="8" class="box"/><text x="534" y="367" class="head">受保护路径 · order(1)</text><text x="534" y="406">已登录则放行，否则拒绝访问</text>
+  <text x="40" y="502" class="note">较小的 order 先执行：先恢复身份，再由下一层决定是否需要登录。</text><text x="40" y="536" class="note">刷新只针对有效登录态，不能因任意访问而创建或复活已过期的登录记录。</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-labelledby="title desc">
+  <title id="title">Gateway 统一入口与服务路由</title><desc id="desc">客户端进入网关，经身份校验、限流及路由匹配后，由负载均衡选择目标实例。用户路径路由到 userservice；订单路径是说明多路由关系的概念示例，不代表原文已有订单配置。</desc>
+  <!-- Contract: existing palette; 8px grid; typography 32/24/20; labelled edges. -->
+  <style>text{font-family:system-ui,sans-serif;fill:#263d55;font-size:20px}.title{font-size:32px;font-weight:700}.node{font-size:24px;font-weight:600}.edge{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#a)}</style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#366775"/></marker></defs>
+  <rect width="960" height="560" fill="#ecf3eb"/><text x="40" y="56" class="title">Gateway：把公共入口收拢</text><text x="40" y="88">原理示意 · 策略需配置或实现，并非引入依赖就自动具备</text>
+  <rect x="40" y="224" width="160" height="112" rx="16" fill="#d1e5e4"/><text x="72" y="288" class="node">客户端</text>
+  <rect x="264" y="176" width="296" height="208" rx="16" fill="#f7efdf"/><text x="296" y="216" class="node">Spring Cloud Gateway</text><text x="296" y="264">认证 / 权限 / 限流</text><text x="296" y="304">Predicate 匹配路由</text><text x="296" y="344">Filter 处理请求与响应</text>
+  <path d="M200 280H264" class="edge"/>
+  <rect x="704" y="160" width="216" height="104" rx="16" fill="#d1e5e4"/><text x="728" y="200" class="node">userservice</text><text x="728" y="240">选择一个可用实例</text>
+  <rect x="704" y="336" width="216" height="104" rx="16" fill="#d1e5e4"/><text x="728" y="376" class="node">其他微服务</text><text x="728" y="416">各自匹配对应路由</text>
+  <path d="M560 240H704M560 328H624V388H704" class="edge"/>
+  <text x="576" y="208">/user/**</text><text x="576" y="472">lb:// 服务名 → 发现实例 → 转发</text>
+  <text x="40" y="520">网关负责入口治理，服务间远程调用仍需各自处理超时、错误与访问权限。</text>
+</svg>

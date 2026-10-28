@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Cache Aside 的读缓存与写后失效流程</title>
+  <desc id="desc">读请求先查 Redis，命中后直接返回，未命中查数据库并将结果带 TTL 回填缓存。写请求先提交数据库更新，再删除缓存；两种存储之间并非天然原子。</desc>
+  <defs><style>text{font-family:"Microsoft YaHei","PingFang SC",sans-serif;fill:#263d55;font-size:22px}.title{font-size:32px;font-weight:700}.head{font-size:24px;font-weight:700}.note{font-size:20px}.box{fill:#d1e5e4;stroke:#263d55;stroke-width:2}.line{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#arrow)}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 10 5 0 10" fill="#366775"/></marker></defs>
+  <rect width="960" height="600" fill="#ecf3eb"/><text x="40" y="54" class="title">Cache Aside：读时回填，写后失效</text>
+  <text x="40" y="114" class="head">读取路径</text>
+  <rect x="40" y="150" width="180" height="72" rx="8" class="box"/><text x="130" y="195" text-anchor="middle">业务查询</text>
+  <path d="M220 186H310" class="line"/><rect x="320" y="150" width="230" height="72" rx="8" class="box"/><text x="435" y="195" text-anchor="middle">查询 Redis</text>
+  <path d="M550 186H690" class="line"/><text x="586" y="170" class="note">命中</text><rect x="700" y="150" width="220" height="72" rx="8" class="box"/><text x="810" y="195" text-anchor="middle">直接返回数据</text>
+  <path d="M435 222V285" class="line"/><text x="455" y="262" class="note">未命中</text>
+  <rect x="320" y="294" width="230" height="72" rx="8" class="box"/><text x="435" y="339" text-anchor="middle">查询数据库</text>
+  <path d="M550 330H690" class="line"/><rect x="700" y="294" width="220" height="72" rx="8" class="box"/><text x="810" y="325" text-anchor="middle">回填缓存 + TTL</text><text x="810" y="353" text-anchor="middle" class="note">并返回查询结果</text>
+  <path d="M40 402H920" stroke="#648f9f" stroke-width="2"/>
+  <text x="40" y="442" class="head">更新路径</text>
+  <rect x="40" y="470" width="180" height="64" rx="8" class="box"/><text x="130" y="510" text-anchor="middle">业务修改</text><path d="M220 502H310" class="line"/>
+  <rect x="320" y="470" width="230" height="64" rx="8" class="box"/><text x="435" y="510" text-anchor="middle">数据库更新并提交</text><path d="M550 502H690" class="line"/>
+  <rect x="700" y="470" width="220" height="64" rx="8" class="box"/><text x="810" y="510" text-anchor="middle">删除对应缓存</text>
+  <text x="40" y="577" class="note">数据库提交与缓存删除不是同一原子操作；删除失败需处理，TTL 只是兜底。</text>
+</svg>

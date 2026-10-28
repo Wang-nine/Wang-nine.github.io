@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+<title id="title">Spring Framework 的能力分层</title>
+<desc id="desc">核心容器提供 Core、Beans、Context 与表达式能力，上层使用 AOP、事务、数据访问和 Web MVC，测试支持覆盖应用各层。箭头表示对核心能力的使用，而非模块逐一对应的依赖图。</desc>
+<style>:root{--paper:#f7efdf;--panel:#ecf3eb;--wash:#d1e5e4;--ink:#263d55;--line:#366775}text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:var(--ink);font-size:18px}.title{font-size:20px;font-weight:700}.small{font-size:16px}.box{fill:var(--panel);stroke:var(--line);stroke-width:1.5}.wash{fill:var(--wash)}.flow{fill:none;stroke:var(--line);stroke-width:2;marker-end:url(#arrow)}</style>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8" fill="#366775"/></marker></defs><path fill="#f7efdf" d="M0 0H960V560H0z"/>
+<text x="36" y="44" class="title">Spring Framework 能力分层 · 原理示意</text><text x="36" y="76" class="small">围绕本文的 IoC 与 DI 理解各模块职责；不是某个发行版本的完整模块清单。</text>
+<rect x="36" y="116" width="258" height="124" rx="8" class="box"/><text x="56" y="150" class="title">Web / Web MVC</text><text x="56" y="187">接收请求、路由与响应</text><text x="56" y="219">表现层对象也由容器管理</text>
+<rect x="318" y="116" width="258" height="124" rx="8" class="box"/><text x="338" y="150" class="title">数据访问 / 事务</text><text x="338" y="187">JDBC、ORM 集成</text><text x="338" y="219">事务边界与资源协调</text>
+<rect x="600" y="116" width="258" height="124" rx="8" class="box"/><text x="620" y="150" class="title">AOP</text><text x="620" y="187">代理、切面与共性逻辑</text><text x="620" y="219">对方法执行进行增强</text>
+<path d="M165 240V310" class="flow"/><path d="M447 240V310" class="flow"/><path d="M729 240V310" class="flow"/>
+<text x="36" y="283" class="small">使用核心容器能力</text>
+<rect x="36" y="314" width="822" height="108" rx="8" class="box wash"/><text x="56" y="349" class="title">核心容器 Core Container</text><text x="56" y="386">Core / Beans / Context / SpEL：创建 Bean、装配依赖、提供应用上下文</text>
+<rect x="882" y="116" width="42" height="306" rx="8" class="box wash"/><text x="903" y="160" text-anchor="middle"><tspan x="903">测</tspan><tspan x="903" dy="30">试</tspan><tspan x="903" dy="30">支</tspan><tspan x="903" dy="30">持</tspan></text>
+<text x="36" y="478">学习入口：先把对象交给容器管理，再描述对象之间的依赖关系。</text><text x="36" y="514" class="small">Spring Framework 是基础框架；Spring Boot 等生态项目在此基础上进一步简化应用配置。</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">锁租期结束后的误删时序</title>
+  <desc id="desc">线程 A 获锁后停顿，租期结束，线程 B 获得同名锁。A 恢复后若无条件删除，会删除 B 的锁。超时释放只删除键，并不能停止 A 仍在执行的业务。</desc>
+  <defs><style>text{font-family:"Microsoft YaHei","PingFang SC",sans-serif;fill:#263d55;font-size:22px}.title{font-size:32px;font-weight:700}.head{font-size:24px;font-weight:700}.note{font-size:20px}.box{fill:#d1e5e4;stroke:#263d55;stroke-width:2}.line{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#arrow)}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 10 5 0 10" fill="#366775"/></marker></defs>
+  <rect width="960" height="600" fill="#ecf3eb"/><text x="40" y="54" class="title">超时释放不等于业务结束：旧持有者可能误删新锁</text>
+  <text x="140" y="119" class="head" text-anchor="middle">线程 A</text><text x="480" y="119" class="head" text-anchor="middle">Redis 锁键</text><text x="820" y="119" class="head" text-anchor="middle">线程 B</text>
+  <path d="M140 145V520M480 145V520M820 145V520" stroke="#648f9f" stroke-width="2" stroke-dasharray="8 8"/>
+  <path d="M140 180H470" class="line"/><text x="180" y="168" class="note">① 获锁：owner = A</text>
+  <rect x="40" y="218" width="280" height="56" rx="8" class="box"/><text x="60" y="254">② 业务尚未结束，线程停顿</text>
+  <rect x="355" y="286" width="250" height="56" rx="8" fill="#fff1cf" stroke="#263d55" stroke-width="2"/><text x="480" y="322" text-anchor="middle">③ A 的锁租期结束</text>
+  <path d="M820 380H490" class="line"/><text x="566" y="365" class="note">④ B 获锁：owner = B</text>
+  <path d="M140 460H470" class="line"/><text x="160" y="442" class="note">⑤ A 恢复后无条件 DEL</text><text x="515" y="467">错误：删除了 B 的锁</text>
+  <text x="40" y="551" class="note">解锁必须校验本次加锁的唯一标识，并把比较与删除放入同一个原子步骤。</text><text x="40" y="584" class="note">即使避免误删，也不能据此证明租期结束后旧业务与新业务不会并发执行。</text>
+</svg>

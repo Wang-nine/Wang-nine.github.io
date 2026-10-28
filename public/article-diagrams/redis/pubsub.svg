@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Redis PubSub 向在线订阅者广播</title>
+  <desc id="desc">发布者向频道发布消息，Redis 将消息转发给当前在线并订阅该频道的多个订阅者。离线订阅者不能在重连后从频道补读历史，PubSub 没有消费组的待确认列表和确认重试机制。</desc>
+  <defs><style>text{font-family:"Microsoft YaHei","PingFang SC",sans-serif;fill:#263d55;font-size:22px}.title{font-size:32px;font-weight:700}.head{font-size:24px;font-weight:700}.note{font-size:20px}.box{fill:#d1e5e4;stroke:#263d55;stroke-width:2}.line{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#arrow)}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 10 5 0 10" fill="#366775"/></marker></defs>
+  <rect width="960" height="560" fill="#ecf3eb"/><text x="40" y="54" class="title">PubSub：向当前订阅者广播，不是历史消息存储</text>
+  <rect x="40" y="220" width="190" height="104" rx="8" class="box"/><text x="135" y="261" text-anchor="middle" class="head">发布者</text><text x="135" y="300" text-anchor="middle">PUBLISH</text>
+  <path d="M230 272H340" class="line"/><rect x="350" y="220" width="230" height="104" rx="8" class="box"/><text x="465" y="261" text-anchor="middle" class="head">Redis 频道</text><text x="465" y="300" text-anchor="middle">即时分发消息</text>
+  <path d="M580 246H630V150H690M580 272H690" class="line"/>
+  <rect x="700" y="112" width="220" height="80" rx="8" class="box"/><text x="810" y="147" text-anchor="middle">在线订阅者 A</text><text x="810" y="178" text-anchor="middle" class="note">收到当前消息</text>
+  <rect x="700" y="232" width="220" height="80" rx="8" class="box"/><text x="810" y="267" text-anchor="middle">在线订阅者 B</text><text x="810" y="298" text-anchor="middle" class="note">收到同一条消息</text>
+  <rect x="700" y="352" width="220" height="80" rx="8" fill="#fff1cf" stroke="#263d55" stroke-width="2" stroke-dasharray="8 6"/><text x="810" y="387" text-anchor="middle">离线订阅者 C</text><text x="810" y="418" text-anchor="middle" class="note">不接收、不补发</text>
+  <text x="40" y="490" class="note">广播不是组内分摊：A、B 各收一份，不能把 PubSub 当作有 ACK 的可靠任务队列。</text><text x="40" y="528" class="note">频道不保存可回放历史；需要消费进度、待确认记录与故障重试时应另选机制。</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" role="img" aria-labelledby="title desc">
+  <title id="title">Redo、WAL 与 doublewrite 的不同保护对象</title>
+  <desc id="desc">Redo 记录修改，用于崩溃恢复；WAL 要求相关日志先于数据页持久化。启用完整双写保护时，脏页先写双写区域再写最终数据位置，完整副本可用于修复不完整页写入。两者并非同一日志或同一恢复职责。</desc>
+  <style>text{font-family:system-ui,'Microsoft YaHei',sans-serif;fill:#263d55;font-size:20px}.heading{font-size:32px;font-weight:700}.label{font-size:24px;font-weight:700}.note{font-size:18px}.node{fill:#f7efdf}.arrow{fill:none;stroke:#263d55;stroke-width:3;marker-end:url(#arrow)}</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#263d55"/></marker></defs>
+  <rect width="1200" height="680" rx="24" fill="#ecf3eb"/>
+  <text x="48" y="60" class="heading">Redo 与 doublewrite：保护的对象不同</text><text x="48" y="96" class="note">原理示意 · WAL 是先后约束，双写是完整页保护</text>
+  <rect x="48" y="144" width="336" height="120" rx="12" class="node"/>
+  <text x="72" y="188" class="label">Log buffer</text><text x="72" y="228">暂存页修改的 redo 记录</text>
+  <path d="M384 204H696" class="arrow"/><text x="432" y="180">写入并按策略持久化</text>
+  <rect x="696" y="144" width="456" height="120" rx="12" fill="#d1e5e4"/>
+  <text x="720" y="188" class="label">磁盘 redo log</text><text x="720" y="228">崩溃恢复：重放必要的修改</text>
+  <text x="48" y="316">WAL：下方数据页落盘前，其对应 redo 记录必须已持久化。</text>
+  <rect x="48" y="360" width="288" height="144" rx="12" class="node"/>
+  <text x="72" y="404" class="label">缓冲池脏页</text><text x="72" y="448">准备刷新完整页</text>
+  <path d="M336 432H456" class="arrow"/>
+  <rect x="456" y="360" width="288" height="144" rx="12" fill="#d1e5e4"/>
+  <text x="480" y="404" class="label">Doublewrite</text><text x="480" y="448">先保留完整页副本</text>
+  <path d="M744 432H864" class="arrow"/>
+  <rect x="864" y="360" width="288" height="144" rx="12" class="node"/>
+  <text x="888" y="404" class="label">数据文件</text><text x="888" y="448">再写页的最终位置</text>
+  <text x="48" y="560">若最终页写入中断，完整双写副本可用于修复；redo 则用于恢复页上的必要修改。</text>
+  <text x="48" y="600" class="note">以启用完整双写保护为前提；双写不等于 undo，也不等于把 redo 文件写两遍。</text>
+  <text x="48" y="636" class="note">MySQL 8.0.20 起双写区域使用独立文件；此图不固定文件名、文件个数或刷新耗时。</text>
+</svg>

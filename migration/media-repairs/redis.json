@@ -1,0 +1,240 @@
+[
+  {
+    "url": "https://wang-nine.cn/images/Redis00-01.png",
+    "kind": "text",
+    "replacementMarkdown": "Redis 在本组业务中首先承担共享存储的角色：验证码和登录信息不再只保存在某个应用实例的内存里，各实例访问同一份 Redis 数据后，才能在请求切换实例时继续识别用户。验证码与登录态应分别设计键和有效期，不能混为一条永久记录。",
+    "assets": [],
+    "basis": "10700.md 正文第17、25行明确讨论集群 Session 共享，第27行为无具体语义的编号图片；结合10705.md“为什么使用Redis”中共享存储、验证码与用户信息的说明补充正文，不推断编号图片的画面。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis00-02.png",
+    "kind": "text",
+    "replacementMarkdown": "登录校验和登录有效期刷新是两项不同职责。请求携带有效凭证时可以恢复用户身份并续期，而是否允许访问某个业务接口，还要根据该路径是否要求登录来判断；公开页面也可能需要刷新已经存在的有效登录态。",
+    "assets": [],
+    "basis": "10700.md 第19行明确介绍拦截器的登录校验与时间刷新，第29行为编号图片；10705.md“拦截器问题”及order(0)、order(1)示例给出职责划分依据，不推定原图内容。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis00-03.png",
+    "kind": "text",
+    "replacementMarkdown": "缓存把可复用的查询结果放在数据库之前，但未命中仍可能回到数据库。处理风险时应区分三种原因：请求的数据本来不存在、单个热点键失效，以及大量键同时失效或缓存服务不可用，它们分别对应穿透、击穿与雪崩，保护策略不能互相替代。",
+    "assets": [],
+    "basis": "10700.md 第21行列出缓存穿透、雪崩和击穿，第31行为编号图片；对应10706.md三个同名小节的定义，按已有业务介绍补充而非声称重现画面。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis00-04.png",
+    "kind": "text",
+    "replacementMarkdown": "秒杀流程需要把资格判断与并发约束分别落实：Redis 内相互依赖的判断和修改可以放入同一段 Lua 脚本，数据库库存则应在更新时检查条件。脚本的原子执行范围限于 Redis，不会自动把数据库更新、订单写入和服务高可用一并变成原子保证。",
+    "assets": [],
+    "basis": "10700.md 第23行介绍Lua秒杀资格检测和乐观锁，第33行为编号图片；10707.md库存并发小节与10708.md Lua原子性说明提供明确上下文，限定原子性边界，不推断图片或运行效果。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis05-%E6%8B%A6%E6%88%AA%E5%99%A8%E4%BC%98%E5%8C%96.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![刷新登录态与路径登录校验的拦截器顺序](/article-diagrams/redis/interceptor-order.svg)\n\n将刷新拦截器放在前面并覆盖所有路径，有有效 token 才恢复用户信息、刷新登录态有效期；随后由登录拦截器检查受保护路径。公开路径无需登录，但有效登录用户访问这些路径时仍能完成续期。缺少或失效的凭证不能通过刷新重新获得登录身份。",
+    "assets": ["/article-diagrams/redis/interceptor-order.svg"],
+    "basis": "10705.md 第118—150行“拦截器问题”、RefreshTokenInterceptor覆盖/**且order(0)、LoginInterceptor排除公开路径且order(1)；据该代码与问题原创流程图，不添加新的路由或测试结果。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis05-%E7%9F%AD%E4%BF%A1%E7%99%BB%E9%99%86.png",
+    "kind": "text",
+    "replacementMarkdown": "短信登录的关键不在页面外观，而在验证码与用户身份的衔接：服务端保存与手机号对应的验证码，登录请求提交后进行比对，通过后再查找或创建用户并建立登录态。验证码只是一次登录校验材料，不应作为长期凭证，也不应把用户表中的全部字段交给浏览器。",
+    "assets": [],
+    "basis": "10705.md“短信登陆”“导入的表格”后第28行图片，以及后续“验证码如何比对”“保存验证码”“保存用户信息”的讨论；以功能说明替代界面类引用，不虚构短信号码、验证码、服务商或发送成功记录。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis05-02Session.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![实例内 Session 与 Redis 共享登录态对照](/article-diagrams/redis/shared-session.svg)\n\nSession 保存在各自应用实例内存时，一个实例不能直接读到另一个实例的登录记录。改用 Redis 保存登录态后，请求携带随机 token，各实例都能通过它查找同一份用户信息；这改变的是状态存储位置，并不意味着浏览器会自动保存或发送新的凭证。",
+    "assets": ["/article-diagrams/redis/shared-session.svg"],
+    "basis": "10705.md“为什么使用Redis”第30—52行讨论Tomcat本地Session不共享，第60—70行说明随机token与登录校验；原创对照图，不把随机token额外解释为JWT。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis05-03redis.png",
+    "kind": "text",
+    "replacementMarkdown": "验证码可以按手机号建立独立的 String 键，登录用户信息则以随机 token 为索引保存为 Hash，或按需要序列化为 String。登录成功后把 token 返回客户端，由后续请求显式携带；验证码和登录态分别设置有效期，既限制凭证使用窗口，也避免过期记录长期占用内存。",
+    "assets": [],
+    "basis": "10705.md 第54—78行“保存验证码”“保存用户信息”“登陆校验”及有效期说明；保留String、Hash和随机token的实际上下文，不捏造请求头名称、具体token或验证码。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis06-01%E7%BC%93%E5%AD%98.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![Cache Aside 读取回填与写后删除缓存流程](/article-diagrams/redis/cache-aside.svg)\n\n应用先查询 Redis，命中时直接返回，未命中时查询数据库并回填带有效期的缓存。修改数据时先提交数据库更新，再让对应缓存失效，后续读取重新加载。缓存减少重复查询，但数据库与缓存之间的失败窗口仍需处理，不能仅靠设置有效期宣称两者始终一致。",
+    "assets": ["/article-diagrams/redis/cache-aside.svg"],
+    "basis": "10706.md“缓存”第15—27行说明缓冲作用与一致性成本，“缓存更新策略”第47—56行明确命中、回源、TTL及先写库后删缓存；用同篇明确流程原创图示，无延迟或性能数值。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis06-02%E7%BC%93%E5%AD%98%E6%9B%B4%E6%96%B0.png",
+    "kind": "text",
+    "replacementMarkdown": "先写数据库再删除缓存，是让下一次读取重新加载最新数据，而不是给旧缓存逐字段打补丁。数据库提交与缓存删除属于两个操作，删除失败需要重试或补偿，超时剔除只能限制陈旧数据存续的窗口，不能自动提供跨存储的原子性，也不能消除所有并发回填竞态。",
+    "assets": [],
+    "basis": "10706.md 第47—58行“缓存更新策略的最佳实践方案”与读写操作；承接前面Cache Aside图，以文字解释写库删缓存的边界，避免把原文“确保原子性”误画为已有分布式事务保证。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis06-03%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![缓存穿透、热点键击穿和大范围雪崩的区别](/article-diagrams/redis/cache-failures.svg)\n\n击穿的对象是原本存在、访问集中的热点键，缓存失效后大量请求同时回源；穿透则是缓存和数据库都没有对应数据，雪崩涉及大量键失效或整个缓存服务不可用。先定位触发范围，再决定使用空值缓存、互斥重建、错开有效期或业务降级，避免把不同故障当作同一问题处理。",
+    "assets": ["/article-diagrams/redis/cache-failures.svg"],
+    "basis": "10706.md 第60—105行分别定义穿透、雪崩、击穿，第107行位于击穿定义后；按三个相邻小节原创对照图，重点保持单热点与大范围失效的区别。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis06-03%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![缓存空对象与布隆过滤器的两条穿透保护路径](/article-diagrams/redis/penetration-guards.svg)\n\n数据库查空后，可以短期缓存明确的空值标记，使后续同类请求直接返回不存在；需要区分空标记和真正没有缓存。布隆过滤器能够排除确定不存在的查询，但“可能存在”仍须继续查询，不能当作数据存在的证明。两种方式都需要考虑新增数据和失效维护。",
+    "assets": ["/article-diagrams/redis/penetration-guards.svg"],
+    "basis": "10706.md 第60—90行“缓存穿透”的空对象缓存、布隆过滤优缺点与解决方案；图中不把过滤器误判方向画反，也不承诺过滤器无需维护。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis06-04%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![互斥重建与逻辑过期的缓存击穿处理对照](/article-diagrams/redis/hotspot-rebuild.svg)\n\n互斥方案让获锁请求再次检查缓存，再按需回源重建，其他请求等待或重试；逻辑过期方案保留旧值，发现过期时先返回旧数据，仅让获锁任务后台更新。后者以暂时陈旧换取读取不等待，但缓存真实缺失时没有旧值可用，仍需冷启动或回源策略。",
+    "assets": ["/article-diagrams/redis/hotspot-rebuild.svg"],
+    "basis": "10706.md 第109—119行列出互斥锁、逻辑过期及等待、一致性、额外内存等权衡；原创重建路径图，补明逻辑过期的旧值前提，不宣称某方案提供普遍强一致性。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis07-01%E5%85%A8%E5%B1%80%E5%94%AF%E4%B8%80ID.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![时间信息与 Redis 自增序列组合全局 ID](/article-diagrams/redis/distributed-id.svg)\n\n同一业务与日期命名空间中的应用实例，共用 Redis 计数器获取自增序列，再与约定的时间信息组成 ID。编码需要明确字段边界、日期切换和序列溢出的处理，不能随意拼接便认为绝不会重复。这是 Redis 自增组合方案，与通常包含机器标识的 Snowflake 应区别理解，也不代表 ID 已不可猜测。",
+    "assets": ["/article-diagrams/redis/distributed-id.svg"],
+    "basis": "10707.md 第15—44行“全局唯一ID”明确时间戳加计数器、每天一个key，列表另提snowflake；图只画已明确的Redis自增组合，不推定未记录的位数、机器ID或压测表现。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis07-02%E7%A7%92%E6%9D%80%E6%B5%81%E7%A8%8B.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![秒杀活动时间校验与条件扣库存流程](/article-diagrams/redis/seckill-stock.svg)\n\n活动时间不符合条件时直接拒绝下单；活动进行中也不能仅凭先前读到的库存继续扣减。应在数据库更新时同时约束库存大于零，并依据更新结果决定是否创建订单。库存扣减与订单写入需要事务边界，而同一用户同一优惠券只能购买一次，还需要额外的并发约束。",
+    "assets": ["/article-diagrams/redis/seckill-stock.svg"],
+    "basis": "10707.md 第46—74行活动起止时间、库存充足、超卖、CAS与一人一单要求；将正文约束整理为原创流程，不捏造接口、库存规模、订单状态或实际执行结果。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis07-02%E8%B6%85%E5%8D%96.png",
+    "kind": "text",
+    "replacementMarkdown": "超卖的风险来自检查与修改之间的并发窗口：多个请求可能先后读到同一个可售库存，再各自继续下单。若扣减没有同步约束，就可能卖出超过可用数量的订单，或者发生更新覆盖。把库存条件放进更新语句，并检查影响行数，才能让过时的读取结果不再直接决定是否售出。",
+    "assets": [],
+    "basis": "10707.md 第48—62行库存判断、“高并发情况下会出现超卖”及随后版本号法、CAS；采用并发机制解释代替未经记录的具体库存时序、日志或演示结果。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis07-03%E6%82%B2%E8%A7%82%E9%94%81%E4%B8%8E%E4%B9%90%E8%A7%82%E9%94%81.png",
+    "kind": "text",
+    "replacementMarkdown": "悲观锁把冲突操作放进互斥区，让其他执行者等待；乐观方案则允许先读取，在提交更新时用版本号或条件比较拒绝过期修改。前者需要评估锁粒度与等待成本，后者需要处理冲突失败和重试，不能只用“更快”概括选择。进程内同步锁也不会自动约束另一台应用实例。",
+    "assets": [],
+    "basis": "10707.md 第59—78行版本号法、CAS、悲观锁串行与乐观锁失败率，以及紧接的集群并发问题；以具体机制对照文字承接，不重复生成库存图。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis07-04%E9%9B%86%E7%BE%A4%E5%B9%B6%E5%8F%91%E9%97%AE%E9%A2%98.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![进程内锁与共享 Redis 锁的作用边界](/article-diagrams/redis/cluster-lock.svg)\n\n同一用户的请求分散到不同应用进程后，各进程自己的同步锁无法相互排斥。需要让相同业务资源竞争同一个共享锁键，只有获锁者进入受保护业务，未获锁者等待、重试或返回。锁键粒度应匹配优惠券与用户的业务约束，数据库唯一约束也可作为防止重复订单的最终保护。",
+    "assets": ["/article-diagrams/redis/cluster-lock.svg"],
+    "basis": "10707.md 第74—80行明确同一优惠券一人一单和集群并发安全；10708.md 第17、59—67行说明多进程互斥与SET NX EX。原创图连接两篇相邻主题，不把本地锁画成跨进程共享。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis08-01%E5%88%86%E5%B8%83%E5%BC%8F%E8%AF%AF%E5%88%A0%E8%A7%A3%E5%86%B3.png",
+    "kind": "text",
+    "replacementMarkdown": "锁值应保存本次加锁生成的唯一标识，释放前只接受与该标识一致的所有者。仅记录一个容易被不同进程重复使用的线程编号并不充分；不同持有者必须能够区分。检查归属只能确定应该删除谁的锁，若检查与删除分成两次命令，仍存在中间过期、换主人的竞争窗口。",
+    "assets": [],
+    "basis": "10708.md 第32—40行“释放锁的时候判断一下锁标识”及随后原子性、Lua说明；用文字明确归属校验的作用和不足，与后续原子解锁图形成递进，不声称单次GET已解决所有误删。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis08-01%E5%88%86%E5%B8%83%E5%BC%8F%E8%AF%AF%E5%88%A02.png",
+    "kind": "text",
+    "replacementMarkdown": "租期结束后，同名锁可能已经属于新的请求。旧持有者恢复执行时，如果不检查当前锁值便直接删除，就会把新持有者的锁一并释放，使后续请求也进入临界区。超时机制有助于故障后的自动释放，却不会停止仍在执行的旧业务，因此不能把键过期理解为业务已经结束。",
+    "assets": [],
+    "basis": "10708.md 第26—32行“注意redis的超时释放”后相邻锁过期、误删引用，以及第75行长业务超时风险；围绕同一时序补充解释，不伪造暂停时长或故障测试。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis08-01%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81.png",
+    "kind": "text",
+    "replacementMarkdown": "分布式锁要协调的是不同进程对同一资源的访问，而不是只锁住单个应用实例内的线程。竞争者需要使用一致的资源标识，通过共享的协调服务决定谁可进入临界区；获取失败时不得继续执行受保护操作。互斥、释放策略和故障边界需要分别设计，不能因为使用了 Redis 就默认全部具备。",
+    "assets": [],
+    "basis": "10708.md 开篇第15—24行图片紧接“多进程之间互斥”和MySQL、Redis、Zookeeper比较表；采用开篇概念说明，避免复用10707集群互斥图或推定表中概括性高可用评价已被验证。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis08-01%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%812.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![锁租期结束后旧持有者误删新锁的时序](/article-diagrams/redis/lock-expiry.svg)\n\n过期时间限制的是 Redis 锁键的存活，并不会中断持锁线程。旧线程停顿期间锁可能到期，另一个线程随后获得同名锁；旧线程恢复后若直接删除该键，就删除了别人的锁。解锁需要核对本次加锁标识，并且将核对与删除合并执行，避免新的竞争窗口。",
+    "assets": ["/article-diagrams/redis/lock-expiry.svg"],
+    "basis": "10708.md 第26—36行超时释放、误删与标识判断的连续段落；原创定性时序图，无虚构秒数、实际日志或故障复现结论。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis08-02%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%8E%9F%E5%AD%90%E6%80%A7.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![非原子检查删除的竞争窗口与 Lua 原子解锁](/article-diagrams/redis/unlock-atomic.svg)\n\n先 GET 再 DEL 即使检查过所有者，也可能在两条命令之间发生过期和重新加锁。把比较与条件删除放进同一个 Lua 脚本，只有锁值等于预期标识时才删除同一把锁，其他客户端无法在这两个步骤之间插入命令。这个保证限于脚本内的 Redis 操作，不覆盖数据库事务。",
+    "assets": ["/article-diagrams/redis/unlock-atomic.svg"],
+    "basis": "10708.md 第32—55行锁标识判断、原子性与Lua示例，尤其KEYS[1]、ARGV[1]比较；按意图画正确的同键删除流程，不沿用示例中未定义key变量，也不宣称Redis事务具备回滚能力。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis08-03%E8%B0%83%E7%94%A8%E8%84%9A%E6%9C%AC.png",
+    "kind": "text",
+    "replacementMarkdown": "调用解锁脚本时，要把实际锁键作为键参数传入，再把期望的所有者标识作为普通参数传入。脚本中的 KEYS[1] 与 ARGV[1] 分别读取这两类输入，不应把用户输入直接拼进脚本文本。调用方还要解释返回值，区分本次确实删除了锁与锁已不存在、已不属于自己等未释放情况。",
+    "assets": [],
+    "basis": "10708.md 第40—55行“样例”处脚本调用引用及Lua代码的KEYS[1]、ARGV[1]；仅解释参数边界，不生成未经上下文确认的客户端API调用、终端输出或执行结果。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis08-04Lua.png",
+    "kind": "text",
+    "replacementMarkdown": "这段 Lua 的核心是先读取目标锁的当前值，再与调用者提供的标识比较，匹配时删除的必须仍是同一个键。这里键参数应统一使用 KEYS[1]，不能换成未定义的 key 变量。返回值也应与删除结果对应，否则调用者无法仅凭固定返回值知道是否真正完成了释放。",
+    "assets": [],
+    "basis": "10708.md 第46—55行后紧接代码：GET使用KEYS[1]但DEL使用未定义key，且固定return 0；文字指出准确语义与变量不一致，不修改原代码块、不伪造成功输出。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis08-Redission%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%8E%9F%E7%90%86.png",
+    "kind": "text",
+    "replacementMarkdown": "Redisson 将重入计数、等待唤醒和适用模式下的租期续约组合起来：同一所有者重入增加计数，其他线程等待通知后再尝试竞争，最终释放才唤醒等待者。watchdog 不是所有调用方式下都启用的无限续期，也不能消除进程长时间停顿、网络中断或主从切换的全部互斥风险。",
+    "assets": [],
+    "basis": "10708.md 第88—94行“Redisson分布式锁原理”列出Hash重入、信号量与PubSub、watchDog，并由第73—76行列出长业务与主从风险；以总结文字避免重复生命周期图，不添加公平锁或实测续约间隔。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis08-Redission%E5%8A%A0%E9%94%81.png",
+    "kind": "text",
+    "replacementMarkdown": "加锁时需要区分锁不存在、锁属于当前线程、锁属于其他线程三种状态。不存在时建立所有者与计数，属于当前所有者时增加重入次数，属于别人时不能直接覆盖，而应依据等待策略重试或返回。被通知唤醒只是获得再次竞争的机会，并不等于已经自动取得锁。",
+    "assets": [],
+    "basis": "10708.md 第80—94行“可重入原理”、加锁引用及Hash记录线程与重入次数、PubSub等待重试的说明；用状态语义补充，不推定特定Redisson版本源码、返回码或FIFO保证。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis08-Redission%E5%8F%AF%E9%87%8D%E5%85%A5%E5%8E%9F%E7%90%86.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![Redisson 所有者、重入计数与释放通知的生命周期](/article-diagrams/redis/redisson-lifecycle.svg)\n\n可重入允许同一所有者重复进入同一把锁，而不是允许其他线程共享持有。锁状态记录可区分客户端与线程的标识及重入计数，每次正确解锁减少计数，归零才释放并通知等待者。等待者仍需重新获取锁，通知不等于授权；续期是否启用也要结合固定租期或 watchdog 模式判断。",
+    "assets": ["/article-diagrams/redis/redisson-lifecycle.svg"],
+    "basis": "10708.md 第69—94行可重入锁、Hash线程标识与重入次数、等待重试和watchDog；原创生命周期图，不虚构公平队列、默认超时值或当前环境的续约结果。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis08-Redission%E7%AE%80%E5%8D%95%E7%9A%84%E7%94%A8%E6%B3%95.png",
+    "kind": "text",
+    "replacementMarkdown": "使用可重入锁时，先按业务资源取得同名锁对象，再尝试获取；只有获取成功才执行受保护逻辑，并在退出时确保释放。若获取过程被中断或未成功，不能当作已经持锁继续处理，也不能无条件解锁。等待时长与租期属于不同配置概念，需要根据所选调用方式确认续期行为。",
+    "assets": [],
+    "basis": "10708.md 第71—80行简单SETNX方案的问题和“简单的用法”引用；以调用生命周期说明替代代码截图，不编造依赖版本、方法重载、连接配置或锁获取成功的日志。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis08-Redission%E8%A7%A3%E9%94%81.png",
+    "kind": "text",
+    "replacementMarkdown": "解锁先确认当前执行者有权操作这把锁，再减少自己的重入计数。仍有未退出的重入层级时锁应继续保留，只有最后一层退出才删除锁并发布释放通知。其他线程收到通知后还要重新竞争，不能将一次通知当作锁已转交，也不能由非持有者随意清空计数。",
+    "assets": [],
+    "basis": "10708.md 第80—94行“可重入原理”、解锁引用及Hash计数、PubSub唤醒说明；补充与重入对称的释放过程，不声称有公平顺序或固定线程获锁结果。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis08-lua.png",
+    "kind": "text",
+    "replacementMarkdown": "完整的锁生命周期需要两处不可分割的操作：获取时用一条带 NX 与过期参数的 SET 同时建立互斥和租期，避免先加锁后设置过期之间中断；释放时用脚本原子比较标识并条件删除。租期仍应覆盖业务风险，自动过期本身不能保证旧执行者已停止访问受保护资源。",
+    "assets": [],
+    "basis": "10708.md 第57—67行紧接“利用set nx ex获取锁，并设置过期时间，保存线程标示”及释放时判断；承接前面Lua原子解锁图，以文字总结获取与释放两处边界，不重复图形。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis09-02pubsub.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![Redis PubSub 向在线订阅者分发同一消息](/article-diagrams/redis/pubsub.svg)\n\n发布者把消息发送到频道，当前在线且订阅该频道的多个订阅者各自接收一份，这与把任务分摊给单个消费者不同。频道不保存供离线订阅者补读的历史，也没有消费组的确认与待处理记录；断开连接期间错过的消息，不能仅靠重新订阅自动恢复。",
+    "assets": ["/article-diagrams/redis/pubsub.svg"],
+    "basis": "10709.md 第48—62行“基于PubSub的消息队列”及多生产多消费、不持久化、消息丢失的优缺点；按发布订阅广播语义原创图，不沿用开篇“点对点”概括，不画可靠离线队列。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis09-03Stream.png",
+    "kind": "diagram",
+    "replacementMarkdown": "![Redis Stream 的消费组分摊、pending 与确认流程](/article-diagrams/redis/stream-groups.svg)\n\nStream 保存带标识的消息记录，不同消费组维护各自进度，同组消费者可以分摊新消息。组内消息交付后进入待确认记录，业务处理成功再确认；确认移除的是待确认状态，不是流中的消息正文。失败消息需要显式恢复或认领，重复交付仍可能发生，因此处理逻辑必须考虑幂等。",
+    "assets": ["/article-diagrams/redis/stream-groups.svg"],
+    "basis": "10709.md 第64—68行仅给出“基于Stream的消息队列”和两条图片引用；基于明确主题原创基础机制说明，与同篇PubSub局限形成对照，不声称还原原图、具体消费组配置或现场实验。"
+  },
+  {
+    "url": "https://wang-nine.cn/images/Redis09-03Stream02.png",
+    "kind": "text",
+    "replacementMarkdown": "消费组并不会替应用判断业务是否真正完成。消费者应在处理成功后确认，处理中断时由恢复逻辑检查待确认记录并安排重试或认领。消息保留、裁剪与 Redis 持久化配置还会影响可恢复范围；确认机制不自动提供端到端恰好一次处理，并发消费者的完成顺序也不必等于消息写入顺序。",
+    "assets": [],
+    "basis": "10709.md“基于Stream的消息队列”末尾第68行连续第二个引用，未给参数或操作日志；作为前一消费组图的边界解释，避免再画重复图，不编造消息ID、消费输出、延时或绝不丢失结论。"
+  }
+]

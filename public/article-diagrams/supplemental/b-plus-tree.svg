@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" role="img" aria-labelledby="title desc" lang="zh-CN" style="max-width:100%;height:auto">
+  <title id="title">B+树索引结构示意</title>
+  <desc id="desc">根节点包含示例分隔键20和40，三个子指针分别指向键小于20、键大于等于20且小于40、键大于等于40的叶节点。叶层按序保存5、12、18、20、27、35、40、48、60对应的全部示例记录，相邻叶节点以双向链相连。这里只说明B+树路由与InnoDB叶节点双向连接的概念，不表示实际物理页键布局。</desc>
+  <metadata>原创概念示意。配色沿用项目 DESIGN.md 的 cloud、ink、haze、pine、night；文字采用22、20、18、16像素层级；不使用外部资源。数字均为示例键值。</metadata>
+  <style>
+    svg { --paper:#ecf3eb; --ink:#263d55; --node:#d1e5e4; --link:#366775; --root:#243953; font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif; color:var(--ink); }
+    text { fill:var(--ink); font-size:18px; }
+    .heading { font-size:22px; font-weight:700; }
+    .label { font-size:20px; font-weight:700; }
+    .small { font-size:16px; }
+    .paper { fill:var(--paper); }
+    .root { fill:var(--root); }
+    .root-key { fill:var(--paper); font-size:22px; font-weight:700; }
+    .leaf { fill:var(--node); stroke:var(--ink); stroke-width:2; }
+    .divider { fill:none; stroke:var(--ink); stroke-width:1.5; }
+    .branch { fill:none; stroke:var(--ink); stroke-width:2.5; marker-end:url(#child-arrow); }
+    .chain { fill:none; stroke:var(--link); stroke-width:2.5; marker-start:url(#leaf-arrow); marker-end:url(#leaf-arrow); }
+  </style>
+  <defs>
+    <marker id="child-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9 Z" fill="var(--ink)"/>
+    </marker>
+    <marker id="leaf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9 Z" fill="var(--link)"/>
+    </marker>
+  </defs>
+  <rect class="paper" width="1000" height="520"/>
+  <text class="heading" x="40" y="40">B+树：上层路由，叶层保存全部记录</text>
+  <text x="40" y="72">示例键值仅用于说明查找区间；叶节点按键有序，并以双向链相连。</text>
+
+  <text class="label" x="500" y="116" text-anchor="middle">根节点：分隔键 + 子指针</text>
+  <rect class="root" x="370" y="136" width="260" height="56" rx="8"/>
+  <path d="M 500 144 V 184" stroke="var(--paper)" stroke-width="1.5"/>
+  <text class="root-key" x="435" y="172" text-anchor="middle">20</text>
+  <text class="root-key" x="565" y="172" text-anchor="middle">40</text>
+  <path class="branch" d="M 390 192 L 170 286"/>
+  <path class="branch" d="M 500 192 V 286"/>
+  <path class="branch" d="M 610 192 L 830 286"/>
+  <text x="180" y="244" text-anchor="middle">键 &lt; 20</text>
+  <text x="520" y="244">20 ≤ 键 &lt; 40</text>
+  <text x="820" y="244" text-anchor="middle">键 ≥ 40</text>
+
+  <g aria-label="叶节点一，键5、12、18及其记录">
+    <rect class="leaf" x="40" y="288" width="260" height="84" rx="8"/>
+    <path class="divider" d="M 40 330 H 300 M 127 288 V 372 M 213 288 V 372"/>
+    <text class="label" x="83" y="316" text-anchor="middle">5</text>
+    <text class="label" x="170" y="316" text-anchor="middle">12</text>
+    <text class="label" x="257" y="316" text-anchor="middle">18</text>
+    <text x="83" y="358" text-anchor="middle">记录</text>
+    <text x="170" y="358" text-anchor="middle">记录</text>
+    <text x="257" y="358" text-anchor="middle">记录</text>
+  </g>
+  <g aria-label="叶节点二，键20、27、35及其记录">
+    <rect class="leaf" x="370" y="288" width="260" height="84" rx="8"/>
+    <path class="divider" d="M 370 330 H 630 M 457 288 V 372 M 543 288 V 372"/>
+    <text class="label" x="413" y="316" text-anchor="middle">20</text>
+    <text class="label" x="500" y="316" text-anchor="middle">27</text>
+    <text class="label" x="587" y="316" text-anchor="middle">35</text>
+    <text x="413" y="358" text-anchor="middle">记录</text>
+    <text x="500" y="358" text-anchor="middle">记录</text>
+    <text x="587" y="358" text-anchor="middle">记录</text>
+  </g>
+  <g aria-label="叶节点三，键40、48、60及其记录">
+    <rect class="leaf" x="700" y="288" width="260" height="84" rx="8"/>
+    <path class="divider" d="M 700 330 H 960 M 787 288 V 372 M 873 288 V 372"/>
+    <text class="label" x="743" y="316" text-anchor="middle">40</text>
+    <text class="label" x="830" y="316" text-anchor="middle">48</text>
+    <text class="label" x="917" y="316" text-anchor="middle">60</text>
+    <text x="743" y="358" text-anchor="middle">记录</text>
+    <text x="830" y="358" text-anchor="middle">记录</text>
+    <text x="917" y="358" text-anchor="middle">记录</text>
+  </g>
+  <path class="chain" d="M 307 338 H 363"/>
+  <path class="chain" d="M 637 338 H 693"/>
+  <text class="small" x="335" y="312" text-anchor="middle">双向</text>
+  <text class="small" x="665" y="312" text-anchor="middle">双向</text>
+
+  <text class="label" x="40" y="414">叶节点：包含全部示例记录，分隔键 20、40 也出现在叶层</text>
+  <text x="40" y="448">范围查找示例：20 ≤ 键 ≤ 48，定位到 20 后沿叶链向右读取至 48。</text>
+  <text class="small" x="40" y="488">叶子记录的内容取决于索引类型；此图不表示 InnoDB 的实际物理页键布局。</text>
+</svg>

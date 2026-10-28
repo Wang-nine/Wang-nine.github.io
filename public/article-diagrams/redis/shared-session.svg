@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">从实例内 Session 到 Redis 共享登录态</title>
+  <desc id="desc">左侧两个服务实例各自保存 Session，切换实例不能直接读取彼此状态。右侧两个实例通过请求携带的随机 token 查询同一 Redis 登录信息。</desc>
+  <defs><style>text{font-family:"Microsoft YaHei","PingFang SC",sans-serif;fill:#263d55;font-size:22px}.title{font-size:32px;font-weight:700}.head{font-size:24px;font-weight:700}.note{font-size:20px}.box{fill:#d1e5e4;stroke:#263d55;stroke-width:2}.line{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#arrow)}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 10 5 0 10" fill="#366775"/></marker></defs>
+  <rect width="960" height="560" fill="#ecf3eb"/>
+  <text x="40" y="54" class="title">登录态：存在哪里，决定谁能读取</text>
+  <path d="M480 100V485" stroke="#648f9f" stroke-width="2" stroke-dasharray="8 8"/>
+  <text x="40" y="114" class="head">实例内保存</text><text x="520" y="114" class="head">Redis 共享保存</text>
+  <rect x="60" y="150" width="350" height="64" rx="8" class="box"/><text x="235" y="191" text-anchor="middle">浏览器携带 sessionId</text>
+  <path d="M160 214V270M310 214V270" class="line"/>
+  <rect x="40" y="276" width="190" height="144" rx="8" class="box"/><rect x="250" y="276" width="190" height="144" rx="8" class="box"/>
+  <text x="135" y="316" text-anchor="middle">Tomcat A</text><text x="135" y="359" text-anchor="middle">本地 Session</text><text x="135" y="393" text-anchor="middle" class="note">登录信息在此</text>
+  <text x="345" y="316" text-anchor="middle">Tomcat B</text><text x="345" y="359" text-anchor="middle">本地 Session</text><text x="345" y="393" text-anchor="middle" class="note">不共享 A 的记录</text>
+  <text x="40" y="468" class="note">切换实例后，不能依赖原实例的内存。</text>
+  <rect x="540" y="150" width="360" height="64" rx="8" class="box"/><text x="720" y="191" text-anchor="middle">浏览器携带随机 token</text>
+  <path d="M625 214V270M815 214V270" class="line"/>
+  <rect x="530" y="276" width="180" height="64" rx="8" class="box"/><text x="620" y="317" text-anchor="middle">Tomcat A</text>
+  <rect x="730" y="276" width="180" height="64" rx="8" class="box"/><text x="820" y="317" text-anchor="middle">Tomcat B</text>
+  <path d="M620 340V385H690V405M820 340V385H750V405" class="line"/>
+  <rect x="540" y="410" width="360" height="66" rx="8" class="box"/><text x="720" y="451" text-anchor="middle">Redis：token → 用户信息 + TTL</text>
+  <text x="40" y="531" class="note">token 是登录凭证；本节使用服务端查询登录态，不需要假定它是 JWT。</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 580" role="img" aria-labelledby="title desc">
+<title id="title">Spring 通过 setter 装配 Service 与 Dao</title>
+<desc id="desc">容器读取 Bean 配置，创建 DaoImpl 和 ServiceImpl，通过 property name dao ref Dao 调用 setDao 注入引用。应用从容器获取 Service 后，save 委托到注入的 Dao。</desc>
+<style>:root{--paper:#f7efdf;--panel:#ecf3eb;--wash:#d1e5e4;--ink:#263d55;--line:#366775}text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:var(--ink);font-size:18px}.title{font-size:20px;font-weight:700}.small{font-size:16px}.box{fill:var(--panel);stroke:var(--line);stroke-width:1.5}.wash{fill:var(--wash)}.flow{fill:none;stroke:var(--line);stroke-width:2;marker-end:url(#arrow)}</style>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8" fill="#366775"/></marker></defs><path fill="#f7efdf" d="M0 0H960V580H0z"/>
+<text x="36" y="44" class="title">从创建对象到装配依赖 · 原理示意</text><text x="36" y="76" class="small">IoC 管对象的创建与获取；DI 把已有 Bean 的引用交给依赖它的对象。</text>
+<rect x="36" y="112" width="888" height="92" rx="8" class="box wash"/><text x="56" y="147" class="title">applicationContext.xml → IoC 容器</text><text x="56" y="181">注册 id="Service" 与 id="Dao"；property name="dao" ref="Dao" 描述装配关系</text>
+<path d="M260 204V286" class="flow"/><text x="276" y="252" class="small">创建 ServiceImpl</text><path d="M756 204V286" class="flow"/><text x="601" y="252" class="small">创建 DaoImpl</text>
+<rect x="36" y="290" width="404" height="116" rx="8" class="box"/><text x="56" y="325" class="title">Service Bean</text><text x="56" y="359">持有 Dao 接口类型的属性 dao</text><text x="56" y="389">setDao(Dao dao) 接收依赖</text>
+<rect x="620" y="290" width="304" height="116" rx="8" class="box"/><text x="640" y="325" class="title">Dao Bean</text><text x="640" y="359">实现 Dao 接口</text><text x="640" y="389">提供 save() 操作</text>
+<path d="M620 335H444" class="flow"/><text x="456" y="317" class="small">经 setter 注入</text>
+<path d="M440 383H616" class="flow"/><text x="460" y="414" class="small">运行时委托调用</text>
+<rect x="36" y="458" width="888" height="80" rx="8" class="box wash"/><text x="56" y="490">应用 getBean("Service") → service.save() → dao.save()</text><text x="56" y="520" class="small">name 对应 JavaBean 属性（setter）；ref 对应容器中的 Bean 名称，两者用途不同。</text>
+</svg>

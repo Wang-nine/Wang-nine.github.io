@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+  <title id="title">Redis Stream 消费组、待确认记录与 ACK</title>
+  <desc id="desc">生产者向 Stream 追加带 ID 的消息。一个消费组将新消息分配给组内消费者并记录 pending，成功处理后 XACK 移除待确认记录而不删除流中消息。另一个消费组有独立进度；失败消息需显式恢复，处理必须考虑幂等。</desc>
+  <defs><style>text{font-family:"Microsoft YaHei","PingFang SC",sans-serif;fill:#263d55;font-size:22px}.title{font-size:32px;font-weight:700}.head{font-size:24px;font-weight:700}.note{font-size:20px}.box{fill:#d1e5e4;stroke:#263d55;stroke-width:2}.line{fill:none;stroke:#366775;stroke-width:3;marker-end:url(#arrow)}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 10 5 0 10" fill="#366775"/></marker></defs>
+  <rect width="960" height="640" fill="#ecf3eb"/><text x="40" y="54" class="title">Stream：保存记录，消费组各自维护处理进度</text>
+  <rect x="40" y="106" width="190" height="80" rx="8" class="box"/><text x="135" y="140" text-anchor="middle">生产者</text><text x="135" y="173" text-anchor="middle">XADD</text><path d="M230 146H330" class="line"/>
+  <rect x="340" y="106" width="580" height="80" rx="8" class="box"/><text x="364" y="140" class="head">Stream：按 ID 排列的消息记录</text><text x="364" y="173" class="note">消息保留受裁剪策略影响，持久性取决于配置。</text>
+  <path d="M510 186V225H300V256M800 186V256" class="line"/>
+  <rect x="40" y="268" width="550" height="258" rx="8" fill="#d1e5e4" stroke="#263d55" stroke-width="2"/><text x="64" y="308" class="head">消费组 G · XREADGROUP</text><text x="64" y="344" class="note">新消息在组内分摊，组维护自己的 pending。</text>
+  <rect x="70" y="370" width="230" height="60" rx="8" fill="#ecf3eb" stroke="#263d55" stroke-width="2"/><text x="185" y="408" text-anchor="middle">消费者 A 处理消息甲</text><rect x="325" y="370" width="235" height="60" rx="8" fill="#ecf3eb" stroke="#263d55" stroke-width="2"/><text x="442" y="408" text-anchor="middle">消费者 B 处理消息乙</text>
+  <path d="M185 430V454M442 430V454" class="line"/><text x="76" y="482">处理成功 → XACK → 移除待确认记录</text><text x="76" y="513" class="note">ACK 不会删除 Stream 中的消息正文。</text>
+  <rect x="650" y="268" width="270" height="128" rx="8" class="box"/><text x="674" y="308" class="head">消费组 H</text><text x="674" y="345">独立读取同一条流</text><text x="674" y="378" class="note">独立进度与 pending</text>
+  <text x="650" y="445" class="note">组间不互相消耗进度。</text><text x="650" y="480" class="note">组内重投可能带来重复。</text>
+  <text x="40" y="573" class="note">处理失败或消费者中断：待确认记录需显式重读、认领或恢复，不会因超时自动成功。</text><text x="40" y="610" class="note">消息处理需幂等；消费组与 ACK 不等于端到端 exactly-once，也不保证并发完成顺序。</text>
+</svg>

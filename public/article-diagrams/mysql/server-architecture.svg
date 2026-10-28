@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="100%" role="img" aria-labelledby="title desc">
+  <title id="title">MySQL 分层架构原理示意</title>
+  <desc id="desc">客户端请求经连接层认证，服务层解析优化 SQL，存储引擎接口调用 InnoDB 等引擎，再由引擎读写磁盘文件。箭头表示调用方向，结果沿相反方向返回。</desc>
+  <!-- Illustration tokens: DESIGN.md ink/cloud/haze/cream; type 32/24/20/18; space 24/48. -->
+  <style>text{font-family:system-ui,'Microsoft YaHei',sans-serif;fill:#263d55;font-size:20px}.heading{font-size:32px;font-weight:700}.label{font-size:24px;font-weight:700}.note{font-size:18px}.panel{fill:#d1e5e4}.node{fill:#f7efdf}.arrow{fill:none;stroke:#263d55;stroke-width:3;marker-end:url(#arrow)}</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#263d55"/></marker></defs>
+  <rect width="1200" height="720" rx="24" fill="#ecf3eb"/>
+  <text x="48" y="60" class="heading">MySQL：从 SQL 请求到文件读写</text>
+  <text x="48" y="96" class="note">原理示意 · 调用向下，查询结果沿相反方向返回</text>
+  <rect x="48" y="132" width="1104" height="64" rx="12" class="node"/>
+  <text x="72" y="172" class="label">客户端</text><text x="312" y="172">应用程序 / 命令行客户端 → 发起 SQL 请求</text>
+  <path d="M600 196V228" class="arrow"/>
+  <rect x="48" y="228" width="1104" height="72" rx="12" class="panel"/>
+  <text x="72" y="272" class="label">连接层</text><text x="312" y="272">连接管理、身份认证与访问控制</text>
+  <path d="M600 300V332" class="arrow"/>
+  <rect x="48" y="332" width="1104" height="72" rx="12" class="panel"/>
+  <text x="72" y="376" class="label">服务层</text><text x="312" y="376">SQL 解析 → 优化 → 执行；过程、函数等服务器功能</text>
+  <path d="M600 404V436" class="arrow"/>
+  <rect x="48" y="436" width="1104" height="72" rx="12" class="panel"/>
+  <text x="72" y="480" class="label">引擎层</text><text x="312" y="480">通过存储引擎接口访问 InnoDB / MyISAM / MEMORY</text>
+  <path d="M600 508V540" class="arrow"/>
+  <rect x="48" y="540" width="1104" height="72" rx="12" class="node"/>
+  <text x="72" y="584" class="label">持久存储</text><text x="312" y="584">磁盘型引擎读写数据、索引与相关日志文件</text>
+  <text x="48" y="660" class="note">边界：MEMORY 表数据位于内存；这里不把所有引擎都画成磁盘型，也不包含旧版查询缓存。</text>
+</svg>
