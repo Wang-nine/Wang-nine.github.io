@@ -1,0 +1,88 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  SITE_URL: https://wang-nine.github.io
+  COREPACK_ENABLE_DOWNLOAD_PROMPT: "0"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Enable pnpm 9.14.4
+        run: |
+          corepack enable
+          corepack prepare pnpm@9.14.4 --activate
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Install dependencies
+        run: corepack pnpm install --frozen-lockfile
+
+      - name: Test
+        run: corepack pnpm test
+
+      - name: Migration tests
+        env:
+          LEGACY_POSTS_DIR: ${{ runner.temp }}/legacy-blog/posts
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/legacy-blog"
+          git archive 46a1300b8bdf8beb24a85c8dace88ad8a06e7ff6 posts | tar -x -C "$RUNNER_TEMP/legacy-blog"
+          corepack pnpm test:migration
+
+      - name: Check
+        run: corepack pnpm check
+
+      - name: Build
+        run: corepack pnpm build
+
+      - name: Validate publishing
+        run: corepack pnpm validate:publishing
+
+      - name: Audit built site
+        run: node scripts/audit-built-site.mjs --site-url "$SITE_URL"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    if: github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
