@@ -68,3 +68,52 @@
 ## 操作边界
 
 仅写入上述 3 篇文章与本记录。未修改源学习仓库，未提交或推送 git，未改动依赖、配置或界面，未触碰 `migration/` 中其它 agent 的文件。
+
+> 以上全文是 2026-10-26 首次导入时的记录，范围仅限当时的 3 篇。下面的 2026-10-28 同步段是后续追加，不回溯修改上面的历史内容。
+
+## 2026-10-28 同步：新增 04、05
+
+### 范围与历史
+
+本节记录第二次 notes 导入，只新增 2 篇。上文的 allowlist、输出清单、日期与操作边界都是 2026-10-26 的历史范围，保持原样不改写；本次范围由本节单独界定。
+
+### Allowlist（本次允许读取的源文件）
+
+1. `notes/02-math-numpy/04-chain-rule.md`
+2. `notes/02-math-numpy/05-nonlinear-chain.md`
+
+仍然排除：`notes/README.md`、`learning-state/`、`exercises/`、`curriculum/`、`AGENTS.md`、课堂记录与其它未列出的文件。源仓库文件未修改。
+
+### 输出文件
+
+| 输出 | Slug | 标题 |
+| --- | --- | --- |
+| `src/content/posts/llm-learning/math-numpy/04-chain-rule.md` | `llm-math-numpy-04` | 04 chain rule：把变化沿链路传回去 |
+| `src/content/posts/llm-learning/math-numpy/05-nonlinear-chain.md` | `llm-math-numpy-05` | 05 非线性链：w² 让方向随位置改变 |
+
+### 正文处理
+
+- 删除原文首个 H1，frontmatter 标题与原文 H1 文本一致；删除文末私人产物行（练习代码链接与课堂记录链接）。
+- 标题以下的章节、公式块、表格、教师归因与 OpenStax 来源说明逐字保留，不做知识改写。
+- 原文中的 M2.4 编号与「掌握证据只在学习档案」「不代表学生已读」等边界说明保留，它们限定知识范围，不构成掌握声明。
+- 上一课链接改为规范站内路径：04 指向 `/posts/llm-math-numpy-03/`，05 指向 `/posts/llm-math-numpy-04/`。两条标签文字仍为 03、04 的课程标题。
+
+### 日期策略
+
+沿用首次导入的做法：没有可验证的首次发布时间，统一用导入日期 `2026-10-28`。每篇文末附注：
+
+> 本文于2026-10-28整理公开，日期为导入日期。
+
+### 隐私与链接检查
+
+- 正文与 frontmatter 未发现凭证、token、密码、API key、邮箱、私有绝对路径或 `learning-state` / `exercises` 引用。
+- 私人练习链接与 session 标识已删除，站内只保留规范 `/posts/llm-math-numpy-0N/` 交叉链接。
+- 外部来源为 OpenStax Calculus Volume 1 §3.6 的公开链接。
+
+### 数量口径
+
+本次之后站内共有 5 篇 notes，配合 72 条 legacy 迁移基线为 77 篇。`75` 只是当时「72 legacy + 3 notes」的迁移基线，不是篇数上限；这里不把 75 当成固定最大值。
+
+### 操作边界（本次）
+
+仅写入上述 2 篇新文章并追加本记录。未修改 01、02、03 三篇既有文章，未改其发布时间，也未改其「正式 chain rule 尚未讲」等原文语境。未触碰学习仓库的档案、练习与课程文件，未改动 legacy 哈希清单、报告、脚本、界面配置或其它文档，未执行 git 操作。
