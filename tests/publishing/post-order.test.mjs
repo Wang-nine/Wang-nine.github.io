@@ -14,39 +14,40 @@ function slugs(posts) {
 	return posts.map((entry) => entry.slug);
 }
 
-test("orders all seven shuffled course notes by lesson, not publication date", () => {
-	const input = [lesson(7, 20), lesson(6, 19), lesson(4, 18), lesson(5, 17), lesson(1, 16), lesson(2, 15), lesson(3, 14)];
-	assert.deepEqual(slugs(sortPosts(input)), Array.from({ length: 7 }, (_, i) => lesson(i + 1).slug));
+test("publication date takes precedence over course lesson numbers", () => {
+	const input = [lesson(7, 1), lesson(1, 20), lesson(3, 10)];
+	assert.deepEqual(slugs(sortPosts(input)), [lesson(1).slug, lesson(3).slug, lesson(7).slug]);
 });
 
-test("anchors the contiguous course at its newest member and keeps ordinary chronology", () => {
+test("equal-date course notes sort deterministically from 07 to 01", () => {
+	const input = [7, 6, 4, 5, 1, 2, 3].map((number) => lesson(number, 10));
+	const expected = Array.from({ length: 7 }, (_, i) => lesson(7 - i).slug);
+	assert.deepEqual(slugs(sortPosts(input)), expected);
+	assert.deepEqual(slugs(sortPosts([...input].reverse())), expected);
+});
+
+test("ordinary posts and course notes interleave by date without grouping", () => {
 	const input = [post("old", 1), lesson(3, 15), post("between", 12), lesson(1, 3), post("newer", 20), lesson(2, 7), post("middle", 10)];
-	assert.deepEqual(slugs(sortPosts(input)), ["newer", lesson(1).slug, lesson(2).slug, lesson(3).slug, "between", "middle", "old"]);
+	assert.deepEqual(slugs(sortPosts(input)), ["newer", lesson(3).slug, "between", "middle", lesson(2).slug, lesson(1).slug, "old"]);
 });
 
-test("equal-date groups and ordinary posts have input-independent tie breaks", () => {
-	const input = [post("zebra", 10), lesson(2, 10), post("alpha", 10), lesson(1, 5)];
-	const expected = [lesson(1).slug, lesson(2).slug, "alpha", "zebra"];
+test("all equal-date slugs use an input-independent descending tie break", () => {
+	const input = [post("zebra", 10), lesson(2, 10), post("alpha", 10), lesson(1, 10)];
+	const expected = ["zebra", lesson(2).slug, lesson(1).slug, "alpha"];
 	for (const permutation of [input, [...input].reverse(), [input[2], input[0], input[3], input[1]]]) {
 		assert.deepEqual(slugs(sortPosts(permutation)), expected);
 	}
 });
 
-test("only exact positive two-digit course slugs are grouped", () => {
-	const lookalikes = ["llm-math-numpy-00", "llm-math-numpy-1", "llm-math-numpy-001", "llm-math-numpy-01-extra", "other-llm-math-numpy-01", "LLM-math-numpy-01", "llm-math-numpy"];
-	const input = lookalikes.map((slug, index) => post(slug, 20 - index));
-	input.push(lesson(2, 4), lesson(1, 2));
-	assert.deepEqual(slugs(sortPosts([...input].reverse())), [...lookalikes, lesson(1).slug, lesson(2).slug]);
-});
-
-test("supports missing lessons, a single course member, and empty input", () => {
-	assert.deepEqual(slugs(sortPosts([lesson(12, 3), lesson(9, 20), lesson(2, 1)])), [lesson(2).slug, lesson(9).slug, lesson(12).slug]);
-	assert.deepEqual(slugs(sortPosts([lesson(7, 4), post("ordinary", 8)])), ["ordinary", lesson(7).slug]);
+test("supports Date, string and numeric publication values, single posts and empty input", () => {
+	const input = [post("date", 3), { slug: "string", data: { published: "2026-10-02T00:00:00Z" } }, { slug: "number", data: { published: Date.UTC(2026, 9, 4) } }];
+	assert.deepEqual(slugs(sortPosts(input)), ["number", "date", "string"]);
+	assert.deepEqual(sortPosts([input[0]]), [input[0]]);
 	assert.deepEqual(sortPosts([]), []);
 });
 
 test("does not mutate input, post objects, or publication dates", () => {
-	const input = [lesson(2, 20), post("ordinary", 10), lesson(1, 1)];
+	const input = [lesson(1, 1), post("ordinary", 10), lesson(2, 20)];
 	const original = [...input];
 	const dates = input.map((entry) => entry.data.published);
 	const timestamps = dates.map((date) => date.getTime());
@@ -59,7 +60,7 @@ test("does not mutate input, post objects, or publication dates", () => {
 	const result = sortPosts(input);
 	assert.notEqual(result, input);
 	assert.deepEqual(input, original);
-	assert.deepEqual(result, [input[2], input[0], input[1]]);
+	assert.deepEqual(result, [input[2], input[1], input[0]]);
 	input.forEach((entry, index) => {
 		assert.equal(entry, original[index]);
 		assert.equal(entry.data.published, dates[index]);

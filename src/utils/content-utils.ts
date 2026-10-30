@@ -4,7 +4,7 @@ import { i18n } from "@i18n/translation";
 import { getCategoryUrl } from "@utils/url-utils.ts";
 import { sortPosts } from "./post-order.ts";
 
-// Retrieve posts in publication order, keeping course lessons together.
+// Retrieve posts in descending publication order.
 async function getRawSortedPosts() {
 	const allBlogPosts = await getCollection("posts", ({ data }) => {
 		return import.meta.env.PROD ? data.draft !== true : true;
