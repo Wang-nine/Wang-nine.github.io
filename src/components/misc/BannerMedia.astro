@@ -1,0 +1,120 @@
+---
+import ImageWrapper from "./ImageWrapper.astro";
+import { url } from "../../utils/url-utils";
+
+interface Props {
+	src: string;
+	video?: string;
+	position?: "top" | "center" | "bottom";
+}
+const { src, video, position = "center" } = Astro.props;
+---
+
+<banner-media id="banner" class="block relative overflow-hidden h-full transition duration-700 opacity-0 scale-105">
+    <ImageWrapper src={src} position={position} alt="Banner image of the blog" class="h-full" />
+    {video && <>
+        <!-- No src until motion/data preferences have been checked: no unwanted video download. -->
+        <video data-src={url(video)} poster={url(src)} muted autoplay loop playsinline preload="none"
+               aria-hidden="true" tabindex="-1"
+               class="pointer-events-none absolute inset-0 w-full h-full object-cover opacity-0"
+               style={`object-position: ${position}`}></video>
+        <div data-video-shade class="pointer-events-none absolute inset-0 dark:bg-black/10 hidden"></div>
+    </>}
+</banner-media>
+
+<script>
+    class BannerMedia extends HTMLElement {
+        connectedCallback() {
+            const video = this.querySelector("video");
+            const toggle = document.querySelector<HTMLButtonElement>("[data-banner-toggle]");
+            const shade = this.querySelector<HTMLElement>("[data-video-shade]");
+            if (!video || !toggle) return;
+
+            const motion = matchMedia("(prefers-reduced-motion: reduce)");
+            const desktop = matchMedia("(min-width: 768px)");
+            const connection = (navigator as Navigator & {
+                connection?: EventTarget & { saveData?: boolean };
+            }).connection;
+            const events = new AbortController();
+            const options = { signal: events.signal };
+            let failed = false;
+            let userPaused = false;
+
+            const showPoster = () => {
+                video.classList.add("opacity-0");
+                shade?.classList.add("hidden");
+                toggle.hidden = true;
+            };
+            const stop = () => {
+                video.pause();
+                video.removeAttribute("src");
+                video.load();
+                showPoster();
+            };
+            const allowed = () => !motion.matches && desktop.matches && !connection?.saveData;
+            const updateLabel = () => {
+                toggle.textContent = video.paused ? "播放背景" : "暂停背景";
+            };
+            const play = () => {
+                video.muted = true;
+                void video.play().catch((error: unknown) => {
+                    // Swup/scrollbar setup can reconnect this element while play is pending.
+                    // An old instance or an intentional pause must not disable its successor.
+                    if (events.signal.aborted || (error instanceof DOMException && error.name === "AbortError")) return;
+                    failed = true;
+                    stop();
+                });
+            };
+            const sync = () => {
+                if (!allowed() || failed) {
+                    stop();
+                    return;
+                }
+                if (!video.hasAttribute("src")) video.src = video.dataset.src || "";
+                if (userPaused) {
+                    toggle.hidden = false;
+                    updateLabel();
+                }
+                if (!userPaused && !document.hidden) play();
+            };
+            video.addEventListener("playing", () => {
+                if (!allowed()) return stop();
+                video.classList.remove("opacity-0");
+                shade?.classList.remove("hidden");
+                toggle.hidden = false;
+                updateLabel();
+            }, options);
+            video.addEventListener("error", () => {
+                // Ignore the intentionally empty source used by static-only modes.
+                if (!video.hasAttribute("src")) return;
+                failed = true;
+                stop();
+            }, options);
+            video.addEventListener("pause", updateLabel, options);
+            toggle.addEventListener("click", () => {
+                userPaused = !video.paused;
+                if (userPaused) video.pause();
+                else play();
+            }, options);
+            motion.addEventListener("change", sync, options);
+            desktop.addEventListener("change", sync, options);
+            connection?.addEventListener("change", sync, options);
+            document.addEventListener("visibilitychange", () => {
+                if (document.hidden) video.pause();
+                else sync();
+            }, options);
+            this.cleanup = () => {
+                events.abort();
+                stop();
+            };
+            sync();
+        }
+
+        private cleanup?: () => void;
+
+        disconnectedCallback() {
+            this.cleanup?.();
+        }
+    }
+    if (!customElements.get("banner-media")) customElements.define("banner-media", BannerMedia);
+</script>

@@ -5,7 +5,7 @@ import Navbar from "@components/Navbar.astro";
 import SideBar from "@components/widget/SideBar.astro";
 import type { MarkdownHeading } from "astro";
 import { Icon } from "astro-icon/components";
-import ImageWrapper from "../components/misc/ImageWrapper.astro";
+import BannerMedia from "../components/misc/BannerMedia.astro";
 import TOC from "../components/widget/TOC.astro";
 import { siteConfig } from "../config";
 import {
@@ -53,10 +53,7 @@ const mainPanelTop = siteConfig.banner.enable
 
 <!-- Banner -->
 {siteConfig.banner.enable && <div id="banner-wrapper" class={`absolute z-10 w-full transition duration-700 overflow-hidden`} style={`top: -${BANNER_HEIGHT_EXTEND}vh`}>
-    <ImageWrapper id="banner" alt="Banner image of the blog" class:list={["object-cover h-full transition duration-700 opacity-0 scale-105"]}
-                  src={siteConfig.banner.src} position={siteConfig.banner.position}
-    >
-    </ImageWrapper>
+    <BannerMedia src={siteConfig.banner.src} video={siteConfig.banner.video} position={siteConfig.banner.position} />
 </div>}
 
 <!-- Main content -->
@@ -67,6 +64,10 @@ const mainPanelTop = siteConfig.banner.enable
     mx-auto gap-4 px-0 md:px-4"
         >
             <!-- Banner image credit -->
+            {siteConfig.banner.video && <button type="button" data-banner-toggle hidden
+                class="absolute left-4 -top-[3.25rem] h-9 px-3 rounded-full bg-black/60 hover:bg-black/70 text-white/90 text-xs focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                暂停背景
+            </button>}
             {hasBannerCredit && <a href={siteConfig.banner.credit.url} id="banner-credit" target="_blank" rel="noopener" aria-label="Visit image source"
                                    class:list={["group onload-animation transition-all absolute flex justify-center items-center rounded-full " +
                                    "px-3 right-4 -top-[3.25rem] bg-black/60 hover:bg-black/70 h-9", {"hover:pr-9 active:bg-black/80": hasBannerLink}]}

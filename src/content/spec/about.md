@@ -15,7 +15,7 @@
 
 本站使用 [Fuwari](https://github.com/saicaca/fuwari) 主题，基于 [Astro](https://astro.build) 构建，保留主题原有的圆角卡片与阅读布局。Fuwari 源码采用 MIT 许可，主题署名与许可证予以保留。
 
-页首静态图片采用 [MotionBGS 分发的「Uesugi Erii Sunrise Above The City」壁纸](https://motionbgs.com/uesugi-erii-sunrise-above-the-city)，保留此前选定的上杉绘梨衣与东京塔场景，替换带有「4K」角标的视频封面。下载的 JPEG 实际尺寸为 3840 × 2160，按原尺寸转存为本地 WebP，未放大、裁边或修除文字；这不代表已核实其为作者原图或原生 4K 画质，也不是本站原创插画。
+页首采用 [MotionBGS 分发的「Uesugi Erii Sunrise Above The City」动态壁纸](https://motionbgs.com/uesugi-erii-sunrise-above-the-city)，保留此前选定的上杉绘梨衣与东京塔场景。桌面默认静音循环播放约 10 秒的 1920 × 1080 视频，可用“暂停背景”按钮关闭动画；手机、减少动态效果或节省流量模式，以及视频无法播放时，使用同场景静态 WebP。视频以 H.264 压缩为约 5.2 MiB，不使用大体积 GIF；静态 JPEG 按下载尺寸 3840 × 2160 转存为 WebP。素材未放大、裁边或修除文字；这些像素尺寸不代表已核实其为作者原图或原生 4K 画质，也不是本站原创插画。
 
 作品可追溯至「龙族卡塞尔之门」官方账号于 2024 年 8 月 20 日发布的[《动态壁纸第六弹 - 世界很温柔》](https://www.bilibili.com/video/BV1ziWneGEpx/)。该官方发布出处与本站实际下载壁纸的 MotionBGS 分发来源分别列明，官方发布不等于已获得本站转载授权。
 

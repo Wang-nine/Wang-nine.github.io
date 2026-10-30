@@ -18,6 +18,7 @@ export const siteConfig: SiteConfig = {
 	banner: {
 		enable: true,
 		src: "/brand/erii-wallpaper.webp", // 以 / 开头的资源路径对应 public 目录。
+		video: "/brand/erii-wallpaper.mp4",
 		position: "center",
 		credit: {
 			enable: true,
