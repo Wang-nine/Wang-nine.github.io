@@ -21,8 +21,8 @@ export const siteConfig: SiteConfig = {
 		position: "center",
 		credit: {
 			enable: true,
-			text: "视频封面 · 热门壁纸推荐 / Bilibili",
-			url: "https://www.bilibili.com/video/BV1XFspeBEuw/",
+			text: "壁纸来源 · MotionBGS",
+			url: "https://motionbgs.com/uesugi-erii-sunrise-above-the-city",
 		},
 	},
 	toc: {
