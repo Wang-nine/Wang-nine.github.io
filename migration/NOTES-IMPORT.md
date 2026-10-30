@@ -117,3 +117,46 @@
 ### 操作边界（本次）
 
 仅写入上述 2 篇新文章并追加本记录。未修改 01、02、03 三篇既有文章，未改其发布时间，也未改其「正式 chain rule 尚未讲」等原文语境。未触碰学习仓库的档案、练习与课程文件，未改动 legacy 哈希清单、报告、脚本、界面配置或其它文档，未执行 git 操作。
+
+## 2026-10-30 同步：新增 06、07，复核 01–05
+
+### 范围与 Allowlist
+
+本节为第三次 notes 导入的追加记录，不改写前两次历史记录。本次源仓库只读以下 7 个知识笔记文件：
+
+1. `notes/02-math-numpy/01-prediction-and-loss.md`（仅复核）
+2. `notes/02-math-numpy/02-bias-and-loss.md`（仅复核）
+3. `notes/02-math-numpy/03-stationary-points.md`（仅复核）
+4. `notes/02-math-numpy/04-chain-rule.md`（仅复核）
+5. `notes/02-math-numpy/05-nonlinear-chain.md`（仅复核）
+6. `notes/02-math-numpy/06-batch-mse.md`（新增导入）
+7. `notes/02-math-numpy/07-mean-sum.md`（新增导入）
+
+未读取 `notes/README.md`、`learning-state/`、`exercises/`、`curriculum/` 或其它源仓库学习内容，未访问私人链接目标，未修改任何源文件。
+
+### 输出与来源
+
+| 输出 | Slug | 原文标题 |
+| --- | --- | --- |
+| `src/content/posts/llm-learning/math-numpy/06-batch-mse.md` | `llm-math-numpy-06` | 06 batch MSE：共享参数的贡献汇总 |
+| `src/content/posts/llm-learning/math-numpy/07-mean-sum.md` | `llm-math-numpy-07` | 07 mean 与 sum：归约改变的是哪些量 |
+
+新文章正文各自来自同名 allowlist 文件；使用与 04、05 一致的 frontmatter 字段。只删除首个 H1 和文末私人练习、课堂记录内容，将该末行中的上一课链接分别保留为 `/posts/llm-math-numpy-05/`、`/posts/llm-math-numpy-06/`。其余知识正文、公式、代码块、表格、教师归因、来源状态与「不是掌握证明」等边界说明逐字保留，未补写已读来源或独立掌握声明。
+
+### 日期策略
+
+本次本机实际日期核对为 `2026-10-30`，两篇 `published` 均使用该导入日期，不写 `updated`，不把课堂日期当作发布时间。文末统一追加：
+
+> 本文于2026-10-30整理公开，日期为导入日期。
+
+01–05 的原有发布时间与导入附注不变。
+
+### 定向复核与隐私
+
+- 对 01–07 逐篇执行精确转换比对：仅去除源 H1、文末私人产物段并规范上一课链接；博客侧剥离 frontmatter 与导入附注后正文完全一致（统一换行格式后比较，不改写文本）。01–05 公开知识无变化，无需更新既有文章。
+- 新增两篇的正文与 frontmatter 定向扫描未发现 `learning-state`、`exercises`、session 标识、私有绝对路径、邮箱或凭证标记；私人练习与课堂记录链接残留 0 个。
+- 两篇 Markdown 链接仅为各自上一课的规范站内链接；来源说明原样保留，没有新增外部来源链接或抓取声明。
+
+### 数量与操作边界
+
+本次新增 2 篇，本系列由 5 篇变为 7 篇；按既有 72 条 legacy 基线计算合计为 79 篇，此处不是重新审计 legacy。仅写入两篇新文章并追加本记录，未修改 01–05、脚本、界面、配置或 legacy 基线。未提交或推送 git；全量测试、构建、发布审计及部署交由主任务执行，本节不声称这些检查已通过。
