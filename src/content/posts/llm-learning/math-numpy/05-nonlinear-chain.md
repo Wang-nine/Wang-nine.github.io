@@ -19,17 +19,20 @@ slug: "llm-math-numpy-05"
 ## 2. 图示与公式
 
 ```text
-w --(p = w^2 + 1)--> p --(r = p - y)--> r --(L = r^2)--> L
+w --> p --> r --> L
 ```
 
 `y = 4` 固定。展开整条链：
 
-```text
-p = w^2 + 1
-r = p - y = w^2 - 3
-L = r^2 = (w^2 - 3)^2
-dL/dw = dL/dr * dr/dp * dp/dw = 2r * 1 * 2w = 4w(w^2 - 3)
-```
+$$
+\begin{aligned}
+p &= w^2 + 1 \\
+r &= p - y = w^2 - 3 \\
+L &= r^2 = (w^2 - 3)^2 \\
+\frac{dL}{dw} &= \frac{dL}{dr}\frac{dr}{dp}\frac{dp}{dw}
+= 2r \cdot 1 \cdot 2w = 4w(w^2 - 3)
+\end{aligned}
+$$
 
 `dp/dw = 2w` 要在**当前的 w** 处取值，不是常数；换一个 `w` 就得重算这一段。代码里 `p`、`r`、`dL_dw` 都在每次函数调用里重新算，正是为了守住这一点。
 
@@ -46,13 +49,31 @@ dL/dw = dL/dr * dr/dp * dp/dw = 2r * 1 * 2w = 4w(w^2 - 3)
 
 ## 4. 三个量不要混
 
-```text
-exact derivative      dL/dw                     点上的极限值
-finite quotient       [L(w+h) - L(w)] / h       该区间的精确平均变化率
-linear prediction     L(w+h) ≈ L(w) + dL/dw * h  用导数外推的新值
-```
+**exact derivative**：点上的极限值。
 
-有限差商在精确算术下就是区间平均变化率，不是"错的导数"；差商一般不等于点导数，某些函数、点或步长下可以恰好相等，区间内函数是直线只是其中一种情形。线性预测又是另一件事：`ΔL ≈ dL/dw * h`，新值 = 旧值加 `导数 × h`，误差来自被省略的高阶项。
+$$
+\frac{dL}{dw}
+$$
+
+**finite quotient**：该区间的精确平均变化率。
+
+$$
+\frac{L(w+h) - L(w)}{h}, \qquad h \ne 0
+$$
+
+**linear prediction**：用导数外推的新值。
+
+$$
+L(w+h) \approx L(w) + \frac{dL}{dw}h
+$$
+
+有限差商在精确算术下就是区间平均变化率，不是"错的导数"；差商一般不等于点导数，某些函数、点或步长下可以恰好相等，区间内函数是直线只是其中一种情形。线性预测又是另一件事：
+
+$$
+\Delta L \approx \frac{dL}{dw}h
+$$
+
+新值 = 旧值加 `导数 × h`，误差来自被省略的高阶项。
 另外 `h != 0`：差商的分母就是它，不能因为 `h` 小就当成 0 忽略；求极限也不是把 0 代进分母。浮点里 `h` 太小时 `L(w+h) - L(w)` 相减会损失有效位，实际计算要选合适量级。
 
 ## 5. 易错点
@@ -72,7 +93,12 @@ linear prediction     L(w+h) ≈ L(w) + dL/dw * h  用导数外推的新值
 ## 7. 自测
 
 1. `w = -1` 与 `w = +1` 的 `p`、`r`、`L` 都相同，为什么 `dL/dw` 相反？
-2. 差商 `[L(w+h) - L(w)] / h` 在精确算术下就等于导数吗？
+2. 下列差商在精确算术下就等于导数吗？
+
+   $$
+   \frac{L(w+h)-L(w)}{h}, \qquad h \ne 0
+   $$
+
 3. 为什么不能在 `w = 1` 处断定"一直往右走 loss 会持续下降"？
 
 来源：沿用上课教师已核对过的 [OpenStax Calculus Volume 1, §3.6 The Chain Rule](https://openstax.org/books/calculus-volume-1/pages/3-6-the-chain-rule) 的 "Rule: The Chain Rule" 与复合函数结构；`p = w² + 1`、`y = 4` 的案例与两点对照表为教师自拟，本课未重新抓取网页，也不代表学生已读该页。

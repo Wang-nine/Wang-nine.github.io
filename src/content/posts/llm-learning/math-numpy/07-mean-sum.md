@@ -18,21 +18,24 @@ slug: "llm-math-numpy-07"
 w（共享参数）→ 预测 → residual → 每样本平方误差 (N,1)
                                   ├─ sum  → 总 loss   ()
                                   └─ mean → 平均 loss ()
-
-r_i = w*x_i - y_i
-ℓ_i = r_i²
-单样本导数贡献 = 2*r_i*x_i
 ```
+
+$$
+r_i = wx_i-y_i, \qquad \ell_i = r_i^2, \qquad
+\frac{d\ell_i}{dw} = 2r_i x_i
+$$
 
 参数 w 与预测没有因归约而改变；改变的是 loss 及它对 w 的变化率。
 
 ## 2. 固定 N 的比例
 
-```text
-L_mean(w) = L_sum(w) / N
-L_mean'(w) = L_sum'(w) / N
-Q_mean(w,h) = Q_sum(w,h) / N
-```
+$$
+\begin{aligned}
+L_{\mathrm{mean}}(w) &= \frac{L_{\mathrm{sum}}(w)}{N} \\
+L_{\mathrm{mean}}'(w) &= \frac{L_{\mathrm{sum}}'(w)}{N} \\
+Q_{\mathrm{mean}}(w,h) &= \frac{Q_{\mathrm{sum}}(w,h)}{N}
+\end{aligned}
+$$
 
 前提：同一批样本，N 不依赖 w；差商使用相同基准 w、相同非零 h。
 不是“平均参数”；也不是“导数变化量”。差商是 loss 的区间平均变化率。
