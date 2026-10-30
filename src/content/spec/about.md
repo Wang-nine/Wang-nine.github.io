@@ -15,11 +15,13 @@
 
 本站使用 [Fuwari](https://github.com/saicaca/fuwari) 主题，基于 [Astro](https://astro.build) 构建，保留主题原有的圆角卡片与阅读布局。Fuwari 源码采用 MIT 许可，主题署名与许可证予以保留。
 
-页首静态图片采用 Bilibili 视频[《世界很温柔〈龙族〉上杉绘梨衣_4K动态壁纸分享》](https://www.bilibili.com/video/BV1XFspeBEuw/)的公开封面，来源账号为「热门壁纸推荐」。本站使用的是 1906 × 1192 的视频封面转存 WebP，并非已取得的 4K 壁纸原图，也不是本站原创插画。
+页首静态图片采用 [MotionBGS 分发的「Uesugi Erii Sunrise Above The City」壁纸](https://motionbgs.com/uesugi-erii-sunrise-above-the-city)，保留此前选定的上杉绘梨衣与东京塔场景，替换带有「4K」角标的视频封面。下载的 JPEG 实际尺寸为 3840 × 2160，按原尺寸转存为本地 WebP，未放大、裁边或修除文字；这不代表已核实其为作者原图或原生 4K 画质，也不是本站原创插画。
+
+作品可追溯至「龙族卡塞尔之门」官方账号于 2024 年 8 月 20 日发布的[《动态壁纸第六弹 - 世界很温柔》](https://www.bilibili.com/video/BV1ziWneGEpx/)。该官方发布出处与本站实际下载壁纸的 MotionBGS 分发来源分别列明，官方发布不等于已获得本站转载授权。
 
 个人头像取自 [Wang-nine 的 GitHub 公开头像](https://github.com/Wang-nine)，转存为本地 WebP；站点图标仍保留此前为本站绘制的小猫 SVG，未随头像更换。
 
-封面来源标注「未经作者授权禁止转载」；本站列明来源不等于已获得授权，上传账号也不等于已核实的原画作者。封面及头像所含作品的权利归相应权利人，授权与转载许可尚未核实，不适用本站代码的 MIT 许可或文章许可。具体下载来源、尺寸与处理方式见仓库 `DESIGN.md` 的资产来源记录。
+此前视频封面来源标注「未经作者授权禁止转载」；更换下载来源不代表解决了作品授权问题。MotionBGS 是壁纸分发来源，并非本站已核实的原画作者；列明来源不等于已获得授权。壁纸及头像所含作品的权利归相应权利人，原画作者、授权与转载许可尚未核实，不适用本站代码的 MIT 许可或文章许可。具体下载来源、尺寸与处理方式见仓库 `DESIGN.md` 的资产来源记录。
 
 - GitHub：[Wang-nine](https://github.com/Wang-nine)
 - 站点仓库：[Wang-nine/Wang-nine.github.io](https://github.com/Wang-nine/Wang-nine.github.io)
