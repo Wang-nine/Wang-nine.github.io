@@ -206,3 +206,59 @@
 ### 操作边界
 
 仅写入 7 篇对应文章并追加本记录。未改动排序、动态横幅、配置、脚本或其它并行修改；未提交、推送、SSH 或部署。全量 Node/check/build、KaTeX 浏览器验证与最终部署由主任务负责，本节不声称已完成。
+
+## 2026-11-09 同步：更新 01–07，新增 08 与笔记内代码快照
+
+### 本次授权与精确 Allowlist
+
+用户要求「本地有新笔记了，更新下，注意以前的笔记也有修改加上了代码段，都同步下吧」。本次读取用户明确授权的当前工作区源文，而非以提交版本替代工作区；授权包括这些公开笔记中已经收录的学生代码快照，不包括私人练习目录中的代码文件。此前记录中「未导入学生实现」等陈述仅描述此前批次，不适用于本次明确授权的笔记内快照。
+
+仅只读源仓库 `notes/02-math-numpy/` 下以下 8 个文件，并更新博客 `src/content/posts/llm-learning/math-numpy/` 下的同名文章：
+
+1. `01-prediction-and-loss.md`
+2. `02-bias-and-loss.md`
+3. `03-stationary-points.md`
+4. `04-chain-rule.md`
+5. `05-nonlinear-chain.md`
+6. `06-batch-mse.md`
+7. `07-mean-sum.md`
+8. `08-dot-product.md`
+
+未读取私人索引 `notes/README.md`、学习档案、课堂记录、练习文件、课程文件或其它源笔记，未跟随文中的私人链接；未修改源文件。新增 08 标题为「08 点积、内积、外积与叉积」，slug 为 `llm-math-numpy-08`，分类为 `LLM 学习`，上一课指向 `/posts/llm-math-numpy-07/`。
+
+### 转换与隐私边界
+
+- 删除首个 H1；正文知识、表格、示例、来源状态、教师归因、课程范围与「不是独立掌握证明」等说明保留，不补写学习证据。
+- 删除私人练习、课堂记录及「原文件」链接共 26 个，保留同一行的上一课导航并规范为 `/posts/llm-math-numpy-0N/`。不在遇到私人链接时截断后续内容，附录标题、快照说明与全部代码块继续保留。
+- 按既有私人路径排除边界，仅移除 Python 头部指向私人练习目录的 8 行 `FilePath` 元数据。其它可执行代码、注释、时间戳与作者署名均不改写。公开 GitHub noreply 作者地址保留，共 16 处；本批次不声称「邮箱 0 个」。
+- 延续用户此前授权的博客端转换：40 个显式 `latex` 围栏转换为 `$$`（01–07 共 36 个，08 新增 4 个）；TeX payload 包括缩进与换行保持不变。普通 Python / text 围栏与反引号不作格式替换。
+- 本次保留 9 个 Python 快照块（01 两个，其余每篇一个）。其中 8 个块仅删除上述路径元数据行，06 的一个块完全不变；14 个其它围栏块（均为 text）payload 完全不变。相较既有博客，01–07 新增 8 个 Python 快照块，新增文章 08 带来 1 个 Python 快照块。
+
+### 日期策略
+
+本机实际导入日期核对为 `2026-11-09`。01–07 原 frontmatter 和原导入附注原样保留，不添加 `updated`，不修改发布时间以提升排序。08 使用 `published: 2026-11-09`、`draft: false`、`lang: zh_CN`、`image: ''`，文末注明「本文于2026-11-09整理公开，日期为导入日期。」这不是授课日期或掌握证明。
+
+### 定向验证与源文件 SHA-256
+
+统一 CRLF / LF 后，逐篇剥离博客 frontmatter 与导入附注，与仅应用上述限定转换的源正文比较，8/8 一致；另行逐块核对 Python（仅准许删除上述路径行）、text 与 TeX payload，全部通过。8 个源文件的字节在操作前后相同。源快照 SHA-256 如下：
+
+| 文件 | SHA-256 | 公式块 | Python 块 | text 块 | 移除 FilePath 行 |
+| --- | --- | --- | --- | --- | --- |
+| 01-prediction-and-loss.md | `615a9481dd1eda52b982328d585eeed2430d8eb78eed1e0f7e32406df530e616` | 4 | 2 | 3 | 2 |
+| 02-bias-and-loss.md | `0933d57e0f7b2ff5cbc37d24f8f1b77ecebdeab7545672a49b54a4eb0a6a6d16` | 4 | 1 | 3 | 1 |
+| 03-stationary-points.md | `896225c1f58cc5e25125d09dce28bd476bccfc22ba9986d4ce54bc3539b3259a` | 9 | 1 | 0 | 1 |
+| 04-chain-rule.md | `c81c00ee8f7a8a16ec7c002649b0a9759bc43e4ed96c224c12fbe8f2a214dace` | 7 | 1 | 1 | 1 |
+| 05-nonlinear-chain.md | `4fd8a353ad122f9149e406c386196c3c3d304675216cab26acda03bc467a5861` | 6 | 1 | 1 | 1 |
+| 06-batch-mse.md | `e70599f49b26db79d2626910dc17dd84c6cb3e8e1ed187326b3c3c019a51e0be` | 4 | 1 | 2 | 0 |
+| 07-mean-sum.md | `5c015a662f90bfdade2eb140f7035ec05526f2b297673489443c8dadae5b25ae` | 2 | 1 | 1 | 1 |
+| 08-dot-product.md | `e76f1bbf71700a1ca448a75e88bcf4a2f3c632b478ae66ad46b289cb9d2ae050` | 4 | 1 | 3 | 1 |
+
+正文与 frontmatter 的私人练习 / session 路径、机器绝对路径、FilePath 元数据、残留相对 Markdown 笔记链接扫描均为 0 命中；常见私钥、访问 token、API key 与密码赋值模式未见命中。公开 noreply 署名不按私人联系方式删除。隐私路径统计针对公开文章，不包含本导入记录为了界定 allowlist 而记载的源路径。
+
+使用站点现有 `katex` dependency，对全部 40 个 TeX payload 调用 `katex.renderToString(inner, { displayMode: true, throwOnError: true })`，40/40 通过；这仅为解析检查，不是数学正确性或浏览器渲染证明。
+
+`git diff --check` 对已跟踪文章报出 6 处 Python 快照原有行尾空白；为遵守代码 payload 保留要求，未自动清理这些源文空白。该检查未通过，不影响上述逐字转换比对结果。
+
+### 操作边界
+
+仅更新上述 8 篇文章并追加本记录；临时转换与定向校验脚本放在仓库外。未改动实现、排序、横幅、配置、测试或 legacy 内容，未提交、推送、SSH 或部署。全量测试、check/build、DOM 检查及发布由主任务负责，本节不声称已完成。
