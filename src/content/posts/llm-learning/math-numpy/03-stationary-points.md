@@ -115,4 +115,91 @@ $$
 
 上一课：[02 bias 与损失](/posts/llm-math-numpy-02/)。
 
+## 附录：学生代码快照
+
+以下是学生当前已保存的实现，仅供复习；不是教师参考答案，也不是独立掌握证明。原练习文件是唯一编辑源；快照不会自动同步，原文件后续修改后需重新生成。
+
+### stationary_points.py
+
+
+```python
+'''
+Author: Wang-nine Wang-nine@users.noreply.github.com
+Date: 2026-10-26 19:30:45
+LastEditors: Wang-nine Wang-nine@users.noreply.github.com
+LastEditTime: 2026-10-26 19:41:48
+Description: 周一，又要上班了..
+'''
+import numpy as np
+
+def main():
+    #default offset
+    offset = [-0.1,-0.01, -0.001, 0.001, 0.01, 0.1]
+    #all of the three functions result is 0 at the point of zero 
+    f_0 = 0
+    #A(t) = t^2
+    res_A = []
+    name_A = "A(t) = t^2"
+    for each_offset in offset:
+        f_offset = (each_offset) ** 2
+        delta_f = f_offset - f_0
+        change_rate = delta_f / each_offset
+        res_dict = {
+            "name" : name_A,
+            "h" : each_offset,
+            "f(0)" : f_0,
+            "f(h)" : f_offset,
+            "delta_f" : delta_f,
+            "change_rate" : change_rate
+        }
+        res_A.append(res_dict)
+    for each_res in res_A:
+        print(each_res)
+    print("\n")
+
+    #B(t) = -t^2
+    res_B = []
+    name_B = "B(t) = -t^2"
+    for each_offset in offset:
+        f_offset = -(each_offset) ** 2
+        delta_f = f_offset - f_0
+        change_rate = delta_f / each_offset
+        res_dict = {
+            "name" : name_B,
+            "h" : each_offset,
+            "f(0)" : f_0,
+            "f(h)" : f_offset,
+            "delta_f" : delta_f,
+            "change_rate" : change_rate
+        }   
+        res_B.append(res_dict)
+
+    for each_res in res_B:
+        print(each_res)
+    print("\n")
+
+    #C(t) = t^3
+    res_C = []
+    name_C = "C(t) = t^3"
+    for each_offset in offset:
+        f_offset = (each_offset) ** 3
+        delta_f = f_offset - f_0
+        change_rate = delta_f / each_offset
+        res_dict = {
+            "name" : name_C,
+            "h" : each_offset,
+            "f(0)" : f_0,
+            "f(h)" : f_offset,
+            "delta_f" : delta_f,
+            "change_rate" : change_rate
+        }   
+        res_C.append(res_dict)
+    for each_res in res_C:
+        print(each_res)
+    print("\n")   
+
+if __name__ == "__main__":
+    main()
+```
+
 *本文于2026-10-26整理公开，日期为导入日期。*

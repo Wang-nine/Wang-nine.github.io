@@ -118,4 +118,105 @@ $$
 
 上一课：[03 驻点与局部极值](/posts/llm-math-numpy-03/)。
 
+## 附录：学生代码快照
+
+以下是学生当前已保存的实现，仅供复习；不是教师参考答案，也不是独立掌握证明。原练习文件是唯一编辑源；快照不会自动同步，原文件后续修改后需重新生成。
+
+### chain_rule_check.py
+
+
+```python
+'''
+Author: Wang-nine Wang-nine@users.noreply.github.com
+Date: 2026-10-27 11:40:49
+LastEditors: Wang-nine Wang-nine@users.noreply.github.com
+LastEditTime: 2026-10-27 20:50:07
+Description: 学习ing...
+'''
+import numpy as np
+
+def main():
+    #data
+    h_offset = [0.1, 0.01, 0.001]
+
+    #when w = 1
+    res_1 = []
+    w = 1
+    dL_dw = cal_chain_rule(w)
+    for h in h_offset:
+        difference_quotient = (cal_L_with_w(w + h) - cal_L_with_w(w)) / h
+        res = {
+            "w" : w,
+            "h" : h,
+            "chain rule" : dL_dw,
+            "difference_quotient" : difference_quotient
+        }
+        res_1.append(res)
+    for each_res in res_1:
+        print(each_res)
+
+    #when w = 1.5
+    res_1_5 = []
+    w = 1.5
+    dL_dw = cal_chain_rule(w)
+    for h in h_offset:
+        difference_quotient = (cal_L_with_w(w + h) - cal_L_with_w(w)) / h
+        res = {
+            "w" : w,
+            "h" : h,
+            "chain rule" : dL_dw,
+            "difference_quotient" : difference_quotient
+        }
+        res_1_5.append(res)
+    for each_res in res_1_5:
+        print(each_res)
+
+    #new case, w = 1
+    res_1_new = []
+    w = 1
+    h_offset_new = [0.01, -0.01]
+    dL_dw = cal_chain_rule_1(w)
+    for h in h_offset_new:
+        difference_quotient = (cal_L_with_w_1(w + h) - cal_L_with_w_1(w)) / h
+        res = {
+            "w" : w,
+            "h" : h,
+            "chain rule" : dL_dw,
+            "difference_quotient" : difference_quotient
+        }
+        res_1_new.append(res)
+    for each_res in res_1_new:
+        print(each_res)
+        
+
+def cal_chain_rule_1(w: int) -> int:
+    p = -2 * w + 1
+    r = p - 5
+    L = r ** 2
+    dp_dw = -2
+    dr_dp = 1
+    dL_dr = 2 * r
+    dL_dw = dL_dr * dr_dp * dp_dw
+    return dL_dw
+
+def cal_L_with_w_1(w: int) -> int:
+    return ((-2 * w + 1) - 5) ** 2
+
+def cal_chain_rule(w: int) -> int:
+    p = 3 * w + 1
+    r = p - 5
+    L = r ** 2
+    dp_dw = 3
+    dr_dp = 1
+    dL_dr = 2 * r
+    dL_dw = dL_dr * dr_dp * dp_dw
+    return dL_dw
+
+def cal_L_with_w(w: int) -> int:
+    return ((3 * w + 1) - 5) ** 2
+
+if __name__ == "__main__":
+    main()
+```
+
 *本文于2026-10-28整理公开，日期为导入日期。*

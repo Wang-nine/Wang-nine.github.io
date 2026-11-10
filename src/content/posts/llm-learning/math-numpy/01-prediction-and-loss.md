@@ -115,4 +115,123 @@ np.array(5)      -> ()      ndim 0
 
 来源：[NumPy: the absolute basics for beginners](https://numpy.org/doc/stable/user/absolute_beginners.html)、[numpy.mean](https://numpy.org/doc/stable/reference/generated/numpy.mean.html)。
 
+
+## 附录：学生代码快照
+
+以下是学生当前已保存的实现，仅供复习；不是教师参考答案，也不是独立掌握证明。原练习文件是唯一编辑源；快照不会自动同步，原文件后续修改后需重新生成。
+
+### forward.py
+
+
+```python
+'''
+Author: Wang-nine Wang-nine@users.noreply.github.com
+Date: 2026-10-21 20:46:52
+LastEditors: Wang-nine Wang-nine@users.noreply.github.com
+LastEditTime: 2026-10-24 15:13:16
+Description: 学习ing
+'''
+import numpy as np
+
+def main():
+    X = np.array([
+        [1, 2],
+        [3, 1],
+        [2, 4]
+    ])
+    w = np.array([
+        [2],
+        [3]
+    ])
+    bias = 5
+    target = np.array([
+        [12],
+        [16],
+        [23]
+    ])
+    # target = np.array([12, 16, 23])
+    p = X @ w + bias
+    #check shape of p is equal to shape of target, broadcasting is invalid here
+    if p.shape != target.shape:
+        print(f"shape of p is {p.shape}, shape of target is {target.shape}, which is not equal here")
+    else:
+        residual = p - target
+        print(f"the value of residual is\n {residual}")
+        print(f"the shape of residual is {residual.shape}")
+        MSE = np.mean((p - target) ** 2)
+        print(f"the value of MSE is {MSE}")
+        print(f"the shape of MSE is {MSE.shape}")
+
+    #print the data's information
+    print(f"the value of X is\n {X}")
+    print(f"the shape of X is {X.shape}")
+    print(f"the value of w is\n {w}")
+    print(f"the shape of w is {w.shape}")
+    print(f"the value of p is\n {p}")
+    print(f"the shape of p is {p.shape}")
+    print(f"the value of target is\n {target}")
+    print(f'the shape of target is {target.shape}')
+
+
+if __name__ == "__main__":
+    main()
+```
+
+### single_sample_check.py
+
+
+```python
+'''
+Author: Wang-nine Wang-nine@users.noreply.github.com
+Date: 2026-10-24 15:27:59
+LastEditors: Wang-nine Wang-nine@users.noreply.github.com
+LastEditTime: 2026-10-24 15:38:03
+Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+'''
+import numpy as np
+
+def main():
+    X = np.array([
+        [9, 9],
+    ])
+    w = np.array([
+        [2],
+        [3]
+    ])
+    bias = 5
+    target = np.array([
+        [58]
+    ])
+    # target = np.array([58])
+    MSE1 = 64.0
+
+    #calculate by numpy
+    p = X @ w + bias
+    
+    #check shape of p is equal to shape of target, broadcasting is invalid here
+    if p.shape != target.shape:
+        print(f"shape of p is {p.shape}, shape of target is {target.shape}, which is not equal here")
+    else:
+        residual = p - target
+        print(f"the value of residual is\n {residual}")
+        print(f"the shape of residual is {residual.shape}")
+        MSE = np.mean((p - target) ** 2)
+        print(f"the value of MSE is {MSE}")
+        print(f"the shape of MSE is {MSE.shape}")
+
+    #print the data's information
+    print(f"the value of X is\n {X}")
+    print(f"the shape of X is {X.shape}")
+    print(f"the value of w is\n {w}")
+    print(f"the shape of w is {w.shape}")
+    print(f"the value of p is\n {p}")
+    print(f"the shape of p is {p.shape}")
+    print(f"the value of target is\n {target}")
+    print(f'the shape of target is {target.shape}')
+
+
+if __name__ == "__main__":
+    main()
+```
+
 *本文于2026-10-26整理公开，日期为导入日期。*

@@ -105,4 +105,45 @@ $$
 
 上一课：[04 chain rule](/posts/llm-math-numpy-04/)。
 
+## 附录：学生代码快照
+
+以下是学生当前已保存的实现，仅供复习；不是教师参考答案，也不是独立掌握证明。原练习文件是唯一编辑源；快照不会自动同步，原文件后续修改后需重新生成。
+
+### nonlinear_chain_check.py
+
+
+```python
+'''
+Author: Wang-nine Wang-nine@users.noreply.github.com
+Date: 2026-10-28 15:53:44
+LastEditors: Wang-nine Wang-nine@users.noreply.github.com
+LastEditTime: 2026-10-28 16:19:35
+Description: learning....
+'''
+
+def main():
+    for w in [-1, 1]:
+        for h in [0.01, -0.01]:
+            calc(w, h)
+
+def calc(w: float, h:float) -> None:
+    p = w ** 2 + 1
+    r = p - 4
+    L = r ** 2
+    dL_dr = 2 * r
+    dr_dp = 1
+    dp_dw = 2 * w
+    dL_dw = dL_dr * dr_dp * dp_dw
+    delta_L = calc_loss(w + h) - calc_loss(w)
+    difference_quotient = delta_L / h
+    print(f"w : {w} | p : {p} | r : {r} | L : {L} | Derivative : {dL_dw} | h : {h} | difference quotient : {difference_quotient} \n")
+
+def calc_loss(w: float) -> float:
+    return ((w ** 2 + 1) - 4) ** 2
+
+
+if __name__ == "__main__":
+    main()
+```
+
 *本文于2026-10-28整理公开，日期为导入日期。*

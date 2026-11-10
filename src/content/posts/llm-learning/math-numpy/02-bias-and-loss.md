@@ -98,4 +98,75 @@ $$
 
 上一课：[01 前向预测与 MSE](/posts/llm-math-numpy-01/)。
 
+## 附录：学生代码快照
+
+以下是学生当前已保存的实现，仅供复习；不是教师参考答案，也不是独立掌握证明。原练习文件是唯一编辑源；快照不会自动同步，原文件后续修改后需重新生成。
+
+### bias_sweep.py
+
+
+```python
+'''
+Author: Wang-nine Wang-nine@users.noreply.github.com
+Date: 2026-10-25 20:26:17
+LastEditors: Wang-nine Wang-nine@users.noreply.github.com
+LastEditTime: 2026-10-25 21:50:36
+Description: 学习中,周六加班这个难受
+'''
+import numpy as np
+
+def main():
+    X = np.array([
+        [1, 2],
+        [3, 1],
+        [2, 4]
+    ])
+    w = np.array([
+        [2],
+        [3]
+    ])
+    bias = 5
+    target = np.array([
+        [12],
+        [16],
+        [23]
+    ])
+    #declare the result dict list
+    res = []
+    #bias small change list
+    bias_offset = [0, 0.1, 0.01, 0.001]
+    #test the MSE while bias change
+    for bias in range(4, 9):
+        for offset in bias_offset:
+            p = X @ w + bias + offset
+            if p.shape != target.shape:
+                print(f"shape of p is {p.shape}, shape of target is {target.shape}, which is not equal here")
+                return
+            else:
+                residual = p - target
+                print(f"the value of residual is\n {residual}")
+                print(f"the shape of residual is {residual.shape}")
+                MSE = np.mean((p - target) ** 2)
+                print(f"the value of MSE is {MSE}")
+                print(f"the shape of MSE is {MSE.shape}")
+                bias_res = {
+                    "bias" : bias + offset,
+                    "predict" : p,
+                    "residual" : residual,
+                    "MSE" : MSE
+                }
+                if offset != 0:
+                    approx_derivative = (MSE - res[(bias - 4) * 4]["MSE"]) / offset
+                    bias_res["approx_derivative"] = approx_derivative
+                res.append(bias_res)
+
+    #print the final result
+    for each_res in res:
+        print(each_res)
+
+
+if __name__ == "__main__":
+    main()
+```
+
 *本文于2026-10-26整理公开，日期为导入日期。*

@@ -86,4 +86,70 @@ $$
 
 上一课：[05 非线性链](/posts/llm-math-numpy-05/)。
 
+## 附录：学生代码快照
+
+以下是学生当前已保存的实现，仅供复习；不是教师参考答案，也不是独立掌握证明。原练习文件是唯一编辑源；快照不会自动同步，原文件后续修改后需重新生成。
+
+### batch_mse_check.py
+
+
+```python
+import numpy as np
+
+def main():
+    calc(1)
+
+def calc(w: float) -> None:
+    #test data
+    x = np.array([[1], [2], [3]])
+    y = np.array([[4], [1], [1]])
+    offset_array = [0.01, 0, -0.01]
+
+    for offset in offset_array:
+        MSE_array = []
+        derivative = []
+        difference_quotient_array = []
+        #loop result
+        difference_quotient = None
+        for index in range(len(x)):
+            x_i = x[index][0]
+            y_i = y[index][0]
+            p = (w + offset) * x_i + 0
+            r = p - y_i
+            l = r ** 2
+            dl_dr = 2 * r
+            dr_dp = 1
+            dp_dw = x_i
+            dl_dw = dl_dr * dr_dp * dp_dw
+            if offset != 0:
+                difference_quotient_array.append((calc_loss(w + offset, x_i, y_i) - calc_loss(w, x_i, y_i)) / offset)
+            MSE_array.append(l)
+            derivative.append(dl_dw)
+        batch_MSE = np.mean(np.array(MSE_array))
+        batch_derivative = np.mean(np.array(derivative))
+        if offset != 0:
+            difference_quotient = np.mean(np.array(difference_quotient_array))
+
+        #array result
+        p_array = (w + offset) * x + 0
+        r_array = p_array - y
+        array_batch_loss = np.mean(r_array ** 2)
+        dl_dr = 2 * r_array
+        dr_dp = 1
+        dp_dw = x
+        dl_dw = np.mean(dl_dr * dr_dp * dp_dw)
+
+        print(f"w : {w} | w + offset : {w + offset} | batch MSE : {batch_MSE:.4f} | 循环得到导数 : {batch_derivative:.4f} | 数组得到导数 : {dl_dw:.4f} | h : {offset} | ", end="")
+        if difference_quotient != None:
+            print(f"差商 : {difference_quotient:.4f}")
+        else:
+            print(f"差商 : None")
+
+def calc_loss(w: float, x: float, y:float) -> float:
+    return (w * x + 0 - y) ** 2
+
+if __name__ == "__main__":
+    main()
+```
+
 *本文于2026-10-30整理公开，日期为导入日期。*

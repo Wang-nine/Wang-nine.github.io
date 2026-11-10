@@ -61,4 +61,60 @@ $$
 
 上一课：[06 batch MSE](/posts/llm-math-numpy-06/)。
 
+## 附录：学生代码快照
+
+以下是学生当前已保存的实现，仅供复习；不是教师参考答案，也不是独立掌握证明。原练习文件是唯一编辑源；快照不会自动同步，原文件后续修改后需重新生成。
+
+### mean_sum_check.py
+
+
+```python
+'''
+Author: Wang-nine Wang-nine@users.noreply.github.com
+Date: 2026-10-30 14:25:13
+LastEditors: Wang-nine Wang-nine@users.noreply.github.com
+LastEditTime: 2026-10-30 15:44:45
+Description: learning...
+'''
+import numpy as np
+
+def main():
+    #p = wx + b(b = 0)
+    x = np.array([[1], [2], [3]])
+    y = np.array([[4], [1], [1]])
+    double_x = np.array([[1], [2], [3], [1], [2], [3]])
+    double_y = np.array([[4], [1], [1], [4], [1], [1]])
+    w = 2
+    offset_array = [0.01, -0.01]
+    calc(x, y, w, offset_array, "sum")
+    calc(x, y, w, offset_array, "mean")
+    calc(double_x, double_y, w, offset_array, "sum")
+    calc(double_x, double_y, w, offset_array, "mean")
+
+def calc(x: np.ndarray, y: np.ndarray, w: float, offset_array: list, mode: int):
+    sum_loss = np.sum((w * x - y) ** 2)
+    #sum_dl_dw = sum_dl_dr * dr_dp * dp_dw = 2r * 1 * x = 2(w * x - y) * x
+    sum_dl_dw = np.sum(2 * (w *x - y) * x)
+    mean_loss = np.mean((w * x - y) ** 2)
+    mean_dl_dw = np.mean(2 * (w * x - y) * x)
+    for h in offset_array:
+        if mode == "sum":
+            #sum mode
+            loss_h = np.sum(((w + h) * x - y) ** 2)
+            difference_quotient = (loss_h - sum_loss) / h
+            dl_dw_h = np.sum(2 * ((w + h) * x - y) * x)
+            print(f"规约方式 : 总和 | 基准w : {w} | loss(w) : {sum_loss:.4f} | 解析导数(w) = {sum_dl_dw:.4f} | h : {h} | 差商 : {difference_quotient:.4f}")
+        else:
+            #mean
+            loss_h = np.mean(((w + h) * x - y) ** 2)
+            difference_quotient = (loss_h - mean_loss) / h
+            dl_dw_h = np.mean(2 * ((w + h) * x - y) * x)
+            print(f"规约方式 : 平均 | 基准w : {w} | loss(w) : {mean_loss:.4f} | 解析导数(w) = {mean_dl_dw:.4f} | h : {h} | 差商 : {difference_quotient:.4f}")
+
+
+
+if __name__ == "__main__":
+    main()
+```
+
 *本文于2026-10-30整理公开，日期为导入日期。*
