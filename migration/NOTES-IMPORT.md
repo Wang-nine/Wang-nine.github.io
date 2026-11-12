@@ -315,3 +315,57 @@
 ### 操作边界
 
 仅新增 09 文章并追加本记录；转换与验证脚本置于仓库外，不修改源仓库、旧文章、配置、脚本、UI、横幅或 legacy 文件。未提交、推送、SSH、网络部署或访问 VPS。全量测试、check/build、浏览器与线上检查及 Git 提交/推送由主任务负责；本节不声称这些工作已完成。
+
+## 2026-11-12 再同步：新增 10，复核 01–09
+
+### 本次授权与精确 Allowlist
+
+用户要求「新增一片笔记，全同步一下」。本次仅只读以下 10 个公开笔记；授权包含笔记内已收录的代码快照，不包含导入或读取私人练习文件。没有读取私人索引、学习档案、课堂记录、课程文件或其它源笔记，没有跟随私人链接，没有修改源文件。
+
+1. `notes/02-math-numpy/01-prediction-and-loss.md`
+2. `notes/02-math-numpy/02-bias-and-loss.md`
+3. `notes/02-math-numpy/03-stationary-points.md`
+4. `notes/02-math-numpy/04-chain-rule.md`
+5. `notes/02-math-numpy/05-nonlinear-chain.md`
+6. `notes/02-math-numpy/06-batch-mse.md`
+7. `notes/02-math-numpy/07-mean-sum.md`
+8. `notes/02-math-numpy/08-dot-product.md`
+9. `notes/02-math-numpy/09-cosine-similarity.md`
+10. `notes/02-math-numpy/10-batch-cosine.md`
+
+### 实际输出、转换与日期
+
+新增 `src/content/posts/llm-learning/math-numpy/10-batch-cosine.md`，标题严格使用源 H1「10 batch cosine：每行使用自己的长度」，slug 为 `llm-math-numpy-10`。使用既有 Fuwari 字段，分类为 `LLM 学习`、`draft: false`、`lang: zh_CN`、`image: ''`，description 与 tags 仅描述逐行归一化、广播和检查边界。`published` 与导入附注采用本机已核对的实际导入日期 `2026-11-12`，不把代码时间戳当作发表或授课日期。
+
+01–09 的源 SHA-256 与上一次记录全部相同，限定公开转换后与对应既有正文 9/9 一致，因此旧文章实际修改数为 0；没有重写旧文章，原 frontmatter、published、slug 与导入附注均保持不变。本系列从 9 篇增加为 10 篇。
+
+- 删除新文章初始 H1，删除练习、课堂记录、原文件的 3 个私人链接；同一行的上一课保留并改为 `/posts/llm-math-numpy-09/`。转换器支持两位编号（包括 10），不再仅匹配 01–09。
+- 保留完整附录，仅删除 Python 头部指向私人练习目录的 1 行 `FilePath`；其余可执行代码、注释、作者、时间戳、原始空白与知识说明均不改写，也未运行这些代码。公开 GitHub noreply 署名新增 2 处、全系列共 20 处。
+- 仅将新文章的 1 个显式 `latex` 围栏转换为 `$$`，TeX payload 原样保留；普通 Python 与 text 围栏、内容和空白不变。没有静默修订数学或代码，没有补写学生掌握或来源已读声明。
+
+### 定向验证与源快照 SHA-256
+
+统一 CRLF / LF 后逐篇剥离 frontmatter 和导入附注，与限定公开转换逐字比较，10/10 通过。01–09 的 frontmatter 和附注另与操作前快照对照，9/9 不变。全部普通代码 payload（仅允许删除私人 FilePath 行）和 TeX payload 逐块比对通过。10 个源文件在读取前后及写入后复核 SHA-256，全部不变。
+
+| 源文件（相对 `notes/02-math-numpy/`） | SHA-256 | 公式块 | Python 块 | text 块 | 排除 FilePath 行 |
+| --- | --- | --- | --- | --- | --- |
+| 01-prediction-and-loss.md | `615a9481dd1eda52b982328d585eeed2430d8eb78eed1e0f7e32406df530e616` | 4 | 2 | 3 | 2 |
+| 02-bias-and-loss.md | `0933d57e0f7b2ff5cbc37d24f8f1b77ecebdeab7545672a49b54a4eb0a6a6d16` | 4 | 1 | 3 | 1 |
+| 03-stationary-points.md | `896225c1f58cc5e25125d09dce28bd476bccfc22ba9986d4ce54bc3539b3259a` | 9 | 1 | 0 | 1 |
+| 04-chain-rule.md | `c81c00ee8f7a8a16ec7c002649b0a9759bc43e4ed96c224c12fbe8f2a214dace` | 7 | 1 | 1 | 1 |
+| 05-nonlinear-chain.md | `4fd8a353ad122f9149e406c386196c3c3d304675216cab26acda03bc467a5861` | 6 | 1 | 1 | 1 |
+| 06-batch-mse.md | `e70599f49b26db79d2626910dc17dd84c6cb3e8e1ed187326b3c3c019a51e0be` | 4 | 1 | 2 | 0 |
+| 07-mean-sum.md | `5c015a662f90bfdade2eb140f7035ec05526f2b297673489443c8dadae5b25ae` | 2 | 1 | 1 | 1 |
+| 08-dot-product.md | `e76f1bbf71700a1ca448a75e88bcf4a2f3c632b478ae66ad46b289cb9d2ae050` | 4 | 1 | 3 | 1 |
+| 09-cosine-similarity.md | `b2a05bb929c3976f626df7a257f0601560ce3e313b7fe8f3c6172080db424fd5` | 5 | 1 | 1 | 1 |
+| 10-batch-cosine.md | `6674c6306e4e6c9b16ae2dcb8fc5174397268f025018db6337e293bad97b5ae8` | 1 | 1 | 3 | 1 |
+
+全系列共 46 个公式块、11 个 Python 块、18 个 text 块，转换排除私人 FilePath 共 11 行。使用站点已有 `katex` dependency，对全部 TeX payload 调用 `renderToString(inner, { displayMode: true, throwOnError: true })`，46/46 解析通过；这不是数学正确性、完整构建或浏览器渲染证明。
+
+公开正文定向扫描未发现私人练习 / session 路径、机器绝对路径、FilePath 元数据或未规范的相对笔记链接；常见私钥、访问 token、API key、密码赋值与非 noreply 联系地址扫描未见命中。公开 noreply 署名保留；本记录中的 allowlist 相对路径不属于正文隐私残留。
+
+`git diff --check` 对已跟踪变更通过。对未跟踪新文章执行 `git diff --no-index --check -- NUL src/content/posts/llm-learning/math-numpy/10-batch-cosine.md`，报告第 131、153 行源 Python 快照原有行尾空格，结果未通过；为保留代码 payload 不清理这 2 处空白。
+
+### 操作边界
+
+仅新增 10 文章并追加本记录。临时脚本 `notes-sync-10-20261112.mjs` 与独立 state 在仓库外，未覆盖上次证据。未修改源仓库、既有文章、UI、配置、脚本、测试或 legacy 基线，未提交、推送、SSH、部署或访问 VPS。全量测试、check/build、浏览器检查、Git 提交/推送及获授权后的 VPS 操作由主任务负责，本节不声称已完成。
