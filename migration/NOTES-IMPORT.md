@@ -262,3 +262,56 @@
 ### 操作边界
 
 仅更新上述 8 篇文章并追加本记录；临时转换与定向校验脚本放在仓库外。未改动实现、排序、横幅、配置、测试或 legacy 内容，未提交、推送、SSH 或部署。全量测试、check/build、DOM 检查及发布由主任务负责，本节不声称已完成。
+
+## 2026-11-12 同步：新增 09，复核 01–08
+
+### 本次范围与精确 Allowlist
+
+用户确认同步到博客 Git；本次只读以下 9 个工作区公开笔记。授权包含笔记内已有代码快照，不包含读取私人练习文件。未读取私人笔记索引、学习档案、课堂记录、课程文件、练习文件或其它源笔记，未跟随私人链接，也未触碰未跟踪练习文件。
+
+1. `notes/02-math-numpy/01-prediction-and-loss.md`
+2. `notes/02-math-numpy/02-bias-and-loss.md`
+3. `notes/02-math-numpy/03-stationary-points.md`
+4. `notes/02-math-numpy/04-chain-rule.md`
+5. `notes/02-math-numpy/05-nonlinear-chain.md`
+6. `notes/02-math-numpy/06-batch-mse.md`
+7. `notes/02-math-numpy/07-mean-sum.md`
+8. `notes/02-math-numpy/08-dot-product.md`
+9. `notes/02-math-numpy/09-cosine-similarity.md`
+
+### 输出与既有文章变化证据
+
+新增 `src/content/posts/llm-learning/math-numpy/09-cosine-similarity.md`，标题与源 H1 完全一致：「09 L2 norm 与 cosine similarity」，slug 为 `llm-math-numpy-09`，分类为 `LLM 学习`，使用 `draft: false`、`lang: zh_CN`、`image: ''`。上一课规范为 `/posts/llm-math-numpy-08/`。
+
+01–08 的源 SHA-256 均与 2026-11-09 记录相同；当前源文按限定规则转换后，也与现有 8 篇博客正文全部一致。因此本次旧文章实际修改数为 0，不做无依据重写；8 篇原 frontmatter、slug、published 与导入附注全部保持不变。本系列由 8 篇变为 9 篇。
+
+### 转换、代码与日期
+
+- 删除新文章初始 H1；删除 3 个私人链接（练习、课堂记录与附录原文件），保留上一课导航和之后的完整附录，不在首个私人尾段处截断全文。
+- 仅删除 Python 头部 1 行指向私人练习目录的 `FilePath` 元数据；其余代码、注释、作者、时间戳与原有行尾空格逐字保留。新文章公开 GitHub noreply 署名保留 2 处，全系列共 18 处，不声称邮箱为 0。
+- 延续此前博客端授权，仅将 09 的 5 个显式 `latex` 围栏转换为 `$$`，内层 TeX 字符、缩进与换行不改。09 的 1 个 Python 块（除上述元数据行）及 1 个 text 块 payload 均不变；全系列共 45 个公式块、10 个 Python 块、15 个 text 块。
+- 新文章 `published` 与文末导入附注均为实际导入日期 `2026-11-12`，不使用代码时间戳或课堂日期作为发布日期，不添加掌握证明或来源已读声明。
+
+### 定向验证与源快照 SHA-256
+
+统一 CRLF / LF 后，逐篇剥离 frontmatter 与导入附注，对照限定公开转换，9/9 正文完全一致；01–08 frontmatter 与附注单独对照操作前快照，8/8 不变。全部 Python / text payload 与源文逐块核对，仅允许删除私人 `FilePath` 行；全部 TeX payload 与原 `latex` 围栏内部逐字一致。使用站点当前 `katex` dependency 直接调用 `renderToString(inner, { displayMode: true, throwOnError: true })`，45/45 解析通过。这不是数学正确性、完整构建或浏览器渲染证明。
+
+| 源文件（相对 `notes/02-math-numpy/`） | SHA-256 | 公式块 | Python 块 | text 块 | 公开转换排除 FilePath 行 |
+| --- | --- | --- | --- | --- | --- |
+| 01-prediction-and-loss.md | `615a9481dd1eda52b982328d585eeed2430d8eb78eed1e0f7e32406df530e616` | 4 | 2 | 3 | 2 |
+| 02-bias-and-loss.md | `0933d57e0f7b2ff5cbc37d24f8f1b77ecebdeab7545672a49b54a4eb0a6a6d16` | 4 | 1 | 3 | 1 |
+| 03-stationary-points.md | `896225c1f58cc5e25125d09dce28bd476bccfc22ba9986d4ce54bc3539b3259a` | 9 | 1 | 0 | 1 |
+| 04-chain-rule.md | `c81c00ee8f7a8a16ec7c002649b0a9759bc43e4ed96c224c12fbe8f2a214dace` | 7 | 1 | 1 | 1 |
+| 05-nonlinear-chain.md | `4fd8a353ad122f9149e406c386196c3c3d304675216cab26acda03bc467a5861` | 6 | 1 | 1 | 1 |
+| 06-batch-mse.md | `e70599f49b26db79d2626910dc17dd84c6cb3e8e1ed187326b3c3c019a51e0be` | 4 | 1 | 2 | 0 |
+| 07-mean-sum.md | `5c015a662f90bfdade2eb140f7035ec05526f2b297673489443c8dadae5b25ae` | 2 | 1 | 1 | 1 |
+| 08-dot-product.md | `e76f1bbf71700a1ca448a75e88bcf4a2f3c632b478ae66ad46b289cb9d2ae050` | 4 | 1 | 3 | 1 |
+| 09-cosine-similarity.md | `b2a05bb929c3976f626df7a257f0601560ce3e313b7fe8f3c6172080db424fd5` | 5 | 1 | 1 | 1 |
+
+9 个源文件均在读取前后及写入后重新核对 SHA-256，全部不变。公开文章定向路径扫描未发现私人练习 / session 路径、机器绝对路径、FilePath 元数据或未规范的相对笔记链接；常见私钥、访问 token、API key 与密码赋值模式未见命中。公开 noreply 作者署名保留；扫描不将本记录中用于界定 allowlist 的相对源路径视为文章泄漏。
+
+`git diff --check` 对已跟踪变更通过；另对未跟踪的新 09 使用 `git diff --no-index --check -- NUL src/content/posts/llm-learning/math-numpy/09-cosine-similarity.md`，报告第 127、136 行原 Python 快照行尾空格，结果未通过。为保留代码 payload，不清理这 2 处原文空格。
+
+### 操作边界
+
+仅新增 09 文章并追加本记录；转换与验证脚本置于仓库外，不修改源仓库、旧文章、配置、脚本、UI、横幅或 legacy 文件。未提交、推送、SSH、网络部署或访问 VPS。全量测试、check/build、浏览器与线上检查及 Git 提交/推送由主任务负责；本节不声称这些工作已完成。
