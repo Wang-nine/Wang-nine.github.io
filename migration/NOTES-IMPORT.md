@@ -369,3 +369,59 @@
 ### 操作边界
 
 仅新增 10 文章并追加本记录。临时脚本 `notes-sync-10-20261112.mjs` 与独立 state 在仓库外，未覆盖上次证据。未修改源仓库、既有文章、UI、配置、脚本、测试或 legacy 基线，未提交、推送、SSH、部署或访问 VPS。全量测试、check/build、浏览器检查、Git 提交/推送及获授权后的 VPS 操作由主任务负责，本节不声称已完成。
+
+
+## 2026-11-14 同步：新增 11，复核 01–10
+
+### 精确 Allowlist 与输出
+
+本次仅只读下列 11 个工作区公开笔记；授权包括笔记内已有代码快照，不包括读取私人练习实现。未读取私人索引、学习档案、课堂记录、课程文件或其它源笔记，未跟随私人链接，源文件未修改。
+
+1. `notes/02-math-numpy/01-prediction-and-loss.md`
+2. `notes/02-math-numpy/02-bias-and-loss.md`
+3. `notes/02-math-numpy/03-stationary-points.md`
+4. `notes/02-math-numpy/04-chain-rule.md`
+5. `notes/02-math-numpy/05-nonlinear-chain.md`
+6. `notes/02-math-numpy/06-batch-mse.md`
+7. `notes/02-math-numpy/07-mean-sum.md`
+8. `notes/02-math-numpy/08-dot-product.md`
+9. `notes/02-math-numpy/09-cosine-similarity.md`
+10. `notes/02-math-numpy/10-batch-cosine.md`
+11. `notes/02-math-numpy/11-softmax.md`
+
+新增 `src/content/posts/llm-learning/math-numpy/11-softmax.md`，标题严格使用源 H1「11 softmax：从分数到概率」，slug 为 `llm-math-numpy-11`，分类为 `LLM 学习`，`draft: false`、`lang: zh_CN`、`image: ''`；description 与 tags 仅描述 softmax、数值稳定性和验证边界。上一课为 `/posts/llm-math-numpy-10/`，相对笔记链接转换另以两位编号 11 用例验证。
+
+01–10 的源 SHA-256 与上次记录全部一致，限定转换后的公开正文与既有文章 10/10 一致；旧文章实际修改数为 0、未变化数为 10，10 篇文件的全部字节（含 frontmatter、原发布时间、slug 和导入附注）保持不变。本系列由 10 篇变为 11 篇。
+
+### 转换、日期与边界
+
+- 仅删除首个 H1、私人练习 / session / 原文件链接及私人 FilePath 元数据行；同一行上一课导航保留并规范为站内路径，不在首个私人链接处截断附录。新文章删除 3 个私人链接和 1 行 FilePath。
+- 新文章 5 个显式 latex 围栏仅转换分隔符为 `$$`，TeX payload 原样保留。普通 Python / text 围栏及其 payload（除上述 FilePath 行）逐字保留，包括原有行尾空白；完整附录、教师归因、来源核对状态、无学生阅读证明与验证范围说明全部保留。没有修订算法或数学，没有运行学生 Python。
+- 新文章保留 2 处公开 GitHub noreply 署名，全系列共 22 处；不将它们误报为私人联系方式。
+- 新文章 published 和文末附注采用本次实际导入日期 `2026-11-14`，不是授课日期或代码时间戳；旧文章日期不变，不添加 updated 或掌握声明。
+
+### 定向验证与源快照 SHA-256
+
+使用仓库外 Python 标准库脚本执行统一换行后的 source→output 精确比对，11/11 正文一致；全部普通代码和 TeX payload 逐块比对通过。读取后和写入后再次核对全部源文件字节及 SHA-256，11/11 不变。下表为本次完整 allowlist 快照：
+
+| 源文件（相对 `notes/02-math-numpy/`） | SHA-256 | 公式块 | Python 块 | text 块 | 排除 FilePath 行 |
+| --- | --- | --- | --- | --- | --- |
+| 01-prediction-and-loss.md | `615a9481dd1eda52b982328d585eeed2430d8eb78eed1e0f7e32406df530e616` | 4 | 2 | 3 | 2 |
+| 02-bias-and-loss.md | `0933d57e0f7b2ff5cbc37d24f8f1b77ecebdeab7545672a49b54a4eb0a6a6d16` | 4 | 1 | 3 | 1 |
+| 03-stationary-points.md | `896225c1f58cc5e25125d09dce28bd476bccfc22ba9986d4ce54bc3539b3259a` | 9 | 1 | 0 | 1 |
+| 04-chain-rule.md | `c81c00ee8f7a8a16ec7c002649b0a9759bc43e4ed96c224c12fbe8f2a214dace` | 7 | 1 | 1 | 1 |
+| 05-nonlinear-chain.md | `4fd8a353ad122f9149e406c386196c3c3d304675216cab26acda03bc467a5861` | 6 | 1 | 1 | 1 |
+| 06-batch-mse.md | `e70599f49b26db79d2626910dc17dd84c6cb3e8e1ed187326b3c3c019a51e0be` | 4 | 1 | 2 | 0 |
+| 07-mean-sum.md | `5c015a662f90bfdade2eb140f7035ec05526f2b297673489443c8dadae5b25ae` | 2 | 1 | 1 | 1 |
+| 08-dot-product.md | `e76f1bbf71700a1ca448a75e88bcf4a2f3c632b478ae66ad46b289cb9d2ae050` | 4 | 1 | 3 | 1 |
+| 09-cosine-similarity.md | `b2a05bb929c3976f626df7a257f0601560ce3e313b7fe8f3c6172080db424fd5` | 5 | 1 | 1 | 1 |
+| 10-batch-cosine.md | `6674c6306e4e6c9b16ae2dcb8fc5174397268f025018db6337e293bad97b5ae8` | 1 | 1 | 3 | 1 |
+| 11-softmax.md | `269f217485f56cf4d55fcc931d19c177e826efc50370d855d8beb756b26ebd4f` | 5 | 1 | 1 | 1 |
+
+全系列共 51 个公式块、12 个 Python 块、19 个 text 块，排除私人 FilePath 共 12 行。11 篇代码围栏配对、display math 分隔符配对、普通代码外 inline dollar 配对诊断通过，无残留 latex 围栏。隐私扫描针对公开文章正文和 frontmatter：私人路径、机器绝对路径、FilePath、未规范相对笔记链接、常见私钥 / token / API key / 密码赋值和非 noreply 邮箱均为 0 命中；该扫描不是对所有潜在秘密的完备证明。
+
+此前记录中 01–10 的 46 个相同 TeX payload 已通过 KaTeX 解析，本次仅复用该历史证据，不声称重新解析。临时 clone 未安装依赖，本次未调用 KaTeX；新 11 的 5 个公式解析及完整测试 / check / build 留给主任务的 GitHub CI，不声称已通过；分隔符诊断不等于 KaTeX 解析或数学正确性证明。
+
+### 操作边界
+
+仅新增上述 11 文章并追加本记录，临时脚本和证据置于仓库外独立的 notes-sync-11-20261114 名称下，未覆盖旧证据。未重建已删除的原博客目录，未修改源仓库、既有文章、UI、配置、脚本、依赖或 legacy 文件；未执行 git 写操作、提交、推送、SSH、密钥操作、网络部署或访问 VPS。主任务负责产物阅读复核、GitHub CI、Pages 线上验证与提交 / 推送。
